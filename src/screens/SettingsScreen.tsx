@@ -17,6 +17,7 @@ interface Props {
   onProfileUpdate: (d: ProfileData) => void;
   isDark: boolean;
   onDarkToggle: () => void;
+  onSignOut: () => void;
   T: Theme;
 }
 
@@ -29,7 +30,7 @@ const NOTIF_ITEMS: [string, boolean][] = [
   ['New events in my area',       true],
 ];
 
-export default function SettingsScreen({ user, onBack, profileData, onProfileUpdate, isDark, onDarkToggle, T }: Props) {
+export default function SettingsScreen({ user, onBack, profileData, onProfileUpdate, isDark, onDarkToggle, onSignOut, T }: Props) {
   const [fields, setFields] = useState({
     email:    profileData.email || user?.email || 'lea@randevu.app',
     phone:    profileData.phone || '+32 478 12 34 56',
@@ -152,7 +153,7 @@ export default function SettingsScreen({ user, onBack, profileData, onProfileUpd
           </View>
 
           {/* Logout / delete */}
-          <TouchableOpacity style={styles.logoutBtn}>
+          <TouchableOpacity style={styles.logoutBtn} onPress={onSignOut}>
             <Text style={styles.logoutTxt}>Log out</Text>
           </TouchableOpacity>
           <TouchableOpacity style={{ alignItems: 'center', padding: 8 }}>

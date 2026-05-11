@@ -1,24 +1,25 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { makeTheme, Theme, C } from './src/constants/theme';
 import { Event, EVENTS } from './src/data/events';
 import { Avatar } from './src/data/avatars';
 import { AuthUser } from './src/screens/AuthScreen';
 
-import AuthScreen  from './src/screens/AuthScreen';
-import HomeScreen  from './src/screens/HomeScreen';
-import MapScreen   from './src/screens/MapScreen';
-import NowScreen   from './src/screens/NowScreen';
-import ProfileScreen   from './src/screens/ProfileScreen';
+import AuthScreen        from './src/screens/AuthScreen';
+import HomeScreen        from './src/screens/HomeScreen';
+import MapScreen         from './src/screens/MapScreen';
+import NowScreen         from './src/screens/NowScreen';
+import ProfileScreen     from './src/screens/ProfileScreen';
 import EventDetailScreen from './src/screens/EventDetailScreen';
-import ChatScreen      from './src/screens/ChatScreen';
-import SettingsScreen  from './src/screens/SettingsScreen';
+import ChatScreen        from './src/screens/ChatScreen';
+import SettingsScreen    from './src/screens/SettingsScreen';
 
 // ── Navigation types ──────────────────────────────────────────────────────────
 export type RootStackParamList = {
@@ -38,10 +39,12 @@ export type TabParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab   = createBottomTabNavigator<TabParamList>();
 
-// ── Tab bar icon SVG paths (inline, no asset needed) ─────────────────────────
-function TabIcon({ name, focused, color }: { name: string; focused: boolean; color: string }) {
+const USER_KEY = '@randevu_user';
+
+// ── Tab bar icon ──────────────────────────────────────────────────────────────
+function TabIcon({ name, focused }: { name: string; focused: boolean; color: string }) {
   const icons: Record<string, string> = {
-    Home:    '🏠', Map: '🗺️', Now: '⚡', Profile: '👤',
+    Home: '🏠', Map: '🗺️', Now: '⚡', Profile: '👤',
   };
   return (
     <View style={{ alignItems: 'center', justifyContent: 'center' }}>
@@ -114,22 +117,47 @@ function TabNavigator({
 // ── Root App ──────────────────────────────────────────────────────────────────
 export default function App() {
   const [user,         setUser]         = useState<AuthUser | null>(null);
+  const [isLoading,    setIsLoading]    = useState(true);
   const [avatar,       setAvatar]       = useState<Avatar | null>(null);
   const [profileData,  setProfileData]  = useState({ email: '', phone: '' });
   const [isDark,       setIsDark]       = useState(false);
   const [joinedEvents, setJoinedEvents] = useState<number[]>([]);
 
-  const T = useMemo(() => makeTheme(isDark), [isDark]);
+  const T        = useMemo(() => makeTheme(isDark), [isDark]);
   const myEvents = useMemo(() => EVENTS.filter(e => joinedEvents.includes(e.id)), [joinedEvents]);
+
+  // Load persisted user on first launch
+  useEffect(() => {
+    AsyncStorage.getItem(USER_KEY)
+      .then(json => { if (json) setUser(JSON.parse(json)); })
+      .catch(() => {})
+      .finally(() => setIsLoading(false));
+  }, []);
 
   const handleAuth = useCallback((u: AuthUser) => {
     setUser(u);
     setProfileData(p => ({ ...p, email: u.email }));
+    AsyncStorage.setItem(USER_KEY, JSON.stringify(u)).catch(() => {});
+  }, []);
+
+  const handleSignOut = useCallback(() => {
+    AsyncStorage.removeItem(USER_KEY).catch(() => {});
+    setUser(null);
   }, []);
 
   const handleJoin = useCallback((ev: Event) => {
     setJoinedEvents(p => p.includes(ev.id) ? p.filter(id => id !== ev.id) : [...p, ev.id]);
   }, []);
+
+  if (isLoading) {
+    return (
+      <SafeAreaProvider>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: '#F5F5F7' }}>
+          <ActivityIndicator size="large" color={C.lav} />
+        </View>
+      </SafeAreaProvider>
+    );
+  }
 
   if (!user) {
     return (
@@ -170,6 +198,7 @@ export default function App() {
                 onJoin={handleJoin}
                 joined={joinedEvents.includes(route.params.event.id)}
                 T={T}
+                onEventPress={ev => navigation.push('Detail', { event: ev })}
               />
             )}
           </Stack.Screen>
@@ -193,6 +222,7 @@ export default function App() {
                 onProfileUpdate={setProfileData}
                 isDark={isDark}
                 onDarkToggle={() => setIsDark(d => !d)}
+                onSignOut={handleSignOut}
                 T={T}
               />
             )}

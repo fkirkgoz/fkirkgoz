@@ -14,6 +14,26 @@ import Tap from '../components/Tap';
 import SrcBadge from '../components/SrcBadge';
 import Toast from '../components/Toast';
 
+function getDisplayDate(relative: string): string {
+  const today = new Date();
+  const day = today.getDay();
+  const addDays = (n: number) => { const d = new Date(today); d.setDate(d.getDate() + n); return d; };
+  const fmt = (d: Date) => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+  if (relative === 'Tonight')      return fmt(today);
+  if (relative === 'Tomorrow')     return fmt(addDays(1));
+  if (relative === 'This Weekend') {
+    if (day === 0) return fmt(today);
+    const toSat = (6 - day + 7) % 7;
+    return fmt(addDays(toSat === 0 ? 7 : toSat));
+  }
+  if (relative === 'Next Week') {
+    const toMon = ((1 - day) + 7) % 7 || 7;
+    return fmt(addDays(toMon));
+  }
+  if (relative === 'Next Month') return fmt(addDays(28));
+  return relative;
+}
+
 function fmtPrice(p: string) {
   if (!p || p === 'Free') return 'Free';
   const num = parseFloat(p.replace(/[^0-9.]/g, ''));
@@ -36,9 +56,10 @@ interface Props {
   onJoin: (e: Event) => void;
   joined: boolean;
   T: Theme;
+  onEventPress?: (e: Event) => void;
 }
 
-export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin, joined, T }: Props) {
+export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin, joined, T, onEventPress }: Props) {
   const insets = useSafeAreaInsets();
   const [saved, setSaved]           = useState(false);
   const [calDone, setCalDone]       = useState(false);
@@ -124,7 +145,7 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
         <View style={{ paddingHorizontal: 22 }}>
           {/* Info card */}
           <View style={[styles.infoCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
-            {[['📍', e.venue, e.addr], ['📅', `${e.date} · ${e.time}`, null], ['💶', fmtPrice(e.price), null]].map(([ic, main, sub], i) => (
+            {[['📍', e.venue, e.addr], ['📅', `${getDisplayDate(e.date)} · ${e.time}`, null], ['💶', fmtPrice(e.price), null]].map(([ic, main, sub], i) => (
               <View key={i} style={[styles.infoRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
                 <Text style={{ fontSize: 18, marginTop: 1 }}>{ic}</Text>
                 <View>
@@ -366,16 +387,22 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
                         contentContainerStyle={{ gap: 10, marginTop: 10 }}
                       >
                         {mutual.map(ev => (
-                          <View key={ev.id} style={[styles.mutualCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
-                            <View style={[styles.mutualBar, { backgroundColor: ev.color }]} />
-                            <View style={{ padding: 10 }}>
-                              <Text style={{ fontSize: 20, marginBottom: 4 }}>{ev.emoji}</Text>
-                              <Text style={[styles.mutualTitle, { color: T.text }]} numberOfLines={2}>
-                                {ev.title.length > 16 ? ev.title.slice(0, 15) + '…' : ev.title}
-                              </Text>
-                              <Text style={{ fontSize: 10, color: T.sub, fontWeight: '700' }}>{ev.date}</Text>
+                          <TouchableOpacity
+                            key={ev.id}
+                            activeOpacity={0.75}
+                            onPress={() => onEventPress?.(ev)}
+                          >
+                            <View style={[styles.mutualCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
+                              <View style={[styles.mutualBar, { backgroundColor: ev.color }]} />
+                              <View style={{ padding: 10 }}>
+                                <Text style={{ fontSize: 20, marginBottom: 4 }}>{ev.emoji}</Text>
+                                <Text style={[styles.mutualTitle, { color: T.text }]} numberOfLines={2}>
+                                  {ev.title.length > 16 ? ev.title.slice(0, 15) + '…' : ev.title}
+                                </Text>
+                                <Text style={{ fontSize: 10, color: T.sub, fontWeight: '700' }}>{getDisplayDate(ev.date)}</Text>
+                              </View>
                             </View>
-                          </View>
+                          </TouchableOpacity>
                         ))}
                       </ScrollView>
                     </View>
