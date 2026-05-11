@@ -5,28 +5,14 @@
     "owner": "figenkirkgoz",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": false,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#8E7DBE"
-    },
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "app.randevu.brussels"
     },
     "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#8E7DBE"
-      },
       "package": "app.randevu.brussels"
-    },
-    "web": {
-      "favicon": "./assets/favicon.png",
-      "bundler": "metro"
     },
     "plugins": []
   }
