@@ -38,10 +38,6 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
   const [editing, setEditing] = useState(false);
   const [bio, setBio] = useState("always down for a hidden gem 💎 techno + yoga + good food ✨ Brussels-based");
   const [pickerOpen, setPickerOpen] = useState(false);
-  const [pickerPage, setPickerPage] = useState(0);
-
-  const pageAvatars = AVATARS.slice(pickerPage * 6, pickerPage * 6 + 6);
-  const totalPages  = Math.ceil(AVATARS.length / 6);
 
   return (
     <GradBg isDark={T.isDark} style={{ flex: 1 }}>
@@ -185,13 +181,13 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
         </View>
       </ScrollView>
 
-      {/* Avatar picker modal */}
+      {/* Avatar picker modal — all avatars in one scrollable grid, no pagination */}
       <Modal visible={pickerOpen} animationType="slide" presentationStyle="pageSheet">
         <View style={[styles.pickerContainer, { backgroundColor: T.card }]}>
           <Text style={[styles.pickerTitle, { color: T.text }]}>Choose your avatar</Text>
-          <Text style={[styles.pickerSub, { color: T.sub }]}>{AVATARS.length} avatar styles — tap to select ✨</Text>
-          <View style={styles.pickerGrid}>
-            {pageAvatars.map(av => (
+          <Text style={[styles.pickerSub, { color: T.sub }]}>{AVATARS.length} styles — tap to select ✨</Text>
+          <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.pickerGrid}>
+            {AVATARS.map(av => (
               <Tap key={av.id} onPress={() => { onAvatarChange(av); setPickerOpen(false); }} style={{ width: '30%' }}>
                 <LinearGradient colors={av.bg as [string, string]} style={[styles.pickerItem, { borderColor: avatar?.id === av.id ? T.accent : 'transparent' }]}>
                   <Text style={{ fontSize: 34, marginBottom: 4 }}>{av.emoji ?? '🧑'}</Text>
@@ -199,15 +195,7 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
                 </LinearGradient>
               </Tap>
             ))}
-          </View>
-          {/* Dots */}
-          <View style={styles.dotsRow}>
-            {Array.from({ length: totalPages }).map((_, i) => (
-              <Tap key={i} onPress={() => setPickerPage(i)}>
-                <View style={[styles.dot, { width: pickerPage === i ? 20 : 8, backgroundColor: pickerPage === i ? T.accent : T.border }]} />
-              </Tap>
-            ))}
-          </View>
+          </ScrollView>
           <Tap onPress={() => setPickerOpen(false)}>
             <View style={[styles.cancelBtn, { backgroundColor: T.pill }]}>
               <Text style={{ fontWeight: '800', fontSize: 15, color: T.sub }}>Cancel</Text>

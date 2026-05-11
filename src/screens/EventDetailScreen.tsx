@@ -3,6 +3,7 @@ import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   Linking, Modal, FlatList, Platform,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 import * as Clipboard from 'expo-clipboard';
 import { LinearGradient } from 'expo-linear-gradient';
 import MapView, { Marker } from 'react-native-maps';
@@ -140,29 +141,38 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
               <Text style={[styles.whoTitle, { color: T.text }]}>👥 Who's Going</Text>
               <Text style={{ fontSize: 13, fontWeight: '700', color: T.accent, textDecorationLine: 'underline' }}>View All →</Text>
             </TouchableOpacity>
-            {/* Entire row is one tap target → opens full attendee list */}
-            <TouchableOpacity
-              activeOpacity={0.75}
-              onPress={() => setViewAll(true)}
-              style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' }}
+            {/* Smooth horizontal scroll — every element opens the attendee list */}
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={{ alignItems: 'center', gap: 8, paddingRight: 4 }}
             >
-              {(e.attendees ?? []).slice(0, 5).map((a, i) => (
-                <View key={i} style={[styles.attendeeCircle, {
-                  backgroundColor: a.c,
-                  marginLeft: i === 0 ? 0 : -10,
-                  borderColor: a.isFriend ? C.lav : T.card,
-                }]}>
-                  <Text style={styles.attendeeTxt}>{a.n[0]}</Text>
-                  {a.isFriend && <View style={[styles.friendDot, { borderColor: T.card }]} />}
-                </View>
+              {(e.attendees ?? []).map((a, i) => (
+                <TouchableOpacity key={i} onPress={() => setViewAll(true)} activeOpacity={0.75}>
+                  <View style={[styles.attendeeCircle, {
+                    backgroundColor: a.c,
+                    borderColor: a.isFriend ? C.lav : T.card,
+                  }]}>
+                    <Text style={styles.attendeeTxt}>{a.n[0]}</Text>
+                    {a.isFriend && <View style={[styles.friendDot, { borderColor: T.card }]} />}
+                  </View>
+                </TouchableOpacity>
               ))}
-              <Text style={[styles.whoMore, { color: T.sub }]}>
-                <Text style={{ color: T.accent, fontWeight: '900' }}>
-                  +{Math.max(0, e.going - Math.min(5, e.attendees?.length ?? 0))} more
-                </Text>
-                {' '}from {e.neighbourhood}
-              </Text>
-            </TouchableOpacity>
+              {e.going > (e.attendees?.length ?? 0) && (
+                <TouchableOpacity onPress={() => setViewAll(true)} activeOpacity={0.75}>
+                  <View style={[styles.morePill, { backgroundColor: `${C.lav}18`, borderColor: `${C.lav}30` }]}>
+                    <Text style={{ color: C.lav, fontWeight: '900', fontSize: 11 }}>
+                      +{(e.going - (e.attendees?.length ?? 0)).toLocaleString()}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              )}
+              <TouchableOpacity onPress={() => setViewAll(true)} activeOpacity={0.75}>
+                <View style={[styles.chevronBtn, { backgroundColor: `${C.lav}12` }]}>
+                  <Ionicons name="chevron-forward" size={18} color={C.lav} />
+                </View>
+              </TouchableOpacity>
+            </ScrollView>
             {(e.friends ?? 0) > 0 && (
               <View style={[styles.friendsBanner, { backgroundColor: `${C.lav}14` }]}>
                 <Text>✨</Text>
@@ -572,4 +582,6 @@ const styles = StyleSheet.create({
   attendeeRow:    { flexDirection: 'row', alignItems: 'center', gap: 14, paddingHorizontal: 22, paddingVertical: 12, borderBottomWidth: 1 },
   attendeeCircleLg: { width: 46, height: 46, borderRadius: 23, alignItems: 'center', justifyContent: 'center', borderWidth: 2 },
   addFriendBtn:   { borderRadius: 20, paddingHorizontal: 14, paddingVertical: 7, borderWidth: 1 },
+  morePill:       { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5 },
+  chevronBtn:     { width: 36, height: 36, borderRadius: 18, alignItems: 'center', justifyContent: 'center' },
 });
