@@ -76,7 +76,7 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
         {/* Name / stats */}
         <View style={{ alignItems: 'center', paddingHorizontal: 22, marginTop: 4 }}>
           <Text style={[styles.name, { color: T.text }]}>{user?.name ?? 'Léa Van den Berg'}</Text>
-          <Text style={[styles.emailTxt, { color: T.sub }]}>{profileData.email || user?.email ?? 'lea@randevu.app'} · Brussels</Text>
+          <Text style={[styles.emailTxt, { color: T.sub }]}>{profileData.email || (user?.email ?? 'lea@randevu.app')} · Brussels</Text>
           {!!profileData.phone && <Text style={[styles.emailTxt, { color: T.sub }]}>{profileData.phone}</Text>}
           <View style={styles.statsRow}>
             {[['24','Events'],['8','Friends'],['3','Badges']].map(([v, l]) => (
