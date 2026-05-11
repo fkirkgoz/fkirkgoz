@@ -45,7 +45,7 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
 
   return (
     <GradBg isDark={T.isDark} style={{ flex: 1 }}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 20 }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 90 }}>
         {/* Header */}
         <LinearGradient colors={[C.lav, C.teal]} style={styles.headerGrad}>
           <View style={styles.headerRow}>

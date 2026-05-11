@@ -32,7 +32,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
   const ss = String(secs % 60).padStart(2, '0');
 
   return (
-    <ScrollView style={{ flex: 1, backgroundColor: T.isDark ? '#0D0D0D' : C.dark }} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 20 }}>
+    <ScrollView style={{ flex: 1, backgroundColor: T.isDark ? '#0D0D0D' : C.dark }} showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 90 }}>
       {/* Header */}
       <View style={styles.header}>
         <View style={styles.liveBadge}>

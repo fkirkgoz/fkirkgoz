@@ -41,7 +41,7 @@ export default function HomeScreen({ onEventPress, T, myEvents }: Props) {
 
   return (
     <GradBg isDark={T.isDark} style={{ flex: 1 }}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 20 }}>
+      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 90 }}>
         {/* Header */}
         <View style={styles.header}>
           <View>
