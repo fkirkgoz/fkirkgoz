@@ -136,24 +136,25 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
 
           {/* Who's Going */}
           <View style={[styles.whoCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
-            <View style={styles.whoHeader}>
+            <TouchableOpacity activeOpacity={0.75} onPress={() => setViewAll(true)} style={styles.whoHeader}>
               <Text style={[styles.whoTitle, { color: T.text }]}>👥 Who's Going</Text>
-              <Tap onPress={() => setViewAll(true)}>
-                <Text style={{ fontSize: 13, fontWeight: '700', color: T.accent, textDecorationLine: 'underline' }}>View All</Text>
-              </Tap>
-            </View>
-            <View style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' }}>
+              <Text style={{ fontSize: 13, fontWeight: '700', color: T.accent, textDecorationLine: 'underline' }}>View All →</Text>
+            </TouchableOpacity>
+            {/* Entire row is one tap target → opens full attendee list */}
+            <TouchableOpacity
+              activeOpacity={0.75}
+              onPress={() => setViewAll(true)}
+              style={{ flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap' }}
+            >
               {(e.attendees ?? []).slice(0, 5).map((a, i) => (
-                <Tap key={i} onPress={() => setGuestModal(a)}>
-                  <View style={[styles.attendeeCircle, {
-                    backgroundColor: a.c,
-                    marginLeft: i === 0 ? 0 : -10,
-                    borderColor: a.isFriend ? C.lav : T.card,
-                  }]}>
-                    <Text style={styles.attendeeTxt}>{a.n[0]}</Text>
-                    {a.isFriend && <View style={[styles.friendDot, { borderColor: T.card }]} />}
-                  </View>
-                </Tap>
+                <View key={i} style={[styles.attendeeCircle, {
+                  backgroundColor: a.c,
+                  marginLeft: i === 0 ? 0 : -10,
+                  borderColor: a.isFriend ? C.lav : T.card,
+                }]}>
+                  <Text style={styles.attendeeTxt}>{a.n[0]}</Text>
+                  {a.isFriend && <View style={[styles.friendDot, { borderColor: T.card }]} />}
+                </View>
               ))}
               <Text style={[styles.whoMore, { color: T.sub }]}>
                 <Text style={{ color: T.accent, fontWeight: '900' }}>
@@ -161,7 +162,7 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
                 </Text>
                 {' '}from {e.neighbourhood}
               </Text>
-            </View>
+            </TouchableOpacity>
             {(e.friends ?? 0) > 0 && (
               <View style={[styles.friendsBanner, { backgroundColor: `${C.lav}14` }]}>
                 <Text>✨</Text>
