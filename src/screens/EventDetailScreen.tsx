@@ -5,7 +5,6 @@ import {
 } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import { LinearGradient } from 'expo-linear-gradient';
-import { WebView } from 'react-native-webview';
 import { Event, Attendee } from '../data/events';
 import { Theme, C } from '../constants/theme';
 import Tap from '../components/Tap';
@@ -69,7 +68,6 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
     }
   };
 
-  const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${e.lng - 0.009},${e.lat - 0.006},${e.lng + 0.009},${e.lat + 0.006}&layer=mapnik&marker=${e.lat},${e.lng}`;
 
   return (
     <View style={{ flex: 1, backgroundColor: T.card }}>
@@ -169,9 +167,17 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
           {/* Map */}
           <View style={{ marginBottom: 22 }}>
             <Text style={[styles.sectionTitle, { color: T.text }]}>Location</Text>
-            <View style={[styles.mapContainer, { borderColor: T.border }]}>
-              <WebView source={{ uri: mapSrc }} style={{ flex: 1 }} scrollEnabled={false} />
-            </View>
+            <TouchableOpacity
+              style={[styles.mapContainer, { borderColor: T.border, backgroundColor: `${C.lav}12`, alignItems: 'center', justifyContent: 'center', gap: 6 }]}
+              onPress={() => Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${e.lat},${e.lng}`).catch(() => {})}
+            >
+              <Text style={{ fontSize: 32 }}>📍</Text>
+              <Text style={{ fontWeight: '800', fontSize: 14, color: C.lav }}>{e.venue}</Text>
+              <Text style={{ fontSize: 12, color: T.sub }}>{e.addr}</Text>
+              <View style={{ backgroundColor: C.lav, borderRadius: 12, paddingHorizontal: 16, paddingVertical: 8, marginTop: 4 }}>
+                <Text style={{ color: 'white', fontWeight: '800', fontSize: 13 }}>Open in Google Maps →</Text>
+              </View>
+            </TouchableOpacity>
           </View>
 
           {/* Group Chat teaser */}

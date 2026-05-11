@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
-  View, Text, ScrollView, StyleSheet, Linking, Dimensions,
+  View, Text, ScrollView, StyleSheet, Linking, Dimensions, TouchableOpacity,
 } from 'react-native';
-import { WebView } from 'react-native-webview';
+import { LinearGradient } from 'expo-linear-gradient';
 import { Event } from '../data/events';
 import { MAP_PINS } from '../data/events';
 import { Theme, C } from '../constants/theme';
@@ -31,25 +31,6 @@ export default function MapScreen({ onEventPress, T }: Props) {
     Linking.openURL(`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`).catch(() => {});
   };
 
-  const mapHTML = `
-    <!DOCTYPE html>
-    <html style="margin:0;padding:0;height:100%;overflow:hidden">
-    <body style="margin:0;padding:0;height:100%">
-      <div id="map" style="width:100%;height:100%"></div>
-      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-      <script>
-        var map = L.map('map', { zoomControl:true, attributionControl:false }).setView([50.848, 4.352], 13);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-        var pins = ${JSON.stringify(MAP_PINS.map(p => ({ lat: p.event.lat, lng: p.event.lng, emoji: p.event.emoji, title: p.event.title, id: p.event.id })))};
-        pins.forEach(function(p) {
-          var icon = L.divIcon({ html: '<div style="background:#8E7DBE;width:36px;height:36px;border-radius:50%;border:3px solid white;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 4px 12px rgba(142,125,190,0.5)">' + p.emoji + '</div>', className:'', iconSize:[36,36] });
-          L.marker([p.lat,p.lng],{icon:icon}).addTo(map).bindPopup('<b>' + p.title + '</b>').on('click',function(){ window.ReactNativeWebView.postMessage(String(p.id)); });
-        });
-      </script>
-    </body></html>
-  `;
-
   return (
     <View style={[styles.container, { backgroundColor: T.bg }]}>
       {/* Header */}
@@ -58,19 +39,29 @@ export default function MapScreen({ onEventPress, T }: Props) {
         <Text style={[styles.headerSub, { color: T.sub }]}>Tap a pin to see event details</Text>
       </View>
 
-      {/* Map */}
+      {/* Map placeholder – interactive event grid */}
       <View style={styles.mapWrap}>
-        <WebView
-          originWhitelist={['*']}
-          source={{ html: mapHTML }}
-          style={{ flex: 1 }}
-          onMessage={event => {
-            const id = parseInt(event.nativeEvent.data, 10);
-            const found = MAP_PINS.find(p => p.event.id === id);
-            if (found) setSel(found.event);
-          }}
-          javaScriptEnabled
-        />
+        <LinearGradient colors={['#dce8f5', '#c8dff0']} style={{ flex: 1 }}>
+          <View style={styles.mapGrid}>
+            {MAP_PINS.map(({ event: ev, area }) => (
+              <TouchableOpacity
+                key={ev.id}
+                style={[styles.mapPin, { borderColor: ev.color, backgroundColor: `${ev.color}22` }]}
+                onPress={() => setSel(ev)}
+                activeOpacity={0.7}
+              >
+                <Text style={styles.mapPinEmoji}>{ev.emoji}</Text>
+                <Text style={[styles.mapPinArea, { color: C.dark }]} numberOfLines={1}>{area}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
+          <TouchableOpacity
+            style={styles.openMapsBtn}
+            onPress={() => Linking.openURL('https://www.google.com/maps/@50.848,4.352,13z').catch(() => {})}
+          >
+            <Text style={styles.openMapsBtnTxt}>🗺️ Open full map in Google Maps →</Text>
+          </TouchableOpacity>
+        </LinearGradient>
       </View>
 
       {/* Selected event card */}
@@ -136,6 +127,12 @@ const styles = StyleSheet.create({
   headerTitle: { fontSize: 22, fontWeight: '900' },
   headerSub:   { fontSize: 12, marginTop: 2 },
   mapWrap:     { flex: 1, marginHorizontal: 16, marginBottom: 8, borderRadius: 28, overflow: 'hidden' },
+  mapGrid:     { flex: 1, flexDirection: 'row', flexWrap: 'wrap', padding: 12, gap: 8, alignContent: 'flex-start' },
+  mapPin:      { width: '22%', alignItems: 'center', borderRadius: 16, padding: 8, borderWidth: 2 },
+  mapPinEmoji: { fontSize: 22, marginBottom: 2 },
+  mapPinArea:  { fontSize: 9, fontWeight: '800', textAlign: 'center' },
+  openMapsBtn: { margin: 12, backgroundColor: 'rgba(255,255,255,0.85)', borderRadius: 16, paddingVertical: 10, paddingHorizontal: 16, alignItems: 'center' },
+  openMapsBtnTxt: { fontSize: 13, fontWeight: '800', color: C.lav },
   selCard:     { marginHorizontal: 16, marginBottom: 8, borderRadius: 22, padding: 16, shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.2, shadowRadius: 16, elevation: 8 },
   selRow:      { flexDirection: 'row', alignItems: 'flex-start', gap: 10 },
   selEmoji:    { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
