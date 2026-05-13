@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   Linking, Modal, FlatList, Platform,
 } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
 import * as Clipboard from 'expo-clipboard';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -61,6 +62,7 @@ interface Props {
 
 export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin, joined, T, onEventPress }: Props) {
   const insets = useSafeAreaInsets();
+  const navigation = useNavigation<any>();
   const [saved, setSaved]           = useState(false);
   const [calDone, setCalDone]       = useState(false);
   const [toast, setToast]           = useState('');
@@ -68,6 +70,18 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
   const [guestModal, setGuestModal] = useState<Attendee | null>(null);
   const [viewAll, setViewAll]       = useState(false);
   const [addedFriends, setAddedFriends] = useState<string[]>([]);
+  const pendingGuestRef = useRef<Attendee | null>(null);
+
+  // Re-open friend modal when returning from a pushed EventDetail screen
+  useEffect(() => {
+    const unsub = navigation.addListener('focus', () => {
+      if (pendingGuestRef.current) {
+        setGuestModal(pendingGuestRef.current);
+        pendingGuestRef.current = null;
+      }
+    });
+    return unsub;
+  }, [navigation]);
 
   const showToast  = (msg: string) => { setToast(msg); setTimeout(() => setToast(''), 2400); };
   const showShare  = () => { setShareToast(true); setTimeout(() => setShareToast(false), 2200); };
@@ -390,7 +404,11 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
                           <TouchableOpacity
                             key={ev.id}
                             activeOpacity={0.75}
-                            onPress={() => onEventPress?.(ev)}
+                            onPress={() => {
+                              pendingGuestRef.current = guestModal;
+                              setGuestModal(null);
+                              setTimeout(() => onEventPress?.(ev), 320);
+                            }}
                           >
                             <View style={[styles.mutualCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
                               <View style={[styles.mutualBar, { backgroundColor: ev.color }]} />

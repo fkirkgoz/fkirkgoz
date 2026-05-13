@@ -56,7 +56,7 @@ function TabIcon({ name, focused }: { name: string; focused: boolean; color: str
 // ── Tab navigator ─────────────────────────────────────────────────────────────
 function TabNavigator({
   T, myEvents, onEventPress, onSettings,
-  user, avatar, onAvatarChange, profileData, onProfileUpdate,
+  user, avatar, onAvatarChange, profileData, onProfileUpdate, onUserUpdate,
 }: {
   T: Theme;
   myEvents: Event[];
@@ -67,6 +67,7 @@ function TabNavigator({
   onAvatarChange: (av: Avatar) => void;
   profileData: { email: string; phone: string };
   onProfileUpdate: (d: { email: string; phone: string }) => void;
+  onUserUpdate: (updates: Partial<AuthUser>) => void;
 }) {
   return (
     <Tab.Navigator
@@ -107,6 +108,7 @@ function TabNavigator({
             T={T}
             myEvents={myEvents}
             onEventPress={onEventPress}
+            onUserUpdate={onUserUpdate}
           />
         )}
       </Tab.Screen>
@@ -143,6 +145,15 @@ export default function App() {
   const handleSignOut = useCallback(() => {
     AsyncStorage.removeItem(USER_KEY).catch(() => {});
     setUser(null);
+  }, []);
+
+  const handleUserUpdate = useCallback((updates: Partial<AuthUser>) => {
+    setUser(prev => {
+      if (!prev) return prev;
+      const updated = { ...prev, ...updates };
+      AsyncStorage.setItem(USER_KEY, JSON.stringify(updated)).catch(() => {});
+      return updated;
+    });
   }, []);
 
   const handleJoin = useCallback((ev: Event) => {
@@ -185,6 +196,7 @@ export default function App() {
                 onAvatarChange={setAvatar}
                 profileData={profileData}
                 onProfileUpdate={setProfileData}
+                onUserUpdate={handleUserUpdate}
               />
             )}
           </Stack.Screen>

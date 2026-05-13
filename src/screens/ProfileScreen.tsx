@@ -32,11 +32,12 @@ interface Props {
   T: Theme;
   myEvents: Event[];
   onEventPress: (e: Event) => void;
+  onUserUpdate?: (updates: Partial<AuthUser>) => void;
 }
 
-export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange, profileData, T, myEvents, onEventPress }: Props) {
+export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange, profileData, T, myEvents, onEventPress, onUserUpdate }: Props) {
   const [editing, setEditing] = useState(false);
-  const [bio, setBio] = useState("always down for a hidden gem 💎 techno + yoga + good food ✨ Brussels-based");
+  const [bio, setBio] = useState(user?.bio ?? "always down for a hidden gem 💎 techno + yoga + good food ✨ Brussels-based");
   const [pickerOpen, setPickerOpen] = useState(false);
 
   return (
@@ -88,7 +89,10 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
         <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border, marginHorizontal: 22, marginTop: 18 }]}>
           <View style={styles.cardHeader}>
             <Text style={[styles.cardLabel, { color: T.sub }]}>BIO</Text>
-            <Tap onPress={() => setEditing(e => !e)}>
+            <Tap onPress={() => {
+              if (editing) onUserUpdate?.({ bio });
+              setEditing(e => !e);
+            }}>
               <View style={[styles.editBtn, { backgroundColor: T.pill }]}>
                 <Text style={{ fontSize: 12, fontWeight: '700', color: T.accent }}>{editing ? 'Save ✓' : 'Edit ✏️'}</Text>
               </View>
@@ -106,6 +110,20 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
             <Text style={[styles.bioText, { color: T.text }]}>{bio}</Text>
           )}
         </View>
+
+        {/* Vibes — shown only if set during sign-up */}
+        {(user?.vibes ?? []).length > 0 && (
+          <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border, marginHorizontal: 22, marginTop: 14 }]}>
+            <Text style={[styles.cardLabel, { color: T.sub, marginBottom: 10 }]}>MY VIBES</Text>
+            <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8 }}>
+              {(user?.vibes ?? []).map(v => (
+                <View key={v} style={{ backgroundColor: `${C.lav}16`, borderRadius: 20, paddingHorizontal: 14, paddingVertical: 6, borderWidth: 1, borderColor: `${C.lav}30` }}>
+                  <Text style={{ fontSize: 13, fontWeight: '700', color: C.lav }}>{v}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        )}
 
         {/* My Schedule */}
         <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border, marginHorizontal: 22, marginTop: 14 }]}>
