@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useRef } from 'react';
 import {
   View, Text, TextInput, ScrollView, TouchableOpacity,
-  StyleSheet, FlatList, Pressable,
+  StyleSheet, FlatList,
 } from 'react-native';
 import { Theme, C } from '../constants/theme';
 import { EVENTS, CATS, DATES, Event } from '../data/events';
@@ -39,167 +39,180 @@ export default function HomeScreen({ onEventPress, T, myEvents }: Props) {
     return true;
   }), [cat, date, q]);
 
-  return (
-    <GradBg isDark={T.isDark} style={{ flex: 1 }}>
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 90 }}>
-        {/* Header */}
-        <View style={styles.header}>
-          <View>
-            <Text style={[styles.headerCity, { color: T.sub }]}>Brussels 🇧🇪</Text>
-            <Text style={[styles.headerTitle, { color: T.text }]}>
-              What's your{'\n'}<Text style={{ color: T.accent }}>vibe tonight?</Text>
-            </Text>
-          </View>
-          <View>
-            <Tap onPress={() => { setNotifOpen(s => !s); setNRead(true); }}>
-              <View style={[styles.bellBtn, { backgroundColor: notifOpen ? T.accent : undefined }]}>
-                <Text style={styles.bellEmoji}>🔔</Text>
-              </View>
-            </Tap>
-            {!nRead && <View style={[styles.bellDot, { borderColor: T.bg }]} />}
-          </View>
+  const listHeader = (
+    <View>
+      {/* Header */}
+      <View style={styles.header}>
+        <View>
+          <Text style={[styles.headerCity, { color: T.sub }]}>Brussels 🇧🇪</Text>
+          <Text style={[styles.headerTitle, { color: T.text }]}>
+            What's your{'\n'}<Text style={{ color: T.accent }}>vibe tonight?</Text>
+          </Text>
         </View>
-
-        {/* Notification panel */}
-        {notifOpen && (
-          <View style={[styles.notifPanel, { backgroundColor: T.card, borderColor: T.border }]}>
-            <Text style={[styles.notifTitle, { color: T.text }]}>🔔 Notifications</Text>
-            {[
-              { e: '🎛️', t: '3 friends added Fuse RA Night — join?', a: '2m ago' },
-              { e: '⚽',  t: 'Union SG fan zone filling up fast!',     a: '15m ago' },
-              { e: '🌿', t: 'Canal Cleanup starts in 1 hour.',         a: '45m ago' },
-            ].map((n, i) => (
-              <View key={i} style={[styles.notifRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
-                <Text style={{ fontSize: 18 }}>{n.e}</Text>
-                <View style={{ flex: 1 }}>
-                  <Text style={[styles.notifText, { color: T.text }]}>{n.t}</Text>
-                  <Text style={[styles.notifTime, { color: T.sub }]}>{n.a}</Text>
-                </View>
-              </View>
-            ))}
-            <Tap onPress={() => setNotifOpen(false)}>
-              <View style={[styles.dismissBtn, { backgroundColor: T.pill }]}>
-                <Text style={[styles.dismissTxt, { color: T.sub }]}>Dismiss all</Text>
-              </View>
-            </Tap>
-          </View>
-        )}
-
-        {/* Search */}
-        <View style={styles.searchWrap}>
-          {searching ? (
-            <View style={styles.searchActive}>
-              <View style={[styles.searchInner, { backgroundColor: T.input, borderColor: T.accent }]}>
-                <Text>🔍</Text>
-                <TextInput
-                  ref={searchRef}
-                  value={q}
-                  onChangeText={setQ}
-                  placeholder="Search events, category…"
-                  placeholderTextColor={T.sub}
-                  style={[styles.searchInput, { color: T.text }]}
-                  autoFocus
-                />
-                {!!q && (
-                  <TouchableOpacity onPress={() => setQ('')}>
-                    <Text style={{ color: T.sub, fontSize: 20 }}>×</Text>
-                  </TouchableOpacity>
-                )}
-              </View>
-              <TouchableOpacity onPress={() => { setSearching(false); setQ(''); }}>
-                <Text style={{ color: T.accent, fontWeight: '800', fontSize: 13 }}>Cancel</Text>
-              </TouchableOpacity>
+        <View>
+          <Tap onPress={() => { setNotifOpen(s => !s); setNRead(true); }}>
+            <View style={[styles.bellBtn, { backgroundColor: notifOpen ? T.accent : undefined }]}>
+              <Text style={styles.bellEmoji}>🔔</Text>
             </View>
-          ) : (
-            <Tap onPress={() => setSearching(true)}>
-              <View style={[styles.searchPlaceholder, { backgroundColor: T.input }]}>
-                <Text>🔍</Text>
-                <Text style={[styles.searchPlaceholderTxt, { color: T.sub }]}>Search events, category, venues…</Text>
-              </View>
-            </Tap>
-          )}
+          </Tap>
+          {!nRead && <View style={[styles.bellDot, { borderColor: T.bg }]} />}
         </View>
+      </View>
 
-        {/* Category filter */}
-        {!q && (
-          <View style={{ marginTop: 18 }}>
-            <Text style={[styles.sectionLabel, { color: T.sub, paddingLeft: 22 }]}>CATEGORY</Text>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 22, gap: 9, paddingTop: 10 }}>
-              {CATS.map(c => {
-                const active = cat === c;
-                return (
-                  <Tap key={c} onPress={() => setCat(active ? 'All' : c)}>
-                    <View style={[
-                      styles.filterChip,
-                      { backgroundColor: active ? T.accent : T.card, borderColor: active ? T.accent : T.border },
-                    ]}>
-                      <Text style={[styles.filterChipTxt, { color: active ? C.white : T.text }]}>{c}</Text>
-                    </View>
-                  </Tap>
-                );
-              })}
-            </ScrollView>
-          </View>
-        )}
-
-        {/* Date tabs */}
-        {!q && (
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 22, gap: 8, paddingTop: 12, paddingBottom: 2 }}>
-            {DATES.map(d => (
-              <Tap key={d} onPress={() => setDate(d)}>
-                <View style={[
-                  styles.datePill,
-                  { backgroundColor: date === d ? T.text : 'transparent', borderColor: date === d ? T.text : `${T.sub}55` },
-                ]}>
-                  <Text style={{ color: date === d ? T.bg : T.sub, fontSize: 12, fontWeight: '700' }}>{d}</Text>
-                </View>
-              </Tap>
-            ))}
-          </ScrollView>
-        )}
-
-        {/* FOMO banner */}
-        {!q && date === 'All' && cat === 'All' && (
-          <Tap onPress={() => onEventPress(EVENTS[0])} style={{ marginHorizontal: 22, marginTop: 14 }}>
-            <View style={styles.fomoBanner}>
-              <Text style={{ fontSize: 24 }}>🔥</Text>
+      {/* Notification panel */}
+      {notifOpen && (
+        <View style={[styles.notifPanel, { backgroundColor: T.card, borderColor: T.border }]}>
+          <Text style={[styles.notifTitle, { color: T.text }]}>🔔 Notifications</Text>
+          {[
+            { e: '🎛️', t: '3 friends added Fuse RA Night — join?', a: '2m ago' },
+            { e: '⚽',  t: 'Union SG fan zone filling up fast!',     a: '15m ago' },
+            { e: '🌿', t: 'Canal Cleanup starts in 1 hour.',         a: '45m ago' },
+          ].map((n, i) => (
+            <View key={i} style={[styles.notifRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
+              <Text style={{ fontSize: 18 }}>{n.e}</Text>
               <View style={{ flex: 1 }}>
-                <Text style={styles.fomoTitle}>3 friends going to the RA Techno Night!</Text>
-                <Text style={styles.fomoSub}>Fuse · Tonight · Only 12 spots left</Text>
+                <Text style={[styles.notifText, { color: T.text }]}>{n.t}</Text>
+                <Text style={[styles.notifTime, { color: T.sub }]}>{n.a}</Text>
               </View>
-              <View style={styles.fomoJoin}>
-                <Text style={styles.fomoJoinTxt}>Join →</Text>
-              </View>
+            </View>
+          ))}
+          <Tap onPress={() => setNotifOpen(false)}>
+            <View style={[styles.dismissBtn, { backgroundColor: T.pill }]}>
+              <Text style={[styles.dismissTxt, { color: T.sub }]}>Dismiss all</Text>
+            </View>
+          </Tap>
+        </View>
+      )}
+
+      {/* Search */}
+      <View style={styles.searchWrap}>
+        {searching ? (
+          <View style={styles.searchActive}>
+            <View style={[styles.searchInner, { backgroundColor: T.input, borderColor: T.accent }]}>
+              <Text>🔍</Text>
+              <TextInput
+                ref={searchRef}
+                value={q}
+                onChangeText={setQ}
+                placeholder="Search events, category…"
+                placeholderTextColor={T.sub}
+                style={[styles.searchInput, { color: T.text }]}
+                autoFocus
+              />
+              {!!q && (
+                <TouchableOpacity onPress={() => setQ('')}>
+                  <Text style={{ color: T.sub, fontSize: 20 }}>×</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+            <TouchableOpacity onPress={() => { setSearching(false); setQ(''); }}>
+              <Text style={{ color: T.accent, fontWeight: '800', fontSize: 13 }}>Cancel</Text>
+            </TouchableOpacity>
+          </View>
+        ) : (
+          <Tap onPress={() => setSearching(true)}>
+            <View style={[styles.searchPlaceholder, { backgroundColor: T.input }]}>
+              <Text>🔍</Text>
+              <Text style={[styles.searchPlaceholderTxt, { color: T.sub }]}>Search events, category, venues…</Text>
             </View>
           </Tap>
         )}
+      </View>
 
-        {/* Events list */}
-        <View style={{ paddingHorizontal: 22, marginTop: 18 }}>
-          <Text style={[styles.sectionLabel, { color: T.sub, marginBottom: 14 }]}>
-            {q ? `Results for "${q}"` : cat !== 'All' ? cat : date !== 'All' ? date : 'All events'} · {filtered.length}
-          </Text>
-          {filtered.length === 0 ? (
-            <View style={{ alignItems: 'center', paddingVertical: 36 }}>
-              <Text style={{ fontSize: 44, marginBottom: 10 }}>😕</Text>
-              <Text style={[styles.noResultsTitle, { color: T.text }]}>No events found</Text>
-              <Text style={[styles.noResultsSub, { color: T.sub }]}>Try another category or date</Text>
-            </View>
-          ) : (
-            <View style={{ gap: 14 }}>
-              {filtered.map(ev => (
-                <EventCard
-                  key={ev.id}
-                  event={ev}
-                  onPress={() => onEventPress(ev)}
-                  T={T}
-                  joined={myEvents.some(m => m.id === ev.id)}
-                />
-              ))}
-            </View>
-          )}
+      {/* Category filter */}
+      {!q && (
+        <View style={{ marginTop: 18 }}>
+          <Text style={[styles.sectionLabel, { color: T.sub, paddingLeft: 22 }]}>CATEGORY</Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 22, gap: 9, paddingTop: 10 }}>
+            {CATS.map(c => {
+              const active = cat === c;
+              return (
+                <Tap key={c} onPress={() => setCat(active ? 'All' : c)}>
+                  <View style={[
+                    styles.filterChip,
+                    { backgroundColor: active ? T.accent : T.card, borderColor: active ? T.accent : T.border },
+                  ]}>
+                    <Text style={[styles.filterChipTxt, { color: active ? C.white : T.text }]}>{c}</Text>
+                  </View>
+                </Tap>
+              );
+            })}
+          </ScrollView>
         </View>
-      </ScrollView>
+      )}
+
+      {/* Date tabs */}
+      {!q && (
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 22, gap: 8, paddingTop: 12, paddingBottom: 2 }}>
+          {DATES.map(d => (
+            <Tap key={d} onPress={() => setDate(d)}>
+              <View style={[
+                styles.datePill,
+                { backgroundColor: date === d ? T.text : 'transparent', borderColor: date === d ? T.text : `${T.sub}55` },
+              ]}>
+                <Text style={{ color: date === d ? T.bg : T.sub, fontSize: 12, fontWeight: '700' }}>{d}</Text>
+              </View>
+            </Tap>
+          ))}
+        </ScrollView>
+      )}
+
+      {/* FOMO banner */}
+      {!q && date === 'All' && cat === 'All' && (
+        <Tap onPress={() => onEventPress(EVENTS[0])} style={{ marginHorizontal: 22, marginTop: 14 }}>
+          <View style={styles.fomoBanner}>
+            <Text style={{ fontSize: 24 }}>🔥</Text>
+            <View style={{ flex: 1 }}>
+              <Text style={styles.fomoTitle}>3 friends going to the RA Techno Night!</Text>
+              <Text style={styles.fomoSub}>Fuse · Tonight · Only 12 spots left</Text>
+            </View>
+            <View style={styles.fomoJoin}>
+              <Text style={styles.fomoJoinTxt}>Join →</Text>
+            </View>
+          </View>
+        </Tap>
+      )}
+
+      {/* Section label */}
+      <View style={{ paddingHorizontal: 22, marginTop: 18, marginBottom: 14 }}>
+        <Text style={[styles.sectionLabel, { color: T.sub }]}>
+          {q ? `Results for "${q}"` : cat !== 'All' ? cat : date !== 'All' ? date : 'All events'} · {filtered.length}
+        </Text>
+      </View>
+    </View>
+  );
+
+  return (
+    <GradBg isDark={T.isDark} style={{ flex: 1 }}>
+      <FlatList
+        data={filtered}
+        keyExtractor={ev => String(ev.id)}
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={{ paddingBottom: 90 }}
+        initialNumToRender={8}
+        maxToRenderPerBatch={8}
+        windowSize={10}
+        removeClippedSubviews
+        ListHeaderComponent={listHeader}
+        ItemSeparatorComponent={() => <View style={{ height: 14 }} />}
+        renderItem={({ item: ev }) => (
+          <View style={{ paddingHorizontal: 22 }}>
+            <EventCard
+              event={ev}
+              onPress={() => onEventPress(ev)}
+              T={T}
+              joined={myEvents.some(m => m.id === ev.id)}
+            />
+          </View>
+        )}
+        ListEmptyComponent={
+          <View style={{ alignItems: 'center', paddingVertical: 36, paddingHorizontal: 22 }}>
+            <Text style={{ fontSize: 44, marginBottom: 10 }}>😕</Text>
+            <Text style={[styles.noResultsTitle, { color: T.text }]}>No events found</Text>
+            <Text style={[styles.noResultsSub, { color: T.sub }]}>Try another category or date</Text>
+          </View>
+        }
+      />
     </GradBg>
   );
 }

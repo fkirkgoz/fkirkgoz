@@ -1,4 +1,5 @@
 import { C } from '../constants/theme';
+import scrapedRaw from './scraped_events.json';
 
 export interface Attendee {
   n: string;
@@ -60,7 +61,7 @@ export interface Event {
   attendeeCount?: number;
 }
 
-export const EVENTS: Event[] = [
+const BASE_EVENTS: Event[] = [
   // TODAY
   { id:1, cat:'Nightlife', date:'Today', title:'Techno Night — RA Curation', venue:'Fuse Club', addr:'Rue Blaes 208, 1000 Bruxelles', time:'23:00–06:00', startH:23, endH:30, price:'€14', emoji:'🎛️', color:C.lav, friends:3, tags:['Techno','Nightlife'], source:'RA', lat:50.8451, lng:4.3506, going:214, neighbourhood:'Marolles', ticket:'https://ra.co', desc:'Resident Advisor curated techno night at Fuse — Brussels\' most iconic club. Hand-picked lineup of European underground acts. Dress code enforced.', attendees:[{n:'Zoë',c:C.pink,isFriend:true},{n:'Kaan',c:C.teal,isFriend:true},{n:'Maya',c:C.lav,isFriend:false},{n:'Luc',c:C.green,isFriend:false}], chatSeed:[{user:'Mathis',text:'Anyone in the queue? 🙌',time:'22:41'},{user:'Clara',text:'Warm-up set is 🔥',time:'22:58'},{user:'Lukas',text:'Meeting by cloakroom in 20',time:'23:04'}] },
   { id:2, cat:'Wellness', date:'Today', title:'Free Yoga · Cinquantenaire', venue:'Parc du Cinquantenaire', addr:'Av. de la Renaissance, 1000 Bruxelles', time:'09:00–10:30', startH:9, endH:10.5, price:'Free', emoji:'🧘', color:C.teal, friends:1, tags:['Wellness','Outdoors'], source:'Randevu', lat:50.8401, lng:4.3901, going:38, neighbourhood:'Euro Quarter', desc:'Gentle vinyasa flow under the iconic triumphal arch. All levels welcome.', attendees:[{n:'Léa',c:C.teal,isFriend:true},{n:'Ines',c:C.pink,isFriend:false},{n:'Badr',c:C.lav,isFriend:false}], chatSeed:[{user:'Clara',text:'Usual spot near the fountain? 🌿',time:'08:42'},{user:'Lukas',text:'Yes! Same as last week 🧘',time:'08:51'}] },
@@ -90,6 +91,8 @@ export const EVENTS: Event[] = [
   { id:37, cat:'Food & Drink', date:'This Weekend', title:'Wolf Food Market', venue:'Wolf', addr:'Rue du Fossé aux Loups 50, 1000 Bruxelles', time:'11:00–20:00', startH:11, endH:20, price:'Free', emoji:'🍕', color:'#F4C87A', friends:2, tags:['Street Food','Social','Market'], source:'Wolf', lat:50.8498, lng:4.3541, going:650, neighbourhood:'Centre', desc:"Brussels' coolest indoor food market inside the iconic Wolf building. 20+ local vendors, craft beers, natural wines, and a live DJ every weekend. Free entry.", attendees:[{n:'Claire',c:C.pink,isFriend:true},{n:'Hugo',c:'#FAD7A0',isFriend:true},{n:'Tom',c:C.cream,isFriend:false},{n:'Vera',c:'#F4C87A',isFriend:false}], chatSeed:[{user:'Clara',text:'The Korean BBQ stall is back this week 🙏',time:'Sat 11:15'},{user:'Mathis',text:'Wolf on a sunny Saturday = perfection',time:'Sat 11:30'},{user:'Claire',text:'Grabbing the corner table — come find me 🍷',time:'Sat 12:00'}] },
   { id:38, cat:'Culture', date:'This Weekend', title:'Place Noord Open Air', venue:'Place du Nord', addr:'Place du Nord, 1000 Bruxelles', time:'16:00–23:00', startH:16, endH:23, price:'Free', emoji:'☀️', color:'#90E0EF', friends:6, tags:['Community','DJ Sets','Open Air'], source:'Randevu', lat:50.8601, lng:4.3592, going:420, neighbourhood:'Schaerbeek', desc:'Summer vibes at Place du Nord as the neighbourhood transforms into a free open-air terrace. Local DJs, food trucks, and the most vibrant, diverse crowd in Brussels.', attendees:[{n:'Kai',c:C.lav,isFriend:true},{n:'Sophie',c:'#D5C5F0',isFriend:true},{n:'Ali',c:C.green,isFriend:true},{n:'Mia',c:C.pink,isFriend:false},{n:'Sam',c:'#90E0EF',isFriend:false}], chatSeed:[{user:'Clara',text:'Place Noord is such a hidden gem ☀️',time:'Sat 15:45'},{user:'Mathis',text:'Best free DJ nights in Brussels hands down',time:'Sat 16:00'},{user:'Kai',text:'See you at the food truck area 🌮',time:'Sat 16:20'}] },
 ];
+
+export const EVENTS: Event[] = [...BASE_EVENTS, ...(scrapedRaw as unknown as Event[])];
 
 export const CATS  = ['All','Nightlife','Sports','Music','Art','Wellness','Culture','Food & Drink','Market','Volunteering'];
 export const DATES = ['All','Today','Tomorrow','This Weekend','Next Week'];
