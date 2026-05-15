@@ -66,6 +66,7 @@ const VENUE_CONFIGS = [
     defaultTime: '23:00',
     extraWait: 9000,
     jsHeavy: true,
+    enforceVisuals: true,
     urls: [
       'https://fuse.be',
       'https://www.fuse.be',
@@ -85,14 +86,14 @@ const VENUE_CONFIGS = [
     defaultTime: '22:00',
     extraWait: 9000,
     jsHeavy: true,
-    // Try both .event-list and .event-item — C12 uses one depending on page version
-    waitForSelector: '.event-list,.event-item,.agenda',
+    enforceVisuals: true,
+    waitForSelector: '.event-list,.event-item,.event,.agenda,[class*="event"]',
     urls: [
+      'https://agenda.paylogic.com/3b4e4443dd994952aaa213113e5d01a9',
       'https://c12space.com/agenda/',
       'https://c12space.com/agenda',
       'https://www.c12space.com/agenda',
       'https://c12space.com',
-      'https://www.c12space.com',
     ],
   },
   {
@@ -106,12 +107,12 @@ const VENUE_CONFIGS = [
     defaultTime: '20:00',
     extraWait: 7000,
     urls: [
+      'https://la-madeleine.be/agenda/',
+      'https://www.la-madeleine.be/agenda/',
+      'https://la-madeleine.be/agenda',
       'https://la-madeleine.be/en/',
       'https://www.la-madeleine.be/en/',
-      'https://la-madeleine.be/en/agenda',
-      'https://www.la-madeleine.be/en/agenda',
       'https://www.la-madeleine.be',
-      'https://la-madeleine.be',
     ],
   },
   {
@@ -160,6 +161,10 @@ function classify(text) {
 }
 
 function classifyForVenue(text, config) {
+  // enforceVisuals locks emoji/color/cat to the venue definition regardless of keywords
+  if (config.enforceVisuals) {
+    return { emoji: config.emoji, color: config.color, cat: config.cat, tags: config.tags };
+  }
   const cls = classify(text);
   return cls.emoji === DEFAULT_CLASS.emoji
     ? { emoji: config.emoji, color: config.color, cat: config.cat, tags: config.tags }
@@ -191,13 +196,10 @@ function detectExternalVenue(text) {
 
 // ── Price logic ───────────────────────────────────────────────────────────────
 
-// Scans text for € amounts only. Returns [0] for free, [prices…] for paid, [] for unknown.
+// Scans text for € amounts ONLY. Returns [prices…] or [].
+// Never guesses "Free" from body text — only explicit € values count.
 function extractAllPrices(text) {
   if (!text) return [];
-  const t = text.toLowerCase();
-  if (t.includes('free entry') || t.includes('entrée libre') || t.includes('gratis ingang') ||
-      t.includes('gratuit') || t.includes('gratis') ||
-      /\bfree\b/.test(t)) return [0];
   const prices = [];
   const re = /€\s*(\d+(?:[.,]\d{1,2})?)|(\d+(?:[.,]\d{1,2})?)\s*(?:€|eur\b)/gi;
   let m;
@@ -206,6 +208,14 @@ function extractAllPrices(text) {
     if (!isNaN(val) && val > 0 && val < 500) prices.push(val);
   }
   return [...new Set(prices)];
+}
+
+// Used ONLY on confirmed ticket-shop pages. Returns [0] for explicit free, [prices…], or [].
+function extractTicketPagePrices(text) {
+  if (!text) return [];
+  const t = text.toLowerCase();
+  if (/free entry|entrée libre|gratis ingang|gratuit|\bfree ticket|\bfree event/i.test(t)) return [0];
+  return extractAllPrices(text);
 }
 
 function extractPriceFromOffers(offers) {
@@ -260,8 +270,9 @@ async function deepFetchPrices(page, events) {
       });
 
       let text = await page.evaluate(() => document.body?.innerText || '');
+      let onTicketPage = false;
 
-      // Follow the ticket link if it points to a different domain
+      // Follow ticket link to external shop (Paylogic, Eventix, Ticketmaster, etc.)
       if (ticketUrl) {
         try {
           const currentHost = new URL(ev.sourceURL).hostname;
@@ -270,16 +281,19 @@ async function deepFetchPrices(page, events) {
             await page.goto(ticketUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
             await sleep(1000);
             text = await page.evaluate(() => document.body?.innerText || '');
+            onTicketPage = true;
           }
         } catch { /* keep text from detail page */ }
       }
 
-      const prices = extractAllPrices(text);
+      // On a real ticket page use the free-aware extractor; everywhere else € only
+      const prices = onTicketPage ? extractTicketPagePrices(text) : extractAllPrices(text);
       if (prices.length > 0) {
         ev.price = formatPrice(prices);
         console.log(`      ✓ "${ev.title.slice(0, 30)}": ${ev.price}`);
       } else {
-        console.log(`      — "${ev.title.slice(0, 30)}": no € found`);
+        ev.price = '';   // explicit blank — never guess
+        console.log(`      — "${ev.title.slice(0, 30)}": no price found → blank`);
       }
     } catch (err) {
       console.log(`      ✗ "${ev.title?.slice(0, 25)}": ${err.message.slice(0, 60)}`);
@@ -699,17 +713,22 @@ async function main() {
   console.log(`📂  Loaded ${existing.length} existing scraped events`);
   existing = removeExpired(existing);
 
-  // Retroactively fix any Fuse home-venue events that drifted to wrong coordinates
-  let fuseFixes = 0;
+  // Retroactively correct coordinates for Fuse and C12 (no external venue override)
+  let coordFixes = 0;
   existing = existing.map(e => {
     if (e.venue?.toLowerCase().includes('fuse') && !e.externalVenueHint &&
         (e.lat !== 50.8365 || e.lng !== 4.3435)) {
-      fuseFixes++;
+      coordFixes++;
       return { ...e, lat: 50.8365, lng: 4.3435, addr: 'Rue Blaes 208, 1000 Brussels' };
+    }
+    if (e.venue?.toLowerCase() === 'c12' && !e.externalVenueHint &&
+        (e.lat !== 50.8462 || e.lng !== 4.3556)) {
+      coordFixes++;
+      return { ...e, lat: 50.8462, lng: 4.3556, addr: 'Rue du Marché aux Herbes 116, 1000 Brussels' };
     }
     return e;
   });
-  if (fuseFixes) console.log(`📍  Fixed ${fuseFixes} Fuse event(s) with wrong coordinates`);
+  if (coordFixes) console.log(`📍  Fixed ${coordFixes} event(s) with wrong coordinates (Fuse/C12)`);
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -766,9 +785,11 @@ async function main() {
       console.log(`${r.lat.toFixed(4)}, ${r.lng.toFixed(4)}`);
       await sleep(GEOCODE_DELAY);
     } else if (r.venue?.toLowerCase().includes('fuse')) {
-      // Zero-tolerance Fuse home location when no external venue mentioned
       r.lat = 50.8365; r.lng = 4.3435;
       r.addr = 'Rue Blaes 208, 1000 Brussels';
+    } else if (r.venue?.toLowerCase() === 'c12') {
+      r.lat = 50.8462; r.lng = 4.3556;
+      r.addr = 'Rue du Marché aux Herbes 116, 1000 Brussels';
     } else if (!r.lat || !r.lng) {
       process.stdout.write(`  📍  Geocoding "${r.venue}"… `);
       const coords = await geocode(r.venue);
