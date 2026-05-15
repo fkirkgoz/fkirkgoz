@@ -36,7 +36,8 @@ function getDisplayDate(relative: string): string {
 }
 
 function fmtPrice(p: string) {
-  if (!p || p === 'Free') return 'Free';
+  if (!p) return '';
+  if (p === 'Free') return 'Free';
   const num = parseFloat(p.replace(/[^0-9.]/g, ''));
   if (isNaN(num)) return p;
   const sym = p.match(/[€$£]/)?.[0] ?? '€';
@@ -159,7 +160,11 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
         <View style={{ paddingHorizontal: 22 }}>
           {/* Info card */}
           <View style={[styles.infoCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
-            {[['📍', e.venue, e.addr], ['📅', `${getDisplayDate(e.date)} · ${e.time}`, null], ['💶', fmtPrice(e.price), null]].map(([ic, main, sub], i) => (
+            {([
+              ['📍', e.venue, e.addr],
+              ['📅', `${getDisplayDate(e.date)} · ${e.time}`, null],
+              ...(e.price ? [['💶', fmtPrice(e.price), null]] : []),
+            ] as [string, string, string | null][]).map(([ic, main, sub], i) => (
               <View key={i} style={[styles.infoRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
                 <Text style={{ fontSize: 18, marginTop: 1 }}>{ic}</Text>
                 <View>

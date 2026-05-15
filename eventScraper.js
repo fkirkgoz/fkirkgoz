@@ -32,6 +32,7 @@ const VENUE_CONFIGS = [
     tags: ['Concert', 'Live Music'],
     defaultTime: '20:00',
     extraWait: 5000,
+    enforceVisuals: true,
     urls: [
       'https://www.abconcerts.be/en/agenda',
       'https://abconcerts.be/en/agenda',
@@ -47,6 +48,7 @@ const VENUE_CONFIGS = [
     tags: ['Concert', 'Indie', 'Alternative'],
     defaultTime: '20:00',
     extraWait: 7000,
+    enforceVisuals: true,
     urls: [
       'https://botanique.be/en/agenda',
       'https://botanique.be/en',
@@ -106,12 +108,13 @@ const VENUE_CONFIGS = [
     tags: ['Concert', 'Live Music'],
     defaultTime: '20:00',
     extraWait: 7000,
+    enforceVisuals: true,
     urls: [
+      'https://la-madeleine.be/en/agenda',
+      'https://www.la-madeleine.be/en/agenda',
       'https://la-madeleine.be/agenda/',
       'https://www.la-madeleine.be/agenda/',
       'https://la-madeleine.be/agenda',
-      'https://la-madeleine.be/en/',
-      'https://www.la-madeleine.be/en/',
       'https://www.la-madeleine.be',
     ],
   },
@@ -263,7 +266,7 @@ async function deepFetchPrices(page, events) {
           const href = (a.href || '').toLowerCase();
           const text = (a.textContent || '').toLowerCase();
           if (TICKET_HOSTS.some(h => href.includes(h))) return a.href;
-          if ((text.includes('ticket') || text.includes('buy') || text.includes('koop')) &&
+          if ((text.includes('ticket') || text.includes('presale') || text.includes('buy') || text.includes('koop')) &&
               href.startsWith('http') && !href.includes(location.hostname)) return a.href;
         }
         return null;
