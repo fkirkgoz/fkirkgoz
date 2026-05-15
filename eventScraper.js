@@ -25,7 +25,7 @@ const KEYWORD_MAP = [
   { kw:['rock','indie','punk','metal','alternative','grunge'],                emoji:'🎸', color:'#C77DFF', cat:'Music',        tags:['Rock','Live Music']      },
   { kw:['pop','rnb','hip-hop','hip hop','rap','soul','r&b'],                 emoji:'🎤', color:'#F7CFD8', cat:'Music',        tags:['Pop','Live Music']       },
   { kw:['classical','orchestra','opera','choir','symphony'],                  emoji:'🎻', color:'#E76F51', cat:'Culture',      tags:['Classical','Culture']    },
-  { kw:['concert','live music','band','singer'],                              emoji:'🎵', color:'#8E7DBE', cat:'Music',        tags:['Concert','Live Music']   },
+  { kw:['concert','live music','band','singer','live set'],                   emoji:'🎵', color:'#8E7DBE', cat:'Music',        tags:['Concert','Live Music']   },
   { kw:['food','cook','taste','eat','cuisine','gastro','brunch','dinner'],    emoji:'🍕', color:'#F4C87A', cat:'Food & Drink', tags:['Food','Social']          },
   { kw:['beer','wine','cocktail','bar','drink','brewery'],                    emoji:'🍹', color:'#F4C87A', cat:'Food & Drink', tags:['Drinks','Social']        },
   { kw:['market','flea','brocante','vintage','antique','bazaar'],             emoji:'🛍️', color:'#F4C87A', cat:'Market',       tags:['Market','Outdoors']      },
@@ -38,6 +38,8 @@ const KEYWORD_MAP = [
   { kw:['dance','ballet','tango','salsa','bachata'],                          emoji:'💃', color:'#F7CFD8', cat:'Arts',         tags:['Dance','Performance']    },
 ];
 const DEFAULT_CLASS = { emoji:'📍', color:'#8E7DBE', cat:'Event', tags:['Brussels'] };
+// Music fallback for known concert venues (AB etc.)
+const MUSIC_CLASS   = { emoji:'🎵', color:'#8E7DBE', cat:'Music', tags:['Concert','Live Music'] };
 
 const NEIGHBOURHOODS = ['Ixelles','Saint-Gilles','Molenbeek','Anderlecht','Laeken','Etterbeek','Schaerbeek','Forest','Uccle','Centre','Sablon','Marolles'];
 const FRIEND_NAMES   = ['Zoë','Kaan','Léa','Iris','Nora','Hugo','Axel','Ali','Kai','Fleur'];
@@ -57,6 +59,12 @@ function classify(text) {
   const lower = (text||'').toLowerCase();
   for (const e of KEYWORD_MAP) if (e.kw.some(k => lower.includes(k))) return { emoji:e.emoji, color:e.color, cat:e.cat, tags:e.tags };
   return DEFAULT_CLASS;
+}
+
+// Force music classification for AB Concerts — it's always a concert venue
+function classifyAB(text) {
+  const cls = classify(text);
+  return cls.emoji === DEFAULT_CLASS.emoji ? MUSIC_CLASS : cls;
 }
 
 function toRelativeDate(iso) {
@@ -79,18 +87,15 @@ function parseRawDate(raw) {
   if (!raw) return null;
   let t = (raw||'').replace(/\s+/g,' ').trim();
 
-  // ── ISO / RFC (most reliable) ──────────────────────────────────────────────
   if (/^\d{4}-\d{2}-\d{2}/.test(t)) {
     const d = new Date(t);
     if (!isNaN(d.getTime()) && d.getFullYear() > 2020) return t.slice(0,10);
   }
 
-  // ── Translate French / Dutch months ───────────────────────────────────────
   const tLow = t.toLowerCase();
   for (const [fr,en] of Object.entries(MONTH_FR)) t = tLow.includes(fr) ? t.replace(new RegExp(fr,'i'), en) : t;
   for (const [nl,en] of Object.entries(MONTH_NL)) t = tLow.includes(nl) ? t.replace(new RegExp(nl,'i'), en) : t;
 
-  // ── DD/MM/YYYY ─────────────────────────────────────────────────────────────
   let m = t.match(/(\d{1,2})[\/\.\-](\d{1,2})[\/\.\-](\d{2,4})/);
   if (m) {
     const y = m[3].length===2 ? `20${m[3]}` : m[3];
@@ -98,15 +103,13 @@ function parseRawDate(raw) {
     if (!isNaN(d.getTime())) return d.toISOString().split('T')[0];
   }
 
-  // ── "14 June 2025" / "14 Jun 2025" ────────────────────────────────────────
   m = t.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
   if (m) { const d = new Date(`${m[2]} ${m[1]}, ${m[3]}`); if (!isNaN(d.getTime())) return d.toISOString().split('T')[0]; }
 
-  // ── "June 14, 2025" / "June 14 2025" ──────────────────────────────────────
   m = t.match(/([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})/);
   if (m) { const d = new Date(`${m[1]} ${m[2]}, ${m[3]}`); if (!isNaN(d.getTime())) return d.toISOString().split('T')[0]; }
 
-  // ── "Fri 14 Jun" / "14 Jun" (no year — assume this or next year) ──────────
+  // "Fri 14 Jun" / "14 Jun" (no year — assume this or next year)
   m = t.match(/(?:[A-Za-z]+\s+)?(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/i);
   if (m) {
     const yr = new Date().getFullYear();
@@ -117,27 +120,25 @@ function parseRawDate(raw) {
     }
   }
 
-  // ── Standard Date.parse fallback ──────────────────────────────────────────
   const d = new Date(t);
   if (!isNaN(d.getTime()) && d.getFullYear() > 2020) return d.toISOString().split('T')[0];
-
   return null;
 }
 
-// Scan a block of raw text for ANY date-like pattern
+// Scan raw element text for any date-like pattern when CSS selectors miss
 function scanTextForDate(text) {
   if (!text) return null;
   const s = text.replace(/\s+/g,' ');
-  const MONTHS_SHORT = 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec';
-  const MONTHS_FULL  = 'January|February|March|April|May|June|July|August|September|October|November|December';
+  const MS = 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec';
+  const MF = 'January|February|March|April|May|June|July|August|September|October|November|December';
   const patterns = [
     /\d{4}-\d{2}-\d{2}/,
     /\d{1,2}\/\d{1,2}\/\d{4}/,
-    new RegExp(`(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\\w*\\s+\\d{1,2}\\s+(?:${MONTHS_SHORT})\\w*`, 'i'),
-    new RegExp(`\\d{1,2}\\s+(?:${MONTHS_FULL})\\s+\\d{4}`, 'i'),
-    new RegExp(`(?:${MONTHS_FULL})\\s+\\d{1,2},?\\s+\\d{4}`, 'i'),
-    new RegExp(`\\d{1,2}\\s+(?:${MONTHS_SHORT})\\w*\\s+\\d{4}`, 'i'),
-    new RegExp(`\\d{1,2}\\s+(?:${MONTHS_SHORT})`, 'i'),
+    new RegExp(`(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\\w*\\s+\\d{1,2}\\s+(?:${MS})\\w*`, 'i'),
+    new RegExp(`\\d{1,2}\\s+(?:${MF})\\s+\\d{4}`, 'i'),
+    new RegExp(`(?:${MF})\\s+\\d{1,2},?\\s+\\d{4}`, 'i'),
+    new RegExp(`\\d{1,2}\\s+(?:${MS})\\w*\\s+\\d{4}`, 'i'),
+    new RegExp(`\\d{1,2}\\s+(?:${MS})`, 'i'),
   ];
   for (const p of patterns) {
     const m = s.match(p);
@@ -151,6 +152,46 @@ function parseTime(str) {
   const m = str.match(/(\d{1,2})[h:\.](\d{2})?/);
   if (m) { const h = parseInt(m[1],10); const min = m[2]?parseInt(m[2],10):0; return { time:`${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`, startH:h, endH:h+3 }; }
   return { time:'20:00', startH:20, endH:23 };
+}
+
+// ── Price extraction ──────────────────────────────────────────────────────────
+
+// Extract price from a JSON-LD offers object (or array of offers)
+function extractPriceFromOffers(offers) {
+  if (!offers) return null;
+  const o = Array.isArray(offers) ? offers[0] : offers;
+  if (!o) return null;
+
+  const desc = ((o.description || '') + ' ' + (o.name || '')).toLowerCase();
+  if (desc.includes('free') || desc.includes('gratuit')) return 'Free';
+
+  const p = parseFloat(o.price);
+  if (!isNaN(p) && p === 0) return 'Free';
+  if (!isNaN(p) && p > 0) {
+    const sym = o.priceCurrency === 'USD' ? '$' : o.priceCurrency === 'GBP' ? '£' : '€';
+    return `${sym}${Number.isInteger(p) ? p : p.toFixed(2)}`;
+  }
+  // Has an offer object but price is missing/unparseable → paid but unknown amount
+  if (o.url || o.availability) return 'TBA';
+  return null;
+}
+
+// Extract price from a plain text string (HTML scraping fallback)
+function extractPriceFromText(text) {
+  if (!text) return 'TBA';
+  const t = text.toLowerCase();
+  if (t.includes('free')  || t.includes('gratuit') ||
+      t.includes('gratis') || t.includes('free entry') ||
+      t.includes('free admission')) return 'Free';
+
+  const m1 = text.match(/[€£$]\s*(\d+(?:[.,]\d{1,2})?)/);
+  if (m1) return `€${m1[1].replace(',','.')}`;
+  const m2 = text.match(/(\d+(?:[.,]\d{1,2})?)\s*[€£$]/);
+  if (m2) return `€${m2[1].replace(',','.')}`;
+  const m3 = text.match(/(\d+(?:[.,]\d{1,2})?)\s*(?:euro|eur\b)/i);
+  if (m3) return `€${m3[1].replace(',','.')}`;
+
+  return 'TBA';
 }
 
 function generateAttendees() {
@@ -188,6 +229,7 @@ function isValidTitle(t) {
 // ── Geocoding ─────────────────────────────────────────────────────────────────
 async function geocode(venue) {
   try {
+    // "Venue Name + Brussels" gives scattered, accurate markers
     const q   = encodeURIComponent(`${venue}, Brussels, Belgium`);
     const res = await axios.get(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1`,
       { headers:{ 'User-Agent':'Randevu Brussels App (randevu.app)' }, timeout:8000 });
@@ -228,7 +270,7 @@ async function extractJsonLd(page) {
     const found = [];
     for (const blob of blobs) {
       const list = Array.isArray(blob) ? blob
-        : blob['@type']==='Event' ? [blob]
+        : blob['@type']==='Event'      ? [blob]
         : blob['@type']==='MusicEvent' ? [blob]
         : blob['@graph'] ? blob['@graph'] : [];
       for (const item of list) {
@@ -250,14 +292,12 @@ async function scrapeABConcerts(browser) {
     await sleep(5000);
     await page.evaluate(() => window.scrollBy(0, 800));
     await sleep(2000);
+    console.log(`    Page: "${await page.title()}"`);
 
-    const pageTitle = await page.title();
-    console.log(`    Page: "${pageTitle}"`);
-
-    // ── Strategy 1: JSON-LD structured data ──
+    // ── Strategy 1: JSON-LD ──
     const jsonEvents = await extractJsonLd(page);
     if (jsonEvents.length > 0) {
-      console.log(`    JSON-LD: ${jsonEvents.length} structured events found`);
+      console.log(`    JSON-LD: ${jsonEvents.length} events`);
       for (const ev of jsonEvents) {
         const title = clean(ev.name || '');
         if (!isValidTitle(title)) continue;
@@ -265,79 +305,59 @@ async function scrapeABConcerts(browser) {
         if (!rawDate) continue;
         const relDate = toRelativeDate(rawDate);
         if (!relDate) continue;
-        const venue  = clean(ev.location?.name || ev.location || 'Ancienne Belgique');
+        const venue  = clean(ev.location?.name || 'Ancienne Belgique');
         const desc   = clean(ev.description || '');
         const url    = ev.url || ev['@id'] || '';
-        const price  = ev.offers?.price ? `€${ev.offers.price}` : (ev.offers?.priceCurrency ? 'TBC' : 'Free');
-        const { emoji, color, cat, tags } = classify(title + ' ' + desc);
-        const timeStr = ev.startDate ? ev.startDate.slice(11,16) : '20:00';
-        const startH  = parseInt(timeStr.split(':')[0], 10) || 20;
+        // Proper price: never default to Free unless explicitly stated
+        const price  = extractPriceFromOffers(ev.offers) ||
+                       extractPriceFromText(ev.description || '') ||
+                       'TBA';
+        const { emoji, color, cat, tags } = classifyAB(title + ' ' + desc);
+        const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : '20:00';
+        const startH  = parseInt((timeStr||'20').split(':')[0], 10) || 20;
         events.push({ _rawDate:rawDate, title, venue, addr:'Boulevard Anspach 110, 1000 Brussels',
-          date:relDate, time:timeStr||'20:00', startH, endH:startH+3, price, emoji, color, cat, tags,
+          date:relDate, time:timeStr, startH, endH:startH+3, price, emoji, color, cat, tags,
           source:'AB', sourceURL:url, ticket:url,
-          desc:desc||`Live at AB — ${title}.`, neighbourhood:'Centre', lat:50.8483, lng:4.3512 });
+          desc:desc||`Live at Ancienne Belgique — ${title}.`, neighbourhood:'Centre', lat:50.8483, lng:4.3512 });
       }
-      console.log(`    ✓ JSON-LD extracted ${events.length} events`);
     }
 
-    // ── Strategy 2: HTML parsing (fallback) ──
+    // ── Strategy 2: HTML fallback ──
     if (events.length === 0) {
-      const html = await page.content();
-      const $ = cheerio.load(html);
-
-      // Scope to main content; fall back to body
+      const $ = cheerio.load(await page.content());
       const scope = $('main, #content, .main-content, [role="main"], .agenda, .programme, .events-list').first();
       const root  = scope.length ? scope : $('body');
-      console.log(`    Scope: ${scope.length ? scope.get(0).tagName + '.' + (scope.attr('class')||'') : 'body'}`);
+      console.log(`    Scope: ${scope.length ? (scope.get(0).tagName + (scope.attr('class')||'').slice(0,30)) : 'body'}`);
 
       const candidates = root.find([
-        'article',
-        '[class*="event"]',
-        '[class*="show"]',
-        '[class*="concert"]',
-        '[class*="agenda-item"]',
-        '[class*="programme-item"]',
-        '[class*="listing"]',
-        'li',
+        'article','[class*="event"]','[class*="show"]','[class*="concert"]',
+        '[class*="agenda-item"]','[class*="programme-item"]','[class*="listing"]','li',
       ].join(',')).filter((_, el) => {
         const text = $(el).text().trim();
         return text.length > 20 && text.length < 600;
       });
-      console.log(`    HTML fallback: ${candidates.length} candidates`);
+      console.log(`    HTML: ${candidates.length} candidates`);
 
-      // Log first candidate HTML for debugging
       if (candidates.length > 0) {
-        const snippet = $(candidates.get(0)).html()||'';
-        console.log(`    First candidate HTML (200 chars): ${snippet.replace(/\s+/g,' ').slice(0,200)}`);
+        const snippet = ($(candidates.get(0)).html()||'').replace(/\s+/g,' ').slice(0,200);
+        console.log(`    First candidate HTML: ${snippet}`);
       }
 
       candidates.each((i, el) => {
         if (i >= 30) return;
-        const $el = $(el);
-        const title = clean($el.find('h1,h2,h3,h4,strong,[class*="title"],[class*="name"],[class*="artist"]').first().text());
+        const $el    = $(el);
+        const title  = clean($el.find('h1,h2,h3,h4,strong,[class*="title"],[class*="name"],[class*="artist"]').first().text());
         if (!isValidTitle(title)) return;
 
-        // Date strategy: try attributes → specific selectors → full text scan
-        const datetimeAttr =
-          $el.find('[datetime]').first().attr('datetime') ||
-          $el.find('time').first().attr('datetime') ||
-          $el.attr('data-date') || '';
-
-        const specificText = clean($el.find([
-          'time',
-          '[class*="date"]',
-          '[class*="when"]',
-          '[class*="dag"]',
-          '[class*="datum"]',
-          '[class*="time"]',
-          '[class*="period"]',
-          '[class*="day"]',
+        // Date: attribute → specific selector → full text scan
+        const datetimeAttr  = $el.find('[datetime]').first().attr('datetime') ||
+                              $el.find('time').first().attr('datetime') || '';
+        const specificText  = clean($el.find([
+          'time','[class*="date"]','[class*="when"]','[class*="dag"]',
+          '[class*="datum"]','[class*="day"]','[class*="period"]',
         ].join(',')).first().text());
-
-        // Last resort: scan all text in the element for any date pattern
-        const scannedDate = (!datetimeAttr && !specificText) ? scanTextForDate($el.text()) : null;
-        const dateText = datetimeAttr || specificText || scannedDate || '';
-
+        const scannedDate   = (!datetimeAttr && !specificText) ? scanTextForDate($el.text()) : null;
+        const dateText      = datetimeAttr || specificText || scannedDate || '';
         console.log(`    AB: "${title.slice(0,40)}" | date: "${dateText.slice(0,40)}"`);
 
         const rawDate = parseRawDate(dateText);
@@ -346,18 +366,18 @@ async function scrapeABConcerts(browser) {
         if (!relDate) return;
 
         const timeText  = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
+        const priceText = clean($el.find('[class*="price"],[class*="ticket"],[class*="cost"]').first().text());
         const desc      = clean($el.find('p,[class*="desc"],[class*="intro"]').first().text());
-        const priceText = clean($el.find('[class*="price"],[class*="ticket"]').first().text());
-        const link      = $el.find('a[href]').first().attr('href')||'';
+        const link      = $el.find('a[href]').first().attr('href') || '';
         const url       = link.startsWith('http') ? link : `https://www.abconcerts.be${link}`;
-        const price     = /\d/.test(priceText) ? priceText.replace(/[^0-9€£$.,]/g,'').slice(0,10)||'TBC' : 'Free';
-        const { emoji, color, cat, tags } = classify(title+' '+desc);
+        const price     = extractPriceFromText(priceText || $el.text());
+        const { emoji, color, cat, tags } = classifyAB(title + ' ' + desc);
         const { time, startH, endH }      = parseTime(timeText);
 
         events.push({ _rawDate:rawDate, title, venue:'Ancienne Belgique', addr:'Boulevard Anspach 110, 1000 Brussels',
           date:relDate, time, startH, endH, price, emoji, color, cat, tags,
           source:'AB', sourceURL:url, ticket:url,
-          desc:desc||`Live at AB — ${title}.`, neighbourhood:'Centre', lat:50.8483, lng:4.3512 });
+          desc:desc||`Live at Ancienne Belgique — ${title}.`, neighbourhood:'Centre', lat:50.8483, lng:4.3512 });
       });
     }
 
@@ -387,14 +407,13 @@ async function scrapeEventbrite(browser) {
       try {
         console.log(`    Trying ${url}`);
         await page.goto(url, { waitUntil:'domcontentloaded', timeout:30000 });
-        await sleep(4000);
+        await sleep(5000);
         await page.evaluate(() => window.scrollBy(0, 600));
         await sleep(2000);
         const title = await page.title();
-        console.log(`    Page title: "${title}"`);
+        console.log(`    Title: "${title}"`);
         if (title && !title.toLowerCase().includes('error') && !title.toLowerCase().includes('not found')) {
-          loaded = true;
-          break;
+          loaded = true; break;
         }
       } catch (err) { console.log(`    Failed: ${err.message}`); }
     }
@@ -403,7 +422,7 @@ async function scrapeEventbrite(browser) {
     // ── Strategy 1: JSON-LD ──
     const jsonEvents = await extractJsonLd(page);
     if (jsonEvents.length > 0) {
-      console.log(`    JSON-LD: ${jsonEvents.length} structured events found`);
+      console.log(`    JSON-LD: ${jsonEvents.length} events`);
       for (const ev of jsonEvents) {
         const title = clean(ev.name || '');
         if (!isValidTitle(title)) continue;
@@ -415,13 +434,14 @@ async function scrapeEventbrite(browser) {
         const addr   = clean(ev.location?.address?.streetAddress || `${venue}, Brussels`);
         const desc   = clean(ev.description || '');
         const url    = ev.url || ev['@id'] || '';
-        const price  = ev.offers?.price === 0 || ev.offers?.price === '0' ? 'Free'
-          : ev.offers?.price ? `€${ev.offers.price}` : 'Free';
+        const price  = extractPriceFromOffers(ev.offers) ||
+                       extractPriceFromText(ev.description || '') ||
+                       'TBA';
         const { emoji, color, cat, tags } = classify(title + ' ' + desc);
         const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : '19:00';
         const startH  = parseInt((timeStr||'19').split(':')[0], 10) || 19;
         events.push({ _rawDate:rawDate, title, venue, addr,
-          date:relDate, time:timeStr||'19:00', startH, endH:startH+3, price, emoji, color, cat, tags,
+          date:relDate, time:timeStr, startH, endH:startH+3, price, emoji, color, cat, tags,
           source:'Eventbrite', sourceURL:url, ticket:url,
           desc:desc||`Event in Brussels — ${title}.`,
           neighbourhood:NEIGHBOURHOODS[Math.floor(Math.random()*NEIGHBOURHOODS.length)],
@@ -429,38 +449,33 @@ async function scrapeEventbrite(browser) {
       }
     }
 
-    // ── Strategy 2: HTML parsing ──
+    // ── Strategy 2: HTML ──
     if (events.length === 0) {
       const $ = cheerio.load(await page.content());
-
       const candidates = $([
-        'article',
-        '[class*="event-card"]',
-        '[class*="search-event-card"]',
-        '[class*="discover-search"]',
-        '[data-event-id]',
-        '[data-automation="event-card"]',
+        'article','[class*="event-card"]','[class*="search-event-card"]',
+        '[class*="discover-search"]','[data-event-id]','[data-automation="event-card"]',
       ].join(',')).filter((_, el) => {
         const text = $(el).text().trim();
         return text.length > 20 && text.length < 800;
       });
-      console.log(`    HTML: ${candidates.length} event card candidates`);
+      console.log(`    HTML: ${candidates.length} cards`);
 
       if (candidates.length > 0) {
-        const snippet = $(candidates.get(0)).html()||'';
-        console.log(`    First card HTML (200 chars): ${snippet.replace(/\s+/g,' ').slice(0,200)}`);
+        const snippet = ($(candidates.get(0)).html()||'').replace(/\s+/g,' ').slice(0,200);
+        console.log(`    First card HTML: ${snippet}`);
       }
 
       candidates.each((i, el) => {
         if (i >= 25) return;
-        const $el = $(el);
+        const $el  = $(el);
         const title = clean($el.find('h2,h3,[class*="title"],[class*="event-name"]').first().text());
         if (!isValidTitle(title)) return;
 
         const datetimeAttr = $el.find('[datetime]').first().attr('datetime') || '';
         const specificText = clean($el.find('time,[class*="date"],[class*="when"],[class*="start"]').first().text());
         const scannedDate  = (!datetimeAttr && !specificText) ? scanTextForDate($el.text()) : null;
-        const dateText = datetimeAttr || specificText || scannedDate || '';
+        const dateText     = datetimeAttr || specificText || scannedDate || '';
 
         const rawDate = parseRawDate(dateText);
         if (!rawDate) return;
@@ -468,14 +483,16 @@ async function scrapeEventbrite(browser) {
         if (!relDate) return;
 
         const venueText = clean($el.find('[class*="venue"],[class*="location"],[class*="place"]').first().text());
+        const priceText = clean($el.find('[class*="price"],[class*="ticket"],[class*="cost"]').first().text());
         const desc      = clean($el.find('p,[class*="desc"],[class*="summary"]').first().text());
-        const link      = $el.find('a[href]').first().attr('href')||'';
+        const link      = $el.find('a[href]').first().attr('href') || '';
         const url       = link.startsWith('http') ? link : `https://www.eventbrite.com${link}`;
-        const { emoji, color, cat, tags } = classify(title+' '+desc);
+        const price     = extractPriceFromText(priceText || $el.text());
+        const { emoji, color, cat, tags } = classify(title + ' ' + desc);
 
         events.push({ _rawDate:rawDate, title, venue:venueText||'Brussels', addr:venueText?`${venueText}, Brussels`:'Brussels, Belgium',
-          date:relDate, time:'19:00', startH:19, endH:22, price:'Free',
-          emoji, color, cat, tags, source:'Eventbrite', sourceURL:url, ticket:url,
+          date:relDate, time:'19:00', startH:19, endH:22, price, emoji, color, cat, tags,
+          source:'Eventbrite', sourceURL:url, ticket:url,
           desc:desc||`Event in Brussels — ${title}.`,
           neighbourhood:NEIGHBOURHOODS[Math.floor(Math.random()*NEIGHBOURHOODS.length)],
           lat:0, lng:0 });
@@ -498,8 +515,10 @@ async function main() {
   existing = removeExpired(existing);
 
   const browser = await puppeteer.launch({
-    headless:'new',
-    args:['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu'],
+    headless: 'new',
+    // Support CI environments that provide their own Chrome
+    ...(process.env.PUPPETEER_EXECUTABLE_PATH ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH } : {}),
+    args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu'],
   });
 
   let raw = [];
@@ -526,17 +545,16 @@ async function main() {
       await sleep(GEOCODE_DELAY);
     }
 
-    const fc = Math.floor(Math.random()*4);
     existing.push({
       id:idCounter++, cat:r.cat, date:r.date, title:r.title, venue:r.venue, addr:r.addr,
       time:r.time, startH:r.startH, endH:r.endH, price:r.price, emoji:r.emoji, color:r.color,
-      friends:fc, tags:r.tags, source:r.source, sourceURL:r.sourceURL, ticket:r.ticket,
+      friends:Math.floor(Math.random()*4), tags:r.tags, source:r.source, sourceURL:r.sourceURL, ticket:r.ticket,
       lat:r.lat, lng:r.lng, going:Math.floor(Math.random()*300)+20,
       neighbourhood:r.neighbourhood, desc:r.desc,
       attendees:generateAttendees(), chatSeed:generateChatSeed(), _rawDate:r._rawDate,
     });
     added++;
-    console.log(`  ✅  Added: "${r.title}" (${r.date})`);
+    console.log(`  ✅  Added: "${r.title}" (${r.date}) — ${r.price}`);
   }
 
   console.log(`\n📊  +${added} new  |  ${existing.length} total`);
