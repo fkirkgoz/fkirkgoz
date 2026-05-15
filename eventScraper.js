@@ -18,10 +18,10 @@ const path      = require('path');
 const SCRAPED_JSON   = path.join(__dirname, 'src', 'data', 'scraped_events.json');
 const SCRAPED_ID_MIN = 100;
 const GEOCODE_DELAY  = 1200;
+const DEEP_PRICE_CAP = 8; // max detail-page visits per venue
 
-// ── Brussels venue definitions ────────────────────────────────────────────────
-// extraWait: ms to wait after DOM ready so JS can render event cards
-// jsHeavy:   use networkidle2 wait mode + extra scroll passes
+// ── Hardcoded venue truths (no-guess rule) ────────────────────────────────────
+// All lat/lng values below are exact — the geocoder is NEVER called for these.
 const VENUE_CONFIGS = [
   {
     id: 'ab',
@@ -41,16 +41,16 @@ const VENUE_CONFIGS = [
   {
     id: 'botanique',
     name: 'Le Botanique',
-    addr: 'Rue Royale 236, 1210 Saint-Josse',
-    lat: 50.8587, lng: 4.3634,
+    addr: 'Rue Royale 236, 1210 Brussels',
+    lat: 50.8554, lng: 4.3664,   // HARDCODED — Rue Royale 236
     neighbourhood: 'Saint-Josse',
     emoji: '🎸', color: '#B8E5C0', cat: 'Music',
     tags: ['Concert', 'Indie', 'Alternative'],
     defaultTime: '20:00',
     extraWait: 7000,
     urls: [
-      'https://botanique.be/en',
       'https://botanique.be/en/agenda',
+      'https://botanique.be/en',
       'https://botanique.be/en/activities',
       'https://www.botanique.be/en',
       'https://botanique.be/fr/agenda',
@@ -60,7 +60,7 @@ const VENUE_CONFIGS = [
     id: 'fuse',
     name: 'Fuse',
     addr: 'Rue Blaes 208, 1000 Brussels',
-    lat: 50.8451, lng: 4.3506,
+    lat: 50.8365, lng: 4.3435,   // HARDCODED — Rue Blaes 208, Marolles
     neighbourhood: 'Marolles',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Techno', 'Electronic', 'Nightlife'],
@@ -86,6 +86,7 @@ const VENUE_CONFIGS = [
     defaultTime: '22:00',
     extraWait: 9000,
     jsHeavy: true,
+    waitForSelector: '.agenda',   // Puppeteer waits for this before scraping
     urls: [
       'https://c12space.com/agenda/',
       'https://c12space.com/agenda',
@@ -152,16 +153,17 @@ const VENUE_CONFIGS = [
     id: 'rsca',
     name: 'RSC Anderlecht',
     addr: 'Avenue Théo Verbeeck 2, 1070 Anderlecht',
-    lat: 50.8341, lng: 4.3021,
+    lat: 50.8343, lng: 4.2985,   // HARDCODED — Lotto Park
     neighbourhood: 'Anderlecht',
     emoji: '⚽', color: '#6EC6CA', cat: 'Sports',
     tags: ['Football', 'Sports', 'Anderlecht'],
     defaultTime: '18:00',
-    extraWait: 6000,
+    extraWait: 7000,
+    jsHeavy: true,
     urls: [
-      'https://www.rsca.be/en/calendar',
       'https://www.rsca.be/en/matches',
-      'https://rsca.be/en/calendar',
+      'https://www.rsca.be/en/calendar',
+      'https://rsca.be/en/matches',
       'https://www.rsca.be/en/fixtures',
       'https://www.rsca.be/en',
     ],
@@ -169,17 +171,18 @@ const VENUE_CONFIGS = [
   {
     id: 'unionsg',
     name: 'Union Saint-Gilloise',
-    addr: 'Avenue du Stade 2, 1190 Forest',
-    lat: 50.8165, lng: 4.3372,
+    addr: 'Chaussée de Bruxelles 82, 1190 Forest',
+    lat: 50.8176, lng: 4.3297,   // HARDCODED — Stade Joseph Marien, Forest
     neighbourhood: 'Forest',
     emoji: '⚽', color: '#F4C87A', cat: 'Sports',
     tags: ['Football', 'Sports', 'Union'],
     defaultTime: '18:00',
-    extraWait: 6000,
+    extraWait: 7000,
+    jsHeavy: true,
     urls: [
+      'https://www.rusg.brussels/en/calendar',
       'https://www.rusg.brussels/en/tickets',
       'https://www.rusg.brussels/en/agenda',
-      'https://www.rusg.brussels/en/calendar',
       'https://www.rusg.brussels/en',
       'https://rusg.brussels/en',
     ],
@@ -190,7 +193,7 @@ const VENUE_CONFIGS = [
     addr: 'Brussels, Belgium',
     lat: 50.8503, lng: 4.3517,
     neighbourhood: 'Centre',
-    emoji: '🏛️', color: '#8E7DBE', cat: 'Culture',
+    emoji: '🏙️', color: '#8E7DBE', cat: 'Culture',
     tags: ['Brussels', 'Culture', 'City'],
     defaultTime: '10:00',
     extraWait: 5000,
@@ -201,28 +204,29 @@ const VENUE_CONFIGS = [
   },
 ];
 
-// ── Keyword classification ────────────────────────────────────────────────────
+// ── Keyword classification ─────────────────────────────────────────────────────
 const KEYWORD_MAP = [
-  { kw:['techno','electronic','rave','dj set','club night','trance','house'], emoji:'⚡', color:'#7B2FBE', cat:'Nightlife',    tags:['Techno','Electronic']   },
-  { kw:['jazz','blues','swing','bossa nova'],                                 emoji:'🎷', color:'#C77DFF', cat:'Music',        tags:['Jazz','Live Music']      },
-  { kw:['rock','indie','punk','metal','alternative','grunge'],                emoji:'🎸', color:'#C77DFF', cat:'Music',        tags:['Rock','Live Music']      },
-  { kw:['pop','rnb','hip-hop','hip hop','rap','soul','r&b'],                 emoji:'🎤', color:'#F7CFD8', cat:'Music',        tags:['Pop','Live Music']       },
-  { kw:['classical','orchestra','opera','choir','symphony','philharmonic'],   emoji:'🎻', color:'#E76F51', cat:'Culture',      tags:['Classical','Culture']    },
-  { kw:['concert','live music','band','singer','live set'],                   emoji:'🎵', color:'#8E7DBE', cat:'Music',        tags:['Concert','Live Music']   },
-  { kw:['food','cook','taste','eat','cuisine','gastro','brunch'],             emoji:'🍕', color:'#F4C87A', cat:'Food & Drink', tags:['Food','Social']          },
-  { kw:['beer','wine','cocktail','bar','drink'],                              emoji:'🍹', color:'#F4C87A', cat:'Food & Drink', tags:['Drinks','Social']        },
-  { kw:['market','flea','brocante','vintage','antique'],                      emoji:'🛍️', color:'#F4C87A', cat:'Market',       tags:['Market','Outdoors']      },
-  { kw:['art','exhibit','museum','gallery','paint','photo','sculpture'],      emoji:'🎨', color:'#F4A261', cat:'Culture',      tags:['Art','Culture']          },
-  { kw:['sport','football','run','yoga','fitness'],                           emoji:'⚽', color:'#90E0EF', cat:'Sports',       tags:['Sports','Active']        },
-  { kw:['festival','open air','open-air','outdoor','park'],                   emoji:'🌍', color:'#F4A261', cat:'Festival',     tags:['Festival','Outdoors']    },
-  { kw:['theatre','theater','play','comedy','improv','stand-up'],             emoji:'🎭', color:'#E76F51', cat:'Arts',         tags:['Theatre','Performance']  },
-  { kw:['cinema','film','movie','screening','documentary'],                   emoji:'🎬', color:'#6C63FF', cat:'Arts',         tags:['Cinema','Film']          },
-  { kw:['dance','ballet','tango','salsa'],                                    emoji:'💃', color:'#F7CFD8', cat:'Arts',         tags:['Dance','Performance']    },
+  { kw:['techno','electronic','rave','dj set','club night','trance','house'],  emoji:'⚡', color:'#7B2FBE', cat:'Nightlife',    tags:['Techno','Electronic']   },
+  { kw:['jazz','blues','swing','bossa nova'],                                  emoji:'🎷', color:'#C77DFF', cat:'Music',        tags:['Jazz','Live Music']      },
+  { kw:['rock','indie','punk','metal','alternative','grunge'],                 emoji:'🎸', color:'#C77DFF', cat:'Music',        tags:['Rock','Live Music']      },
+  { kw:['pop','rnb','hip-hop','hip hop','rap','soul','r&b'],                  emoji:'🎤', color:'#F7CFD8', cat:'Music',        tags:['Pop','Live Music']       },
+  { kw:['classical','orchestra','opera','choir','symphony','philharmonic'],    emoji:'🎻', color:'#E76F51', cat:'Culture',      tags:['Classical','Culture']    },
+  { kw:['concert','live music','band','singer','live set'],                    emoji:'🎵', color:'#8E7DBE', cat:'Music',        tags:['Concert','Live Music']   },
+  { kw:['food','cook','taste','eat','cuisine','gastro','brunch'],              emoji:'🍕', color:'#F4C87A', cat:'Food & Drink', tags:['Food','Social']          },
+  { kw:['beer','wine','cocktail','bar','drink'],                               emoji:'🍹', color:'#F4C87A', cat:'Food & Drink', tags:['Drinks','Social']        },
+  { kw:['market','flea','brocante','vintage','antique'],                       emoji:'🛍️', color:'#F4C87A', cat:'Market',       tags:['Market','Outdoors']      },
+  { kw:['art','exhibit','museum','gallery','paint','photo','sculpture'],       emoji:'🎨', color:'#F4A261', cat:'Culture',      tags:['Art','Culture']          },
+  { kw:['football','match','vs.','home game','kick-off','ligue','jupiler'],    emoji:'⚽', color:'#90E0EF', cat:'Sports',       tags:['Football','Sports']      },
+  { kw:['sport','run','yoga','fitness','athletics'],                           emoji:'🏃', color:'#90E0EF', cat:'Sports',       tags:['Sports','Active']        },
+  { kw:['festival','open air','open-air','outdoor','park'],                    emoji:'🌍', color:'#F4A261', cat:'Festival',     tags:['Festival','Outdoors']    },
+  { kw:['theatre','theater','play','comedy','improv','stand-up'],              emoji:'🎭', color:'#E76F51', cat:'Arts',         tags:['Theatre','Performance']  },
+  { kw:['cinema','film','movie','screening','documentary'],                    emoji:'🎬', color:'#6C63FF', cat:'Arts',         tags:['Cinema','Film']          },
+  { kw:['dance','ballet','tango','salsa'],                                     emoji:'💃', color:'#F7CFD8', cat:'Arts',         tags:['Dance','Performance']    },
 ];
 const DEFAULT_CLASS = { emoji:'📍', color:'#8E7DBE', cat:'Event', tags:['Brussels'] };
 
 function classify(text) {
-  const lower = (text||'').toLowerCase();
+  const lower = (text || '').toLowerCase();
   for (const e of KEYWORD_MAP) if (e.kw.some(k => lower.includes(k))) return { emoji:e.emoji, color:e.color, cat:e.cat, tags:e.tags };
   return DEFAULT_CLASS;
 }
@@ -236,11 +240,13 @@ function classifyForVenue(text, config) {
 
 // ── Price logic ───────────────────────────────────────────────────────────────
 
+// Scans text for € amounts only. Returns [0] for free, [prices…] for paid, [] for unknown.
 function extractAllPrices(text) {
   if (!text) return [];
   const t = text.toLowerCase();
-  if (t.includes('free') || t.includes('gratuit') || t.includes('gratis') ||
-      t.includes('free entry') || t.includes('entrée libre')) return [0];
+  if (t.includes('free entry') || t.includes('entrée libre') || t.includes('gratis ingang') ||
+      t.includes('gratuit') || t.includes('gratis') ||
+      /\bfree\b/.test(t)) return [0];
   const prices = [];
   const re = /€\s*(\d+(?:[.,]\d{1,2})?)|(\d+(?:[.,]\d{1,2})?)\s*(?:€|eur\b)/gi;
   let m;
@@ -264,6 +270,7 @@ function extractPriceFromOffers(offers) {
   return prices;
 }
 
+// Always outputs "From €X" for paid events — never bare "€X".
 function formatPrice(prices) {
   if (!prices || prices.length === 0) return '';
   const hasFree = prices.includes(0);
@@ -271,33 +278,34 @@ function formatPrice(prices) {
   if (hasFree && paid.length === 0) return 'Free';
   if (paid.length === 0) return '';
   const min = Math.min(...paid);
-  const max = Math.max(...paid);
   const fmt = n => Number.isInteger(n) ? `${n}` : n.toFixed(2);
-  if (hasFree) return `Free – €${fmt(max)}`;
-  if (min === max) return `€${fmt(min)}`;
+  if (hasFree) return `Free / From €${fmt(min)}`;
   return `From €${fmt(min)}`;
 }
 
 // ── Two-step price extraction ─────────────────────────────────────────────────
-// For events that landed with no price, follow their detail URL and look for €
+// Visits each event's own detail page and scans for € prices.
+// Overwrites the price extracted from the listing page (detail pages are more accurate).
 async function deepFetchPrices(page, events) {
-  const toFetch = events.filter(e => !e.price && e.sourceURL?.startsWith('http')).slice(0, 5);
+  const toFetch = events.filter(e => e.sourceURL?.startsWith('http')).slice(0, DEEP_PRICE_CAP);
   if (toFetch.length === 0) return;
-  console.log(`    💰 Deep-fetching prices for ${toFetch.length} events…`);
+  console.log(`    💰 Deep price fetch: visiting ${toFetch.length} event pages…`);
   for (const ev of toFetch) {
     try {
       await page.goto(ev.sourceURL, { waitUntil: 'domcontentloaded', timeout: 12000 });
-      await sleep(1500);
+      await sleep(1200);
       const text = await page.evaluate(() => document.body?.innerText || '');
       const prices = extractAllPrices(text);
       if (prices.length > 0) {
         ev.price = formatPrice(prices);
         console.log(`      ✓ "${ev.title.slice(0, 30)}": ${ev.price}`);
+      } else {
+        console.log(`      — "${ev.title.slice(0, 30)}": no € found on detail page`);
       }
     } catch (err) {
-      console.log(`      ✗ price fetch failed: ${err.message.slice(0, 50)}`);
+      console.log(`      ✗ "${ev.title?.slice(0, 25)}": ${err.message.slice(0, 60)}`);
     }
-    await sleep(1000);
+    await sleep(800);
   }
 }
 
@@ -323,7 +331,7 @@ function toRelativeDate(iso) {
 
 function parseRawDate(raw) {
   if (!raw) return null;
-  let t = (raw||'').replace(/\s+/g,' ').trim();
+  let t = (raw || '').replace(/\s+/g,' ').trim();
   if (/^\d{4}-\d{2}-\d{2}/.test(t)) { const d=new Date(t); if(!isNaN(d.getTime())&&d.getFullYear()>2020)return t.slice(0,10); }
   const tLow = t.toLowerCase();
   for (const [fr,en] of Object.entries(MONTH_FR)) t = tLow.includes(fr) ? t.replace(new RegExp(fr,'i'), en) : t;
@@ -362,7 +370,7 @@ function parseTime(str, defaultTime) {
   const def = defaultTime || '20:00';
   if (!str) return { time:def, startH:parseInt(def,10)||20, endH:(parseInt(def,10)||20)+3 };
   const m = str.match(/(\d{1,2})[h:\.](\d{2})?/);
-  if (m) { const h=parseInt(m[1],10); const min=m[2]?parseInt(m[2],10):0; return { time:`${String(h).padStart(2,'0')}:${String(min).padStart(2,'0')}`, startH:h, endH:h+3 }; }
+  if (m) { const h=parseInt(m[1],10); const mn=m[2]?parseInt(m[2],10):0; return { time:`${String(h).padStart(2,'0')}:${String(mn).padStart(2,'0')}`, startH:h, endH:h+3 }; }
   return { time:def, startH:parseInt(def,10)||20, endH:(parseInt(def,10)||20)+3 };
 }
 
@@ -406,6 +414,7 @@ function generateChatSeed() {
 }
 
 // ── Geocoding ─────────────────────────────────────────────────────────────────
+// Only called for events from sources that have no hardcoded lat/lng.
 async function geocode(venue) {
   try {
     const q   = encodeURIComponent(`${venue}, Brussels, Belgium`);
@@ -462,15 +471,17 @@ async function extractJsonLd(page) {
 // ── Generic venue scraper ─────────────────────────────────────────────────────
 async function scrapeVenue(browser, config) {
   console.log(`\n${config.emoji}  Scraping ${config.name}…`);
-  const events = [];
+  const events  = [];
+  let failReason = '';
+
   try {
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
 
+    // ── Load page ──
     let loaded = false;
     for (const url of config.urls) {
       try {
-        // JS-heavy sites: networkidle2 (may partially timeout — that's OK)
         const waitMode = config.jsHeavy ? 'networkidle2' : 'domcontentloaded';
         try {
           await page.goto(url, { waitUntil: waitMode, timeout: 30000 });
@@ -481,7 +492,19 @@ async function scrapeVenue(browser, config) {
 
         const extraWait = config.extraWait || 5000;
         await sleep(extraWait);
-        // Two scroll passes to trigger any lazy-loading
+
+        // C12 and similar: wait for a specific DOM element to appear
+        if (config.waitForSelector) {
+          try {
+            await page.waitForSelector(config.waitForSelector, { timeout: 15000 });
+            console.log(`    ✓ Selector found: ${config.waitForSelector}`);
+          } catch {
+            failReason = `Selector '${config.waitForSelector}' not found — timeout after 15s`;
+            console.log(`    ✗ ${failReason}`);
+          }
+        }
+
+        // Two scroll passes to trigger lazy-loading
         await page.evaluate(() => window.scrollBy(0, 800));
         await sleep(1500);
         await page.evaluate(() => window.scrollBy(0, 800));
@@ -491,153 +514,170 @@ async function scrapeVenue(browser, config) {
         const bodyLen = await page.evaluate(() => document.body?.innerText?.length || 0);
         console.log(`    Loaded: "${title}" (${bodyLen} chars)`);
 
-        // Accept any page with a real title and some content
         if (title && title.length > 3 && bodyLen > 300) {
           loaded = true; break;
         }
-      } catch (err) { console.log(`    URL failed: ${err.message.slice(0,80)}`); }
-    }
-    if (!loaded) { await page.close(); return events; }
-
-    // ── Strategy 1: JSON-LD structured data ──
-    const jsonEvents = await extractJsonLd(page);
-    if (jsonEvents.length > 0) {
-      console.log(`    JSON-LD: ${jsonEvents.length} events`);
-      for (const ev of jsonEvents) {
-        const title = clean(ev.name || '');
-        if (!isValidTitle(title)) continue;
-        const rawDate = parseRawDate(ev.startDate || ev.datePublished || '');
-        if (!rawDate) continue;
-        const relDate = toRelativeDate(rawDate);
-        if (!relDate) continue;
-        const venue   = clean(ev.location?.name || config.name);
-        const desc    = clean(ev.description || '');
-        const url     = ev.url || ev['@id'] || '';
-        const offerPs = extractPriceFromOffers(ev.offers);
-        const descPs  = offerPs.length === 0 ? extractAllPrices(desc) : [];
-        const price   = formatPrice([...offerPs, ...descPs]);
-        const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : config.defaultTime;
-        const startH  = parseInt((timeStr||config.defaultTime).split(':')[0], 10) || 20;
-        const cls     = classifyForVenue(title+' '+desc, config);
-        events.push({ _rawDate:rawDate, title, venue, addr:config.addr,
-          date:relDate, time:timeStr||config.defaultTime, startH, endH:startH+3,
-          price, emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
-          source:config.name, sourceURL:url, ticket:url,
-          desc:desc||`${title} at ${config.name}.`,
-          neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng });
+      } catch (err) {
+        const msg = err.message.slice(0, 80);
+        console.log(`    URL failed: ${msg}`);
+        failReason = `Page load failed: ${msg}`;
       }
-      console.log(`    → ${events.length} valid from JSON-LD`);
     }
 
-    // ── Strategy 2: HTML — heading + date presence filter ──────────────────
-    // This works regardless of CSS class names by requiring that a candidate
-    // element contains BOTH a heading AND something that looks like a date.
-    if (events.length === 0) {
-      const $ = cheerio.load(await page.content());
-
-      // Prefer a scoped container; fall back to body
-      const scope = $([
-        'main','#content','[role="main"]',
-        '.agenda','.programme','.calendar','.events-list','.event-list',
-        '.event-overview','.listing','.schedule',
-      ].join(',')).first();
-      const root = scope.length ? scope : $('body');
-      console.log(`    HTML scope: ${scope.length ? (scope.get(0).tagName+(scope.attr('class')||'').slice(0,30)) : 'body'}`);
-
-      // Cast a very wide net — any container element
-      const candidates = root.find([
-        'article',
-        '.card','[class*="card"]',
-        '[class*="event"]','[class*="show"]','[class*="concert"]',
-        '[class*="agenda"]','[class*="programme"]','[class*="listing"]',
-        '[class*="item"]',
-        // CMS-specific
-        '.node','.views-row',          // Drupal
-        '.eventlist-event',            // Squarespace
-        '.wp-block-post','.entry',     // WordPress
-        '.tribe-event',                // The Events Calendar
-        'li',
-      ].join(',')).filter((_, el) => {
-        const $el  = $(el);
-        const text = $el.text().trim();
-        if (text.length < 15 || text.length > 1200) return false;
-
-        // Must have a heading-like element (event title)
-        const hasHeading = $el.find([
-          'h1','h2','h3','h4','h5','strong','b',
-          '[class*="title"]','[class*="name"]','[class*="artist"]','[class*="heading"]',
-        ].join(',')).length > 0;
-        if (!hasHeading) return false;
-
-        // Must have a date element OR text that parses as a date
-        const hasDateEl  = $el.find('time,[datetime],[class*="date"],[class*="dag"],[class*="when"],[class*="period"]').length > 0;
-        const hasDateTxt = hasDateEl || !!scanTextForDate(text);
-        return hasDateTxt;
-      });
-
-      console.log(`    HTML candidates (heading+date filter): ${candidates.length}`);
-      if (candidates.length > 0) {
-        console.log(`    First candidate: ${($(candidates.get(0)).html()||'').replace(/\s+/g,' ').slice(0,250)}`);
+    if (!loaded) {
+      failReason = failReason || 'All URLs failed or returned empty page';
+      await page.close();
+    } else {
+      // ── Strategy 1: JSON-LD structured data ──
+      const jsonEvents = await extractJsonLd(page);
+      if (jsonEvents.length > 0) {
+        console.log(`    JSON-LD: ${jsonEvents.length} events`);
+        for (const ev of jsonEvents) {
+          const title = clean(ev.name || '');
+          if (!isValidTitle(title)) continue;
+          const rawDate = parseRawDate(ev.startDate || ev.datePublished || '');
+          if (!rawDate) continue;
+          const relDate = toRelativeDate(rawDate);
+          if (!relDate) continue;
+          const desc    = clean(ev.description || '');
+          const url     = ev.url || ev['@id'] || '';
+          const offerPs = extractPriceFromOffers(ev.offers);
+          const descPs  = offerPs.length === 0 ? extractAllPrices(desc) : [];
+          const price   = formatPrice([...offerPs, ...descPs]);
+          const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : config.defaultTime;
+          const startH  = parseInt((timeStr || config.defaultTime).split(':')[0], 10) || 20;
+          const cls     = classifyForVenue(title+' '+desc, config);
+          events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
+            date:relDate, time:timeStr||config.defaultTime, startH, endH:startH+3,
+            price, emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
+            source:config.name, sourceURL:url, ticket:url,
+            desc:desc||`${title} at ${config.name}.`,
+            neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng });
+        }
+        console.log(`    → ${events.length} valid from JSON-LD`);
       }
 
-      const baseOrigin = config.urls[0].match(/^https?:\/\/[^\/]+/)?.[0] || '';
+      // ── Strategy 2: HTML — heading + date presence filter ──
+      // Requires a candidate element to contain BOTH a heading AND a date signal,
+      // so it works regardless of CSS class names.
+      if (events.length === 0) {
+        const $ = cheerio.load(await page.content());
 
-      candidates.each((i, el) => {
-        if (i >= 30) return;
-        const $el  = $(el);
-        const title = clean($el.find([
-          'h1','h2','h3','h4','h5','strong',
-          '[class*="title"]','[class*="name"]','[class*="artist"]','[class*="heading"]',
-        ].join(',')).first().text());
-        if (!isValidTitle(title)) return;
+        // Prefer a scoped container; fall back to body
+        const scope = $([
+          'main','#content','[role="main"]',
+          '.agenda','.programme','.calendar','.events-list','.event-list',
+          '.event-overview','.listing','.schedule','.matches','.fixtures',
+        ].join(',')).first();
+        const root = scope.length ? scope : $('body');
+        const scopeDesc = scope.length
+          ? (scope.get(0).tagName + (scope.attr('class')||'').slice(0,30))
+          : 'body';
+        console.log(`    HTML scope: ${scopeDesc}`);
 
-        // Date: datetime attribute → specific selector → full text scan
-        const dtAttr    = $el.find('[datetime]').first().attr('datetime') || $el.find('time').first().attr('datetime') || '';
-        const dtSpecific = clean($el.find([
-          'time','[class*="date"]','[class*="when"]','[class*="dag"]',
-          '[class*="datum"]','[class*="day"]','[class*="period"]',
-        ].join(',')).first().text());
-        const dtScanned  = (!dtAttr && !dtSpecific) ? scanTextForDate($el.text()) : null;
-        const dateText   = dtAttr || dtSpecific || dtScanned || '';
-        console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${dateText.slice(0,35)}"`);
+        if (!scope.length) {
+          failReason = failReason || 'No agenda/calendar container found — using body';
+        }
 
-        const rawDate = parseRawDate(dateText);
-        if (!rawDate) { console.log(`      → date not parsed`); return; }
-        const relDate = toRelativeDate(rawDate);
-        if (!relDate) return;
+        // Wide net: any container that has both a heading and a date
+        const candidates = root.find([
+          'article',
+          '.card','[class*="card"]',
+          '[class*="event"]','[class*="show"]','[class*="concert"]',
+          '[class*="agenda"]','[class*="programme"]','[class*="listing"]',
+          '[class*="match"]','[class*="fixture"]','[class*="game"]',
+          '[class*="item"]',
+          '.node','.views-row',          // Drupal
+          '.eventlist-event',            // Squarespace
+          '.wp-block-post','.entry',     // WordPress
+          '.tribe-event',                // The Events Calendar
+          'li',
+        ].join(',')).filter((_, el) => {
+          const $el  = $(el);
+          const text = $el.text().trim();
+          if (text.length < 15 || text.length > 1200) return false;
+          const hasHeading = $el.find([
+            'h1','h2','h3','h4','h5','strong','b',
+            '[class*="title"]','[class*="name"]','[class*="artist"]','[class*="heading"]',
+          ].join(',')).length > 0;
+          if (!hasHeading) return false;
+          const hasDateEl  = $el.find('time,[datetime],[class*="date"],[class*="dag"],[class*="when"],[class*="period"]').length > 0;
+          const hasDateTxt = hasDateEl || !!scanTextForDate(text);
+          return hasDateTxt;
+        });
 
-        const timeText  = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
-        const priceText = clean($el.find([
-          '[class*="price"]','[class*="ticket"]','[class*="cost"]',
-          '[class*="tarif"]','[class*="rate"]',
-        ].join(',')).first().text());
-        const desc = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
-        const link = $el.find('a[href]').first().attr('href') || '';
-        const url  = link.startsWith('http') ? link : link.startsWith('/') ? `${baseOrigin}${link}` : link;
+        console.log(`    HTML candidates (heading+date filter): ${candidates.length}`);
+        if (candidates.length === 0) {
+          failReason = failReason || 'No candidate elements passed heading+date filter';
+        } else {
+          console.log(`    First candidate: ${($(candidates.get(0)).html()||'').replace(/\s+/g,' ').slice(0,250)}`);
+        }
 
-        // Price: specific element first, then scan the whole card text
-        const allPrices = extractAllPrices(priceText) || extractAllPrices($el.text());
-        const price     = formatPrice(allPrices);
-        const { time, startH, endH } = parseTime(timeText, config.defaultTime);
-        const cls = classifyForVenue(title+' '+desc, config);
+        const baseOrigin = config.urls[0].match(/^https?:\/\/[^\/]+/)?.[0] || '';
 
-        events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
-          date:relDate, time, startH, endH, price,
-          emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
-          source:config.name, sourceURL:url, ticket:url,
-          desc:desc||`${title} at ${config.name}.`,
-          neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng });
-      });
+        candidates.each((i, el) => {
+          if (i >= 30) return;
+          const $el  = $(el);
+          const title = clean($el.find([
+            'h1','h2','h3','h4','h5','strong',
+            '[class*="title"]','[class*="name"]','[class*="artist"]','[class*="heading"]',
+          ].join(',')).first().text());
+          if (!isValidTitle(title)) return;
+
+          const dtAttr     = $el.find('[datetime]').first().attr('datetime') || $el.find('time').first().attr('datetime') || '';
+          const dtSpecific = clean($el.find([
+            'time','[class*="date"]','[class*="when"]','[class*="dag"]',
+            '[class*="datum"]','[class*="day"]','[class*="period"]',
+          ].join(',')).first().text());
+          const dtScanned  = (!dtAttr && !dtSpecific) ? scanTextForDate($el.text()) : null;
+          const dateText   = dtAttr || dtSpecific || dtScanned || '';
+          console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${dateText.slice(0,35)}"`);
+
+          const rawDate = parseRawDate(dateText);
+          if (!rawDate) { console.log(`      → date not parsed`); return; }
+          const relDate = toRelativeDate(rawDate);
+          if (!relDate) return;
+
+          const timeText  = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
+          const priceText = clean($el.find([
+            '[class*="price"]','[class*="ticket"]','[class*="cost"]',
+            '[class*="tarif"]','[class*="rate"]',
+          ].join(',')).first().text());
+          const desc = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
+          const link = $el.find('a[href]').first().attr('href') || '';
+          const url  = link.startsWith('http') ? link : link.startsWith('/') ? `${baseOrigin}${link}` : link;
+
+          const allPrices = extractAllPrices(priceText) || extractAllPrices($el.text());
+          const price     = formatPrice(allPrices);
+          const { time, startH, endH } = parseTime(timeText, config.defaultTime);
+          const cls = classifyForVenue(title+' '+desc, config);
+
+          events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
+            date:relDate, time, startH, endH, price,
+            emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
+            source:config.name, sourceURL:url, ticket:url,
+            desc:desc||`${title} at ${config.name}.`,
+            neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng });
+        });
+      }
+
+      // ── Step 2: Visit each event's detail page for accurate price ──
+      await deepFetchPrices(page, events);
+
+      await page.close();
     }
-
-    // Deep-fetch prices for events that still have none
-    await deepFetchPrices(page, events);
-
-    await page.close();
   } catch (err) {
-    console.warn(`    ⚠️  ${config.name} failed: ${err.message}`);
+    failReason = err.message;
+    console.warn(`    ⚠️  ${config.name} threw: ${failReason}`);
   }
-  console.log(`    ✓ ${events.length} events from ${config.name}`);
+
+  // ── Mandatory per-site result log ──
+  if (events.length > 0) {
+    console.log(`\n✅ Site ${config.name}: [Found ${events.length} events]`);
+  } else {
+    console.log(`\n❌ Site ${config.name}: [Found 0 events] — ${failReason || 'No matching elements with heading+date'}`);
+  }
+
   return events;
 }
 
@@ -655,14 +695,16 @@ async function main() {
     args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu'],
   });
 
+  const results = [];
   let raw = [];
   try {
     for (const config of VENUE_CONFIGS) {
       try {
         const venueEvents = await scrapeVenue(browser, config);
+        results.push({ name: config.name, emoji: config.emoji, count: venueEvents.length });
         raw = [...raw, ...venueEvents];
       } catch (err) {
-        // One venue failing never stops the rest
+        results.push({ name: config.name, emoji: config.emoji, count: 0, err: err.message });
         console.warn(`  ⚠️  Skipping ${config.name}: ${err.message}`);
       }
     }
@@ -670,7 +712,18 @@ async function main() {
     await browser.close();
   }
 
-  console.log(`\n📡  Processing ${raw.length} scraped candidates…`);
+  // ── Final summary table ──
+  console.log('\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  console.log('  SCRAPE RESULTS');
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+  for (const r of results) {
+    const status = r.count > 0 ? '✅' : '❌';
+    const detail = r.err ? ` — ${r.err.slice(0, 60)}` : '';
+    console.log(`  ${status} ${r.emoji} ${r.name}: [Found ${r.count} events]${detail}`);
+  }
+  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+
+  console.log(`📡  Processing ${raw.length} scraped candidates…`);
 
   let idCounter = nextId(existing);
   let added = 0;
@@ -678,6 +731,7 @@ async function main() {
   for (const r of raw) {
     if (isDuplicate(existing, r.title, r._rawDate)) { console.log(`  ⏭   Duplicate: "${r.title}"`); continue; }
 
+    // Coords are already hardcoded in VENUE_CONFIGS — only geocode if somehow missing
     if (!r.lat || !r.lng) {
       process.stdout.write(`  📍  Geocoding "${r.venue}"… `);
       const coords = await geocode(r.venue);
