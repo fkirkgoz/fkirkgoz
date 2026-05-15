@@ -2,7 +2,7 @@
 /**
  * Randevu Event Scraper
  *
- * Sources: AB Concerts (abconcerts.be) + visit.brussels
+ * Sources: AB Concerts (abconcerts.be) + Eventbrite Brussels
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -124,6 +124,28 @@ function parseRawDate(raw) {
   return null;
 }
 
+// Scan a block of raw text for ANY date-like pattern
+function scanTextForDate(text) {
+  if (!text) return null;
+  const s = text.replace(/\s+/g,' ');
+  const MONTHS_SHORT = 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec';
+  const MONTHS_FULL  = 'January|February|March|April|May|June|July|August|September|October|November|December';
+  const patterns = [
+    /\d{4}-\d{2}-\d{2}/,
+    /\d{1,2}\/\d{1,2}\/\d{4}/,
+    new RegExp(`(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\\w*\\s+\\d{1,2}\\s+(?:${MONTHS_SHORT})\\w*`, 'i'),
+    new RegExp(`\\d{1,2}\\s+(?:${MONTHS_FULL})\\s+\\d{4}`, 'i'),
+    new RegExp(`(?:${MONTHS_FULL})\\s+\\d{1,2},?\\s+\\d{4}`, 'i'),
+    new RegExp(`\\d{1,2}\\s+(?:${MONTHS_SHORT})\\w*\\s+\\d{4}`, 'i'),
+    new RegExp(`\\d{1,2}\\s+(?:${MONTHS_SHORT})`, 'i'),
+  ];
+  for (const p of patterns) {
+    const m = s.match(p);
+    if (m) return m[0].trim();
+  }
+  return null;
+}
+
 function parseTime(str) {
   if (!str) return { time:'20:00', startH:20, endH:23 };
   const m = str.match(/(\d{1,2})[h:\.](\d{2})?/);
@@ -152,8 +174,15 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 
 function isValidTitle(t) {
   if (!t || t.length < 5) return false;
-  const skip = ['grand-place','atomium','manneken','mini europe','brussels','home','search','filter','load more','see all','back to','cookie','privacy','newsletter','login','sign in','menu','close'];
-  return !skip.some(s => t.toLowerCase() === s || t.toLowerCase().startsWith(s+' '));
+  const skip = [
+    'grand-place','atomium','manneken','mini europe','brussels',
+    'home','search','filter','load more','see all','back to',
+    'cookie','privacy','newsletter','login','sign in','menu','close',
+    'accept','reject','settings','language','share','buy ticket',
+    'add to cart','sold out','more info',
+  ];
+  const tl = t.toLowerCase();
+  return !skip.some(s => tl === s || tl.startsWith(s+' ') || tl.endsWith(' '+s));
 }
 
 // ── Geocoding ─────────────────────────────────────────────────────────────────
@@ -200,6 +229,7 @@ async function extractJsonLd(page) {
     for (const blob of blobs) {
       const list = Array.isArray(blob) ? blob
         : blob['@type']==='Event' ? [blob]
+        : blob['@type']==='MusicEvent' ? [blob]
         : blob['@graph'] ? blob['@graph'] : [];
       for (const item of list) {
         if (item['@type']==='Event' || item['@type']==='MusicEvent') found.push(item);
@@ -217,10 +247,12 @@ async function scrapeABConcerts(browser) {
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
     await page.goto('https://www.abconcerts.be/en/agenda', { waitUntil:'domcontentloaded', timeout:30000 });
-    await sleep(4000);
-    // Scroll to trigger lazy loading
-    await page.evaluate(() => window.scrollBy(0, 600));
+    await sleep(5000);
+    await page.evaluate(() => window.scrollBy(0, 800));
     await sleep(2000);
+
+    const pageTitle = await page.title();
+    console.log(`    Page: "${pageTitle}"`);
 
     // ── Strategy 1: JSON-LD structured data ──
     const jsonEvents = await extractJsonLd(page);
@@ -245,31 +277,68 @@ async function scrapeABConcerts(browser) {
           source:'AB', sourceURL:url, ticket:url,
           desc:desc||`Live at AB — ${title}.`, neighbourhood:'Centre', lat:50.8483, lng:4.3512 });
       }
+      console.log(`    ✓ JSON-LD extracted ${events.length} events`);
     }
 
     // ── Strategy 2: HTML parsing (fallback) ──
     if (events.length === 0) {
-      const $ = cheerio.load(await page.content());
-      // Scope to main content only
-      const scope = $('main, #content, .main-content, [role="main"], .agenda, .programme').first();
-      const root  = scope.length ? scope : $('body');
+      const html = await page.content();
+      const $ = cheerio.load(html);
 
-      const candidates = root.find('article, [class*="event"], [class*="show"], [class*="concert"], [class*="agenda-item"], [class*="programme-item"], li').filter((_, el) => {
+      // Scope to main content; fall back to body
+      const scope = $('main, #content, .main-content, [role="main"], .agenda, .programme, .events-list').first();
+      const root  = scope.length ? scope : $('body');
+      console.log(`    Scope: ${scope.length ? scope.get(0).tagName + '.' + (scope.attr('class')||'') : 'body'}`);
+
+      const candidates = root.find([
+        'article',
+        '[class*="event"]',
+        '[class*="show"]',
+        '[class*="concert"]',
+        '[class*="agenda-item"]',
+        '[class*="programme-item"]',
+        '[class*="listing"]',
+        'li',
+      ].join(',')).filter((_, el) => {
         const text = $(el).text().trim();
-        return text.length > 20 && text.length < 500;
+        return text.length > 20 && text.length < 600;
       });
       console.log(`    HTML fallback: ${candidates.length} candidates`);
+
+      // Log first candidate HTML for debugging
+      if (candidates.length > 0) {
+        const snippet = $(candidates.get(0)).html()||'';
+        console.log(`    First candidate HTML (200 chars): ${snippet.replace(/\s+/g,' ').slice(0,200)}`);
+      }
 
       candidates.each((i, el) => {
         if (i >= 30) return;
         const $el = $(el);
-        const title = clean($el.find('h1,h2,h3,h4,[class*="title"],[class*="name"],[class*="artist"]').first().text());
+        const title = clean($el.find('h1,h2,h3,h4,strong,[class*="title"],[class*="name"],[class*="artist"]').first().text());
         if (!isValidTitle(title)) return;
 
-        // Date: try datetime attribute first, then text
-        const datetimeAttr = $el.find('[datetime]').first().attr('datetime') || $el.find('time').first().attr('datetime') || '';
-        const dateText = datetimeAttr || clean($el.find('time,[class*="date"],[class*="when"],[class*="dag"]').first().text());
-        console.log(`    AB candidate: "${title}" | date text: "${dateText.slice(0,40)}"`);
+        // Date strategy: try attributes → specific selectors → full text scan
+        const datetimeAttr =
+          $el.find('[datetime]').first().attr('datetime') ||
+          $el.find('time').first().attr('datetime') ||
+          $el.attr('data-date') || '';
+
+        const specificText = clean($el.find([
+          'time',
+          '[class*="date"]',
+          '[class*="when"]',
+          '[class*="dag"]',
+          '[class*="datum"]',
+          '[class*="time"]',
+          '[class*="period"]',
+          '[class*="day"]',
+        ].join(',')).first().text());
+
+        // Last resort: scan all text in the element for any date pattern
+        const scannedDate = (!datetimeAttr && !specificText) ? scanTextForDate($el.text()) : null;
+        const dateText = datetimeAttr || specificText || scannedDate || '';
+
+        console.log(`    AB: "${title.slice(0,40)}" | date: "${dateText.slice(0,40)}"`);
 
         const rawDate = parseRawDate(dateText);
         if (!rawDate) { console.log(`      → date not parsed, skipping`); return; }
@@ -299,32 +368,35 @@ async function scrapeABConcerts(browser) {
   return events;
 }
 
-// ── visit.brussels ────────────────────────────────────────────────────────────
-async function scrapeVisitBrussels(browser) {
-  console.log('\n🌆  Scraping visit.brussels…');
+// ── Eventbrite Brussels ───────────────────────────────────────────────────────
+async function scrapeEventbrite(browser) {
+  console.log('\n🎟️  Scraping Eventbrite Brussels…');
   const events = [];
   try {
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
 
-    // Try the agenda/events page first, fallback to search
     const URLS = [
-      'https://visit.brussels/en/agenda',
-      'https://visit.brussels/en/whats-on',
-      'https://visit.brussels/en/search-results?category=Event&type=calendar',
-      'https://visit.brussels/en/search-results?category=Event',
+      'https://www.eventbrite.com/d/belgium--brussels/events/',
+      'https://www.eventbrite.be/d/belgium--brussels/events/',
+      'https://www.eventbrite.com/d/belgium--brussels/all-events/',
     ];
 
     let loaded = false;
     for (const url of URLS) {
       try {
-        await page.goto(url, { waitUntil:'networkidle2', timeout:30000 });
-        await sleep(3000);
-        await page.evaluate(() => window.scrollBy(0, 800));
-        await sleep(1500);
-        const content = await page.content();
-        if (content.includes('event') || content.includes('agenda')) { loaded = true; break; }
-      } catch {}
+        console.log(`    Trying ${url}`);
+        await page.goto(url, { waitUntil:'domcontentloaded', timeout:30000 });
+        await sleep(4000);
+        await page.evaluate(() => window.scrollBy(0, 600));
+        await sleep(2000);
+        const title = await page.title();
+        console.log(`    Page title: "${title}"`);
+        if (title && !title.toLowerCase().includes('error') && !title.toLowerCase().includes('not found')) {
+          loaded = true;
+          break;
+        }
+      } catch (err) { console.log(`    Failed: ${err.message}`); }
     }
     if (!loaded) { await page.close(); return events; }
 
@@ -339,70 +411,81 @@ async function scrapeVisitBrussels(browser) {
         if (!rawDate) continue;
         const relDate = toRelativeDate(rawDate);
         if (!relDate) continue;
-        const venue   = clean(ev.location?.name || ev.location || 'Brussels');
-        const desc    = clean(ev.description || '');
-        const url     = ev.url || ev['@id'] || '';
-        const { emoji, color, cat, tags } = classify(title+' '+desc);
-        const timeStr = ev.startDate ? ev.startDate.slice(11,16) : '19:00';
-        const startH  = parseInt(timeStr.split(':')[0],10)||19;
-        events.push({ _rawDate:rawDate, title, venue, addr:`${venue}, Brussels`,
-          date:relDate, time:timeStr||'19:00', startH, endH:startH+3, price:'Free',
-          emoji, color, cat, tags, source:'visit.brussels', sourceURL:url,
-          desc:desc||`Discover ${title} in Brussels.`,
+        const venue  = clean(ev.location?.name || ev.location?.address?.name || 'Brussels');
+        const addr   = clean(ev.location?.address?.streetAddress || `${venue}, Brussels`);
+        const desc   = clean(ev.description || '');
+        const url    = ev.url || ev['@id'] || '';
+        const price  = ev.offers?.price === 0 || ev.offers?.price === '0' ? 'Free'
+          : ev.offers?.price ? `€${ev.offers.price}` : 'Free';
+        const { emoji, color, cat, tags } = classify(title + ' ' + desc);
+        const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : '19:00';
+        const startH  = parseInt((timeStr||'19').split(':')[0], 10) || 19;
+        events.push({ _rawDate:rawDate, title, venue, addr,
+          date:relDate, time:timeStr||'19:00', startH, endH:startH+3, price, emoji, color, cat, tags,
+          source:'Eventbrite', sourceURL:url, ticket:url,
+          desc:desc||`Event in Brussels — ${title}.`,
           neighbourhood:NEIGHBOURHOODS[Math.floor(Math.random()*NEIGHBOURHOODS.length)],
           lat:0, lng:0 });
       }
     }
 
-    // ── Strategy 2: HTML, scoped to main content ──
+    // ── Strategy 2: HTML parsing ──
     if (events.length === 0) {
       const $ = cheerio.load(await page.content());
-      // Scope ONLY to the main content area — avoids nav, footer, sidebars
-      const scope = $('main, #content, [role="main"], .view-content, .search-results, .agenda-list, .event-list').first();
-      const root  = scope.length ? scope : $('body');
 
-      // Find event containers
-      const candidates = root.find('article, .node--type-event, [class*="event-item"], [class*="event-card"], [class*="result-item"], [class*="agenda-item"], .views-row').filter((_, el) => {
+      const candidates = $([
+        'article',
+        '[class*="event-card"]',
+        '[class*="search-event-card"]',
+        '[class*="discover-search"]',
+        '[data-event-id]',
+        '[data-automation="event-card"]',
+      ].join(',')).filter((_, el) => {
         const text = $(el).text().trim();
-        return text.length > 30 && text.length < 1000;
+        return text.length > 20 && text.length < 800;
       });
-      console.log(`    HTML: ${candidates.length} candidates in main content`);
+      console.log(`    HTML: ${candidates.length} event card candidates`);
+
+      if (candidates.length > 0) {
+        const snippet = $(candidates.get(0)).html()||'';
+        console.log(`    First card HTML (200 chars): ${snippet.replace(/\s+/g,' ').slice(0,200)}`);
+      }
 
       candidates.each((i, el) => {
-        if (i >= 30) return;
+        if (i >= 25) return;
         const $el = $(el);
-        const title = clean($el.find('h1,h2,h3,h4,[class*="title"],[class*="heading"]').first().text());
+        const title = clean($el.find('h2,h3,[class*="title"],[class*="event-name"]').first().text());
         if (!isValidTitle(title)) return;
 
-        // Date — require a real parseable date, NO fallback
         const datetimeAttr = $el.find('[datetime]').first().attr('datetime') || '';
-        const dateText = datetimeAttr || clean($el.find('time,[class*="date"],[class*="when"],[class*="start"]').first().text());
-        console.log(`    VB candidate: "${title}" | date: "${dateText.slice(0,40)}"`);
+        const specificText = clean($el.find('time,[class*="date"],[class*="when"],[class*="start"]').first().text());
+        const scannedDate  = (!datetimeAttr && !specificText) ? scanTextForDate($el.text()) : null;
+        const dateText = datetimeAttr || specificText || scannedDate || '';
 
         const rawDate = parseRawDate(dateText);
-        if (!rawDate) { console.log(`      → no date found, skipping`); return; } // NO fallback
+        if (!rawDate) return;
         const relDate = toRelativeDate(rawDate);
         if (!relDate) return;
 
         const venueText = clean($el.find('[class*="venue"],[class*="location"],[class*="place"]').first().text());
-        const desc      = clean($el.find('p,[class*="desc"],[class*="summary"],[class*="intro"]').first().text());
+        const desc      = clean($el.find('p,[class*="desc"],[class*="summary"]').first().text());
         const link      = $el.find('a[href]').first().attr('href')||'';
-        const url       = link.startsWith('http') ? link : `https://visit.brussels${link}`;
+        const url       = link.startsWith('http') ? link : `https://www.eventbrite.com${link}`;
         const { emoji, color, cat, tags } = classify(title+' '+desc);
 
         events.push({ _rawDate:rawDate, title, venue:venueText||'Brussels', addr:venueText?`${venueText}, Brussels`:'Brussels, Belgium',
           date:relDate, time:'19:00', startH:19, endH:22, price:'Free',
-          emoji, color, cat, tags, source:'visit.brussels', sourceURL:url,
-          desc:desc||`Discover ${title} in Brussels.`,
+          emoji, color, cat, tags, source:'Eventbrite', sourceURL:url, ticket:url,
+          desc:desc||`Event in Brussels — ${title}.`,
           neighbourhood:NEIGHBOURHOODS[Math.floor(Math.random()*NEIGHBOURHOODS.length)],
           lat:0, lng:0 });
       });
     }
 
     await page.close();
-  } catch (err) { console.warn(`    ⚠️  visit.brussels failed: ${err.message}`); }
+  } catch (err) { console.warn(`    ⚠️  Eventbrite failed: ${err.message}`); }
 
-  console.log(`    ✓ ${events.length} events from visit.brussels`);
+  console.log(`    ✓ ${events.length} events from Eventbrite`);
   return events;
 }
 
@@ -421,9 +504,8 @@ async function main() {
 
   let raw = [];
   try {
-    // Run sequentially so debug output is easier to read
     raw = [...raw, ...(await scrapeABConcerts(browser))];
-    raw = [...raw, ...(await scrapeVisitBrussels(browser))];
+    raw = [...raw, ...(await scrapeEventbrite(browser))];
   } finally {
     await browser.close();
   }
