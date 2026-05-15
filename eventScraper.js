@@ -2,8 +2,7 @@
 /**
  * Randevu Event Scraper — Brussels venue-specific edition
  *
- * Sources: AB · Botanique · Fuse · C12 · Cirque Royal · La Madeleine · Bozar
- *          RSC Anderlecht · Union Saint-Gilloise · City of Brussels
+ * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -86,32 +85,14 @@ const VENUE_CONFIGS = [
     defaultTime: '22:00',
     extraWait: 9000,
     jsHeavy: true,
-    waitForSelector: '.agenda',   // Puppeteer waits for this before scraping
+    // Try both .event-list and .event-item — C12 uses one depending on page version
+    waitForSelector: '.event-list,.event-item,.agenda',
     urls: [
       'https://c12space.com/agenda/',
       'https://c12space.com/agenda',
       'https://www.c12space.com/agenda',
       'https://c12space.com',
       'https://www.c12space.com',
-    ],
-  },
-  {
-    id: 'cirqueRoyal',
-    name: 'Cirque Royal',
-    addr: "Rue de l'Enseignement 81, 1000 Brussels",
-    lat: 50.8549, lng: 4.3620,
-    neighbourhood: 'Centre',
-    emoji: '🎹', color: '#C77DFF', cat: 'Music',
-    tags: ['Concert', 'Live Music'],
-    defaultTime: '20:00',
-    extraWait: 6000,
-    urls: [
-      'https://www.cirque-royal.org',
-      'https://cirque-royal.org',
-      'https://www.cirque-royal.org/en',
-      'https://www.cirque-royal.org/agenda',
-      'https://www.cirque-royal.org/programmation',
-      'https://www.cirque-royal.org/spectacles',
     ],
   },
   {
@@ -123,14 +104,14 @@ const VENUE_CONFIGS = [
     emoji: '🎸', color: '#8E7DBE', cat: 'Music',
     tags: ['Concert', 'Live Music'],
     defaultTime: '20:00',
-    extraWait: 6000,
+    extraWait: 7000,
     urls: [
+      'https://la-madeleine.be/en/',
+      'https://www.la-madeleine.be/en/',
+      'https://la-madeleine.be/en/agenda',
+      'https://www.la-madeleine.be/en/agenda',
       'https://www.la-madeleine.be',
       'https://la-madeleine.be',
-      'https://www.la-madeleine.be/agenda',
-      'https://www.la-madeleine.be/programmation',
-      'https://www.la-madeleine.be/spectacles',
-      'https://www.la-madeleine.be/concerts',
     ],
   },
   {
@@ -147,59 +128,6 @@ const VENUE_CONFIGS = [
       'https://www.bozar.be/en/calendar',
       'https://www.bozar.be/en',
       'https://bozar.be/en/calendar',
-    ],
-  },
-  {
-    id: 'rsca',
-    name: 'RSC Anderlecht',
-    addr: 'Avenue Théo Verbeeck 2, 1070 Anderlecht',
-    lat: 50.8343, lng: 4.2985,   // HARDCODED — Lotto Park
-    neighbourhood: 'Anderlecht',
-    emoji: '⚽', color: '#6EC6CA', cat: 'Sports',
-    tags: ['Football', 'Sports', 'Anderlecht'],
-    defaultTime: '18:00',
-    extraWait: 7000,
-    jsHeavy: true,
-    urls: [
-      'https://www.rsca.be/en/matches',
-      'https://www.rsca.be/en/calendar',
-      'https://rsca.be/en/matches',
-      'https://www.rsca.be/en/fixtures',
-      'https://www.rsca.be/en',
-    ],
-  },
-  {
-    id: 'unionsg',
-    name: 'Union Saint-Gilloise',
-    addr: 'Chaussée de Bruxelles 82, 1190 Forest',
-    lat: 50.8176, lng: 4.3297,   // HARDCODED — Stade Joseph Marien, Forest
-    neighbourhood: 'Forest',
-    emoji: '⚽', color: '#F4C87A', cat: 'Sports',
-    tags: ['Football', 'Sports', 'Union'],
-    defaultTime: '18:00',
-    extraWait: 7000,
-    jsHeavy: true,
-    urls: [
-      'https://www.rusg.brussels/en/calendar',
-      'https://www.rusg.brussels/en/tickets',
-      'https://www.rusg.brussels/en/agenda',
-      'https://www.rusg.brussels/en',
-      'https://rusg.brussels/en',
-    ],
-  },
-  {
-    id: 'brussels',
-    name: 'City of Brussels',
-    addr: 'Brussels, Belgium',
-    lat: 50.8503, lng: 4.3517,
-    neighbourhood: 'Centre',
-    emoji: '🏙️', color: '#8E7DBE', cat: 'Culture',
-    tags: ['Brussels', 'Culture', 'City'],
-    defaultTime: '10:00',
-    extraWait: 5000,
-    urls: [
-      'https://www.brussels.be/agenda',
-      'https://brussels.be/agenda',
     ],
   },
 ];
@@ -434,8 +362,24 @@ function saveScraped(events) {
   fs.writeFileSync(SCRAPED_JSON, JSON.stringify(events,null,2),'utf8');
   console.log(`\n✅  Saved ${events.length} events → scraped_events.json`);
 }
-function isDuplicate(existing, title, rawDate) {
-  return existing.some(e => e.title?.toLowerCase()===title?.toLowerCase() && e._rawDate===rawDate);
+// Smart dedup: if same title+date exists, keep whichever version has a price
+// and the longer description. Returns true if a duplicate was found (and merged).
+function smartMerge(existing, incoming) {
+  const idx = existing.findIndex(e =>
+    e.title?.toLowerCase() === incoming.title?.toLowerCase() &&
+    e._rawDate === incoming._rawDate
+  );
+  if (idx === -1) return false;
+  const old = existing[idx];
+  const betterPrice = (incoming.price && !old.price) ? incoming.price : old.price;
+  const betterDesc  = (incoming.desc?.length || 0) > (old.desc?.length || 0) ? incoming.desc : old.desc;
+  if (betterPrice !== old.price || betterDesc !== old.desc) {
+    existing[idx] = { ...old, price: betterPrice, desc: betterDesc };
+    console.log(`  🔄  Upgraded: "${old.title.slice(0,40)}"${betterPrice !== old.price ? ' +price' : ''}${betterDesc !== old.desc ? ' +desc' : ''}`);
+  } else {
+    console.log(`  ⏭   Duplicate (no upgrade): "${old.title.slice(0,40)}"`);
+  }
+  return true;
 }
 function removeExpired(events) {
   const today=new Date(); today.setHours(0,0,0,0);
@@ -566,8 +510,9 @@ async function scrapeVenue(browser, config) {
         // Prefer a scoped container; fall back to body
         const scope = $([
           'main','#content','[role="main"]',
-          '.agenda','.programme','.calendar','.events-list','.event-list',
-          '.event-overview','.listing','.schedule','.matches','.fixtures',
+          '.event-list','.event-items','.event-item',   // C12
+          '.agenda','.programme','.calendar','.events-list',
+          '.event-overview','.listing','.schedule',
         ].join(',')).first();
         const root = scope.length ? scope : $('body');
         const scopeDesc = scope.length
@@ -692,7 +637,7 @@ async function main() {
   const browser = await puppeteer.launch({
     headless: 'new',
     ...(process.env.PUPPETEER_EXECUTABLE_PATH ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH } : {}),
-    args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu'],
+    args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu','--ignore-certificate-errors'],
   });
 
   const results = [];
@@ -729,7 +674,7 @@ async function main() {
   let added = 0;
 
   for (const r of raw) {
-    if (isDuplicate(existing, r.title, r._rawDate)) { console.log(`  ⏭   Duplicate: "${r.title}"`); continue; }
+    if (smartMerge(existing, r)) continue;
 
     // Coords are already hardcoded in VENUE_CONFIGS — only geocode if somehow missing
     if (!r.lat || !r.lng) {
