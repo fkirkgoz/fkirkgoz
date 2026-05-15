@@ -259,14 +259,30 @@ async function deepFetchPrices(page, events) {
       await page.goto(ev.sourceURL, { waitUntil: 'domcontentloaded', timeout: 12000 });
       await sleep(1200);
 
-      // Look for an external ticket link (Paylogic, Ticketmaster, dice.fm, etc.)
+      // Look for an external ticket link — priority: PRESALE button > ticket host URL > text match
+      // Always skip customerservice links (Paylogic support, not the purchase page)
       const ticketUrl = await page.evaluate(() => {
         const TICKET_HOSTS = ['paylogic','ticketmaster','ticketswap','dice.fm','eventbrite','payconiq','shoobs','koobit','ticketweb'];
-        for (const a of document.querySelectorAll('a[href]')) {
+        const links = [...document.querySelectorAll('a[href]')];
+        const skip = a => (a.href || '').toLowerCase().includes('customerservice');
+
+        // 1st priority: explicit PRESALE / PRESALE button text (C12 style "● PRESALE ●")
+        for (const a of links) {
+          if (skip(a)) continue;
+          if (/presale/i.test(a.textContent)) return a.href;
+        }
+        // 2nd priority: known ticket platform domain in URL
+        for (const a of links) {
+          if (skip(a)) continue;
+          const href = (a.href || '').toLowerCase();
+          if (TICKET_HOSTS.some(h => href.includes(h))) return a.href;
+        }
+        // 3rd priority: ticket/buy/koop text on external link
+        for (const a of links) {
+          if (skip(a)) continue;
           const href = (a.href || '').toLowerCase();
           const text = (a.textContent || '').toLowerCase();
-          if (TICKET_HOSTS.some(h => href.includes(h))) return a.href;
-          if ((text.includes('ticket') || text.includes('presale') || text.includes('buy') || text.includes('koop')) &&
+          if ((text.includes('ticket') || text.includes('buy') || text.includes('koop')) &&
               href.startsWith('http') && !href.includes(location.hostname)) return a.href;
         }
         return null;
@@ -339,7 +355,10 @@ function parseRawDate(raw) {
   const tLow = t.toLowerCase();
   for (const [fr,en] of Object.entries(MONTH_FR)) t = tLow.includes(fr) ? t.replace(new RegExp(fr,'i'), en) : t;
   for (const [nl,en] of Object.entries(MONTH_NL)) t = tLow.includes(nl) ? t.replace(new RegExp(nl,'i'), en) : t;
-  let m = t.match(/(\d{1,2})[\/\.\-](\d{1,2})[\/\.\-](\d{2,4})/);
+  // "13 . 05 . 2026" (Fuse) and "15.05.26" (La Madeleine compact) — dots with optional spaces
+  let m = t.match(/(\d{1,2})\s*\.\s*(\d{1,2})\s*\.\s*(\d{2,4})/);
+  if (m) { const y=m[3].length===2?`20${m[3]}`:m[3]; const d=new Date(`${y}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`); if(!isNaN(d.getTime())&&parseInt(y)>2020)return d.toISOString().split('T')[0]; }
+  m = t.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/);
   if (m) { const y=m[3].length===2?`20${m[3]}`:m[3]; const d=new Date(`${y}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`); if(!isNaN(d.getTime()))return d.toISOString().split('T')[0]; }
   m = t.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
   if (m) { const d=new Date(`${m[2]} ${m[1]}, ${m[3]}`); if(!isNaN(d.getTime()))return d.toISOString().split('T')[0]; }
@@ -359,6 +378,7 @@ function scanTextForDate(text) {
   const patterns = [
     /\d{4}-\d{2}-\d{2}/,
     /\d{1,2}\/\d{1,2}\/\d{4}/,
+    /\d{1,2}\s*\.\s*\d{1,2}\s*\.\s*\d{2,4}/,   // "13 . 05 . 2026" Fuse / "15.05.26" La Madeleine
     new RegExp(`(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\\w*\\s+\\d{1,2}\\s+(?:${MS})\\w*`, 'i'),
     new RegExp(`\\d{1,2}\\s+(?:${MF})\\s+\\d{4}`, 'i'),
     new RegExp(`(?:${MF})\\s+\\d{1,2},?\\s+\\d{4}`, 'i'),
@@ -440,10 +460,21 @@ function saveScraped(events) {
 // Smart dedup: if same title+date exists, keep whichever version has a price
 // and the longer description. Returns true if a duplicate was found (and merged).
 function smartMerge(existing, incoming) {
-  const idx = existing.findIndex(e =>
+  // Exact title+date match
+  let idx = existing.findIndex(e =>
     e.title?.toLowerCase() === incoming.title?.toLowerCase() &&
     e._rawDate === incoming._rawDate
   );
+  // C12/Fuse: same venue+date but title may differ across Paylogic vs own site
+  if (idx === -1) {
+    const v = (incoming.venue || '').toLowerCase();
+    if (['c12', 'fuse'].some(n => v.includes(n))) {
+      idx = existing.findIndex(e =>
+        (e.venue || '').toLowerCase() === v &&
+        e._rawDate === incoming._rawDate
+      );
+    }
+  }
   if (idx === -1) return false;
   const old = existing[idx];
   const betterPrice = (incoming.price && !old.price) ? incoming.price : old.price;
@@ -463,6 +494,33 @@ function removeExpired(events) {
   if(n) console.log(`🗑️   Removed ${n} expired event(s)`);
   return kept;
 }
+// For C12 and Fuse, one event per date is the rule.
+// Cross-run scrapes from Paylogic vs own-site produce different titles for the same night.
+// This collapses them, keeping the version with the longer title and any price data.
+function deduplicateExisting(events) {
+  const NIGHTLIFE = ['c12', 'fuse'];
+  const seen = {};
+  const result = [];
+  let removed = 0;
+  for (const e of events) {
+    const v = (e.venue || '').toLowerCase();
+    if (NIGHTLIFE.some(n => v.includes(n))) {
+      const key = `${v}|${e._rawDate || ''}`;
+      if (key in seen) {
+        const kept = seen[key];
+        if (e.price && !kept.price) kept.price = e.price;
+        if ((e.title?.length || 0) > (kept.title?.length || 0)) kept.title = e.title;
+        removed++;
+        continue;
+      }
+      seen[key] = e;
+    }
+    result.push(e);
+  }
+  if (removed) console.log(`🔧  Removed ${removed} venue+date duplicate(s) (C12/Fuse multi-source)`);
+  return result;
+}
+
 function nextId(existing) { return Math.max(existing.reduce((m,e)=>Math.max(m,e.id||0),0)+1, SCRAPED_ID_MIN); }
 
 // ── JSON-LD extraction ────────────────────────────────────────────────────────
@@ -577,6 +635,55 @@ async function scrapeVenue(browser, config) {
             ...(externalVenueHint ? { externalVenueHint } : {}) });
         }
         console.log(`    → ${events.length} valid from JSON-LD`);
+      }
+
+      // ── Strategy 1.5: La Madeleine grid cards (.flex-col.border-2) ──
+      if (config.id === 'laMadeleine' && events.length === 0) {
+        try {
+          await page.waitForSelector('.flex-col.border-2', { timeout: 8000 });
+          console.log('    La Madeleine: found .flex-col.border-2 grid cards');
+          const cards = await page.evaluate(() =>
+            [...document.querySelectorAll('.flex-col.border-2')].map(card => {
+              const lines = (card.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
+              // Date: first line matching DD.MM.YY or DD.MM.YYYY
+              const dateStr = lines.find(l => /\d{1,2}\s*\.\s*\d{2}\s*\.\s*\d{2,4}/.test(l)) || '';
+              // Title: explicit heading element, else first non-date non-button line
+              const heading = card.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
+              const title = (
+                heading?.innerText?.trim() ||
+                lines.find(l => l.length > 4 && !/\d{2}\.\d{2}/.test(l) && !/^(tickets?|buy|info)$/i.test(l)) ||
+                ''
+              ).trim();
+              // TICKETS link
+              const ticketA = [...card.querySelectorAll('a')].find(a => /tickets?/i.test(a.textContent));
+              const link = ticketA?.href || [...card.querySelectorAll('a')].map(a => a.href).find(Boolean) || '';
+              return { dateStr, title, link };
+            })
+          );
+          const baseOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || '';
+          for (const { dateStr, title, link } of cards) {
+            if (!isValidTitle(title)) continue;
+            const rawDate = parseRawDate(dateStr);
+            if (!rawDate) { console.log(`    skip "${title.slice(0,30)}" — date not parsed (raw:"${dateStr}")`); continue; }
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+            const url = link.startsWith('http') ? link : link.startsWith('/') ? `${baseOrigin}${link}` : link;
+            const cls = classifyForVenue(title, config);
+            events.push({
+              _rawDate: rawDate, title, venue: config.name, addr: config.addr,
+              date: relDate, time: config.defaultTime,
+              startH: parseInt(config.defaultTime, 10) || 20,
+              endH: (parseInt(config.defaultTime, 10) || 20) + 3,
+              price: '', emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
+              source: config.name, sourceURL: url, ticket: url,
+              desc: `${title} at ${config.name}.`,
+              neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
+            });
+          }
+          console.log(`    La Madeleine grid → ${events.length} event(s) parsed`);
+        } catch (err) {
+          console.log(`    La Madeleine grid selector failed: ${err.message.slice(0, 60)}`);
+        }
       }
 
       // ── Strategy 2: HTML — heading + date presence filter ──
@@ -698,14 +805,26 @@ async function scrapeVenue(browser, config) {
     console.warn(`    ⚠️  ${config.name} threw: ${failReason}`);
   }
 
+  // ── Within-venue dedup: strict title+date (catches same event scraped twice in one run) ──
+  const seenInScrape = new Set();
+  const uniqueEvents = events.filter(ev => {
+    const key = ev.title.toLowerCase() + '|' + ev._rawDate;
+    if (seenInScrape.has(key)) return false;
+    seenInScrape.add(key);
+    return true;
+  });
+  if (uniqueEvents.length < events.length) {
+    console.log(`  ✂️  Within-scrape: removed ${events.length - uniqueEvents.length} duplicate(s) for ${config.name}`);
+  }
+
   // ── Mandatory per-site result log ──
-  if (events.length > 0) {
-    console.log(`\n✅ Site ${config.name}: [Found ${events.length} events]`);
+  if (uniqueEvents.length > 0) {
+    console.log(`\n✅ Site ${config.name}: [Found ${uniqueEvents.length} events]`);
   } else {
     console.log(`\n❌ Site ${config.name}: [Found 0 events] — ${failReason || 'No matching elements with heading+date'}`);
   }
 
-  return events;
+  return uniqueEvents;
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
@@ -715,6 +834,7 @@ async function main() {
   let existing = loadScraped();
   console.log(`📂  Loaded ${existing.length} existing scraped events`);
   existing = removeExpired(existing);
+  existing = deduplicateExisting(existing);
 
   // Retroactively correct coordinates for Fuse and C12 (no external venue override)
   let coordFixes = 0;
@@ -732,6 +852,28 @@ async function main() {
     return e;
   });
   if (coordFixes) console.log(`📍  Fixed ${coordFixes} event(s) with wrong coordinates (Fuse/C12)`);
+
+  // Retroactively enforce correct emoji/color/cat for all known venues
+  const VENUE_VISUAL_MAP = {
+    'ancienne belgique': { emoji: '🎸', color: '#C77DFF', cat: 'Music' },
+    'le botanique':      { emoji: '🎸', color: '#B8E5C0', cat: 'Music' },
+    'fuse':              { emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife' },
+    'c12':               { emoji: '💃', color: '#6C63FF', cat: 'Nightlife' },
+    'la madeleine':      { emoji: '🎸', color: '#8E7DBE', cat: 'Music' },
+    'bozar':             { emoji: '🏛️', color: '#E76F51', cat: 'Culture' },
+  };
+  let emojiFixed = 0;
+  existing = existing.map(e => {
+    const v = (e.venue || '').toLowerCase();
+    for (const [key, vis] of Object.entries(VENUE_VISUAL_MAP)) {
+      if (v.includes(key) && (e.emoji !== vis.emoji || e.cat !== vis.cat)) {
+        emojiFixed++;
+        return { ...e, emoji: vis.emoji, color: vis.color, cat: vis.cat };
+      }
+    }
+    return e;
+  });
+  if (emojiFixed) console.log(`🎨  Fixed ${emojiFixed} event(s) with wrong emoji/cat`);
 
   const browser = await puppeteer.launch({
     headless: 'new',
