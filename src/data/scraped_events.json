@@ -1,1 +1,583 @@
-[]
+[
+  {
+    "id": 100,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Punk 50: Habenmeuf, Flux, Cimitero, Blitzer + Cancelled",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "TBA",
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 0,
+    "tags": [
+      "Rock",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/punk-50-habenmeuf-flux-cimitero-blitzer/a10Qw00000FN95BIAT",
+    "ticket": "https://www.abconcerts.be/en/agenda/punk-50-habenmeuf-flux-cimitero-blitzer/a10Qw00000FN95BIAT",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 109,
+    "neighbourhood": "Centre",
+    "desc": "4 bands, 1 (female) fist!",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest253",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest918",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest317",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest953",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest574",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "First time at this venue!",
+        "time": "12:12 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:46 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:12 PM"
+      }
+    ],
+    "_rawDate": "2026-05-19"
+  },
+  {
+    "id": 101,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Hommage à Éliane Radigue: artist talk, screening & live set",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "TBA",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/hommage-a-eliane-radigue-artist-talk-screening-live-set/a10Qw00000HddqvIAB",
+    "ticket": "https://www.abconcerts.be/en/agenda/hommage-a-eliane-radigue-artist-talk-screening-live-set/a10Qw00000HddqvIAB",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 143,
+    "neighbourhood": "Centre",
+    "desc": "An evening focusing on the work of electro-acoustic music’s grande dame",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest894",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest610",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest578",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest173",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest775",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Grab tickets fast, selling out!",
+        "time": "9:57 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "11:00 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "6:19 AM"
+      }
+    ],
+    "_rawDate": "2026-05-19"
+  },
+  {
+    "id": 102,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Group Atelier w/Paulo Rietjens (ASTROFISIKS)",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Free",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/group-atelier-wpaulo-rietjens-astrofisiks/a10Qw00000HW5cHIAT",
+    "ticket": "https://www.abconcerts.be/en/agenda/group-atelier-wpaulo-rietjens-astrofisiks/a10Qw00000HW5cHIAT",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 222,
+    "neighbourhood": "Centre",
+    "desc": "FRONTALstudio",
+    "attendees": [
+      {
+        "n": "Guest232",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest056",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest863",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest802",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest881",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Already got my ticket! 👋",
+        "time": "12:08 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "3:46 PM"
+      }
+    ],
+    "_rawDate": "2026-05-20"
+  },
+  {
+    "id": 103,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Puggy + Pia",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "TBA",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/puggy/a10Qw00000FZ37GIAT",
+    "ticket": "https://www.abconcerts.be/en/agenda/puggy/a10Qw00000FZ37GIAT",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 41,
+    "neighbourhood": "Centre",
+    "desc": "Puggy returns to the AB!",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest487",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest062",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest332",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Brussels never disappoints ❤️",
+        "time": "8:53 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "3:59 AM"
+      }
+    ],
+    "_rawDate": "2026-05-20"
+  },
+  {
+    "id": 104,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "AB x VK: La Dame Blanche + Erik Fernandez",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "TBA",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/ab-x-vk-la-dame-blanche/a10Qw00000I3qe1IAB",
+    "ticket": "https://www.abconcerts.be/en/agenda/ab-x-vk-la-dame-blanche/a10Qw00000I3qe1IAB",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 81,
+    "neighbourhood": "Centre",
+    "desc": "VK",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest325",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest019",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Already got my ticket! 👋",
+        "time": "10:34 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "2:52 PM"
+      }
+    ],
+    "_rawDate": "2026-05-21"
+  },
+  {
+    "id": 105,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Workshop Polyfonic singing with N'Faly Kouyaté",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "TBA",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/workshop-polyfonic-singing-with-nfaly-kouyate/a10Qw00000Hzp5RIAR",
+    "ticket": "https://www.abconcerts.be/en/agenda/workshop-polyfonic-singing-with-nfaly-kouyate/a10Qw00000Hzp5RIAR",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 142,
+    "neighbourhood": "Centre",
+    "desc": "An immersive crash course in West African polyphony",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest114",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest669",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "3:07 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "This is going to be AMAZING",
+        "time": "10:35 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:06 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 106,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "SIENNA SPIRO + DEBBIE",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "TBA",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/sienna-spiro/a10Qw00000FcvizIAB",
+    "ticket": "https://www.abconcerts.be/en/agenda/sienna-spiro/a10Qw00000FcvizIAB",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 155,
+    "neighbourhood": "Centre",
+    "desc": "The Visitor Tour",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest451",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest111",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest787",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest590",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest770",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest724",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "9:08 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "1:41 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 107,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Sunday Morning Concert: Laura De Jongh",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "TBA",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "AB",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/sunday-morning-concert-laura-de-jongh/a10Qw00000GZxiLIAT",
+    "ticket": "https://www.abconcerts.be/en/agenda/sunday-morning-concert-laura-de-jongh/a10Qw00000GZxiLIAT",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 261,
+    "neighbourhood": "Centre",
+    "desc": "Thurston Moore’s favourite artist in 2025",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest515",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest229",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest989",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest489",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "3:37 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "1:23 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "9:08 PM"
+      }
+    ],
+    "_rawDate": "2026-05-24"
+  }
+]
