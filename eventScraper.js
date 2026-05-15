@@ -222,13 +222,41 @@ async function deepFetchPrices(page, events) {
     try {
       await page.goto(ev.sourceURL, { waitUntil: 'domcontentloaded', timeout: 12000 });
       await sleep(1200);
-      const text = await page.evaluate(() => document.body?.innerText || '');
+
+      // Look for an external ticket link (Paylogic, Ticketmaster, dice.fm, etc.)
+      const ticketUrl = await page.evaluate(() => {
+        const TICKET_HOSTS = ['paylogic','ticketmaster','ticketswap','dice.fm','eventbrite','payconiq','shoobs','koobit','ticketweb'];
+        for (const a of document.querySelectorAll('a[href]')) {
+          const href = (a.href || '').toLowerCase();
+          const text = (a.textContent || '').toLowerCase();
+          if (TICKET_HOSTS.some(h => href.includes(h))) return a.href;
+          if ((text.includes('ticket') || text.includes('buy') || text.includes('koop')) &&
+              href.startsWith('http') && !href.includes(location.hostname)) return a.href;
+        }
+        return null;
+      });
+
+      let text = await page.evaluate(() => document.body?.innerText || '');
+
+      // Follow the ticket link if it points to a different domain
+      if (ticketUrl) {
+        try {
+          const currentHost = new URL(ev.sourceURL).hostname;
+          if (!ticketUrl.includes(currentHost)) {
+            console.log(`      🎫 Following ticket link: ${ticketUrl.slice(0, 70)}`);
+            await page.goto(ticketUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
+            await sleep(1000);
+            text = await page.evaluate(() => document.body?.innerText || '');
+          }
+        } catch { /* keep text from detail page */ }
+      }
+
       const prices = extractAllPrices(text);
       if (prices.length > 0) {
         ev.price = formatPrice(prices);
         console.log(`      ✓ "${ev.title.slice(0, 30)}": ${ev.price}`);
       } else {
-        console.log(`      — "${ev.title.slice(0, 30)}": no € found on detail page`);
+        console.log(`      — "${ev.title.slice(0, 30)}": no € found`);
       }
     } catch (err) {
       console.log(`      ✗ "${ev.title?.slice(0, 25)}": ${err.message.slice(0, 60)}`);
@@ -260,6 +288,13 @@ function toRelativeDate(iso) {
 function parseRawDate(raw) {
   if (!raw) return null;
   let t = (raw || '').replace(/\s+/g,' ').trim();
+
+  // Strip date ranges before parsing:
+  //   "May 16 – 17, 2026"  → "May 16, 2026"
+  //   "16 – 17 May 2026"   → "16 May 2026"
+  //   "16–18 June 2026"    → "16 June 2026"
+  t = t.replace(/([A-Za-z]+\s+\d{1,2})\s*[–—-]\s*\d{1,2}(,?\s*\d{4})/i, '$1$2');
+  t = t.replace(/(\d{1,2})\s*[–—]\s*\d{1,2}(\s+[A-Za-z])/,               '$1$2');
   if (/^\d{4}-\d{2}-\d{2}/.test(t)) { const d=new Date(t); if(!isNaN(d.getTime())&&d.getFullYear()>2020)return t.slice(0,10); }
   const tLow = t.toLowerCase();
   for (const [fr,en] of Object.entries(MONTH_FR)) t = tLow.includes(fr) ? t.replace(new RegExp(fr,'i'), en) : t;
@@ -634,6 +669,18 @@ async function main() {
   console.log(`📂  Loaded ${existing.length} existing scraped events`);
   existing = removeExpired(existing);
 
+  // Retroactively fix any Fuse events that have wrong coordinates
+  let fuseFixes = 0;
+  existing = existing.map(e => {
+    if (e.venue?.toLowerCase().includes('fuse') &&
+        (e.lat !== 50.8365 || e.lng !== 4.3435)) {
+      fuseFixes++;
+      return { ...e, lat: 50.8365, lng: 4.3435, addr: 'Rue Blaes 208, 1000 Brussels' };
+    }
+    return e;
+  });
+  if (fuseFixes) console.log(`📍  Fixed ${fuseFixes} Fuse event(s) with wrong coordinates`);
+
   const browser = await puppeteer.launch({
     headless: 'new',
     ...(process.env.PUPPETEER_EXECUTABLE_PATH ? { executablePath: process.env.PUPPETEER_EXECUTABLE_PATH } : {}),
@@ -668,6 +715,11 @@ async function main() {
   }
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 
+  // Explicit per-venue log so C12 date fix is verifiable
+  for (const r of results) {
+    if (r.name === 'C12') console.log(`💃 C12: [${r.count} events added]`);
+  }
+
   console.log(`📡  Processing ${raw.length} scraped candidates…`);
 
   let idCounter = nextId(existing);
@@ -676,7 +728,14 @@ async function main() {
   for (const r of raw) {
     if (smartMerge(existing, r)) continue;
 
-    // Coords are already hardcoded in VENUE_CONFIGS — only geocode if somehow missing
+    // Zero-tolerance Fuse location — never allow geocoder or any other value
+    if (r.venue?.toLowerCase().includes('fuse')) {
+      r.lat  = 50.8365;
+      r.lng  = 4.3435;
+      r.addr = 'Rue Blaes 208, 1000 Brussels';
+    }
+
+    // Coords are hardcoded in VENUE_CONFIGS — only geocode if somehow still missing
     if (!r.lat || !r.lng) {
       process.stdout.write(`  📍  Geocoding "${r.venue}"… `);
       const coords = await geocode(r.venue);
