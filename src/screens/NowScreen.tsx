@@ -22,10 +22,11 @@ export default function NowScreen({ onEventPress, T }: Props) {
     return () => clearInterval(id);
   }, []);
 
-  // Demo mocked at 21:12 so "Grand Place Light Show" is shown as happening
-  const curH = 21.2;
-  const happening    = EVENTS.filter(e => e.startH !== undefined && curH >= e.startH && curH < e.endH);
-  const startingSoon = EVENTS.filter(e => e.startH !== undefined && curH < e.startH && e.startH - curH <= 1);
+  // Only show events that are happening today or are ongoing — no future-date noise
+  const todayEvents  = EVENTS.filter(e => e.date === 'Tonight' || e.date === 'Ongoing');
+  const curH = 21.2; // demo time; real clock is displayed but filtering uses startH
+  const happening    = todayEvents.filter(e => e.startH !== undefined && curH >= e.startH && curH < e.endH);
+  const startingSoon = todayEvents.filter(e => e.startH !== undefined && curH < e.startH && e.startH - curH <= 1);
 
   const hh = String(Math.floor(secs / 3600) % 24).padStart(2, '0');
   const mm = String(Math.floor((secs % 3600) / 60)).padStart(2, '0');
@@ -40,7 +41,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
           <Text style={styles.liveTxt}>LIVE NOW</Text>
         </View>
         <Text style={styles.title}>Happening in{'\n'}<Text style={{ color: C.teal }}>Brussels right now ⚡</Text></Text>
-        <Text style={styles.demoNote}>Time-accurate · Demo mocked at 21:12</Text>
+        <Text style={styles.demoNote}>Tonight &amp; Ongoing only · Demo mocked at 21:12</Text>
       </View>
 
       {/* Live clock */}

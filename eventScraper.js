@@ -77,8 +77,8 @@ const VENUE_CONFIGS = [
   {
     id: 'c12',
     name: 'C12',
-    addr: 'Rue du Fossé aux Loups 43, 1000 Brussels',
-    lat: 50.8500, lng: 4.3539,
+    addr: 'Rue du Marché aux Herbes 116, 1000 Brussels',
+    lat: 50.8462, lng: 4.3556,   // HARDCODED — Rue du Marché aux Herbes 116
     neighbourhood: 'Centre',
     emoji: '💃', color: '#6C63FF', cat: 'Nightlife',
     tags: ['Electronic', 'Art', 'Nightlife'],
@@ -164,6 +164,29 @@ function classifyForVenue(text, config) {
   return cls.emoji === DEFAULT_CLASS.emoji
     ? { emoji: config.emoji, color: config.color, cat: config.cat, tags: config.tags }
     : cls;
+}
+
+// ── Smart venue detection ─────────────────────────────────────────────────────
+// For C12 and Fuse events held at external Brussels locations, we geocode the
+// actual venue instead of pinning to the club's home address.
+const EXTERNAL_VENUE_PATTERNS = [
+  { re: /gare\s+maritime/i,                        name: 'Gare Maritime Brussels'        },
+  { re: /circle\s*park|cercle\s*park/i,            name: 'Circle Park Brussels'          },
+  { re: /brussels\s*expo|expo\s*brussels/i,        name: 'Brussels Expo'                 },
+  { re: /palais\s*12/i,                            name: 'Palais 12 Brussels'            },
+  { re: /wolvendael/i,                             name: 'Wolvendael Park Brussels'      },
+  { re: /forest\s+national/i,                      name: 'Forest National Brussels'      },
+  { re: /tour\s*(?:&|et|and)\s*taxis/i,           name: 'Tour et Taxis Brussels'        },
+  { re: /bois\s+de\s+la\s+cambre|ter\s+kameren/i, name: 'Bois de la Cambre Brussels'    },
+  { re: /stade\s+roi\s+baudouin/i,                 name: 'Stade Roi Baudouin Brussels'   },
+  { re: /atomium/i,                                name: 'Atomium Brussels'              },
+];
+
+function detectExternalVenue(text) {
+  for (const { re, name } of EXTERNAL_VENUE_PATTERNS) {
+    if (re.test(text || '')) return name;
+  }
+  return null;
 }
 
 // ── Price logic ───────────────────────────────────────────────────────────────
@@ -525,13 +548,16 @@ async function scrapeVenue(browser, config) {
           const price   = formatPrice([...offerPs, ...descPs]);
           const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : config.defaultTime;
           const startH  = parseInt((timeStr || config.defaultTime).split(':')[0], 10) || 20;
-          const cls     = classifyForVenue(title+' '+desc, config);
+          const cls              = classifyForVenue(title+' '+desc, config);
+          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
+            ? detectExternalVenue(title+' '+desc+' '+(ev.location?.name||'')) : null;
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
             date:relDate, time:timeStr||config.defaultTime, startH, endH:startH+3,
             price, emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
             source:config.name, sourceURL:url, ticket:url,
             desc:desc||`${title} at ${config.name}.`,
-            neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng });
+            neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng,
+            ...(externalVenueHint ? { externalVenueHint } : {}) });
         }
         console.log(`    → ${events.length} valid from JSON-LD`);
       }
@@ -545,7 +571,8 @@ async function scrapeVenue(browser, config) {
         // Prefer a scoped container; fall back to body
         const scope = $([
           'main','#content','[role="main"]',
-          '.event-list','.event-items','.event-item',   // C12
+          '.event-list','.event-items','.event-item',        // C12
+          '.event-card','.event-cards',                      // La Madeleine / generic
           '.agenda','.programme','.calendar','.events-list',
           '.event-overview','.listing','.schedule',
         ].join(',')).first();
@@ -561,7 +588,7 @@ async function scrapeVenue(browser, config) {
 
         // Wide net: any container that has both a heading and a date
         const candidates = root.find([
-          'article',
+          'article','.event-card','[class*="event-card"]',
           '.card','[class*="card"]',
           '[class*="event"]','[class*="show"]','[class*="concert"]',
           '[class*="agenda"]','[class*="programme"]','[class*="listing"]',
@@ -631,13 +658,16 @@ async function scrapeVenue(browser, config) {
           const price     = formatPrice(allPrices);
           const { time, startH, endH } = parseTime(timeText, config.defaultTime);
           const cls = classifyForVenue(title+' '+desc, config);
+          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
+            ? detectExternalVenue(title+' '+desc) : null;
 
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
             date:relDate, time, startH, endH, price,
             emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
             source:config.name, sourceURL:url, ticket:url,
             desc:desc||`${title} at ${config.name}.`,
-            neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng });
+            neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng,
+            ...(externalVenueHint ? { externalVenueHint } : {}) });
         });
       }
 
@@ -669,10 +699,10 @@ async function main() {
   console.log(`📂  Loaded ${existing.length} existing scraped events`);
   existing = removeExpired(existing);
 
-  // Retroactively fix any Fuse events that have wrong coordinates
+  // Retroactively fix any Fuse home-venue events that drifted to wrong coordinates
   let fuseFixes = 0;
   existing = existing.map(e => {
-    if (e.venue?.toLowerCase().includes('fuse') &&
+    if (e.venue?.toLowerCase().includes('fuse') && !e.externalVenueHint &&
         (e.lat !== 50.8365 || e.lng !== 4.3435)) {
       fuseFixes++;
       return { ...e, lat: 50.8365, lng: 4.3435, addr: 'Rue Blaes 208, 1000 Brussels' };
@@ -728,15 +758,18 @@ async function main() {
   for (const r of raw) {
     if (smartMerge(existing, r)) continue;
 
-    // Zero-tolerance Fuse location — never allow geocoder or any other value
-    if (r.venue?.toLowerCase().includes('fuse')) {
-      r.lat  = 50.8365;
-      r.lng  = 4.3435;
+    // Smart venue override: external location mentioned in event text takes priority
+    if (r.externalVenueHint) {
+      process.stdout.write(`  🗺️  External venue "${r.externalVenueHint}"… `);
+      const coords = await geocode(r.externalVenueHint);
+      r.lat = coords.lat; r.lng = coords.lng; r.addr = r.externalVenueHint;
+      console.log(`${r.lat.toFixed(4)}, ${r.lng.toFixed(4)}`);
+      await sleep(GEOCODE_DELAY);
+    } else if (r.venue?.toLowerCase().includes('fuse')) {
+      // Zero-tolerance Fuse home location when no external venue mentioned
+      r.lat = 50.8365; r.lng = 4.3435;
       r.addr = 'Rue Blaes 208, 1000 Brussels';
-    }
-
-    // Coords are hardcoded in VENUE_CONFIGS — only geocode if somehow still missing
-    if (!r.lat || !r.lng) {
+    } else if (!r.lat || !r.lng) {
       process.stdout.write(`  📍  Geocoding "${r.venue}"… `);
       const coords = await geocode(r.venue);
       r.lat = coords.lat; r.lng = coords.lng;
