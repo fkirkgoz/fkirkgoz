@@ -235,10 +235,13 @@ function extractPriceFromOffers(offers) {
 }
 
 // Always outputs "From €X" for paid events — never bare "€X".
+// €1.25 is Paylogic's booking fee — filtered universally so it never appears as a ticket price.
 function formatPrice(prices) {
   if (!prices || prices.length === 0) return '';
-  const hasFree = prices.includes(0);
-  const paid    = prices.filter(p => p > 0);
+  const clean  = prices.filter(p => p !== 1.25);   // drop Paylogic booking fee
+  if (!clean.length) return '';
+  const hasFree = clean.includes(0);
+  const paid    = clean.filter(p => p > 0);
   if (hasFree && paid.length === 0) return 'Free';
   if (paid.length === 0) return '';
   const min = Math.min(...paid);
@@ -261,23 +264,25 @@ async function deepFetchPrices(page, events) {
 
       // Look for an external ticket link — priority: PRESALE button > ticket host URL > text match
       // Always skip customerservice links (Paylogic support, not the purchase page)
-      const ticketUrl = await page.evaluate(() => {
-        const TICKET_HOSTS = ['paylogic','ticketmaster','ticketswap','dice.fm','eventbrite','payconiq','shoobs','koobit','ticketweb'];
+      const TICKET_HOSTS = ['paylogic','shop.c12space.com','shop.fuse.be','ticketmaster',
+        'ticketswap','dice.fm','eventbrite','payconiq','shoobs','koobit','ticketweb','ticketlive'];
+      const SLOW_HOSTS   = ['paylogic','ticketlive']; // need networkidle2 + long wait
+
+      const ticketUrl = await page.evaluate((hosts) => {
         const links = [...document.querySelectorAll('a[href]')];
         const skip = a => (a.href || '').toLowerCase().includes('customerservice');
-
-        // 1st priority: explicit PRESALE / PRESALE button text (C12 style "● PRESALE ●")
+        // 1st: exact "● PRESALE ●" or any presale text (C12)
         for (const a of links) {
           if (skip(a)) continue;
           if (/presale/i.test(a.textContent)) return a.href;
         }
-        // 2nd priority: known ticket platform domain in URL
+        // 2nd: known ticket platform in URL
         for (const a of links) {
           if (skip(a)) continue;
           const href = (a.href || '').toLowerCase();
-          if (TICKET_HOSTS.some(h => href.includes(h))) return a.href;
+          if (hosts.some(h => href.includes(h))) return a.href;
         }
-        // 3rd priority: ticket/buy/koop text on external link
+        // 3rd: buy/ticket/koop text on external link
         for (const a of links) {
           if (skip(a)) continue;
           const href = (a.href || '').toLowerCase();
@@ -286,21 +291,53 @@ async function deepFetchPrices(page, events) {
               href.startsWith('http') && !href.includes(location.hostname)) return a.href;
         }
         return null;
-      });
+      }, TICKET_HOSTS);
 
       let text = await page.evaluate(() => document.body?.innerText || '');
       let onTicketPage = false;
 
-      // Follow ticket link to external shop (Paylogic, Eventix, Ticketmaster, etc.)
       if (ticketUrl) {
         try {
           const currentHost = new URL(ev.sourceURL).hostname;
           if (!ticketUrl.includes(currentHost)) {
-            console.log(`      🎫 Following ticket link: ${ticketUrl.slice(0, 70)}`);
-            await page.goto(ticketUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
-            await sleep(5000);  // wait for full price list to render (avoids grabbing service fee only)
-            text = await page.evaluate(() => document.body?.innerText || '');
-            onTicketPage = true;
+            console.log(`      🎫 Following: ${ticketUrl.slice(0, 70)}`);
+            const isSlow = SLOW_HOSTS.some(h => ticketUrl.toLowerCase().includes(h));
+            await page.goto(ticketUrl, {
+              waitUntil: isSlow ? 'networkidle2' : 'domcontentloaded',
+              timeout: 18000,
+            });
+            await sleep(isSlow ? 5000 : 1500);
+
+            // Detect landing on a generic homepage (Paylogic redirect failure)
+            const finalUrl = page.url();
+            const isGeneric = /^https?:\/\/[^/]+\/?(?:[#?].*)?$/.test(finalUrl) ||
+              finalUrl.toLowerCase().includes('customerservice');
+
+            if (isGeneric) {
+              // Redirect collapsed to homepage — search source page for direct shop link
+              console.log(`      ↩️  Generic redirect (${finalUrl.slice(0, 45)}), scanning source…`);
+              await page.goto(ev.sourceURL, { waitUntil: 'domcontentloaded', timeout: 10000 });
+              await sleep(2000);
+              const shopUrl = await page.evaluate(() => {
+                const SHOPS = ['shop.c12space.com','shop.fuse.be','ticketlive.be'];
+                for (const a of document.querySelectorAll('a[href]')) {
+                  if (SHOPS.some(s => (a.href || '').includes(s))) return a.href;
+                }
+                const m = (document.body?.innerText || '').match(/https?:\/\/shop\.[a-z0-9.-]+\/[a-z0-9/_?=&%-]+/i);
+                return m ? m[0] : null;
+              });
+              if (shopUrl) {
+                console.log(`      🔗 Direct shop: ${shopUrl.slice(0, 60)}`);
+                await page.goto(shopUrl, { waitUntil: 'networkidle2', timeout: 18000 });
+                await sleep(5000);
+                text = await page.evaluate(() => document.body?.innerText || '');
+                onTicketPage = true;
+              }
+              // else: stay with text from source page (no onTicketPage flag)
+            } else {
+              text = await page.evaluate(() => document.body?.innerText || '');
+              onTicketPage = true;
+            }
           }
         } catch { /* keep text from detail page */ }
       }
@@ -314,8 +351,11 @@ async function deepFetchPrices(page, events) {
       if (prices.length > 0) {
         ev.price = formatPrice(prices);
         console.log(`      ✓ "${ev.title.slice(0, 30)}": ${ev.price}`);
+      } else if (onTicketPage && /sold[\s-]?out|complet\b|uitverkocht/i.test(text)) {
+        ev.price = 'Sold Out';
+        console.log(`      🚫 "${ev.title.slice(0, 30)}": Sold Out`);
       } else {
-        ev.price = '';   // explicit blank — never guess
+        ev.price = '';
         console.log(`      — "${ev.title.slice(0, 30)}": no price found → blank`);
       }
     } catch (err) {

@@ -82,8 +82,14 @@ export default function EventCard({ event: e, onPress, T, joined }: EventCardPro
                 <Text style={[styles.friendsCount, { color: T.accent }]}>👥 {e.friends}</Text>
               )}
               {!!e.price && (
-                <View style={[styles.priceBadge, { backgroundColor: e.price === 'Free' ? C.green : C.pink }]}>
-                  <Text style={[styles.priceTxt, { color: C.dark }]}>{fmtPrice(e.price)}</Text>
+                <View style={[styles.priceBadge, {
+                  backgroundColor: e.price === 'Free' ? C.green
+                    : e.price === 'Sold Out' ? '#E8294A'
+                    : C.pink,
+                }]}>
+                  <Text style={[styles.priceTxt, { color: e.price === 'Sold Out' ? '#fff' : C.dark }]}>
+                    {fmtPrice(e.price)}
+                  </Text>
                 </View>
               )}
             </View>

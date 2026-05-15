@@ -168,7 +168,11 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
               <View key={i} style={[styles.infoRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
                 <Text style={{ fontSize: 18, marginTop: 1 }}>{ic}</Text>
                 <View>
-                  <Text style={[styles.infoMain, { color: ic === '💶' && e.price === 'Free' ? '#1a7a35' : T.text }]}>{main}</Text>
+                  <Text style={[styles.infoMain, {
+                    color: ic === '💶' && e.price === 'Free' ? '#1a7a35'
+                      : ic === '💶' && e.price === 'Sold Out' ? '#E8294A'
+                      : T.text,
+                  }]}>{main}</Text>
                   {sub && <Text style={[styles.infoSub, { color: T.sub }]}>{sub}</Text>}
                 </View>
               </View>
