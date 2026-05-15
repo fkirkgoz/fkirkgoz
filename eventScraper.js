@@ -3,6 +3,7 @@
  * Randevu Event Scraper — Brussels venue-specific edition
  *
  * Sources: AB · Botanique · Fuse · C12 · Cirque Royal · La Madeleine · Bozar
+ *          RSC Anderlecht · Union Saint-Gilloise · City of Brussels
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -86,11 +87,11 @@ const VENUE_CONFIGS = [
     extraWait: 9000,
     jsHeavy: true,
     urls: [
+      'https://c12space.com/agenda/',
+      'https://c12space.com/agenda',
+      'https://www.c12space.com/agenda',
       'https://c12space.com',
       'https://www.c12space.com',
-      'https://c12space.com/agenda',
-      'https://c12space.com/events',
-      'https://www.c12space.com/agenda',
     ],
   },
   {
@@ -145,6 +146,57 @@ const VENUE_CONFIGS = [
       'https://www.bozar.be/en/calendar',
       'https://www.bozar.be/en',
       'https://bozar.be/en/calendar',
+    ],
+  },
+  {
+    id: 'rsca',
+    name: 'RSC Anderlecht',
+    addr: 'Avenue Théo Verbeeck 2, 1070 Anderlecht',
+    lat: 50.8341, lng: 4.3021,
+    neighbourhood: 'Anderlecht',
+    emoji: '⚽', color: '#6EC6CA', cat: 'Sports',
+    tags: ['Football', 'Sports', 'Anderlecht'],
+    defaultTime: '18:00',
+    extraWait: 6000,
+    urls: [
+      'https://www.rsca.be/en/calendar',
+      'https://www.rsca.be/en/matches',
+      'https://rsca.be/en/calendar',
+      'https://www.rsca.be/en/fixtures',
+      'https://www.rsca.be/en',
+    ],
+  },
+  {
+    id: 'unionsg',
+    name: 'Union Saint-Gilloise',
+    addr: 'Avenue du Stade 2, 1190 Forest',
+    lat: 50.8165, lng: 4.3372,
+    neighbourhood: 'Forest',
+    emoji: '⚽', color: '#F4C87A', cat: 'Sports',
+    tags: ['Football', 'Sports', 'Union'],
+    defaultTime: '18:00',
+    extraWait: 6000,
+    urls: [
+      'https://www.rusg.brussels/en/tickets',
+      'https://www.rusg.brussels/en/agenda',
+      'https://www.rusg.brussels/en/calendar',
+      'https://www.rusg.brussels/en',
+      'https://rusg.brussels/en',
+    ],
+  },
+  {
+    id: 'brussels',
+    name: 'City of Brussels',
+    addr: 'Brussels, Belgium',
+    lat: 50.8503, lng: 4.3517,
+    neighbourhood: 'Centre',
+    emoji: '🏛️', color: '#8E7DBE', cat: 'Culture',
+    tags: ['Brussels', 'Culture', 'City'],
+    defaultTime: '10:00',
+    extraWait: 5000,
+    urls: [
+      'https://www.brussels.be/agenda',
+      'https://brussels.be/agenda',
     ],
   },
 ];
@@ -226,6 +278,29 @@ function formatPrice(prices) {
   return `From €${fmt(min)}`;
 }
 
+// ── Two-step price extraction ─────────────────────────────────────────────────
+// For events that landed with no price, follow their detail URL and look for €
+async function deepFetchPrices(page, events) {
+  const toFetch = events.filter(e => !e.price && e.sourceURL?.startsWith('http')).slice(0, 5);
+  if (toFetch.length === 0) return;
+  console.log(`    💰 Deep-fetching prices for ${toFetch.length} events…`);
+  for (const ev of toFetch) {
+    try {
+      await page.goto(ev.sourceURL, { waitUntil: 'domcontentloaded', timeout: 12000 });
+      await sleep(1500);
+      const text = await page.evaluate(() => document.body?.innerText || '');
+      const prices = extractAllPrices(text);
+      if (prices.length > 0) {
+        ev.price = formatPrice(prices);
+        console.log(`      ✓ "${ev.title.slice(0, 30)}": ${ev.price}`);
+      }
+    } catch (err) {
+      console.log(`      ✗ price fetch failed: ${err.message.slice(0, 50)}`);
+    }
+    await sleep(1000);
+  }
+}
+
 // ── Date helpers ──────────────────────────────────────────────────────────────
 const MONTH_FR = { janvier:'January',février:'February',mars:'March',avril:'April',mai:'May',juin:'June',juillet:'July','août':'August',septembre:'September',octobre:'October',novembre:'November',décembre:'December' };
 const MONTH_NL = { januari:'January',februari:'February',maart:'March',april:'April',mei:'May',juni:'June',juli:'July',augustus:'August',september:'September',oktober:'October',november:'November',december:'December' };
@@ -298,7 +373,7 @@ function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
 function isValidTitle(t) {
   if (!t || t.length < 5 || t.length > 200) return false;
   const skip = [
-    'grand-place','atomium','manneken','mini europe','brussels',
+    'grand-place','atomium','manneken','mini europe',
     'home','search','filter','load more','see all','back to','read more',
     'cookie','privacy','newsletter','login','sign in','menu','close',
     'accept','reject','settings','language','share','buy ticket',
@@ -554,6 +629,9 @@ async function scrapeVenue(browser, config) {
           neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng });
       });
     }
+
+    // Deep-fetch prices for events that still have none
+    await deepFetchPrices(page, events);
 
     await page.close();
   } catch (err) {
