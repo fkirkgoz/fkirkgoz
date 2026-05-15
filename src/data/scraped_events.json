@@ -2882,8 +2882,8 @@
     "source": "Fuse",
     "sourceURL": "https://www.fuse.be/events/fuse-presents-brussels-pride-w-lsdxoxo-nene-h",
     "ticket": "https://www.fuse.be/events/fuse-presents-brussels-pride-w-lsdxoxo-nene-h",
-    "lat": 50.8451,
-    "lng": 4.3506,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "going": 46,
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Brussels Pride w/ LSDXOXO & Nene H at Fuse.",
@@ -2940,8 +2940,8 @@
     "source": "Fuse",
     "sourceURL": "https://www.fuse.be/events/fuse-presents-styxx-w-lacchesi-beau-didier-siren333",
     "ticket": "https://www.fuse.be/events/fuse-presents-styxx-w-lacchesi-beau-didier-siren333",
-    "lat": 50.8451,
-    "lng": 4.3506,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "going": 204,
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: STYXX w/ Lacchesi, Beau Didier & Siren333 at Fuse.",
@@ -2998,8 +2998,8 @@
     "source": "Fuse",
     "sourceURL": "https://www.fuse.be/events/fuse-presents-natalie-robinson-dee-diggs",
     "ticket": "https://www.fuse.be/events/fuse-presents-natalie-robinson-dee-diggs",
-    "lat": 50.8451,
-    "lng": 4.3506,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "going": 35,
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Natalie Robinson & Dee Diggs at Fuse.",
@@ -3086,8 +3086,8 @@
     "source": "Fuse",
     "sourceURL": "https://www.fuse.be/events/fuse-presents-rikhter-all-night-long",
     "ticket": "https://www.fuse.be/events/fuse-presents-rikhter-all-night-long",
-    "lat": 50.8451,
-    "lng": 4.3506,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "going": 274,
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Rikhter (live) (all night long) at Fuse.",
@@ -3144,8 +3144,8 @@
     "source": "Fuse",
     "sourceURL": "https://www.fuse.be/events/fuse-presents-acid-night-w-dr-rubinstein-boston-168-live",
     "ticket": "https://www.fuse.be/events/fuse-presents-acid-night-w-dr-rubinstein-boston-168-live",
-    "lat": 50.8451,
-    "lng": 4.3506,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "going": 175,
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Acid night w/ Dr. Rubinstein & Boston 168 (live) at Fuse.",
@@ -3222,8 +3222,8 @@
     "source": "Fuse",
     "sourceURL": "https://www.fuse.be/events/fuse-presents-acid-arab-lefto-early-bird",
     "ticket": "https://www.fuse.be/events/fuse-presents-acid-arab-lefto-early-bird",
-    "lat": 50.8451,
-    "lng": 4.3506,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "going": 246,
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Acid Arab & Lefto Early Bird at Fuse.",
@@ -3305,8 +3305,8 @@
     "source": "Fuse",
     "sourceURL": "https://www.fuse.be/news/rec-45-w-yazzus-b2b-dj-tool",
     "ticket": "https://www.fuse.be/news/rec-45-w-yazzus-b2b-dj-tool",
-    "lat": 50.8451,
-    "lng": 4.3506,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "going": 111,
     "neighbourhood": "Marolles",
     "desc": "REC 45 w/ Yazzus b2b DJ TOOL at Fuse.",
@@ -3365,5 +3365,530 @@
       }
     ],
     "_rawDate": "2026-08-05"
+  },
+  {
+    "id": 145,
+    "cat": "Nightlife",
+    "date": "Tomorrow",
+    "title": "C12 x Gay Haze 9 HRS Pride w/ Clarisa Kimskii, 131 BOM, Fais Le Beau, Karla Böhm and more",
+    "venue": "C12",
+    "addr": "Rue du Fossé aux Loups 43, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "price": "",
+    "emoji": "💃",
+    "color": "#6C63FF",
+    "friends": 1,
+    "tags": [
+      "Electronic",
+      "Art",
+      "Nightlife"
+    ],
+    "source": "C12",
+    "sourceURL": "https://c12space.com/event/c12-x-gay-haze-9-hrs-pride-w-clarisa-kimskii-131-bom-fais-le-beau-karla-bohm-and-more/",
+    "ticket": "https://c12space.com/event/c12-x-gay-haze-9-hrs-pride-w-clarisa-kimskii-131-bom-fais-le-beau-karla-bohm-and-more/",
+    "lat": 50.85,
+    "lng": 4.3539,
+    "going": 122,
+    "neighbourhood": "Centre",
+    "desc": "C12 x Gay Haze 9 HRS Pride w/ Clarisa Kimskii, 131 BOM, Fais Le Beau, Karla Böhm and more at C12.",
+    "attendees": [
+      {
+        "n": "Guest238",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest583",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest705",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest904",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest501",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "First time at this venue!",
+        "time": "1:21 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Brussels never disappoints ❤️",
+        "time": "5:23 AM"
+      }
+    ],
+    "_rawDate": "2026-05-16"
+  },
+  {
+    "id": 146,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "C12 Nite w/ Schacke, su:zy, Hysope",
+    "venue": "C12",
+    "addr": "Rue du Fossé aux Loups 43, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "price": "",
+    "emoji": "💃",
+    "color": "#6C63FF",
+    "friends": 3,
+    "tags": [
+      "Electronic",
+      "Art",
+      "Nightlife"
+    ],
+    "source": "C12",
+    "sourceURL": "https://c12space.com/event/c12-nite-w-schacke-suzy-hysope/",
+    "ticket": "https://c12space.com/event/c12-nite-w-schacke-suzy-hysope/",
+    "lat": 50.85,
+    "lng": 4.3539,
+    "going": 48,
+    "neighbourhood": "Centre",
+    "desc": "C12 Nite w/ Schacke, su:zy, Hysope at C12.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest264",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest433",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest420",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest985",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "First time at this venue!",
+        "time": "3:07 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Who else is going?? 🙋",
+        "time": "12:03 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 147,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "C12 Nite w/ CCL, Casper, VCR",
+    "venue": "C12",
+    "addr": "Rue du Fossé aux Loups 43, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "price": "",
+    "emoji": "💃",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Electronic",
+      "Art",
+      "Nightlife"
+    ],
+    "source": "C12",
+    "sourceURL": "https://c12space.com/event/c12-nite-w-ccl-casper-vcr/",
+    "ticket": "https://c12space.com/event/c12-nite-w-ccl-casper-vcr/",
+    "lat": 50.85,
+    "lng": 4.3539,
+    "going": 100,
+    "neighbourhood": "Centre",
+    "desc": "C12 Nite w/ CCL, Casper, VCR at C12.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest147",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest636",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest708",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest397",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest954",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "2:01 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Who else is going?? 🙋",
+        "time": "12:27 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Already got my ticket! 👋",
+        "time": "6:37 PM"
+      }
+    ],
+    "_rawDate": "2026-05-29"
+  },
+  {
+    "id": 148,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "C12 Nite w/ DINA, Nefeli, Sookie, STDJ",
+    "venue": "C12",
+    "addr": "Rue du Fossé aux Loups 43, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "price": "",
+    "emoji": "💃",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Electronic",
+      "Art",
+      "Nightlife"
+    ],
+    "source": "C12",
+    "sourceURL": "https://c12space.com/event/c12-nite-w-dina-nefeli-sookie-stdj/",
+    "ticket": "https://c12space.com/event/c12-nite-w-dina-nefeli-sookie-stdj/",
+    "lat": 50.85,
+    "lng": 4.3539,
+    "going": 119,
+    "neighbourhood": "Centre",
+    "desc": "C12 Nite w/ DINA, Nefeli, Sookie, STDJ at C12.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest122",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest872",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "9:15 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "This is going to be AMAZING",
+        "time": "6:33 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "9:04 PM"
+      }
+    ],
+    "_rawDate": "2026-06-06"
+  },
+  {
+    "id": 149,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "C12 Nite w/ D.Tiffany, Spirite, ttyfal",
+    "venue": "C12",
+    "addr": "Rue du Fossé aux Loups 43, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "price": "",
+    "emoji": "💃",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Electronic",
+      "Art",
+      "Nightlife"
+    ],
+    "source": "C12",
+    "sourceURL": "https://c12space.com/event/c12-nite-w-d-tiffany-spirite-ttyfal/",
+    "ticket": "https://c12space.com/event/c12-nite-w-d-tiffany-spirite-ttyfal/",
+    "lat": 50.85,
+    "lng": 4.3539,
+    "going": 226,
+    "neighbourhood": "Centre",
+    "desc": "C12 Nite w/ D.Tiffany, Spirite, ttyfal at C12.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest019",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest028",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest676",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest021",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest359",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest329",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Already got my ticket! 👋",
+        "time": "8:25 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:22 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "7:24 AM"
+      }
+    ],
+    "_rawDate": "2026-06-12"
+  },
+  {
+    "id": 150,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "C12 Nite Curated by Clara D w/ Isabel Soto, Carmelo Ponente, Initial Code & Downside (live)",
+    "venue": "C12",
+    "addr": "Rue du Fossé aux Loups 43, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "price": "",
+    "emoji": "💃",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Electronic",
+      "Art",
+      "Nightlife"
+    ],
+    "source": "C12",
+    "sourceURL": "https://c12space.com/event/c12-nite-curated-by-clara-d-w-carmelo-ponente-isabel-soto-initial-code-downside-live/",
+    "ticket": "https://c12space.com/event/c12-nite-curated-by-clara-d-w-carmelo-ponente-isabel-soto-initial-code-downside-live/",
+    "lat": 50.85,
+    "lng": 4.3539,
+    "going": 51,
+    "neighbourhood": "Centre",
+    "desc": "C12 Nite Curated by Clara D w/ Isabel Soto, Carmelo Ponente, Initial Code & Downside (live) at C12.",
+    "attendees": [
+      {
+        "n": "Guest712",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest321",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "5:56 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Counting down the days 🗓️",
+        "time": "12:26 PM"
+      }
+    ],
+    "_rawDate": "2026-06-13"
+  },
+  {
+    "id": 151,
+    "cat": "Food & Drink",
+    "date": "Ongoing",
+    "title": "C12 x Circle Park Open air + Afterparty 15 HRS w/ Angel D’lite, UNOS, Byron Yeates, Zouzibabe and more",
+    "venue": "C12",
+    "addr": "Rue du Fossé aux Loups 43, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "price": "",
+    "emoji": "🍕",
+    "color": "#F4C87A",
+    "friends": 0,
+    "tags": [
+      "Food",
+      "Social"
+    ],
+    "source": "C12",
+    "sourceURL": "https://c12space.com/event/c12-x-circle-park-open-air-afterparty-15-hrs-w-angel-dlite-unos-byron-yeates-zouzibabe-and-more/",
+    "ticket": "https://c12space.com/event/c12-x-circle-park-open-air-afterparty-15-hrs-w-angel-dlite-unos-byron-yeates-zouzibabe-and-more/",
+    "lat": 50.85,
+    "lng": 4.3539,
+    "going": 285,
+    "neighbourhood": "Centre",
+    "desc": "C12 x Circle Park Open air + Afterparty 15 HRS w/ Angel D’lite, UNOS, Byron Yeates, Zouzibabe and more at C12.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest905",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest685",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest549",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest345",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest054",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest493",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest845",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "2:13 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "9:03 AM"
+      }
+    ],
+    "_rawDate": "2026-06-20"
   }
 ]
