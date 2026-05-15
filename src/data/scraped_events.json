@@ -579,5 +579,889 @@
       }
     ],
     "_rawDate": "2026-05-24"
+  },
+  {
+    "id": 108,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Vitrival - Baptiste Bogaert & Noëlle Bastin",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 2,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/vitrival-baptiste-bogaert-noelle-bastin",
+    "ticket": "https://www.bozar.be/en/calendar/vitrival-baptiste-bogaert-noelle-bastin",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 113,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest667",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest907",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest842",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "5:21 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Who else is going?? 🙋",
+        "time": "9:14 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:22 PM"
+      }
+    ],
+    "_rawDate": "2026-05-29"
+  },
+  {
+    "id": 109,
+    "cat": "Music",
+    "date": "Ongoing",
+    "title": "Orchestre Philharmonique Royal de Liège",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/orchestre-philharmonique-royal-de-liege-26",
+    "ticket": "https://www.bozar.be/en/calendar/orchestre-philharmonique-royal-de-liege-26",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 58,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest962",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest920",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest557",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest375",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "1:14 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "3:11 PM"
+      }
+    ],
+    "_rawDate": "2027-05-15"
+  },
+  {
+    "id": 110,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Mr. Nobody Against Putin - David Borenstein & Pavel Talankin",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/mr-nobody-against-putin-david-borenstein-pavel-talankin",
+    "ticket": "https://www.bozar.be/en/calendar/mr-nobody-against-putin-david-borenstein-pavel-talankin",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 144,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest764",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest458",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest757",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest450",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Who else is going?? 🙋",
+        "time": "1:17 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "9:38 PM"
+      }
+    ],
+    "_rawDate": "2026-05-30"
+  },
+  {
+    "id": 111,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Bellezza e Bruttezza",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 3,
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/bellezza-e-bruttezza",
+    "ticket": "https://www.bozar.be/en/calendar/bellezza-e-bruttezza",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 75,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest545",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest659",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "7:50 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "1:31 AM"
+      }
+    ],
+    "_rawDate": "2026-06-14"
+  },
+  {
+    "id": 112,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Ho Tzu Nyen. P for Power",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 1,
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/ho-tzu-nyen-p-power",
+    "ticket": "https://www.bozar.be/en/calendar/ho-tzu-nyen-p-power",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 227,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest044",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest918",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest524",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest054",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest620",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest508",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest373",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Counting down the days 🗓️",
+        "time": "11:41 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "5:05 AM"
+      }
+    ],
+    "_rawDate": "2026-06-14"
+  },
+  {
+    "id": 113,
+    "cat": "Culture",
+    "date": "Ongoing",
+    "title": "Picture Perfect",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/picture-perfect",
+    "ticket": "https://www.bozar.be/en/calendar/picture-perfect",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 263,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest258",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest316",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest488",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest547",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest188",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Who else is going?? 🙋",
+        "time": "7:23 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "9:46 PM"
+      }
+    ],
+    "_rawDate": "2026-08-16"
+  },
+  {
+    "id": 114,
+    "cat": "Arts",
+    "date": "Next Week",
+    "title": "Dry Leaf - Aleksandre Koberidze",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 2,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/dry-leaf-aleksandre-koberidze",
+    "ticket": "https://www.bozar.be/en/calendar/dry-leaf-aleksandre-koberidze",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 209,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest039",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest286",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest822",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest275",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest120",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest192",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest918",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "1:54 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "12:03 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "8:55 AM"
+      }
+    ],
+    "_rawDate": "2026-05-19"
+  },
+  {
+    "id": 115,
+    "cat": "Food & Drink",
+    "date": "Next Month",
+    "title": "7 Walks with Mark Brown - Pierre Creton & Vincent Barré",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🍹",
+    "color": "#F4C87A",
+    "friends": 2,
+    "tags": [
+      "Drinks",
+      "Social"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/7-walks-mark-brown-pierre-creton-vincent-barre",
+    "ticket": "https://www.bozar.be/en/calendar/7-walks-mark-brown-pierre-creton-vincent-barre",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 48,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest162",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest387",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest560",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest485",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest572",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Who else is going?? 🙋",
+        "time": "6:55 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "5:39 AM"
+      }
+    ],
+    "_rawDate": "2026-05-30"
+  },
+  {
+    "id": 116,
+    "cat": "Arts",
+    "date": "Tomorrow",
+    "title": "Procès d'un jeune poète - Philippe Van Cutsem",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/proces-dun-jeune-poete-philippe-van-cutsem",
+    "ticket": "https://www.bozar.be/en/calendar/proces-dun-jeune-poete-philippe-van-cutsem",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 107,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest461",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest239",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Counting down the days 🗓️",
+        "time": "9:54 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "7:17 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "2:50 AM"
+      }
+    ],
+    "_rawDate": "2026-05-16"
+  },
+  {
+    "id": 117,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Koninklijk Concertgebouworkest Amsterdam, Rouvali & Gabetta",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/koninklijk-concertgebouworkest-amsterdam-rouvali-gabetta",
+    "ticket": "https://www.bozar.be/en/calendar/koninklijk-concertgebouworkest-amsterdam-rouvali-gabetta",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 58,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "attendees": [
+      {
+        "n": "Guest744",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest934",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest565",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest272",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest674",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest825",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest464",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "This is going to be AMAZING",
+        "time": "7:38 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "1:35 PM"
+      }
+    ],
+    "_rawDate": "2026-05-16"
+  },
+  {
+    "id": 118,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Writing Life – Annie Ernaux Through the Eyes of High School Students - Claire Simon",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 2,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/writing-life-annie-ernaux-through-eyes-high-school-students-claire-simon",
+    "ticket": "https://www.bozar.be/en/calendar/writing-life-annie-ernaux-through-eyes-high-school-students-claire-simon",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 223,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Guest830",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest879",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest501",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest252",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest793",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "First time at this venue!",
+        "time": "4:48 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "2:11 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "1:23 AM"
+      }
+    ],
+    "_rawDate": "2026-05-31"
+  },
+  {
+    "id": 119,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Le Veilleur - Lou de Pontavice & Victoire Bonin",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 2,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/le-veilleur-lou-de-pontavice-victoire-bonin",
+    "ticket": "https://www.bozar.be/en/calendar/le-veilleur-lou-de-pontavice-victoire-bonin",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 30,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Guest591",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest934",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest134",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest719",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest036",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Who else is going?? 🙋",
+        "time": "5:30 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "2:44 AM"
+      }
+    ],
+    "_rawDate": "2026-05-24"
   }
 ]
