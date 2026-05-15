@@ -6,11 +6,13 @@ import SrcBadge from './SrcBadge';
 import Tap from './Tap';
 
 function fmtPrice(p: string) {
-  if (!p || p === 'Free') return 'Free';
+  if (!p) return '';
+  if (p === 'Free') return 'Free';
+  if (p.startsWith('From ') || p.startsWith('Free')) return p;
   const num = parseFloat(p.replace(/[^0-9.]/g, ''));
   if (isNaN(num)) return p;
   const sym = p.match(/[€$£]/)?.[0] ?? '€';
-  return `${sym}${num.toFixed(2)}`;
+  return `${sym}${Number.isInteger(num) ? num : num.toFixed(2)}`;
 }
 
 interface EventCardProps {
@@ -79,9 +81,11 @@ export default function EventCard({ event: e, onPress, T, joined }: EventCardPro
               {e.friends > 0 && (
                 <Text style={[styles.friendsCount, { color: T.accent }]}>👥 {e.friends}</Text>
               )}
-              <View style={[styles.priceBadge, { backgroundColor: e.price === 'Free' ? C.green : C.pink }]}>
-                <Text style={[styles.priceTxt, { color: C.dark }]}>{fmtPrice(e.price)}</Text>
-              </View>
+              {!!e.price && (
+                <View style={[styles.priceBadge, { backgroundColor: e.price === 'Free' ? C.green : C.pink }]}>
+                  <Text style={[styles.priceTxt, { color: C.dark }]}>{fmtPrice(e.price)}</Text>
+                </View>
+              )}
             </View>
           </View>
         </View>
