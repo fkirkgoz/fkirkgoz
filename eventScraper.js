@@ -298,7 +298,7 @@ async function deepFetchPrices(page, events) {
           if (!ticketUrl.includes(currentHost)) {
             console.log(`      🎫 Following ticket link: ${ticketUrl.slice(0, 70)}`);
             await page.goto(ticketUrl, { waitUntil: 'domcontentloaded', timeout: 10000 });
-            await sleep(1000);
+            await sleep(5000);  // wait for full price list to render (avoids grabbing service fee only)
             text = await page.evaluate(() => document.body?.innerText || '');
             onTicketPage = true;
           }
@@ -306,7 +306,11 @@ async function deepFetchPrices(page, events) {
       }
 
       // On a real ticket page use the free-aware extractor; everywhere else € only
-      const prices = onTicketPage ? extractTicketPagePrices(text) : extractAllPrices(text);
+      const rawPrices = onTicketPage ? extractTicketPagePrices(text) : extractAllPrices(text);
+      // Drop service fees (< €5) — talks/workshops can legitimately cost less
+      const isLowCostEvent = /\b(talk|workshop|lecture|seminar)\b/i.test(ev.title);
+      const priceFloor = isLowCostEvent ? 0.01 : 5;
+      const prices = rawPrices.filter(p => p === 0 || p >= priceFloor);
       if (prices.length > 0) {
         ev.price = formatPrice(prices);
         console.log(`      ✓ "${ev.title.slice(0, 30)}": ${ev.price}`);
@@ -637,29 +641,45 @@ async function scrapeVenue(browser, config) {
         console.log(`    → ${events.length} valid from JSON-LD`);
       }
 
-      // ── Strategy 1.5: La Madeleine grid cards (.flex-col.border-2) ──
+      // ── Strategy 1.5: La Madeleine (JetEngine/Elementor layout) ──
+      // Primary: <a> tags containing .jet-listing-dynamic-field__content (title + date fields)
+      // Fallback: .flex-col.border-2 Tailwind grid cards
       if (config.id === 'laMadeleine' && events.length === 0) {
         try {
-          await page.waitForSelector('.flex-col.border-2', { timeout: 8000 });
-          console.log('    La Madeleine: found .flex-col.border-2 grid cards');
-          const cards = await page.evaluate(() =>
-            [...document.querySelectorAll('.flex-col.border-2')].map(card => {
+          console.log('    La Madeleine: scanning for JetEngine / grid cards…');
+          await sleep(2000); // extra render time beyond extraWait
+          const cards = await page.evaluate(() => {
+            // Primary path: Elementor/JetEngine — anchors wrapping field elements
+            const jetLinks = [...document.querySelectorAll('a')].filter(a =>
+              a.querySelector('.jet-listing-dynamic-field__content')
+            );
+            if (jetLinks.length > 0) {
+              return jetLinks.map(a => {
+                const fields = [...a.querySelectorAll('.jet-listing-dynamic-field__content')]
+                  .map(f => (f.innerText || '').trim()).filter(Boolean);
+                const dateStr = fields.find(f => /\d{1,2}\s*\.\s*\d{2}\s*\.\s*\d{2,4}/.test(f)) || '';
+                const title = fields
+                  .filter(f => !/\d{2}\.\d{2}/.test(f))
+                  .sort((x, y) => y.length - x.length)[0] || '';
+                return { dateStr, title, link: a.href };
+              });
+            }
+            // Fallback: Tailwind grid cards
+            return [...document.querySelectorAll('.flex-col.border-2')].map(card => {
               const lines = (card.innerText || '').split('\n').map(s => s.trim()).filter(Boolean);
-              // Date: first line matching DD.MM.YY or DD.MM.YYYY
               const dateStr = lines.find(l => /\d{1,2}\s*\.\s*\d{2}\s*\.\s*\d{2,4}/.test(l)) || '';
-              // Title: explicit heading element, else first non-date non-button line
               const heading = card.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
               const title = (
                 heading?.innerText?.trim() ||
                 lines.find(l => l.length > 4 && !/\d{2}\.\d{2}/.test(l) && !/^(tickets?|buy|info)$/i.test(l)) ||
                 ''
               ).trim();
-              // TICKETS link
               const ticketA = [...card.querySelectorAll('a')].find(a => /tickets?/i.test(a.textContent));
               const link = ticketA?.href || [...card.querySelectorAll('a')].map(a => a.href).find(Boolean) || '';
               return { dateStr, title, link };
-            })
-          );
+            });
+          });
+          console.log(`    La Madeleine: ${cards.length} card(s) found`);
           const baseOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || '';
           for (const { dateStr, title, link } of cards) {
             if (!isValidTitle(title)) continue;
@@ -680,9 +700,9 @@ async function scrapeVenue(browser, config) {
               neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
             });
           }
-          console.log(`    La Madeleine grid → ${events.length} event(s) parsed`);
+          console.log(`    La Madeleine → ${events.length} event(s) parsed`);
         } catch (err) {
-          console.log(`    La Madeleine grid selector failed: ${err.message.slice(0, 60)}`);
+          console.log(`    La Madeleine scraper failed: ${err.message.slice(0, 60)}`);
         }
       }
 
@@ -956,6 +976,14 @@ async function main() {
     added++;
     console.log(`  ✅  Added: "${r.title}" (${r.date})${r.price ? ' — '+r.price : ''}`);
   }
+
+  // ── Absolute kill-switch: global title+date dedup on the final array ──
+  const preFinal = existing.length;
+  existing = existing.filter((v, i, a) =>
+    a.findIndex(t => t.title === v.title && t.date === v.date) === i
+  );
+  if (existing.length < preFinal)
+    console.log(`🔪  Final dedup removed ${preFinal - existing.length} global duplicate(s)`);
 
   console.log(`\n📊  +${added} new  |  ${existing.length} total`);
   saveScraped(existing);
