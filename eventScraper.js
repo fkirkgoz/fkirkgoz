@@ -2,7 +2,7 @@
 /**
  * Randevu Event Scraper — Brussels venue-specific edition
  *
- * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · MIX Brussels · Hangar · Couleur Café · Horst
+ * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Wecandoo · Hangar · Couleur Café · Horst
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -135,21 +135,20 @@ const VENUE_CONFIGS = [
     ],
   },
   {
-    id: 'mix',
-    name: 'MIX Brussels',
-    addr: 'Rue du Marché au Charbon 28, 1000 Brussels',
-    lat: 50.8468, lng: 4.3508,
+    id: 'wecandoo',
+    name: 'Wecandoo Brussels',
+    addr: 'Brussels, Belgium',
+    lat: 50.8503, lng: 4.3517,
     neighbourhood: 'Centre',
     emoji: '🧠', color: '#00BCD4', cat: 'Wellness',
-    tags: ['Wellness', 'Community', 'LGBTQ+'],
-    defaultTime: '20:00',
+    tags: ['Workshop', 'Activity', 'Creative'],
+    defaultTime: '14:00',
     extraWait: 6000,
     enforceVisuals: true,
     urls: [
-      'https://mix.brussels/events/',
-      'https://mix.brussels/events',
-      'https://mix.brussels/agenda',
-      'https://mix.brussels',
+      'https://wecandoo.be/en/ateliers/bruxelles',
+      'https://wecandoo.be/fr/ateliers/bruxelles',
+      'https://wecandoo.be/en/workshops/brussels',
     ],
   },
   {
@@ -161,9 +160,10 @@ const VENUE_CONFIGS = [
     emoji: '⚡', color: '#2A1F3D', cat: 'Nightlife',
     tags: ['Techno', 'Electronic', 'Open Air'],
     defaultTime: '22:00',
-    extraWait: 8000,
+    extraWait: 9000,
     jsHeavy: true,
     enforceVisuals: true,
+    brusselsOnly: true,
     urls: [
       'https://tickets.thehangar.be/',
       'https://tickets.thehangar.be',
@@ -260,6 +260,9 @@ const EXTERNAL_VENUE_PATTERNS = [
   { re: /bois\s+de\s+la\s+cambre|ter\s+kameren/i, name: 'Bois de la Cambre Brussels'    },
   { re: /stade\s+roi\s+baudouin/i,                 name: 'Stade Roi Baudouin Brussels'   },
   { re: /atomium/i,                                name: 'Atomium Brussels'              },
+  { re: /hangar\s+flagey|flagey/i,                 name: 'Flagey Brussels'               },
+  { re: /terminal\s+brussels|hangar\s+terminal/i,  name: 'Terminal Brussels'             },
+  { re: /recyclart/i,                              name: 'Recyclart Brussels'            },
 ];
 
 function detectExternalVenue(text) {
@@ -337,8 +340,9 @@ async function deepFetchPrices(page, events) {
       // Look for an external ticket link — priority: PRESALE button > ticket host URL > text match
       // Always skip customerservice links (Paylogic support, not the purchase page)
       const TICKET_HOSTS = ['paylogic','shop.c12space.com','shop.fuse.be','ticketmaster',
-        'ticketswap','dice.fm','eventbrite','payconiq','shoobs','koobit','ticketweb','ticketlive'];
-      const SLOW_HOSTS   = ['paylogic','ticketlive']; // need networkidle2 + long wait
+        'ticketswap','dice.fm','eventbrite','payconiq','shoobs','koobit','ticketweb','ticketlive',
+        'shotgun.live','shotgun.be','ra.co/events','residentadvisor.net'];
+      const SLOW_HOSTS   = ['paylogic','ticketlive','shotgun.live','shotgun.be']; // need networkidle2 + long wait
 
       const ticketUrl = await page.evaluate((hosts) => {
         const links = [...document.querySelectorAll('a[href]')];
@@ -441,20 +445,32 @@ async function deepFetchPrices(page, events) {
 const MONTH_FR = { janvier:'January',février:'February',mars:'March',avril:'April',mai:'May',juin:'June',juillet:'July','août':'August',septembre:'September',octobre:'October',novembre:'November',décembre:'December' };
 const MONTH_NL = { januari:'January',februari:'February',maart:'March',april:'April',mei:'May',juni:'June',juli:'July',augustus:'August',september:'September',oktober:'October',november:'November',december:'December' };
 
-function toRelativeDate(iso) {
-  const ev = new Date(iso);
-  if (isNaN(ev.getTime())) return null;
-  const today = new Date(); today.setHours(0,0,0,0);
-  const eDay  = new Date(ev); eDay.setHours(0,0,0,0);
-  const diff  = Math.round((eDay - today) / 86400000);
-  if (diff < 0)  return null;
-  const dow = ev.getDay();
+function toRelativeDate(iso, endIso) {
+  if (!iso) return null;
+  // Parse as LOCAL calendar date — avoids UTC-midnight timezone drift
+  // ("2026-06-26" via new Date() would be midnight UTC, shifted by ±hours in local tz)
+  const parts = iso.split('-').map(Number);
+  if (parts.length < 3 || !parts[0] || !parts[1] || !parts[2]) return null;
+  const eDay  = new Date(parts[0], parts[1] - 1, parts[2]); // local midnight
+  const today = new Date(); today.setHours(0, 0, 0, 0);     // local midnight
+
+  // Multi-day festival: if today falls inside [startDate, endDate], flag as Ongoing
+  if (endIso) {
+    const ep = endIso.split('-').map(Number);
+    if (ep.length >= 3) {
+      const eEnd = new Date(ep[0], ep[1] - 1, ep[2]);
+      if (today >= eDay && today <= eEnd) return 'Ongoing';
+    }
+  }
+
+  const diff = Math.round((eDay - today) / 86400000);
+  if (diff < 0)  return null;  // past → skip
+  const dow = eDay.getDay();
   if (diff === 0) return 'Tonight';
   if (diff === 1) return 'Tomorrow';
   if (diff <= 6 && (dow === 0 || dow === 6)) return 'This Weekend';
   if (diff <= 7)  return 'Next Week';
-  if (diff <= 30) return 'Next Month';
-  return 'Ongoing';
+  return 'Next Month';  // anything > 7 days — never label future events "Ongoing"
 }
 
 function parseRawDate(raw) {
@@ -584,7 +600,7 @@ function smartMerge(existing, incoming) {
   // C12/Fuse: same venue+date but title may differ across Paylogic vs own site
   if (idx === -1) {
     const v = (incoming.venue || '').toLowerCase();
-    if (['c12', 'fuse'].some(n => v.includes(n))) {
+    if (['c12', 'fuse', 'hangar'].some(n => v.includes(n))) {
       idx = existing.findIndex(e =>
         (e.venue || '').toLowerCase() === v &&
         e._rawDate === incoming._rawDate
@@ -614,7 +630,7 @@ function removeExpired(events) {
 // Cross-run scrapes from Paylogic vs own-site produce different titles for the same night.
 // This collapses them, keeping the version with the longer title and any price data.
 function deduplicateExisting(events) {
-  const NIGHTLIFE = ['c12', 'fuse'];
+  const NIGHTLIFE = ['c12', 'fuse', 'hangar'];
   const seen = {};
   const result = [];
   let removed = 0;
@@ -740,7 +756,7 @@ async function scrapeVenue(browser, config) {
           const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : config.defaultTime;
           const startH  = parseInt((timeStr || config.defaultTime).split(':')[0], 10) || 20;
           const cls              = classifyForVenue(title+' '+desc, config);
-          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
+          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse' || config.id === 'hangar')
             ? detectExternalVenue(title+' '+desc+' '+(ev.location?.name||'')) : null;
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
             date:relDate, time:timeStr||config.defaultTime, startH, endH:startH+3,
@@ -815,6 +831,83 @@ async function scrapeVenue(browser, config) {
           console.log(`    La Madeleine → ${events.length} event(s) parsed`);
         } catch (err) {
           console.log(`    La Madeleine scraper failed: ${err.message.slice(0, 60)}`);
+        }
+      }
+
+      // ── Strategy 1.6: Wecandoo Brussels workshop scraper ──
+      if (config.id === 'wecandoo' && events.length === 0) {
+        try {
+          console.log('    Wecandoo: scanning workshop cards…');
+          await sleep(3000);
+          const workshops = await page.evaluate(() => {
+            const selectors = [
+              '[class*="activity-card"]','[class*="workshop-card"]','[class*="atelier"]',
+              '[class*="ActivityCard"]','[class*="WorkshopCard"]',
+              '[class*="offer"]','[class*="Offer"]',
+              'article','[class*="card"]',
+            ];
+            const seen = new Set();
+            const cards = [...document.querySelectorAll(selectors.join(','))].filter(c => {
+              const t = (c.innerText || '').trim();
+              if (t.length < 15 || t.length > 1200) return false;
+              if (seen.has(t.slice(0, 60))) return false;
+              seen.add(t.slice(0, 60));
+              return true;
+            });
+            return cards.map(card => {
+              const headingEl = card.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
+              const title = (headingEl?.innerText || '').replace(/\s+/g, ' ').trim();
+              const allText = (card.innerText || '').replace(/\s+/g, ' ').trim();
+              const priceEl = card.querySelector('[class*="price"],[class*="tarif"],[class*="cost"],[class*="amount"],[class*="Price"]');
+              const priceText = (priceEl?.innerText || allText).match(/€\s*\d+(?:[.,]\d{1,2})?/)?.[0] || '';
+              const locEl = card.querySelector('[class*="location"],[class*="lieu"],[class*="place"],[class*="city"],[class*="address"],[class*="Location"]');
+              const location = (locEl?.innerText || '').replace(/\s+/g, ' ').trim();
+              const dateEl = card.querySelector('time,[datetime],[class*="date"],[class*="next"],[class*="session"],[class*="Date"]');
+              const dateStr = dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim();
+              const catEl = card.querySelector('[class*="category"],[class*="tag"],[class*="type"],[class*="label"],[class*="Category"]');
+              const category = (catEl?.innerText || '').replace(/\s+/g, ' ').trim();
+              const link = card.querySelector('a[href]')?.href || '';
+              return { title, priceText, location, dateStr, category, link, allText };
+            });
+          });
+          console.log(`    Wecandoo: ${workshops.length} card(s) found`);
+          const todayLocal = new Date(); todayLocal.setHours(0, 0, 0, 0);
+          const baseOrigin = 'https://wecandoo.be';
+          for (const w of workshops) {
+            if (!w.title || w.title.length < 4 || !isValidTitle(w.title)) continue;
+            // Try to parse a date; workshops without a specific date get next Saturday
+            let rawDate = parseRawDate(w.dateStr) || parseRawDate(scanTextForDate(w.allText));
+            if (!rawDate) {
+              // No specific date: assign next Saturday as the default session anchor
+              const nextSat = new Date(todayLocal);
+              const daysToSat = (6 - todayLocal.getDay() + 7) % 7 || 7;
+              nextSat.setDate(todayLocal.getDate() + daysToSat);
+              rawDate = nextSat.toISOString().split('T')[0];
+            }
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+            const prices = extractAllPrices(w.priceText || w.allText);
+            const price = formatPrice(prices);
+            const venueText = (w.location || 'Brussels').replace(/\n.*/g, '').trim();
+            const url = w.link.startsWith('http') ? w.link : w.link.startsWith('/') ? `${baseOrigin}${w.link}` : '';
+            const cls = classifyForVenue(w.title + ' ' + w.category, config);
+            const tags = [...cls.tags];
+            if (w.category && w.category.length < 30 && !tags.includes(w.category)) tags.push(w.category);
+            events.push({
+              _rawDate: rawDate, title: w.title,
+              venue: venueText || config.name, addr: config.addr,
+              date: relDate, time: config.defaultTime,
+              startH: parseInt(config.defaultTime, 10) || 14,
+              endH: (parseInt(config.defaultTime, 10) || 14) + 2,
+              price, emoji: cls.emoji, color: cls.color, cat: cls.cat, tags,
+              source: config.name, sourceURL: url, ticket: url,
+              desc: `${w.title}${w.category ? ' — ' + w.category : ''} workshop in Brussels.`,
+              neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
+            });
+          }
+          console.log(`    Wecandoo → ${events.length} workshop(s) parsed`);
+        } catch (err) {
+          console.log(`    Wecandoo scraper failed: ${err.message.slice(0, 60)}`);
         }
       }
 
@@ -914,7 +1007,7 @@ async function scrapeVenue(browser, config) {
           const price     = formatPrice(allPrices);
           const { time, startH, endH } = parseTime(timeText, config.defaultTime);
           const cls = classifyForVenue(title+' '+desc, config);
-          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
+          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse' || config.id === 'hangar')
             ? detectExternalVenue(title+' '+desc) : null;
 
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
@@ -935,6 +1028,50 @@ async function scrapeVenue(browser, config) {
   } catch (err) {
     failReason = err.message;
     console.warn(`    ⚠️  ${config.name} threw: ${failReason}`);
+  }
+
+  // ── Couleur Café: inject confirmed 2026 festival if scraping returned nothing ──
+  // Festival is a single recurring annual event with fixed dates — safe to hardcode.
+  if (config.id === 'couleurCafe' && events.length === 0) {
+    const festStart = '2026-06-26';
+    const festEnd   = '2026-06-28';
+    const relDate   = toRelativeDate(festStart, festEnd);
+    if (relDate) {
+      events.push({
+        _rawDate: festStart, _endDate: festEnd,
+        title: 'Couleur Café Festival 2026',
+        venue: 'Osseghem Park, Atomium',
+        addr: 'Ossegempark, 1020 Laeken, Brussels',
+        date: relDate, time: '14:00', startH: 14, endH: 26,
+        price: '',
+        emoji: '🎸', color: '#F4A261', cat: 'Festival',
+        tags: ['World Music', 'Hip Hop', 'Festival', 'Open Air'],
+        source: 'Couleur Café',
+        sourceURL: 'https://www.couleurcafe.be',
+        ticket: 'https://www.couleurcafe.be',
+        desc: "Brussels' legendary 3-day world music & hip hop festival at Osseghem Park, in the shadow of the Atomium. 26–28 June 2026.",
+        neighbourhood: 'Laeken', lat: 50.8948, lng: 4.3411,
+      });
+      console.log(`  🎸  Couleur Café: injected confirmed festival entry (${relDate})`);
+    }
+  }
+
+  // ── Hangar: drop events explicitly at non-Brussels venues ──
+  if (config.id === 'hangar' && events.length > 0) {
+    const SKIP_CITIES = [
+      /\bantwerp\b|\banvers\b|\bantwerpen\b/i,
+      /\bli[eè]ge\b|\blüttich\b/i,
+      /\bghent\b|\bgand\b|\bgent\b/i,
+      /\bbruges?\b|\bbrugge\b/i,
+      /\bnamur\b|\bcharleroi\b|\bmons\b/i,
+    ];
+    const before = events.length;
+    events = events.filter(ev => {
+      const text = `${ev.title} ${ev.venue} ${ev.addr} ${ev.desc}`;
+      return !SKIP_CITIES.some(r => r.test(text));
+    });
+    if (events.length < before)
+      console.log(`  🏙️  Hangar: dropped ${before - events.length} non-Brussels event(s)`);
   }
 
   // ── Within-venue dedup: strict title+date (catches same event scraped twice in one run) ──
@@ -981,18 +1118,28 @@ async function main() {
       coordFixes++;
       return { ...e, lat: 50.8462, lng: 4.3556, addr: 'Rue du Marché aux Herbes 116, 1000 Brussels' };
     }
+    if (e.venue?.toLowerCase().includes('hangar') && !e.externalVenueHint &&
+        (e.lat !== 50.8430 || e.lng !== 4.3370)) {
+      coordFixes++;
+      return { ...e, lat: 50.8430, lng: 4.3370, addr: 'Place des Abattoirs 1, 1000 Brussels' };
+    }
     return e;
   });
   if (coordFixes) console.log(`📍  Fixed ${coordFixes} event(s) with wrong coordinates (Fuse/C12)`);
 
   // Retroactively enforce correct emoji/color/cat for all known venues
   const VENUE_VISUAL_MAP = {
-    'ancienne belgique': { emoji: '🎸', color: '#C77DFF', cat: 'Music' },
-    'le botanique':      { emoji: '🎸', color: '#B8E5C0', cat: 'Music' },
+    'ancienne belgique': { emoji: '🎸', color: '#C77DFF', cat: 'Music'     },
+    'le botanique':      { emoji: '🎸', color: '#B8E5C0', cat: 'Music'     },
     'fuse':              { emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife' },
     'c12':               { emoji: '💃', color: '#6C63FF', cat: 'Nightlife' },
-    'la madeleine':      { emoji: '🎸', color: '#8E7DBE', cat: 'Music' },
-    'bozar':             { emoji: '🏛️', color: '#E76F51', cat: 'Culture' },
+    'la madeleine':      { emoji: '🎸', color: '#8E7DBE', cat: 'Music'     },
+    'bozar':             { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
+    'wecandoo':          { emoji: '🧠', color: '#00BCD4', cat: 'Wellness'  },
+    'hangar':            { emoji: '⚡', color: '#2A1F3D', cat: 'Nightlife' },
+    'couleur café':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
+    'couleur cafe':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
+    'horst':             { emoji: '⚡', color: '#1A1A2E', cat: 'Festival'  },
   };
   let emojiFixed = 0;
   existing = existing.map(e => {
