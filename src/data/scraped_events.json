@@ -9,7 +9,7 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "price": "",
+    "price": "From €9.60",
     "emoji": "🎸",
     "color": "#C77DFF",
     "friends": 0,
@@ -86,7 +86,7 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "price": "",
+    "price": "From €2",
     "emoji": "🎸",
     "color": "#C77DFF",
     "friends": 2,
@@ -297,7 +297,7 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "price": "",
+    "price": "From €18.40",
     "emoji": "🎸",
     "color": "#C77DFF",
     "friends": 1,
@@ -354,7 +354,7 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "price": "",
+    "price": "From €2",
     "emoji": "🎸",
     "color": "#C77DFF",
     "friends": 1,
@@ -1114,7 +1114,7 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "price": "",
+    "price": "From €8",
     "emoji": "🏛️",
     "color": "#E76F51",
     "friends": 2,
@@ -3963,5 +3963,1325 @@
       }
     ],
     "_rawDate": "2026-09-27"
+  },
+  {
+    "id": 153,
+    "cat": "Music",
+    "date": "Ongoing",
+    "title": "Steve Ignorant plays 'Crass - Feeding of The 5000' + Taqbir, Club Brat, L.A. SAGNE",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "From €5",
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/steve-ignorant-plays-crass-feeding-of-the-5000/a10Qw00000ADS2OIAX",
+    "ticket": "https://www.abconcerts.be/en/agenda/steve-ignorant-plays-crass-feeding-of-the-5000/a10Qw00000ADS2OIAX",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 75,
+    "neighbourhood": "Centre",
+    "desc": "A full-length rendition of a 1978 anarcho-punk classic, plus three Crass-influenced acts, makes for a proper PUNK 50 mini-festival!",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest629",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest633",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest524",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest352",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest773",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "9:49 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "7:29 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Counting down the days 🗓️",
+        "time": "8:17 PM"
+      }
+    ],
+    "_rawDate": "2027-05-16"
+  },
+  {
+    "id": 154,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Tricky + Marta Zlakowska",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/tricky/a10Qw00000FKbM9IAL",
+    "ticket": "https://www.abconcerts.be/en/agenda/tricky/a10Qw00000FKbM9IAL",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 247,
+    "neighbourhood": "Centre",
+    "desc": "The figurehead of the alternative scene",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest453",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest665",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest774",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "5:41 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "7:22 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "First time at this venue!",
+        "time": "6:10 PM"
+      }
+    ],
+    "_rawDate": "2026-05-24"
+  },
+  {
+    "id": 155,
+    "cat": "Nightlife",
+    "date": "Ongoing",
+    "title": "Fuse presents: Brussels Pride w/ LSDXOXO & Nene H",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "price": "Sold Out",
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "friends": 3,
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "sourceURL": "https://www.fuse.be/events/fuse-presents-brussels-pride-w-lsdxoxo-nene-h",
+    "ticket": "https://www.fuse.be/events/fuse-presents-brussels-pride-w-lsdxoxo-nene-h",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "going": 240,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: Brussels Pride w/ LSDXOXO & Nene H at Fuse.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest817",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest377",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest404",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest515",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest775",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest120",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest308",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "4:31 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "11:56 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "7:26 PM"
+      }
+    ],
+    "_rawDate": "2027-05-16"
+  },
+  {
+    "id": 156,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "MIDNIGHT TIL MORNING",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/midnight-til-morning/",
+    "ticket": "https://la-madeleine.be/show/midnight-til-morning/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 302,
+    "neighbourhood": "Centre",
+    "desc": "MIDNIGHT TIL MORNING at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest452",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest921",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest483",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest965",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest416",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:13 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Already got my ticket! 👋",
+        "time": "1:38 AM"
+      }
+    ],
+    "_rawDate": "2026-05-16"
+  },
+  {
+    "id": 157,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "BETHEL MUSIC",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/bethel-music-2/",
+    "ticket": "https://la-madeleine.be/show/bethel-music-2/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 247,
+    "neighbourhood": "Centre",
+    "desc": "BETHEL MUSIC at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest073",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest090",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest282",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest971",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:57 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "4:48 AM"
+      }
+    ],
+    "_rawDate": "2026-05-20"
+  },
+  {
+    "id": 158,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "ARDE BOGOTÁ",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/arde-bogota/",
+    "ticket": "https://la-madeleine.be/show/arde-bogota/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 271,
+    "neighbourhood": "Centre",
+    "desc": "ARDE BOGOTÁ at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest910",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest613",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "2:04 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "First time at this venue!",
+        "time": "7:27 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "6:28 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 159,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "GOOSE",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/goose/",
+    "ticket": "https://la-madeleine.be/show/goose/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 94,
+    "neighbourhood": "Centre",
+    "desc": "GOOSE at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest588",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest194",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest779",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest107",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest091",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest778",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "7:33 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Brussels never disappoints ❤️",
+        "time": "3:48 AM"
+      }
+    ],
+    "_rawDate": "2026-05-25"
+  },
+  {
+    "id": 160,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "MUSTAPHA EL ATRASSI",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/mustapha-el-atrassi-30-05/",
+    "ticket": "https://la-madeleine.be/show/mustapha-el-atrassi-30-05/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 81,
+    "neighbourhood": "Centre",
+    "desc": "MUSTAPHA EL ATRASSI at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest871",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest373",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest441",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest462",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "8:34 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Brussels never disappoints ❤️",
+        "time": "7:39 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Already got my ticket! 👋",
+        "time": "1:10 AM"
+      }
+    ],
+    "_rawDate": "2026-05-30"
+  },
+  {
+    "id": 161,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "RAFI BASTOS",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/rafi-bastos/",
+    "ticket": "https://la-madeleine.be/show/rafi-bastos/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 163,
+    "neighbourhood": "Centre",
+    "desc": "RAFI BASTOS at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest956",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest845",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:36 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "3:47 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "11:04 AM"
+      }
+    ],
+    "_rawDate": "2026-05-31"
+  },
+  {
+    "id": 162,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "JAZZY BAZZ",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/jazzy-bazz-2/",
+    "ticket": "https://la-madeleine.be/show/jazzy-bazz-2/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 50,
+    "neighbourhood": "Centre",
+    "desc": "JAZZY BAZZ at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest474",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest554",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest144",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest463",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest354",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest959",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest203",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "12:53 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "6:10 AM"
+      }
+    ],
+    "_rawDate": "2026-06-03"
+  },
+  {
+    "id": 163,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "JEROEN LEENDERS",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "Sold Out",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/jeroen-leenders/",
+    "ticket": "https://la-madeleine.be/show/jeroen-leenders/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 184,
+    "neighbourhood": "Centre",
+    "desc": "JEROEN LEENDERS at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest344",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest470",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest437",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest117",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest995",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest954",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest954",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "3:35 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:00 PM"
+      }
+    ],
+    "_rawDate": "2026-06-05"
+  },
+  {
+    "id": 164,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "SILA BISALU SUR SCÈNE",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/sila-bisalu-sur-scene/",
+    "ticket": "https://la-madeleine.be/show/sila-bisalu-sur-scene/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 142,
+    "neighbourhood": "Centre",
+    "desc": "SILA BISALU SUR SCÈNE at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest042",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest548",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest363",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest082",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest261",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest425",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest736",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:15 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "7:23 PM"
+      }
+    ],
+    "_rawDate": "2026-06-06"
+  },
+  {
+    "id": 165,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "KADER JAPONAIS",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/kader-japonais/",
+    "ticket": "https://la-madeleine.be/show/kader-japonais/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 244,
+    "neighbourhood": "Centre",
+    "desc": "KADER JAPONAIS at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Guest711",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest757",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest463",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest895",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest893",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest656",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest521",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Brussels never disappoints ❤️",
+        "time": "7:39 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "6:06 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "First time at this venue!",
+        "time": "2:07 PM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 166,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "ASHNIKKO",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/ashnikko-2/",
+    "ticket": "https://la-madeleine.be/show/ashnikko-2/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 263,
+    "neighbourhood": "Centre",
+    "desc": "ASHNIKKO at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Guest064",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest366",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "5:20 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Grab tickets fast, selling out!",
+        "time": "6:22 PM"
+      }
+    ],
+    "_rawDate": "2026-06-10"
+  },
+  {
+    "id": 167,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "BEZ OBMEZHEN",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "sourceURL": "https://la-madeleine.be/show/bez-obmezhen/",
+    "ticket": "https://la-madeleine.be/show/bez-obmezhen/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 298,
+    "neighbourhood": "Centre",
+    "desc": "BEZ OBMEZHEN at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest907",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest222",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest315",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "This is going to be AMAZING",
+        "time": "5:57 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "2:58 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "This is going to be AMAZING",
+        "time": "4:31 PM"
+      }
+    ],
+    "_rawDate": "2026-06-11"
+  },
+  {
+    "id": 168,
+    "cat": "Arts",
+    "date": "Ongoing",
+    "title": "Procès d'un jeune poète - Philippe Van Cutsem",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "From €8",
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 2,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/proces-dun-jeune-poete-philippe-van-cutsem",
+    "ticket": "https://www.bozar.be/en/calendar/proces-dun-jeune-poete-philippe-van-cutsem",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 185,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest205",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest043",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest453",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest876",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest213",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest661",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest567",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Who else is going?? 🙋",
+        "time": "9:19 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "This is going to be AMAZING",
+        "time": "2:09 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Who else is going?? 🙋",
+        "time": "11:00 PM"
+      }
+    ],
+    "_rawDate": "2027-05-16"
+  },
+  {
+    "id": 169,
+    "cat": "Music",
+    "date": "Ongoing",
+    "title": "Koninklijk Concertgebouworkest Amsterdam, Rouvali & Gabetta",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "sourceURL": "https://www.bozar.be/en/calendar/koninklijk-concertgebouworkest-amsterdam-rouvali-gabetta",
+    "ticket": "https://www.bozar.be/en/calendar/koninklijk-concertgebouworkest-amsterdam-rouvali-gabetta",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 106,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "attendees": [
+      {
+        "n": "Guest864",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest817",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "1:36 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:00 AM"
+      }
+    ],
+    "_rawDate": "2027-05-16"
   }
 ]
