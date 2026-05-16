@@ -2,7 +2,7 @@
 /**
  * Randevu Event Scraper — Brussels venue-specific edition
  *
- * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Wecandoo · Hangar · Couleur Café · Horst
+ * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Hangar · Couleur Café · Horst · Agenda Brussels
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -135,20 +135,21 @@ const VENUE_CONFIGS = [
     ],
   },
   {
-    id: 'wecandoo',
-    name: 'Wecandoo Brussels',
+    id: 'agendaBrussels',
+    name: 'Agenda Brussels',
     addr: 'Brussels, Belgium',
     lat: 50.8503, lng: 4.3517,
     neighbourhood: 'Centre',
-    emoji: '🧠', color: '#00BCD4', cat: 'Wellness',
-    tags: ['Workshop', 'Activity', 'Creative'],
-    defaultTime: '14:00',
-    extraWait: 6000,
-    enforceVisuals: true,
+    emoji: '🏛️', color: '#E76F51', cat: 'Culture',
+    tags: ['Culture', 'Brussels'],
+    defaultTime: '10:00',
+    extraWait: 5000,
+    // No enforceVisuals — each event is classified by its own content
     urls: [
-      'https://wecandoo.be/en/ateliers/bruxelles',
-      'https://wecandoo.be/fr/ateliers/bruxelles',
-      'https://wecandoo.be/en/workshops/brussels',
+      'https://www.agenda.brussels/en',
+      'https://agenda.brussels/en',
+      'https://www.agenda.brussels/en/agenda',
+      'https://www.agenda.brussels/en/events',
     ],
   },
   {
@@ -447,30 +448,38 @@ const MONTH_NL = { januari:'January',februari:'February',maart:'March',april:'Ap
 
 function toRelativeDate(iso, endIso) {
   if (!iso) return null;
-  // Parse as LOCAL calendar date — avoids UTC-midnight timezone drift
-  // ("2026-06-26" via new Date() would be midnight UTC, shifted by ±hours in local tz)
+  // Parse ISO into LOCAL calendar parts — eliminates UTC-midnight timezone drift.
+  // new Date("2026-06-26") is interpreted as UTC midnight, which shifts by ±hours
+  // in local timezones; new Date(yr, mo-1, dy) is always local midnight.
   const parts = iso.split('-').map(Number);
   if (parts.length < 3 || !parts[0] || !parts[1] || !parts[2]) return null;
-  const eDay  = new Date(parts[0], parts[1] - 1, parts[2]); // local midnight
-  const today = new Date(); today.setHours(0, 0, 0, 0);     // local midnight
+  const eDay = new Date(parts[0], parts[1] - 1, parts[2]); // local midnight
 
-  // Multi-day festival: if today falls inside [startDate, endDate], flag as Ongoing
+  // Multi-day festival check: 'Ongoing' ONLY when today sits between start and end.
+  // This is the SOLE path by which 'Ongoing' can be returned.
   if (endIso) {
     const ep = endIso.split('-').map(Number);
     if (ep.length >= 3) {
       const eEnd = new Date(ep[0], ep[1] - 1, ep[2]);
-      if (today >= eDay && today <= eEnd) return 'Ongoing';
+      const now  = new Date(); now.setHours(0, 0, 0, 0);
+      if (now >= eDay && now <= eEnd) return 'Ongoing';
     }
   }
 
-  const diff = Math.round((eDay - today) / 86400000);
-  if (diff < 0)  return null;  // past → skip
+  // Strict future-only path — Math.ceil guarantees future events are NEVER "Tonight".
+  // A future event at midnight vs. now at 3 PM = +9h → ceil(9/24) = 1 → "Tomorrow". ✓
+  // Today's event at midnight vs. now at 3 PM  = −15h → ceil(−0.625) = 0 → "Tonight". ✓
+  const now   = new Date();
+  const diffTime = eDay.getTime() - now.getTime();
+  const diffDays  = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays < 0)  return null;  // past → expired
   const dow = eDay.getDay();
-  if (diff === 0) return 'Tonight';
-  if (diff === 1) return 'Tomorrow';
-  if (diff <= 6 && (dow === 0 || dow === 6)) return 'This Weekend';
-  if (diff <= 7)  return 'Next Week';
-  return 'Next Month';  // anything > 7 days — never label future events "Ongoing"
+  if (diffDays === 0) return 'Tonight';
+  if (diffDays === 1) return 'Tomorrow';
+  if (diffDays <= 6 && (dow === 0 || dow === 6)) return 'This Weekend';
+  if (diffDays <= 7)  return 'Next Week';
+  return 'Next Month';  // strictly future; never "Ongoing"
 }
 
 function parseRawDate(raw) {
@@ -834,80 +843,227 @@ async function scrapeVenue(browser, config) {
         }
       }
 
-      // ── Strategy 1.6: Wecandoo Brussels workshop scraper ──
-      if (config.id === 'wecandoo' && events.length === 0) {
+      // ── Strategy 1.6: Hangar — flexible JS-rendered content scraper ──
+      // Hangar's ticket site (tickets.thehangar.be) is client-side rendered.
+      // We wait extra for the grid, try a cascade of flexible selectors, then
+      // fall back to scanning event-page <a> links. Per-event Brussels filter
+      // uses the exact venue text from the page — never the config's office address.
+      if (config.id === 'hangar' && events.length === 0) {
         try {
-          console.log('    Wecandoo: scanning workshop cards…');
-          await sleep(3000);
-          const workshops = await page.evaluate(() => {
-            const selectors = [
-              '[class*="activity-card"]','[class*="workshop-card"]','[class*="atelier"]',
-              '[class*="ActivityCard"]','[class*="WorkshopCard"]',
-              '[class*="offer"]','[class*="Offer"]',
-              'article','[class*="card"]',
+          console.log('    Hangar: waiting for JS render…');
+          await sleep(5000);
+          await page.evaluate(() => { window.scrollBy(0, 1200); });
+          await sleep(2000);
+          await page.evaluate(() => { window.scrollBy(0, 1200); });
+          await sleep(1500);
+
+          const BRUSSELS_RE = [
+            /gare\s+maritime/i, /hangar\s+flagey|flagey/i, /terminal/i,
+            /brussels|bruxelles|brussel/i,
+            /anderlecht|ixelles|elsene|schaerbeek|molenbeek|laeken|etterbeek/i,
+            /atomium/i, /recyclart/i, /tour\s*(?:&|et)\s*taxis/i,
+            /palais\s*12/i, /forest\s+national/i,
+          ];
+          const SKIP_RE = [
+            /\bantwerp|\banvers|\bantwerpen\b/i,
+            /\bli[eè]ge\b|\blüttich\b/i,
+            /\bghent\b|\bgand\b|\bgent\b/i,
+            /\bbruges?\b|\bbrugge\b/i,
+            /\bnamur\b|\bcharleroi\b|\bmons\b|\bhasselt\b/i,
+          ];
+
+          const cards = await page.evaluate(() => {
+            // Try progressively broader selectors until we get ≥2 results
+            const cascades = [
+              '[class*="event-card"],[class*="EventCard"]',
+              '[class*="event-item"],[class*="EventItem"]',
+              '[class*="ticket-item"],[class*="TicketItem"]',
+              'article[class*="event"],li[class*="event"]',
+              '[class*="event"],[class*="card"]',
             ];
-            const seen = new Set();
-            const cards = [...document.querySelectorAll(selectors.join(','))].filter(c => {
-              const t = (c.innerText || '').trim();
-              if (t.length < 15 || t.length > 1200) return false;
-              if (seen.has(t.slice(0, 60))) return false;
-              seen.add(t.slice(0, 60));
-              return true;
-            });
-            return cards.map(card => {
-              const headingEl = card.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
-              const title = (headingEl?.innerText || '').replace(/\s+/g, ' ').trim();
-              const allText = (card.innerText || '').replace(/\s+/g, ' ').trim();
-              const priceEl = card.querySelector('[class*="price"],[class*="tarif"],[class*="cost"],[class*="amount"],[class*="Price"]');
-              const priceText = (priceEl?.innerText || allText).match(/€\s*\d+(?:[.,]\d{1,2})?/)?.[0] || '';
-              const locEl = card.querySelector('[class*="location"],[class*="lieu"],[class*="place"],[class*="city"],[class*="address"],[class*="Location"]');
-              const location = (locEl?.innerText || '').replace(/\s+/g, ' ').trim();
-              const dateEl = card.querySelector('time,[datetime],[class*="date"],[class*="next"],[class*="session"],[class*="Date"]');
-              const dateStr = dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim();
-              const catEl = card.querySelector('[class*="category"],[class*="tag"],[class*="type"],[class*="label"],[class*="Category"]');
-              const category = (catEl?.innerText || '').replace(/\s+/g, ' ').trim();
-              const link = card.querySelector('a[href]')?.href || '';
-              return { title, priceText, location, dateStr, category, link, allText };
-            });
-          });
-          console.log(`    Wecandoo: ${workshops.length} card(s) found`);
-          const todayLocal = new Date(); todayLocal.setHours(0, 0, 0, 0);
-          const baseOrigin = 'https://wecandoo.be';
-          for (const w of workshops) {
-            if (!w.title || w.title.length < 4 || !isValidTitle(w.title)) continue;
-            // Try to parse a date; workshops without a specific date get next Saturday
-            let rawDate = parseRawDate(w.dateStr) || parseRawDate(scanTextForDate(w.allText));
-            if (!rawDate) {
-              // No specific date: assign next Saturday as the default session anchor
-              const nextSat = new Date(todayLocal);
-              const daysToSat = (6 - todayLocal.getDay() + 7) % 7 || 7;
-              nextSat.setDate(todayLocal.getDate() + daysToSat);
-              rawDate = nextSat.toISOString().split('T')[0];
+            for (const sel of cascades) {
+              const els = [...document.querySelectorAll(sel)].filter(el => {
+                const t = (el.innerText || '').trim();
+                return t.length > 20 && t.length < 1500;
+              });
+              if (els.length >= 2) {
+                return els.map(el => {
+                  const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
+                  const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"]');
+                  const locEl  = el.querySelector('[class*="location"],[class*="venue"],[class*="place"],[class*="city"]');
+                  return {
+                    title:    (h?.innerText || '').replace(/\s+/g, ' ').trim(),
+                    allText:  (el.innerText || '').replace(/\s+/g, ' ').trim(),
+                    dateStr:  dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+                    location: (locEl?.innerText || '').replace(/\s+/g, ' ').trim(),
+                    link:     el.querySelector('a[href]')?.href || '',
+                  };
+                });
+              }
             }
+            // Link-level fallback: any <a> whose href looks like an event page
+            return [...document.querySelectorAll('a[href]')]
+              .filter(a => {
+                const href = a.href || '';
+                const txt  = (a.innerText || '').trim();
+                return txt.length > 5 && txt.length < 150 &&
+                  (href.includes('/event') || href.includes('/ticket') || href.includes('/agenda') || href.includes('/show'));
+              })
+              .map(a => {
+                const parent = a.closest('li,article,[class*="item"],[class*="row"]') || a;
+                return {
+                  title:    (a.innerText || '').replace(/\s+/g, ' ').trim(),
+                  allText:  (parent.innerText || a.innerText || '').replace(/\s+/g, ' ').trim(),
+                  dateStr:  '',
+                  location: '',
+                  link:     a.href,
+                };
+              });
+          });
+
+          console.log(`    Hangar: ${cards.length} candidate(s) via flexible selector`);
+          const baseOrigin = 'https://tickets.thehangar.be';
+
+          for (const card of cards) {
+            if (!card.title || card.title.length < 5 || !isValidTitle(card.title)) continue;
+            const combined = `${card.title} ${card.location} ${card.allText}`;
+
+            // Hard skip — non-Brussels city explicitly mentioned
+            if (SKIP_RE.some(r => r.test(combined))) {
+              console.log(`    Hangar: skip (non-Brussels) "${card.title.slice(0, 40)}"`);
+              continue;
+            }
+
+            // Extract the specific Brussels venue text shown on the page
+            let venueText = card.location.replace(/\s+/g, ' ').trim();
+            if (!venueText) {
+              for (const re of BRUSSELS_RE) {
+                const m = combined.match(re);
+                if (m) { venueText = m[0]; break; }
+              }
+            }
+            // Must have a recognised Brussels location — no office-address fallback
+            if (!venueText) {
+              console.log(`    Hangar: skip (no Brussels location) "${card.title.slice(0, 40)}"`);
+              continue;
+            }
+
+            const rawDate = parseRawDate(card.dateStr) || parseRawDate(scanTextForDate(card.allText));
+            if (!rawDate) { console.log(`    Hangar: skip (no date) "${card.title.slice(0, 40)}"`); continue; }
             const relDate = toRelativeDate(rawDate);
             if (!relDate) continue;
-            const prices = extractAllPrices(w.priceText || w.allText);
-            const price = formatPrice(prices);
-            const venueText = (w.location || 'Brussels').replace(/\n.*/g, '').trim();
-            const url = w.link.startsWith('http') ? w.link : w.link.startsWith('/') ? `${baseOrigin}${w.link}` : '';
-            const cls = classifyForVenue(w.title + ' ' + w.category, config);
-            const tags = [...cls.tags];
-            if (w.category && w.category.length < 30 && !tags.includes(w.category)) tags.push(w.category);
+
+            const url = card.link.startsWith('http') ? card.link : `${baseOrigin}${card.link}`;
+            const cls = classifyForVenue(card.title + ' ' + card.allText, config);
             events.push({
-              _rawDate: rawDate, title: w.title,
-              venue: venueText || config.name, addr: config.addr,
+              _rawDate: rawDate, title: card.title,
+              venue: venueText, addr: `${venueText}, Brussels`,
               date: relDate, time: config.defaultTime,
-              startH: parseInt(config.defaultTime, 10) || 14,
-              endH: (parseInt(config.defaultTime, 10) || 14) + 2,
-              price, emoji: cls.emoji, color: cls.color, cat: cls.cat, tags,
+              startH: parseInt(config.defaultTime, 10) || 22,
+              endH: (parseInt(config.defaultTime, 10) || 22) + 5,
+              price: '', emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
               source: config.name, sourceURL: url, ticket: url,
-              desc: `${w.title}${w.category ? ' — ' + w.category : ''} workshop in Brussels.`,
+              desc: `${card.title} at ${venueText}.`,
+              neighbourhood: 'Brussels', lat: config.lat, lng: config.lng,
+            });
+            console.log(`    Hangar ✓ "${card.title.slice(0, 40)}" @ ${venueText} (${relDate})`);
+          }
+          console.log(`    Hangar → ${events.length} Brussels event(s)`);
+        } catch (err) {
+          console.log(`    Hangar scraper error: ${err.message.slice(0, 80)}`);
+        }
+      }
+
+      // ── Strategy 1.7: Agenda Brussels — culture & sports activities ──
+      // agenda.brussels lists city-wide exhibitions, sports events, and activities.
+      // No enforceVisuals — each event is classified by its own content keywords.
+      if (config.id === 'agendaBrussels' && events.length === 0) {
+        try {
+          console.log('    Agenda Brussels: scanning event grid…');
+          await sleep(3000);
+
+          const agendaItems = await page.evaluate(() => {
+            const selectors = [
+              '.event-card','[class*="event-card"]',
+              '.event-item','[class*="event-item"]',
+              '[class*="EventCard"]','[class*="EventItem"]',
+              'article','[class*="card"]','.item',
+            ];
+            const seen = new Set();
+            let best = [];
+            for (const sel of selectors) {
+              const els = [...document.querySelectorAll(sel)].filter(el => {
+                const t = (el.innerText || '').trim();
+                return t.length > 20 && t.length < 800;
+              });
+              if (els.length > best.length) best = els;
+            }
+            return best.map(el => {
+              const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
+              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="dag"]');
+              const locEl  = el.querySelector('[class*="location"],[class*="venue"],[class*="place"],[class*="address"]');
+              const catEl  = el.querySelector('[class*="category"],[class*="type"],[class*="tag"],[class*="label"]');
+              const priceEl= el.querySelector('[class*="price"],[class*="ticket"],[class*="tarif"]');
+              return {
+                title:    (h?.innerText || '').replace(/\s+/g, ' ').trim(),
+                allText:  (el.innerText || '').replace(/\s+/g, ' ').trim(),
+                dateStr:  dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+                location: (locEl?.innerText || '').replace(/\s+/g, ' ').trim(),
+                category: (catEl?.innerText || '').replace(/\s+/g, ' ').trim(),
+                priceText:(priceEl?.innerText || '').replace(/\s+/g, ' ').trim(),
+                link:     el.querySelector('a[href]')?.href || '',
+              };
+            }).filter(Boolean);
+          });
+
+          console.log(`    Agenda Brussels: ${agendaItems.length} item(s) found`);
+          const baseOrigin = 'https://www.agenda.brussels';
+
+          for (const item of agendaItems) {
+            if (!item.title || item.title.length < 5 || !isValidTitle(item.title)) continue;
+
+            const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
+            if (!rawDate) continue;
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+
+            // Category + emoji: explicit mapping per user spec, then generic classify
+            const combined = (item.title + ' ' + item.category + ' ' + item.allText).toLowerCase();
+            let cls;
+            if (/exhibition|museum|art\b|theater|theatre|galerie|gallery|exposition|dance|ballet|circus|cirque/i.test(combined)) {
+              const emoji = /theater|theatre|dance|ballet|performance/i.test(combined) ? '🎭'
+                          : /museum|history|histoire/i.test(combined) ? '🏛️' : '🎨';
+              cls = { emoji, color: '#E76F51', cat: 'Culture', tags: ['Culture', 'Art'] };
+            } else if (/\brun\b|race|padel|swim\b|swimming|fitness|\bsport\b|marathon|trail|yoga|cycling|triathlon|tennis/i.test(combined)) {
+              cls = { emoji: '👟', color: '#90E0EF', cat: 'Sports', tags: ['Sports', 'Active'] };
+            } else {
+              cls = classify(combined);
+              if (cls.emoji === DEFAULT_CLASS.emoji) {
+                cls = { emoji: '🏛️', color: '#E76F51', cat: 'Culture', tags: ['Culture', 'Brussels'] };
+              }
+            }
+
+            const prices = extractAllPrices(item.priceText || item.allText);
+            const price  = formatPrice(prices);
+            const venueText = (item.location || 'Brussels').replace(/\n.*/g, '').trim().slice(0, 80);
+            const url = item.link.startsWith('http') ? item.link
+              : item.link.startsWith('/') ? `${baseOrigin}${item.link}` : '';
+
+            events.push({
+              _rawDate: rawDate, title: item.title,
+              venue: venueText || 'Brussels', addr: `${venueText || 'Brussels'}, Belgium`,
+              date: relDate, time: config.defaultTime,
+              startH: parseInt(config.defaultTime, 10) || 10,
+              endH: (parseInt(config.defaultTime, 10) || 10) + 3,
+              price, emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
+              source: config.name, sourceURL: url, ticket: url,
+              desc: item.allText.slice(0, 200) || `${item.title} in Brussels.`,
               neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
             });
           }
-          console.log(`    Wecandoo → ${events.length} workshop(s) parsed`);
+          console.log(`    Agenda Brussels → ${events.length} event(s) parsed`);
         } catch (err) {
-          console.log(`    Wecandoo scraper failed: ${err.message.slice(0, 60)}`);
+          console.log(`    Agenda Brussels scraper error: ${err.message.slice(0, 80)}`);
         }
       }
 
@@ -1056,24 +1212,6 @@ async function scrapeVenue(browser, config) {
     }
   }
 
-  // ── Hangar: drop events explicitly at non-Brussels venues ──
-  if (config.id === 'hangar' && events.length > 0) {
-    const SKIP_CITIES = [
-      /\bantwerp\b|\banvers\b|\bantwerpen\b/i,
-      /\bli[eè]ge\b|\blüttich\b/i,
-      /\bghent\b|\bgand\b|\bgent\b/i,
-      /\bbruges?\b|\bbrugge\b/i,
-      /\bnamur\b|\bcharleroi\b|\bmons\b/i,
-    ];
-    const before = events.length;
-    events = events.filter(ev => {
-      const text = `${ev.title} ${ev.venue} ${ev.addr} ${ev.desc}`;
-      return !SKIP_CITIES.some(r => r.test(text));
-    });
-    if (events.length < before)
-      console.log(`  🏙️  Hangar: dropped ${before - events.length} non-Brussels event(s)`);
-  }
-
   // ── Within-venue dedup: strict title+date (catches same event scraped twice in one run) ──
   const seenInScrape = new Set();
   const uniqueEvents = events.filter(ev => {
@@ -1135,7 +1273,7 @@ async function main() {
     'c12':               { emoji: '💃', color: '#6C63FF', cat: 'Nightlife' },
     'la madeleine':      { emoji: '🎸', color: '#8E7DBE', cat: 'Music'     },
     'bozar':             { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
-    'wecandoo':          { emoji: '🧠', color: '#00BCD4', cat: 'Wellness'  },
+    'agenda brussels':   { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
     'hangar':            { emoji: '⚡', color: '#2A1F3D', cat: 'Nightlife' },
     'couleur café':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
     'couleur cafe':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
