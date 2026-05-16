@@ -508,7 +508,7 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "price": "",
+    "price": "From €8",
     "emoji": "🎸",
     "color": "#C77DFF",
     "friends": 1,
@@ -1863,7 +1863,7 @@
     "lng": 4.3634,
     "going": 153,
     "neighbourhood": "Saint-Josse",
-    "desc": "Solann - Flora Fishbach - Papooz & many more at Le Botanique.",
+    "desc": "Solann · Flora Fishbach · Papooz · Léonie Pernet · Camille Yembe · Noor · Nilusi · Les Louanges · Blasé · Max Baby · Isaac · Gildaa · Pyo · 4nouki & many more",
     "attendees": [
       {
         "n": "Zoë",
@@ -1951,7 +1951,7 @@
     "lng": 4.3634,
     "going": 238,
     "neighbourhood": "Saint-Josse",
-    "desc": "Liniker - Mari Froes - Mychelle & many more at Le Botanique.",
+    "desc": "Liniker • Mari Froes • Mychelle • Adja • Sevens • Sara Parkman • Helena Casella • Fidju Kitxora",
     "attendees": [
       {
         "n": "Zoë",
@@ -5242,7 +5242,7 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "price": "",
+    "price": "From €28",
     "emoji": "🏛️",
     "color": "#E76F51",
     "friends": 2,
@@ -5352,5 +5352,2619 @@
       }
     ],
     "_rawDate": "2026-06-26"
+  },
+  {
+    "id": 171,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Conference : Let's talk about Africa 3.0",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "price": "",
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "sourceURL": "https://www.abconcerts.be/en/agenda/conference-lets-talk-about-africa-30/a10Qw00000HzopJIAR",
+    "ticket": "https://www.abconcerts.be/en/agenda/conference-lets-talk-about-africa-30/a10Qw00000HzopJIAR",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 269,
+    "neighbourhood": "Centre",
+    "desc": "Can music reinvent the relationship between Africa and Europe?",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest034",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest346",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest940",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest436",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:11 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Who else is going?? 🙋",
+        "time": "4:58 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "First time at this venue!",
+        "time": "8:16 PM"
+      }
+    ],
+    "_rawDate": "2026-05-25"
+  },
+  {
+    "id": 172,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Initiez-vous au modelage lors d'un moment convivial",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €65",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 150,
+    "neighbourhood": "Centre",
+    "desc": "Initiez-vous au modelage lors d'un moment convivial workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest943",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest293",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest326",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest531",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest931",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest945",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest421",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Who else is going?? 🙋",
+        "time": "9:47 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "3:26 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 173,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Initiate yourself into the world of natural perfumery",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €135",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 254,
+    "neighbourhood": "Centre",
+    "desc": "Initiate yourself into the world of natural perfumery workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest915",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest479",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest004",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest783",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest021",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Already got my ticket! 👋",
+        "time": "10:36 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "7:20 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "5:07 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 174,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Cook your own 100% plant-based meal",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €80",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 49,
+    "neighbourhood": "Centre",
+    "desc": "Cook your own 100% plant-based meal workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest278",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest683",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest318",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest858",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest769",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "9:12 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "6:08 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "11:39 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 175,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Créez votre couteau unique",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €240",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 3,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 127,
+    "neighbourhood": "Centre",
+    "desc": "Créez votre couteau unique workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest605",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest430",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest330",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Grab tickets fast, selling out!",
+        "time": "3:09 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:01 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 176,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Sample Brussels organic wines in an urban winery",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €35",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 157,
+    "neighbourhood": "Centre",
+    "desc": "Sample Brussels organic wines in an urban winery workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest532",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest408",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "11:52 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "12:33 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 177,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Create your own bag",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €140",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 3,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 148,
+    "neighbourhood": "Centre",
+    "desc": "Create your own bag workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest721",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest688",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest807",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest643",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest489",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "5:53 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "9:34 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 178,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Create your own small terrarium",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €49",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 3,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 126,
+    "neighbourhood": "Centre",
+    "desc": "Create your own small terrarium workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest585",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest989",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest761",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest542",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "12:26 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "12:20 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 179,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Embroider your t-shirt",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €75",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 1,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 45,
+    "neighbourhood": "Centre",
+    "desc": "Embroider your t-shirt workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest583",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest065",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "First time at this venue!",
+        "time": "10:18 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "8:07 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "2:04 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 180,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Tufting your wall decoration",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €115",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 3,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 151,
+    "neighbourhood": "Centre",
+    "desc": "Tufting your wall decoration workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest850",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest762",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "7:11 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "7:00 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "5:53 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 181,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Discover the potter's wheel",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €80",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 77,
+    "neighbourhood": "Centre",
+    "desc": "Discover the potter's wheel workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest034",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest355",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest841",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest479",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest200",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest850",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest513",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "6:33 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Grab tickets fast, selling out!",
+        "time": "2:06 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 182,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Make your own fresh Italian pasta",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €82",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 223,
+    "neighbourhood": "Centre",
+    "desc": "Make your own fresh Italian pasta workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest617",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest433",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest619",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest189",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest542",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Grab tickets fast, selling out!",
+        "time": "5:42 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "8:03 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Brussels never disappoints ❤️",
+        "time": "6:58 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 183,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Découvrez les secrets de fabrication du vinaigre",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "From €25",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 1,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 192,
+    "neighbourhood": "Centre",
+    "desc": "Découvrez les secrets de fabrication du vinaigre workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest451",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest516",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest335",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest668",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest019",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "This is going to be AMAZING",
+        "time": "3:22 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "2:35 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 184,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Foodies",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 1,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 119,
+    "neighbourhood": "Centre",
+    "desc": "Foodies workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest596",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest805",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest323",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest670",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest026",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest301",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest000",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:58 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:40 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "10:53 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 185,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Pottery and ceramics",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 150,
+    "neighbourhood": "Centre",
+    "desc": "Pottery and ceramics workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest900",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest129",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest865",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest994",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest116",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest864",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest498",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:21 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "4:43 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "1:32 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 186,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Textiles",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 134,
+    "neighbourhood": "Centre",
+    "desc": "Textiles workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest378",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest862",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest747",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest117",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest367",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Who else is going?? 🙋",
+        "time": "8:56 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "10:07 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:59 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 187,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Drinks and beverages",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 28,
+    "neighbourhood": "Centre",
+    "desc": "Drinks and beverages workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest620",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest901",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest431",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest789",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:57 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Grab tickets fast, selling out!",
+        "time": "4:06 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "1:05 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 188,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Cosmetics and well-being",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 3,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 309,
+    "neighbourhood": "Centre",
+    "desc": "Cosmetics and well-being workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest801",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest937",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "9:28 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "2:50 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 189,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Plant life",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 1,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 293,
+    "neighbourhood": "Centre",
+    "desc": "Plant life workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest922",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest250",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest783",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "8:36 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Counting down the days 🗓️",
+        "time": "7:03 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 190,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Jewellery",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 155,
+    "neighbourhood": "Centre",
+    "desc": "Jewellery workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest924",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest623",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest602",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest475",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest902",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest335",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Who else is going?? 🙋",
+        "time": "8:59 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "2:44 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 191,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Leather",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 3,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 238,
+    "neighbourhood": "Centre",
+    "desc": "Leather workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest424",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest707",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "This is going to be AMAZING",
+        "time": "3:24 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "2:19 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "8:22 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 192,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Paper",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 278,
+    "neighbourhood": "Centre",
+    "desc": "Paper workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest872",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest172",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest474",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest756",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest398",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest631",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "4:17 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:53 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 193,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Agriculture",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 34,
+    "neighbourhood": "Centre",
+    "desc": "Agriculture workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest689",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest156",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest581",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest845",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest371",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest838",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest212",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:46 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Who else is going?? 🙋",
+        "time": "2:30 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 194,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Glass",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 1,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 89,
+    "neighbourhood": "Centre",
+    "desc": "Glass workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest752",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest429",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest462",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest427",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest755",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest283",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest849",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "11:25 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "8:11 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:10 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 195,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Metal",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 60,
+    "neighbourhood": "Centre",
+    "desc": "Metal workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest671",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest825",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest491",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest337",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest734",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "This is going to be AMAZING",
+        "time": "2:58 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:58 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Brussels never disappoints ❤️",
+        "time": "7:10 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 196,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Stoneworking",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 23,
+    "neighbourhood": "Centre",
+    "desc": "Stoneworking workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest540",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest748",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest352",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Can't wait for this one! 🔥",
+        "time": "7:55 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "5:47 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 197,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Yannick FERMENTATION SPECIALIST",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 226,
+    "neighbourhood": "Centre",
+    "desc": "Yannick FERMENTATION SPECIALIST workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest200",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest125",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest781",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest267",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest018",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:41 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "1:35 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 198,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Grégoire OENOLOGUE",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 218,
+    "neighbourhood": "Centre",
+    "desc": "Grégoire OENOLOGUE workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest205",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest199",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest411",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest427",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest977",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest178",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest273",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "First time at this venue!",
+        "time": "5:39 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:27 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Brussels never disappoints ❤️",
+        "time": "3:56 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 199,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Audrey PLANT DESIGNER",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 99,
+    "neighbourhood": "Centre",
+    "desc": "Audrey PLANT DESIGNER workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest094",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest862",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest813",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest814",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest390",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "6:40 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:35 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 200,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Martine FLORIST AND GARDENER",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 1,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 55,
+    "neighbourhood": "Centre",
+    "desc": "Martine FLORIST AND GARDENER workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest952",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest739",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest636",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest558",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest229",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Brussels never disappoints ❤️",
+        "time": "11:42 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:18 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 201,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Suzana COSMETIC CREATOR",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 298,
+    "neighbourhood": "Centre",
+    "desc": "Suzana COSMETIC CREATOR workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest231",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest235",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "8:37 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "4:47 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 202,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Idil MARBLE ARTIST AND JEWELLER",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 2,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 39,
+    "neighbourhood": "Centre",
+    "desc": "Idil MARBLE ARTIST AND JEWELLER workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest192",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest400",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest536",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest121",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Can't wait for this one! 🔥",
+        "time": "9:22 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:15 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 203,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Aurélie FLORIST",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 182,
+    "neighbourhood": "Centre",
+    "desc": "Aurélie FLORIST workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest349",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest669",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest736",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "6:38 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:02 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Already got my ticket! 👋",
+        "time": "3:18 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 204,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Dieter CERAMIST & SPINNER",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 1,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 271,
+    "neighbourhood": "Centre",
+    "desc": "Dieter CERAMIST & SPINNER workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest409",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest576",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest516",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest187",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Already got my ticket! 👋",
+        "time": "12:21 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "7:42 AM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
+  },
+  {
+    "id": 205,
+    "cat": "Wellness",
+    "date": "Next Week",
+    "title": "Caroline CYANOTYPING EXPERT",
+    "venue": "Brussels",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 16,
+    "price": "",
+    "emoji": "🧠",
+    "color": "#00BCD4",
+    "friends": 0,
+    "tags": [
+      "Workshop",
+      "Activity",
+      "Creative"
+    ],
+    "source": "Wecandoo Brussels",
+    "sourceURL": "",
+    "ticket": "",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 170,
+    "neighbourhood": "Centre",
+    "desc": "Caroline CYANOTYPING EXPERT workshop in Brussels.",
+    "attendees": [
+      {
+        "n": "Guest713",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest698",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest374",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest023",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest836",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest102",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "This is going to be AMAZING",
+        "time": "7:10 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "2:04 PM"
+      }
+    ],
+    "_rawDate": "2026-05-23"
   }
 ]
