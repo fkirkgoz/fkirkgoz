@@ -69,12 +69,8 @@ export default function MapScreen({ onEventPress, T }: Props) {
         {groups.map(group => {
           const first    = group.events[0];
           const isMulti  = group.events.length > 1;
-          // Music venues (AB, Botanique, etc.) get a music marker when grouped
-          const isMusicGroup = isMulti && group.events.some(e =>
-            ['Music','Nightlife','Arts'].includes(e.cat)
-          );
-          const markerEmoji = isMusicGroup ? '🎵' : first.emoji;
-          const markerColor = isMusicGroup ? '#7B2FBE' : first.color;
+          const markerEmoji = first.emoji;
+          const markerColor = first.color;
 
           return (
             <Marker

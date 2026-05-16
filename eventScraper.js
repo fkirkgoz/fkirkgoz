@@ -2,7 +2,7 @@
 /**
  * Randevu Event Scraper — Brussels venue-specific edition
  *
- * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar
+ * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · MIX Brussels · Hangar · Couleur Café · Horst
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -132,6 +132,78 @@ const VENUE_CONFIGS = [
       'https://www.bozar.be/en/calendar',
       'https://www.bozar.be/en',
       'https://bozar.be/en/calendar',
+    ],
+  },
+  {
+    id: 'mix',
+    name: 'MIX Brussels',
+    addr: 'Rue du Marché au Charbon 28, 1000 Brussels',
+    lat: 50.8468, lng: 4.3508,
+    neighbourhood: 'Centre',
+    emoji: '🧠', color: '#00BCD4', cat: 'Wellness',
+    tags: ['Wellness', 'Community', 'LGBTQ+'],
+    defaultTime: '20:00',
+    extraWait: 6000,
+    enforceVisuals: true,
+    urls: [
+      'https://mix.brussels/events/',
+      'https://mix.brussels/events',
+      'https://mix.brussels/agenda',
+      'https://mix.brussels',
+    ],
+  },
+  {
+    id: 'hangar',
+    name: 'Hangar',
+    addr: 'Place des Abattoirs 1, 1000 Brussels',
+    lat: 50.8430, lng: 4.3370,
+    neighbourhood: 'Anderlecht',
+    emoji: '⚡', color: '#2A1F3D', cat: 'Nightlife',
+    tags: ['Techno', 'Electronic', 'Open Air'],
+    defaultTime: '22:00',
+    extraWait: 8000,
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://tickets.thehangar.be/',
+      'https://tickets.thehangar.be',
+      'https://thehangar.be',
+      'https://www.thehangar.be',
+    ],
+  },
+  {
+    id: 'couleurCafe',
+    name: 'Couleur Café',
+    addr: 'Ossegempark, 1020 Laeken',
+    lat: 50.8948, lng: 4.3411,
+    neighbourhood: 'Laeken',
+    emoji: '🎸', color: '#F4A261', cat: 'Festival',
+    tags: ['World Music', 'Hip Hop', 'Festival'],
+    defaultTime: '14:00',
+    extraWait: 6000,
+    enforceVisuals: true,
+    urls: [
+      'https://www.couleurcafe.be',
+      'https://couleurcafe.be',
+      'https://www.couleurcafe.be/programme',
+      'https://couleurcafe.be/programme',
+    ],
+  },
+  {
+    id: 'horst',
+    name: 'Horst Arts & Music',
+    addr: 'Asiat Park, Vilvoorde',
+    lat: 50.9254, lng: 4.4044,
+    neighbourhood: 'Vilvoorde',
+    emoji: '⚡', color: '#1A1A2E', cat: 'Festival',
+    tags: ['Electronic', 'Arts', 'Festival'],
+    defaultTime: '14:00',
+    extraWait: 7000,
+    enforceVisuals: true,
+    urls: [
+      'https://www.horstartsandmusic.com/',
+      'https://www.horstartsandmusic.com',
+      'https://horstartsandmusic.com',
     ],
   },
 ];
