@@ -2,7 +2,7 @@
 /**
  * Randevu Event Scraper — Brussels venue-specific edition
  *
- * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Couleur Café · Horst · Agenda Brussels · TicketSwap Brussels
+ * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Couleur Café · Agenda Brussels
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -169,39 +169,6 @@ const VENUE_CONFIGS = [
       'https://couleurcafe.be/programme',
     ],
   },
-  {
-    id: 'horst',
-    name: 'Horst Arts & Music',
-    addr: 'Asiat Park, Vilvoorde',
-    lat: 50.9254, lng: 4.4044,
-    neighbourhood: 'Vilvoorde',
-    emoji: '⚡', color: '#1A1A2E', cat: 'Festival',
-    tags: ['Electronic', 'Arts', 'Festival'],
-    defaultTime: '14:00',
-    extraWait: 7000,
-    enforceVisuals: true,
-    urls: [
-      'https://www.horstartsandmusic.com/',
-      'https://www.horstartsandmusic.com',
-      'https://horstartsandmusic.com',
-    ],
-  },
-  {
-    id: 'ticketswap',
-    name: 'TicketSwap Brussels',
-    addr: 'Brussels, Belgium',
-    lat: 50.8503, lng: 4.3517,
-    neighbourhood: 'Centre',
-    emoji: '🎟️', color: '#FF6B35', cat: 'Music',
-    tags: ['Concert', 'Live Music', 'Brussels'],
-    defaultTime: '20:00',
-    extraWait: 8000,
-    jsHeavy: true,
-    urls: [
-      'https://www.ticketswap.be/search?location=4',
-      'https://www.ticketswap.be/?location=4',
-    ],
-  },
 ];
 
 // ── Keyword classification ─────────────────────────────────────────────────────
@@ -309,37 +276,65 @@ function toRelativeDate(iso, endIso) {
   return 'Next Month';  // strictly future; never "Ongoing"
 }
 
+// Returns "YYYY-MM-DD" using LOCAL calendar parts — avoids UTC midnight timezone drift.
+// new Date("2026-06-06").toISOString() in UTC+2 gives "2026-06-05T22:00:00Z" (wrong).
+// new Date(y, m, d) is always local midnight, so getFullYear/Month/Date are correct.
+function toLocalISODate(d) {
+  const y  = d.getFullYear();
+  const mo = String(d.getMonth() + 1).padStart(2, '0');
+  const dy = String(d.getDate()).padStart(2, '0');
+  return `${y}-${mo}-${dy}`;
+}
+
 function parseRawDate(raw) {
   if (!raw) return null;
   let t = (raw || '').replace(/\s+/g,' ').trim();
 
-  // Strip date ranges before parsing:
-  //   "May 16 – 17, 2026"  → "May 16, 2026"
-  //   "16 – 17 May 2026"   → "16 May 2026"
-  //   "16–18 June 2026"    → "16 June 2026"
+  // Strip date ranges: "May 16 – 17, 2026" → "May 16, 2026" / "16 – 17 May 2026" → "16 May 2026"
   t = t.replace(/([A-Za-z]+\s+\d{1,2})\s*[–—-]\s*\d{1,2}(,?\s*\d{4})/i, '$1$2');
   t = t.replace(/(\d{1,2})\s*[–—]\s*\d{1,2}(\s+[A-Za-z])/,               '$1$2');
-  if (/^\d{4}-\d{2}-\d{2}/.test(t)) { const d=new Date(t); if(!isNaN(d.getTime())&&d.getFullYear()>2020)return t.slice(0,10); }
+
+  // Fast path: already ISO "2026-06-06…"
+  if (/^\d{4}-\d{2}-\d{2}/.test(t)) {
+    const [yr, mo, dy] = t.slice(0, 10).split('-').map(Number);
+    if (yr > 2020 && yr <= 2030 && mo >= 1 && mo <= 12 && dy >= 1 && dy <= 31)
+      return `${yr}-${String(mo).padStart(2,'0')}-${String(dy).padStart(2,'0')}`;
+  }
+
+  // Translate French/Dutch month names to English (word-boundary safe)
   const tLow = t.toLowerCase();
-  // Word-boundary match prevents 'mai' matching inside 'email', 'juin' inside 'injuicer', etc.
   for (const [fr,en] of Object.entries(MONTH_FR)) {
     if (tLow.includes(fr)) t = t.replace(new RegExp(`(?<![a-zÀ-ÿ])${fr}(?![a-zÀ-ÿ])`, 'i'), en);
   }
   for (const [nl,en] of Object.entries(MONTH_NL)) {
     if (tLow.includes(nl)) t = t.replace(new RegExp(`(?<![a-zÀ-ÿ])${nl}(?![a-zÀ-ÿ])`, 'i'), en);
   }
-  // "13 . 05 . 2026" (Fuse) and "15.05.26" (La Madeleine compact) — dots with optional spaces
+
+  // Validates the constructed Date — rejects out-of-range and pre-2021 dates.
+  function checked(d) {
+    if (isNaN(d.getTime())) return null;
+    const y = d.getFullYear(), mo = d.getMonth() + 1, dy = d.getDate();
+    if (y <= 2020 || y > 2030 || mo < 1 || mo > 12 || dy < 1 || dy > 31) return null;
+    return toLocalISODate(d);
+  }
+
+  // "13 . 05 . 2026" (Fuse) / "15.05.26" (La Madeleine compact)
   let m = t.match(/(\d{1,2})\s*\.\s*(\d{1,2})\s*\.\s*(\d{2,4})/);
-  if (m) { const y=m[3].length===2?`20${m[3]}`:m[3]; const d=new Date(`${y}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`); if(!isNaN(d.getTime())&&parseInt(y)>2020)return d.toISOString().split('T')[0]; }
+  if (m) { const y = m[3].length === 2 ? `20${m[3]}` : m[3]; return checked(new Date(parseInt(y,10), parseInt(m[2],10)-1, parseInt(m[1],10))); }
+
+  // "16/05/2026" / "16-05-2026"
   m = t.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/);
-  if (m) { const y=m[3].length===2?`20${m[3]}`:m[3]; const d=new Date(`${y}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`); if(!isNaN(d.getTime()))return d.toISOString().split('T')[0]; }
+  if (m) { const y = m[3].length === 2 ? `20${m[3]}` : m[3]; return checked(new Date(parseInt(y,10), parseInt(m[2],10)-1, parseInt(m[1],10))); }
+
+  // "16 June 2026" / "16 Jun 2026" — 4-digit year required
   m = t.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
-  if (m) { const d=new Date(`${m[2]} ${m[1]}, ${m[3]}`); if(!isNaN(d.getTime()))return d.toISOString().split('T')[0]; }
+  if (m) return checked(new Date(`${m[2]} ${m[1]}, ${m[3]}`));
+
+  // "June 16, 2026" / "Jun 16 2026" — 4-digit year required
   m = t.match(/([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})/);
-  if (m) { const d=new Date(`${m[1]} ${m[2]}, ${m[3]}`); if(!isNaN(d.getTime()))return d.toISOString().split('T')[0]; }
-  m = t.match(/(?:[A-Za-z]+\s+)?(\d{1,2})\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/i);
-  if (m) { const yr=new Date().getFullYear(); let d=new Date(`${m[2]} ${m[1]}, ${yr}`); if(!isNaN(d.getTime())){ if(d<new Date())d=new Date(`${m[2]} ${m[1]}, ${yr+1}`); return d.toISOString().split('T')[0]; } }
-  const d=new Date(t); if(!isNaN(d.getTime())&&d.getFullYear()>2020)return d.toISOString().split('T')[0];
+  if (m) return checked(new Date(`${m[1]} ${m[2]}, ${m[3]}`));
+
+  // No year-guessing pattern — omitted intentionally to prevent stray "Jun 15" noise.
   return null;
 }
 
@@ -670,75 +665,7 @@ async function scrapeVenue(browser, config) {
         }
       }
 
-      // ── Strategy 1.6: TicketSwap Brussels — resale listings for Brussels events ──
-      // Scans the Brussels location page for event listings: title, date, venue.
-      if (config.id === 'ticketswap' && events.length === 0) {
-        try {
-          console.log('    TicketSwap: scanning Brussels listings…');
-          await sleep(4000);
-          await page.evaluate(() => window.scrollBy(0, 1200));
-          await sleep(2000);
-
-          const items = await page.evaluate(() => {
-            const cascades = [
-              '[data-testid*="event"],[data-testid*="listing"]',
-              '[class*="EventCard"],[class*="event-card"],[class*="listing-card"]',
-              '[class*="EventItem"],[class*="event-item"]',
-              'article,[class*="card"]',
-            ];
-            for (const sel of cascades) {
-              const els = [...document.querySelectorAll(sel)].filter(el => {
-                const t = (el.innerText || '').trim();
-                return t.length > 10 && t.length < 800;
-              });
-              if (els.length >= 2) {
-                return els.map(el => {
-                  const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"],[class*="heading"]');
-                  const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="time"]');
-                  const locEl  = el.querySelector('[class*="location"],[class*="venue"],[class*="place"]');
-                  const link   = el.querySelector('a[href]');
-                  return {
-                    title:   (h?.innerText || el.querySelector('a')?.innerText || '').replace(/\s+/g, ' ').trim(),
-                    dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
-                    venue:   (locEl?.innerText || '').replace(/\s+/g, ' ').trim(),
-                    link:    link?.href || '',
-                    allText: (el.innerText || '').replace(/\s+/g, ' ').trim(),
-                  };
-                });
-              }
-            }
-            return [];
-          });
-
-          console.log(`    TicketSwap: ${items.length} listing(s) found`);
-          for (const item of items) {
-            if (!item.title || item.title.length < 5 || !isValidTitle(item.title)) continue;
-            const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
-            if (!rawDate) continue;
-            const relDate = toRelativeDate(rawDate);
-            if (!relDate) continue;
-            const venueText = item.venue || 'Brussels';
-            const url = item.link.startsWith('http') ? item.link : '';
-            const cls = classify(item.title + ' ' + item.allText);
-            events.push({
-              _rawDate: rawDate, title: item.title,
-              venue: venueText, addr: `${venueText}, Brussels`,
-              date: relDate, time: config.defaultTime,
-              startH: parseInt(config.defaultTime, 10) || 20,
-              endH: (parseInt(config.defaultTime, 10) || 20) + 3,
-              emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
-              source: config.name, officialEventLink: url,
-              desc: `${item.title} — tickets via TicketSwap Brussels.`,
-              neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
-            });
-          }
-          console.log(`    TicketSwap → ${events.length} event(s)`);
-        } catch (err) {
-          console.log(`    TicketSwap scraper error: ${err.message.slice(0, 80)}`);
-        }
-      }
-
-      // ── Strategy 1.7: Agenda Brussels — culture & sports activities ──
+      // ── Strategy 1.6: Agenda Brussels — culture & sports activities ──
       // agenda.brussels lists city-wide exhibitions, sports events, and activities.
       // No enforceVisuals — each event is classified by its own content keywords.
       if (config.id === 'agendaBrussels' && events.length === 0) {
@@ -809,6 +736,9 @@ async function scrapeVenue(browser, config) {
             const url = item.link.startsWith('http') ? item.link
               : item.link.startsWith('/') ? `${baseOrigin}${item.link}` : '';
 
+            // Generic "Brussels" entries use config centre coords; named venues get
+            // lat/lng = 0 so the geocoder in main() resolves the specific address.
+            const isGenericVenue = !venueText || venueText.toLowerCase() === 'brussels';
             events.push({
               _rawDate: rawDate, title: item.title,
               venue: venueText || 'Brussels', addr: `${venueText || 'Brussels'}, Belgium`,
@@ -818,7 +748,9 @@ async function scrapeVenue(browser, config) {
               emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
               source: config.name, officialEventLink: url,
               desc: item.allText.slice(0, 200) || `${item.title} in Brussels.`,
-              neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
+              neighbourhood: config.neighbourhood,
+              lat: isGenericVenue ? config.lat : 0,
+              lng: isGenericVenue ? config.lng : 0,
             });
           }
           console.log(`    Agenda Brussels → ${events.length} event(s) parsed`);
@@ -1044,7 +976,6 @@ async function main() {
     'agenda brussels':   { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
     'couleur café':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
     'couleur cafe':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
-    'horst':             { emoji: '⚡', color: '#1A1A2E', cat: 'Festival'  },
   };
   let emojiFixed = 0;
   existing = existing.map(e => {
