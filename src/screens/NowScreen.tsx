@@ -24,7 +24,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
 
   // Only show events that are happening today or are ongoing — no future-date noise
   const todayEvents  = EVENTS.filter(e => e.date === 'Tonight' || e.date === 'Ongoing');
-  const curH = 21.2; // demo time; real clock is displayed but filtering uses startH
+  const curH = secs / 3600; // live clock hour (0–24)
   const happening    = todayEvents.filter(e => e.startH !== undefined && curH >= e.startH && curH < e.endH);
   const startingSoon = todayEvents.filter(e => e.startH !== undefined && curH < e.startH && e.startH - curH <= 1);
 
@@ -41,7 +41,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
           <Text style={styles.liveTxt}>LIVE NOW</Text>
         </View>
         <Text style={styles.title}>Happening in{'\n'}<Text style={{ color: C.teal }}>Brussels right now ⚡</Text></Text>
-        <Text style={styles.demoNote}>Tonight &amp; Ongoing only · Demo mocked at 21:12</Text>
+        <Text style={styles.demoNote}>Tonight &amp; Ongoing events · live clock</Text>
       </View>
 
       {/* Live clock */}
@@ -132,7 +132,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
           </Text>
         </View>
       )}
-      <Text style={styles.demoFooter}>Demo at 21:12 · Real clock on device ↻</Text>
+      <Text style={styles.demoFooter}>Live clock · updates every second ↻</Text>
     </ScrollView>
   );
 }

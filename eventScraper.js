@@ -321,8 +321,13 @@ function parseRawDate(raw) {
   t = t.replace(/(\d{1,2})\s*[–—]\s*\d{1,2}(\s+[A-Za-z])/,               '$1$2');
   if (/^\d{4}-\d{2}-\d{2}/.test(t)) { const d=new Date(t); if(!isNaN(d.getTime())&&d.getFullYear()>2020)return t.slice(0,10); }
   const tLow = t.toLowerCase();
-  for (const [fr,en] of Object.entries(MONTH_FR)) t = tLow.includes(fr) ? t.replace(new RegExp(fr,'i'), en) : t;
-  for (const [nl,en] of Object.entries(MONTH_NL)) t = tLow.includes(nl) ? t.replace(new RegExp(nl,'i'), en) : t;
+  // Word-boundary match prevents 'mai' matching inside 'email', 'juin' inside 'injuicer', etc.
+  for (const [fr,en] of Object.entries(MONTH_FR)) {
+    if (tLow.includes(fr)) t = t.replace(new RegExp(`(?<![a-zÀ-ÿ])${fr}(?![a-zÀ-ÿ])`, 'i'), en);
+  }
+  for (const [nl,en] of Object.entries(MONTH_NL)) {
+    if (tLow.includes(nl)) t = t.replace(new RegExp(`(?<![a-zÀ-ÿ])${nl}(?![a-zÀ-ÿ])`, 'i'), en);
+  }
   // "13 . 05 . 2026" (Fuse) and "15.05.26" (La Madeleine compact) — dots with optional spaces
   let m = t.match(/(\d{1,2})\s*\.\s*(\d{1,2})\s*\.\s*(\d{2,4})/);
   if (m) { const y=m[3].length===2?`20${m[3]}`:m[3]; const d=new Date(`${y}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`); if(!isNaN(d.getTime())&&parseInt(y)>2020)return d.toISOString().split('T')[0]; }
@@ -999,6 +1004,17 @@ async function main() {
     return e;
   });
   if (migrated) console.log(`🔧  Migrated ${migrated} event(s) to new schema (officialEventLink)`);
+
+  // Refresh date labels from _rawDate — prevents stale 'Tonight'/'Ongoing' labels
+  let relabelled = 0;
+  existing = existing.map(e => {
+    if (!e._rawDate) return e;
+    const fresh = toRelativeDate(e._rawDate, e._endDate || null);
+    if (!fresh) return null;           // past — will be removed below
+    if (fresh !== e.date) { relabelled++; return { ...e, date: fresh }; }
+    return e;
+  }).filter(Boolean);
+  if (relabelled) console.log(`📅  Refreshed ${relabelled} stale date label(s)`);
 
   // Retroactively correct coordinates for Fuse and C12 (no external venue override)
   let coordFixes = 0;
