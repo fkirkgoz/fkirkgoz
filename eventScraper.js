@@ -2,7 +2,7 @@
 /**
  * Randevu Event Scraper — Brussels venue-specific edition
  *
- * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Hangar · Couleur Café · Horst · Agenda Brussels
+ * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Couleur Café · Horst · Agenda Brussels · TicketSwap Brussels
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -17,7 +17,6 @@ const path      = require('path');
 const SCRAPED_JSON   = path.join(__dirname, 'src', 'data', 'scraped_events.json');
 const SCRAPED_ID_MIN = 100;
 const GEOCODE_DELAY  = 1200;
-const DEEP_PRICE_CAP = 8; // max detail-page visits per venue
 
 // ── Hardcoded venue truths (no-guess rule) ────────────────────────────────────
 // All lat/lng values below are exact — the geocoder is NEVER called for these.
@@ -153,26 +152,6 @@ const VENUE_CONFIGS = [
     ],
   },
   {
-    id: 'hangar',
-    name: 'Hangar',
-    addr: 'Place des Abattoirs 1, 1000 Brussels',
-    lat: 50.8430, lng: 4.3370,
-    neighbourhood: 'Anderlecht',
-    emoji: '⚡', color: '#2A1F3D', cat: 'Nightlife',
-    tags: ['Techno', 'Electronic', 'Open Air'],
-    defaultTime: '22:00',
-    extraWait: 9000,
-    jsHeavy: true,
-    enforceVisuals: true,
-    brusselsOnly: true,
-    urls: [
-      'https://tickets.thehangar.be/',
-      'https://tickets.thehangar.be',
-      'https://thehangar.be',
-      'https://www.thehangar.be',
-    ],
-  },
-  {
     id: 'couleurCafe',
     name: 'Couleur Café',
     addr: 'Ossegempark, 1020 Laeken',
@@ -205,6 +184,22 @@ const VENUE_CONFIGS = [
       'https://www.horstartsandmusic.com/',
       'https://www.horstartsandmusic.com',
       'https://horstartsandmusic.com',
+    ],
+  },
+  {
+    id: 'ticketswap',
+    name: 'TicketSwap Brussels',
+    addr: 'Brussels, Belgium',
+    lat: 50.8503, lng: 4.3517,
+    neighbourhood: 'Centre',
+    emoji: '🎟️', color: '#FF6B35', cat: 'Music',
+    tags: ['Concert', 'Live Music', 'Brussels'],
+    defaultTime: '20:00',
+    extraWait: 8000,
+    jsHeavy: true,
+    urls: [
+      'https://www.ticketswap.be/search?location=4',
+      'https://www.ticketswap.be/?location=4',
     ],
   },
 ];
@@ -273,177 +268,9 @@ function detectExternalVenue(text) {
   return null;
 }
 
-// ── Price logic ───────────────────────────────────────────────────────────────
-
-// Scans text for € amounts ONLY. Returns [prices…] or [].
-// Never guesses "Free" from body text — only explicit € values count.
-function extractAllPrices(text) {
-  if (!text) return [];
-  const prices = [];
-  const re = /€\s*(\d+(?:[.,]\d{1,2})?)|(\d+(?:[.,]\d{1,2})?)\s*(?:€|eur\b)/gi;
-  let m;
-  while ((m = re.exec(text)) !== null) {
-    const val = parseFloat((m[1] || m[2]).replace(',', '.'));
-    if (!isNaN(val) && val > 0 && val < 500) prices.push(val);
-  }
-  return [...new Set(prices)];
-}
-
-// Used ONLY on confirmed ticket-shop pages. Returns [0] for explicit free, [prices…], or [].
-function extractTicketPagePrices(text) {
-  if (!text) return [];
-  const t = text.toLowerCase();
-  if (/free entry|entrée libre|gratis ingang|gratuit|\bfree ticket|\bfree event/i.test(t)) return [0];
-  return extractAllPrices(text);
-}
-
-function extractPriceFromOffers(offers) {
-  if (!offers) return [];
-  const list = Array.isArray(offers) ? offers : [offers];
-  const prices = [];
-  for (const o of list) {
-    const desc = ((o.description || '') + ' ' + (o.name || '')).toLowerCase();
-    if (desc.includes('free') || desc.includes('gratuit')) { prices.push(0); continue; }
-    const p = parseFloat(o.price);
-    if (!isNaN(p) && p >= 0 && p < 500) prices.push(p);
-  }
-  return prices;
-}
-
-// Always outputs "From €X" for paid events — never bare "€X".
-// €1.25 is Paylogic's booking fee — filtered universally so it never appears as a ticket price.
-function formatPrice(prices) {
-  if (!prices || prices.length === 0) return '';
-  const clean  = prices.filter(p => p !== 1.25);   // drop Paylogic booking fee
-  if (!clean.length) return '';
-  const hasFree = clean.includes(0);
-  const paid    = clean.filter(p => p > 0);
-  if (hasFree && paid.length === 0) return 'Free';
-  if (paid.length === 0) return '';
-  const min = Math.min(...paid);
-  const fmt = n => Number.isInteger(n) ? `${n}` : n.toFixed(2);
-  if (hasFree) return `Free / From €${fmt(min)}`;
-  return `From €${fmt(min)}`;
-}
-
-// ── Two-step price extraction ─────────────────────────────────────────────────
-// Visits each event's own detail page and scans for € prices.
-// Overwrites the price extracted from the listing page (detail pages are more accurate).
-async function deepFetchPrices(page, events) {
-  const toFetch = events.filter(e => e.sourceURL?.startsWith('http')).slice(0, DEEP_PRICE_CAP);
-  if (toFetch.length === 0) return;
-  console.log(`    💰 Deep price fetch: visiting ${toFetch.length} event pages…`);
-  for (const ev of toFetch) {
-    try {
-      await page.goto(ev.sourceURL, { waitUntil: 'domcontentloaded', timeout: 12000 });
-      await sleep(1200);
-
-      // Look for an external ticket link — priority: PRESALE button > ticket host URL > text match
-      // Always skip customerservice links (Paylogic support, not the purchase page)
-      const TICKET_HOSTS = ['paylogic','shop.c12space.com','shop.fuse.be','ticketmaster',
-        'ticketswap','dice.fm','eventbrite','payconiq','shoobs','koobit','ticketweb','ticketlive',
-        'shotgun.live','shotgun.be','ra.co/events','residentadvisor.net'];
-      const SLOW_HOSTS   = ['paylogic','ticketlive','shotgun.live','shotgun.be']; // need networkidle2 + long wait
-
-      const ticketUrl = await page.evaluate((hosts) => {
-        const links = [...document.querySelectorAll('a[href]')];
-        const skip = a => (a.href || '').toLowerCase().includes('customerservice');
-        // 1st: exact "● PRESALE ●" or any presale text (C12)
-        for (const a of links) {
-          if (skip(a)) continue;
-          if (/presale/i.test(a.textContent)) return a.href;
-        }
-        // 2nd: known ticket platform in URL
-        for (const a of links) {
-          if (skip(a)) continue;
-          const href = (a.href || '').toLowerCase();
-          if (hosts.some(h => href.includes(h))) return a.href;
-        }
-        // 3rd: buy/ticket/koop text on external link
-        for (const a of links) {
-          if (skip(a)) continue;
-          const href = (a.href || '').toLowerCase();
-          const text = (a.textContent || '').toLowerCase();
-          if ((text.includes('ticket') || text.includes('buy') || text.includes('koop')) &&
-              href.startsWith('http') && !href.includes(location.hostname)) return a.href;
-        }
-        return null;
-      }, TICKET_HOSTS);
-
-      let text = await page.evaluate(() => document.body?.innerText || '');
-      let onTicketPage = false;
-
-      if (ticketUrl) {
-        try {
-          const currentHost = new URL(ev.sourceURL).hostname;
-          if (!ticketUrl.includes(currentHost)) {
-            console.log(`      🎫 Following: ${ticketUrl.slice(0, 70)}`);
-            const isSlow = SLOW_HOSTS.some(h => ticketUrl.toLowerCase().includes(h));
-            await page.goto(ticketUrl, {
-              waitUntil: isSlow ? 'networkidle2' : 'domcontentloaded',
-              timeout: 18000,
-            });
-            await sleep(isSlow ? 5000 : 1500);
-
-            // Detect landing on a generic homepage (Paylogic redirect failure)
-            const finalUrl = page.url();
-            const isGeneric = /^https?:\/\/[^/]+\/?(?:[#?].*)?$/.test(finalUrl) ||
-              finalUrl.toLowerCase().includes('customerservice');
-
-            if (isGeneric) {
-              // Redirect collapsed to homepage — search source page for direct shop link
-              console.log(`      ↩️  Generic redirect (${finalUrl.slice(0, 45)}), scanning source…`);
-              await page.goto(ev.sourceURL, { waitUntil: 'domcontentloaded', timeout: 10000 });
-              await sleep(2000);
-              const shopUrl = await page.evaluate(() => {
-                const SHOPS = ['shop.c12space.com','shop.fuse.be','ticketlive.be'];
-                for (const a of document.querySelectorAll('a[href]')) {
-                  if (SHOPS.some(s => (a.href || '').includes(s))) return a.href;
-                }
-                const m = (document.body?.innerText || '').match(/https?:\/\/shop\.[a-z0-9.-]+\/[a-z0-9/_?=&%-]+/i);
-                return m ? m[0] : null;
-              });
-              if (shopUrl) {
-                console.log(`      🔗 Direct shop: ${shopUrl.slice(0, 60)}`);
-                await page.goto(shopUrl, { waitUntil: 'networkidle2', timeout: 18000 });
-                await sleep(5000);
-                text = await page.evaluate(() => document.body?.innerText || '');
-                onTicketPage = true;
-              }
-              // else: stay with text from source page (no onTicketPage flag)
-            } else {
-              text = await page.evaluate(() => document.body?.innerText || '');
-              onTicketPage = true;
-            }
-          }
-        } catch { /* keep text from detail page */ }
-      }
-
-      // On a real ticket page use the free-aware extractor; everywhere else € only
-      const rawPrices = onTicketPage ? extractTicketPagePrices(text) : extractAllPrices(text);
-      // Drop service fees (< €5) — talks/workshops can legitimately cost less
-      const isLowCostEvent = /\b(talk|workshop|lecture|seminar)\b/i.test(ev.title);
-      const priceFloor = isLowCostEvent ? 0.01 : 5;
-      const prices = rawPrices.filter(p => p === 0 || p >= priceFloor);
-      if (prices.length > 0) {
-        ev.price = formatPrice(prices);
-        console.log(`      ✓ "${ev.title.slice(0, 30)}": ${ev.price}`);
-      } else if (onTicketPage && /sold[\s-]?out|complet\b|uitverkocht/i.test(text)) {
-        ev.price = 'Sold Out';
-        console.log(`      🚫 "${ev.title.slice(0, 30)}": Sold Out`);
-      } else {
-        ev.price = '';
-        console.log(`      — "${ev.title.slice(0, 30)}": no price found → blank`);
-      }
-    } catch (err) {
-      console.log(`      ✗ "${ev.title?.slice(0, 25)}": ${err.message.slice(0, 60)}`);
-    }
-    await sleep(800);
-  }
-}
 
 // ── Date helpers ──────────────────────────────────────────────────────────────
-const MONTH_FR = { janvier:'January',février:'February',mars:'March',avril:'April',mai:'May',juin:'June',juillet:'July','août':'August',septembre:'September',octobre:'October',novembre:'November',décembre:'December' };
+const MONTH_FR = { janvier:'January',février:'February',fevrier:'February',mars:'March',avril:'April',mai:'May',juin:'June',juillet:'July','août':'August',aout:'August',septembre:'September',octobre:'October',novembre:'November',décembre:'December',decembre:'December' };
 const MONTH_NL = { januari:'January',februari:'February',maart:'March',april:'April',mei:'May',juni:'June',juli:'July',augustus:'August',september:'September',oktober:'October',november:'November',december:'December' };
 
 function toRelativeDate(iso, endIso) {
@@ -609,7 +436,7 @@ function smartMerge(existing, incoming) {
   // C12/Fuse: same venue+date but title may differ across Paylogic vs own site
   if (idx === -1) {
     const v = (incoming.venue || '').toLowerCase();
-    if (['c12', 'fuse', 'hangar'].some(n => v.includes(n))) {
+    if (['c12', 'fuse'].some(n => v.includes(n))) {
       idx = existing.findIndex(e =>
         (e.venue || '').toLowerCase() === v &&
         e._rawDate === incoming._rawDate
@@ -618,11 +445,10 @@ function smartMerge(existing, incoming) {
   }
   if (idx === -1) return false;
   const old = existing[idx];
-  const betterPrice = (incoming.price && !old.price) ? incoming.price : old.price;
   const betterDesc  = (incoming.desc?.length || 0) > (old.desc?.length || 0) ? incoming.desc : old.desc;
-  if (betterPrice !== old.price || betterDesc !== old.desc) {
-    existing[idx] = { ...old, price: betterPrice, desc: betterDesc };
-    console.log(`  🔄  Upgraded: "${old.title.slice(0,40)}"${betterPrice !== old.price ? ' +price' : ''}${betterDesc !== old.desc ? ' +desc' : ''}`);
+  if (betterDesc !== old.desc) {
+    existing[idx] = { ...old, desc: betterDesc };
+    console.log(`  🔄  Upgraded: "${old.title.slice(0,40)}" +desc`);
   } else {
     console.log(`  ⏭   Duplicate (no upgrade): "${old.title.slice(0,40)}"`);
   }
@@ -637,9 +463,9 @@ function removeExpired(events) {
 }
 // For C12 and Fuse, one event per date is the rule.
 // Cross-run scrapes from Paylogic vs own-site produce different titles for the same night.
-// This collapses them, keeping the version with the longer title and any price data.
+// This collapses them, keeping the version with the longer title.
 function deduplicateExisting(events) {
-  const NIGHTLIFE = ['c12', 'fuse', 'hangar'];
+  const NIGHTLIFE = ['c12', 'fuse'];
   const seen = {};
   const result = [];
   let removed = 0;
@@ -649,7 +475,6 @@ function deduplicateExisting(events) {
       const key = `${v}|${e._rawDate || ''}`;
       if (key in seen) {
         const kept = seen[key];
-        if (e.price && !kept.price) kept.price = e.price;
         if ((e.title?.length || 0) > (kept.title?.length || 0)) kept.title = e.title;
         removed++;
         continue;
@@ -759,18 +584,15 @@ async function scrapeVenue(browser, config) {
           if (!relDate) continue;
           const desc    = clean(ev.description || '');
           const url     = ev.url || ev['@id'] || '';
-          const offerPs = extractPriceFromOffers(ev.offers);
-          const descPs  = offerPs.length === 0 ? extractAllPrices(desc) : [];
-          const price   = formatPrice([...offerPs, ...descPs]);
           const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : config.defaultTime;
           const startH  = parseInt((timeStr || config.defaultTime).split(':')[0], 10) || 20;
           const cls              = classifyForVenue(title+' '+desc, config);
-          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse' || config.id === 'hangar')
+          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
             ? detectExternalVenue(title+' '+desc+' '+(ev.location?.name||'')) : null;
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
             date:relDate, time:timeStr||config.defaultTime, startH, endH:startH+3,
-            price, emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
-            source:config.name, sourceURL:url, ticket:url,
+            emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
+            source:config.name, officialEventLink:url,
             desc:desc||`${title} at ${config.name}.`,
             neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng,
             ...(externalVenueHint ? { externalVenueHint } : {}) });
@@ -831,8 +653,8 @@ async function scrapeVenue(browser, config) {
               date: relDate, time: config.defaultTime,
               startH: parseInt(config.defaultTime, 10) || 20,
               endH: (parseInt(config.defaultTime, 10) || 20) + 3,
-              price: '', emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
-              source: config.name, sourceURL: url, ticket: url,
+              emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
+              source: config.name, officialEventLink: url,
               desc: `${title} at ${config.name}.`,
               neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
             });
@@ -843,134 +665,71 @@ async function scrapeVenue(browser, config) {
         }
       }
 
-      // ── Strategy 1.6: Hangar — flexible JS-rendered content scraper ──
-      // Hangar's ticket site (tickets.thehangar.be) is client-side rendered.
-      // We wait extra for the grid, try a cascade of flexible selectors, then
-      // fall back to scanning event-page <a> links. Per-event Brussels filter
-      // uses the exact venue text from the page — never the config's office address.
-      if (config.id === 'hangar' && events.length === 0) {
+      // ── Strategy 1.6: TicketSwap Brussels — resale listings for Brussels events ──
+      // Scans the Brussels location page for event listings: title, date, venue.
+      if (config.id === 'ticketswap' && events.length === 0) {
         try {
-          console.log('    Hangar: waiting for JS render…');
-          await sleep(5000);
-          await page.evaluate(() => { window.scrollBy(0, 1200); });
+          console.log('    TicketSwap: scanning Brussels listings…');
+          await sleep(4000);
+          await page.evaluate(() => window.scrollBy(0, 1200));
           await sleep(2000);
-          await page.evaluate(() => { window.scrollBy(0, 1200); });
-          await sleep(1500);
 
-          const BRUSSELS_RE = [
-            /gare\s+maritime/i, /hangar\s+flagey|flagey/i, /terminal/i,
-            /brussels|bruxelles|brussel/i,
-            /anderlecht|ixelles|elsene|schaerbeek|molenbeek|laeken|etterbeek/i,
-            /atomium/i, /recyclart/i, /tour\s*(?:&|et)\s*taxis/i,
-            /palais\s*12/i, /forest\s+national/i,
-          ];
-          const SKIP_RE = [
-            /\bantwerp|\banvers|\bantwerpen\b/i,
-            /\bli[eè]ge\b|\blüttich\b/i,
-            /\bghent\b|\bgand\b|\bgent\b/i,
-            /\bbruges?\b|\bbrugge\b/i,
-            /\bnamur\b|\bcharleroi\b|\bmons\b|\bhasselt\b/i,
-          ];
-
-          const cards = await page.evaluate(() => {
-            // Try progressively broader selectors until we get ≥2 results
+          const items = await page.evaluate(() => {
             const cascades = [
-              '[class*="event-card"],[class*="EventCard"]',
-              '[class*="event-item"],[class*="EventItem"]',
-              '[class*="ticket-item"],[class*="TicketItem"]',
-              'article[class*="event"],li[class*="event"]',
-              '[class*="event"],[class*="card"]',
+              '[data-testid*="event"],[data-testid*="listing"]',
+              '[class*="EventCard"],[class*="event-card"],[class*="listing-card"]',
+              '[class*="EventItem"],[class*="event-item"]',
+              'article,[class*="card"]',
             ];
             for (const sel of cascades) {
               const els = [...document.querySelectorAll(sel)].filter(el => {
                 const t = (el.innerText || '').trim();
-                return t.length > 20 && t.length < 1500;
+                return t.length > 10 && t.length < 800;
               });
               if (els.length >= 2) {
                 return els.map(el => {
-                  const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
-                  const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"]');
-                  const locEl  = el.querySelector('[class*="location"],[class*="venue"],[class*="place"],[class*="city"]');
+                  const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"],[class*="heading"]');
+                  const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="time"]');
+                  const locEl  = el.querySelector('[class*="location"],[class*="venue"],[class*="place"]');
+                  const link   = el.querySelector('a[href]');
                   return {
-                    title:    (h?.innerText || '').replace(/\s+/g, ' ').trim(),
-                    allText:  (el.innerText || '').replace(/\s+/g, ' ').trim(),
-                    dateStr:  dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
-                    location: (locEl?.innerText || '').replace(/\s+/g, ' ').trim(),
-                    link:     el.querySelector('a[href]')?.href || '',
+                    title:   (h?.innerText || el.querySelector('a')?.innerText || '').replace(/\s+/g, ' ').trim(),
+                    dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+                    venue:   (locEl?.innerText || '').replace(/\s+/g, ' ').trim(),
+                    link:    link?.href || '',
+                    allText: (el.innerText || '').replace(/\s+/g, ' ').trim(),
                   };
                 });
               }
             }
-            // Link-level fallback: any <a> whose href looks like an event page
-            return [...document.querySelectorAll('a[href]')]
-              .filter(a => {
-                const href = a.href || '';
-                const txt  = (a.innerText || '').trim();
-                return txt.length > 5 && txt.length < 150 &&
-                  (href.includes('/event') || href.includes('/ticket') || href.includes('/agenda') || href.includes('/show'));
-              })
-              .map(a => {
-                const parent = a.closest('li,article,[class*="item"],[class*="row"]') || a;
-                return {
-                  title:    (a.innerText || '').replace(/\s+/g, ' ').trim(),
-                  allText:  (parent.innerText || a.innerText || '').replace(/\s+/g, ' ').trim(),
-                  dateStr:  '',
-                  location: '',
-                  link:     a.href,
-                };
-              });
+            return [];
           });
 
-          console.log(`    Hangar: ${cards.length} candidate(s) via flexible selector`);
-          const baseOrigin = 'https://tickets.thehangar.be';
-
-          for (const card of cards) {
-            if (!card.title || card.title.length < 5 || !isValidTitle(card.title)) continue;
-            const combined = `${card.title} ${card.location} ${card.allText}`;
-
-            // Hard skip — non-Brussels city explicitly mentioned
-            if (SKIP_RE.some(r => r.test(combined))) {
-              console.log(`    Hangar: skip (non-Brussels) "${card.title.slice(0, 40)}"`);
-              continue;
-            }
-
-            // Extract the specific Brussels venue text shown on the page
-            let venueText = card.location.replace(/\s+/g, ' ').trim();
-            if (!venueText) {
-              for (const re of BRUSSELS_RE) {
-                const m = combined.match(re);
-                if (m) { venueText = m[0]; break; }
-              }
-            }
-            // Must have a recognised Brussels location — no office-address fallback
-            if (!venueText) {
-              console.log(`    Hangar: skip (no Brussels location) "${card.title.slice(0, 40)}"`);
-              continue;
-            }
-
-            const rawDate = parseRawDate(card.dateStr) || parseRawDate(scanTextForDate(card.allText));
-            if (!rawDate) { console.log(`    Hangar: skip (no date) "${card.title.slice(0, 40)}"`); continue; }
+          console.log(`    TicketSwap: ${items.length} listing(s) found`);
+          for (const item of items) {
+            if (!item.title || item.title.length < 5 || !isValidTitle(item.title)) continue;
+            const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
+            if (!rawDate) continue;
             const relDate = toRelativeDate(rawDate);
             if (!relDate) continue;
-
-            const url = card.link.startsWith('http') ? card.link : `${baseOrigin}${card.link}`;
-            const cls = classifyForVenue(card.title + ' ' + card.allText, config);
+            const venueText = item.venue || 'Brussels';
+            const url = item.link.startsWith('http') ? item.link : '';
+            const cls = classify(item.title + ' ' + item.allText);
             events.push({
-              _rawDate: rawDate, title: card.title,
+              _rawDate: rawDate, title: item.title,
               venue: venueText, addr: `${venueText}, Brussels`,
               date: relDate, time: config.defaultTime,
-              startH: parseInt(config.defaultTime, 10) || 22,
-              endH: (parseInt(config.defaultTime, 10) || 22) + 5,
-              price: '', emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
-              source: config.name, sourceURL: url, ticket: url,
-              desc: `${card.title} at ${venueText}.`,
-              neighbourhood: 'Brussels', lat: config.lat, lng: config.lng,
+              startH: parseInt(config.defaultTime, 10) || 20,
+              endH: (parseInt(config.defaultTime, 10) || 20) + 3,
+              emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
+              source: config.name, officialEventLink: url,
+              desc: `${item.title} — tickets via TicketSwap Brussels.`,
+              neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
             });
-            console.log(`    Hangar ✓ "${card.title.slice(0, 40)}" @ ${venueText} (${relDate})`);
           }
-          console.log(`    Hangar → ${events.length} Brussels event(s)`);
+          console.log(`    TicketSwap → ${events.length} event(s)`);
         } catch (err) {
-          console.log(`    Hangar scraper error: ${err.message.slice(0, 80)}`);
+          console.log(`    TicketSwap scraper error: ${err.message.slice(0, 80)}`);
         }
       }
 
@@ -1003,14 +762,12 @@ async function scrapeVenue(browser, config) {
               const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="dag"]');
               const locEl  = el.querySelector('[class*="location"],[class*="venue"],[class*="place"],[class*="address"]');
               const catEl  = el.querySelector('[class*="category"],[class*="type"],[class*="tag"],[class*="label"]');
-              const priceEl= el.querySelector('[class*="price"],[class*="ticket"],[class*="tarif"]');
               return {
                 title:    (h?.innerText || '').replace(/\s+/g, ' ').trim(),
                 allText:  (el.innerText || '').replace(/\s+/g, ' ').trim(),
                 dateStr:  dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
                 location: (locEl?.innerText || '').replace(/\s+/g, ' ').trim(),
                 category: (catEl?.innerText || '').replace(/\s+/g, ' ').trim(),
-                priceText:(priceEl?.innerText || '').replace(/\s+/g, ' ').trim(),
                 link:     el.querySelector('a[href]')?.href || '',
               };
             }).filter(Boolean);
@@ -1043,8 +800,6 @@ async function scrapeVenue(browser, config) {
               }
             }
 
-            const prices = extractAllPrices(item.priceText || item.allText);
-            const price  = formatPrice(prices);
             const venueText = (item.location || 'Brussels').replace(/\n.*/g, '').trim().slice(0, 80);
             const url = item.link.startsWith('http') ? item.link
               : item.link.startsWith('/') ? `${baseOrigin}${item.link}` : '';
@@ -1055,8 +810,8 @@ async function scrapeVenue(browser, config) {
               date: relDate, time: config.defaultTime,
               startH: parseInt(config.defaultTime, 10) || 10,
               endH: (parseInt(config.defaultTime, 10) || 10) + 3,
-              price, emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
-              source: config.name, sourceURL: url, ticket: url,
+              emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
+              source: config.name, officialEventLink: url,
               desc: item.allText.slice(0, 200) || `${item.title} in Brussels.`,
               neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
             });
@@ -1151,33 +906,24 @@ async function scrapeVenue(browser, config) {
           if (!relDate) return;
 
           const timeText  = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
-          const priceText = clean($el.find([
-            '[class*="price"]','[class*="ticket"]','[class*="cost"]',
-            '[class*="tarif"]','[class*="rate"]',
-          ].join(',')).first().text());
           const desc = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
           const link = $el.find('a[href]').first().attr('href') || '';
           const url  = link.startsWith('http') ? link : link.startsWith('/') ? `${baseOrigin}${link}` : link;
 
-          const allPrices = extractAllPrices(priceText) || extractAllPrices($el.text());
-          const price     = formatPrice(allPrices);
           const { time, startH, endH } = parseTime(timeText, config.defaultTime);
           const cls = classifyForVenue(title+' '+desc, config);
-          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse' || config.id === 'hangar')
+          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
             ? detectExternalVenue(title+' '+desc) : null;
 
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
-            date:relDate, time, startH, endH, price,
+            date:relDate, time, startH, endH,
             emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
-            source:config.name, sourceURL:url, ticket:url,
+            source:config.name, officialEventLink:url,
             desc:desc||`${title} at ${config.name}.`,
             neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng,
             ...(externalVenueHint ? { externalVenueHint } : {}) });
         });
       }
-
-      // ── Step 2: Visit each event's detail page for accurate price ──
-      await deepFetchPrices(page, events);
 
       await page.close();
     }
@@ -1199,12 +945,10 @@ async function scrapeVenue(browser, config) {
         venue: 'Osseghem Park, Atomium',
         addr: 'Ossegempark, 1020 Laeken, Brussels',
         date: relDate, time: '14:00', startH: 14, endH: 26,
-        price: '',
         emoji: '🎸', color: '#F4A261', cat: 'Festival',
         tags: ['World Music', 'Hip Hop', 'Festival', 'Open Air'],
         source: 'Couleur Café',
-        sourceURL: 'https://www.couleurcafe.be',
-        ticket: 'https://www.couleurcafe.be',
+        officialEventLink: 'https://www.couleurcafe.be',
         desc: "Brussels' legendary 3-day world music & hip hop festival at Osseghem Park, in the shadow of the Atomium. 26–28 June 2026.",
         neighbourhood: 'Laeken', lat: 50.8948, lng: 4.3411,
       });
@@ -1243,6 +987,19 @@ async function main() {
   existing = removeExpired(existing);
   existing = deduplicateExisting(existing);
 
+  // Migrate stale schema: add officialEventLink, remove price/ticket/sourceURL
+  let migrated = 0;
+  existing = existing.map(e => {
+    if ('price' in e || 'ticket' in e || 'sourceURL' in e || !('officialEventLink' in e)) {
+      const link = e.ticket || e.sourceURL || '';
+      const { price: _p, ticket: _t, sourceURL: _s, ...rest } = e;
+      migrated++;
+      return { ...rest, officialEventLink: link };
+    }
+    return e;
+  });
+  if (migrated) console.log(`🔧  Migrated ${migrated} event(s) to new schema (officialEventLink)`);
+
   // Retroactively correct coordinates for Fuse and C12 (no external venue override)
   let coordFixes = 0;
   existing = existing.map(e => {
@@ -1255,11 +1012,6 @@ async function main() {
         (e.lat !== 50.8462 || e.lng !== 4.3556)) {
       coordFixes++;
       return { ...e, lat: 50.8462, lng: 4.3556, addr: 'Rue du Marché aux Herbes 116, 1000 Brussels' };
-    }
-    if (e.venue?.toLowerCase().includes('hangar') && !e.externalVenueHint &&
-        (e.lat !== 50.8430 || e.lng !== 4.3370)) {
-      coordFixes++;
-      return { ...e, lat: 50.8430, lng: 4.3370, addr: 'Place des Abattoirs 1, 1000 Brussels' };
     }
     return e;
   });
@@ -1274,7 +1026,6 @@ async function main() {
     'la madeleine':      { emoji: '🎸', color: '#8E7DBE', cat: 'Music'     },
     'bozar':             { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
     'agenda brussels':   { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
-    'hangar':            { emoji: '⚡', color: '#2A1F3D', cat: 'Nightlife' },
     'couleur café':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
     'couleur cafe':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
     'horst':             { emoji: '⚡', color: '#1A1A2E', cat: 'Festival'  },
@@ -1362,16 +1113,16 @@ async function main() {
 
     existing.push({
       id:idCounter++, cat:r.cat, date:r.date, title:r.title, venue:r.venue, addr:r.addr,
-      time:r.time, startH:r.startH, endH:r.endH, price:r.price,
+      time:r.time, startH:r.startH, endH:r.endH,
       emoji:r.emoji, color:r.color,
       friends:Math.floor(Math.random()*4), tags:r.tags,
-      source:r.source, sourceURL:r.sourceURL, ticket:r.ticket,
+      source:r.source, officialEventLink:r.officialEventLink||'',
       lat:r.lat, lng:r.lng, going:Math.floor(Math.random()*300)+20,
       neighbourhood:r.neighbourhood, desc:r.desc,
       attendees:generateAttendees(), chatSeed:generateChatSeed(), _rawDate:r._rawDate,
     });
     added++;
-    console.log(`  ✅  Added: "${r.title}" (${r.date})${r.price ? ' — '+r.price : ''}`);
+    console.log(`  ✅  Added: "${r.title}" (${r.date})`);
   }
 
   // ── Absolute kill-switch: global title+date dedup on the final array ──

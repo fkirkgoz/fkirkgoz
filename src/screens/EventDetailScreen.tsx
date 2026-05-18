@@ -35,14 +35,6 @@ function getDisplayDate(relative: string): string {
   return relative;
 }
 
-function fmtPrice(p: string) {
-  if (!p) return '';
-  if (p === 'Free') return 'Free';
-  const num = parseFloat(p.replace(/[^0-9.]/g, ''));
-  if (isNaN(num)) return p;
-  const sym = p.match(/[€$£]/)?.[0] ?? '€';
-  return `${sym}${num.toFixed(2)}`;
-}
 
 function getMutualEvents(name: string, currentId: number): Event[] {
   return EVENTS.filter(ev =>
@@ -88,7 +80,7 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
   const showShare  = () => { setShareToast(true); setTimeout(() => setShareToast(false), 2200); };
 
   const handleShare = async () => {
-    const link = e.sourceURL ?? e.ticket ?? `https://randevu.app/events/${e.id}`;
+    const link = e.officialEventLink || `https://randevu.app/events/${e.id}`;
     await Clipboard.setStringAsync(
       `Hey! Join me for ${e.title} at ${e.venue}!\n\n${e.desc ?? ''}\n\nTickets: ${link}\n\nLet's go via Randevu!`
     );
@@ -105,8 +97,8 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
   const handleGoing = () => {
     if (joined) {
       onJoin(e); showToast('❌ Attendance cancelled');
-    } else if (e.ticket ?? e.sourceURL) {
-      Linking.openURL((e.ticket ?? e.sourceURL)!).catch(() => {});
+    } else if (e.officialEventLink) {
+      Linking.openURL(e.officialEventLink).catch(() => {});
       onJoin(e); showToast('🎟️ Opening tickets…');
     } else {
       onJoin(e); showToast('🎉 You\'re in! See you there!');
@@ -163,16 +155,11 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
             {([
               ['📍', e.venue, e.addr],
               ['📅', `${getDisplayDate(e.date)} · ${e.time}`, null],
-              ...(e.price ? [['💶', fmtPrice(e.price), null]] : []),
             ] as [string, string, string | null][]).map(([ic, main, sub], i) => (
               <View key={i} style={[styles.infoRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
                 <Text style={{ fontSize: 18, marginTop: 1 }}>{ic}</Text>
                 <View>
-                  <Text style={[styles.infoMain, {
-                    color: ic === '💶' && e.price === 'Free' ? '#1a7a35'
-                      : ic === '💶' && e.price === 'Sold Out' ? '#E8294A'
-                      : T.text,
-                  }]}>{main}</Text>
+                  <Text style={[styles.infoMain, { color: T.text }]}>{main}</Text>
                   {sub && <Text style={[styles.infoSub, { color: T.sub }]}>{sub}</Text>}
                 </View>
               </View>
@@ -231,11 +218,11 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
           <View style={{ marginBottom: 22 }}>
             <Text style={[styles.sectionTitle, { color: T.text }]}>About this event</Text>
             <Text style={[styles.descText, { color: T.sub }]}>{e.desc}</Text>
-            {!!(e.sourceURL ?? e.ticket) && (
-              <Tap onPress={() => Linking.openURL((e.sourceURL ?? e.ticket)!).catch(() => {})}>
+            {!!e.officialEventLink && (
+              <Tap onPress={() => Linking.openURL(e.officialEventLink).catch(() => {})}>
                 <View style={[styles.sourceLinkBtn, { backgroundColor: `${C.lav}12`, borderColor: `${C.lav}30` }]}>
                   <Text style={{ color: C.lav, fontSize: 13, fontWeight: '700', textDecorationLine: 'underline' }}>
-                    🔗 {e.source ? `${e.source} — Official page` : 'View tickets'} ↗
+                    🔗 {e.source ? `${e.source} — Official page` : 'View event'} ↗
                   </Text>
                 </View>
               </Tap>
@@ -332,7 +319,7 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
               style={styles.goBtn}
             >
               <Text style={styles.goBtnTxt}>
-                {(e.ticket ?? e.sourceURL) ? '🎟️ Get Tickets →' : '🙌 I\'m Going!'}
+                {e.officialEventLink ? '🎟️ Get Tickets →' : '🙌 I\'m Going!'}
               </Text>
             </LinearGradient>
           </Tap>

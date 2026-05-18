@@ -5,15 +5,6 @@ import { Theme, C } from '../constants/theme';
 import SrcBadge from './SrcBadge';
 import Tap from './Tap';
 
-function fmtPrice(p: string) {
-  if (!p) return '';
-  if (p === 'Free') return 'Free';
-  if (p.startsWith('From ') || p.startsWith('Free')) return p;
-  const num = parseFloat(p.replace(/[^0-9.]/g, ''));
-  if (isNaN(num)) return p;
-  const sym = p.match(/[€$£]/)?.[0] ?? '€';
-  return `${sym}${Number.isInteger(num) ? num : num.toFixed(2)}`;
-}
 
 interface EventCardProps {
   event: Event;
@@ -81,17 +72,6 @@ export default function EventCard({ event: e, onPress, T, joined }: EventCardPro
               {e.friends > 0 && (
                 <Text style={[styles.friendsCount, { color: T.accent }]}>👥 {e.friends}</Text>
               )}
-              {!!e.price && (
-                <View style={[styles.priceBadge, {
-                  backgroundColor: e.price === 'Free' ? C.green
-                    : e.price === 'Sold Out' ? '#E8294A'
-                    : C.pink,
-                }]}>
-                  <Text style={[styles.priceTxt, { color: e.price === 'Sold Out' ? '#fff' : C.dark }]}>
-                    {fmtPrice(e.price)}
-                  </Text>
-                </View>
-              )}
             </View>
           </View>
         </View>
@@ -133,6 +113,4 @@ const styles = StyleSheet.create({
   timeText: { fontSize: 12 },
   footerRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
   friendsCount: { fontSize: 11, fontWeight: '700' },
-  priceBadge: { borderRadius: 10, paddingHorizontal: 10, paddingVertical: 4 },
-  priceTxt: { fontSize: 12, fontWeight: '900' },
 });
