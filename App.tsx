@@ -8,6 +8,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { makeTheme, Theme, C } from './src/constants/theme';
+import { Locale } from './src/i18n';
 import { Event, EVENTS } from './src/data/events';
 import { Avatar } from './src/data/avatars';
 import { AuthUser } from './src/screens/AuthScreen';
@@ -39,7 +40,8 @@ export type TabParamList = {
 const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab   = createBottomTabNavigator<TabParamList>();
 
-const USER_KEY = '@randevu_user';
+const USER_KEY   = '@randevu_user';
+const LOCALE_KEY = '@randevu_locale';
 
 // ── Tab bar icon ──────────────────────────────────────────────────────────────
 function TabIcon({ name, focused }: { name: string; focused: boolean; color: string }) {
@@ -123,17 +125,21 @@ export default function App() {
   const [avatar,       setAvatar]       = useState<Avatar | null>(null);
   const [profileData,  setProfileData]  = useState({ email: '', phone: '' });
   const [isDark,       setIsDark]       = useState(false);
+  const [locale,       setLocale]       = useState<Locale>('en');
   const [joinedEvents, setJoinedEvents] = useState<number[]>([]);
 
   const T        = useMemo(() => makeTheme(isDark), [isDark]);
   const myEvents = useMemo(() => EVENTS.filter(e => joinedEvents.includes(e.id)), [joinedEvents]);
 
-  // Load persisted user on first launch
+  // Load persisted user + locale on first launch
   useEffect(() => {
-    AsyncStorage.getItem(USER_KEY)
-      .then(json => { if (json) setUser(JSON.parse(json)); })
-      .catch(() => {})
-      .finally(() => setIsLoading(false));
+    Promise.all([
+      AsyncStorage.getItem(USER_KEY),
+      AsyncStorage.getItem(LOCALE_KEY),
+    ]).then(([userJson, localeStr]) => {
+      if (userJson)  setUser(JSON.parse(userJson));
+      if (localeStr) setLocale(localeStr as Locale);
+    }).catch(() => {}).finally(() => setIsLoading(false));
   }, []);
 
   const handleAuth = useCallback((u: AuthUser) => {
@@ -145,6 +151,11 @@ export default function App() {
   const handleSignOut = useCallback(() => {
     AsyncStorage.removeItem(USER_KEY).catch(() => {});
     setUser(null);
+  }, []);
+
+  const handleLocaleChange = useCallback((l: Locale) => {
+    setLocale(l);
+    AsyncStorage.setItem(LOCALE_KEY, l).catch(() => {});
   }, []);
 
   const handleUserUpdate = useCallback((updates: Partial<AuthUser>) => {
@@ -235,6 +246,8 @@ export default function App() {
                 isDark={isDark}
                 onDarkToggle={() => setIsDark(d => !d)}
                 onSignOut={handleSignOut}
+                locale={locale}
+                onLocaleChange={handleLocaleChange}
                 T={T}
               />
             )}

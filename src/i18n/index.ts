@@ -1,0 +1,82 @@
+export type Locale = 'en' | 'fr' | 'nl';
+
+export const LOCALE_LABELS: Record<Locale, string> = {
+  en: 'English',
+  fr: 'Français',
+  nl: 'Nederlands',
+};
+
+export const LOCALE_FLAGS: Record<Locale, string> = {
+  en: '🇬🇧',
+  fr: '🇫🇷',
+  nl: '🇳🇱',
+};
+
+// Translation keys: extend this map as screens are localised.
+// Each key maps to a string in each locale; missing keys fall back to 'en'.
+const TRANSLATIONS: Record<Locale, Record<string, string>> = {
+  en: {
+    'settings.title':       'Account Settings',
+    'settings.subtitle':    'Manage your Randevu account',
+    'settings.language':    'App Language',
+    'settings.darkMode':    'Darker Vibe',
+    'settings.darkModeSub': 'Switch all screens to deep charcoal',
+    'settings.logout':      'Log out',
+    'settings.delete':      'Delete account',
+    'tab.home':             'Home',
+    'tab.map':              'Map',
+    'tab.now':              'NOW ⚡',
+    'tab.profile':          'Profile',
+    'auth.tagline':         'Your social event companion\nfor Brussels 🇧🇪',
+    'auth.createBtn':       'Create account ✨',
+    'auth.loginBtn':        'Log in →',
+    'auth.welcomeBack':     'Welcome back 👋',
+    'auth.joinTitle':       'Join Randevu ✨',
+    'auth.loginSub':        'Log in to discover Brussels',
+    'auth.signupSub':       "Create your account — it's free",
+  },
+  fr: {
+    'settings.title':       'Paramètres du compte',
+    'settings.subtitle':    'Gérer votre compte Randevu',
+    'settings.language':    "Langue de l'application",
+    'settings.darkMode':    'Mode sombre',
+    'settings.darkModeSub': 'Passer tous les écrans en gris foncé',
+    'settings.logout':      'Se déconnecter',
+    'settings.delete':      'Supprimer le compte',
+    'tab.home':             'Accueil',
+    'tab.map':              'Carte',
+    'tab.now':              'EN LIVE ⚡',
+    'tab.profile':          'Profil',
+    'auth.tagline':         'Votre compagnon d\'événements\nà Bruxelles 🇧🇪',
+    'auth.createBtn':       'Créer un compte ✨',
+    'auth.loginBtn':        'Se connecter →',
+    'auth.welcomeBack':     'Bon retour 👋',
+    'auth.joinTitle':       'Rejoindre Randevu ✨',
+    'auth.loginSub':        'Connectez-vous pour découvrir Bruxelles',
+    'auth.signupSub':       "Créez votre compte — c'est gratuit",
+  },
+  nl: {
+    'settings.title':       'Accountinstellingen',
+    'settings.subtitle':    'Beheer je Randevu-account',
+    'settings.language':    'App-taal',
+    'settings.darkMode':    'Donkere modus',
+    'settings.darkModeSub': 'Schakel alle schermen naar donkergrijs',
+    'settings.logout':      'Uitloggen',
+    'settings.delete':      'Account verwijderen',
+    'tab.home':             'Home',
+    'tab.map':              'Kaart',
+    'tab.now':              'NU ⚡',
+    'tab.profile':          'Profiel',
+    'auth.tagline':         'Jouw sociale evenementenapp\nvoor Brussel 🇧🇪',
+    'auth.createBtn':       'Account aanmaken ✨',
+    'auth.loginBtn':        'Inloggen →',
+    'auth.welcomeBack':     'Welkom terug 👋',
+    'auth.joinTitle':       'Word lid van Randevu ✨',
+    'auth.loginSub':        'Log in om Brussel te ontdekken',
+    'auth.signupSub':       'Maak je account aan — het is gratis',
+  },
+};
+
+export function t(key: string, locale: Locale): string {
+  return TRANSLATIONS[locale]?.[key] ?? TRANSLATIONS.en[key] ?? key;
+}

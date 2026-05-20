@@ -4,6 +4,7 @@ import {
   KeyboardAvoidingView, Platform, TouchableOpacity, Modal,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Theme, C } from '../constants/theme';
 import Tap from '../components/Tap';
 
@@ -15,7 +16,49 @@ export interface AuthUser {
   vibes?: string[];
 }
 
-const mockDB: AuthUser[] = [];
+// ── User store ─────────────────────────────────────────────────────────────────
+// Users are persisted to AsyncStorage so login survives app restarts.
+// The mockDB fallback is kept for the current session only (e.g. just-signed-up
+// user who hasn't yet been flushed to storage).
+const USERS_KEY = '@randevu_users';
+const sessionDB: AuthUser[] = [];
+
+async function loadUsers(): Promise<AuthUser[]> {
+  try {
+    const json = await AsyncStorage.getItem(USERS_KEY);
+    const stored: AuthUser[] = json ? JSON.parse(json) : [];
+    // Merge in-session signups not yet flushed (edge case: rapid sign-up/log-in)
+    for (const u of sessionDB) {
+      if (!stored.find(s => s.email.toLowerCase() === u.email.toLowerCase())) {
+        stored.push(u);
+      }
+    }
+    return stored;
+  } catch {
+    return [...sessionDB];
+  }
+}
+
+async function persistUser(user: AuthUser): Promise<void> {
+  sessionDB.push(user);
+  try {
+    const existing = await loadUsers();
+    // Upsert
+    const updated = [...existing.filter(u => u.email.toLowerCase() !== user.email.toLowerCase()), user];
+    await AsyncStorage.setItem(USERS_KEY, JSON.stringify(updated));
+  } catch {
+    // Storage failure is non-fatal; session cache still works for this run.
+  }
+}
+
+// ── TODO: Email verification (future backend integration) ─────────────────────
+// When a real email service is wired up, call sendVerificationEmail(user.email)
+// here and block onAuth() until the user confirms their address.
+//
+// async function sendVerificationEmail(email: string): Promise<void> {
+//   await api.post('/auth/verify', { email });
+// }
+// ─────────────────────────────────────────────────────────────────────────────
 
 const VIBE_OPTIONS = [
   'Techno', 'Jazz', 'Hip-Hop', 'Food & Drink',
@@ -92,62 +135,99 @@ export default function AuthScreen({ onAuth, T }: Props) {
     clearErr();
   };
 
-  const signup = () => {
-    if (!name.trim())    return setErr('Please enter your name.');
-    if (!email.trim())   return setErr('Please enter your email.');
-    if (pass.length < 6) return setErr('Password must be at least 6 characters.');
-    if (pass !== confirm) return setErr("Passwords don't match.");
-    if (!termsAccepted)  return setErr('Please accept the Terms & Conditions to continue.');
-    if (mockDB.find(u => u.email.toLowerCase() === email.toLowerCase().trim()))
-      return setErr('Account already exists. Please log in.');
+  const signup = async () => {
+    if (!name.trim())     return setErr('Please enter your name.');
+    if (!email.trim())    return setErr('Please enter your email.');
+    if (!/\S+@\S+\.\S+/.test(email.trim())) return setErr('Please enter a valid email address.');
+    if (pass.length < 6)  return setErr('Password must be at least 6 characters.');
+    if (pass !== confirm)  return setErr("Passwords don't match.");
+    if (!termsAccepted)    return setErr('Please accept the Terms & Conditions to continue.');
+
     setLoad(true);
-    setTimeout(() => {
+    try {
+      const users = await loadUsers();
+      if (users.find(u => u.email.toLowerCase() === email.toLowerCase().trim())) {
+        setErr('An account with this email already exists. Please log in.');
+        return;
+      }
+
       const u: AuthUser = {
-        name: name.trim(),
-        email: email.toLowerCase().trim(),
+        name:   name.trim(),
+        email:  email.toLowerCase().trim(),
         password: pass,
-        bio: bio.trim() || undefined,
-        vibes: vibes.length > 0 ? vibes : undefined,
+        bio:    bio.trim() || undefined,
+        vibes:  vibes.length > 0 ? vibes : undefined,
       };
-      mockDB.push(u);
-      setLoad(false);
+
+      await persistUser(u);
       onAuth(u);
-    }, 800);
+    } catch {
+      setErr('Something went wrong. Please try again.');
+    } finally {
+      setLoad(false);
+    }
   };
 
-  const login = () => {
+  const login = async () => {
     if (!email.trim() || !pass) return setErr('Please fill in all fields.');
     setLoad(true);
-    setTimeout(() => {
-      const m = mockDB.find(u => u.email.toLowerCase() === email.toLowerCase().trim());
-      if (!m)               { setLoad(false); return setErr('User not found. Please sign up first.'); }
-      if (m.password !== pass) { setLoad(false); return setErr('Incorrect credentials. Please try again.'); }
+    try {
+      const users = await loadUsers();
+      const match = users.find(u => u.email.toLowerCase() === email.toLowerCase().trim());
+      if (!match) {
+        setErr('No account found. Please sign up first.');
+        return;
+      }
+      if (match.password !== pass) {
+        setErr('Incorrect password. Please try again.');
+        return;
+      }
+      onAuth(match);
+    } catch {
+      setErr('Something went wrong. Please try again.');
+    } finally {
       setLoad(false);
-      onAuth(m);
-    }, 800);
+    }
   };
 
+  // ── Welcome screen ───────────────────────────────────────────────────────────
   if (mode === 'welcome') {
     return (
-      <LinearGradient colors={[C.lav, C.teal]} style={styles.welcomeFill}>
-        <Text style={styles.welcomeIcon}>🗓️</Text>
-        <Text style={styles.brand}>Randevu</Text>
-        <Text style={styles.tagline}>Your social event companion{'\n'}for Brussels 🇧🇪</Text>
-        <Tap onPress={() => setMode('signup')} style={styles.ctaWrap}>
-          <View style={styles.ctaPrimary}>
-            <Text style={styles.ctaPrimaryTxt}>Create account ✨</Text>
+      <LinearGradient colors={[C.lavD, C.lav, C.teal]} style={styles.welcomeFill}>
+        {/* Decorative blobs */}
+        <View style={[styles.blob, { top: 60, right: -30, backgroundColor: 'rgba(255,255,255,0.08)', width: 180, height: 180, borderRadius: 90 }]} />
+        <View style={[styles.blob, { bottom: 120, left: -40, backgroundColor: 'rgba(255,255,255,0.06)', width: 220, height: 220, borderRadius: 110 }]} />
+
+        <View style={styles.welcomeCenter}>
+          <View style={styles.welcomeIconWrap}>
+            <Text style={styles.welcomeIcon}>🗓️</Text>
           </View>
-        </Tap>
-        <Tap onPress={() => setMode('login')} style={styles.ctaWrap}>
-          <View style={styles.ctaSecondary}>
-            <Text style={styles.ctaSecondaryTxt}>Log in →</Text>
+          <Text style={styles.brand}>Randevu</Text>
+          <View style={styles.cityBadge}>
+            <Text style={styles.cityBadgeTxt}>Brussels · Belgium 🇧🇪</Text>
           </View>
-        </Tap>
+          <Text style={styles.tagline}>Your social event companion{'\n'}for the city</Text>
+        </View>
+
+        <View style={styles.welcomeBtns}>
+          <Tap onPress={() => setMode('signup')} style={styles.ctaWrap}>
+            <View style={styles.ctaPrimary}>
+              <Text style={styles.ctaPrimaryTxt}>Create account ✨</Text>
+            </View>
+          </Tap>
+          <Tap onPress={() => setMode('login')} style={styles.ctaWrap}>
+            <View style={styles.ctaSecondary}>
+              <Text style={styles.ctaSecondaryTxt}>Log in →</Text>
+            </View>
+          </Tap>
+          <Text style={styles.welcomeFooter}>Free · No ads · GDPR compliant</Text>
+        </View>
       </LinearGradient>
     );
   }
 
-  const isLogin  = mode === 'login';
+  // ── Login / Sign-up form ─────────────────────────────────────────────────────
+  const isLogin   = mode === 'login';
   const canSubmit = !load && (isLogin || termsAccepted);
 
   return (
@@ -188,6 +268,7 @@ export default function AuthScreen({ onAuth, T }: Props) {
             style={[styles.input, { backgroundColor: T.input, color: T.text, borderColor: `${T.accent}35` }]}
             keyboardType="email-address"
             autoCapitalize="none"
+            autoCorrect={false}
           />
 
           <TextInput
@@ -210,7 +291,6 @@ export default function AuthScreen({ onAuth, T }: Props) {
                 secureTextEntry
               />
 
-              {/* Bio */}
               <Text style={[styles.fieldLabel, { color: T.sub }]}>Bio (optional)</Text>
               <TextInput
                 placeholder="Tell Brussels who you are… 🎉"
@@ -222,7 +302,6 @@ export default function AuthScreen({ onAuth, T }: Props) {
                 style={[styles.bioInput, { backgroundColor: T.input, color: T.text, borderColor: `${T.accent}35` }]}
               />
 
-              {/* Vibe selector */}
               <Text style={[styles.fieldLabel, { color: T.sub }]}>
                 Your Vibes (pick up to 3)
                 {vibes.length > 0 && <Text style={{ color: C.lav }}> · {vibes.length}/3</Text>}
@@ -277,11 +356,15 @@ export default function AuthScreen({ onAuth, T }: Props) {
           )}
 
           <Tap onPress={isLogin ? login : signup} disabled={!canSubmit} style={{ marginTop: 4 }}>
-            <View style={[styles.submitBtn, { backgroundColor: canSubmit ? C.lav : '#C8BBE0' }]}>
+            <LinearGradient
+              colors={canSubmit ? [C.lavD, C.lav] : ['#C8BBE0', '#C8BBE0']}
+              start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
+              style={styles.submitBtn}
+            >
               <Text style={styles.submitTxt}>
                 {load ? 'One sec…' : isLogin ? 'Log in' : 'Create account'}
               </Text>
-            </View>
+            </LinearGradient>
           </Tap>
 
           {isLogin && (
@@ -330,41 +413,53 @@ export default function AuthScreen({ onAuth, T }: Props) {
 }
 
 const styles = StyleSheet.create({
-  welcomeFill:     { flex: 1, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 32 },
-  welcomeIcon:     { fontSize: 72, marginBottom: 4 },
-  brand:           { fontSize: 42, fontWeight: '900', color: C.white, letterSpacing: -1.5, marginBottom: 6 },
-  tagline:         { fontSize: 15, color: 'rgba(255,255,255,0.85)', fontWeight: '600', textAlign: 'center', marginBottom: 52, lineHeight: 24 },
-  ctaWrap:         { width: '100%', marginBottom: 14 },
-  ctaPrimary:      { backgroundColor: C.white, borderRadius: 50, padding: 17, alignItems: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.18, shadowRadius: 16, elevation: 8 },
-  ctaPrimaryTxt:   { color: C.lav, fontWeight: '900', fontSize: 16 },
-  ctaSecondary:    { backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 50, padding: 17, alignItems: 'center', borderWidth: 2, borderColor: 'rgba(255,255,255,0.45)' },
+  // Welcome
+  welcomeFill:    { flex: 1, paddingHorizontal: 32 },
+  blob:           { position: 'absolute' },
+  welcomeCenter:  { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  welcomeIconWrap: { width: 88, height: 88, borderRadius: 28, backgroundColor: 'rgba(255,255,255,0.2)', alignItems: 'center', justifyContent: 'center', marginBottom: 16, borderWidth: 1.5, borderColor: 'rgba(255,255,255,0.3)' },
+  welcomeIcon:    { fontSize: 44 },
+  brand:          { fontSize: 46, fontWeight: '900', color: C.white, letterSpacing: -2, marginBottom: 10 },
+  cityBadge:      { backgroundColor: 'rgba(255,255,255,0.18)', borderRadius: 20, paddingHorizontal: 14, paddingVertical: 5, marginBottom: 14, borderWidth: 1, borderColor: 'rgba(255,255,255,0.25)' },
+  cityBadgeTxt:   { color: 'rgba(255,255,255,0.9)', fontSize: 12, fontWeight: '700', letterSpacing: 0.4 },
+  tagline:        { fontSize: 15, color: 'rgba(255,255,255,0.8)', fontWeight: '600', textAlign: 'center', lineHeight: 24 },
+  welcomeBtns:    { paddingBottom: 52, width: '100%' },
+  ctaWrap:        { width: '100%', marginBottom: 12 },
+  ctaPrimary:     { backgroundColor: C.white, borderRadius: 50, padding: 17, alignItems: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.18, shadowRadius: 16, elevation: 8 },
+  ctaPrimaryTxt:  { color: C.lav, fontWeight: '900', fontSize: 16 },
+  ctaSecondary:   { backgroundColor: 'rgba(255,255,255,0.15)', borderRadius: 50, padding: 17, alignItems: 'center', borderWidth: 1.5, borderColor: 'rgba(255,255,255,0.4)' },
   ctaSecondaryTxt: { color: C.white, fontWeight: '900', fontSize: 16 },
-  formContainer:   { padding: 28, paddingTop: 56, paddingBottom: 48 },
-  backArrow:       { fontSize: 24, marginBottom: 28 },
-  formTitle:       { fontSize: 27, fontWeight: '900', marginBottom: 6 },
-  formSub:         { fontSize: 14, fontWeight: '600', marginBottom: 30 },
-  input:           { borderWidth: 1.5, borderRadius: 18, paddingHorizontal: 18, paddingVertical: 14, fontSize: 15, fontWeight: '600', marginBottom: 12 },
-  fieldLabel:      { fontSize: 11, fontWeight: '800', textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 8, marginTop: 4 },
-  bioInput:        { borderWidth: 1.5, borderRadius: 18, paddingHorizontal: 18, paddingVertical: 12, fontSize: 15, fontWeight: '600', marginBottom: 18, textAlignVertical: 'top', minHeight: 82 },
-  vibeGrid:        { flexDirection: 'row', flexWrap: 'wrap', gap: 9, marginBottom: 22 },
-  vibePill:        { borderRadius: 20, paddingHorizontal: 14, paddingVertical: 8, borderWidth: 1.5 },
-  vibePillTxt:     { fontSize: 13, fontWeight: '700' },
-  termsRow:        { flexDirection: 'row', alignItems: 'flex-start', gap: 12, marginBottom: 18 },
-  checkbox:        { width: 22, height: 22, borderRadius: 6, borderWidth: 2, alignItems: 'center', justifyContent: 'center', marginTop: 3, flexShrink: 0 },
-  checkmark:       { color: 'white', fontSize: 12, fontWeight: '900' },
-  termsTextWrap:   { flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' },
-  termsBase:       { fontSize: 13, fontWeight: '600', lineHeight: 22 },
-  termsLink:       { fontSize: 13, fontWeight: '800', lineHeight: 22, textDecorationLine: 'underline' },
-  errBox:          { backgroundColor: '#ffe5e8', borderWidth: 1.5, borderColor: '#f5b8c2', borderRadius: 14, padding: 12, marginBottom: 12 },
-  errTxt:          { color: '#C0392B', fontSize: 13, fontWeight: '700', textAlign: 'center' },
-  submitBtn:       { borderRadius: 50, padding: 17, alignItems: 'center' },
-  submitTxt:       { color: C.white, fontWeight: '900', fontSize: 16 },
-  switchRow:       { flexDirection: 'row', justifyContent: 'center', marginTop: 22 },
-  legalContainer:  { flex: 1 },
-  legalHeader:     { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 22, paddingTop: 28, paddingBottom: 16, borderBottomWidth: 1 },
-  legalTitle:      { fontSize: 18, fontWeight: '900' },
-  legalClose:      { borderRadius: 14, paddingHorizontal: 14, paddingVertical: 8 },
-  legalBody:       { padding: 22, paddingBottom: 36 },
-  legalText:       { fontSize: 13, lineHeight: 24, fontWeight: '500' },
-  legalAcceptBtn:  { marginHorizontal: 22, marginBottom: 32, borderRadius: 50, padding: 17, alignItems: 'center' },
+  welcomeFooter:  { textAlign: 'center', color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: '600', marginTop: 10 },
+
+  // Form
+  formContainer:  { padding: 28, paddingTop: 56, paddingBottom: 48 },
+  backArrow:      { fontSize: 24, marginBottom: 28 },
+  formTitle:      { fontSize: 27, fontWeight: '900', marginBottom: 6 },
+  formSub:        { fontSize: 14, fontWeight: '600', marginBottom: 30 },
+  input:          { borderWidth: 1.5, borderRadius: 18, paddingHorizontal: 18, paddingVertical: 14, fontSize: 15, fontWeight: '600', marginBottom: 12 },
+  fieldLabel:     { fontSize: 11, fontWeight: '800', textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 8, marginTop: 4 },
+  bioInput:       { borderWidth: 1.5, borderRadius: 18, paddingHorizontal: 18, paddingVertical: 12, fontSize: 15, fontWeight: '600', marginBottom: 18, textAlignVertical: 'top', minHeight: 82 },
+  vibeGrid:       { flexDirection: 'row', flexWrap: 'wrap', gap: 9, marginBottom: 22 },
+  vibePill:       { borderRadius: 20, paddingHorizontal: 14, paddingVertical: 8, borderWidth: 1.5 },
+  vibePillTxt:    { fontSize: 13, fontWeight: '700' },
+  termsRow:       { flexDirection: 'row', alignItems: 'flex-start', gap: 12, marginBottom: 18 },
+  checkbox:       { width: 22, height: 22, borderRadius: 6, borderWidth: 2, alignItems: 'center', justifyContent: 'center', marginTop: 3, flexShrink: 0 },
+  checkmark:      { color: 'white', fontSize: 12, fontWeight: '900' },
+  termsTextWrap:  { flex: 1, flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center' },
+  termsBase:      { fontSize: 13, fontWeight: '600', lineHeight: 22 },
+  termsLink:      { fontSize: 13, fontWeight: '800', lineHeight: 22, textDecorationLine: 'underline' },
+  errBox:         { backgroundColor: '#ffe5e8', borderWidth: 1.5, borderColor: '#f5b8c2', borderRadius: 14, padding: 12, marginBottom: 12 },
+  errTxt:         { color: '#C0392B', fontSize: 13, fontWeight: '700', textAlign: 'center' },
+  submitBtn:      { borderRadius: 50, padding: 17, alignItems: 'center' },
+  submitTxt:      { color: C.white, fontWeight: '900', fontSize: 16 },
+  switchRow:      { flexDirection: 'row', justifyContent: 'center', marginTop: 22 },
+
+  // Legal modal
+  legalContainer: { flex: 1 },
+  legalHeader:    { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingHorizontal: 22, paddingTop: 28, paddingBottom: 16, borderBottomWidth: 1 },
+  legalTitle:     { fontSize: 18, fontWeight: '900' },
+  legalClose:     { borderRadius: 14, paddingHorizontal: 14, paddingVertical: 8 },
+  legalBody:      { padding: 22, paddingBottom: 36 },
+  legalText:      { fontSize: 13, lineHeight: 24, fontWeight: '500' },
+  legalAcceptBtn: { marginHorizontal: 22, marginBottom: 32, borderRadius: 50, padding: 17, alignItems: 'center' },
 });

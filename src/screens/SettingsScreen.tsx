@@ -5,6 +5,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { AuthUser } from './AuthScreen';
 import { Theme, C } from '../constants/theme';
+import { Locale, LOCALE_LABELS, LOCALE_FLAGS } from '../i18n';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
 
@@ -18,6 +19,8 @@ interface Props {
   isDark: boolean;
   onDarkToggle: () => void;
   onSignOut: () => void;
+  locale: Locale;
+  onLocaleChange: (l: Locale) => void;
   T: Theme;
 }
 
@@ -30,7 +33,11 @@ const NOTIF_ITEMS: [string, boolean][] = [
   ['New events in my area',       true],
 ];
 
-export default function SettingsScreen({ user, onBack, profileData, onProfileUpdate, isDark, onDarkToggle, onSignOut, T }: Props) {
+export default function SettingsScreen({
+  user, onBack, profileData, onProfileUpdate,
+  isDark, onDarkToggle, onSignOut,
+  locale, onLocaleChange, T,
+}: Props) {
   const [fields, setFields] = useState({
     email:    profileData.email || user?.email || 'lea@randevu.app',
     phone:    profileData.phone || '+32 478 12 34 56',
@@ -58,11 +65,13 @@ export default function SettingsScreen({ user, onBack, profileData, onProfileUpd
     { k: 'password', label: 'Password',      icon: '🔒', type: 'default'       },
   ];
 
+  const locales = Object.keys(LOCALE_LABELS) as Locale[];
+
   return (
     <GradBg isDark={T.isDark} style={{ flex: 1 }}>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 40 }}>
         {/* Header */}
-        <LinearGradient colors={[C.lav, C.teal]} style={styles.headerGrad}>
+        <LinearGradient colors={[C.lavD, C.lav, C.teal]} style={styles.headerGrad}>
           <Tap onPress={onBack}>
             <View style={styles.backBtn}>
               <Text style={styles.backBtnTxt}>← Back</Text>
@@ -136,6 +145,36 @@ export default function SettingsScreen({ user, onBack, profileData, onProfileUpd
             ))}
           </View>
 
+          {/* Language */}
+          <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border }]}>
+            <Text style={[styles.cardTitle, { color: T.text }]}>🌍 App Language</Text>
+            <Text style={[styles.toggleDesc, { color: T.sub, marginBottom: 14 }]}>
+              Choose your preferred language
+            </Text>
+            <View style={styles.langRow}>
+              {locales.map(code => {
+                const active = locale === code;
+                return (
+                  <Tap key={code} onPress={() => onLocaleChange(code)} style={{ flex: 1 }}>
+                    <LinearGradient
+                      colors={active ? [C.lavD, C.lav] : ['transparent', 'transparent']}
+                      style={[
+                        styles.langBtn,
+                        { borderColor: active ? C.lav : T.border },
+                        !active && { backgroundColor: T.pill },
+                      ]}
+                    >
+                      <Text style={styles.langFlag}>{LOCALE_FLAGS[code]}</Text>
+                      <Text style={[styles.langName, { color: active ? 'white' : T.text }]}>
+                        {LOCALE_LABELS[code]}
+                      </Text>
+                    </LinearGradient>
+                  </Tap>
+                );
+              })}
+            </View>
+          </View>
+
           {/* Dark mode */}
           <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border }]}>
             <View style={styles.toggleRow}>
@@ -178,10 +217,14 @@ const styles = StyleSheet.create({
   changeBtn:    { borderRadius: 14, paddingHorizontal: 15, paddingVertical: 8 },
   input:        { borderWidth: 1.5, borderRadius: 14, paddingHorizontal: 14, paddingVertical: 11, fontSize: 14, fontWeight: '600', marginTop: 10 },
   actionBtn:    { borderRadius: 14, paddingVertical: 10 },
-  cardTitle:    { fontSize: 14, fontWeight: '900', marginBottom: 12 },
+  cardTitle:    { fontSize: 14, fontWeight: '900', marginBottom: 2 },
   toggleRow:    { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingVertical: 9 },
   toggleLabel:  { fontSize: 13, fontWeight: '600', flex: 1, paddingRight: 10 },
   toggleDesc:   { fontSize: 12, fontWeight: '600', marginTop: 2 },
+  langRow:      { flexDirection: 'row', gap: 8 },
+  langBtn:      { borderRadius: 16, borderWidth: 1.5, paddingVertical: 12, paddingHorizontal: 6, alignItems: 'center', gap: 4 },
+  langFlag:     { fontSize: 20 },
+  langName:     { fontSize: 11, fontWeight: '800', letterSpacing: 0.2 },
   logoutBtn:    { backgroundColor: '#FFE5E8', borderRadius: 22, padding: 16, alignItems: 'center', marginBottom: 10 },
   logoutTxt:    { fontWeight: '900', fontSize: 14, color: '#C0392B' },
 });
