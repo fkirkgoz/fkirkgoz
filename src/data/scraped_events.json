@@ -1,163 +1,8 @@
 [
   {
-    "id": 100,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Punk 50: Habenmeuf, Flux, Cimitero, Blitzer + Cancelled",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Rock",
-      "Live Music"
-    ],
-    "source": "AB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 109,
-    "neighbourhood": "Centre",
-    "desc": "4 bands, 1 (female) fist!",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest253",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest918",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest317",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest953",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest574",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Axel",
-        "text": "First time at this venue!",
-        "time": "12:12 AM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Grab tickets fast, selling out!",
-        "time": "10:46 PM"
-      },
-      {
-        "user": "Axel",
-        "text": "Can't wait for this one! 🔥",
-        "time": "6:12 PM"
-      }
-    ],
-    "_rawDate": "2026-05-19",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/punk-50-habenmeuf-flux-cimitero-blitzer/a10Qw00000FN95BIAT"
-  },
-  {
-    "id": 101,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Hommage à Éliane Radigue: artist talk, screening & live set",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "AB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 143,
-    "neighbourhood": "Centre",
-    "desc": "An evening focusing on the work of electro-acoustic music’s grande dame",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest894",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest610",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest578",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest173",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest775",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "Grab tickets fast, selling out!",
-        "time": "9:57 AM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Who else is going?? 🙋",
-        "time": "11:00 AM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Counting down the days 🗓️",
-        "time": "6:19 AM"
-      }
-    ],
-    "_rawDate": "2026-05-19",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/hommage-a-eliane-radigue-artist-talk-screening-live-set/a10Qw00000HddqvIAB"
-  },
-  {
     "id": 102,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Group Atelier w/Paulo Rietjens (ASTROFISIKS)",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -222,7 +67,7 @@
   {
     "id": 103,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Puggy + Pia",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -282,7 +127,7 @@
   {
     "id": 104,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "AB x VK: La Dame Blanche + Erik Fernandez",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -985,96 +830,6 @@
     "officialEventLink": "https://www.bozar.be/en/calendar/picture-perfect"
   },
   {
-    "id": 114,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Dry Leaf - Aleksandre Koberidze",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 209,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Guest039",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest286",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest822",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest275",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest120",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest192",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest918",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "Already got my ticket! 👋",
-        "time": "1:54 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Already got my ticket! 👋",
-        "time": "12:03 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Already got my ticket! 👋",
-        "time": "8:55 AM"
-      }
-    ],
-    "_rawDate": "2026-05-19",
-    "officialEventLink": "https://www.bozar.be/en/calendar/dry-leaf-aleksandre-koberidze"
-  },
-  {
     "id": 115,
     "cat": "Culture",
     "date": "Next Month",
@@ -1671,7 +1426,7 @@
   {
     "id": 126,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Liniker - Mari Froes - Mychelle & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Saint-Josse",
@@ -2132,7 +1887,7 @@
   {
     "id": 135,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Ino Casablanca - Jewel Usain - Folie's & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Saint-Josse",
@@ -3563,7 +3318,7 @@
   {
     "id": 157,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "BETHEL MUSIC",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -5337,5 +5092,231 @@
       }
     ],
     "_rawDate": "2027-04-01"
+  },
+  {
+    "id": 182,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "C12 Nite - 19/06",
+    "venue": "C12",
+    "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "emoji": "💃",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Electronic",
+      "Art",
+      "Nightlife"
+    ],
+    "source": "C12",
+    "officialEventLink": "https://shop.c12space.com/1253c45b2968498da52d767bc2684f38",
+    "lat": 50.8462,
+    "lng": 4.3556,
+    "going": 312,
+    "neighbourhood": "Centre",
+    "desc": "Juicy Romance / JEKKAMAÏ / Gucccifer",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest688",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest321",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest601",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest214",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest102",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest916",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Who else is going?? 🙋",
+        "time": "2:17 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:59 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:50 PM"
+      }
+    ],
+    "_rawDate": "2026-06-19"
+  },
+  {
+    "id": 183,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "PFL BRUSSELS WEIGH INS",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/pfl-brussels-weigh-ins/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 54,
+    "neighbourhood": "Centre",
+    "desc": "PFL BRUSSELS WEIGH INS at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest382",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest635",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest655",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest769",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest733",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:45 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "6:21 AM"
+      }
+    ],
+    "_rawDate": "2026-05-22"
+  },
+  {
+    "id": 184,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Back on Senne",
+    "venue": "Sewer Museum",
+    "addr": "Sewer Museum, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/fr/visiteurs/agenda/event-detail.Back-on-Senne.586749",
+    "lat": 50.8446181,
+    "lng": 4.338832,
+    "going": 69,
+    "neighbourhood": "Centre",
+    "desc": "Until Sun 03 January 2027 Back on Senne ExhibitionsSewer Museum View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest409",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest555",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest003",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "7:03 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:56 PM"
+      }
+    ],
+    "_rawDate": "2027-01-03"
   }
 ]
