@@ -1,133 +1,8 @@
 [
   {
-    "id": 102,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Group Atelier w/Paulo Rietjens (ASTROFISIKS)",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "AB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 222,
-    "neighbourhood": "Centre",
-    "desc": "FRONTALstudio",
-    "attendees": [
-      {
-        "n": "Guest232",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest056",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest863",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest802",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest881",
-        "c": "#F4A261",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Already got my ticket! 👋",
-        "time": "12:08 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Counting down the days 🗓️",
-        "time": "3:46 PM"
-      }
-    ],
-    "_rawDate": "2026-05-20",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/group-atelier-wpaulo-rietjens-astrofisiks/a10Qw00000HW5cHIAT"
-  },
-  {
-    "id": 103,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Puggy + Pia",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "AB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 41,
-    "neighbourhood": "Centre",
-    "desc": "Puggy returns to the AB!",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Guest487",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest062",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest332",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Brussels never disappoints ❤️",
-        "time": "8:53 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Already got my ticket! 👋",
-        "time": "3:59 AM"
-      }
-    ],
-    "_rawDate": "2026-05-20",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/puggy/a10Qw00000FZ37GIAT"
-  },
-  {
     "id": 104,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "AB x VK: La Dame Blanche + Erik Fernandez",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -1264,7 +1139,7 @@
   {
     "id": 124,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Mura Masa - Dorian Electra - Danny L Harle & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Saint-Josse",
@@ -1887,7 +1762,7 @@
   {
     "id": 135,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Ino Casablanca - Jewel Usain - Folie's & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Saint-Josse",
@@ -2120,7 +1995,7 @@
   {
     "id": 139,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: STYXX w/ Lacchesi, Beau Didier & Siren333",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3316,81 +3191,6 @@
     "officialEventLink": "https://www.fuse.be/events/fuse-presents-brussels-pride-w-lsdxoxo-nene-h"
   },
   {
-    "id": 157,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "BETHEL MUSIC",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "going": 247,
-    "neighbourhood": "Centre",
-    "desc": "BETHEL MUSIC at La Madeleine.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Guest073",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest090",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest282",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest971",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Hugo",
-        "text": "Can't wait for this one! 🔥",
-        "time": "6:57 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "Counting down the days 🗓️",
-        "time": "4:48 AM"
-      }
-    ],
-    "_rawDate": "2026-05-20",
-    "officialEventLink": "https://la-madeleine.be/show/bethel-music-2/"
-  },
-  {
     "id": 158,
     "cat": "Music",
     "date": "This Weekend",
@@ -4415,7 +4215,7 @@
   {
     "id": 172,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Angine de Poitrine - Model/Actriz - Maria Iskariot & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -5177,7 +4977,7 @@
   {
     "id": 183,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "PFL BRUSSELS WEIGH INS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -5318,5 +5118,60 @@
       }
     ],
     "_rawDate": "2027-01-03"
+  },
+  {
+    "id": 185,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Houses in Comic Strips",
+    "venue": "Autrique House",
+    "addr": "Autrique House, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/fr/visiteurs/agenda/event-detail.Houses-in-Comic-Strips.5700020520",
+    "lat": 50.8632497,
+    "lng": 4.3731584,
+    "going": 92,
+    "neighbourhood": "Centre",
+    "desc": "Until Sun 07 March 2027 Houses in Comic Strips €9 ExhibitionsAutrique House View more",
+    "attendees": [
+      {
+        "n": "Guest262",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest355",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest990",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "6:56 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Who else is going?? 🙋",
+        "time": "6:52 PM"
+      }
+    ],
+    "_rawDate": "2027-03-07"
   }
 ]
