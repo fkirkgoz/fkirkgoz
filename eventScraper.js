@@ -353,7 +353,9 @@ function parseRawDate(raw) {
 
   // Safe year inference — "Thu 21 May", "Fri 22 May", "09 Jun", "22 May"
   // Requires an explicit month name to prevent matching stray digit pairs.
-  // If the inferred date is already past, try next year.
+  // If the inferred date is in the past, bump to next year ONLY if that stays
+  // within 12 months — otherwise discard (treats genuinely-stale events as expired
+  // rather than wrongly pushing "Fri 15 May" to May 2027 when it's May 21, 2026).
   const MS = 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec';
   const MF = 'January|February|March|April|May|June|July|August|September|October|November|December';
   m = t.match(new RegExp(`(?:(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\\w*\\s+)?(\\d{1,2})\\s+(${MF}|${MS})(?![a-zA-Z])`, 'i'));
@@ -362,8 +364,12 @@ function parseRawDate(raw) {
     let d = new Date(`${m[2]} ${m[1]}, ${yr}`);
     if (!isNaN(d.getTime())) {
       const today = new Date(); today.setHours(0, 0, 0, 0);
-      if (d < today) d = new Date(`${m[2]} ${m[1]}, ${yr + 1}`);
-      return checked(d);
+      if (d < today) {
+        const next = new Date(`${m[2]} ${m[1]}, ${yr + 1}`);
+        const cutoff = new Date(today); cutoff.setFullYear(cutoff.getFullYear() + 1);
+        d = next <= cutoff ? next : null; // discard if > 12 months away
+      }
+      return d ? checked(d) : null;
     }
   }
 
@@ -985,14 +991,22 @@ async function main() {
   existing = removeExpired(existing);
   existing = deduplicateExisting(existing);
 
-  // One-time purge: delete events stored with the broken "2026-06-18" placeholder
-  // that resulted from the over-aggressive date-parsing fix in an earlier session.
-  // These entries are still in the future so removeExpired() won't catch them.
-  const BROKEN_DATE = '2026-06-18';
+  // Purge events with known bad dates. Three patterns to catch:
+  // 1. "YYYY-06-18" in any year — the specific broken placeholder from the bad parse era
+  // 2. Any _rawDate with year >= 2027 — year inference overcorrection: when a venue
+  //    scrapes "Fri 15 May" after May 15 has passed, the year is bumped to the following
+  //    year (2027), which is wrong; these are stale artefacts, never real future events
+  // 3. Events with no _rawDate at all are safe to keep (removeExpired handles them)
   const prePurge = existing.length;
-  existing = existing.filter(e => e._rawDate !== BROKEN_DATE);
+  existing = existing.filter(e => {
+    if (!e._rawDate) return true;
+    const raw = String(e._rawDate);
+    if (raw.match(/-06-18$/)) return false;           // June 18 any year
+    if (parseInt(raw.slice(0, 4), 10) >= 2027) return false; // 2027+ overcorrection
+    return true;
+  });
   const purged = prePurge - existing.length;
-  if (purged) console.log(`🧹  Purged ${purged} event(s) with stale "${BROKEN_DATE}" placeholder date`);
+  if (purged) console.log(`🧹  Purged ${purged} event(s) with bad dates (June-18 placeholder or 2027+ year-inference artefact)`);
 
   // Migrate stale schema: add officialEventLink, remove price/ticket/sourceURL
   let migrated = 0;
