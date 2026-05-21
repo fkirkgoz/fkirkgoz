@@ -26,6 +26,20 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   const [nRead, setNRead] = useState(false);
   const searchRef = useRef<TextInput>(null);
 
+  // Build date pill list: standard labels first, then any named-month labels
+  // (e.g. 'July', 'August') that exist in the current event data.
+  const availableDates = useMemo(() => {
+    const seen = new Set(DATES);
+    const extra: string[] = [];
+    for (const e of EVENTS) {
+      if (e.date && !seen.has(e.date) && e.date !== 'Ongoing') {
+        seen.add(e.date);
+        extra.push(e.date);
+      }
+    }
+    return [...DATES, ...extra];
+  }, []);
+
   const filtered = useMemo(() => EVENTS.filter(e => {
     if (cat  !== 'All' && e.cat  !== cat)  return false;
     if (date !== 'All' && e.date !== date) return false;
@@ -146,7 +160,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
       {/* Date tabs */}
       {!q && (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 22, gap: 8, paddingTop: 12, paddingBottom: 2 }}>
-          {DATES.map(d => (
+          {availableDates.map(d => (
             <Tap key={d} onPress={() => setDate(d)}>
               <View style={[
                 styles.datePill,

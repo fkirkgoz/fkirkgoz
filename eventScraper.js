@@ -269,11 +269,24 @@ function toRelativeDate(iso, endIso) {
 
   if (diffDays < 0)  return null;  // past → expired
   const dow = eDay.getDay();
-  if (diffDays === 0) return 'Tonight';
+  if (diffDays === 0) return 'Tonight'; // refined to 'Today' by refineDateLabel when startH < 19
   if (diffDays === 1) return 'Tomorrow';
   if (diffDays <= 6 && (dow === 0 || dow === 6)) return 'This Weekend';
   if (diffDays <= 7)  return 'Next Week';
-  return 'Next Month';  // strictly future; never "Ongoing"
+  // "Next Month" covers the window from 8 days out through the end of next calendar month.
+  // Events beyond that get a named-month label (e.g. 'July', 'August') so they never
+  // get lumped in with genuinely near-term content.
+  const endOfNextMonth = new Date(now.getFullYear(), now.getMonth() + 2, 0);
+  if (eDay <= endOfNextMonth) return 'Next Month';
+  const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  return MONTH_NAMES[eDay.getMonth()];
+}
+
+// Refine 'Tonight' → 'Today' for daytime events (startH < 19).
+// Called after the event's startH is determined so toRelativeDate stays date-only.
+function refineDateLabel(relDate, startH) {
+  if (relDate !== 'Tonight') return relDate;
+  return (typeof startH === 'number' && startH < 19) ? 'Today' : 'Tonight';
 }
 
 // Returns "YYYY-MM-DD" using LOCAL calendar parts — avoids UTC midnight timezone drift.
@@ -670,7 +683,7 @@ async function scrapeVenue(browser, config) {
           const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
             ? detectExternalVenue(title+' '+desc+' '+(ev.location?.name||'')) : null;
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
-            date:relDate, time:timeStr, startH, endH:startH+3,
+            date:refineDateLabel(relDate, startH), time:timeStr, startH, endH:startH+3,
             emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
             source:config.name, officialEventLink:url,
             desc:desc||`${title} at ${config.name}.`,
@@ -737,7 +750,8 @@ async function scrapeVenue(browser, config) {
             const cls = classifyForVenue(title, config);
             events.push({
               _rawDate: rawDate, title, venue: config.name, addr: config.addr,
-              date: relDate, time: config.defaultTime,
+              date: refineDateLabel(relDate, parseInt(config.defaultTime, 10) || 20),
+              time: config.defaultTime,
               startH: parseInt(config.defaultTime, 10) || 20,
               endH: (parseInt(config.defaultTime, 10) || 20) + 3,
               emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
@@ -832,7 +846,7 @@ async function scrapeVenue(browser, config) {
             events.push({
               _rawDate: rawDate, title: item.title,
               venue: venueText || 'Brussels', addr: `${venueText || 'Brussels'}, Belgium`,
-              date: relDate, time: agSmart.time,
+              date: refineDateLabel(relDate, agSmart.startH), time: agSmart.time,
               startH: agSmart.startH, endH: agSmart.endH,
               emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
               source: config.name, officialEventLink: url,
@@ -943,7 +957,7 @@ async function scrapeVenue(browser, config) {
             ? detectExternalVenue(title+' '+desc) : null;
 
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
-            date:relDate, time, startH, endH,
+            date:refineDateLabel(relDate, startH), time, startH, endH,
             emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
             source:config.name, officialEventLink:url,
             desc:desc||`${title} at ${config.name}.`,
@@ -1050,7 +1064,8 @@ async function main() {
     if (!e._rawDate) return e;
     const fresh = toRelativeDate(e._rawDate, e._endDate || null);
     if (!fresh) return null;           // past — will be removed below
-    if (fresh !== e.date) { relabelled++; return { ...e, date: fresh }; }
+    const refined = refineDateLabel(fresh, e.startH);
+    if (refined !== e.date) { relabelled++; return { ...e, date: refined }; }
     return e;
   }).filter(Boolean);
   if (relabelled) console.log(`📅  Refreshed ${relabelled} stale date label(s)`);

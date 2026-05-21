@@ -22,11 +22,18 @@ export default function NowScreen({ onEventPress, T }: Props) {
     return () => clearInterval(id);
   }, []);
 
-  // Only show events that are happening today or are ongoing — no future-date noise
-  const todayEvents  = EVENTS.filter(e => e.date === 'Tonight' || e.date === 'Ongoing');
+  // Today events = anything labeled Today, Tonight, or Ongoing
+  const todayEvents = EVENTS.filter(e => e.date === 'Today' || e.date === 'Tonight' || e.date === 'Ongoing');
   const curH = secs / 3600; // live clock hour (0–24)
-  const happening    = todayEvents.filter(e => e.startH !== undefined && curH >= e.startH && curH < e.endH);
-  const startingSoon = todayEvents.filter(e => e.startH !== undefined && curH < e.startH && e.startH - curH <= 1);
+  // Daytime events ('Today') show all day — they're open now regardless of clock position.
+  // Evening events ('Tonight') use the hour window so they don't clutter before they start.
+  const happening = todayEvents.filter(e => {
+    if (e.date === 'Today' || e.date === 'Ongoing') return true;
+    return e.startH !== undefined && curH >= e.startH && curH < e.endH;
+  });
+  const startingSoon = todayEvents.filter(e =>
+    e.date === 'Tonight' && e.startH !== undefined && curH < e.startH && e.startH - curH <= 1
+  );
 
   const hh = String(Math.floor(secs / 3600) % 24).padStart(2, '0');
   const mm = String(Math.floor((secs % 3600) / 60)).padStart(2, '0');
@@ -41,7 +48,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
           <Text style={styles.liveTxt}>LIVE NOW</Text>
         </View>
         <Text style={styles.title}>Happening in{'\n'}<Text style={{ color: C.teal }}>Brussels right now ⚡</Text></Text>
-        <Text style={styles.demoNote}>Tonight &amp; Ongoing events · live clock</Text>
+        <Text style={styles.demoNote}>Today, Tonight &amp; Ongoing events · live clock</Text>
       </View>
 
       {/* Live clock */}

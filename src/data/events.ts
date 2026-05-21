@@ -63,4 +63,4 @@ export interface Event {
 export const EVENTS: Event[] = scrapedRaw as unknown as Event[];
 
 export const CATS  = ['All', 'Nightlife', 'Music', 'Culture', 'Festival', 'Arts', 'Sports', 'Wellness', 'Food & Drink', 'Market', 'Volunteering'];
-export const DATES = ['All', 'Tonight', 'Tomorrow', 'This Weekend', 'Next Week'];
+export const DATES = ['All', 'Today', 'Tonight', 'Tomorrow', 'This Weekend', 'Next Week', 'Next Month'];
