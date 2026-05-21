@@ -403,6 +403,23 @@ function parseTime(str, defaultTime) {
   return { time:def, startH:parseInt(def,10)||20, endH:(parseInt(def,10)||20)+3 };
 }
 
+// Category-aware default time — prevents nightlife hours on museums and exhibitions.
+// Used as the fallback when no explicit start time is scraped from the page.
+function smartDefaultTime(cat) {
+  switch (cat) {
+    case 'Nightlife':    return { time: '23:00', startH: 23, endH: 26 };
+    case 'Music':        return { time: '20:00', startH: 20, endH: 23 };
+    case 'Festival':     return { time: '12:00', startH: 12, endH: 22 };
+    case 'Culture':
+    case 'Arts':         return { time: '11:00', startH: 11, endH: 18 };
+    case 'Market':       return { time: '10:00', startH: 10, endH: 17 };
+    case 'Sports':
+    case 'Wellness':     return { time: '10:00', startH: 10, endH: 13 };
+    case 'Food & Drink': return { time: '12:00', startH: 12, endH: 20 };
+    default:             return { time: '19:00', startH: 19, endH: 22 };
+  }
+}
+
 // ── Other helpers ─────────────────────────────────────────────────────────────
 function clean(s) { return (s||'').replace(/\s+/g,' ').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').trim(); }
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -605,11 +622,15 @@ async function scrapeVenue(browser, config) {
           }
         }
 
-        // Two scroll passes to trigger lazy-loading
-        await page.evaluate(() => window.scrollBy(0, 800));
+        // Four scroll passes with increasing depth to expose lazy-loaded summer events
+        await page.evaluate(() => window.scrollBy(0, 1200));
         await sleep(1500);
-        await page.evaluate(() => window.scrollBy(0, 800));
-        await sleep(1000);
+        await page.evaluate(() => window.scrollBy(0, 1500));
+        await sleep(1200);
+        await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+        await sleep(2000);
+        await page.evaluate(() => window.scrollTo(0, 0));
+        await sleep(500);
 
         const title   = await page.title();
         const bodyLen = await page.evaluate(() => document.body?.innerText?.length || 0);
@@ -642,13 +663,14 @@ async function scrapeVenue(browser, config) {
           if (!relDate) continue;
           const desc    = clean(ev.description || '');
           const url     = ev.url || ev['@id'] || '';
-          const timeStr = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : config.defaultTime;
-          const startH  = parseInt((timeStr || config.defaultTime).split(':')[0], 10) || 20;
           const cls              = classifyForVenue(title+' '+desc, config);
+          const smart            = smartDefaultTime(cls.cat);
+          const timeStr          = ev.startDate?.length > 10 ? ev.startDate.slice(11,16) : smart.time;
+          const startH           = parseInt(timeStr.split(':')[0], 10) || smart.startH;
           const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
             ? detectExternalVenue(title+' '+desc+' '+(ev.location?.name||'')) : null;
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
-            date:relDate, time:timeStr||config.defaultTime, startH, endH:startH+3,
+            date:relDate, time:timeStr, startH, endH:startH+3,
             emoji:cls.emoji, color:cls.color, cat:cls.cat, tags:cls.tags,
             source:config.name, officialEventLink:url,
             desc:desc||`${title} at ${config.name}.`,
@@ -775,7 +797,7 @@ async function scrapeVenue(browser, config) {
           const baseOrigin = 'https://www.agenda.brussels';
 
           for (const item of agendaItems) {
-            if (events.length >= 20) break; // cap to prevent city-wide bloat
+            if (events.length >= 30) break; // cap to prevent city-wide bloat
             if (!item.title || item.title.length < 5 || !isValidTitle(item.title)) continue;
 
             const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
@@ -806,12 +828,12 @@ async function scrapeVenue(browser, config) {
             // Generic "Brussels" entries use config centre coords; named venues get
             // lat/lng = 0 so the geocoder in main() resolves the specific address.
             const isGenericVenue = !venueText || venueText.toLowerCase() === 'brussels';
+            const agSmart = smartDefaultTime(cls.cat);
             events.push({
               _rawDate: rawDate, title: item.title,
               venue: venueText || 'Brussels', addr: `${venueText || 'Brussels'}, Belgium`,
-              date: relDate, time: config.defaultTime,
-              startH: parseInt(config.defaultTime, 10) || 10,
-              endH: (parseInt(config.defaultTime, 10) || 10) + 3,
+              date: relDate, time: agSmart.time,
+              startH: agSmart.startH, endH: agSmart.endH,
               emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
               source: config.name, officialEventLink: url,
               desc: item.allText.slice(0, 200) || `${item.title} in Brussels.`,
@@ -887,7 +909,7 @@ async function scrapeVenue(browser, config) {
         const baseOrigin = config.urls[0].match(/^https?:\/\/[^\/]+/)?.[0] || '';
 
         candidates.each((i, el) => {
-          if (i >= 30) return;
+          if (i >= 50) return;
           const $el  = $(el);
           const title = clean($el.find([
             'h1','h2','h3','h4','h5','strong',
@@ -914,8 +936,9 @@ async function scrapeVenue(browser, config) {
           const link = $el.find('a[href]').first().attr('href') || '';
           const url  = link.startsWith('http') ? link : link.startsWith('/') ? `${baseOrigin}${link}` : link;
 
-          const { time, startH, endH } = parseTime(timeText, config.defaultTime);
           const cls = classifyForVenue(title+' '+desc, config);
+          const smart = smartDefaultTime(cls.cat);
+          const { time, startH, endH } = parseTime(timeText, smart.time);
           const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
             ? detectExternalVenue(title+' '+desc) : null;
 
