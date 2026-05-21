@@ -34,6 +34,12 @@ const TRANSLATIONS: Record<Locale, Record<string, string>> = {
     'auth.joinTitle':       'Join Randevu ✨',
     'auth.loginSub':        'Log in to discover Brussels',
     'auth.signupSub':       "Create your account — it's free",
+    'home.search':          'Search events, category, venues…',
+    'home.searchActive':    'Search events, category…',
+    'home.cancel':          'Cancel',
+    'home.category':        'CATEGORY',
+    'home.noResults':       'No events found',
+    'home.noResultsSub':    'Try another category or date',
   },
   fr: {
     'settings.title':       'Paramètres du compte',
@@ -54,6 +60,12 @@ const TRANSLATIONS: Record<Locale, Record<string, string>> = {
     'auth.joinTitle':       'Rejoindre Randevu ✨',
     'auth.loginSub':        'Connectez-vous pour découvrir Bruxelles',
     'auth.signupSub':       "Créez votre compte — c'est gratuit",
+    'home.search':          'Rechercher événements, catégories…',
+    'home.searchActive':    'Rechercher événements…',
+    'home.cancel':          'Annuler',
+    'home.category':        'CATÉGORIE',
+    'home.noResults':       'Aucun événement trouvé',
+    'home.noResultsSub':    'Essayez une autre catégorie ou date',
   },
   nl: {
     'settings.title':       'Accountinstellingen',
@@ -74,6 +86,12 @@ const TRANSLATIONS: Record<Locale, Record<string, string>> = {
     'auth.joinTitle':       'Word lid van Randevu ✨',
     'auth.loginSub':        'Log in om Brussel te ontdekken',
     'auth.signupSub':       'Maak je account aan — het is gratis',
+    'home.search':          'Zoek evenementen, categorieën…',
+    'home.searchActive':    'Zoek evenementen…',
+    'home.cancel':          'Annuleren',
+    'home.category':        'CATEGORIE',
+    'home.noResults':       'Geen evenementen gevonden',
+    'home.noResultsSub':    'Probeer een andere categorie of datum',
   },
 };
 

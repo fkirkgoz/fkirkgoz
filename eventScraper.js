@@ -290,9 +290,22 @@ function parseRawDate(raw) {
   if (!raw) return null;
   let t = (raw || '').replace(/\s+/g,' ').trim();
 
-  // Strip date ranges: "May 16 – 17, 2026" → "May 16, 2026" / "16 – 17 May 2026" → "16 May 2026"
+  // Strip "Now →" prefix — Bozar exhibitions like "Now → 30 May'26" mean
+  // the show is CURRENTLY running; we parse the end date as the event date.
+  t = t.replace(/^Now\s*[→>]\s*/i, '');
+
+  // Strip trailing weekday-based ranges — keep only the start date block.
+  // "Fri 22 May — Sun 24 May" → "Fri 22 May"
+  // "Tue 09 June — Sat 13 June" → "Tue 09 June"
+  // "Sat 23 May — Thu 31 December" → "Sat 23 May"
+  t = t.replace(/\s*[-–—]\s+(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\w*\s+\d{1,2}\s+[A-Za-z]+.*/i, '');
+
+  // Strip simple numeric ranges (existing patterns)
   t = t.replace(/([A-Za-z]+\s+\d{1,2})\s*[–—-]\s*\d{1,2}(,?\s*\d{4})/i, '$1$2');
   t = t.replace(/(\d{1,2})\s*[–—]\s*\d{1,2}(\s+[A-Za-z])/,               '$1$2');
+
+  // Strip trailing time suffix — "21 May'26 - 18:00" → "21 May'26"
+  t = t.replace(/\s*[-–]\s*\d{1,2}:\d{2}.*$/, '');
 
   // Fast path: already ISO "2026-06-06…"
   if (/^\d{4}-\d{2}-\d{2}/.test(t)) {
@@ -326,15 +339,34 @@ function parseRawDate(raw) {
   m = t.match(/(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})/);
   if (m) { const y = m[3].length === 2 ? `20${m[3]}` : m[3]; return checked(new Date(parseInt(y,10), parseInt(m[2],10)-1, parseInt(m[1],10))); }
 
-  // "16 June 2026" / "16 Jun 2026" — 4-digit year required
+  // "16 June 2026" / "16 Jun 2026" — 4-digit year
   m = t.match(/(\d{1,2})\s+([A-Za-z]+)\s+(\d{4})/);
   if (m) return checked(new Date(`${m[2]} ${m[1]}, ${m[3]}`));
 
-  // "June 16, 2026" / "Jun 16 2026" — 4-digit year required
+  // "June 16, 2026" / "Jun 16 2026" — 4-digit year
   m = t.match(/([A-Za-z]+)\s+(\d{1,2}),?\s+(\d{4})/);
   if (m) return checked(new Date(`${m[1]} ${m[2]}, ${m[3]}`));
 
-  // No year-guessing pattern — omitted intentionally to prevent stray "Jun 15" noise.
+  // "21 May'26" / "16 Aug.'26" — Bozar abbreviated 2-digit year
+  m = t.match(/(\d{1,2})\s+([A-Za-z]+)\.?'(\d{2})/);
+  if (m) return checked(new Date(`${m[2].replace('.','').trim()} ${m[1]}, 20${m[3]}`));
+
+  // Safe year inference — "Thu 21 May", "Fri 22 May", "09 Jun", "22 May"
+  // Requires an explicit month name to prevent matching stray digit pairs.
+  // If the inferred date is already past, try next year.
+  const MS = 'Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec';
+  const MF = 'January|February|March|April|May|June|July|August|September|October|November|December';
+  m = t.match(new RegExp(`(?:(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\\w*\\s+)?(\\d{1,2})\\s+(${MF}|${MS})(?![a-zA-Z])`, 'i'));
+  if (m) {
+    const yr = new Date().getFullYear();
+    let d = new Date(`${m[2]} ${m[1]}, ${yr}`);
+    if (!isNaN(d.getTime())) {
+      const today = new Date(); today.setHours(0, 0, 0, 0);
+      if (d < today) d = new Date(`${m[2]} ${m[1]}, ${yr + 1}`);
+      return checked(d);
+    }
+  }
+
   return null;
 }
 
@@ -612,6 +644,13 @@ async function scrapeVenue(browser, config) {
             const jetLinks = [...document.querySelectorAll('a')].filter(a =>
               a.querySelector('.jet-listing-dynamic-field__content')
             );
+            function detectStatus(el) {
+              const txt = (el.innerText || '').toUpperCase();
+              if (txt.includes('SOLD OUT'))  return 'SOLD OUT';
+              if (txt.includes('POSTPONED')) return 'POSTPONED';
+              if (txt.includes('CANCELLED')) return 'CANCELLED';
+              return '';
+            }
             if (jetLinks.length > 0) {
               return jetLinks.map(a => {
                 const fields = [...a.querySelectorAll('.jet-listing-dynamic-field__content')]
@@ -620,7 +659,7 @@ async function scrapeVenue(browser, config) {
                 const title = fields
                   .filter(f => !/\d{2}\.\d{2}/.test(f))
                   .sort((x, y) => y.length - x.length)[0] || '';
-                return { dateStr, title, link: a.href };
+                return { dateStr, title, link: a.href, status: detectStatus(a) };
               });
             }
             // Fallback: Tailwind grid cards
@@ -635,12 +674,12 @@ async function scrapeVenue(browser, config) {
               ).trim();
               const ticketA = [...card.querySelectorAll('a')].find(a => /tickets?/i.test(a.textContent));
               const link = ticketA?.href || [...card.querySelectorAll('a')].map(a => a.href).find(Boolean) || '';
-              return { dateStr, title, link };
+              return { dateStr, title, link, status: detectStatus(card) };
             });
           });
           console.log(`    La Madeleine: ${cards.length} card(s) found`);
           const baseOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || '';
-          for (const { dateStr, title, link } of cards) {
+          for (const { dateStr, title, link, status } of cards) {
             if (!isValidTitle(title)) continue;
             const rawDate = parseRawDate(dateStr);
             if (!rawDate) { console.log(`    skip "${title.slice(0,30)}" — date not parsed (raw:"${dateStr}")`); continue; }
@@ -657,6 +696,7 @@ async function scrapeVenue(browser, config) {
               source: config.name, officialEventLink: url,
               desc: `${title} at ${config.name}.`,
               neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
+              ...(status ? { status } : {}),
             });
           }
           console.log(`    La Madeleine → ${events.length} event(s) parsed`);
@@ -709,6 +749,7 @@ async function scrapeVenue(browser, config) {
           const baseOrigin = 'https://www.agenda.brussels';
 
           for (const item of agendaItems) {
+            if (events.length >= 20) break; // cap to prevent city-wide bloat
             if (!item.title || item.title.length < 5 || !isValidTitle(item.title)) continue;
 
             const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));

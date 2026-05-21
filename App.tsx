@@ -8,7 +8,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { makeTheme, Theme, C } from './src/constants/theme';
-import { Locale } from './src/i18n';
+import { Locale, t } from './src/i18n';
 import { Event, EVENTS } from './src/data/events';
 import { Avatar } from './src/data/avatars';
 import { AuthUser } from './src/screens/AuthScreen';
@@ -58,7 +58,7 @@ function TabIcon({ name, focused }: { name: string; focused: boolean; color: str
 // ── Tab navigator ─────────────────────────────────────────────────────────────
 function TabNavigator({
   T, myEvents, onEventPress, onSettings,
-  user, avatar, onAvatarChange, profileData, onProfileUpdate, onUserUpdate,
+  user, avatar, onAvatarChange, profileData, onProfileUpdate, onUserUpdate, locale,
 }: {
   T: Theme;
   myEvents: Event[];
@@ -70,6 +70,7 @@ function TabNavigator({
   profileData: { email: string; phone: string };
   onProfileUpdate: (d: { email: string; phone: string }) => void;
   onUserUpdate: (updates: Partial<AuthUser>) => void;
+  locale: Locale;
 }) {
   return (
     <Tab.Navigator
@@ -90,16 +91,16 @@ function TabNavigator({
         tabBarIcon: ({ focused, color }) => <TabIcon name={route.name} focused={focused} color={color} />,
       })}
     >
-      <Tab.Screen name="Home">
-        {() => <HomeScreen onEventPress={onEventPress} T={T} myEvents={myEvents} />}
+      <Tab.Screen name="Home" options={{ tabBarLabel: t('tab.home', locale) }}>
+        {() => <HomeScreen onEventPress={onEventPress} T={T} myEvents={myEvents} locale={locale} />}
       </Tab.Screen>
-      <Tab.Screen name="Map">
+      <Tab.Screen name="Map" options={{ tabBarLabel: t('tab.map', locale) }}>
         {() => <MapScreen onEventPress={onEventPress} T={T} />}
       </Tab.Screen>
-      <Tab.Screen name="Now" options={{ tabBarLabel: 'NOW ⚡' }}>
+      <Tab.Screen name="Now" options={{ tabBarLabel: t('tab.now', locale) }}>
         {() => <NowScreen onEventPress={onEventPress} T={T} />}
       </Tab.Screen>
-      <Tab.Screen name="Profile">
+      <Tab.Screen name="Profile" options={{ tabBarLabel: t('tab.profile', locale) }}>
         {() => (
           <ProfileScreen
             user={user}
@@ -208,6 +209,7 @@ export default function App() {
                 profileData={profileData}
                 onProfileUpdate={setProfileData}
                 onUserUpdate={handleUserUpdate}
+                locale={locale}
               />
             )}
           </Stack.Screen>

@@ -4,6 +4,7 @@ import {
   StyleSheet, FlatList,
 } from 'react-native';
 import { Theme, C } from '../constants/theme';
+import { Locale, t } from '../i18n';
 import { EVENTS, CATS, DATES, Event } from '../data/events';
 import EventCard from '../components/EventCard';
 import GradBg from '../components/GradBg';
@@ -13,9 +14,10 @@ interface Props {
   onEventPress: (e: Event) => void;
   T: Theme;
   myEvents: Event[];
+  locale?: Locale;
 }
 
-export default function HomeScreen({ onEventPress, T, myEvents }: Props) {
+export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }: Props) {
   const [cat,  setCat]  = useState('All');
   const [date, setDate] = useState('All');
   const [q, setQ]       = useState('');
@@ -94,7 +96,7 @@ export default function HomeScreen({ onEventPress, T, myEvents }: Props) {
                 ref={searchRef}
                 value={q}
                 onChangeText={setQ}
-                placeholder="Search events, category…"
+                placeholder={t('home.searchActive', locale)}
                 placeholderTextColor={T.sub}
                 style={[styles.searchInput, { color: T.text }]}
                 autoFocus
@@ -106,14 +108,14 @@ export default function HomeScreen({ onEventPress, T, myEvents }: Props) {
               )}
             </View>
             <TouchableOpacity onPress={() => { setSearching(false); setQ(''); }}>
-              <Text style={{ color: T.accent, fontWeight: '800', fontSize: 13 }}>Cancel</Text>
+              <Text style={{ color: T.accent, fontWeight: '800', fontSize: 13 }}>{t('home.cancel', locale)}</Text>
             </TouchableOpacity>
           </View>
         ) : (
           <Tap onPress={() => setSearching(true)}>
             <View style={[styles.searchPlaceholder, { backgroundColor: T.input }]}>
               <Text>🔍</Text>
-              <Text style={[styles.searchPlaceholderTxt, { color: T.sub }]}>Search events, category, venues…</Text>
+              <Text style={[styles.searchPlaceholderTxt, { color: T.sub }]}>{t('home.search', locale)}</Text>
             </View>
           </Tap>
         )}
@@ -122,7 +124,7 @@ export default function HomeScreen({ onEventPress, T, myEvents }: Props) {
       {/* Category filter */}
       {!q && (
         <View style={{ marginTop: 18 }}>
-          <Text style={[styles.sectionLabel, { color: T.sub, paddingLeft: 22 }]}>CATEGORY</Text>
+          <Text style={[styles.sectionLabel, { color: T.sub, paddingLeft: 22 }]}>{t('home.category', locale)}</Text>
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 22, gap: 9, paddingTop: 10 }}>
             {CATS.map(c => {
               const active = cat === c;
@@ -208,8 +210,8 @@ export default function HomeScreen({ onEventPress, T, myEvents }: Props) {
         ListEmptyComponent={
           <View style={{ alignItems: 'center', paddingVertical: 36, paddingHorizontal: 22 }}>
             <Text style={{ fontSize: 44, marginBottom: 10 }}>😕</Text>
-            <Text style={[styles.noResultsTitle, { color: T.text }]}>No events found</Text>
-            <Text style={[styles.noResultsSub, { color: T.sub }]}>Try another category or date</Text>
+            <Text style={[styles.noResultsTitle, { color: T.text }]}>{t('home.noResults', locale)}</Text>
+            <Text style={[styles.noResultsSub, { color: T.sub }]}>{t('home.noResultsSub', locale)}</Text>
           </View>
         }
       />

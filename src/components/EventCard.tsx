@@ -41,6 +41,13 @@ export default function EventCard({ event: e, onPress, T, joined }: EventCardPro
             <View style={[styles.catBadge, { backgroundColor: T.pill }]}>
               <Text style={[styles.catBadgeTxt, { color: T.pillTxt }]}>{e.cat}</Text>
             </View>
+            {!!e.status && (
+              <View style={[styles.catBadge, {
+                backgroundColor: e.status === 'SOLD OUT' ? '#E8294A' : e.status === 'POSTPONED' ? '#F4A261' : '#888',
+              }]}>
+                <Text style={[styles.catBadgeTxt, { color: 'white' }]}>{e.status}</Text>
+              </View>
+            )}
             {joined && (
               <View style={[styles.catBadge, { backgroundColor: C.green }]}>
                 <Text style={[styles.catBadgeTxt, { color: C.dark }]}>✓ Going</Text>
