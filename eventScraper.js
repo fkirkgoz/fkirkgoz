@@ -459,8 +459,10 @@ function saveScraped(events) {
 }
 // Smart dedup: if same title+date exists, keep whichever version has a price
 // and the longer description. Returns true if a duplicate was found (and merged).
+// Always overwrites _rawDate and date with fresh scraped values so stale/broken
+// placeholder dates are never locked in place by a matching title.
 function smartMerge(existing, incoming) {
-  // Exact title+date match
+  // Primary: exact title + raw date match
   let idx = existing.findIndex(e =>
     e.title?.toLowerCase() === incoming.title?.toLowerCase() &&
     e._rawDate === incoming._rawDate
@@ -475,11 +477,29 @@ function smartMerge(existing, incoming) {
       );
     }
   }
+  // Fallback: same title + same venue regardless of stored _rawDate.
+  // Catches events whose _rawDate was previously broken — always overwrites
+  // with the freshly parsed value from the current scrape run.
+  if (idx === -1) {
+    idx = existing.findIndex(e =>
+      e.title?.toLowerCase() === incoming.title?.toLowerCase() &&
+      (e.venue || '').toLowerCase() === (incoming.venue || '').toLowerCase()
+    );
+  }
   if (idx === -1) return false;
   const old = existing[idx];
-  const betterDesc  = (incoming.desc?.length || 0) > (old.desc?.length || 0) ? incoming.desc : old.desc;
-  if (betterDesc !== old.desc) {
-    existing[idx] = { ...old, desc: betterDesc };
+  const betterDesc = (incoming.desc?.length || 0) > (old.desc?.length || 0) ? incoming.desc : old.desc;
+  const dateChanged = old._rawDate !== incoming._rawDate;
+  // Always stamp fresh _rawDate and date — never let a stored broken date survive
+  existing[idx] = {
+    ...old,
+    _rawDate: incoming._rawDate,
+    date: incoming.date,
+    ...(betterDesc !== old.desc ? { desc: betterDesc } : {}),
+  };
+  if (dateChanged) {
+    console.log(`  📅  Date-fixed: "${old.title.slice(0,40)}" ${old._rawDate || '?'} → ${incoming._rawDate}`);
+  } else if (betterDesc !== old.desc) {
     console.log(`  🔄  Upgraded: "${old.title.slice(0,40)}" +desc`);
   } else {
     console.log(`  ⏭   Duplicate (no upgrade): "${old.title.slice(0,40)}"`);
@@ -964,6 +984,15 @@ async function main() {
   console.log(`📂  Loaded ${existing.length} existing scraped events`);
   existing = removeExpired(existing);
   existing = deduplicateExisting(existing);
+
+  // One-time purge: delete events stored with the broken "2026-06-18" placeholder
+  // that resulted from the over-aggressive date-parsing fix in an earlier session.
+  // These entries are still in the future so removeExpired() won't catch them.
+  const BROKEN_DATE = '2026-06-18';
+  const prePurge = existing.length;
+  existing = existing.filter(e => e._rawDate !== BROKEN_DATE);
+  const purged = prePurge - existing.length;
+  if (purged) console.log(`🧹  Purged ${purged} event(s) with stale "${BROKEN_DATE}" placeholder date`);
 
   // Migrate stale schema: add officialEventLink, remove price/ticket/sourceURL
   let migrated = 0;
