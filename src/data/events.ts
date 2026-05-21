@@ -57,6 +57,7 @@ export interface Event {
   chatSeed: ChatMessage[];
   attendeeCount?: number;
   status?: string;
+  _rawDate?: string;
 }
 
 export const EVENTS: Event[] = scrapedRaw as unknown as Event[];

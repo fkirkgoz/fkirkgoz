@@ -15,11 +15,18 @@ import Tap from '../components/Tap';
 import SrcBadge from '../components/SrcBadge';
 import Toast from '../components/Toast';
 
-function getDisplayDate(relative: string): string {
+function getDisplayDate(relative: string, rawDate?: string): string {
+  const fmt = (d: Date) => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+  // Prefer the raw ISO date (e.g. "2026-05-29") — avoids addDays(28) approximation
+  // that mapped all "Next Month" events to exactly 28 days out (e.g. June 18).
+  if (rawDate) {
+    const [y, mo, d] = rawDate.split('-').map(Number);
+    if (y && mo && d) return fmt(new Date(y, mo - 1, d));
+  }
+  // Fallback for hardcoded base events that have no _rawDate
   const today = new Date();
   const day = today.getDay();
   const addDays = (n: number) => { const d = new Date(today); d.setDate(d.getDate() + n); return d; };
-  const fmt = (d: Date) => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
   if (relative === 'Tonight')      return fmt(today);
   if (relative === 'Tomorrow')     return fmt(addDays(1));
   if (relative === 'This Weekend') {
@@ -31,8 +38,8 @@ function getDisplayDate(relative: string): string {
     const toMon = ((1 - day) + 7) % 7 || 7;
     return fmt(addDays(toMon));
   }
-  if (relative === 'Next Month') return fmt(addDays(28));
-  return relative;
+  if (relative === 'Ongoing') return relative;
+  return fmt(addDays(30));
 }
 
 
@@ -154,7 +161,7 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
           <View style={[styles.infoCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
             {([
               ['📍', e.venue, e.addr],
-              ['📅', `${getDisplayDate(e.date)} · ${e.time}`, null],
+              ['📅', `${getDisplayDate(e.date, e._rawDate)} · ${e.time}`, null],
             ] as [string, string, string | null][]).map(([ic, main, sub], i) => (
               <View key={i} style={[styles.infoRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
                 <Text style={{ fontSize: 18, marginTop: 1 }}>{ic}</Text>
@@ -413,7 +420,7 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
                                 <Text style={[styles.mutualTitle, { color: T.text }]} numberOfLines={2}>
                                   {ev.title.length > 16 ? ev.title.slice(0, 15) + '…' : ev.title}
                                 </Text>
-                                <Text style={{ fontSize: 10, color: T.sub, fontWeight: '700' }}>{getDisplayDate(ev.date)}</Text>
+                                <Text style={{ fontSize: 10, color: T.sub, fontWeight: '700' }}>{getDisplayDate(ev.date, ev._rawDate)}</Text>
                               </View>
                             </View>
                           </TouchableOpacity>
