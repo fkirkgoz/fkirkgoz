@@ -24,7 +24,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   const [searching, setSearching] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
   const [nRead, setNRead] = useState(false);
-  const [sort, setSort] = useState<'date' | 'alpha'>('date');
+  const [sort, setSort] = useState<'date-asc' | 'date-desc' | 'alpha-asc' | 'alpha-desc'>('date-asc');
   const searchRef = useRef<TextInput>(null);
 
   // Build date pill list: standard labels first, then any named-month labels
@@ -62,13 +62,24 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   };
   const sorted = useMemo(() => {
     const arr = [...filtered];
-    if (sort === 'alpha') return arr.sort((a, b) => a.title.localeCompare(b.title));
-    return arr.sort((a, b) => {
-      const wa = DATE_WEIGHT[a.date] ?? 6;
-      const wb = DATE_WEIGHT[b.date] ?? 6;
-      if (wa !== wb) return wa - wb;
-      return (a.startH ?? 0) - (b.startH ?? 0);
-    });
+    switch (sort) {
+      case 'alpha-asc':  return arr.sort((a, b) => a.title.localeCompare(b.title));
+      case 'alpha-desc': return arr.sort((a, b) => b.title.localeCompare(a.title));
+      case 'date-desc':
+        return arr.sort((a, b) => {
+          const wa = DATE_WEIGHT[a.date] ?? 6;
+          const wb = DATE_WEIGHT[b.date] ?? 6;
+          if (wa !== wb) return wb - wa;
+          return (b.startH ?? 0) - (a.startH ?? 0);
+        });
+      default: // 'date-asc'
+        return arr.sort((a, b) => {
+          const wa = DATE_WEIGHT[a.date] ?? 6;
+          const wb = DATE_WEIGHT[b.date] ?? 6;
+          if (wa !== wb) return wa - wb;
+          return (a.startH ?? 0) - (b.startH ?? 0);
+        });
+    }
   }, [filtered, sort]);
 
   const listHeader = (
@@ -188,39 +199,35 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
         </ScrollView>
       )}
 
-      {/* Sort toggle */}
+      {/* Sort strip */}
       {!q && (
         <View style={styles.sortRow}>
           <Text style={[styles.sortLabel, { color: T.sub }]}>Sort:</Text>
-          {(['date', 'alpha'] as const).map(mode => {
-            const active = sort === mode;
-            return (
-              <Tap key={mode} onPress={() => setSort(mode)}>
-                <View style={[styles.sortChip, { backgroundColor: active ? T.accent : T.pill, borderColor: active ? T.accent : T.border }]}>
-                  <Text style={{ fontSize: 12, fontWeight: '800', color: active ? C.white : T.sub }}>
-                    {mode === 'date' ? '📅 Date' : '🔤 A–Z'}
-                  </Text>
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 7 }}>
+            {([
+              ['date-asc',   '📅 Earliest'],
+              ['date-desc',  '📅 Latest'],
+              ['alpha-asc',  '🔤 A → Z'],
+              ['alpha-desc', '🔤 Z → A'],
+            ] as const).map(([mode, label]) => {
+              const active = sort === mode;
+              return (
+                <Tap key={mode} onPress={() => setSort(mode)}>
+                  <View style={[styles.sortChip, { backgroundColor: active ? T.accent : T.pill, borderColor: active ? T.accent : T.border }]}>
+                    <Text style={{ fontSize: 12, fontWeight: '800', color: active ? C.white : T.sub }}>{label}</Text>
+                  </View>
+                </Tap>
+              );
+            })}
+            {sort !== 'date-asc' && (
+              <Tap onPress={() => setSort('date-asc')}>
+                <View style={[styles.sortChip, { backgroundColor: '#FF444414', borderColor: '#FF4444' }]}>
+                  <Text style={{ fontSize: 12, fontWeight: '800', color: '#FF4444' }}>✕ Reset</Text>
                 </View>
               </Tap>
-            );
-          })}
+            )}
+          </ScrollView>
         </View>
-      )}
-
-      {/* FOMO banner */}
-      {!q && date === 'All' && cat === 'All' && (
-        <Tap onPress={() => onEventPress(EVENTS[0])} style={{ marginHorizontal: 22, marginTop: 14 }}>
-          <View style={styles.fomoBanner}>
-            <Text style={{ fontSize: 24 }}>🔥</Text>
-            <View style={{ flex: 1 }}>
-              <Text style={styles.fomoTitle}>3 friends going to the RA Techno Night!</Text>
-              <Text style={styles.fomoSub}>Fuse · Tonight · Only 12 spots left</Text>
-            </View>
-            <View style={styles.fomoJoin}>
-              <Text style={styles.fomoJoinTxt}>Join →</Text>
-            </View>
-          </View>
-        </Tap>
       )}
 
       {/* Section label */}
@@ -294,11 +301,6 @@ const styles = StyleSheet.create({
   sortRow:           { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 22, marginTop: 12 },
   sortLabel:         { fontSize: 11, fontWeight: '800', letterSpacing: 1, textTransform: 'uppercase' },
   sortChip:          { borderRadius: 16, paddingHorizontal: 14, paddingVertical: 7, borderWidth: 1.5 },
-  fomoBanner:        { backgroundColor: C.lav, borderRadius: 22, padding: 14, flexDirection: 'row', alignItems: 'center', gap: 12 },
-  fomoTitle:         { color: C.white, fontWeight: '900', fontSize: 13 },
-  fomoSub:           { color: 'rgba(255,255,255,0.78)', fontSize: 11, marginTop: 2 },
-  fomoJoin:          { backgroundColor: 'rgba(255,255,255,0.22)', borderRadius: 12, paddingHorizontal: 12, paddingVertical: 6 },
-  fomoJoinTxt:       { color: C.white, fontSize: 12, fontWeight: '800' },
   noResultsTitle:    { fontWeight: '700', fontSize: 16 },
   noResultsSub:      { fontSize: 13, marginTop: 6 },
 });

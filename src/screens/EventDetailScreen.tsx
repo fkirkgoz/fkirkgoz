@@ -115,6 +115,10 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
   const friends = (e.attendees ?? []).filter(a => a.isFriend);
   const others  = (e.attendees ?? []).filter(a => !a.isFriend);
 
+  const friendNames  = new Set(friends.map(a => a.n));
+  const friendMsgs   = (e.chatSeed ?? []).filter(m => m.isMe || friendNames.has(m.user));
+  const lastFriendMsg = friendMsgs.length > 0 ? friendMsgs[friendMsgs.length - 1] : null;
+
   return (
     <View style={{ flex: 1, backgroundColor: T.card }}>
 
@@ -273,21 +277,30 @@ export default function EventDetailScreen({ event: e, onBack, onOpenChat, onJoin
             </View>
           </View>
 
-          {/* Group Chat teaser */}
+          {/* Friends Chat teaser */}
           <View style={[styles.chatTeaser, { backgroundColor: `${C.lav}14`, borderColor: `${C.lav}30` }]}>
-            <Text style={[styles.chatTeaserTitle, { color: T.text }]}>💬 Event Group Chat</Text>
-            <Text style={[styles.chatTeaserSub, { color: T.sub }]}>
-              {e.chatSeed?.length ?? 0} messages · {e.going} people
-            </Text>
-            {(e.chatSeed?.length ?? 0) > 0 && (
-              <View style={[styles.chatPreview, { backgroundColor: T.card }]}>
-                <Text style={{ fontWeight: '800', color: C.lav }}>
-                  {e.chatSeed[e.chatSeed.length - 1].user}:{' '}
-                </Text>
-                <Text style={{ color: T.text, fontSize: 13 }}>
-                  {e.chatSeed[e.chatSeed.length - 1].text}
-                </Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, marginBottom: 4 }}>
+              <Text style={[styles.chatTeaserTitle, { color: T.text }]}>💬 Friends Event Chat</Text>
+              <View style={{ backgroundColor: `${C.lav}22`, borderRadius: 8, paddingHorizontal: 7, paddingVertical: 2 }}>
+                <Text style={{ fontSize: 10, fontWeight: '800', color: C.lav }}>🔒 Friends only</Text>
               </View>
+            </View>
+            {lastFriendMsg ? (
+              <>
+                <Text style={[styles.chatTeaserSub, { color: T.sub }]}>
+                  {friendMsgs.length} message{friendMsgs.length !== 1 ? 's' : ''} · {friends.length} friend{friends.length !== 1 ? 's' : ''} going
+                </Text>
+                <View style={[styles.chatPreview, { backgroundColor: T.card }]}>
+                  <Text style={{ fontWeight: '800', color: C.lav }}>{lastFriendMsg.user}: </Text>
+                  <Text style={{ color: T.text, fontSize: 13, flex: 1 }}>{lastFriendMsg.text}</Text>
+                </View>
+              </>
+            ) : (
+              <Text style={[styles.chatTeaserSub, { color: T.sub, marginBottom: 8 }]}>
+                {friends.length > 0
+                  ? `${friends.length} friend${friends.length !== 1 ? 's' : ''} going — be the first to message!`
+                  : 'Invite friends to this event to start chatting'}
+              </Text>
             )}
             <Tap onPress={onOpenChat}>
               <View style={styles.chatOpenBtn}>
