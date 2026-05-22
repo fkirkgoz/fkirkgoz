@@ -19,7 +19,11 @@ interface Props {
 }
 
 export default function ChatScreen({ event: e, onBack, T }: Props) {
-  const [msgs, setMsgs]   = useState<ChatMessage[]>(e.chatSeed ?? []);
+  const friendNames = new Set(
+    (e.attendees ?? []).filter(a => a.isFriend).map(a => a.n),
+  );
+  const friendSeed = (e.chatSeed ?? []).filter(m => m.isMe || friendNames.has(m.user));
+  const [msgs, setMsgs]   = useState<ChatMessage[]>(friendSeed);
   const [draft, setDraft] = useState('');
   const scrollRef = useRef<ScrollView>(null);
 
@@ -48,12 +52,20 @@ export default function ChatScreen({ event: e, onBack, T }: Props) {
               <Text style={styles.backBtnTxt}>‹ Back</Text>
             </View>
           </Tap>
-          <View>
-            <Text style={styles.headerTitle}>{e.emoji} {e.title}</Text>
-            <Text style={styles.headerSub}>💬 Group chat · {e.going} going</Text>
+          <View style={{ flex: 1 }}>
+            <Text style={styles.headerTitle} numberOfLines={1}>{e.emoji} {e.title}</Text>
+            <Text style={styles.headerSub}>👫 Friends chat · {friendNames.size} friends going</Text>
           </View>
         </View>
       </LinearGradient>
+
+      {/* Friends-only banner */}
+      <View style={[styles.friendsBanner, { backgroundColor: `${C.lav}18`, borderColor: `${C.lav}40` }]}>
+        <Text style={{ fontSize: 14 }}>🔒</Text>
+        <Text style={[styles.friendsBannerTxt, { color: C.lav }]}>
+          Friends-only · only people you know who are attending can see this chat
+        </Text>
+      </View>
 
       {/* Messages */}
       <ScrollView
@@ -62,6 +74,15 @@ export default function ChatScreen({ event: e, onBack, T }: Props) {
         contentContainerStyle={{ padding: 16, gap: 12 }}
         showsVerticalScrollIndicator={false}
       >
+        {msgs.length === 0 && (
+          <View style={{ alignItems: 'center', paddingTop: 48 }}>
+            <Text style={{ fontSize: 36, marginBottom: 10 }}>👫</Text>
+            <Text style={{ fontWeight: '900', fontSize: 16, color: T.text }}>No friends here yet</Text>
+            <Text style={{ fontSize: 13, color: T.sub, marginTop: 6, textAlign: 'center', lineHeight: 20 }}>
+              Be the first — invite a friend to this event and start the conversation!
+            </Text>
+          </View>
+        )}
         {msgs.map((m, i) => {
           const acColor = AVATAR_COLORS[m.user] ?? '#FAD7A0';
           return (
@@ -118,6 +139,8 @@ const styles = StyleSheet.create({
   bubbleSender: { fontSize: 11, fontWeight: '800', color: C.lav, marginBottom: 3 },
   bubbleText:   { fontSize: 14, fontWeight: '600', lineHeight: 20 },
   bubbleTime:   { fontSize: 10, marginTop: 3, alignSelf: 'flex-end' },
+  friendsBanner:    { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 16, paddingVertical: 10, borderBottomWidth: 1 },
+  friendsBannerTxt: { fontSize: 12, fontWeight: '700', flex: 1, lineHeight: 17 },
   inputBar:     { flexDirection: 'row', alignItems: 'center', gap: 10, paddingHorizontal: 16, paddingVertical: 12, paddingBottom: 28, borderTopWidth: 1 },
   inputWrap:    { flex: 1, borderRadius: 22, paddingHorizontal: 16, paddingVertical: 11, flexDirection: 'row', alignItems: 'center', borderWidth: 1.5 },
   input:        { flex: 1, fontSize: 14, fontWeight: '600' },

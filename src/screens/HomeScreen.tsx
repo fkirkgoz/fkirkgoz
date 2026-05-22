@@ -24,6 +24,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   const [searching, setSearching] = useState(false);
   const [notifOpen, setNotifOpen] = useState(false);
   const [nRead, setNRead] = useState(false);
+  const [sort, setSort] = useState<'date' | 'alpha'>('date');
   const searchRef = useRef<TextInput>(null);
 
   // Build date pill list: standard labels first, then any named-month labels
@@ -55,6 +56,21 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
     return true;
   }), [cat, date, q]);
 
+  const DATE_WEIGHT: Record<string, number> = {
+    Today: 0, Tonight: 1, Tomorrow: 2, 'This Weekend': 3,
+    'Next Week': 4, 'Next Month': 5, Ongoing: 99,
+  };
+  const sorted = useMemo(() => {
+    const arr = [...filtered];
+    if (sort === 'alpha') return arr.sort((a, b) => a.title.localeCompare(b.title));
+    return arr.sort((a, b) => {
+      const wa = DATE_WEIGHT[a.date] ?? 6;
+      const wb = DATE_WEIGHT[b.date] ?? 6;
+      if (wa !== wb) return wa - wb;
+      return (a.startH ?? 0) - (b.startH ?? 0);
+    });
+  }, [filtered, sort]);
+
   const listHeader = (
     <View>
       {/* Header */}
@@ -80,7 +96,6 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
         <View style={[styles.notifPanel, { backgroundColor: T.card, borderColor: T.border }]}>
           <Text style={[styles.notifTitle, { color: T.text }]}>🔔 Notifications</Text>
           {[
-            { e: '🎛️', t: '3 friends added Fuse RA Night — join?', a: '2m ago' },
             { e: '⚽',  t: 'Union SG fan zone filling up fast!',     a: '15m ago' },
             { e: '🌿', t: 'Canal Cleanup starts in 1 hour.',         a: '45m ago' },
           ].map((n, i) => (
@@ -173,6 +188,25 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
         </ScrollView>
       )}
 
+      {/* Sort toggle */}
+      {!q && (
+        <View style={styles.sortRow}>
+          <Text style={[styles.sortLabel, { color: T.sub }]}>Sort:</Text>
+          {(['date', 'alpha'] as const).map(mode => {
+            const active = sort === mode;
+            return (
+              <Tap key={mode} onPress={() => setSort(mode)}>
+                <View style={[styles.sortChip, { backgroundColor: active ? T.accent : T.pill, borderColor: active ? T.accent : T.border }]}>
+                  <Text style={{ fontSize: 12, fontWeight: '800', color: active ? C.white : T.sub }}>
+                    {mode === 'date' ? '📅 Date' : '🔤 A–Z'}
+                  </Text>
+                </View>
+              </Tap>
+            );
+          })}
+        </View>
+      )}
+
       {/* FOMO banner */}
       {!q && date === 'All' && cat === 'All' && (
         <Tap onPress={() => onEventPress(EVENTS[0])} style={{ marginHorizontal: 22, marginTop: 14 }}>
@@ -192,7 +226,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
       {/* Section label */}
       <View style={{ paddingHorizontal: 22, marginTop: 18, marginBottom: 14 }}>
         <Text style={[styles.sectionLabel, { color: T.sub }]}>
-          {q ? `Results for "${q}"` : cat !== 'All' ? cat : date !== 'All' ? date : 'All events'} · {filtered.length}
+          {q ? `Results for "${q}"` : cat !== 'All' ? cat : date !== 'All' ? date : 'All events'} · {sorted.length}
         </Text>
       </View>
     </View>
@@ -201,7 +235,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   return (
     <GradBg isDark={T.isDark} style={{ flex: 1 }}>
       <FlatList
-        data={filtered}
+        data={sorted}
         keyExtractor={ev => String(ev.id)}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 90 }}
@@ -257,6 +291,9 @@ const styles = StyleSheet.create({
   filterChip:        { borderRadius: 16, paddingHorizontal: 15, paddingVertical: 9, borderWidth: 1.5 },
   filterChipTxt:     { fontSize: 12, fontWeight: '800' },
   datePill:          { borderRadius: 50, paddingHorizontal: 15, paddingVertical: 7, borderWidth: 1.5 },
+  sortRow:           { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 22, marginTop: 12 },
+  sortLabel:         { fontSize: 11, fontWeight: '800', letterSpacing: 1, textTransform: 'uppercase' },
+  sortChip:          { borderRadius: 16, paddingHorizontal: 14, paddingVertical: 7, borderWidth: 1.5 },
   fomoBanner:        { backgroundColor: C.lav, borderRadius: 22, padding: 14, flexDirection: 'row', alignItems: 'center', gap: 12 },
   fomoTitle:         { color: C.white, fontWeight: '900', fontSize: 13 },
   fomoSub:           { color: 'rgba(255,255,255,0.78)', fontSize: 11, marginTop: 2 },
