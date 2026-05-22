@@ -5,17 +5,12 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AuthUser } from './AuthScreen';
-import { Event } from '../data/events';
+import { Event, EVENTS } from '../data/events';
 import { Avatar, AVATARS } from '../data/avatars';
 import { Theme, C } from '../constants/theme';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
 
-const BADGES = [
-  { emoji: '🌿', label: 'Canal Cleaner', desc: 'Canal Cleanup 2025', color: C.green },
-  { emoji: '🍜', label: 'Comm. Chef',    desc: 'Cooking for All',    color: C.pink  },
-  { emoji: '🌱', label: 'Green Ranger',  desc: '3 Eco Events',       color: C.teal  },
-];
 const PERKS = [
   { emoji: '🎛️', label: '10% off FUSE',         desc: 'Valid until 31 May', color: C.lav  },
   { emoji: '🍹', label: 'Free drink at M. Lambic', desc: 'Show at entry',     color: C.teal },
@@ -39,6 +34,10 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
   const [editing, setEditing] = useState(false);
   const [bio, setBio] = useState(user?.bio ?? "always down for a hidden gem 💎 techno + yoga + good food ✨ Brussels-based");
   const [pickerOpen, setPickerOpen] = useState(false);
+
+  const today = new Date();
+  const todayISO = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+  const pastEvents = EVENTS.filter(e => e._rawDate && e._rawDate < todayISO);
 
   return (
     <GradBg isDark={T.isDark} style={{ flex: 1 }}>
@@ -162,23 +161,41 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
           )}
         </View>
 
-        {/* Badges */}
+        {/* My Past Events */}
         <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border, marginHorizontal: 22, marginTop: 14 }]}>
           <View style={[styles.cardHeader, { marginBottom: 12 }]}>
-            <Text style={[styles.sectionTitle, { color: T.text }]}>🏅 Meaningful Impact</Text>
+            <Text style={[styles.sectionTitle, { color: T.text }]}>🕰 My Past Events</Text>
             <View style={[styles.countBadge, { backgroundColor: T.accent }]}>
-              <Text style={{ color: 'white', fontSize: 11, fontWeight: '800' }}>3 Vouchers</Text>
+              <Text style={{ color: 'white', fontSize: 11, fontWeight: '800' }}>{pastEvents.length} attended</Text>
             </View>
           </View>
-          <View style={{ flexDirection: 'row', gap: 10 }}>
-            {BADGES.map(b => (
-              <View key={b.label} style={[styles.badgeCard, { backgroundColor: `${b.color}44`, borderColor: b.color }]}>
-                <Text style={{ fontSize: 24 }}>{b.emoji}</Text>
-                <Text style={[styles.badgeLabel, { color: T.text }]}>{b.label}</Text>
-                <Text style={[styles.badgeDesc, { color: T.sub }]}>{b.desc}</Text>
-              </View>
-            ))}
-          </View>
+          {pastEvents.length === 0 ? (
+            <View style={{ alignItems: 'center', paddingVertical: 16 }}>
+              <Text style={{ fontSize: 28, marginBottom: 6 }}>📭</Text>
+              <Text style={[styles.emptyText, { color: T.sub }]}>No past events yet — get out there!</Text>
+            </View>
+          ) : (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 12 }}>
+              {pastEvents.map(ev => (
+                <Tap key={ev.id} onPress={() => onEventPress(ev)}>
+                  <View style={[styles.scheduleCard, { backgroundColor: T.cardAlt, borderColor: T.border }]}>
+                    <View style={[styles.scheduleBar, { backgroundColor: ev.color }]} />
+                    <View style={{ padding: 10 }}>
+                      <Text style={{ fontSize: 22, marginBottom: 5 }}>{ev.emoji}</Text>
+                      <Text style={[styles.scheduleName, { color: T.text }]} numberOfLines={2}>
+                        {ev.title.length > 18 ? ev.title.slice(0, 17) + '…' : ev.title}
+                      </Text>
+                      <Text style={{ fontSize: 10, color: T.sub, fontWeight: '700' }}>{ev.date}</Text>
+                      <Text style={{ fontSize: 10, color: T.sub }}>{ev.time}</Text>
+                      <View style={[styles.goingBadge, { backgroundColor: 'rgba(255,255,255,0.15)' }]}>
+                        <Text style={{ fontSize: 10, fontWeight: '800', color: T.sub }}>✓ Attended</Text>
+                      </View>
+                    </View>
+                  </View>
+                </Tap>
+              ))}
+            </ScrollView>
+          )}
         </View>
 
         {/* Perks */}
@@ -254,9 +271,6 @@ const styles = StyleSheet.create({
   scheduleBar:  { height: 4 },
   scheduleName: { fontSize: 12, fontWeight: '900', lineHeight: 16, marginBottom: 3 },
   goingBadge:   { marginTop: 6, backgroundColor: C.green, borderRadius: 8, paddingHorizontal: 6, paddingVertical: 2, alignSelf: 'flex-start' },
-  badgeCard:    { flex: 1, borderRadius: 18, padding: 12, alignItems: 'center', borderWidth: 1.5 },
-  badgeLabel:   { fontSize: 11, fontWeight: '800', marginTop: 4, textAlign: 'center' },
-  badgeDesc:    { fontSize: 10, marginTop: 2, textAlign: 'center' },
   perkRow:      { flexDirection: 'row', alignItems: 'center', gap: 12, borderRadius: 16, paddingHorizontal: 14, paddingVertical: 12, borderWidth: 1, borderStyle: 'dashed', marginBottom: 10 },
   perkLabel:    { fontSize: 13, fontWeight: '800' },
   perkDesc:     { fontSize: 11 },

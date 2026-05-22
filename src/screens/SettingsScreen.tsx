@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import {
   View, Text, ScrollView, StyleSheet, TextInput, Switch, TouchableOpacity,
+  Alert, Modal,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AuthUser } from './AuthScreen';
 import { Theme, C } from '../constants/theme';
@@ -47,6 +49,33 @@ export default function SettingsScreen({
   const [val, setVal]         = useState('');
   const [savedF, setSavedF]   = useState<FieldKey | null>(null);
   const [notifs, setNotifs]   = useState<boolean[]>(NOTIF_ITEMS.map(n => n[1]));
+  const [deleteModalOpen, setDeleteModalOpen] = useState(false);
+  const [deleteReason, setDeleteReason] = useState<string | null>(null);
+  const [otherText, setOtherText] = useState('');
+
+  const DELETE_REASONS = [
+    "Not finding events I like",
+    "Too many notifications",
+    "Privacy concerns",
+    "Other",
+  ];
+
+  const confirmDelete = async () => {
+    await AsyncStorage.multiRemove(['@randevu_user', '@randevu_users']);
+    setDeleteModalOpen(false);
+    onSignOut();
+  };
+
+  const openDeleteModal = () => {
+    Alert.alert(
+      'Delete Account',
+      'Are you sure you want to permanently delete your account? This cannot be undone.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'Delete', style: 'destructive', onPress: () => { setDeleteReason(null); setOtherText(''); setDeleteModalOpen(true); } },
+      ],
+    );
+  };
 
   const startEdit = (k: FieldKey) => { setEditing(k); setVal(k === 'password' ? '' : fields[k]); };
   const doSave = (k: FieldKey) => {
@@ -195,11 +224,59 @@ export default function SettingsScreen({
           <TouchableOpacity style={styles.logoutBtn} onPress={onSignOut}>
             <Text style={styles.logoutTxt}>Log out</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={{ alignItems: 'center', padding: 8 }}>
-            <Text style={{ color: T.sub, fontWeight: '700', fontSize: 13 }}>Delete account</Text>
+          <TouchableOpacity style={{ alignItems: 'center', padding: 8 }} onPress={openDeleteModal}>
+            <Text style={{ color: '#C0392B', fontWeight: '700', fontSize: 13 }}>Delete account</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>
+
+      {/* Delete account reason modal */}
+      <Modal visible={deleteModalOpen} animationType="slide" transparent presentationStyle="overFullScreen">
+        <View style={styles.modalOverlay}>
+          <View style={[styles.modalSheet, { backgroundColor: T.card }]}>
+            <Text style={[styles.modalTitle, { color: T.text }]}>Why are you leaving? 😢</Text>
+            <Text style={[styles.modalSub, { color: T.sub }]}>Your feedback helps us improve Randevu</Text>
+            <View style={{ gap: 10, marginTop: 18 }}>
+              {DELETE_REASONS.map(reason => (
+                <Tap key={reason} onPress={() => setDeleteReason(reason)}>
+                  <View style={[styles.reasonRow, { borderColor: deleteReason === reason ? C.pink : T.border, backgroundColor: deleteReason === reason ? `${C.pink}18` : T.pill }]}>
+                    <View style={[styles.radioOuter, { borderColor: deleteReason === reason ? C.pink : T.sub }]}>
+                      {deleteReason === reason && <View style={[styles.radioInner, { backgroundColor: C.pink }]} />}
+                    </View>
+                    <Text style={[styles.reasonTxt, { color: T.text }]}>{reason}</Text>
+                  </View>
+                </Tap>
+              ))}
+              {deleteReason === 'Other' && (
+                <TextInput
+                  value={otherText}
+                  onChangeText={setOtherText}
+                  placeholder="Tell us more..."
+                  placeholderTextColor={T.sub}
+                  multiline
+                  numberOfLines={2}
+                  style={[styles.otherInput, { backgroundColor: T.pill, borderColor: T.accent, color: T.text }]}
+                />
+              )}
+            </View>
+            <View style={{ flexDirection: 'row', gap: 10, marginTop: 22 }}>
+              <Tap onPress={() => setDeleteModalOpen(false)} style={{ flex: 1 }}>
+                <View style={[styles.modalBtn, { backgroundColor: T.pill }]}>
+                  <Text style={{ fontWeight: '800', fontSize: 14, color: T.sub, textAlign: 'center' }}>Cancel</Text>
+                </View>
+              </Tap>
+              <Tap
+                onPress={() => { if (deleteReason) confirmDelete(); }}
+                style={{ flex: 1 }}
+              >
+                <View style={[styles.modalBtn, { backgroundColor: deleteReason ? '#C0392B' : T.border }]}>
+                  <Text style={{ fontWeight: '800', fontSize: 14, color: 'white', textAlign: 'center' }}>Delete Forever</Text>
+                </View>
+              </Tap>
+            </View>
+          </View>
+        </View>
+      </Modal>
     </GradBg>
   );
 }
@@ -227,4 +304,14 @@ const styles = StyleSheet.create({
   langName:     { fontSize: 11, fontWeight: '800', letterSpacing: 0.2 },
   logoutBtn:    { backgroundColor: '#FFE5E8', borderRadius: 22, padding: 16, alignItems: 'center', marginBottom: 10 },
   logoutTxt:    { fontWeight: '900', fontSize: 14, color: '#C0392B' },
+  modalOverlay: { flex: 1, backgroundColor: 'rgba(0,0,0,0.55)', justifyContent: 'flex-end' },
+  modalSheet:   { borderTopLeftRadius: 28, borderTopRightRadius: 28, padding: 24, paddingBottom: 40 },
+  modalTitle:   { fontSize: 18, fontWeight: '900' },
+  modalSub:     { fontSize: 13, fontWeight: '600', marginTop: 4 },
+  reasonRow:    { flexDirection: 'row', alignItems: 'center', gap: 12, borderRadius: 16, paddingHorizontal: 14, paddingVertical: 13, borderWidth: 1.5 },
+  radioOuter:   { width: 20, height: 20, borderRadius: 10, borderWidth: 2, alignItems: 'center', justifyContent: 'center' },
+  radioInner:   { width: 10, height: 10, borderRadius: 5 },
+  reasonTxt:    { fontSize: 14, fontWeight: '700' },
+  otherInput:   { borderWidth: 1.5, borderRadius: 14, paddingHorizontal: 14, paddingVertical: 10, fontSize: 14, fontWeight: '600', textAlignVertical: 'top' },
+  modalBtn:     { borderRadius: 18, paddingVertical: 14 },
 });
