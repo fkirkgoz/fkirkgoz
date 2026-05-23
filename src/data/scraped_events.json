@@ -2,7 +2,7 @@
   {
     "id": 100,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Workshop Polyfonic singing with N'Faly Kouyaté",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -62,7 +62,7 @@
   {
     "id": 101,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "SIENNA SPIRO + DEBBIE",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -137,7 +137,7 @@
   {
     "id": 102,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Sunday Morning Concert: Laura De Jongh",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -197,7 +197,7 @@
   {
     "id": 103,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Tricky + Marta Zlakowska",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -710,75 +710,9 @@
     "_rawDate": "2026-05-28"
   },
   {
-    "id": 110,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Mura Masa - Dorian Electra (dj-set) - Danny L Harle & many more",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/projects/les-nuits-botanique/les-nuits-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 318,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Mura Masa · Dorian Electra (dj-set) · Danny L Harle · Namasenda · Cortisa Star · MEYY · Swordes · Yaeger · EQ",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest896",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest608",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "3:15 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Who else is going?? 🙋",
-        "time": "12:26 AM"
-      }
-    ],
-    "_rawDate": "2026-05-22"
-  },
-  {
     "id": 111,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Molchat Doma - shame - SUUNS & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -854,7 +788,7 @@
   {
     "id": 112,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Solann - Flora Fishbach - Papooz & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1163,7 +1097,7 @@
   {
     "id": 116,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Yamê - Nubya Garcia - Nectar Woode & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2048,173 +1982,6 @@
     "_rawDate": "2026-06-17"
   },
   {
-    "id": 128,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "femtanyl",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/femtanyl-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 193,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest167",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest689",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest310",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest201",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest548",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "First time at this venue!",
-        "time": "12:35 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "First time at this venue!",
-        "time": "4:55 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Who else is going?? 🙋",
-        "time": "8:08 AM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
-    "id": 129,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "Live At Museum: Oxis",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 192,
-    "neighbourhood": "Saint-Josse",
-    "desc": "As part of the opening of the exhibition Side by Side",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Guest631",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest914",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest719",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest159",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest778",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest089",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Nora",
-        "text": "First time at this venue!",
-        "time": "1:53 PM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Grab tickets fast, selling out!",
-        "time": "5:21 AM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Counting down the days 🗓️",
-        "time": "1:05 PM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
     "id": 130,
     "cat": "Music",
     "date": "Next Month",
@@ -2271,65 +2038,9 @@
     "_rawDate": "2026-06-19"
   },
   {
-    "id": 131,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: STYXX w/ Lacchesi, Beau Didier & Siren333",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "friends": 3,
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-styxx-w-lacchesi-beau-didier-siren333",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "going": 100,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: STYXX w/ Lacchesi, Beau Didier & Siren333 at Fuse.",
-    "attendees": [
-      {
-        "n": "Guest266",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest297",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest423",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Hugo",
-        "text": "Brussels never disappoints ❤️",
-        "time": "12:17 AM"
-      },
-      {
-        "user": "Axel",
-        "text": "Grab tickets fast, selling out!",
-        "time": "11:28 PM"
-      }
-    ],
-    "_rawDate": "2026-05-22"
-  },
-  {
     "id": 132,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: Natalie Robinson & Dee Diggs",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2506,7 +2217,7 @@
   {
     "id": 134,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Acid night w/ Dr. Rubinstein & Boston 168 (live)",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2790,7 +2501,7 @@
   {
     "id": 138,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "C12 Nite - 23/05",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -3270,89 +2981,9 @@
     "_rawDate": "2026-06-20"
   },
   {
-    "id": 145,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "PFL BRUSSELS WEIGH INS",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/pfl-brussels-weigh-ins/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "going": 125,
-    "neighbourhood": "Centre",
-    "desc": "PFL BRUSSELS WEIGH INS at La Madeleine.",
-    "attendees": [
-      {
-        "n": "Guest754",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest717",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest254",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest179",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest453",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest790",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest724",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "Already got my ticket! 👋",
-        "time": "1:12 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Already got my ticket! 👋",
-        "time": "5:24 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Counting down the days 🗓️",
-        "time": "7:26 PM"
-      }
-    ],
-    "_rawDate": "2026-05-22"
-  },
-  {
     "id": 146,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "ARDE BOGOTÁ",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -3502,7 +3133,7 @@
   {
     "id": 148,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "MUSTAPHA EL ATRASSI",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -5770,138 +5401,8 @@
     "_rawDate": "2026-10-14"
   },
   {
-    "id": 179,
-    "cat": "Arts",
-    "date": "Today",
-    "title": "Fiume o Morte! - Igor Bezinović",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
-    "friends": 3,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/fiume-o-morte-igor-bezinovic",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 33,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Guest090",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest554",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest092",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Already got my ticket! 👋",
-        "time": "4:24 AM"
-      },
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "10:26 AM"
-      }
-    ],
-    "_rawDate": "2026-05-22"
-  },
-  {
-    "id": 180,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Bozar Bassment #8: Jokkoo Collective - offcircuit",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/bozar-bassment-8-jokkoo-collective-offcircuit",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 282,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Guest811",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest118",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest301",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest120",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Zoë",
-        "text": "Counting down the days 🗓️",
-        "time": "11:12 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "This is going to be AMAZING",
-        "time": "5:11 PM"
-      }
-    ],
-    "_rawDate": "2026-05-22"
-  },
-  {
     "id": 181,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Writing Life – Annie Ernaux Through the Eyes of High School Students - Claire Simon",
     "venue": "Bozar",
@@ -5909,8 +5410,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 3,
     "tags": [
       "Cinema",
@@ -5972,7 +5473,7 @@
         "time": "12:57 PM"
       }
     ],
-    "_rawDate": "2026-05-31"
+    "_rawDate": "2026-06-07"
   },
   {
     "id": 182,
@@ -5984,8 +5485,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 3,
     "tags": [
       "Art",
@@ -6069,8 +5570,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 3,
     "tags": [
       "Art",
@@ -6159,8 +5660,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 1,
     "tags": [
       "Art",
@@ -6216,7 +5717,7 @@
   },
   {
     "id": 185,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Week",
     "title": "Vitrival - Baptiste Bogaert & Noëlle Bastin",
     "venue": "Bozar",
@@ -6224,8 +5725,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 1,
     "tags": [
       "Cinema",
@@ -6306,16 +5807,16 @@
   },
   {
     "id": 186,
-    "cat": "Arts",
-    "date": "This Weekend",
+    "cat": "Culture",
+    "date": "Tomorrow",
     "title": "Le Veilleur - Lou de Pontavice & Victoire Bonin",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 0,
     "tags": [
       "Cinema",
@@ -6381,7 +5882,7 @@
   },
   {
     "id": 187,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Tokyo Melody: A Film about Ryuichi Sakamoto - Elizabeth Lennard",
     "venue": "Bozar",
@@ -6389,8 +5890,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 0,
     "tags": [
       "Cinema",
@@ -6471,16 +5972,16 @@
   },
   {
     "id": 188,
-    "cat": "Music",
-    "date": "Tomorrow",
+    "cat": "Culture",
+    "date": "Tonight",
     "title": "VIVA Elisabeth!",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 0,
     "tags": [
       "Concert",
@@ -6561,7 +6062,7 @@
   },
   {
     "id": 189,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Morlaix - Jaime Rosales",
     "venue": "Bozar",
@@ -6569,8 +6070,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 2,
     "tags": [
       "Cinema",
@@ -6646,16 +6147,16 @@
   },
   {
     "id": 190,
-    "cat": "Arts",
-    "date": "Next Month",
+    "cat": "Culture",
+    "date": "Next Week",
     "title": "Mr. Nobody Against Putin - David Borenstein & Pavel Talankin",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 3,
     "tags": [
       "Cinema",
@@ -6787,7 +6288,7 @@
   {
     "id": 192,
     "cat": "Sports",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "IFAM Outdoor Brussels",
     "venue": "King Baudouin Stadium",
     "addr": "King Baudouin Stadium, Belgium",
@@ -6872,7 +6373,7 @@
   {
     "id": 193,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Festival l'art et les tout-petits",
     "venue": "Théâtre La montagne magique",
     "addr": "Théâtre La montagne magique, Belgium",
@@ -6927,7 +6428,7 @@
   {
     "id": 194,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Tutankhamun - The Immersive Exhibition",
     "venue": "Brussels Expo Palais 1/ Paleis 1",
     "addr": "Brussels Expo Palais 1/ Paleis 1, Belgium",
@@ -7002,7 +6503,7 @@
   {
     "id": 195,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Hangar invites PAWSA - Bois de La Cambre",
     "venue": "The Bois de la Cambre",
     "addr": "The Bois de la Cambre, Belgium",
@@ -7217,7 +6718,7 @@
   {
     "id": 198,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival Familles Arc-en-ciel",
     "venue": "Le Senghor - Centre Culturel d’Etterbeek",
     "addr": "Le Senghor - Centre Culturel d’Etterbeek, Belgium",
@@ -7297,7 +6798,7 @@
   {
     "id": 199,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Zinneke Parade 2026",
     "venue": "Bruxelles Centre",
     "addr": "Bruxelles Centre, Belgium",
@@ -7367,7 +6868,7 @@
   {
     "id": 200,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Downtown Brussels Art",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -7515,5 +7016,834 @@
       }
     ],
     "_rawDate": "2026-06-26"
+  },
+  {
+    "id": 202,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "femtanyl",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/femtanyl-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 111,
+    "neighbourhood": "Saint-Josse",
+    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest984",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest426",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:03 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "1:51 PM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 203,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Live At Museum: Oxis",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 51,
+    "neighbourhood": "Saint-Josse",
+    "desc": "As part of the opening of the exhibition Side by Side",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest537",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest238",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest499",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest801",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest828",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Counting down the days 🗓️",
+        "time": "11:35 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "5:50 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "First time at this venue!",
+        "time": "4:01 AM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 204,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Zaza Club: WiFi Gawd - restarstill - GRANDMIXXER & many more",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/projects/nightlife/nightlife-0",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 252,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Zaza Club: WiFi Gawd - restarstill - GRANDMIXXER & many more at Le Botanique.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest890",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest869",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "1:59 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "10:14 PM"
+      }
+    ],
+    "_rawDate": "2026-06-19"
+  },
+  {
+    "id": 205,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: DC Salas curates w/ Michelle (live) & Enrica Falqui",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "friends": 3,
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-dc-salas-curates-w-michelle-live-enrica-falqui",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "going": 132,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: DC Salas curates w/ Michelle (live) & Enrica Falqui at Fuse.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest123",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest196",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest510",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest600",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:17 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "8:57 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:57 PM"
+      }
+    ],
+    "_rawDate": "2026-06-13"
+  },
+  {
+    "id": 206,
+    "cat": "Music",
+    "date": "October",
+    "title": "KID FRANCESCOLI",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/kid-francescoli/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 31,
+    "neighbourhood": "Centre",
+    "desc": "KID FRANCESCOLI at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Guest782",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest150",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest126",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest991",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "5:26 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "1:46 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "7:04 PM"
+      }
+    ],
+    "_rawDate": "2026-10-17"
+  },
+  {
+    "id": 207,
+    "cat": "Arts",
+    "date": "Tomorrow",
+    "title": "Hair, Paper, Water... - Trương Minh Quý & Nicolas Graux",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 1,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/hair-paper-water-truong-minh-quy-nicolas-graux",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 33,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest503",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest527",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest566",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest602",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest393",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest646",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "7:26 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Brussels never disappoints ❤️",
+        "time": "10:45 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:23 PM"
+      }
+    ],
+    "_rawDate": "2026-05-24"
+  },
+  {
+    "id": 208,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Final Queen Elisabeth Competition | Cello 2026",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/final-queen-elisabeth-competition-cello-2026-3",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 20,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest830",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest509",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest479",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest654",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest988",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest497",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest494",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:20 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "5:35 AM"
+      }
+    ],
+    "_rawDate": "2026-05-25"
+  },
+  {
+    "id": 209,
+    "cat": "Arts",
+    "date": "Next Week",
+    "title": "Un Héritage Empoisonné - Isabelle Loodts",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 3,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/un-heritage-empoisonne-isabelle-loodts",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 137,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Guest310",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest571",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest406",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest705",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest022",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "4:03 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Brussels never disappoints ❤️",
+        "time": "4:12 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "4:33 AM"
+      }
+    ],
+    "_rawDate": "2026-05-26"
+  },
+  {
+    "id": 210,
+    "cat": "Sports",
+    "date": "Next Month",
+    "title": "20 km de Bruxelles / 20 km door Brussel",
+    "venue": "Arcades du Cinquantenaire",
+    "addr": "Arcades du Cinquantenaire, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "👟",
+    "color": "#90E0EF",
+    "friends": 3,
+    "tags": [
+      "Sports",
+      "Active"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.20-km-de-Bruxelles-20-km-door-Brussel.5700017230",
+    "lat": 50.8404854,
+    "lng": 4.3929826,
+    "going": 88,
+    "neighbourhood": "Centre",
+    "desc": "Sun 31 May 20 km de Bruxelles / 20 km door Brussel €35 SportArcades du Cinquantenaire View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest908",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest759",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest255",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest786",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest405",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Brussels never disappoints ❤️",
+        "time": "12:00 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "11:31 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "First time at this venue!",
+        "time": "12:31 AM"
+      }
+    ],
+    "_rawDate": "2026-05-31"
+  },
+  {
+    "id": 211,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "garden tales",
+    "venue": "Kanal Architecture (ex-CIVA)",
+    "addr": "Kanal Architecture (ex-CIVA), Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Culture",
+      "Brussels"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.garden-tales.5700023047",
+    "lat": 50.85420516624766,
+    "lng": 4.350453382057292,
+    "going": 156,
+    "neighbourhood": "Centre",
+    "desc": "Wed 03 June — Sun 07 June garden tales Free Guided toursKanal Architecture (ex-CIVA) View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest573",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest539",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "This is going to be AMAZING",
+        "time": "11:06 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "11:30 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Brussels never disappoints ❤️",
+        "time": "10:22 PM"
+      }
+    ],
+    "_rawDate": "2026-06-03"
+  },
+  {
+    "id": 212,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Artisanal Intelligence",
+    "venue": "Hannon House",
+    "addr": "Hannon House, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Artisanal-Intelligence.5700023129",
+    "lat": 50.8208779,
+    "lng": 4.3520388,
+    "going": 77,
+    "neighbourhood": "Centre",
+    "desc": "Thu 04 June — Sun 21 June Artisanal Intelligence €14 ExhibitionsHannon House View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest878",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest877",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest015",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "8:22 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "5:53 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:37 AM"
+      }
+    ],
+    "_rawDate": "2026-06-04"
   }
 ]
