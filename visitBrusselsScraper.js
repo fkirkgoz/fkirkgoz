@@ -53,13 +53,53 @@ const COLOR_MAP = { Music: '#8E7DBE', Culture: '#FF6B9D', Nightlife: '#4ECDC4' }
 // Category-aware default times (mirrors eventScraper.js smartDefaultTime)
 const DEFAULT_TIME = { Music: { time: '20:00', startH: 20 }, Culture: { time: '19:00', startH: 19 }, Nightlife: { time: '23:00', startH: 23 } };
 
-// Month abbreviations for date parsing (EN + FR + NL)
+// Month lookup — EN + FR + NL, 3-char abbreviations AND full names
 const MONTH_ABB = {
-  jan:1, feb:2, fév:2, fev:2, mar:3, apr:4, avr:4,
-  may:5, mai:5, jun:6, jul:7, aug:8, aoû:8, aou:8,
-  sep:9, oct:10, nov:11, dec:12, déc:12,
+  // English
+  jan:1, january:1,
+  feb:2, febr:2, february:2,
+  mar:3, marc:3, march:3,
+  apr:4, apri:4, april:4,
+  may:5,
+  jun:6, june:6,
+  jul:7, july:7,
+  aug:8, augu:8, august:8,
+  sep:9, sept:9, september:9,
+  oct:10, octo:10, october:10,
+  nov:11, nove:11, november:11,
+  dec:12, dece:12, december:12,
+  // French
+  janv:1, janvier:1,
+  fév:2, févr:2, fev:2, fevr:2, février:2,
+  mars:3,
+  avr:4, avri:4, avril:4,
+  mai:5,
+  juin:6,
+  juil:7, juill:7, juillet:7,
+  aoû:8, aou:8, août:8,
+  // Dutch
+  mrt:3, maar:3, maart:3,
+  mei:5,
+  juni:6,
+  juli:7,
+  augu:8, augustus:8,
+  okto:10, okt:10, oktober:10,
 };
 const MONTH_LONG = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// Navigation / footer noise — lines matching these are never used as event titles
+const NOISE_WORDS = new Set([
+  'contact','contacts','home','accueil','thuis','about','à propos','over ons',
+  'buy tickets','acheter','kopen','tickets','shop','newsletter','subscribe',
+  'abonnez','inschrijven','all rights reserved','copyright','privacy','cookie',
+  'sitemap','facebook','instagram','twitter','youtube','follow us','share',
+  'menu','navigation','search','recherche','zoeken','read more','lire la suite',
+  'meer lezen','see all','voir tout','alles zien','back','retour','terug',
+  'next','previous','suivant','précédent','loading','chargement',
+  'monday','tuesday','wednesday','thursday','friday','saturday','sunday',
+  'lundi','mardi','mercredi','jeudi','vendredi','samedi','dimanche',
+  'maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag','zondag',
+]);
 
 // ─── Utility helpers ─────────────────────────────────────────────────────────
 
@@ -178,27 +218,106 @@ function findEventLinks(html, baseUrl) {
 
 // ─── Step 2b: Extract event listings from a fetched page ─────────────────────
 
+// Resolve month word → number using the expanded MONTH_ABB table
+function lookupMonth(word) {
+  if (!word) return 0;
+  const w = word.toLowerCase().replace(/[^a-zàâéèêïîôùûüij]/g, '');
+  return MONTH_ABB[w] || MONTH_ABB[w.slice(0, 5)] || MONTH_ABB[w.slice(0, 4)] || MONTH_ABB[w.slice(0, 3)] || 0;
+}
+
+// Clamp a year-less date to current-or-next year, capped 12 months ahead
+function inferYear(month, day) {
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  let yr = today.getFullYear();
+  let candidate = new Date(yr, month - 1, day);
+  if (candidate < today) { yr++; candidate = new Date(yr, month - 1, day); }
+  const cutoff = new Date(today); cutoff.setFullYear(cutoff.getFullYear() + 1);
+  return candidate <= cutoff ? yr : null;
+}
+
 function parseRawDate(text) {
-  // dd/mm/yyyy or dd-mm-yyyy
-  let m = text.match(/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/);
+  let m;
+
+  // 1. dd/mm/yyyy  or  dd-mm-yyyy  (full year present)
+  m = text.match(/\b(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})\b/);
   if (m) {
-    const d = new Date(+m[3], +m[2] - 1, +m[1]);
-    if (!isNaN(d.getTime())) return toLocalISO(d);
-  }
-  // dd Mon(th) yyyy  or  Mon(th) dd, yyyy
-  m = text.match(/\b(\d{1,2})\s+([a-záàâéèêïîôùûü]{3,})\s+(\d{4})\b/i)
-    || text.match(/\b([a-záàâéèêïîôùûü]{3,})\s+(\d{1,2})[,\s]+(\d{4})\b/i);
-  if (m) {
-    const abbr = (m[2] || m[1]).slice(0, 3).toLowerCase();
-    const mo   = MONTH_ABB[abbr];
-    const day  = +(m[1].match(/^\d/) ? m[1] : m[2]);
-    const yr   = +(m[3]);
-    if (mo && day && yr) {
-      const d = new Date(yr, mo - 1, day);
-      if (!isNaN(d.getTime())) return toLocalISO(d);
+    const [, d, mo, yr] = m.map(Number);
+    if (mo >= 1 && mo <= 12 && d >= 1 && d <= 31) {
+      const date = new Date(yr, mo - 1, d);
+      if (!isNaN(date.getTime())) return toLocalISO(date);
     }
   }
+
+  // 2. dd/mm  (no year — infer)
+  m = text.match(/\b(\d{1,2})\/(\d{1,2})\b/);
+  if (m) {
+    const [, d, mo] = m.map(Number);
+    if (mo >= 1 && mo <= 12 && d >= 1 && d <= 31) {
+      const yr = inferYear(mo, d);
+      if (yr) return toLocalISO(new Date(yr, mo - 1, d));
+    }
+  }
+
+  // 3. dd Month yyyy  (e.g. "15 May 2026", "15 juillet 2026")
+  m = text.match(/\b(\d{1,2})\s+([a-záàâéèêïîôùûüij]{3,10})\s+(\d{4})\b/i);
+  if (m) {
+    const mo = lookupMonth(m[2]);
+    const [d, yr] = [+m[1], +m[3]];
+    if (mo && d >= 1 && d <= 31) {
+      const date = new Date(yr, mo - 1, d);
+      if (!isNaN(date.getTime())) return toLocalISO(date);
+    }
+  }
+
+  // 4. dd Month  (no year — e.g. "15 May", "3 juin", "15 augustus")
+  m = text.match(/\b(\d{1,2})\s+([a-záàâéèêïîôùûüij]{3,10})\b/i);
+  if (m) {
+    const mo = lookupMonth(m[2]);
+    const d  = +m[1];
+    if (mo && d >= 1 && d <= 31) {
+      const yr = inferYear(mo, d);
+      if (yr) return toLocalISO(new Date(yr, mo - 1, d));
+    }
+  }
+
+  // 5. Month dd[,] yyyy  (e.g. "May 15, 2026")
+  m = text.match(/\b([a-záàâéèêïîôùûüij]{3,10})\s+(\d{1,2})[,\s]+(\d{4})\b/i);
+  if (m) {
+    const mo = lookupMonth(m[1]);
+    const [d, yr] = [+m[2], +m[3]];
+    if (mo && d >= 1 && d <= 31) {
+      const date = new Date(yr, mo - 1, d);
+      if (!isNaN(date.getTime())) return toLocalISO(date);
+    }
+  }
+
+  // 6. Month dd  (no year — e.g. "May 15", "juin 3")
+  m = text.match(/\b([a-záàâéèêïîôùûüij]{3,10})\s+(\d{1,2})\b/i);
+  if (m) {
+    const mo = lookupMonth(m[1]);
+    const d  = +m[2];
+    if (mo && d >= 1 && d <= 31) {
+      const yr = inferYear(mo, d);
+      if (yr) return toLocalISO(new Date(yr, mo - 1, d));
+    }
+  }
+
   return null;
+}
+
+// Return true for lines that are navigation/footer noise and should never be event titles
+function isNoise(text) {
+  const t = text.trim();
+  if (t.length < 4 || t.length > 200)   return true;
+  if (/^https?:\/\//i.test(t))           return true;   // URL
+  if (/^[\d\s\-\/\|\.,:©®]+$/.test(t))  return true;   // pure numbers/symbols
+  const lower = t.toLowerCase();
+  if (NOISE_WORDS.has(lower))            return true;   // exact noise match
+  // Starts with a noise keyword
+  if ([...NOISE_WORDS].some(n => lower.startsWith(n + ' ') || lower === n)) return true;
+  // Looks like a standalone year
+  if (/^\d{4}$/.test(t))                return true;
+  return false;
 }
 
 function toRelativeDate(iso) {
@@ -214,61 +333,98 @@ function toRelativeDate(iso) {
   return MONTH_LONG[eDay.getMonth()];  // named month for far-future events
 }
 
+// ─── Step 2b (v2): Text-proximity date scanner ────────────────────────────────
+// Instead of relying on CSS selectors, this builds a flat ordered array of
+// every visible text segment in the page, then for each segment that contains
+// a parseable date it looks at the N closest non-noise neighbours for a title.
+
 function extractEventsFromPage(html, venue) {
-  const $      = cheerio.load(html);
-  const events = [];
+  const $ = cheerio.load(html);
 
-  // Candidate selectors: semantic event containers + generic heading blocks
-  const selectors = [
-    'article', '[class*="event"]', '[class*="concert"]',
-    '[class*="show"]', '[class*="agenda"]', '[class*="program"]',
-    'li', 'h2', 'h3', 'h4',
-  ].join(', ');
+  // 1. Strip non-content noise from the DOM before scanning
+  $('nav, footer, header, script, style, noscript').remove();
+  $('[class*="nav"], [class*="footer"], [class*="menu"], [class*="cookie"],' +
+    '[class*="banner"], [class*="sidebar"], [role="navigation"],' +
+    '[role="banner"], [role="contentinfo"]').remove();
 
-  $(selectors).each((_, el) => {
-    const container = $(el);
-    const fullText  = container.text().replace(/\s+/g, ' ').trim();
-    if (fullText.length < 8) return;
+  // 2. Build a flat, ordered list of leaf-level text segments
+  //    Each entry: { text, isHeading, tag }
+  const segments = [];
+  $('body *').each((_, el) => {
+    // Skip elements that have child elements — we want only leaf nodes
+    if ($(el).children('*').length > 0) return;
+    const text = $(el).text().replace(/\s+/g, ' ').trim();
+    if (!text || text.length < 3) return;
+    const tag       = (el.tagName || '').toLowerCase();
+    const isHeading = ['h1','h2','h3','h4','h5','strong','b'].includes(tag);
+    segments.push({ text, tag, isHeading });
+  });
 
-    const rawDate = parseRawDate(fullText);
-    if (!rawDate) return;
+  // 3. Deduplicate consecutive identical segments (repeated DOM renders)
+  const segs = segments.filter((s, i) => i === 0 || s.text !== segments[i - 1].text);
+
+  // 4. Scan every segment for a date; when found, resolve title from neighbours
+  const events  = [];
+  const seenKey = new Set();
+
+  for (let i = 0; i < segs.length; i++) {
+    const seg     = segs[i];
+    const rawDate = parseRawDate(seg.text);
+    if (!rawDate) continue;
 
     const relDate = toRelativeDate(rawDate);
-    if (!relDate) return; // skip past events
+    if (!relDate) continue; // past → skip
 
-    // Title: prefer first heading inside container, else first non-empty line
-    let title = container.find('h1,h2,h3,h4,strong').first().text().trim()
-             || fullText.split(/[\n|]+/)[0].trim();
-    title = title.replace(/\s+/g, ' ').slice(0, 120);
-    if (!title || title.length < 5) return;
+    // ── Title resolution ──────────────────────────────────────────────────
+    // Priority 1: heading within the same segment (e.g. "Jazz Night — 15 May")
+    let title = null;
+    const inlineTitle = seg.text.split(/[|·—\-–]/)[0].trim();
+    if (inlineTitle.length >= 4 && !isNoise(inlineTitle) && parseRawDate(inlineTitle) === null) {
+      title = inlineTitle;
+    }
 
-    // Time: look for HH:MM or HHhMM patterns
-    const timeM  = fullText.match(/\b(\d{1,2})[h:]\s*(\d{2})\b/i);
+    // Priority 2: walk backwards up to 5 segments for the closest non-noise text
+    if (!title) {
+      for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
+        const c = segs[j].text;
+        if (!isNoise(c) && parseRawDate(c) === null) { title = c; break; }
+      }
+    }
+
+    // Priority 3: walk forward up to 3 segments (some layouts put title after date)
+    if (!title) {
+      for (let j = i + 1; j <= Math.min(segs.length - 1, i + 3); j++) {
+        const c = segs[j].text;
+        if (!isNoise(c) && parseRawDate(c) === null) { title = c; break; }
+      }
+    }
+
+    if (!title) continue;
+
+    title = title.replace(/\s+/g, ' ').trim().slice(0, 120);
+    if (title.length < 4) continue;
+
+    // ── Time extraction ───────────────────────────────────────────────────
+    // Look in the date segment itself and the 2 surrounding segments
+    const nearby = segs.slice(Math.max(0, i - 2), Math.min(segs.length, i + 3))
+                       .map(s => s.text).join(' ');
+    const timeM   = nearby.match(/\b(\d{1,2})[h:]\s*(\d{2})\b/i);
     const timeStr = timeM
-      ? `${String(timeM[1]).padStart(2, '0')}:${timeM[2]}`
+      ? `${String(+timeM[1]).padStart(2, '0')}:${timeM[2]}`
       : venue.defaultTime;
-    const startH = timeM
+    const startH  = timeM
       ? parseInt(timeM[1], 10) + parseInt(timeM[2], 10) / 60
       : venue.defaultStartH;
 
-    // Official link: first <a> inside the container
-    const href    = container.find('a[href]').first().attr('href') || '';
-    let eventLink = '';
-    try {
-      eventLink = /^https?:\/\//i.test(href) ? href : new URL(href, venue.url).href;
-    } catch { eventLink = venue.url; }
+    // ── Dedup ─────────────────────────────────────────────────────────────
+    const key = title.toLowerCase().slice(0, 50) + rawDate;
+    if (seenKey.has(key)) continue;
+    seenKey.add(key);
 
-    events.push({ title, rawDate, relDate, timeStr, startH, eventLink });
-  });
+    events.push({ title, rawDate, relDate, timeStr, startH, eventLink: venue.url });
+  }
 
-  // Deduplicate within this page by title + date
-  const seen = new Set();
-  return events.filter(ev => {
-    const key = ev.title.toLowerCase() + ev.rawDate;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
+  return events;
 }
 
 // ─── Step 3: Safe upsert into scraped_events.json ────────────────────────────
