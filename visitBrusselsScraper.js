@@ -23,7 +23,7 @@ const path    = require('path');
 
 const EXCEL_PATH   = path.join(__dirname, 'lieux_culturels_touristiques_evenementiels_visitbrussels_vbx.xlsx');
 const DB_PATH      = path.join(__dirname, 'src/data/scraped_events.json');
-const BATCH_SIZE   = 5;          // how many venues to test in one run
+const BATCH_SIZE   = 10;         // how many venues to test in one run
 const VB_ID_START  = 2000;       // well above existing range (100–201)
 const REQ_TIMEOUT  = 12000;      // ms per HTTP request
 const REQ_DELAY    = 1200;       // ms between requests (rate-limit courtesy)
@@ -199,12 +199,41 @@ function findEventLinks(html, baseUrl) {
     found.push({ url: full, text: $(el).text().trim(), isAnchor: false });
   });
 
-  // Also flag in-page anchor IDs matching keywords (single-page sites)
+  // Flag in-page anchor IDs matching keywords (single-page sites)
   $('[id]').each((_, el) => {
     const id = ($(el).attr('id') || '').toLowerCase();
     if (EVENT_KW.some(kw => id.includes(kw))) {
       found.push({ url: `${baseUrl.split('#')[0]}#${$(el).attr('id')}`, text: id, isAnchor: true });
     }
+  });
+
+  // ── Iframe calendar detection ─────────────────────────────────────────────
+  // Some venues (e.g. Théâtre des Martyrs) embed their calendar in an <iframe>
+  // reachable via a #widget-calendar or #insertSpectaclesCalendar anchor.
+  // Strategy A: look for iframes whose src/data-src contains an event keyword.
+  const IFRAME_KW = [...EVENT_KW, 'calendar', 'widget', 'spectacle', 'booking', 'ticketing', 'billetterie'];
+  $('iframe').each((_, el) => {
+    const src = ($(el).attr('src') || $(el).attr('data-src') || '').trim();
+    if (!src) return;
+    if (!IFRAME_KW.some(kw => src.toLowerCase().includes(kw))) return;
+    let full;
+    try { full = /^https?:\/\//i.test(src) ? src : new URL(src, baseUrl).href; } catch { return; }
+    found.push({ url: full, text: `iframe:${src.slice(0, 60)}`, isAnchor: false, isIframe: true });
+  });
+
+  // Strategy B: for any calendar/widget anchor ID found above, also scan that
+  // element's subtree for iframes (handles lazy-loaded widgets).
+  const CAL_ANCHOR_KW = ['calendar', 'widget', 'agenda', 'spectacle', 'program'];
+  $('[id]').each((_, el) => {
+    const id = ($(el).attr('id') || '').toLowerCase();
+    if (!CAL_ANCHOR_KW.some(kw => id.includes(kw))) return;
+    $(el).find('iframe').each((__, iframe) => {
+      const src = ($(iframe).attr('src') || $(iframe).attr('data-src') || '').trim();
+      if (!src) return;
+      let full;
+      try { full = /^https?:\/\//i.test(src) ? src : new URL(src, baseUrl).href; } catch { return; }
+      found.push({ url: full, text: `widget-iframe:${id}`, isAnchor: false, isIframe: true });
+    });
   });
 
   // Deduplicate by URL
@@ -548,6 +577,44 @@ async function main() {
       seen.add(key);
       return true;
     });
+
+    // ── Fallback slug crawling ─────────────────────────────────────────────
+    // If the homepage scan + discovered links yielded nothing, try appending
+    // common localized event sub-paths to the venue root URL one by one.
+    if (allEvents.length === 0) {
+      const base   = new URL(venue.url);
+      const root   = base.origin;
+      const SLUGS  = [
+        '/agenda', '/events', '/concerts', '/programmation',
+        '/programme', '/en/agenda', '/fr/agenda', '/nl/agenda',
+        '/whats-on', '/calendar', '/spectacles',
+      ];
+      console.log('  ↳ 0 events from primary pass — trying fallback slugs…');
+      for (const slug of SLUGS) {
+        const slugUrl = root + slug;
+        // Skip if it would just re-fetch the same page
+        if (venue.url.replace(/\/$/, '') === slugUrl.replace(/\/$/, '')) continue;
+        process.stdout.write(`    ${slug} … `);
+        const slugHtml = await fetchHtml(slugUrl);
+        if (!slugHtml) { console.log('no response'); await sleep(600); continue; }
+        const evs = extractEventsFromPage(slugHtml, venue);
+        if (evs.length > 0) {
+          allEvents.push(...evs);
+          console.log(`${evs.length} event(s) found ✓`);
+          break;   // stop as soon as one slug yields results
+        }
+        console.log('0 events');
+        await sleep(800);
+      }
+      // Dedup again after slug fetch
+      const seen2 = new Set();
+      allEvents = allEvents.filter(ev => {
+        const key = ev.title.toLowerCase() + ev.rawDate;
+        if (seen2.has(key)) return false;
+        seen2.add(key);
+        return true;
+      });
+    }
 
     console.log(`\n  Events extracted with parseable dates: ${allEvents.length}`);
     allEvents.slice(0, 5).forEach(ev =>
