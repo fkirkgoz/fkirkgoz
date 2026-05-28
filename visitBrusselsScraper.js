@@ -28,8 +28,21 @@ const VB_ID_START  = 2000;       // well above existing range (100–201)
 const REQ_TIMEOUT  = 12000;      // ms per HTTP request
 const REQ_DELAY    = 1200;       // ms between requests (rate-limit courtesy)
 
-// Target rows from the Excel
-const TARGET_CATS = ['live music', 'performing arts venue'];
+// Target rows from the Excel — expanded to include more vibrant venue types
+const TARGET_CATS = [
+  'live music', 'performing arts venue',
+  'concert hall', 'bar / club', 'nightlife',
+  'cultural centre', 'contemporary art',
+];
+
+// Curated priority venues — matched by partial name (case-insensitive).
+// These are sorted to the front of the batch regardless of Excel row order.
+const PRIORITY_VENUES = [
+  'botanique', 'ancienne belgique', 'halles de schaerbeek',
+  'vaartkapoen', 'bozar', 'wiels', 'recyclart',
+  'kvs', 'beursschouwburg', 'palace', 'galeries',
+  'ab ', 'ab-', // common abbreviation for Ancienne Belgique
+];
 
 // Multilingual keywords for event-page discovery
 const EVENT_KW = [
@@ -42,8 +55,13 @@ const EVENT_KW = [
 const CAT_MAP = {
   'live music':            'Music',
   'performing arts venue': 'Culture',
+  'concert hall':          'Music',
+  'bar / club':            'Nightlife',
+  'nightlife':             'Nightlife',
   'nightclubs':            'Nightlife',
   'clubbing agenda':       'Nightlife',
+  'cultural centre':       'Culture',
+  'contemporary art':      'Culture',
   'cultural agenda':       'Culture',
 };
 
@@ -159,15 +177,29 @@ function loadVenueBatch() {
   const ws   = wb.Sheets[wb.SheetNames[0]];
   const rows = XLSX.utils.sheet_to_json(ws, { defval: '' });
 
-  const venues = rows
+  // Helper: does this row name match any priority venue?
+  function isPriority(name) {
+    const n = name.toLowerCase();
+    return PRIORITY_VENUES.some(p => n.includes(p));
+  }
+
+  const candidates = rows
     .filter(r => {
       const cats = r['Visit category'].toLowerCase();
       const url  = (r['Web link'] || '').trim();
-      const isTarget  = TARGET_CATS.some(c => cats.includes(c));
+      const isTarget   = TARGET_CATS.some(c => cats.includes(c));
       const hasRealUrl = url && !url.includes('facebook') && !url.includes('instagram');
       return isTarget && hasRealUrl;
     })
-    .slice(0, BATCH_SIZE)
+    // Sort: priority (curated) venues first, then the rest
+    .sort((a, b) => {
+      const ap = isPriority(a.Name) ? 0 : 1;
+      const bp = isPriority(b.Name) ? 0 : 1;
+      return ap - bp;
+    })
+    .slice(0, BATCH_SIZE);
+
+  const venues = candidates
     .map(r => {
       const [lat, lng] = (r['Geo Point'] || '0,0').split(',').map(s => parseFloat(s.trim()));
       const rawCats    = r['Visit category'].split(',').map(s => s.trim().toLowerCase());
@@ -376,6 +408,18 @@ function isGenericTitle(text) {
   return false;
 }
 
+// Reject weak / partial strings that clearly aren't event names
+const WEAK_WORDS = ['heure', 'contact', 'open', 'location', 'menu', 'bruxelles'];
+function isWeakTitle(text) {
+  const t = text.trim();
+  if (t.length < 5) return true;
+  const wordCount = t.split(/\s+/).filter(w => w.length > 0).length;
+  if (wordCount < 3) return true;
+  const lower = t.toLowerCase();
+  if (WEAK_WORDS.some(w => lower.includes(w))) return true;
+  return false;
+}
+
 // Strip prefix tags ("Hors programme - "), trailing junk, and collapse whitespace
 function cleanTitle(raw) {
   let t = raw.trim();
@@ -471,6 +515,7 @@ function extractEventsFromPage(html, venue) {
       inlineTitle.length >= 4 &&
       !isNoise(inlineTitle) &&
       !isGenericTitle(inlineTitle) &&
+      !isWeakTitle(inlineTitle) &&
       parseRawDate(inlineTitle) === null
     ) {
       title = inlineTitle;
@@ -480,7 +525,7 @@ function extractEventsFromPage(html, venue) {
     if (!title) {
       for (let j = i - 1; j >= Math.max(0, i - 6); j--) {
         const c = segs[j].text;
-        if (!isNoise(c) && !isGenericTitle(c) && parseRawDate(c) === null) {
+        if (!isNoise(c) && !isGenericTitle(c) && !isWeakTitle(c) && parseRawDate(c) === null) {
           title = c; break;
         }
       }
@@ -490,7 +535,7 @@ function extractEventsFromPage(html, venue) {
     if (!title) {
       for (let j = i + 1; j <= Math.min(segs.length - 1, i + 4); j++) {
         const c = segs[j].text;
-        if (!isNoise(c) && !isGenericTitle(c) && parseRawDate(c) === null) {
+        if (!isNoise(c) && !isGenericTitle(c) && !isWeakTitle(c) && parseRawDate(c) === null) {
           title = c; break;
         }
       }
@@ -501,6 +546,7 @@ function extractEventsFromPage(html, venue) {
     // ── Clean up the title ────────────────────────────────────────────────
     title = cleanTitle(title).slice(0, 120);
     if (title.length < 4) continue;
+    if (isWeakTitle(title)) continue;
 
     // ── Time extraction ───────────────────────────────────────────────────
     // Look in the date segment itself and the 2 surrounding segments
@@ -594,7 +640,7 @@ async function main() {
 
   // Step 1 — load venue batch from Excel
   const venues = loadVenueBatch();
-  console.log(`Loaded ${venues.length} venue(s) from Excel (first ${BATCH_SIZE} music/performing):\n`);
+  console.log(`Loaded ${venues.length} venue(s) from Excel (priority curated + category filter, top ${BATCH_SIZE}):\n`);
   venues.forEach(v => console.log(`  • [${v.cat}] ${v.name}\n    ${v.url}`));
   console.log();
 
