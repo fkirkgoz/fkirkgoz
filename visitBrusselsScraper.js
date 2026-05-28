@@ -101,6 +101,23 @@ const NOISE_WORDS = new Set([
   'maandag','dinsdag','woensdag','donderdag','vrijdag','zaterdag','zondag',
 ]);
 
+// Generic layout / button labels — rejected as event titles but don't block context lookup
+const GENERIC_TITLES = new Set([
+  'événement','evenement','event','events','evenements','événements',
+  'plusieurs dates','plusieurs date','several dates','meerdere data','meerdere datums',
+  'réserver','reserver','book','reserve','reserveer','réservation','reservation',
+  'détails','details','meer info','more info','more details','en savoir plus','plus d\'infos',
+  'upcoming concerts','upcoming events','upcoming shows','prochains concerts',
+  'a venir','à venir','coming soon','binnenkort','prochainement',
+  'concerts','spectacles','shows','performances','voorstellingen',
+  'tickets','buy tickets','get tickets','acheter billets','billets',
+  'programme','programmation','agenda','saison','season',
+  'voir plus','see more','meer zien','voir tout','see all',
+  'lire plus','read more','meer lezen','lire la suite',
+  'hors programme','hors-programme',
+  'open stage','jam session','live music','musique live','live muziek',
+]);
+
 // ─── Utility helpers ─────────────────────────────────────────────────────────
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
@@ -349,6 +366,43 @@ function isNoise(text) {
   return false;
 }
 
+// Return true for candidate titles that are structural/button labels, not real event names
+function isGenericTitle(text) {
+  const lower = text.toLowerCase().trim();
+  if (GENERIC_TITLES.has(lower)) return true;
+  // Also reject if the entire string is a single generic word
+  const firstWord = lower.split(/[\s\-–|]+/)[0];
+  if (firstWord && GENERIC_TITLES.has(firstWord)) return true;
+  return false;
+}
+
+// Strip prefix tags ("Hors programme - "), trailing junk, and collapse whitespace
+function cleanTitle(raw) {
+  let t = raw.trim();
+
+  // Remove known structural prefixes
+  const PREFIXES = [
+    /^hors[\s-]+programme\s*[-–|:]\s*/i,
+    /^hors-programme\s*[-–|:]\s*/i,
+    /^programme\s*[-–|:]\s*/i,
+    /^spectacle\s*[-–|:]\s*/i,
+    /^concert\s*[-–|:]\s*/i,
+    /^event\s*[-–|:]\s*/i,
+    /^show\s*[-–|:]\s*/i,
+    /^\[.*?\]\s*/,          // [Tag] prefixes
+    /^«\s*/,                // « opening quote
+  ];
+  for (const p of PREFIXES) t = t.replace(p, '');
+
+  // Strip trailing separators, punctuation, quotes
+  t = t.replace(/[\s\-–|·,;:!?»«"']+$/, '').trim();
+
+  // Collapse internal whitespace
+  t = t.replace(/\s{2,}/g, ' ').trim();
+
+  return t;
+}
+
 function toRelativeDate(iso) {
   const today = new Date(); today.setHours(0, 0, 0, 0);
   const eDay  = new Date(iso + 'T00:00:00');
@@ -404,33 +458,48 @@ function extractEventsFromPage(html, venue) {
     const relDate = toRelativeDate(rawDate);
     if (!relDate) continue; // past → skip
 
+    // ── Strict calendar window: today → Aug 31 of current year ───────────
+    const windowEnd = new Date(new Date().getFullYear(), 7, 31); // month is 0-based
+    windowEnd.setHours(23, 59, 59);
+    if (new Date(rawDate + 'T00:00:00') > windowEnd) continue;
+
     // ── Title resolution ──────────────────────────────────────────────────
-    // Priority 1: heading within the same segment (e.g. "Jazz Night — 15 May")
+    // Priority 1: inline split on common separators ("Jazz Night — 15 May")
     let title = null;
-    const inlineTitle = seg.text.split(/[|·—\-–]/)[0].trim();
-    if (inlineTitle.length >= 4 && !isNoise(inlineTitle) && parseRawDate(inlineTitle) === null) {
+    const inlineTitle = seg.text.split(/[|·—–]/)[0].trim();
+    if (
+      inlineTitle.length >= 4 &&
+      !isNoise(inlineTitle) &&
+      !isGenericTitle(inlineTitle) &&
+      parseRawDate(inlineTitle) === null
+    ) {
       title = inlineTitle;
     }
 
-    // Priority 2: walk backwards up to 5 segments for the closest non-noise text
+    // Priority 2: walk backwards up to 6 segments, skipping noise AND generic labels
     if (!title) {
-      for (let j = i - 1; j >= Math.max(0, i - 5); j--) {
+      for (let j = i - 1; j >= Math.max(0, i - 6); j--) {
         const c = segs[j].text;
-        if (!isNoise(c) && parseRawDate(c) === null) { title = c; break; }
+        if (!isNoise(c) && !isGenericTitle(c) && parseRawDate(c) === null) {
+          title = c; break;
+        }
       }
     }
 
-    // Priority 3: walk forward up to 3 segments (some layouts put title after date)
+    // Priority 3: walk forward up to 4 segments
     if (!title) {
-      for (let j = i + 1; j <= Math.min(segs.length - 1, i + 3); j++) {
+      for (let j = i + 1; j <= Math.min(segs.length - 1, i + 4); j++) {
         const c = segs[j].text;
-        if (!isNoise(c) && parseRawDate(c) === null) { title = c; break; }
+        if (!isNoise(c) && !isGenericTitle(c) && parseRawDate(c) === null) {
+          title = c; break;
+        }
       }
     }
 
     if (!title) continue;
 
-    title = title.replace(/\s+/g, ' ').trim().slice(0, 120);
+    // ── Clean up the title ────────────────────────────────────────────────
+    title = cleanTitle(title).slice(0, 120);
     if (title.length < 4) continue;
 
     // ── Time extraction ───────────────────────────────────────────────────
