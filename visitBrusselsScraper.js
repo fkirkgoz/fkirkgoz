@@ -35,13 +35,18 @@ const TARGET_CATS = [
   'cultural centre', 'contemporary art',
 ];
 
-// Curated priority venues — matched by partial name (case-insensitive).
-// These are sorted to the front of the batch regardless of Excel row order.
+// Venues already covered by the main eventScraper.js — skip these to avoid duplication.
+const SKIP_VENUES = [
+  'ancienne belgique', 'le botanique', 'botanique', 'fuse',
+  'c12', 'cirque royal', 'la madeleine', 'bozar',
+];
+
+// Curated priority venues for this scraper — alternative/younger-demographic spots.
+// Matched by partial name (case-insensitive), sorted to front of batch.
 const PRIORITY_VENUES = [
-  'botanique', 'ancienne belgique', 'halles de schaerbeek',
-  'vaartkapoen', 'bozar', 'wiels', 'recyclart',
-  'kvs', 'beursschouwburg', 'palace', 'galeries',
-  'ab ', 'ab-', // common abbreviation for Ancienne Belgique
+  'beursschouwburg', 'halles de schaerbeek', 'recyclart',
+  'vaartkapoen', 'kvs', 'galeries', 'rock classic', 'bonnefooi',
+  'wiels', 'palace',
 ];
 
 // Multilingual keywords for event-page discovery
@@ -185,11 +190,13 @@ function loadVenueBatch() {
 
   const candidates = rows
     .filter(r => {
-      const cats = r['Visit category'].toLowerCase();
-      const url  = (r['Web link'] || '').trim();
-      const isTarget   = TARGET_CATS.some(c => cats.includes(c));
-      const hasRealUrl = url && !url.includes('facebook') && !url.includes('instagram');
-      return isTarget && hasRealUrl;
+      const cats  = r['Visit category'].toLowerCase();
+      const url   = (r['Web link'] || '').trim();
+      const name  = (r.Name || '').toLowerCase();
+      const isTarget    = TARGET_CATS.some(c => cats.includes(c));
+      const hasRealUrl  = url && !url.includes('facebook') && !url.includes('instagram');
+      const isSkipped   = SKIP_VENUES.some(s => name.includes(s));
+      return isTarget && hasRealUrl && !isSkipped;
     })
     // Sort: priority (curated) venues first, then the rest
     .sort((a, b) => {
@@ -424,6 +431,10 @@ function isWeakTitle(text) {
 function cleanTitle(raw) {
   let t = raw.trim();
 
+  // Strip leading broken/empty quote fragments — e.g. `"" de Sébastien Blanc"` → `de Sébastien Blanc`
+  // Matches: one or more quote chars (straight/curly/guillemet) possibly followed by a space
+  t = t.replace(/^["""''«»‘’“”\s]{0,4}["'»”]\s*/g, '').trim();
+
   // Remove known structural prefixes
   const PREFIXES = [
     /^hors[\s-]+programme\s*[-–|:]\s*/i,
@@ -435,11 +446,12 @@ function cleanTitle(raw) {
     /^show\s*[-–|:]\s*/i,
     /^\[.*?\]\s*/,          // [Tag] prefixes
     /^«\s*/,                // « opening quote
+    /^["""'']\s*/,          // any remaining lone leading quote
   ];
   for (const p of PREFIXES) t = t.replace(p, '');
 
   // Strip trailing separators, punctuation, quotes
-  t = t.replace(/[\s\-–|·,;:!?»«"']+$/, '').trim();
+  t = t.replace(/[\s\-–|·,;:!?»«"'"']+$/, '').trim();
 
   // Collapse internal whitespace
   t = t.replace(/\s{2,}/g, ' ').trim();
@@ -640,7 +652,7 @@ async function main() {
 
   // Step 1 — load venue batch from Excel
   const venues = loadVenueBatch();
-  console.log(`Loaded ${venues.length} venue(s) from Excel (priority curated + category filter, top ${BATCH_SIZE}):\n`);
+  console.log(`Loaded ${venues.length} venue(s) from Excel (curated priority, skipping main-scraper venues, top ${BATCH_SIZE}):\n`);
   venues.forEach(v => console.log(`  • [${v.cat}] ${v.name}\n    ${v.url}`));
   console.log();
 
