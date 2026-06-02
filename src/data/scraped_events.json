@@ -2,7 +2,7 @@
   {
     "id": 118,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Nora Brown with Stephanie Coleman",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -68,7 +68,7 @@
   {
     "id": 119,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "TeddyBear",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1351,7 +1351,7 @@
   {
     "id": 150,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "JAZZY BAZZ",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -4395,7 +4395,7 @@
   {
     "id": 211,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "garden tales",
     "venue": "Kanal Architecture (ex-CIVA)",
     "addr": "Kanal Architecture (ex-CIVA), Belgium",
@@ -5143,7 +5143,7 @@
   {
     "id": 234,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Moor Mother + Aquiles Navarro & Olof Melander",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -5598,7 +5598,7 @@
     "lng": 4.3664,
     "going": 166,
     "neighbourhood": "Saint-Josse",
-    "desc": "Clarion at Le Botanique.",
+    "desc": "Nervy, melancholic shoegaze driven by saturated guitars, blending DIY spirit, post-punk, and dream-pop swells",
     "attendees": [
       {
         "n": "Zoë",
@@ -6093,7 +6093,7 @@
   {
     "id": 258,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7398,173 +7398,6 @@
     "_rawDate": "2026-06-06"
   },
   {
-    "id": 290,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "femtanyl - Takihasdied",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/femtanyl-takihasdied-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 95,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
-    "attendees": [
-      {
-        "n": "Guest294",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest219",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest254",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest593",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest562",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest043",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest108",
-        "c": "#90E0EF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Counting down the days 🗓️",
-        "time": "4:49 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Grab tickets fast, selling out!",
-        "time": "6:37 PM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
-    "id": 291,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "Live At Museum: Oxis",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 44,
-    "neighbourhood": "Saint-Josse",
-    "desc": "As part of the opening of the exhibition Side by Side",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest533",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest317",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest248",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest125",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest194",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest629",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest119",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Axel",
-        "text": "Brussels never disappoints ❤️",
-        "time": "11:31 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Already got my ticket! 👋",
-        "time": "4:18 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Who else is going?? 🙋",
-        "time": "9:32 AM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
     "id": 292,
     "cat": "Music",
     "date": "September",
@@ -7709,15 +7542,15 @@
   {
     "id": 294,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Meet the Artist: Ronan Bouroullec",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 3,
     "tags": [
       "Art",
@@ -7783,16 +7616,16 @@
   },
   {
     "id": 295,
-    "cat": "Music",
-    "date": "Tomorrow",
+    "cat": "Culture",
+    "date": "Tonight",
     "title": "La Fonte Musica",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 1,
     "tags": [
       "Concert",
@@ -7860,5 +7693,630 @@
       }
     ],
     "_rawDate": "2026-06-02"
+  },
+  {
+    "id": 296,
+    "cat": "Music",
+    "date": "This Weekend",
+    "title": "Just Vox",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/just-vox/a10Qw00000A3D1OIAV",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 102,
+    "neighbourhood": "Centre",
+    "desc": "Chapter 2: Just Vox pushes back the boundaries of live vocals",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest810",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest167",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "1:28 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Can't wait for this one! 🔥",
+        "time": "9:51 AM"
+      }
+    ],
+    "_rawDate": "2026-06-06"
+  },
+  {
+    "id": 297,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "femtanyl - Takihasdied",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/femtanyl-takihasdied-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 180,
+    "neighbourhood": "Saint-Josse",
+    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest487",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest312",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest965",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest012",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest143",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "3:13 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Can't wait for this one! 🔥",
+        "time": "12:26 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "11:34 PM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 298,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Live At Museum: Oxis",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 269,
+    "neighbourhood": "Saint-Josse",
+    "desc": "As part of the opening of the exhibition Side by Side",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest675",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest500",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest672",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest808",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest700",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:25 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Brussels never disappoints ❤️",
+        "time": "12:48 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:13 PM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 299,
+    "cat": "Music",
+    "date": "September",
+    "title": "The Orielles + Golomb",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/orielles-golomb-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 207,
+    "neighbourhood": "Saint-Josse",
+    "desc": "An adventurous rock double bill, with garage sounds ranging from pop experimentation and very raw energy to bursts of noise",
+    "attendees": [
+      {
+        "n": "Guest639",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest834",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest084",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest264",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest105",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest734",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest436",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "3:41 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Brussels never disappoints ❤️",
+        "time": "4:49 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "11:44 AM"
+      }
+    ],
+    "_rawDate": "2026-09-08"
+  },
+  {
+    "id": 300,
+    "cat": "Music",
+    "date": "September",
+    "title": "Wine Lips - The Boojums",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/wine-lips-boojums-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 106,
+    "neighbourhood": "Saint-Josse",
+    "desc": "One of the most incendiary bands on the ultra-fuzzed psychedelic garage punk scene",
+    "attendees": [
+      {
+        "n": "Guest554",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest853",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest518",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest112",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest779",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest499",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest782",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "12:12 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "First time at this venue!",
+        "time": "7:11 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Grab tickets fast, selling out!",
+        "time": "5:42 PM"
+      }
+    ],
+    "_rawDate": "2026-09-10"
+  },
+  {
+    "id": 301,
+    "cat": "Music",
+    "date": "October",
+    "title": "MIDNIGHT TIL MORNING",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/midnight-til-morning-25-10/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 54,
+    "neighbourhood": "Centre",
+    "desc": "MIDNIGHT TIL MORNING at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest090",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest874",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest782",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest609",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest387",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "7:33 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:42 PM"
+      }
+    ],
+    "_rawDate": "2026-10-25"
+  },
+  {
+    "id": 302,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "Live Magazine : Anthology",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/live-magazine-anthology",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 262,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest198",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest813",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest296",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:56 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "10:17 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "This is going to be AMAZING",
+        "time": "11:21 AM"
+      }
+    ],
+    "_rawDate": "2026-06-03"
+  },
+  {
+    "id": 303,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "Civilisations Brussels Art Fair 2026",
+    "venue": "Quartier du Sablon",
+    "addr": "Quartier du Sablon, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Civilisations-Brussels-Art-Fair-2026.5700022661",
+    "lat": 50.8405519,
+    "lng": 4.355722,
+    "going": 52,
+    "neighbourhood": "Centre",
+    "desc": "Wed 03 June — Sun 07 June Civilisations Brussels Art Fair 2026 Free Fairs and showsQuartier du Sablon View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest925",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest133",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest385",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest117",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest847",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:23 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "4:44 PM"
+      }
+    ],
+    "_rawDate": "2026-06-03"
   }
 ]
