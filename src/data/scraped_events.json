@@ -124,7 +124,7 @@
   {
     "id": 120,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Grace Ives - Félicette",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -200,7 +200,7 @@
   {
     "id": 121,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Whoman - Blumi",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1351,7 +1351,7 @@
   {
     "id": 150,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "JAZZY BAZZ",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1636,7 +1636,7 @@
   {
     "id": 154,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "ASHNIKKO",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -4051,7 +4051,7 @@
   {
     "id": 191,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Festival of the New European Bauhaus",
     "venue": "Art & History Museum (RMAH)",
     "addr": "Art & History Museum (RMAH), Belgium",
@@ -4395,7 +4395,7 @@
   {
     "id": 211,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "garden tales",
     "venue": "Kanal Architecture (ex-CIVA)",
     "addr": "Kanal Architecture (ex-CIVA), Belgium",
@@ -4465,7 +4465,7 @@
   {
     "id": 212,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Artisanal Intelligence",
     "venue": "Hannon House",
     "addr": "Hannon House, Belgium",
@@ -4747,7 +4747,7 @@
   {
     "id": 221,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Bozar Rooftop 2026",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -5139,76 +5139,6 @@
       }
     ],
     "_rawDate": "2026-06-07"
-  },
-  {
-    "id": 234,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Moor Mother + Aquiles Navarro & Olof Melander",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/moor-mother-aquiles-navarro-olof-melander/a10Qw00000IEe1gIAD",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 85,
-    "neighbourhood": "Centre",
-    "desc": "“Moor Mother might be the most radical Afrofuturist artist to emerge for years” (The Wire) + two musical soulmates",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Guest648",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest943",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest009",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "8:54 AM"
-      },
-      {
-        "user": "Axel",
-        "text": "Who else is going?? 🙋",
-        "time": "11:32 PM"
-      },
-      {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "10:22 AM"
-      }
-    ],
-    "_rawDate": "2026-06-02"
   },
   {
     "id": 237,
@@ -6093,7 +6023,7 @@
   {
     "id": 258,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7540,161 +7470,6 @@
     "_rawDate": "2026-09-06"
   },
   {
-    "id": 294,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Meet the Artist: Ronan Bouroullec",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 3,
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-artist-ronan-bouroullec",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 202,
-    "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest778",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest785",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest471",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest245",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest241",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "Counting down the days 🗓️",
-        "time": "6:39 PM"
-      },
-      {
-        "user": "Ali",
-        "text": "First time at this venue!",
-        "time": "6:54 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "This is going to be AMAZING",
-        "time": "7:41 PM"
-      }
-    ],
-    "_rawDate": "2026-06-02"
-  },
-  {
-    "id": 295,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "La Fonte Musica",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/la-fonte-musica",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 192,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Guest979",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest029",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest018",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest235",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest181",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest058",
-        "c": "#90E0EF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Can't wait for this one! 🔥",
-        "time": "1:28 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Brussels never disappoints ❤️",
-        "time": "10:17 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "Who else is going?? 🙋",
-        "time": "2:23 PM"
-      }
-    ],
-    "_rawDate": "2026-06-02"
-  },
-  {
     "id": 296,
     "cat": "Music",
     "date": "This Weekend",
@@ -7758,173 +7533,6 @@
       }
     ],
     "_rawDate": "2026-06-06"
-  },
-  {
-    "id": 297,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "femtanyl - Takihasdied",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/femtanyl-takihasdied-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 180,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest487",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest312",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest965",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest012",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest143",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "First time at this venue!",
-        "time": "3:13 PM"
-      },
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "12:26 AM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Who else is going?? 🙋",
-        "time": "11:34 PM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
-    "id": 298,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "Live At Museum: Oxis",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 269,
-    "neighbourhood": "Saint-Josse",
-    "desc": "As part of the opening of the exhibition Side by Side",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Guest675",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest500",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest672",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest808",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest700",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "Brussels never disappoints ❤️",
-        "time": "2:25 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Brussels never disappoints ❤️",
-        "time": "12:48 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Grab tickets fast, selling out!",
-        "time": "12:13 PM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
   },
   {
     "id": 299,
@@ -8166,7 +7774,7 @@
   {
     "id": 302,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Live Magazine : Anthology",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -8242,7 +7850,7 @@
   {
     "id": 303,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Civilisations Brussels Art Fair 2026",
     "venue": "Quartier du Sablon",
     "addr": "Quartier du Sablon, Belgium",
@@ -8318,5 +7926,448 @@
       }
     ],
     "_rawDate": "2026-06-03"
+  },
+  {
+    "id": 304,
+    "cat": "Music",
+    "date": "This Weekend",
+    "title": "HUMBE",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/humbe/a10Qw00000GNgwbIAD",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 87,
+    "neighbourhood": "Centre",
+    "desc": "First Belgian concert by Mexican alt-pop sensation",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest349",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest366",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest455",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "6:01 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Who else is going?? 🙋",
+        "time": "5:22 PM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 305,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Buckshot - imyraj",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/buckshot-imyraj-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 84,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Dark underground rap with a touch of gothic aesthetics, but above all a raw energy",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest395",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest355",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest716",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest894",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest013",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest346",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "12:34 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Brussels never disappoints ❤️",
+        "time": "10:50 AM"
+      }
+    ],
+    "_rawDate": "2026-06-16"
+  },
+  {
+    "id": 306,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "femtanyl - Takihasdied",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/femtanyl-takihasdied-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 31,
+    "neighbourhood": "Saint-Josse",
+    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest031",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest337",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest797",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:19 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "12:25 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "5:05 AM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 307,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Live At Museum: Oxis",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 233,
+    "neighbourhood": "Saint-Josse",
+    "desc": "As part of the opening of the exhibition Side by Side",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest986",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest810",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest568",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest691",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:42 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "12:06 AM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 308,
+    "cat": "Culture",
+    "date": "Today",
+    "title": "Meet the artist: Roberto Minervini",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 1,
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-artist-roberto-minervini",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 205,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest152",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest767",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest540",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest564",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest282",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest922",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest398",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Grab tickets fast, selling out!",
+        "time": "3:53 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:01 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Can't wait for this one! 🔥",
+        "time": "1:37 PM"
+      }
+    ],
+    "_rawDate": "2026-06-03"
+  },
+  {
+    "id": 309,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "VOLTA Solidarity Festival",
+    "venue": "VOLTA, Centre for music",
+    "addr": "VOLTA, Centre for music, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 0,
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.VOLTA-Solidarity-Festival.5700022799",
+    "lat": 50.86147234400282,
+    "lng": 4.369352583329713,
+    "going": 154,
+    "neighbourhood": "Centre",
+    "desc": "Fri 12 June — Sat 13 June VOLTA Solidarity Festival FestivalVOLTA, Centre for music View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest022",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest393",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest464",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Already got my ticket! 👋",
+        "time": "6:04 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "First time at this venue!",
+        "time": "5:02 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "11:04 PM"
+      }
+    ],
+    "_rawDate": "2026-06-12"
   }
 ]
