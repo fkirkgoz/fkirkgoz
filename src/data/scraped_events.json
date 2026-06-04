@@ -286,7 +286,7 @@
   {
     "id": 122,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Colleen",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -798,7 +798,7 @@
   {
     "id": 135,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: Acid Arab & Lefto Early Bird",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1349,79 +1349,9 @@
     "_rawDate": "2026-06-20"
   },
   {
-    "id": 150,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "JAZZY BAZZ",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/jazzy-bazz-2/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "going": 294,
-    "neighbourhood": "Centre",
-    "desc": "JAZZY BAZZ at La Madeleine.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest099",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest038",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest420",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "First time at this venue!",
-        "time": "2:50 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Brussels never disappoints ❤️",
-        "time": "9:37 AM"
-      }
-    ],
-    "_rawDate": "2026-06-03"
-  },
-  {
     "id": 151,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "JEROEN LEENDERS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1706,7 +1636,7 @@
   {
     "id": 155,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "BEZ OBMEZHEN",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -4393,79 +4323,9 @@
     "_rawDate": "2026-10-17"
   },
   {
-    "id": 211,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "garden tales",
-    "venue": "Kanal Architecture (ex-CIVA)",
-    "addr": "Kanal Architecture (ex-CIVA), Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 1,
-    "tags": [
-      "Culture",
-      "Brussels"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.garden-tales.5700023047",
-    "lat": 50.85420516624766,
-    "lng": 4.350453382057292,
-    "going": 156,
-    "neighbourhood": "Centre",
-    "desc": "Wed 03 June — Sun 07 June garden tales Free Guided toursKanal Architecture (ex-CIVA) View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Guest573",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest539",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "This is going to be AMAZING",
-        "time": "11:06 PM"
-      },
-      {
-        "user": "Iris",
-        "text": "Can't wait for this one! 🔥",
-        "time": "11:30 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Brussels never disappoints ❤️",
-        "time": "10:22 PM"
-      }
-    ],
-    "_rawDate": "2026-06-03"
-  },
-  {
     "id": 212,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Artisanal Intelligence",
     "venue": "Hannon House",
     "addr": "Hannon House, Belgium",
@@ -4747,7 +4607,7 @@
   {
     "id": 221,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Bozar Rooftop 2026",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -5436,7 +5296,7 @@
   {
     "id": 246,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "BXL 2068",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -5963,7 +5823,7 @@
   {
     "id": 256,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Volxem 2026",
     "venue": "Wiels - Contemporary art centre",
     "addr": "Wiels - Contemporary art centre, Belgium",
@@ -6019,86 +5879,6 @@
       }
     ],
     "_rawDate": "2026-06-05"
-  },
-  {
-    "id": 258,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/nightlab-wblck-mamba-dj-workshop-intermediate/a10Qw00000FqD29IAF",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 164,
-    "neighbourhood": "Centre",
-    "desc": "Workshop series with Blck Mamba for the DJs of tomorrow",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest614",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest156",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest407",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest186",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest635",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest949",
-        "c": "#F4A261",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "Counting down the days 🗓️",
-        "time": "3:24 AM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Counting down the days 🗓️",
-        "time": "6:39 PM"
-      }
-    ],
-    "_rawDate": "2026-06-03"
   },
   {
     "id": 261,
@@ -6417,7 +6197,7 @@
   {
     "id": 267,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival Boutures Collectif B.R.A.V.E.",
     "venue": "La Balsamine",
     "addr": "La Balsamine, Belgium",
@@ -6482,7 +6262,7 @@
   {
     "id": 268,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Ghinzu",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -6679,7 +6459,7 @@
   {
     "id": 278,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Rooms : Second Edition",
     "venue": "The Mix",
     "addr": "The Mix, Belgium",
@@ -6884,7 +6664,7 @@
   {
     "id": 281,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Artist in Residence: Showcase Sunchaser",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7025,7 +6805,7 @@
   {
     "id": 286,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Mosaik festival",
     "venue": "L'Os à Moelle",
     "addr": "L'Os à Moelle, Belgium",
@@ -7110,7 +6890,7 @@
   {
     "id": 287,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Clubnight by Liaison x Kunty Kompany: DICTATOR’S FUNERAL + AMI, Henry Keller, prnc, Lucrezia, Anano, ANTWAN, HOLINESS",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7772,162 +7552,6 @@
     "_rawDate": "2026-10-25"
   },
   {
-    "id": 302,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Live Magazine : Anthology",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 3,
-    "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/live-magazine-anthology",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 262,
-    "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Guest198",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest813",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest296",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "Grab tickets fast, selling out!",
-        "time": "10:56 PM"
-      },
-      {
-        "user": "Léa",
-        "text": "Counting down the days 🗓️",
-        "time": "10:17 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "This is going to be AMAZING",
-        "time": "11:21 AM"
-      }
-    ],
-    "_rawDate": "2026-06-03"
-  },
-  {
-    "id": 303,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Civilisations Brussels Art Fair 2026",
-    "venue": "Quartier du Sablon",
-    "addr": "Quartier du Sablon, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Civilisations-Brussels-Art-Fair-2026.5700022661",
-    "lat": 50.8405519,
-    "lng": 4.355722,
-    "going": 52,
-    "neighbourhood": "Centre",
-    "desc": "Wed 03 June — Sun 07 June Civilisations Brussels Art Fair 2026 Free Fairs and showsQuartier du Sablon View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Guest925",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest133",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest385",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest117",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest847",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Nora",
-        "text": "Can't wait for this one! 🔥",
-        "time": "3:23 AM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Already got my ticket! 👋",
-        "time": "4:44 PM"
-      }
-    ],
-    "_rawDate": "2026-06-03"
-  },
-  {
     "id": 304,
     "cat": "Music",
     "date": "This Weekend",
@@ -8069,238 +7693,6 @@
     "_rawDate": "2026-06-16"
   },
   {
-    "id": 306,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "femtanyl - Takihasdied",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/femtanyl-takihasdied-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 31,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Guest031",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest337",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest797",
-        "c": "#90E0EF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Hugo",
-        "text": "Can't wait for this one! 🔥",
-        "time": "6:19 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "12:25 AM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Already got my ticket! 👋",
-        "time": "5:05 AM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
-    "id": 307,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "Live At Museum: Oxis",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 233,
-    "neighbourhood": "Saint-Josse",
-    "desc": "As part of the opening of the exhibition Side by Side",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Guest986",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest810",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest568",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest691",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Axel",
-        "text": "Grab tickets fast, selling out!",
-        "time": "12:42 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Already got my ticket! 👋",
-        "time": "12:06 AM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
-    "id": 308,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Meet the artist: Roberto Minervini",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "friends": 1,
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-artist-roberto-minervini",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 205,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest152",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest767",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest540",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest564",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest282",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest922",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest398",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "Grab tickets fast, selling out!",
-        "time": "3:53 PM"
-      },
-      {
-        "user": "Kaan",
-        "text": "Brussels never disappoints ❤️",
-        "time": "2:01 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Can't wait for this one! 🔥",
-        "time": "1:37 PM"
-      }
-    ],
-    "_rawDate": "2026-06-03"
-  },
-  {
     "id": 309,
     "cat": "Festival",
     "date": "Next Month",
@@ -8369,5 +7761,1653 @@
       }
     ],
     "_rawDate": "2026-06-12"
+  },
+  {
+    "id": 310,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Tashi Dorji + Jean DL",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/tashi-dorji/a10Qw00000IDhpZIAT",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 52,
+    "neighbourhood": "Centre",
+    "desc": "Bhutanese master guitarist back at AB",
+    "attendees": [
+      {
+        "n": "Guest202",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest237",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "2:07 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "9:57 PM"
+      }
+    ],
+    "_rawDate": "2026-06-09"
+  },
+  {
+    "id": 311,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Group Atelier w/Youssef Swatt's",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/group-atelier-wyoussef-swatts/a10Qw00000HotxDIAR",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 211,
+    "neighbourhood": "Centre",
+    "desc": "Feedback on stage presence with Youssef Swatt's",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest967",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest443",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:57 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Who else is going?? 🙋",
+        "time": "4:07 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Who else is going?? 🙋",
+        "time": "12:40 PM"
+      }
+    ],
+    "_rawDate": "2026-06-10"
+  },
+  {
+    "id": 312,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Colleen - maya dhondt",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/colleen-maya-dhondt-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 314,
+    "neighbourhood": "Saint-Josse",
+    "desc": "From reinvented acoustics to warm analog synths, Colleen explores minimalism, avant-pop, and new sonic textures",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest750",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest189",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest132",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest314",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest117",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "1:25 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Brussels never disappoints ❤️",
+        "time": "6:16 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "2:29 PM"
+      }
+    ],
+    "_rawDate": "2026-06-11"
+  },
+  {
+    "id": 313,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "femtanyl - Takihasdied",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/femtanyl-takihasdied-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 259,
+    "neighbourhood": "Saint-Josse",
+    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest576",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest664",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest411",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "11:25 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "7:51 AM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 314,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Live At Museum: Oxis",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 163,
+    "neighbourhood": "Saint-Josse",
+    "desc": "As part of the opening of the exhibition Side by Side",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest914",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest698",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest499",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest015",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest252",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest872",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest674",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Brussels never disappoints ❤️",
+        "time": "9:38 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "7:21 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "First time at this venue!",
+        "time": "12:44 AM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 315,
+    "cat": "Music",
+    "date": "October",
+    "title": "SOOSHI MANGO",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/sooshi-mango/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 223,
+    "neighbourhood": "Centre",
+    "desc": "SOOSHI MANGO at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Guest017",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest388",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest860",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest441",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "1:59 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Brussels never disappoints ❤️",
+        "time": "9:24 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "1:45 AM"
+      }
+    ],
+    "_rawDate": "2026-10-26"
+  },
+  {
+    "id": 316,
+    "cat": "Music",
+    "date": "October",
+    "title": "NONO LA GRINTA",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/nono-la-grinta/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 174,
+    "neighbourhood": "Centre",
+    "desc": "NONO LA GRINTA at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest263",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest221",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest363",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest611",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest510",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest861",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "1:40 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:57 PM"
+      }
+    ],
+    "_rawDate": "2026-10-29"
+  },
+  {
+    "id": 317,
+    "cat": "Music",
+    "date": "November",
+    "title": "KELELA",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/kelela/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 240,
+    "neighbourhood": "Centre",
+    "desc": "KELELA at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest307",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest303",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest071",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest720",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest453",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest170",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "8:31 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "2:22 PM"
+      }
+    ],
+    "_rawDate": "2026-11-02"
+  },
+  {
+    "id": 318,
+    "cat": "Music",
+    "date": "November",
+    "title": "ALCEU VALENÇA",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/alceu-valenca/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 21,
+    "neighbourhood": "Centre",
+    "desc": "ALCEU VALENÇA at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest575",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest058",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:57 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "6:58 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:33 PM"
+      }
+    ],
+    "_rawDate": "2026-11-04"
+  },
+  {
+    "id": 319,
+    "cat": "Music",
+    "date": "November",
+    "title": "SO LA LUNE",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/so-la-lune-2/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 237,
+    "neighbourhood": "Centre",
+    "desc": "SO LA LUNE at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest356",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest836",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "11:23 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "2:21 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "8:31 AM"
+      }
+    ],
+    "_rawDate": "2026-11-06"
+  },
+  {
+    "id": 320,
+    "cat": "Music",
+    "date": "November",
+    "title": "KOCEE LIVE BAND CONCERT",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/kocee-live-band-2/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 56,
+    "neighbourhood": "Centre",
+    "desc": "KOCEE LIVE BAND CONCERT at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest064",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest989",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest956",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest513",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest781",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest184",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest352",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "1:52 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "5:12 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:36 PM"
+      }
+    ],
+    "_rawDate": "2026-11-07"
+  },
+  {
+    "id": 321,
+    "cat": "Music",
+    "date": "November",
+    "title": "POETIC LOVER",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/poetic-lover-08-11/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 223,
+    "neighbourhood": "Centre",
+    "desc": "POETIC LOVER at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest042",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest805",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest976",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest948",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest952",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest246",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest980",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "First time at this venue!",
+        "time": "12:26 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Can't wait for this one! 🔥",
+        "time": "11:31 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Brussels never disappoints ❤️",
+        "time": "7:26 PM"
+      }
+    ],
+    "_rawDate": "2026-11-08"
+  },
+  {
+    "id": 322,
+    "cat": "Music",
+    "date": "November",
+    "title": "THE FRAY",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/the-fray/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 65,
+    "neighbourhood": "Centre",
+    "desc": "THE FRAY at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest806",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest593",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest667",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest394",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:16 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "12:20 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "3:05 AM"
+      }
+    ],
+    "_rawDate": "2026-11-09"
+  },
+  {
+    "id": 323,
+    "cat": "Music",
+    "date": "November",
+    "title": "MERYL",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/meryl/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 301,
+    "neighbourhood": "Centre",
+    "desc": "MERYL at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest676",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest713",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest237",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "4:45 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "3:00 AM"
+      }
+    ],
+    "_rawDate": "2026-11-12"
+  },
+  {
+    "id": 324,
+    "cat": "Music",
+    "date": "November",
+    "title": "KABARET MŁODYCH PANÓW",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/kabaret-mlodych-panow/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 149,
+    "neighbourhood": "Centre",
+    "desc": "KABARET MŁODYCH PANÓW at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest344",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest156",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest121",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "3:28 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:29 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "This is going to be AMAZING",
+        "time": "5:58 PM"
+      }
+    ],
+    "_rawDate": "2026-11-14"
+  },
+  {
+    "id": 325,
+    "cat": "Music",
+    "date": "November",
+    "title": "RENAN LUCE JOUE REPENTI",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/renan-luce-joue-repenti/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 47,
+    "neighbourhood": "Centre",
+    "desc": "RENAN LUCE JOUE REPENTI at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest770",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest219",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest939",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest945",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest491",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest285",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:51 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Brussels never disappoints ❤️",
+        "time": "6:06 AM"
+      }
+    ],
+    "_rawDate": "2026-11-15"
+  },
+  {
+    "id": 326,
+    "cat": "Music",
+    "date": "November",
+    "title": "SALMO",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/salmo/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 296,
+    "neighbourhood": "Centre",
+    "desc": "SALMO at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest075",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest276",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest944",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest496",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "8:13 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Already got my ticket! 👋",
+        "time": "3:42 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Already got my ticket! 👋",
+        "time": "5:59 AM"
+      }
+    ],
+    "_rawDate": "2026-11-16"
+  },
+  {
+    "id": 327,
+    "cat": "Music",
+    "date": "November",
+    "title": "STRANGELOVE - THE DEPECHE MODE EXPERIENCE",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/strangelove-the-depeche-mode-experience/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 130,
+    "neighbourhood": "Centre",
+    "desc": "STRANGELOVE - THE DEPECHE MODE EXPERIENCE at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Guest746",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest865",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest970",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest125",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest121",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "This is going to be AMAZING",
+        "time": "5:45 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Grab tickets fast, selling out!",
+        "time": "6:55 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "1:00 AM"
+      }
+    ],
+    "_rawDate": "2026-11-17"
+  },
+  {
+    "id": 328,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Dry Leaf - Aleksandre Koberidze",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 2,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/dry-leaf-aleksandre-koberidze",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 182,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Guest116",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest594",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest106",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest674",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest863",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest356",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:51 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "1:59 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "12:47 AM"
+      }
+    ],
+    "_rawDate": "2026-06-28"
+  },
+  {
+    "id": 329,
+    "cat": "Arts",
+    "date": "Today",
+    "title": "The Damned - Roberto Minervini",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/damned-roberto-minervini",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 151,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest725",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest031",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest369",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:13 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Counting down the days 🗓️",
+        "time": "4:56 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "4:36 AM"
+      }
+    ],
+    "_rawDate": "2026-06-04"
+  },
+  {
+    "id": 330,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "A Winged Victory for the Sullen",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/winged-victory-sullen",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 26,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest504",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest567",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "3:42 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Can't wait for this one! 🔥",
+        "time": "1:45 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "1:18 AM"
+      }
+    ],
+    "_rawDate": "2026-06-05"
+  },
+  {
+    "id": 331,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Park Poetik",
+    "venue": "Various locations in Saint-Gilles and Forest",
+    "addr": "Various locations in Saint-Gilles and Forest, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Park-Poetik.5700022231",
+    "lat": 50.85349578381596,
+    "lng": 4.369423530765235,
+    "going": 301,
+    "neighbourhood": "Centre",
+    "desc": "Fri 12 June — Sat 05 September Park Poetik FestivalVarious locations in Saint-Gilles and Forest View more",
+    "attendees": [
+      {
+        "n": "Guest868",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest796",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest532",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest205",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest742",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest672",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest987",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "3:13 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "First time at this venue!",
+        "time": "12:50 PM"
+      }
+    ],
+    "_rawDate": "2026-06-12"
+  },
+  {
+    "id": 332,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Maatwerk Festival",
+    "venue": "Quai Béco/Quai des Péniches/Pont Van Praet/Quai de Heembeek/Park Drie Fonteinen/",
+    "addr": "Quai Béco/Quai des Péniches/Pont Van Praet/Quai de Heembeek/Park Drie Fonteinen/, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Maatwerk-Festival.5700020625",
+    "lat": 50.85467016058984,
+    "lng": 4.36030753767082,
+    "going": 114,
+    "neighbourhood": "Centre",
+    "desc": "Sat 13 June Maatwerk Festival FestivalQuai Béco/Quai des Péniches/Pont Van Praet/Quai de Heembeek/Park Drie Fonteinen/Vilvoorde Centrum View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest923",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest439",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest915",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "3:11 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "1:43 PM"
+      }
+    ],
+    "_rawDate": "2026-06-13"
   }
 ]
