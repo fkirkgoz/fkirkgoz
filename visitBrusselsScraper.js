@@ -28,25 +28,39 @@ const VB_ID_START  = 2000;       // well above existing range (100–201)
 const REQ_TIMEOUT  = 12000;      // ms per HTTP request
 const REQ_DELAY    = 1200;       // ms between requests (rate-limit courtesy)
 
-// Target rows from the Excel — expanded to include more vibrant venue types
+// Target rows from the Excel — includes nightclubs so UMI, Signal Club, etc. pass the filter
 const TARGET_CATS = [
   'live music', 'performing arts venue',
   'concert hall', 'bar / club', 'nightlife',
+  'nightclubs', 'clubbing agenda', 'night leisure',
   'cultural centre', 'contemporary art',
+  'galleries and contemporary art centre',
 ];
 
-// Venues already covered by the main eventScraper.js — skip these to avoid duplication.
+// Venues already covered by the main eventScraper.js — never touch these.
 const SKIP_VENUES = [
   'ancienne belgique', 'le botanique', 'botanique', 'fuse',
   'c12', 'cirque royal', 'la madeleine', 'bozar',
 ];
 
-// Curated priority venues for this scraper — alternative/younger-demographic spots.
-// Matched by partial name (case-insensitive), sorted to front of batch.
+// Gen-Z curated list — identified from the Visit.Brussels Excel dataset.
+// Sorted to the front of the batch; category-matched venues fill remaining slots.
+//
+// Selected venues:
+//   UMI               – underground art nightclub       (umibrussels.art)
+//   Signal Club       – electronic / underground        (darkdistortedsignals.com)
+//   BUDA BXL          – club + live music               (budabxl.be)
+//   Madame Moustache  – live music / nightclub          (madamemoustache.be)
+//   Beursschouwburg   – alt cultural hub                (beursschouwburg.be)
+//   Magasin 4         – independent punk / indie venue  (magasin4.be)
+//   La Machine        – underground club / bar          (lamachine.be)
+//   KANAL             – trendy art + events space       (kanal.brussels)
+//   Quai 20           – nightclub / clubbing            (quai20.be)
+//   Kaaitheater       – progressive performing arts     (kaaitheater.be)
 const PRIORITY_VENUES = [
-  'beursschouwburg', 'halles de schaerbeek', 'recyclart',
-  'vaartkapoen', 'kvs', 'galeries', 'rock classic', 'bonnefooi',
-  'wiels', 'palace',
+  'umi', 'signal club', 'buda bxl', 'madame moustache',
+  'beursschouwburg', 'magasin 4', 'la machine', 'kanal',
+  'quai 20', 'kaaitheater',
 ];
 
 // Multilingual keywords for event-page discovery
@@ -58,16 +72,19 @@ const EVENT_KW = [
 
 // Visit category → Randevu cat
 const CAT_MAP = {
-  'live music':            'Music',
-  'performing arts venue': 'Culture',
-  'concert hall':          'Music',
-  'bar / club':            'Nightlife',
-  'nightlife':             'Nightlife',
-  'nightclubs':            'Nightlife',
-  'clubbing agenda':       'Nightlife',
-  'cultural centre':       'Culture',
-  'contemporary art':      'Culture',
-  'cultural agenda':       'Culture',
+  'live music':                              'Music',
+  'performing arts venue':                   'Culture',
+  'concert hall':                            'Music',
+  'bar / club':                              'Nightlife',
+  'bars & cafés':                            'Nightlife',
+  'nightlife':                               'Nightlife',
+  'nightclubs':                              'Nightlife',
+  'clubbing agenda':                         'Nightlife',
+  'night leisure':                           'Nightlife',
+  'cultural centre':                         'Culture',
+  'contemporary art':                        'Culture',
+  'galleries and contemporary art centre':   'Culture',
+  'cultural agenda':                         'Culture',
 };
 
 const EMOJI_MAP = { Music: '🎸', Culture: '🎭', Nightlife: '🎷' };
