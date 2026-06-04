@@ -525,6 +525,14 @@ function extractEventsFromPage(html, venue) {
   // 3. Deduplicate consecutive identical segments (repeated DOM renders)
   const segs = segments.filter((s, i) => i === 0 || s.text !== segments[i - 1].text);
 
+  // Build a frequency map — text appearing 3+ times is structural (nav/category), not a title
+  const segFreq = new Map();
+  for (const s of segs) {
+    const k = s.text.toLowerCase().trim();
+    segFreq.set(k, (segFreq.get(k) ?? 0) + 1);
+  }
+  const isRepeated = (text) => (segFreq.get(text.toLowerCase().trim()) ?? 0) >= 3;
+
   // 4. Scan every segment for a date; when found, resolve title from neighbours
   const events  = [];
   const seenKey = new Set();
@@ -551,17 +559,29 @@ function extractEventsFromPage(html, venue) {
       !isNoise(inlineTitle) &&
       !isGenericTitle(inlineTitle) &&
       !isWeakTitle(inlineTitle) &&
+      !isRepeated(inlineTitle) &&
       parseRawDate(inlineTitle) === null
     ) {
       title = inlineTitle;
     }
 
-    // Priority 2: walk backwards up to 6 segments, skipping noise AND generic labels
+    // Priority 2: walk backwards — heading tags first, then any valid segment
     if (!title) {
-      for (let j = i - 1; j >= Math.max(0, i - 6); j--) {
-        const c = segs[j].text;
-        if (!isNoise(c) && !isGenericTitle(c) && !isWeakTitle(c) && parseRawDate(c) === null) {
-          title = c; break;
+      // 2a: headings only (h1–h3, strong, b) — most reliable title source
+      for (let j = i - 1; j >= Math.max(0, i - 8); j--) {
+        const s = segs[j];
+        if (!s.isHeading) continue;
+        if (!isNoise(s.text) && !isGenericTitle(s.text) && !isWeakTitle(s.text) && !isRepeated(s.text) && parseRawDate(s.text) === null) {
+          title = s.text; break;
+        }
+      }
+      // 2b: fallback — any non-noise, non-repeated segment within 6 steps
+      if (!title) {
+        for (let j = i - 1; j >= Math.max(0, i - 6); j--) {
+          const c = segs[j].text;
+          if (!isNoise(c) && !isGenericTitle(c) && !isWeakTitle(c) && !isRepeated(c) && parseRawDate(c) === null) {
+            title = c; break;
+          }
         }
       }
     }
@@ -570,7 +590,7 @@ function extractEventsFromPage(html, venue) {
     if (!title) {
       for (let j = i + 1; j <= Math.min(segs.length - 1, i + 4); j++) {
         const c = segs[j].text;
-        if (!isNoise(c) && !isGenericTitle(c) && !isWeakTitle(c) && parseRawDate(c) === null) {
+        if (!isNoise(c) && !isGenericTitle(c) && !isWeakTitle(c) && !isRepeated(c) && parseRawDate(c) === null) {
           title = c; break;
         }
       }

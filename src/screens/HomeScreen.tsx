@@ -25,7 +25,16 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   const [notifOpen, setNotifOpen] = useState(false);
   const [nRead, setNRead] = useState(false);
   const [sort, setSort] = useState<'date-asc' | 'date-desc' | 'alpha-asc' | 'alpha-desc'>('date-asc');
+  const [sortOpen, setSortOpen] = useState(false);
   const searchRef = useRef<TextInput>(null);
+
+  const SORT_OPTIONS = [
+    ['date-asc',   '📅 Earliest first'],
+    ['date-desc',  '📅 Latest first'],
+    ['alpha-asc',  '🔤 A → Z'],
+    ['alpha-desc', '🔤 Z → A'],
+  ] as const;
+  const currentSortLabel = SORT_OPTIONS.find(([m]) => m === sort)?.[1] ?? '📅 Earliest first';
 
   // Build date pill list: standard labels first, then any named-month labels
   // (e.g. 'July', 'August') that exist in the current event data.
@@ -199,34 +208,31 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
         </ScrollView>
       )}
 
-      {/* Sort strip */}
+      {/* Sort dropdown */}
       {!q && (
-        <View style={styles.sortRow}>
-          <Text style={[styles.sortLabel, { color: T.sub }]}>Sort:</Text>
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 7 }}>
-            {([
-              ['date-asc',   '📅 Earliest'],
-              ['date-desc',  '📅 Latest'],
-              ['alpha-asc',  '🔤 A → Z'],
-              ['alpha-desc', '🔤 Z → A'],
-            ] as const).map(([mode, label]) => {
-              const active = sort === mode;
-              return (
-                <Tap key={mode} onPress={() => setSort(mode)}>
-                  <View style={[styles.sortChip, { backgroundColor: active ? T.accent : T.pill, borderColor: active ? T.accent : T.border }]}>
-                    <Text style={{ fontSize: 12, fontWeight: '800', color: active ? C.white : T.sub }}>{label}</Text>
-                  </View>
-                </Tap>
-              );
-            })}
-            {sort !== 'date-asc' && (
-              <Tap onPress={() => setSort('date-asc')}>
-                <View style={[styles.sortChip, { backgroundColor: '#FF444414', borderColor: '#FF4444' }]}>
-                  <Text style={{ fontSize: 12, fontWeight: '800', color: '#FF4444' }}>✕ Reset</Text>
-                </View>
-              </Tap>
-            )}
-          </ScrollView>
+        <View style={{ paddingHorizontal: 22, marginTop: 12 }}>
+          <Tap onPress={() => setSortOpen(s => !s)}>
+            <View style={[styles.sortHeader, { backgroundColor: T.card, borderColor: T.border }]}>
+              <Text style={[styles.sortLabel, { color: T.sub }]}>Sort</Text>
+              <Text style={[styles.sortHeaderValue, { color: T.text }]}>{currentSortLabel}</Text>
+              <Text style={{ color: T.sub, fontSize: 11, fontWeight: '700' }}>{sortOpen ? '▲' : '▼'}</Text>
+            </View>
+          </Tap>
+          {sortOpen && (
+            <View style={[styles.sortDropdown, { backgroundColor: T.card, borderColor: T.border }]}>
+              {SORT_OPTIONS.map(([mode, label]) => {
+                const active = sort === mode;
+                return (
+                  <Tap key={mode} onPress={() => { setSort(mode); setSortOpen(false); }}>
+                    <View style={[styles.sortOption, { borderBottomColor: T.border }]}>
+                      <Text style={[styles.sortOptionTxt, { color: active ? T.accent : T.text }]}>{label}</Text>
+                      {active && <Text style={{ color: T.accent, fontWeight: '900' }}>✓</Text>}
+                    </View>
+                  </Tap>
+                );
+              })}
+            </View>
+          )}
         </View>
       )}
 
@@ -298,9 +304,12 @@ const styles = StyleSheet.create({
   filterChip:        { borderRadius: 16, paddingHorizontal: 15, paddingVertical: 9, borderWidth: 1.5 },
   filterChipTxt:     { fontSize: 12, fontWeight: '800' },
   datePill:          { borderRadius: 50, paddingHorizontal: 15, paddingVertical: 7, borderWidth: 1.5 },
-  sortRow:           { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 22, marginTop: 12 },
   sortLabel:         { fontSize: 11, fontWeight: '800', letterSpacing: 1, textTransform: 'uppercase' },
-  sortChip:          { borderRadius: 16, paddingHorizontal: 14, paddingVertical: 7, borderWidth: 1.5 },
+  sortHeader:        { flexDirection: 'row', alignItems: 'center', gap: 10, borderRadius: 16, paddingHorizontal: 16, paddingVertical: 12, borderWidth: 1.5 },
+  sortHeaderValue:   { flex: 1, fontSize: 13, fontWeight: '700' },
+  sortDropdown:      { borderRadius: 16, borderWidth: 1.5, marginTop: 6, overflow: 'hidden' },
+  sortOption:        { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 16, paddingVertical: 14, borderBottomWidth: 1 },
+  sortOptionTxt:     { fontSize: 13, fontWeight: '700' },
   noResultsTitle:    { fontWeight: '700', fontSize: 16 },
   noResultsSub:      { fontSize: 13, marginTop: 6 },
 });

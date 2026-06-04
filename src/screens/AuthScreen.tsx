@@ -12,6 +12,7 @@ export interface AuthUser {
   name: string;
   email: string;
   password: string;
+  phone?: string;
   bio?: string;
   vibes?: string[];
 }
@@ -117,6 +118,7 @@ export default function AuthScreen({ onAuth, T }: Props) {
   const [email, setEmail]     = useState('');
   const [pass, setPass]       = useState('');
   const [confirm, setConfirm] = useState('');
+  const [phone, setPhone]     = useState('');
   const [bio, setBio]         = useState('');
   const [vibes, setVibes]     = useState<string[]>([]);
   const [termsAccepted, setTermsAccepted] = useState(false);
@@ -141,6 +143,7 @@ export default function AuthScreen({ onAuth, T }: Props) {
     if (!/\S+@\S+\.\S+/.test(email.trim())) return setErr('Please enter a valid email address.');
     if (pass.length < 6)  return setErr('Password must be at least 6 characters.');
     if (pass !== confirm)  return setErr("Passwords don't match.");
+    if (phone.replace(/\D/g, '').length < 7) return setErr('Please enter a valid phone number.');
     if (!termsAccepted)    return setErr('Please accept the Terms & Conditions to continue.');
 
     setLoad(true);
@@ -152,11 +155,12 @@ export default function AuthScreen({ onAuth, T }: Props) {
       }
 
       const u: AuthUser = {
-        name:   name.trim(),
-        email:  email.toLowerCase().trim(),
+        name:     name.trim(),
+        email:    email.toLowerCase().trim(),
         password: pass,
-        bio:    bio.trim() || undefined,
-        vibes:  vibes.length > 0 ? vibes : undefined,
+        phone:    phone.trim(),
+        bio:      bio.trim() || undefined,
+        vibes:    vibes.length > 0 ? vibes : undefined,
       };
 
       await persistUser(u);
@@ -289,6 +293,15 @@ export default function AuthScreen({ onAuth, T }: Props) {
                 onChangeText={v => { setConfirm(v); clearErr(); }}
                 style={[styles.input, { backgroundColor: T.input, color: T.text, borderColor: `${T.accent}35` }]}
                 secureTextEntry
+              />
+
+              <TextInput
+                placeholder="Phone number"
+                placeholderTextColor={T.sub}
+                value={phone}
+                onChangeText={v => { setPhone(v); clearErr(); }}
+                style={[styles.input, { backgroundColor: T.input, color: T.text, borderColor: `${T.accent}35` }]}
+                keyboardType="phone-pad"
               />
 
               <Text style={[styles.fieldLabel, { color: T.sub }]}>Bio (optional)</Text>
