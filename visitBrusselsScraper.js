@@ -169,6 +169,29 @@ async function fetchHtml(url) {
   }
 }
 
+// Headless-browser fetch for JS-rendered sites (Puppeteer).
+// Called only as a last resort when Axios returns 0 events.
+async function fetchHtmlPuppeteer(url) {
+  let browser;
+  try {
+    const puppeteer = require('puppeteer');
+    browser = await puppeteer.launch({
+      headless: true,
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    });
+    const page = await browser.newPage();
+    await page.setUserAgent('Mozilla/5.0 (Randevu/1.0; +https://randevu.app)');
+    await page.goto(url, { waitUntil: 'networkidle2', timeout: 25000 });
+    // Extra pause so JS components finish rendering text into the DOM
+    await sleep(2500);
+    return await page.content();
+  } catch {
+    return null;
+  } finally {
+    if (browser) await browser.close().catch(() => {});
+  }
+}
+
 // ─── Step 1: Parse Excel → venue batch ───────────────────────────────────────
 
 function loadVenueBatch() {
@@ -709,36 +732,68 @@ async function main() {
     // If the homepage scan + discovered links yielded nothing, try appending
     // common localized event sub-paths to the venue root URL one by one.
     if (allEvents.length === 0) {
-      const base   = new URL(venue.url);
-      const root   = base.origin;
-      const SLUGS  = [
+      const base  = new URL(venue.url);
+      const root  = base.origin;
+      const SLUGS = [
         '/agenda', '/events', '/concerts', '/programmation',
         '/programme', '/en/agenda', '/fr/agenda', '/nl/agenda',
         '/whats-on', '/calendar', '/spectacles',
       ];
-      console.log('  ↳ 0 events from primary pass — trying fallback slugs…');
+      let slugHit = false;
       for (const slug of SLUGS) {
         const slugUrl = root + slug;
-        // Skip if it would just re-fetch the same page
         if (venue.url.replace(/\/$/, '') === slugUrl.replace(/\/$/, '')) continue;
-        process.stdout.write(`    ${slug} … `);
         const slugHtml = await fetchHtml(slugUrl);
-        if (!slugHtml) { console.log('no response'); await sleep(600); continue; }
+        if (!slugHtml) { await sleep(600); continue; }
         const evs = extractEventsFromPage(slugHtml, venue);
         if (evs.length > 0) {
           allEvents.push(...evs);
-          console.log(`${evs.length} event(s) found ✓`);
-          break;   // stop as soon as one slug yields results
+          console.log(`  ↳ Slug ${slug} → ${evs.length} event(s) ✓`);
+          slugHit = true;
+          break;
         }
-        console.log('0 events');
         await sleep(800);
       }
-      // Dedup again after slug fetch
+      if (!slugHit && allEvents.length === 0) {
+        // nothing from static fetches — silent, Puppeteer pass comes next
+      }
+
+      // Dedup after slug fetch
       const seen2 = new Set();
       allEvents = allEvents.filter(ev => {
         const key = ev.title.toLowerCase() + ev.rawDate;
         if (seen2.has(key)) return false;
         seen2.add(key);
+        return true;
+      });
+    }
+
+    // ── Puppeteer fallback for JS-rendered sites ───────────────────────────
+    // If both the Axios pass and slug crawling returned nothing, the page is
+    // likely client-side rendered.  Re-try the top event links (or homepage)
+    // using a headless browser.
+    if (allEvents.length === 0) {
+      console.log('  ↳ 0 events via static fetch — retrying with headless browser…');
+      const ppPages = links.length > 0 ? links.slice(0, 2) : [{ url: venue.url, isAnchor: false }];
+      for (const link of ppPages) {
+        const html = await fetchHtmlPuppeteer(link.url);
+        if (!html) { console.log(`    ✗ Puppeteer could not load ${link.url}`); continue; }
+        const evs = extractEventsFromPage(html, venue);
+        if (evs.length > 0) {
+          allEvents.push(...evs);
+          console.log(`    ✓ Puppeteer found ${evs.length} event(s)`);
+          break;
+        }
+        console.log(`    ℹ Puppeteer: page loaded but no parseable events`);
+        await sleep(REQ_DELAY);
+      }
+
+      // Dedup after Puppeteer pass
+      const seen3 = new Set();
+      allEvents = allEvents.filter(ev => {
+        const key = ev.title.toLowerCase() + ev.rawDate;
+        if (seen3.has(key)) return false;
+        seen3.add(key);
         return true;
       });
     }
