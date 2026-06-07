@@ -1051,6 +1051,107 @@ async function scrapeVenue(browser, config) {
         }
       }
 
+      // ── Strategy 1.7: jsHeavy live DOM scrape via page.evaluate() ──
+      // For React/Vue SPAs: Cheerio only sees the pre-JS static shell, so CSS selectors
+      // find nothing. page.evaluate() runs inside the browser context where JS has already
+      // rendered the real DOM, giving us real event cards.
+      if (config.jsHeavy && events.length === 0) {
+        try {
+          console.log(`    Strategy 1.7 (jsHeavy live DOM): waiting for deferred renders…`);
+          await sleep(3000);
+
+          const liveCards = await page.evaluate(() => {
+            function hasDates(text) {
+              return /\d{1,2}[\s\/.\-]\d{1,2}|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{4}/i.test(text);
+            }
+
+            // Try progressively broader selectors; keep the largest matching set
+            const SELECTORS = [
+              '[class*="event"]','[class*="Event"]',
+              '[class*="agenda"]','[class*="Agenda"]',
+              '[class*="show"]','[class*="Show"]',
+              '[class*="concert"]','[class*="Concert"]',
+              '[class*="programme"]','[class*="Programme"]',
+              '[class*="card"]','[class*="Card"]',
+              '[class*="listing"]','[class*="Listing"]',
+              '[class*="item"]','[class*="Item"]',
+              'article','li',
+            ];
+            let best = [];
+            for (const sel of SELECTORS) {
+              try {
+                const els = [...document.querySelectorAll(sel)].filter(el => {
+                  const t = (el.innerText || '').trim();
+                  return t.length > 20 && t.length < 1500;
+                });
+                if (els.length > best.length) best = els;
+              } catch {}
+            }
+
+            // Keep only items that have heading AND date signal
+            const candidates = best.filter(el => {
+              const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"]');
+              if (!h) return false;
+              const t = (el.innerText || '').trim();
+              const hasDateEl = !!el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="dag"],[class*="datum"]');
+              return hasDateEl || hasDates(t);
+            }).slice(0, 50);
+
+            return candidates.map(el => {
+              const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"]');
+              const title = (h?.innerText || '').replace(/\s+/g, ' ').trim();
+
+              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="dag"],[class*="datum"],[class*="day"],[class*="period"]');
+              const dateStr = dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').replace(/\s+/g, ' ').trim() || '';
+
+              const timeEl = el.querySelector('[class*="time"],[class*="hour"],[class*="uur"]');
+              const timeText = (timeEl?.innerText || '').replace(/\s+/g, ' ').trim();
+
+              const descEl = el.querySelector('p,[class*="desc"],[class*="intro"],[class*="summary"]');
+              const desc = (descEl?.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 200);
+
+              // Three-tier link: heading anchor → slug anchor → first anchor
+              const headingLink = h?.querySelector('a')?.href || h?.closest?.('a')?.href || '';
+              const allLinks = [...el.querySelectorAll('a[href]')];
+              const slugLink = allLinks.find(a => /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail/i.test(a.href || ''));
+              const link = headingLink || slugLink?.href || allLinks[0]?.href || '';
+
+              const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
+              return { title, dateStr, timeText, desc, link, allText };
+            });
+          });
+
+          console.log(`    Strategy 1.7: ${liveCards.length} live card(s) found`);
+          const baseOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || '';
+
+          for (const { title, dateStr, timeText, desc, link, allText } of liveCards) {
+            if (!isValidTitle(title)) continue;
+            const rawDate = parseRawDate(dateStr) || parseRawDate(scanTextForDate(allText));
+            if (!rawDate) { console.log(`    skip "${title.slice(0,30)}" — date not parsed`); continue; }
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+
+            const url = link.startsWith('http') ? link
+              : link.startsWith('/') ? `${baseOrigin}${link}` : link;
+            const cls = classifyForVenue(title + ' ' + desc, config);
+            const smart = smartDefaultTime(cls.cat);
+            const { time: parsedTime, startH, endH } = parseTime(timeText, smart.time);
+
+            events.push({
+              _rawDate: rawDate, title, venue: config.name, addr: config.addr,
+              date: refineDateLabel(relDate, startH), time: parsedTime, startH, endH,
+              emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
+              source: config.name, officialEventLink: url,
+              desc: desc || `${title} at ${config.name}.`,
+              neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
+            });
+          }
+          console.log(`    Strategy 1.7 → ${events.length} valid event(s)`);
+        } catch (err) {
+          console.log(`    Strategy 1.7 failed: ${err.message.slice(0, 80)}`);
+        }
+      }
+
       // ── Strategy 2: HTML — heading + date presence filter ──
       // Requires a candidate element to contain BOTH a heading AND a date signal,
       // so it works regardless of CSS class names.
@@ -1279,6 +1380,7 @@ async function main() {
     'atelier marcel hastir', 'toots jazz club',
     'théâtre royal des galeries', 'theatre royal des galeries',
     'cloud seven', 'l\'archiduc', 'archiduc',
+    'vedovi gallery', 'blast gallery', 'encore',
   ];
   const preVenuePurge = existing.length;
   existing = existing.filter(e => {
