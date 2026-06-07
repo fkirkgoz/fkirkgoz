@@ -1111,46 +1111,72 @@ async function scrapeVenue(browser, config) {
 
         const baseOrigin = config.urls[0].match(/^https?:\/\/[^\/]+/)?.[0] || '';
 
+        const DATE_SELS = [
+          'time','[datetime]','[class*="date"]','[class*="when"]',
+          '[class*="dag"]','[class*="datum"]','[class*="day"]','[class*="period"]',
+        ].join(',');
+
+        // Helper: pull the best date text from a scoped Cheerio set.
+        function findDateIn($scope) {
+          const dtAttr = $scope.find('[datetime]').first().attr('datetime')
+            || $scope.find('time').first().attr('datetime') || '';
+          const dtTxt  = clean($scope.find(DATE_SELS).first().text());
+          return dtAttr || dtTxt || null;
+        }
+
         candidates.each((i, el) => {
           if (i >= 50) return;
-          const $el  = $(el);
-          const title = clean($el.find([
+          const $el = $(el);
+
+          // Capture heading element explicitly — used for both title and date proximity.
+          const headingEl = $el.find([
             'h1','h2','h3','h4','h5','strong',
             '[class*="title"]','[class*="name"]','[class*="artist"]','[class*="heading"]',
-          ].join(',')).first().text());
+          ].join(',')).first();
+          const title = clean(headingEl.text());
           if (!isValidTitle(title)) return;
 
-          const dtAttr     = $el.find('[datetime]').first().attr('datetime') || $el.find('time').first().attr('datetime') || '';
-          const dtSpecific = clean($el.find([
-            'time','[class*="date"]','[class*="when"]','[class*="dag"]',
-            '[class*="datum"]','[class*="day"]','[class*="period"]',
-          ].join(',')).first().text());
-          const dtScanned  = (!dtAttr && !dtSpecific) ? scanTextForDate($el.text()) : null;
-          const dateText   = dtAttr || dtSpecific || dtScanned || '';
-          console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${dateText.slice(0,35)}"`);
+          // Date anchoring — search nearest DOM context first to avoid cross-card pairing.
+          // Tier 1: heading's direct parent (tightest possible scope).
+          // Tier 2: heading's grandparent.
+          // Tier 3: full candidate element.
+          // Tier 4: raw text scan of the candidate as last resort.
+          const headingParent      = headingEl.parent();
+          const headingGrandparent = headingParent.parent();
+          const dateText =
+            findDateIn(headingParent)      ||
+            findDateIn(headingGrandparent) ||
+            findDateIn($el)                ||
+            scanTextForDate($el.text())    || '';
+
+          console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${(dateText+'').slice(0,35)}"`);
 
           const rawDate = parseRawDate(dateText);
           if (!rawDate) { console.log(`      → date not parsed`); return; }
           const relDate = toRelativeDate(rawDate);
           if (!relDate) return;
 
-          const timeText  = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
-          const desc = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
+          const timeText = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
+          const desc     = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
 
-          // Deep-link: prioritise anchors that point to a specific event detail page.
-          // 1. Anchor wrapping or containing the heading element (most direct event link).
-          // 2. Any <a> whose href contains an event-slug keyword.
-          // 3. Fallback to the first anchor in the candidate.
-          const headingAnchor = $el.find([
-            'h1 a','h2 a','h3 a','h4 a','h5 a',
-            '[class*="title"] a','[class*="name"] a','[class*="artist"] a',
-          ].join(',')).first().attr('href')
-            || $el.find('h1,h2,h3,h4,h5').first().closest('a').attr('href');
+          // Deep-link: three-tier lookup for the specific event detail page href.
+          // Tier 1: anchor directly wrapping or inside the heading element.
+          // Tier 2: any <a> whose href contains a recognisable event-slug path segment.
+          // Tier 3: first anchor anywhere in the candidate (last resort).
+          const headingAnchor =
+            headingEl.find('a').first().attr('href') ||
+            headingEl.closest('a').attr('href') ||
+            $el.find([
+              'h1 a','h2 a','h3 a','h4 a','h5 a',
+              '[class*="title"] a','[class*="name"] a','[class*="artist"] a',
+            ].join(',')).first().attr('href');
           const slugAnchor = $el.find('a[href]').filter((_, a) =>
-            /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme/i.test($(a).attr('href') || '')
+            /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail/i
+              .test($(a).attr('href') || '')
           ).first().attr('href');
           const link = headingAnchor || slugAnchor || $el.find('a[href]').first().attr('href') || '';
-          const url  = link.startsWith('http') ? link : link.startsWith('/') ? `${baseOrigin}${link}` : link;
+          const url  = link.startsWith('http') ? link
+            : link.startsWith('/') ? `${baseOrigin}${link}` : link;
 
           const cls = classifyForVenue(title+' '+desc, config);
           const smart = smartDefaultTime(cls.cat);
@@ -1246,6 +1272,21 @@ async function main() {
   });
   const purged = prePurge - existing.length;
   if (purged) console.log(`🧹  Purged ${purged} event(s) with bad dates (June-18 placeholder or 2027+ year-inference artefact)`);
+
+  // Purge events from known-bad test venues (visitBrusselsScraper.js test runs).
+  // These were never production-quality — wipe them so the Gen-Z venues can start clean.
+  const BAD_VENUES = [
+    'atelier marcel hastir', 'toots jazz club',
+    'théâtre royal des galeries', 'theatre royal des galeries',
+    'cloud seven', 'l\'archiduc', 'archiduc',
+  ];
+  const preVenuePurge = existing.length;
+  existing = existing.filter(e => {
+    const v = (e.venue || e.source || '').toLowerCase();
+    return !BAD_VENUES.some(b => v.includes(b));
+  });
+  const purgedVenues = preVenuePurge - existing.length;
+  if (purgedVenues) console.log(`🗑️   Purged ${purgedVenues} event(s) from bad test venues`);
 
   // Migrate stale schema: add officialEventLink, remove price/ticket/sourceURL
   let migrated = 0;
