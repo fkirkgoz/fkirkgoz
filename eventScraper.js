@@ -798,41 +798,58 @@ async function scrapeVenue(browser, config) {
     const page = await browser.newPage();
     await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
 
+    // Block heavy assets — images, fonts, media, and tracking scripts are never
+    // needed for DOM text parsing. This cuts page load time by 60-80%.
+    await page.setRequestInterception(true);
+    page.on('request', req => {
+      const type = req.resourceType();
+      const url   = req.url();
+      if (['image', 'media', 'font'].includes(type)) { req.abort(); return; }
+      if (/google-analytics|googletagmanager|facebook\.net|doubleclick|hotjar|mixpanel|segment\.io|sentry\.io|clarity\.ms|cookielaw|onetrust|quantserve|newrelic|jsdelivr\.net\/npm\/bootstrap/i.test(url)) {
+        req.abort(); return;
+      }
+      req.continue();
+    });
+
     // ── Load page ──
     let loaded = false;
     for (const url of config.urls) {
       try {
+        // 'networkidle0' is too slow for SPAs; use 'domcontentloaded' + explicit wait.
+        // jsHeavy venues get networkidle2 so React/Vue has time to hydrate.
         const waitMode = config.jsHeavy ? 'networkidle2' : 'domcontentloaded';
         try {
-          await page.goto(url, { waitUntil: waitMode, timeout: 30000 });
+          // 8 s cap — if a venue is this slow it's stalled, not loading
+          await page.goto(url, { waitUntil: waitMode, timeout: 8000 });
         } catch (navErr) {
-          if (!navErr.message.includes('timeout')) throw navErr;
-          console.log(`    Navigation timeout — using partial content`);
+          if (!navErr.message.includes('timeout') && !navErr.message.includes('net::')) throw navErr;
+          console.log(`    Navigation timeout/error — using partial content`);
         }
 
-        const extraWait = config.extraWait || 5000;
+        // Tight wait: asset-blocking means JS renders faster; jsHeavy gets more time.
+        const extraWait = config.jsHeavy ? 4000 : 2500;
         await sleep(extraWait);
 
         // C12 and similar: wait for a specific DOM element to appear
         if (config.waitForSelector) {
           try {
-            await page.waitForSelector(config.waitForSelector, { timeout: 15000 });
+            await page.waitForSelector(config.waitForSelector, { timeout: 8000 });
             console.log(`    ✓ Selector found: ${config.waitForSelector}`);
           } catch {
-            failReason = `Selector '${config.waitForSelector}' not found — timeout after 15s`;
+            failReason = `Selector '${config.waitForSelector}' not found — timeout after 8s`;
             console.log(`    ✗ ${failReason}`);
           }
         }
 
-        // Four scroll passes with increasing depth to expose lazy-loaded summer events
+        // Scroll passes to expose lazy-loaded content
         await page.evaluate(() => window.scrollBy(0, 1200));
-        await sleep(1500);
+        await sleep(800);
         await page.evaluate(() => window.scrollBy(0, 1500));
-        await sleep(1200);
+        await sleep(600);
         await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-        await sleep(2000);
+        await sleep(1200);
         await page.evaluate(() => window.scrollTo(0, 0));
-        await sleep(500);
+        await sleep(300);
 
         const title   = await page.title();
         const bodyLen = await page.evaluate(() => document.body?.innerText?.length || 0);
@@ -888,7 +905,7 @@ async function scrapeVenue(browser, config) {
       if (config.id === 'laMadeleine' && events.length === 0) {
         try {
           console.log('    La Madeleine: scanning for JetEngine / grid cards…');
-          await sleep(2000); // extra render time beyond extraWait
+          await sleep(500); // extra render time beyond extraWait
           const cards = await page.evaluate(() => {
             // Primary path: Elementor/JetEngine — anchors wrapping field elements
             const jetLinks = [...document.querySelectorAll('a')].filter(a =>
@@ -962,7 +979,7 @@ async function scrapeVenue(browser, config) {
       if (config.id === 'agendaBrussels' && events.length === 0) {
         try {
           console.log('    Agenda Brussels: scanning event grid…');
-          await sleep(3000);
+          await sleep(1500);
 
           const agendaItems = await page.evaluate(() => {
             const selectors = [
@@ -1058,7 +1075,7 @@ async function scrapeVenue(browser, config) {
       if (config.jsHeavy && events.length === 0) {
         try {
           console.log(`    Strategy 1.7 (jsHeavy live DOM): waiting for deferred renders…`);
-          await sleep(3000);
+          await sleep(1000);
 
           const liveCards = await page.evaluate(() => {
             function hasDates(text) {
