@@ -423,7 +423,7 @@
   {
     "id": 124,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Left Lane Cruiser",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -489,7 +489,7 @@
   {
     "id": 125,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Camille Camille - Alice George Perez",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -796,92 +796,6 @@
     "_rawDate": "2026-06-19"
   },
   {
-    "id": 136,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "18HRS of Fuse: Open Air & Club",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "friends": 0,
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/18hrs-of-fuse-open-air-club",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "going": 177,
-    "neighbourhood": "Marolles",
-    "desc": "18HRS of Fuse: Open Air & Club at Fuse.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest557",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest696",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest502",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest577",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest993",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "First time at this venue!",
-        "time": "12:43 AM"
-      },
-      {
-        "user": "Fleur",
-        "text": "First time at this venue!",
-        "time": "1:28 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Can't wait for this one! 🔥",
-        "time": "7:40 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
     "id": 137,
     "cat": "Nightlife",
     "date": "September",
@@ -956,67 +870,6 @@
       }
     ],
     "_rawDate": "2026-09-27"
-  },
-  {
-    "id": 140,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "C12 Nite - 06/06",
-    "venue": "C12",
-    "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "💃",
-    "color": "#6C63FF",
-    "friends": 3,
-    "tags": [
-      "Electronic",
-      "Art",
-      "Nightlife"
-    ],
-    "source": "C12",
-    "officialEventLink": "https://shop.c12space.com/cd330d5de10b4102a0314a157daf438e",
-    "lat": 50.8462,
-    "lng": 4.3556,
-    "going": 80,
-    "neighbourhood": "Centre",
-    "desc": "DINA / Nefeli & Sookie / STDJ",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest035",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest505",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "This is going to be AMAZING",
-        "time": "3:38 PM"
-      },
-      {
-        "user": "Ali",
-        "text": "Already got my ticket! 👋",
-        "time": "6:13 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
   },
   {
     "id": 141,
@@ -1097,7 +950,7 @@
   {
     "id": 142,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "C12 Nite curated by Clara D - 13/06",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -1283,74 +1136,9 @@
     "_rawDate": "2026-06-20"
   },
   {
-    "id": 152,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "SILA BISALU SUR SCÈNE",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/sila-bisalu-sur-scene/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "going": 169,
-    "neighbourhood": "Centre",
-    "desc": "SILA BISALU SUR SCÈNE at La Madeleine.",
-    "attendees": [
-      {
-        "n": "Guest345",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest366",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest071",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest865",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Axel",
-        "text": "First time at this venue!",
-        "time": "7:54 AM"
-      },
-      {
-        "user": "Kai",
-        "text": "First time at this venue!",
-        "time": "7:55 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "This is going to be AMAZING",
-        "time": "9:04 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
     "id": 153,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "KADER JAPONAIS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1560,7 +1348,7 @@
   {
     "id": 156,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "ANA CARLA MAZA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -3275,7 +3063,7 @@
   {
     "id": 181,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Writing Life – Annie Ernaux Through the Eyes of High School Students - Claire Simon",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3350,7 +3138,7 @@
   {
     "id": 182,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Ho Tzu Nyen. P for Power",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3435,7 +3223,7 @@
   {
     "id": 183,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Bellezza e Bruttezza",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3678,94 +3466,9 @@
     "_rawDate": "2026-06-28"
   },
   {
-    "id": 189,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Morlaix - Jaime Rosales",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/morlaix-jaime-rosales",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 112,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Guest359",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest487",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest768",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest861",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest841",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest997",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "This is going to be AMAZING",
-        "time": "10:55 AM"
-      },
-      {
-        "user": "Kaan",
-        "text": "Can't wait for this one! 🔥",
-        "time": "2:56 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "First time at this venue!",
-        "time": "8:52 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
     "id": 190,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Mr. Nobody Against Putin - David Borenstein & Pavel Talankin",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -4038,7 +3741,7 @@
   {
     "id": 205,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Fuse presents: DC Salas curates w/ Michelle (live) & Enrica Falqui",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -4642,7 +4345,7 @@
   {
     "id": 233,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Close-Up: Roberto Minervini",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -5905,136 +5608,6 @@
     "_rawDate": "2026-06-27"
   },
   {
-    "id": 279,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "ANYMA pres. ÆDEN - Cinquantenaire Open Air",
-    "venue": "Cinquantenaire Park",
-    "addr": "Cinquantenaire Park, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "friends": 2,
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.ANYMA-pres-%C3%86DEN-Cinquantenaire-Open-Air.5700019585",
-    "lat": 50.8410369,
-    "lng": 4.3934924,
-    "going": 90,
-    "neighbourhood": "Centre",
-    "desc": "Sat 06 June ANYMA pres. ÆDEN - Cinquantenaire Open Air ClubbingCinquantenaire Park View more",
-    "attendees": [
-      {
-        "n": "Guest379",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest108",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "Who else is going?? 🙋",
-        "time": "12:18 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Counting down the days 🗓️",
-        "time": "2:19 PM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
-    "id": 280,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Ô Tour des Contes – Week-end in the Abbey of Forest",
-    "venue": "Source Plurielle Asbl",
-    "addr": "Source Plurielle Asbl, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "friends": 1,
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.O-Tour-des-Contes-Week-end-in-the-Abbey-of-Forest.5700022623",
-    "lat": 50.84237901123883,
-    "lng": 4.351596041952996,
-    "going": 260,
-    "neighbourhood": "Centre",
-    "desc": "Sat 06 June — Sun 07 June Ô Tour des Contes – Week-end in the Abbey of Forest FestivalSource Plurielle Asbl View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest850",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest234",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest996",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest377",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest480",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest710",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "First time at this venue!",
-        "time": "3:37 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Counting down the days 🗓️",
-        "time": "2:39 AM"
-      },
-      {
-        "user": "Kai",
-        "text": "Brussels never disappoints ❤️",
-        "time": "4:05 PM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
     "id": 284,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -6211,151 +5784,6 @@
     "_rawDate": "2026-06-11"
   },
   {
-    "id": 288,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Masterclass Laryssa Kim: Shaping the Invisible",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/masterclass-laryssa-kim-shaping-the-invisible/a10Qw00000GqmlhIAB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 87,
-    "neighbourhood": "Centre",
-    "desc": "Designing the Illusion of Space in Acousmatic Music",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest612",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest122",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest167",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "Brussels never disappoints ❤️",
-        "time": "7:25 PM"
-      },
-      {
-        "user": "Iris",
-        "text": "Brussels never disappoints ❤️",
-        "time": "12:40 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Grab tickets fast, selling out!",
-        "time": "11:28 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
-    "id": 289,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Dwarfs of East Agouza",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/the-dwarfs-of-east-agouza/a10Qw00000GDeRSIA1",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 50,
-    "neighbourhood": "Centre",
-    "desc": "Hypnotic krautrock with the energy of Egyptian shaabi music",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest182",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest172",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest132",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest240",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest376",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Nora",
-        "text": "This is going to be AMAZING",
-        "time": "8:23 PM"
-      },
-      {
-        "user": "Kaan",
-        "text": "First time at this venue!",
-        "time": "10:47 PM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
     "id": 292,
     "cat": "Music",
     "date": "September",
@@ -6496,71 +5924,6 @@
       }
     ],
     "_rawDate": "2026-09-06"
-  },
-  {
-    "id": 296,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Just Vox",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/just-vox/a10Qw00000A3D1OIAV",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 102,
-    "neighbourhood": "Centre",
-    "desc": "Chapter 2: Just Vox pushes back the boundaries of live vocals",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Guest810",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest167",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "Already got my ticket! 👋",
-        "time": "1:28 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Can't wait for this one! 🔥",
-        "time": "9:51 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
   },
   {
     "id": 299,
@@ -6802,7 +6165,7 @@
   {
     "id": 304,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "HUMBE",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8304,7 +7667,7 @@
   {
     "id": 332,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Maatwerk Festival",
     "venue": "Quai Béco/Quai des Péniches/Pont Van Praet/Quai de Heembeek/Park Drie Fonteinen/",
     "addr": "Quai Béco/Quai des Péniches/Pont Van Praet/Quai de Heembeek/Park Drie Fonteinen/, Belgium",
@@ -8738,173 +8101,6 @@
     "_rawDate": "2026-06-09"
   },
   {
-    "id": 338,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "femtanyl - Takihasdied",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/femtanyl-takihasdied-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 237,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A benchmark of digitalcore, blending violent electro, punk energy, and a radically aesthetic vision",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest509",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest471",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest629",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "This is going to be AMAZING",
-        "time": "10:44 PM"
-      },
-      {
-        "user": "Axel",
-        "text": "Can't wait for this one! 🔥",
-        "time": "12:16 PM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
-    "id": 339,
-    "cat": "Music",
-    "date": "Next Month",
-    "title": "Live At Museum: Oxis",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/projects/live-museum/live-museum-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 251,
-    "neighbourhood": "Saint-Josse",
-    "desc": "As part of the opening of the exhibition Side by Side",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Guest821",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest870",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest931",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest485",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest854",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest083",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest776",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "Brussels never disappoints ❤️",
-        "time": "6:06 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Can't wait for this one! 🔥",
-        "time": "11:48 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Can't wait for this one! 🔥",
-        "time": "5:22 PM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
-  },
-  {
     "id": 340,
     "cat": "Music",
     "date": "November",
@@ -8970,78 +8166,8 @@
     "_rawDate": "2026-11-18"
   },
   {
-    "id": 341,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Cantania Alumni",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/cantania-alumni",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 214,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Guest150",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest018",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "Counting down the days 🗓️",
-        "time": "5:53 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Grab tickets fast, selling out!",
-        "time": "9:23 AM"
-      },
-      {
-        "user": "Ali",
-        "text": "Already got my ticket! 👋",
-        "time": "9:42 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
     "id": 342,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "La Musique du Geste - Isabelle Dumont",
     "venue": "Bozar",
@@ -9049,8 +8175,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 2,
     "tags": [
       "Cinema",
@@ -9120,134 +8246,9 @@
     "_rawDate": "2026-06-21"
   },
   {
-    "id": 343,
-    "cat": "Arts",
-    "date": "Today",
-    "title": "Two Prosecutors - Sergei Loznitsa",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
-    "friends": 2,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/two-prosecutors-sergei-loznitsa",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 280,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest352",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest979",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest471",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest593",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest491",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kai",
-        "text": "This is going to be AMAZING",
-        "time": "4:19 PM"
-      },
-      {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "7:25 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
-    "id": 344,
-    "cat": "Arts",
-    "date": "Today",
-    "title": "Low Tide - Roberto Minervini",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
-    "friends": 1,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/low-tide-roberto-minervini",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 297,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Guest413",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest353",
-        "c": "#F4A261",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Brussels never disappoints ❤️",
-        "time": "7:54 PM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Brussels never disappoints ❤️",
-        "time": "7:20 AM"
-      }
-    ],
-    "_rawDate": "2026-06-06"
-  },
-  {
     "id": 345,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Alone, Not even scared (to be scared!)",
     "venue": "Comic Art Museum",
     "addr": "Comic Art Museum, Belgium",
@@ -9297,7 +8298,7 @@
   {
     "id": 346,
     "cat": "Sports",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Bxl Tour",
     "venue": "Place des Palais",
     "addr": "Place des Palais, Belgium",
@@ -9358,86 +8359,6 @@
       }
     ],
     "_rawDate": "2026-06-14"
-  },
-  {
-    "id": 347,
-    "cat": "Festival",
-    "date": "Next Month",
-    "title": "Fête de la musique",
-    "venue": "Various locations in the Brussels Capital Region",
-    "addr": "Various locations in the Brussels Capital Region, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "friends": 2,
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Fete-de-la-musique.5700022159",
-    "lat": 50.8393282181448,
-    "lng": 4.346001184119261,
-    "going": 100,
-    "neighbourhood": "Centre",
-    "desc": "Thu 18 June — Sun 21 June Fête de la musique Free FestivalVarious locations in the Brussels Capital Region View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest653",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest421",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest600",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest244",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest576",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "First time at this venue!",
-        "time": "10:09 AM"
-      },
-      {
-        "user": "Axel",
-        "text": "Already got my ticket! 👋",
-        "time": "11:20 PM"
-      },
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "1:36 PM"
-      }
-    ],
-    "_rawDate": "2026-06-18"
   },
   {
     "id": 348,
@@ -9638,5 +8559,3867 @@
       }
     ],
     "_rawDate": "2026-06-24"
+  },
+  {
+    "id": 351,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Cabaret Voltaire + Augustė Vickunaitė",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/cabaret-voltaire/a10Qw00000C5Iv5IAF",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 163,
+    "neighbourhood": "Centre",
+    "desc": "Legendary influential UK cult band finally at AB",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest421",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest306",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest971",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "This is going to be AMAZING",
+        "time": "8:17 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "3:36 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Brussels never disappoints ❤️",
+        "time": "8:37 PM"
+      }
+    ],
+    "_rawDate": "2026-06-12"
+  },
+  {
+    "id": 352,
+    "cat": "Music",
+    "date": "This Weekend",
+    "title": "Red Leather + Jady",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/red-leather/a10Qw00000FdwTJIAZ",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 279,
+    "neighbourhood": "Centre",
+    "desc": "Alternative country rock from beneath a mysterious hat",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest099",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest576",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest918",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest514",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest176",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest897",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "6:57 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:58 PM"
+      }
+    ],
+    "_rawDate": "2026-06-13"
+  },
+  {
+    "id": 353,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Dernière: 'One Song' - Miet Warlop",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/derniere-one-song-miet-warlop/a10Qw000007eTbxIAE",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 294,
+    "neighbourhood": "Centre",
+    "desc": "Primal scream. Energy bomb. Theatrical uproar. Captivating dance concert that goes off. Booster shot.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest303",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest414",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest344",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest869",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest157",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest806",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest287",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "6:03 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "9:42 PM"
+      }
+    ],
+    "_rawDate": "2026-06-14"
+  },
+  {
+    "id": 354,
+    "cat": "Nightlife",
+    "date": "March",
+    "title": "ROOM 01",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "friends": 3,
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-closer-milano-w-marcal-b2b-arthur-robert-chami",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "going": 216,
+    "neighbourhood": "Marolles",
+    "desc": "ROOM 01 at Fuse.",
+    "attendees": [
+      {
+        "n": "Guest710",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest453",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest703",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "8:49 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Brussels never disappoints ❤️",
+        "time": "5:25 PM"
+      }
+    ],
+    "_rawDate": "2027-03-01"
+  },
+  {
+    "id": 355,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: Mac Declos (all night long)",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "friends": 1,
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-mac-declos-all-night-long",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "going": 129,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: Mac Declos (all night long) at Fuse.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest962",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest857",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest699",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest394",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest194",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest562",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:59 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "2:51 PM"
+      }
+    ],
+    "_rawDate": "2026-07-11"
+  },
+  {
+    "id": 356,
+    "cat": "Nightlife",
+    "date": "August",
+    "title": "XRDS festival 2026: Friday",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "friends": 0,
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/xrds-festival-2026-2",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "going": 288,
+    "neighbourhood": "Marolles",
+    "desc": "XRDS festival 2026: Friday at Fuse.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest023",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest891",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest673",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest119",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Counting down the days 🗓️",
+        "time": "5:52 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:54 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Counting down the days 🗓️",
+        "time": "11:15 AM"
+      }
+    ],
+    "_rawDate": "2026-08-14"
+  },
+  {
+    "id": 357,
+    "cat": "Arts",
+    "date": "Today",
+    "title": "The Passage - Roberto Minervini",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 1,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/passage-roberto-minervini",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 119,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest726",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest427",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest130",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest737",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Brussels never disappoints ❤️",
+        "time": "11:17 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "9:54 PM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 358,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Giorgi Gigashvili – ECHO Rising Star",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/giorgi-gigashvili-echo-rising-star",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 98,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest236",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest208",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest426",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest225",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest564",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest737",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Who else is going?? 🙋",
+        "time": "1:17 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "First time at this venue!",
+        "time": "8:07 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "7:35 PM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 359,
+    "cat": "Arts",
+    "date": "Today",
+    "title": "Mariinka - Pieter-Jan De Pue",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 1,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/mariinka-pieter-jan-de-pue-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 196,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest250",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest917",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest625",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "12:51 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "1:42 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "3:35 PM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 360,
+    "cat": "Culture",
+    "date": "Today",
+    "title": "Introduction to Ho Tzu Nyen",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 0,
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/introduction-ho-tzu-nyen",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 310,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest258",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest380",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest296",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest129",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest478",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Who else is going?? 🙋",
+        "time": "9:04 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "This is going to be AMAZING",
+        "time": "2:31 PM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 361,
+    "cat": "Arts",
+    "date": "Today",
+    "title": "Le Chant des Forêts - Vincent Munier",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 3,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/le-chant-des-forets-vincent-munier-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 52,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Guest739",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest021",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest094",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest758",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest487",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest914",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest620",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "1:35 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Counting down the days 🗓️",
+        "time": "7:15 PM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 362,
+    "cat": "Arts",
+    "date": "Today",
+    "title": "The Other Side - Roberto Minervini",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 3,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/other-side-roberto-minervini",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 181,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Guest869",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest809",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest147",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest156",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest905",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest893",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest701",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:58 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:39 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "First time at this venue!",
+        "time": "5:43 AM"
+      }
+    ],
+    "_rawDate": "2026-06-07"
+  },
+  {
+    "id": 363,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Fête de la musique",
+    "venue": "Various locations in the Brussels Capital Region",
+    "addr": "Various locations in the Brussels Capital Region, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 0,
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Fete-de-la-musique.5700022159",
+    "lat": 50.8580517649065,
+    "lng": 4.353752006017767,
+    "going": 135,
+    "neighbourhood": "Centre",
+    "desc": "Thu 18 June — Sun 21 June Fête de la musique Free FestivalVarious locations in the Brussels Capital Region View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest786",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest251",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:26 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Brussels never disappoints ❤️",
+        "time": "7:49 PM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 364,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Octopoulpe (MX) + Bö.senberg (DE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/50959/2026-06-11/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 155,
+    "neighbourhood": "Molenbeek",
+    "desc": "Octopoulpe (MX) + Bö.senberg (DE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest547",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest257",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:39 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "6:17 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:54 PM"
+      }
+    ],
+    "_rawDate": "2026-06-11"
+  },
+  {
+    "id": 365,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Tat2NoisAct (BE) + Les Filles Du Feu (BE) + Synapses (BE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 0,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/50867/2026-06-12/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 40,
+    "neighbourhood": "Molenbeek",
+    "desc": "Tat2NoisAct (BE) + Les Filles Du Feu (BE) + Synapses (BE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest412",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest957",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest582",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest962",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest940",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Can't wait for this one! 🔥",
+        "time": "8:30 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "3:12 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Grab tickets fast, selling out!",
+        "time": "5:50 AM"
+      }
+    ],
+    "_rawDate": "2026-06-12"
+  },
+  {
+    "id": 366,
+    "cat": "Music",
+    "date": "This Weekend",
+    "title": "BLACK KHAOS ASSAULT PRESENTS",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 0,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/48483/2026-06-13/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 238,
+    "neighbourhood": "Molenbeek",
+    "desc": "BLACK KHAOS ASSAULT PRESENTS at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest153",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest100",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest064",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest375",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest546",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest762",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest329",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "3:25 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "9:16 PM"
+      }
+    ],
+    "_rawDate": "2026-06-13"
+  },
+  {
+    "id": 367,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "MASSACRÉS BELGES TOUR VOL III",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/50261/2026-06-19/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 114,
+    "neighbourhood": "Molenbeek",
+    "desc": "MASSACRÉS BELGES TOUR VOL III at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest449",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest923",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest251",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest687",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest278",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest153",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "5:44 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "3:36 PM"
+      }
+    ],
+    "_rawDate": "2026-06-19"
+  },
+  {
+    "id": 368,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Infecticide (FR) + Bérenger 2000 (BE) + Kania Tieffer (BE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/51188/2026-06-20/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 54,
+    "neighbourhood": "Molenbeek",
+    "desc": "Infecticide (FR) + Bérenger 2000 (BE) + Kania Tieffer (BE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest927",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest697",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest759",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest208",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "10:20 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "11:51 PM"
+      }
+    ],
+    "_rawDate": "2026-06-20"
+  },
+  {
+    "id": 369,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "EyeHateGod (US) + Raw Peace (BE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/49295/2026-06-24/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 280,
+    "neighbourhood": "Molenbeek",
+    "desc": "EyeHateGod (US) + Raw Peace (BE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest413",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest754",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest800",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest189",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest300",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest790",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest633",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Brussels never disappoints ❤️",
+        "time": "11:16 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:14 AM"
+      }
+    ],
+    "_rawDate": "2026-06-24"
+  },
+  {
+    "id": 370,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Xiao (SE) + Cút Lôn (VN) + We Came As Dirt (BE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/50984/2026-06-25/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 281,
+    "neighbourhood": "Molenbeek",
+    "desc": "Xiao (SE) + Cút Lôn (VN) + We Came As Dirt (BE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Guest998",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest655",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest657",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest642",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest625",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest871",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest222",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "10:18 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:19 AM"
+      }
+    ],
+    "_rawDate": "2026-06-25"
+  },
+  {
+    "id": 371,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Avalanche Kaito (BE) + Silke X James (BE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 0,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/51023/2026-06-26/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 197,
+    "neighbourhood": "Molenbeek",
+    "desc": "Avalanche Kaito (BE) + Silke X James (BE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Guest857",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest759",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Brussels never disappoints ❤️",
+        "time": "1:23 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "5:59 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Counting down the days 🗓️",
+        "time": "1:45 PM"
+      }
+    ],
+    "_rawDate": "2026-06-26"
+  },
+  {
+    "id": 372,
+    "cat": "Music",
+    "date": "September",
+    "title": "Pyrrhon (US) + Devoid Of Thought (IT)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/51281/2026-09-07/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 132,
+    "neighbourhood": "Molenbeek",
+    "desc": "Pyrrhon (US) + Devoid Of Thought (IT) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest338",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest190",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest239",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest918",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest526",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest646",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Who else is going?? 🙋",
+        "time": "1:52 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "3:13 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:42 AM"
+      }
+    ],
+    "_rawDate": "2026-09-07"
+  },
+  {
+    "id": 373,
+    "cat": "Music",
+    "date": "September",
+    "title": "The Toasters (US)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/50982/2026-09-15/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 68,
+    "neighbourhood": "Molenbeek",
+    "desc": "The Toasters (US) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Guest963",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest406",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest906",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest215",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest248",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest104",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "9:32 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Counting down the days 🗓️",
+        "time": "6:07 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "7:01 AM"
+      }
+    ],
+    "_rawDate": "2026-09-15"
+  },
+  {
+    "id": 374,
+    "cat": "Music",
+    "date": "September",
+    "title": "Nile On waX (BE) + Bärlin (FR)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/51254/2026-09-18/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 248,
+    "neighbourhood": "Molenbeek",
+    "desc": "Nile On waX (BE) + Bärlin (FR) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest789",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest565",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest610",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest608",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest527",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "This is going to be AMAZING",
+        "time": "10:44 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "10:20 PM"
+      }
+    ],
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 375,
+    "cat": "Music",
+    "date": "October",
+    "title": "Pisse (DE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/50851/2026-10-02/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 314,
+    "neighbourhood": "Molenbeek",
+    "desc": "Pisse (DE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest751",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest617",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest339",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Already got my ticket! 👋",
+        "time": "7:35 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "2:45 AM"
+      }
+    ],
+    "_rawDate": "2026-10-02"
+  },
+  {
+    "id": 376,
+    "cat": "Music",
+    "date": "October",
+    "title": "Young Widows (US) + Aicher (DE)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/51179/2026-10-09/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 317,
+    "neighbourhood": "Molenbeek",
+    "desc": "Young Widows (US) + Aicher (DE) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest021",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest865",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest406",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest332",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest515",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "3:11 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "This is going to be AMAZING",
+        "time": "1:49 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Brussels never disappoints ❤️",
+        "time": "6:14 AM"
+      }
+    ],
+    "_rawDate": "2026-10-09"
+  },
+  {
+    "id": 377,
+    "cat": "Music",
+    "date": "October",
+    "title": "Dazzling Killmen (US)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/50328/2026-10-10/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 122,
+    "neighbourhood": "Molenbeek",
+    "desc": "Dazzling Killmen (US) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Guest187",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest161",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest415",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest987",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "1:59 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "This is going to be AMAZING",
+        "time": "10:04 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "4:43 PM"
+      }
+    ],
+    "_rawDate": "2026-10-10"
+  },
+  {
+    "id": 378,
+    "cat": "Music",
+    "date": "November",
+    "title": "Deaf Kids (BR)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/51301/2026-11-05/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 118,
+    "neighbourhood": "Molenbeek",
+    "desc": "Deaf Kids (BR) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest503",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest409",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "11:08 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Who else is going?? 🙋",
+        "time": "4:38 AM"
+      }
+    ],
+    "_rawDate": "2026-11-05"
+  },
+  {
+    "id": 379,
+    "cat": "Culture",
+    "date": "December",
+    "title": "Brussels Ass Book Fair",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 3,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/brussels-ass-book-fair-2026",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 240,
+    "neighbourhood": "Molenbeek",
+    "desc": "Apply now to be an exhibitor",
+    "attendees": [
+      {
+        "n": "Guest161",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest585",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Counting down the days 🗓️",
+        "time": "11:27 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Brussels never disappoints ❤️",
+        "time": "3:55 AM"
+      }
+    ],
+    "_rawDate": "2026-12-04"
+  },
+  {
+    "id": 380,
+    "cat": "Culture",
+    "date": "November",
+    "title": "A truly immense journey",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 0,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/truly-immense-journey",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 37,
+    "neighbourhood": "Molenbeek",
+    "desc": "100 YEARS OF MASTERPIECES CENTRE POMPIDOU COLLECTION",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest819",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest178",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest675",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest406",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest663",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest912",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Grab tickets fast, selling out!",
+        "time": "8:28 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Already got my ticket! 👋",
+        "time": "1:49 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Brussels never disappoints ❤️",
+        "time": "3:08 PM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 381,
+    "cat": "Culture",
+    "date": "November",
+    "title": "NO SHOW",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 1,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/no-show",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 311,
+    "neighbourhood": "Molenbeek",
+    "desc": "NO SHOW at KANAL - Centre Pompidou.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest262",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest402",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest089",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest219",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest046",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest490",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "9:58 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "12:45 PM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 382,
+    "cat": "Culture",
+    "date": "November",
+    "title": "An infinite woman",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 3,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/infinite-woman",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 140,
+    "neighbourhood": "Molenbeek",
+    "desc": "Black archives in two acts",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest937",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest218",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest346",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest119",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest018",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest325",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "4:56 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "8:10 PM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 383,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Right to the City - Right to the Future",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 3,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/right-city-right-future",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 259,
+    "neighbourhood": "Molenbeek",
+    "desc": "Right to the City - Right to the Future at KANAL - Centre Pompidou.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest261",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest084",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest565",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest171",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest757",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest563",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "5:25 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "4:21 PM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 384,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Joëlle Tuerlinckx",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 1,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/joelle-tuerlinckx",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 243,
+    "neighbourhood": "Molenbeek",
+    "desc": "La première fois",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest205",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest640",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest878",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest095",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest058",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest323",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest491",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "8:42 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "3:27 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "5:44 PM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 385,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Département des Pièges",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 3,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/departement-des-pieges",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 200,
+    "neighbourhood": "Molenbeek",
+    "desc": "Département des Pièges at KANAL - Centre Pompidou.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest424",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest851",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest015",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest540",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "4:15 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "3:04 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "7:48 PM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 386,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Banu Cennetoğlu",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/banu-cennetoglu",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 123,
+    "neighbourhood": "Molenbeek",
+    "desc": "right?",
+    "attendees": [
+      {
+        "n": "Guest538",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest133",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest512",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest958",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest248",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest178",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest828",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Brussels never disappoints ❤️",
+        "time": "7:43 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "7:15 AM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 387,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Manon de Boer",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/manon-de-boer",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 185,
+    "neighbourhood": "Molenbeek",
+    "desc": "Blindsight",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest858",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest252",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest049",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest490",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest427",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Counting down the days 🗓️",
+        "time": "1:46 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "1:06 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "8:04 AM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 388,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Joshua Serafin",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 1,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/joshua-serafin",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 55,
+    "neighbourhood": "Molenbeek",
+    "desc": "Joshua Serafin at KANAL - Centre Pompidou.",
+    "attendees": [
+      {
+        "n": "Guest836",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest322",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "9:38 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "9:39 AM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 389,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Otobong Nkanga",
+    "venue": "KANAL - Centre Pompidou",
+    "addr": "Place Sainctelette 2, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 3,
+    "tags": [
+      "Art",
+      "Culture",
+      "Events"
+    ],
+    "source": "KANAL - Centre Pompidou",
+    "officialEventLink": "https://www.kanal.brussels/en/calendar/otobong-nkanga",
+    "lat": 50.8554,
+    "lng": 4.3454,
+    "going": 217,
+    "neighbourhood": "Molenbeek",
+    "desc": "Otobong Nkanga at KANAL - Centre Pompidou.",
+    "attendees": [
+      {
+        "n": "Guest584",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest440",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest823",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Counting down the days 🗓️",
+        "time": "6:58 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "11:43 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "Counting down the days 🗓️",
+        "time": "8:12 PM"
+      }
+    ],
+    "_rawDate": "2026-11-28"
+  },
+  {
+    "id": 390,
+    "cat": "Culture",
+    "date": "Next Week",
+    "title": "One Song",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/one-song",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 44,
+    "neighbourhood": "Molenbeek",
+    "desc": "One Song at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest893",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest665",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest769",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "10:53 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Already got my ticket! 👋",
+        "time": "2:15 AM"
+      }
+    ],
+    "_rawDate": "2026-06-14"
+  },
+  {
+    "id": 391,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Perfect Child",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/perfect-child",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 49,
+    "neighbourhood": "Molenbeek",
+    "desc": "Perfect Child at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest409",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest118",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest540",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest632",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest858",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest595",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest019",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "5:39 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "12:00 AM"
+      }
+    ],
+    "_rawDate": "2026-06-17"
+  },
+  {
+    "id": 392,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "ENTWINED STUDIO #8",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/entwined-studio-8",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 266,
+    "neighbourhood": "Molenbeek",
+    "desc": "ENTWINED STUDIO #8 at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest487",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest509",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest433",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest250",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest047",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest646",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest699",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Counting down the days 🗓️",
+        "time": "11:14 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "4:54 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:53 PM"
+      }
+    ],
+    "_rawDate": "2026-06-18"
+  },
+  {
+    "id": 393,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Quinceañeras",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/quinceaneras",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 196,
+    "neighbourhood": "Molenbeek",
+    "desc": "Quinceañeras at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest815",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest375",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest779",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "7:17 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "12:30 PM"
+      },
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "5:31 AM"
+      }
+    ],
+    "_rawDate": "2026-06-19"
+  },
+  {
+    "id": 394,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Graduation Performance 2026",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/graduation-performance-2026",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 173,
+    "neighbourhood": "Molenbeek",
+    "desc": "Graduation Performance 2026 at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest954",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest751",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest480",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest552",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Counting down the days 🗓️",
+        "time": "8:12 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "5:23 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:35 PM"
+      }
+    ],
+    "_rawDate": "2026-06-20"
+  },
+  {
+    "id": 395,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Is so-called AI making us sick? - Zine Launch",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/so-called-ai-making-us-sick-zine-launch",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 85,
+    "neighbourhood": "Molenbeek",
+    "desc": "Is so-called AI making us sick? - Zine Launch at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Guest792",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest107",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest553",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest131",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest060",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "3:58 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "This is going to be AMAZING",
+        "time": "3:04 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "4:47 PM"
+      }
+    ],
+    "_rawDate": "2026-06-20"
+  },
+  {
+    "id": 396,
+    "cat": "Culture",
+    "date": "September",
+    "title": "A Love Supreme",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/love-supreme",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 28,
+    "neighbourhood": "Molenbeek",
+    "desc": "A Love Supreme at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest198",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest162",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest064",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "7:54 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "12:31 PM"
+      }
+    ],
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 397,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Figures of Fascism and Antifascist Solidarities",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/figures-fascism-and-antifascist-solidarities",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 161,
+    "neighbourhood": "Molenbeek",
+    "desc": "Figures of Fascism and Antifascist Solidarities at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest246",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest988",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest836",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest050",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest672",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "1:02 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "This is going to be AMAZING",
+        "time": "11:25 PM"
+      }
+    ],
+    "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 398,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Again Forever",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/again-forever",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 133,
+    "neighbourhood": "Molenbeek",
+    "desc": "Again Forever at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest367",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest624",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest156",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest263",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "12:29 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "6:31 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Grab tickets fast, selling out!",
+        "time": "3:46 AM"
+      }
+    ],
+    "_rawDate": "2026-09-25"
+  },
+  {
+    "id": 399,
+    "cat": "Culture",
+    "date": "October",
+    "title": "ADIDAS",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/adidas",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 303,
+    "neighbourhood": "Molenbeek",
+    "desc": "ADIDAS at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest193",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest934",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest165",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "5:36 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Already got my ticket! 👋",
+        "time": "3:14 AM"
+      }
+    ],
+    "_rawDate": "2026-10-10"
+  },
+  {
+    "id": 400,
+    "cat": "Culture",
+    "date": "October",
+    "title": "The Harvest of Broken Promises",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/harvest-broken-promises",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 55,
+    "neighbourhood": "Molenbeek",
+    "desc": "The Harvest of Broken Promises at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest626",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest628",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "9:44 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "3:33 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "1:46 PM"
+      }
+    ],
+    "_rawDate": "2026-10-24"
+  },
+  {
+    "id": 401,
+    "cat": "Culture",
+    "date": "October",
+    "title": "it doesn't go without saying (& other gossips)",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/it-doesnt-go-without-saying-other-gossips",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 212,
+    "neighbourhood": "Molenbeek",
+    "desc": "it doesn't go without saying (& other gossips) at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest229",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest092",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest014",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest943",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "6:14 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "11:14 PM"
+      }
+    ],
+    "_rawDate": "2026-10-30"
+  },
+  {
+    "id": 402,
+    "cat": "Culture",
+    "date": "November",
+    "title": "Spaghetti Western",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/spaghetti-western",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 23,
+    "neighbourhood": "Molenbeek",
+    "desc": "Spaghetti Western at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest817",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest823",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest499",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest802",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest079",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "First time at this venue!",
+        "time": "1:08 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:39 AM"
+      }
+    ],
+    "_rawDate": "2026-11-14"
   }
 ]
