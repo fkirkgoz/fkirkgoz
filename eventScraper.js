@@ -3,6 +3,8 @@
  * Randevu Event Scraper — Brussels venue-specific edition
  *
  * Sources: AB · Botanique · Fuse · C12 · La Madeleine · Bozar · Couleur Café · Agenda Brussels
+ *          + Gen-Z: UMI · Signal Club · BUDA BXL · Madame Moustache · Beursschouwburg
+ *            Magasin 4 · La Machine · KANAL · Quai 20 · Kaaitheater
  * Run:     node eventScraper.js
  * Install: npm install puppeteer axios cheerio --legacy-peer-deps
  */
@@ -167,6 +169,193 @@ const VENUE_CONFIGS = [
       'https://couleurcafe.be',
       'https://www.couleurcafe.be/programme',
       'https://couleurcafe.be/programme',
+    ],
+  },
+
+  // ── Gen-Z / underground Brussels venues ──────────────────────────────────────
+  // BLACKLIST REMINDER: AB, Botanique, Fuse, C12, La Madeleine, Bozar are already
+  // handled above and must NEVER appear in this section.
+  {
+    id: 'umi',
+    name: 'UMI',
+    addr: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Brussels',
+    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
+    tags: ['Electronic', 'Underground', 'Art'],
+    defaultTime: '23:00',
+    extraWait: 7000,
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://umibrussels.art/',
+      'https://umibrussels.art/events',
+      'https://umibrussels.art/agenda',
+    ],
+  },
+  {
+    id: 'signalClub',
+    name: 'Signal Club',
+    addr: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Brussels',
+    emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
+    tags: ['Electronic', 'Underground', 'Dark'],
+    defaultTime: '23:00',
+    extraWait: 7000,
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://www.darkdistortedsignals.com/',
+      'https://www.darkdistortedsignals.com/events',
+      'https://www.darkdistortedsignals.com/agenda',
+    ],
+  },
+  {
+    id: 'budaBxl',
+    name: 'BUDA BXL',
+    addr: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Brussels',
+    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
+    tags: ['Club', 'Live Music', 'Nightlife'],
+    defaultTime: '22:00',
+    extraWait: 7000,
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://www.budabxl.be',
+      'http://www.budabxl.be',
+      'https://www.budabxl.be/agenda',
+      'https://www.budabxl.be/events',
+    ],
+  },
+  {
+    id: 'madameMoustache',
+    name: 'Madame Moustache',
+    addr: 'Quai au Bois à Brûler 5-7, 1000 Brussels',
+    lat: 50.8541, lng: 4.3485,
+    neighbourhood: 'Centre',
+    emoji: '🎸', color: '#C77DFF', cat: 'Music',
+    tags: ['Live Music', 'Club', 'Nightlife'],
+    defaultTime: '21:00',
+    extraWait: 6000,
+    enforceVisuals: true,
+    urls: [
+      'https://madamemoustache.be/',
+      'http://madamemoustache.be/',
+      'https://madamemoustache.be/agenda',
+      'https://madamemoustache.be/events',
+    ],
+  },
+  {
+    id: 'beursschouwburg',
+    name: 'Beursschouwburg',
+    addr: 'Rue Auguste Orts 20-28, 1000 Brussels',
+    lat: 50.8486, lng: 4.3497,
+    neighbourhood: 'Centre',
+    emoji: '🎭', color: '#F4A261', cat: 'Culture',
+    tags: ['Alt Culture', 'Indie', 'Arts'],
+    defaultTime: '20:00',
+    extraWait: 6000,
+    enforceVisuals: true,
+    urls: [
+      'https://www.beursschouwburg.be',
+      'https://www.beursschouwburg.be/en/agenda',
+      'https://www.beursschouwburg.be/fr/agenda',
+      'https://www.beursschouwburg.be/nl/agenda',
+      'http://www.beursschouwburg.be',
+    ],
+  },
+  {
+    id: 'magasin4',
+    name: 'Magasin 4',
+    addr: 'Avenue du Port 51b, 1000 Brussels',
+    lat: 50.8588, lng: 4.3423,
+    neighbourhood: 'Molenbeek',
+    emoji: '🎸', color: '#C77DFF', cat: 'Music',
+    tags: ['Punk', 'Indie', 'Alternative', 'Live Music'],
+    defaultTime: '20:00',
+    extraWait: 6000,
+    enforceVisuals: true,
+    urls: [
+      'https://www.magasin4.be',
+      'http://www.magasin4.be',
+      'https://www.magasin4.be/agenda',
+      'https://www.magasin4.be/concerts',
+    ],
+  },
+  {
+    id: 'laMachine',
+    name: 'La Machine',
+    addr: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Brussels',
+    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
+    tags: ['Underground', 'Club', 'Live Music'],
+    defaultTime: '22:00',
+    extraWait: 7000,
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://www.lamachine.be',
+      'http://www.lamachine.be',
+      'https://www.lamachine.be/agenda',
+      'https://www.lamachine.be/events',
+    ],
+  },
+  {
+    id: 'kanal',
+    name: 'KANAL - Centre Pompidou',
+    addr: 'Place Sainctelette 2, 1000 Brussels',
+    lat: 50.8554, lng: 4.3454,
+    neighbourhood: 'Molenbeek',
+    emoji: '🎨', color: '#F4A261', cat: 'Culture',
+    tags: ['Art', 'Culture', 'Events'],
+    defaultTime: '19:00',
+    extraWait: 6000,
+    enforceVisuals: true,
+    urls: [
+      'https://www.kanal.brussels',
+      'http://www.kanal.brussels',
+      'https://www.kanal.brussels/en/agenda',
+      'https://www.kanal.brussels/fr/agenda',
+    ],
+  },
+  {
+    id: 'quai20',
+    name: 'Quai 20',
+    addr: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Brussels',
+    emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
+    tags: ['Nightclub', 'Clubbing', 'Electronic'],
+    defaultTime: '23:00',
+    extraWait: 7000,
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://quai20.be/',
+      'https://quai20.be/events',
+      'https://quai20.be/agenda',
+    ],
+  },
+  {
+    id: 'kaaitheater',
+    name: 'Kaaitheater',
+    addr: 'Square Sainctelette 20, 1000 Brussels',
+    lat: 50.8551, lng: 4.3448,
+    neighbourhood: 'Molenbeek',
+    emoji: '🎭', color: '#E76F51', cat: 'Culture',
+    tags: ['Performing Arts', 'Experimental', 'Theatre'],
+    defaultTime: '20:00',
+    extraWait: 6000,
+    enforceVisuals: true,
+    urls: [
+      'https://www.kaaitheater.be',
+      'http://www.kaaitheater.be',
+      'https://www.kaaitheater.be/en/agenda',
+      'https://www.kaaitheater.be/nl/agenda',
     ],
   },
 ];
@@ -947,7 +1136,20 @@ async function scrapeVenue(browser, config) {
 
           const timeText  = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
           const desc = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
-          const link = $el.find('a[href]').first().attr('href') || '';
+
+          // Deep-link: prioritise anchors that point to a specific event detail page.
+          // 1. Anchor wrapping or containing the heading element (most direct event link).
+          // 2. Any <a> whose href contains an event-slug keyword.
+          // 3. Fallback to the first anchor in the candidate.
+          const headingAnchor = $el.find([
+            'h1 a','h2 a','h3 a','h4 a','h5 a',
+            '[class*="title"] a','[class*="name"] a','[class*="artist"] a',
+          ].join(',')).first().attr('href')
+            || $el.find('h1,h2,h3,h4,h5').first().closest('a').attr('href');
+          const slugAnchor = $el.find('a[href]').filter((_, a) =>
+            /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme/i.test($(a).attr('href') || '')
+          ).first().attr('href');
+          const link = headingAnchor || slugAnchor || $el.find('a[href]').first().attr('href') || '';
           const url  = link.startsWith('http') ? link : link.startsWith('/') ? `${baseOrigin}${link}` : link;
 
           const cls = classifyForVenue(title+' '+desc, config);
@@ -1096,8 +1298,19 @@ async function main() {
     'la madeleine':      { emoji: '🎸', color: '#8E7DBE', cat: 'Music'     },
     'bozar':             { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
     'agenda brussels':   { emoji: '🏛️', color: '#E76F51', cat: 'Culture'   },
-    'couleur café':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
-    'couleur cafe':      { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
+    'couleur café':           { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
+    'couleur cafe':           { emoji: '🎸', color: '#F4A261', cat: 'Festival'  },
+    // Gen-Z venues
+    'umi':                    { emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife' },
+    'signal club':            { emoji: '⚡', color: '#6C63FF', cat: 'Nightlife' },
+    'buda bxl':               { emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife' },
+    'madame moustache':       { emoji: '🎸', color: '#C77DFF', cat: 'Music'     },
+    'beursschouwburg':        { emoji: '🎭', color: '#F4A261', cat: 'Culture'   },
+    'magasin 4':              { emoji: '🎸', color: '#C77DFF', cat: 'Music'     },
+    'la machine':             { emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife' },
+    'kanal':                  { emoji: '🎨', color: '#F4A261', cat: 'Culture'   },
+    'quai 20':                { emoji: '⚡', color: '#6C63FF', cat: 'Nightlife' },
+    'kaaitheater':            { emoji: '🎭', color: '#E76F51', cat: 'Culture'   },
   };
   let emojiFixed = 0;
   existing = existing.map(e => {
