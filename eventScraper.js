@@ -1491,17 +1491,39 @@ async function main() {
     args: ['--no-sandbox','--disable-setuid-sandbox','--disable-dev-shm-usage','--disable-gpu','--ignore-certificate-errors'],
   });
 
+  const CONCURRENCY = 4; // open 4 pages in parallel — safe on GH Actions (7 GB RAM)
+
+  // Hard per-venue timeout: one stalled page can't freeze its whole batch
+  async function scrapeVenueWithTimeout(config) {
+    return Promise.race([
+      scrapeVenue(browser, config),
+      new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('Venue timed out after 60 s')), 60000)
+      ),
+    ]);
+  }
+
   const results = [];
   let raw = [];
   try {
-    for (const config of VENUE_CONFIGS) {
-      try {
-        const venueEvents = await scrapeVenue(browser, config);
-        results.push({ name: config.name, emoji: config.emoji, count: venueEvents.length });
-        raw = [...raw, ...venueEvents];
-      } catch (err) {
-        results.push({ name: config.name, emoji: config.emoji, count: 0, err: err.message });
-        console.warn(`  ⚠️  Skipping ${config.name}: ${err.message}`);
+    for (let i = 0; i < VENUE_CONFIGS.length; i += CONCURRENCY) {
+      const batch = VENUE_CONFIGS.slice(i, i + CONCURRENCY);
+      const batchNum = Math.floor(i / CONCURRENCY) + 1;
+      const totalBatches = Math.ceil(VENUE_CONFIGS.length / CONCURRENCY);
+      console.log(`\n⚡  Batch ${batchNum}/${totalBatches}: ${batch.map(c => c.name).join(' · ')}`);
+
+      const settled = await Promise.allSettled(batch.map(c => scrapeVenueWithTimeout(c)));
+
+      for (let j = 0; j < settled.length; j++) {
+        const r = settled[j];
+        const config = batch[j];
+        if (r.status === 'fulfilled') {
+          results.push({ name: config.name, emoji: config.emoji, count: r.value.length });
+          raw = [...raw, ...r.value];
+        } else {
+          results.push({ name: config.name, emoji: config.emoji, count: 0, err: r.reason?.message });
+          console.warn(`  ⚠️  ${config.name}: ${r.reason?.message}`);
+        }
       }
     }
   } finally {
