@@ -2,7 +2,7 @@
   {
     "id": 118,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Nora Brown with Stephanie Coleman",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -68,7 +68,7 @@
   {
     "id": 119,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "TeddyBear",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -124,7 +124,7 @@
   {
     "id": 120,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Grace Ives - Félicette",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -200,7 +200,7 @@
   {
     "id": 121,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Whoman - Blumi",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -580,7 +580,7 @@
   {
     "id": 126,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Buckshot",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1138,7 +1138,7 @@
   {
     "id": 154,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ASHNIKKO",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -3318,7 +3318,7 @@
   {
     "id": 191,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Festival of the New European Bauhaus",
     "venue": "Art & History Museum (RMAH)",
     "addr": "Art & History Museum (RMAH), Belgium",
@@ -5860,7 +5860,7 @@
   {
     "id": 305,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Buckshot - imyraj",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -6006,7 +6006,7 @@
   {
     "id": 310,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Tashi Dorji + Jean DL",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -6056,7 +6056,7 @@
   {
     "id": 311,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Group Atelier w/Youssef Swatt's",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7357,7 +7357,7 @@
   {
     "id": 333,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7427,7 +7427,7 @@
   {
     "id": 334,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS'",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7657,7 +7657,7 @@
   {
     "id": 337,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "TeddyBear - Jaqo",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -11407,7 +11407,7 @@
     "endH": 26,
     "emoji": "⚡",
     "color": "#7B2FBE",
-    "friends": 0,
+    "friends": 1,
     "tags": [
       "Techno",
       "Electronic",
@@ -11417,163 +11417,168 @@
     "officialEventLink": "https://www.fuse.be/events/fuse-presents-closer-milano-w-marcal-b2b-arthur-robert-chami",
     "lat": 50.8365,
     "lng": 4.3435,
-    "going": 207,
+    "going": 186,
     "neighbourhood": "Marolles",
     "desc": "ROOM 01 at Fuse.",
     "attendees": [
       {
         "n": "Zoë",
-        "c": "#F4A261",
+        "c": "#8E7DBE",
         "isFriend": true
       },
       {
-        "n": "Kaan",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Guest260",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest413",
+        "n": "Guest361",
         "c": "#8E7DBE",
         "isFriend": false
       },
       {
-        "n": "Guest553",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest797",
-        "c": "#90E0EF",
+        "n": "Guest719",
+        "c": "#B8E5C0",
         "isFriend": false
       }
     ],
     "chatSeed": [
       {
-        "user": "Kai",
-        "text": "Grab tickets fast, selling out!",
-        "time": "8:30 AM"
-      },
-      {
         "user": "Iris",
         "text": "This is going to be AMAZING",
-        "time": "9:23 AM"
+        "time": "4:37 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Counting down the days 🗓️",
+        "time": "10:03 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "2:30 AM"
       }
     ],
     "_rawDate": "2027-03-01"
   },
   {
     "id": 404,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Today",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "friends": 3,
+    "cat": "Culture",
+    "date": "Next Week",
+    "title": "Call me gravity",
+    "venue": "Wiels - Contemporary art centre",
+    "addr": "Wiels - Contemporary art centre, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "friends": 1,
     "tags": [
-      "Concert",
-      "Live Music"
+      "Culture",
+      "Art"
     ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/queen-elisabeth-competition-cello-2026-laureates-concert",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 108,
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Call-me-gravity.5700021783",
+    "lat": 50.8420627591868,
+    "lng": 4.332973512524478,
+    "going": 298,
     "neighbourhood": "Centre",
-    "desc": "Concerts",
+    "desc": "Thu 11 June — Sun 20 September Call me gravity ExhibitionsWiels - Contemporary art centre View more",
     "attendees": [
       {
-        "n": "Guest067",
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest053",
         "c": "#F7CFD8",
         "isFriend": false
       },
       {
-        "n": "Guest476",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest354",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest913",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest432",
-        "c": "#C77DFF",
+        "n": "Guest862",
+        "c": "#B8E5C0",
         "isFriend": false
       }
     ],
     "chatSeed": [
       {
-        "user": "Hugo",
-        "text": "Counting down the days 🗓️",
-        "time": "8:49 PM"
+        "user": "Zoë",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:54 PM"
       },
       {
-        "user": "Hugo",
-        "text": "Already got my ticket! 👋",
-        "time": "8:06 AM"
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "9:04 PM"
       }
     ],
-    "_rawDate": "2026-06-08"
+    "_rawDate": "2026-06-11"
   },
   {
     "id": 405,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Queen Elisabeth Competition | Cello 2026 - Laureates' concert",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "friends": 3,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Vaux-Hall Summer",
+    "venue": "Vaux Hall, Parc de Bruxelles",
+    "addr": "Vaux Hall, Parc de Bruxelles, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 0,
     "tags": [
-      "Concert",
-      "Live Music"
+      "Festival",
+      "Outdoors"
     ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/queen-elisabeth-competition-cello-2026-laureates-concert",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 297,
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Vaux-Hall-Summer.5700022764",
+    "lat": 50.85794993544081,
+    "lng": 4.355945320395429,
+    "going": 217,
     "neighbourhood": "Centre",
-    "desc": "Concerts",
+    "desc": "Wed 17 June — Sun 19 July Vaux-Hall Summer Free FestivalVaux Hall, Parc de Bruxelles View more",
     "attendees": [
       {
-        "n": "Guest905",
-        "c": "#C77DFF",
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest133",
+        "c": "#F4C87A",
         "isFriend": false
       },
       {
-        "n": "Guest160",
+        "n": "Guest221",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest603",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest147",
         "c": "#90E0EF",
         "isFriend": false
       },
       {
-        "n": "Guest707",
-        "c": "#A6D6D6",
+        "n": "Guest607",
+        "c": "#90E0EF",
         "isFriend": false
       }
     ],
@@ -11581,20 +11586,20 @@
       {
         "user": "Ali",
         "text": "Can't wait for this one! 🔥",
-        "time": "5:06 AM"
+        "time": "1:17 AM"
       },
       {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "11:03 AM"
+        "user": "Nora",
+        "text": "Who else is going?? 🙋",
+        "time": "1:15 AM"
       },
       {
-        "user": "Hugo",
-        "text": "First time at this venue!",
-        "time": "5:16 PM"
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "5:32 PM"
       }
     ],
-    "_rawDate": "2026-06-08"
+    "_rawDate": "2026-06-17"
   },
   {
     "id": 406,
@@ -11608,81 +11613,168 @@
     "endH": 22,
     "emoji": "🌍",
     "color": "#F4A261",
-    "friends": 2,
+    "friends": 0,
     "tags": [
       "Festival",
       "Outdoors"
     ],
     "source": "Agenda Brussels",
     "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Fete-de-la-musique.5700022159",
-    "lat": 50.862064553023004,
-    "lng": 4.348874318977304,
-    "going": 213,
+    "lat": 50.85862040387249,
+    "lng": 4.348972519080922,
+    "going": 151,
     "neighbourhood": "Centre",
     "desc": "Thu 18 June — Sun 21 June Fête de la musique Free FestivalVarious locations in the Brussels Capital Region View more",
     "attendees": [
       {
         "n": "Zoë",
-        "c": "#B8E5C0",
+        "c": "#90E0EF",
         "isFriend": true
       },
       {
         "n": "Kaan",
-        "c": "#90E0EF",
+        "c": "#8E7DBE",
         "isFriend": true
       },
       {
-        "n": "Léa",
+        "n": "Guest990",
         "c": "#C77DFF",
-        "isFriend": true
+        "isFriend": false
       },
       {
-        "n": "Guest899",
+        "n": "Guest739",
         "c": "#F4A261",
         "isFriend": false
       },
       {
-        "n": "Guest983",
-        "c": "#F4C87A",
+        "n": "Guest597",
+        "c": "#C77DFF",
         "isFriend": false
       },
       {
-        "n": "Guest189",
-        "c": "#F4A261",
+        "n": "Guest331",
+        "c": "#F7CFD8",
         "isFriend": false
       },
       {
-        "n": "Guest899",
-        "c": "#90E0EF",
+        "n": "Guest183",
+        "c": "#A6D6D6",
         "isFriend": false
       },
       {
-        "n": "Guest988",
-        "c": "#F4A261",
+        "n": "Guest408",
+        "c": "#F7CFD8",
         "isFriend": false
       },
       {
-        "n": "Guest164",
-        "c": "#90E0EF",
+        "n": "Guest732",
+        "c": "#B8E5C0",
         "isFriend": false
       }
     ],
     "chatSeed": [
       {
-        "user": "Axel",
-        "text": "Already got my ticket! 👋",
-        "time": "12:56 AM"
+        "user": "Kai",
+        "text": "This is going to be AMAZING",
+        "time": "5:21 PM"
       },
       {
         "user": "Léa",
-        "text": "First time at this venue!",
-        "time": "12:21 PM"
+        "text": "This is going to be AMAZING",
+        "time": "5:20 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Grab tickets fast, selling out!",
+        "time": "8:20 PM"
       }
     ],
     "_rawDate": "2026-06-18"
   },
   {
     "id": 407,
+    "cat": "Music",
+    "date": "October",
+    "title": "Babe Haven (US) + Latter (US)",
+    "venue": "Magasin 4",
+    "addr": "Avenue du Port 51b, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Punk",
+      "Indie",
+      "Alternative",
+      "Live Music"
+    ],
+    "source": "Magasin 4",
+    "officialEventLink": "https://www.magasin4.be/concerts/51379/2026-10-27/",
+    "lat": 50.8588,
+    "lng": 4.3423,
+    "going": 306,
+    "neighbourhood": "Molenbeek",
+    "desc": "Babe Haven (US) + Latter (US) at Magasin 4.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest773",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest956",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest591",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest814",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest957",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest441",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "9:56 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "12:58 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "First time at this venue!",
+        "time": "12:41 PM"
+      }
+    ],
+    "_rawDate": "2026-10-27"
+  },
+  {
+    "id": 408,
     "cat": "Culture",
     "date": "Next Month",
     "title": "ENTWINED STUDIO #8",
@@ -11693,7 +11785,7 @@
     "endH": 14,
     "emoji": "🎭",
     "color": "#E76F51",
-    "friends": 0,
+    "friends": 3,
     "tags": [
       "Performing Arts",
       "Experimental",
@@ -11703,66 +11795,51 @@
     "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/entwined-studio-8",
     "lat": 50.8551,
     "lng": 4.3448,
-    "going": 184,
+    "going": 56,
     "neighbourhood": "Molenbeek",
     "desc": "ENTWINED STUDIO #8 at Kaaitheater.",
     "attendees": [
       {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest240",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest046",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest967",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest820",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest656",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest588",
+        "n": "Guest360",
         "c": "#B8E5C0",
         "isFriend": false
       },
       {
-        "n": "Guest677",
-        "c": "#90E0EF",
+        "n": "Guest098",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest724",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest893",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest755",
+        "c": "#F4A261",
         "isFriend": false
       }
     ],
     "chatSeed": [
       {
-        "user": "Kaan",
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "6:01 PM"
+      },
+      {
+        "user": "Zoë",
         "text": "Already got my ticket! 👋",
-        "time": "5:09 AM"
+        "time": "12:46 PM"
       },
       {
         "user": "Kaan",
-        "text": "Who else is going?? 🙋",
-        "time": "11:18 PM"
-      },
-      {
-        "user": "Kai",
         "text": "Can't wait for this one! 🔥",
-        "time": "7:13 AM"
+        "time": "1:23 AM"
       }
     ],
     "_rawDate": "2026-06-18"
