@@ -78,7 +78,7 @@
   {
     "id": 158,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "AMERICAN FOOTBALL",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -323,7 +323,7 @@
   {
     "id": 161,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "MOLOTOV & MALA RODRIGUEZ",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1733,7 +1733,7 @@
   {
     "id": 187,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Tokyo Melody: A Film about Ryuichi Sakamoto - Elizabeth Lennard",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2130,7 +2130,7 @@
   {
     "id": 230,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Violent Magic Orchestra",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -4800,7 +4800,7 @@
   {
     "id": 328,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Dry Leaf - Aleksandre Koberidze",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -4936,86 +4936,6 @@
       }
     ],
     "_rawDate": "2026-11-18"
-  },
-  {
-    "id": 342,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "La Musique du Geste - Isabelle Dumont",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/la-musique-du-geste-isabelle-dumont",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 64,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Guest501",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest126",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest138",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest269",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest070",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest385",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest279",
-        "c": "#F4A261",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "12:16 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Who else is going?? 🙋",
-        "time": "7:05 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Brussels never disappoints ❤️",
-        "time": "8:56 AM"
-      }
-    ],
-    "_rawDate": "2026-06-21"
   },
   {
     "id": 350,
@@ -7597,74 +7517,9 @@
     "_rawDate": "2026-07-11"
   },
   {
-    "id": 421,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "George Thorogood & the Destroyers + Jared James Nichols",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/george-thorogood-the-destroyers/a10Qw00000FXyHhIAL",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 157,
-    "neighbourhood": "Centre",
-    "desc": "The Baddest Show On Earth Tour",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest489",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest573",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest476",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest522",
-        "c": "#F4A261",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Can't wait for this one! 🔥",
-        "time": "9:56 AM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Can't wait for this one! 🔥",
-        "time": "4:48 AM"
-      }
-    ],
-    "_rawDate": "2026-06-21"
-  },
-  {
     "id": 424,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Newframes Festival",
     "venue": "CINEMATEK",
     "addr": "CINEMATEK, Belgium",
@@ -7809,7 +7664,7 @@
   {
     "id": 426,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Streets",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8273,7 +8128,7 @@
   {
     "id": 443,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS'",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8614,7 +8469,7 @@
   {
     "id": 454,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Historias del buen Valle - José Luis Guerín",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -8684,7 +8539,7 @@
   {
     "id": 458,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Streets + ILA",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8921,7 +8776,7 @@
   {
     "id": 466,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Elvis Costello & The Imposters with Charlie Sexton",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -9182,81 +9037,6 @@
       }
     ],
     "_rawDate": "2026-11-20"
-  },
-  {
-    "id": 477,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Visueel Festival Visuel, Circus & Urban Arts",
-    "venue": "De Kroon & Archipel 19",
-    "addr": "De Kroon & Archipel 19, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Visueel-Festival-Visuel-Circus-and-Urban-Arts.5700022742",
-    "lat": 50.836922822841885,
-    "lng": 4.370668978302327,
-    "going": 318,
-    "neighbourhood": "Centre",
-    "desc": "Sun 21 June Visueel Festival Visuel, Circus & Urban Arts Free FestivalDe Kroon & Archipel 19 View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Guest605",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest360",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest518",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest455",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest635",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest256",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Nora",
-        "text": "Can't wait for this one! 🔥",
-        "time": "4:40 AM"
-      },
-      {
-        "user": "Axel",
-        "text": "This is going to be AMAZING",
-        "time": "1:57 PM"
-      }
-    ],
-    "_rawDate": "2026-06-21"
   },
   {
     "id": 478,
@@ -9840,7 +9620,7 @@
   {
     "id": 491,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Next Month",
     "title": "C12 Nite - 25/07",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -9926,7 +9706,7 @@
         "time": "8:54 PM"
       }
     ],
-    "_rawDate": "2026-06-25"
+    "_rawDate": "2026-07-25"
   },
   {
     "id": 492,
@@ -10052,76 +9832,6 @@
       }
     ],
     "_rawDate": "2026-08-23"
-  },
-  {
-    "id": 494,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Belgian National Orchestra, Cottis & Gatto",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 1,
-    "tags": [
-      "Classical",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/belgian-national-orchestra-cottis-gatto",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 223,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "attendees": [
-      {
-        "n": "Guest157",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest935",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest547",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest756",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest814",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest904",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "First time at this venue!",
-        "time": "10:58 PM"
-      },
-      {
-        "user": "Ali",
-        "text": "First time at this venue!",
-        "time": "4:33 PM"
-      }
-    ],
-    "_rawDate": "2026-06-21"
   },
   {
     "id": 495,
@@ -10437,7 +10147,7 @@
   },
   {
     "id": 499,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Week",
     "title": "VR Film Screening: Future Planet",
     "venue": "Bozar",
@@ -10445,8 +10155,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 0,
     "tags": [
       "Cinema",
@@ -10691,5 +10401,332 @@
       }
     ],
     "_rawDate": "2026-11-26"
+  },
+  {
+    "id": 503,
+    "cat": "Music",
+    "date": "This Weekend",
+    "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS' + Marc Melià",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/new-date-kyle-dixon-michael-stein-performing-the-music-of-stranger-things/a10Qw00000Ga48jIAB",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 41,
+    "neighbourhood": "Centre",
+    "desc": "The superb live soundtrack to one of the most successful Netflix series ever",
+    "attendees": [
+      {
+        "n": "Guest549",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest637",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest752",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest307",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest043",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Brussels never disappoints ❤️",
+        "time": "7:29 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Grab tickets fast, selling out!",
+        "time": "2:37 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "1:31 PM"
+      }
+    ],
+    "_rawDate": "2026-06-28"
+  },
+  {
+    "id": 504,
+    "cat": "Music",
+    "date": "August",
+    "title": "The Whitest Boy Alive",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/the-whitest-boy-alive/a10Qw00000GS2gnIAD",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 107,
+    "neighbourhood": "Centre",
+    "desc": "Celebrating 20 year of the album dreams",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest070",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest830",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "4:38 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Grab tickets fast, selling out!",
+        "time": "2:36 PM"
+      }
+    ],
+    "_rawDate": "2026-08-30"
+  },
+  {
+    "id": 505,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Violent Magic Orchestra - LANDROSE",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "friends": 0,
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/violent-magic-orchestra-landrose-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "going": 185,
+    "neighbourhood": "Saint-Josse",
+    "desc": "A raw sensory overload where black metal, industrial techno and frantic strobe lights collide in an immersive performance that’s as chaotic as it is hypnotic.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest389",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest453",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "8:06 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "6:03 PM"
+      }
+    ],
+    "_rawDate": "2026-06-23"
+  },
+  {
+    "id": 506,
+    "cat": "Culture",
+    "date": "This Weekend",
+    "title": "Meet the Writer: Dave Eggers",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-writer-dave-eggers",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 263,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest433",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest235",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest035",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest313",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest722",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "7:06 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "3:23 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Who else is going?? 🙋",
+        "time": "11:24 PM"
+      }
+    ],
+    "_rawDate": "2026-06-28"
+  },
+  {
+    "id": 507,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Quai d'Été",
+    "venue": "Quai des péniches",
+    "addr": "Quai des péniches, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Quai-d-Ete.5700022843",
+    "lat": 50.8635873,
+    "lng": 4.351349,
+    "going": 296,
+    "neighbourhood": "Centre",
+    "desc": "Thu 02 July — Sun 19 July Quai d'Été Free FestivalQuai des péniches View more",
+    "attendees": [
+      {
+        "n": "Guest838",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest207",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest711",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest535",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest140",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "11:12 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Who else is going?? 🙋",
+        "time": "4:09 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "This is going to be AMAZING",
+        "time": "2:17 AM"
+      }
+    ],
+    "_rawDate": "2026-07-02"
   }
 ]
