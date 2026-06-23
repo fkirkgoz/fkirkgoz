@@ -78,7 +78,7 @@
   {
     "id": 158,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "AMERICAN FOOTBALL",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -2130,7 +2130,7 @@
   {
     "id": 230,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Violent Magic Orchestra",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -4940,7 +4940,7 @@
   {
     "id": 350,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Mutamorphosis",
     "venue": "Vaux Hall, Parc de Bruxelles",
     "addr": "Vaux Hall, Parc de Bruxelles, Belgium",
@@ -5162,7 +5162,7 @@
   {
     "id": 369,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "EyeHateGod (US) + Raw Peace (BE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -7383,7 +7383,7 @@
   {
     "id": 415,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7517,91 +7517,6 @@
     "_rawDate": "2026-07-11"
   },
   {
-    "id": 424,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Newframes Festival",
-    "venue": "CINEMATEK",
-    "addr": "CINEMATEK, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "friends": 1,
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Newframes-Festival.5700022500",
-    "lat": 50.8441014,
-    "lng": 4.3601392,
-    "going": 54,
-    "neighbourhood": "Centre",
-    "desc": "Mon 22 June — Thu 06 August Newframes Festival CinemaCINEMATEK View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest810",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest598",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest179",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest592",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest512",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest521",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest904",
-        "c": "#90E0EF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "First time at this venue!",
-        "time": "9:33 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Who else is going?? 🙋",
-        "time": "10:40 AM"
-      },
-      {
-        "user": "Axel",
-        "text": "Brussels never disappoints ❤️",
-        "time": "6:23 AM"
-      }
-    ],
-    "_rawDate": "2026-06-22"
-  },
-  {
     "id": 425,
     "cat": "Festival",
     "date": "Next Week",
@@ -7664,7 +7579,7 @@
   {
     "id": 426,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "The Streets",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7966,7 +7881,7 @@
   {
     "id": 441,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Various Voices Brussels 2026",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -8539,7 +8454,7 @@
   {
     "id": 458,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "The Streets + ILA",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -10530,7 +10445,7 @@
   {
     "id": 505,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Violent Magic Orchestra - LANDROSE",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -10728,5 +10643,205 @@
       }
     ],
     "_rawDate": "2026-07-02"
+  },
+  {
+    "id": 508,
+    "cat": "Music",
+    "date": "September",
+    "title": "The Waterboys Fisherman’s Blues Revue",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 1,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/the-waterboys-fishermans-blues-revue/a10Qw00000HhUqgIAF",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 123,
+    "neighbourhood": "Centre",
+    "desc": "The Waterboys Fisherman’s Blues Revue at Ancienne Belgique.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest882",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest812",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest421",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest052",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Already got my ticket! 👋",
+        "time": "4:15 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Counting down the days 🗓️",
+        "time": "7:11 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Brussels never disappoints ❤️",
+        "time": "11:37 AM"
+      }
+    ],
+    "_rawDate": "2026-09-01"
+  },
+  {
+    "id": 509,
+    "cat": "Music",
+    "date": "September",
+    "title": "HYPNOTIC",
+    "venue": "La Madeleine",
+    "addr": "Rue de la Madeleine 51, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#8E7DBE",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "La Madeleine",
+    "officialEventLink": "https://la-madeleine.be/show/hypnotic-immersive-opera-experience/",
+    "lat": 50.8459,
+    "lng": 4.3562,
+    "going": 240,
+    "neighbourhood": "Centre",
+    "desc": "HYPNOTIC at La Madeleine.",
+    "attendees": [
+      {
+        "n": "Guest936",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest260",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "6:17 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "12:05 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Can't wait for this one! 🔥",
+        "time": "11:43 AM"
+      }
+    ],
+    "_rawDate": "2026-09-13"
+  },
+  {
+    "id": 510,
+    "cat": "Culture",
+    "date": "Next Week",
+    "title": "World of Coffee Brussels",
+    "venue": "Brussels Expo",
+    "addr": "Brussels Expo, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Culture",
+      "Brussels"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.World-of-Coffee-Brussels.5700024082",
+    "lat": 50.8998743,
+    "lng": 4.3378542,
+    "going": 21,
+    "neighbourhood": "Centre",
+    "desc": "Thu 25 June — Sat 27 June World of Coffee Brussels €70 Fairs and showsBrussels Expo View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest935",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest811",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Grab tickets fast, selling out!",
+        "time": "9:12 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:35 AM"
+      }
+    ],
+    "_rawDate": "2026-06-25"
   }
 ]
