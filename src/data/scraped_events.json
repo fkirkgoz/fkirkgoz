@@ -76,81 +76,6 @@
     "_rawDate": "2026-09-27"
   },
   {
-    "id": 158,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "AMERICAN FOOTBALL",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/american-football/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "going": 290,
-    "neighbourhood": "Centre",
-    "desc": "AMERICAN FOOTBALL at La Madeleine.",
-    "attendees": [
-      {
-        "n": "Guest031",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest355",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest337",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest262",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest985",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest165",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "First time at this venue!",
-        "time": "8:09 PM"
-      },
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "12:29 PM"
-      },
-      {
-        "user": "Nora",
-        "text": "Who else is going?? 🙋",
-        "time": "12:50 PM"
-      }
-    ],
-    "_rawDate": "2026-06-23"
-  },
-  {
     "id": 159,
     "cat": "Music",
     "date": "Next Week",
@@ -2128,72 +2053,6 @@
     "_rawDate": "2026-06-27"
   },
   {
-    "id": 230,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Violent Magic Orchestra",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/violent-magic-orchestra-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 194,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A raw sensory overload where black metal, industrial techno and frantic strobe lights collide in an immersive performance that’s as chaotic as it is hypnotic.",
-    "attendees": [
-      {
-        "n": "Guest486",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest383",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest041",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest053",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Can't wait for this one! 🔥",
-        "time": "1:10 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "Brussels never disappoints ❤️",
-        "time": "1:03 PM"
-      },
-      {
-        "user": "Ali",
-        "text": "Already got my ticket! 👋",
-        "time": "12:43 AM"
-      }
-    ],
-    "_rawDate": "2026-06-23"
-  },
-  {
     "id": 231,
     "cat": "Music",
     "date": "October",
@@ -2949,7 +2808,7 @@
   {
     "id": 261,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Agriculture - Lintworm",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3045,7 +2904,7 @@
   {
     "id": 262,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "fakemink",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -4940,7 +4799,7 @@
   {
     "id": 350,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Mutamorphosis",
     "venue": "Vaux Hall, Parc de Bruxelles",
     "addr": "Vaux Hall, Parc de Bruxelles, Belgium",
@@ -5162,7 +5021,7 @@
   {
     "id": 369,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "EyeHateGod (US) + Raw Peace (BE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -5254,7 +5113,7 @@
   {
     "id": 370,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Xiao (SE) + Cút Lôn (VN) + We Came As Dirt (BE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -7383,7 +7242,7 @@
   {
     "id": 415,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7519,7 +7378,7 @@
   {
     "id": 425,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival Musiq3 | 2026",
     "venue": "Flagey",
     "addr": "Flagey, Belgium",
@@ -7577,94 +7436,9 @@
     "_rawDate": "2026-06-25"
   },
   {
-    "id": 426,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Streets",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/the-streets/a10Qw00000Ey7D3IAJ",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 258,
-    "neighbourhood": "Centre",
-    "desc": "for the first time ever performing in full: ​a grand don’t come for free - Extra Concert",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest256",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest222",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest921",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest660",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest214",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest623",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "5:03 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "Brussels never disappoints ❤️",
-        "time": "11:29 PM"
-      }
-    ],
-    "_rawDate": "2026-06-23"
-  },
-  {
     "id": 433,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Recyclart Holidays",
     "venue": "Recyclart",
     "addr": "Recyclart, Belgium",
@@ -7881,7 +7655,7 @@
   {
     "id": 441,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Various Voices Brussels 2026",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -8452,79 +8226,9 @@
     "_rawDate": "2026-06-28"
   },
   {
-    "id": 458,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Streets + ILA",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/the-streets/a10Qw00000Ey7D3IAJ",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 294,
-    "neighbourhood": "Centre",
-    "desc": "for the first time ever performing in full: ​a grand don’t come for free - Extra Concert",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Guest890",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest320",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest060",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest774",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Zoë",
-        "text": "Grab tickets fast, selling out!",
-        "time": "2:12 AM"
-      },
-      {
-        "user": "Kaan",
-        "text": "Brussels never disappoints ❤️",
-        "time": "2:56 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Brussels never disappoints ❤️",
-        "time": "12:48 PM"
-      }
-    ],
-    "_rawDate": "2026-06-23"
-  },
-  {
     "id": 461,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "August",
     "title": "Today",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -8594,7 +8298,7 @@
         "time": "4:12 PM"
       }
     ],
-    "_rawDate": "2026-06-27"
+    "_rawDate": "2026-08-23"
   },
   {
     "id": 465,
@@ -9751,7 +9455,7 @@
   {
     "id": 495,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Ommegang 2026",
     "venue": "Grand-Place",
     "addr": "Grand-Place, Belgium",
@@ -10133,7 +9837,7 @@
   {
     "id": 500,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Midis-Minimes Festival",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -10443,62 +10147,6 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 505,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Violent Magic Orchestra - LANDROSE",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/violent-magic-orchestra-landrose-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 185,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A raw sensory overload where black metal, industrial techno and frantic strobe lights collide in an immersive performance that’s as chaotic as it is hypnotic.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest389",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest453",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "Can't wait for this one! 🔥",
-        "time": "8:06 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "This is going to be AMAZING",
-        "time": "6:03 PM"
-      }
-    ],
-    "_rawDate": "2026-06-23"
-  },
-  {
     "id": 506,
     "cat": "Culture",
     "date": "This Weekend",
@@ -10782,7 +10430,7 @@
   {
     "id": 510,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "World of Coffee Brussels",
     "venue": "Brussels Expo",
     "addr": "Brussels Expo, Belgium",
@@ -10843,5 +10491,692 @@
       }
     ],
     "_rawDate": "2026-06-25"
+  },
+  {
+    "id": 511,
+    "cat": "Music",
+    "date": "September",
+    "title": "Bedouine",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 2,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/bedouine/a10Qw00000HoTGLIA3",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 89,
+    "neighbourhood": "Centre",
+    "desc": "Dreamy folk that enters quietly and leaves a lasting impression",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest566",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest111",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest468",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest708",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest221",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "8:10 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "1:10 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "3:41 AM"
+      }
+    ],
+    "_rawDate": "2026-09-04"
+  },
+  {
+    "id": 512,
+    "cat": "Food & Drink",
+    "date": "Next Month",
+    "title": "Les Escales Estivales",
+    "venue": "EDN Bar",
+    "addr": "EDN Bar, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 20,
+    "emoji": "🍹",
+    "color": "#F4C87A",
+    "friends": 3,
+    "tags": [
+      "Drinks",
+      "Social"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Les-Escales-Estivales.5700023758",
+    "lat": 50.83743,
+    "lng": 4.3067261,
+    "going": 158,
+    "neighbourhood": "Centre",
+    "desc": "Thu 02 July — Thu 20 August Les Escales Estivales €4 FestivalEDN Bar View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest780",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest123",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest280",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest680",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "8:38 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "This is going to be AMAZING",
+        "time": "8:48 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "10:11 AM"
+      }
+    ],
+    "_rawDate": "2026-07-02"
+  },
+  {
+    "id": 513,
+    "cat": "Culture",
+    "date": "This Weekend",
+    "title": "DE SITCOMEBACK",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/de-sitcomeback",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 181,
+    "neighbourhood": "Molenbeek",
+    "desc": "DE SITCOMEBACK at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Guest920",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest653",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest592",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest256",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest804",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest337",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest407",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Already got my ticket! 👋",
+        "time": "9:03 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Who else is going?? 🙋",
+        "time": "2:09 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "First time at this venue!",
+        "time": "5:51 AM"
+      }
+    ],
+    "_rawDate": "2026-06-28"
+  },
+  {
+    "id": 514,
+    "cat": "Culture",
+    "date": "September",
+    "title": "State of the Future",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/state-future",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 21,
+    "neighbourhood": "Molenbeek",
+    "desc": "State of the Future at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest760",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest649",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest890",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest214",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "9:04 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "8:46 AM"
+      }
+    ],
+    "_rawDate": "2026-09-02"
+  },
+  {
+    "id": 515,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Chapters of Celebration",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/chapters-celebration-0",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 180,
+    "neighbourhood": "Molenbeek",
+    "desc": "Chapters of Celebration at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest581",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest284",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest425",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest684",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest967",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest981",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest716",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "12:12 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "5:32 PM"
+      }
+    ],
+    "_rawDate": "2026-09-03"
+  },
+  {
+    "id": 516,
+    "cat": "Culture",
+    "date": "September",
+    "title": "shoe/farm",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/shoe-farm",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 24,
+    "neighbourhood": "Molenbeek",
+    "desc": "shoe/farm at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Guest062",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest129",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "This is going to be AMAZING",
+        "time": "10:56 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:54 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "1:53 AM"
+      }
+    ],
+    "_rawDate": "2026-09-03"
+  },
+  {
+    "id": 517,
+    "cat": "Culture",
+    "date": "September",
+    "title": "The Truthful",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/truthful",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 307,
+    "neighbourhood": "Molenbeek",
+    "desc": "The Truthful at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest171",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest475",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest644",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest891",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest612",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest928",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:12 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Already got my ticket! 👋",
+        "time": "12:24 PM"
+      }
+    ],
+    "_rawDate": "2026-09-04"
+  },
+  {
+    "id": 518,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Bonjour Mademoiselleke",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/bonjour-mademoiselleke",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 318,
+    "neighbourhood": "Molenbeek",
+    "desc": "Bonjour Mademoiselleke at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest980",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest794",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest273",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest950",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Already got my ticket! 👋",
+        "time": "5:21 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "9:01 AM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:20 AM"
+      }
+    ],
+    "_rawDate": "2026-09-10"
+  },
+  {
+    "id": 519,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Kunst in de greep van uiterst rechts?",
+    "venue": "Kaaitheater",
+    "addr": "Square Sainctelette 20, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Performing Arts",
+      "Experimental",
+      "Theatre"
+    ],
+    "source": "Kaaitheater",
+    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/kunst-de-greep-van-uiterst-rechts",
+    "lat": 50.8551,
+    "lng": 4.3448,
+    "going": 57,
+    "neighbourhood": "Molenbeek",
+    "desc": "Kunst in de greep van uiterst rechts? at Kaaitheater.",
+    "attendees": [
+      {
+        "n": "Guest893",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest423",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest201",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest822",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest333",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:11 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Counting down the days 🗓️",
+        "time": "4:32 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "This is going to be AMAZING",
+        "time": "4:42 AM"
+      }
+    ],
+    "_rawDate": "2026-09-04"
   }
 ]
