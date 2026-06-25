@@ -78,7 +78,7 @@
   {
     "id": 159,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "VARIOUS VOICES BRUSSELS 2026",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1748,7 +1748,7 @@
   {
     "id": 201,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Couleur Café Festival 2026",
     "venue": "Osseghem Park, Atomium",
     "addr": "Ossegempark, 1020 Laeken, Brussels",
@@ -2600,7 +2600,7 @@
   {
     "id": 251,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Slagwerk: Anna Luna - Europa - Bapari & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2808,7 +2808,7 @@
   {
     "id": 261,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Agriculture - Lintworm",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -4797,66 +4797,6 @@
     "_rawDate": "2026-11-18"
   },
   {
-    "id": 350,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Mutamorphosis",
-    "venue": "Vaux Hall, Parc de Bruxelles",
-    "addr": "Vaux Hall, Parc de Bruxelles, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "friends": 3,
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Mutamorphosis.5700023408",
-    "lat": 50.867297912402485,
-    "lng": 4.37138763093824,
-    "going": 274,
-    "neighbourhood": "Centre",
-    "desc": "Wed 24 June Mutamorphosis Free FestivalVaux Hall, Parc de Bruxelles View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Guest854",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest909",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest873",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "7:06 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Counting down the days 🗓️",
-        "time": "3:57 PM"
-      }
-    ],
-    "_rawDate": "2026-06-24"
-  },
-  {
     "id": 355,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -5019,101 +4959,9 @@
     "_rawDate": "2026-08-14"
   },
   {
-    "id": 369,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "EyeHateGod (US) + Raw Peace (BE)",
-    "venue": "Magasin 4",
-    "addr": "Avenue du Port 51b, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 3,
-    "tags": [
-      "Punk",
-      "Indie",
-      "Alternative",
-      "Live Music"
-    ],
-    "source": "Magasin 4",
-    "officialEventLink": "https://www.magasin4.be/concerts/49295/2026-06-24/",
-    "lat": 50.8588,
-    "lng": 4.3423,
-    "going": 280,
-    "neighbourhood": "Molenbeek",
-    "desc": "EyeHateGod (US) + Raw Peace (BE) at Magasin 4.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest413",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest754",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest800",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest189",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest300",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest790",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest633",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Nora",
-        "text": "Brussels never disappoints ❤️",
-        "time": "11:16 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Grab tickets fast, selling out!",
-        "time": "12:14 AM"
-      }
-    ],
-    "_rawDate": "2026-06-24"
-  },
-  {
     "id": 370,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Xiao (SE) + Cút Lôn (VN) + We Came As Dirt (BE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -5190,7 +5038,7 @@
   {
     "id": 371,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Avalanche Kaito (BE) + Silke X James (BE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -7240,81 +7088,6 @@
     "_rawDate": "2026-07-04"
   },
   {
-    "id": 415,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Nightlab w/BLCK Mamba DJ workshop: intermediate",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/nightlab-wblck-mamba-dj-workshop-intermediate/a10Qw00000FqD2BIAV",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 80,
-    "neighbourhood": "Centre",
-    "desc": "Workshop series with Blck Mamba for the DJs of tomorrow",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest883",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest307",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest178",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest908",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest421",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest503",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "Can't wait for this one! 🔥",
-        "time": "2:08 AM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Counting down the days 🗓️",
-        "time": "10:20 AM"
-      }
-    ],
-    "_rawDate": "2026-06-24"
-  },
-  {
     "id": 419,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -7378,7 +7151,7 @@
   {
     "id": 425,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Festival Musiq3 | 2026",
     "venue": "Flagey",
     "addr": "Flagey, Belgium",
@@ -7438,7 +7211,7 @@
   {
     "id": 433,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Recyclart Holidays",
     "venue": "Recyclart",
     "addr": "Recyclart, Belgium",
@@ -7508,7 +7281,7 @@
   {
     "id": 434,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Bruxelles fait son cinéma",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -7651,81 +7424,6 @@
       }
     ],
     "_rawDate": "2026-11-07"
-  },
-  {
-    "id": 441,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Various Voices Brussels 2026",
-    "venue": "Centre for Fine Arts - Bozar",
-    "addr": "Centre for Fine Arts - Bozar, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 3,
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Various-Voices-Brussels-2026.5700017797",
-    "lat": 50.85260583474222,
-    "lng": 4.368350985215147,
-    "going": 260,
-    "neighbourhood": "Centre",
-    "desc": "Wed 24 June — Sun 28 June Various Voices Brussels 2026 €290 FestivalCentre for Fine Arts - Bozar View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest881",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest670",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest726",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest124",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest933",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Nora",
-        "text": "Grab tickets fast, selling out!",
-        "time": "9:46 AM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Counting down the days 🗓️",
-        "time": "6:22 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Counting down the days 🗓️",
-        "time": "11:38 AM"
-      }
-    ],
-    "_rawDate": "2026-06-24"
   },
   {
     "id": 442,
@@ -8660,7 +8358,7 @@
   {
     "id": 478,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Burning Spear",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8885,7 +8583,7 @@
   {
     "id": 484,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Bequal Festival",
     "venue": "Grand Hospice",
     "addr": "Grand Hospice, Belgium",
@@ -9037,7 +8735,7 @@
   {
     "id": 487,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival Couleur Café",
     "venue": "Atomiumsquare",
     "addr": "Atomiumsquare, Belgium",
@@ -9767,7 +9465,7 @@
   {
     "id": 499,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "VR Film Screening: Future Planet",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -10225,7 +9923,7 @@
   {
     "id": 507,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Quai d'Été",
     "venue": "Quai des péniches",
     "addr": "Quai des péniches, Belgium",
@@ -10430,7 +10128,7 @@
   {
     "id": 510,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "World of Coffee Brussels",
     "venue": "Brussels Expo",
     "addr": "Brussels Expo, Belgium",
@@ -10580,7 +10278,7 @@
   {
     "id": 512,
     "cat": "Food & Drink",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Les Escales Estivales",
     "venue": "EDN Bar",
     "addr": "EDN Bar, Belgium",
@@ -11178,5 +10876,350 @@
       }
     ],
     "_rawDate": "2026-09-04"
+  },
+  {
+    "id": 520,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Burning Spear + Roots Warriors",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/burning-spear/a10Qw00000FBLTZIA5",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 43,
+    "neighbourhood": "Centre",
+    "desc": "Reggae icon",
+    "attendees": [
+      {
+        "n": "Guest000",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest790",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest077",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest051",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "This is going to be AMAZING",
+        "time": "3:06 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "9:47 PM"
+      }
+    ],
+    "_rawDate": "2026-07-02"
+  },
+  {
+    "id": 521,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Impro 'Night Aladar",
+    "venue": "Ancienne Belgique",
+    "addr": "Boulevard Anspach 110, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#C77DFF",
+    "friends": 3,
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Ancienne Belgique",
+    "officialEventLink": "https://www.abconcerts.be/en/agenda/impro-night-aladar/a10Qw00000HkEhJIAV",
+    "lat": 50.8483,
+    "lng": 4.3512,
+    "going": 155,
+    "neighbourhood": "Centre",
+    "desc": "Take your first steps on stage at this fun jam session!",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest632",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest393",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest064",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest049",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest715",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "This is going to be AMAZING",
+        "time": "10:30 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "12:58 PM"
+      }
+    ],
+    "_rawDate": "2026-07-03"
+  },
+  {
+    "id": 522,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Arts at Night",
+    "venue": "BOZAR, KBR, Old Masters Museum",
+    "addr": "BOZAR, KBR, Old Masters Museum, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Arts-at-Night.591843",
+    "lat": 50.833993060451085,
+    "lng": 4.36559691255186,
+    "going": 208,
+    "neighbourhood": "Centre",
+    "desc": "Fri 03 July Arts at Night ExhibitionsBOZAR, KBR, Old Masters Museum View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest318",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest896",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest134",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest231",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest034",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "This is going to be AMAZING",
+        "time": "6:40 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "2:04 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "8:30 AM"
+      }
+    ],
+    "_rawDate": "2026-07-03"
+  },
+  {
+    "id": 523,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Nayad - Streetart festival",
+    "venue": "Various places in Ixelles",
+    "addr": "Various places in Ixelles, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Nayad-Streetart-festival.5700021476",
+    "lat": 50.84549656221748,
+    "lng": 4.356404098920986,
+    "going": 60,
+    "neighbourhood": "Centre",
+    "desc": "Fri 03 July — Sun 05 July Nayad - Streetart festival Free ShowVarious places in Ixelles View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest925",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest202",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest179",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "3:37 AM"
+      },
+      {
+        "user": "Iris",
+        "text": "Brussels never disappoints ❤️",
+        "time": "8:52 PM"
+      }
+    ],
+    "_rawDate": "2026-07-03"
+  },
+  {
+    "id": 524,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Brosella Festival 2026",
+    "venue": "Théâtre de Verdure – Parc d’Osseghem",
+    "addr": "Théâtre de Verdure – Parc d’Osseghem, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brosella-Festival-2026.5700021762",
+    "lat": 50.836876559881915,
+    "lng": 4.337899127820102,
+    "going": 93,
+    "neighbourhood": "Centre",
+    "desc": "Fri 03 July — Sun 05 July Brosella Festival 2026 FestivalThéâtre de Verdure – Parc d’Osseghem View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest753",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest516",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest826",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest449",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest914",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "This is going to be AMAZING",
+        "time": "11:27 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "5:43 PM"
+      }
+    ],
+    "_rawDate": "2026-07-03"
   }
 ]
