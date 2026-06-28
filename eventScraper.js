@@ -422,6 +422,27 @@ const VENUE_CONFIGS = [
       "https://agenda.brussels/en/search?q=Jeux+d%27Hiver",
     ],
   },
+
+  // ── Resident Advisor Brussels — single source for underground nightlife ────────
+  // RA is the authoritative platform for underground electronic / club events.
+  // One page covers all our Gen-Z nightlife venues. Strategy 1.9 matches each
+  // extracted event to the correct venue config (lat/lng/emoji/color) by name.
+  {
+    id: 'residentAdvisor',
+    name: 'Resident Advisor Brussels',
+    useResidentAdvisor: true,
+    addr: 'Brussels, Belgium',
+    lat: 50.8503, lng: 4.3517,
+    neighbourhood: 'Centre',
+    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
+    tags: ['Electronic', 'Club', 'Brussels'],
+    defaultTime: '23:00',
+    jsHeavy: true,
+    extraWait: 8000,
+    urls: [
+      'https://ra.co/events/be/brussels',
+    ],
+  },
 ];
 
 // ── Keyword classification ─────────────────────────────────────────────────────
@@ -1136,8 +1157,8 @@ async function scrapeVenue(browser, config) {
       // For React/Vue SPAs: Cheerio only sees the pre-JS static shell, so CSS selectors
       // find nothing. page.evaluate() runs inside the browser context where JS has already
       // rendered the real DOM, giving us real event cards.
-      // Skipped for useAgendaBrussels venues — Strategy 1.8 handles those specifically.
-      if (config.jsHeavy && !config.useAgendaBrussels && events.length === 0) {
+      // Skipped for useAgendaBrussels (→ 1.8) and useResidentAdvisor (→ 1.9) venues.
+      if (config.jsHeavy && !config.useAgendaBrussels && !config.useResidentAdvisor && events.length === 0) {
         try {
           console.log(`    Strategy 1.7 (jsHeavy live DOM): waiting for deferred renders…`);
           await sleep(1000);
@@ -1333,6 +1354,102 @@ async function scrapeVenue(browser, config) {
           console.log(`    Strategy 1.8 → ${events.length} valid event(s) for "${config.name}"`);
         } catch (err) {
           console.log(`    Strategy 1.8 failed: ${err.message.slice(0, 80)}`);
+        }
+      }
+
+      // ── Strategy 1.9: Resident Advisor Brussels ──
+      // RA is the authoritative source for underground electronic/nightlife events.
+      // We scrape the Brussels events listing and match each card's venue name to
+      // our VENUE_CONFIGS to assign the correct lat/lng/emoji/color per venue.
+      if (config.useResidentAdvisor && events.length === 0) {
+        try {
+          console.log('    Strategy 1.9 (Resident Advisor Brussels): extracting events…');
+          await sleep(3000);
+
+          // Build venue lookup: lowercase name → config object
+          const VENUE_LOOKUP = {};
+          for (const vc of VENUE_CONFIGS) {
+            if (vc.id !== 'residentAdvisor') {
+              VENUE_LOOKUP[vc.name.toLowerCase()] = vc;
+            }
+          }
+
+          const raItems = await page.evaluate(() => {
+            const selectors = [
+              '[data-testid*="event"]',
+              '[class*="event-tile"]', '[class*="eventTile"]',
+              '[class*="listing-item"]', '[class*="listingItem"]',
+              'article', 'li',
+            ];
+            let best = [];
+            for (const sel of selectors) {
+              try {
+                const els = [...document.querySelectorAll(sel)].filter(el => {
+                  const t = (el.innerText || '').trim();
+                  return t.length > 20 && t.length < 600;
+                });
+                if (els.length > best.length) best = els;
+              } catch {}
+            }
+            return best.slice(0, 80).map(el => {
+              const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"],[class*="heading"]');
+              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
+              const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
+              const link = el.querySelector('a[href*="/events/"]')?.href
+                        || el.querySelector('a[href*="/club/"]')?.href
+                        || el.querySelector('a[href]')?.href || '';
+              return {
+                title:   (h?.innerText || '').replace(/\s+/g, ' ').trim(),
+                dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+                allText,
+                link,
+              };
+            }).filter(item => item.title && item.title.length > 3);
+          });
+
+          console.log(`    RA: ${raItems.length} card(s) on Brussels events page`);
+
+          for (const item of raItems) {
+            if (!isValidTitle(item.title)) continue;
+            const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
+            if (!rawDate) continue;
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+
+            // Match to an approved Gen-Z venue by scanning the card text
+            let matchedVc = null;
+            const lowerText = item.allText.toLowerCase();
+            for (const [vname, vc] of Object.entries(VENUE_LOOKUP)) {
+              if (vname.length > 2 && lowerText.includes(vname)) {
+                matchedVc = vc;
+                break;
+              }
+            }
+            if (!matchedVc) continue; // skip events at venues we don't track
+
+            const raUrl = item.link.startsWith('http') ? item.link
+              : item.link ? `https://ra.co${item.link}` : '';
+            const raUrlPath = raUrl.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+            if (!raUrl || raUrlPath.length < 5) continue;
+
+            const cls19   = classifyForVenue(item.title + ' ' + item.allText, matchedVc);
+            const smart19 = smartDefaultTime(cls19.cat);
+
+            events.push({
+              _rawDate: rawDate, title: item.title,
+              venue: matchedVc.name, addr: matchedVc.addr,
+              date: refineDateLabel(relDate, smart19.startH), time: smart19.time,
+              startH: smart19.startH, endH: smart19.endH,
+              emoji: cls19.emoji, color: cls19.color, cat: cls19.cat, tags: cls19.tags,
+              source: 'Resident Advisor', officialEventLink: raUrl,
+              desc: item.allText.slice(0, 200) || `${item.title} at ${matchedVc.name}.`,
+              neighbourhood: matchedVc.neighbourhood,
+              lat: matchedVc.lat, lng: matchedVc.lng,
+            });
+          }
+          console.log(`    RA → ${events.length} event(s) matched to approved venues`);
+        } catch (err) {
+          console.log(`    Strategy 1.9 (RA) failed: ${err.message.slice(0, 80)}`);
         }
       }
 
