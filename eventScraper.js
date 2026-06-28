@@ -173,189 +173,258 @@ const VENUE_CONFIGS = [
   },
 
   // ── Gen-Z / underground Brussels venues ──────────────────────────────────────
-  // BLACKLIST REMINDER: AB, Botanique, Fuse, C12, La Madeleine, Bozar are already
-  // handled above and must NEVER appear in this section.
+  // BLACKLIST: AB, Botanique, Fuse, C12, La Madeleine, Bozar already covered above.
+  // Coords are hardcoded from the official visitBrussels dataset — geocoder is NEVER called for these.
   {
     id: 'umi',
     name: 'UMI',
-    addr: 'Brussels, Belgium',
-    lat: 0, lng: 0,
-    neighbourhood: 'Brussels',
+    addr: 'Rue du Marché aux Fromages 10, 1000 Brussels',
+    lat: 50.8459, lng: 4.3531,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Centre',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Electronic', 'Underground', 'Art'],
     defaultTime: '23:00',
-    extraWait: 7000,
     jsHeavy: true,
     enforceVisuals: true,
     urls: [
-      'https://umibrussels.art/',
       'https://umibrussels.art/events',
       'https://umibrussels.art/agenda',
+      'https://umibrussels.art/',
     ],
   },
   {
     id: 'signalClub',
     name: 'Signal Club',
-    addr: 'Brussels, Belgium',
-    lat: 0, lng: 0,
-    neighbourhood: 'Brussels',
+    addr: 'Rue de la Fourche 49, 1000 Brussels',
+    lat: 50.8487, lng: 4.3536,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Centre',
     emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
     tags: ['Electronic', 'Underground', 'Dark'],
     defaultTime: '23:00',
-    extraWait: 7000,
     jsHeavy: true,
     enforceVisuals: true,
     urls: [
-      'https://www.darkdistortedsignals.com/',
       'https://www.darkdistortedsignals.com/events',
       'https://www.darkdistortedsignals.com/agenda',
+      'https://www.darkdistortedsignals.com/',
     ],
   },
   {
     id: 'budaBxl',
     name: 'BUDA BXL',
-    addr: 'Brussels, Belgium',
-    lat: 0, lng: 0,
-    neighbourhood: 'Brussels',
+    addr: 'Digue du Canal 98A, 1130 Brussels',
+    lat: 50.9078, lng: 4.4112,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Laeken',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Club', 'Live Music', 'Nightlife'],
     defaultTime: '22:00',
-    extraWait: 7000,
     jsHeavy: true,
     enforceVisuals: true,
     urls: [
-      'https://www.budabxl.be',
-      'http://www.budabxl.be',
       'https://www.budabxl.be/agenda',
       'https://www.budabxl.be/events',
+      'https://www.budabxl.be',
     ],
   },
   {
     id: 'madameMoustache',
     name: 'Madame Moustache',
     addr: 'Quai au Bois à Brûler 5-7, 1000 Brussels',
-    lat: 50.8541, lng: 4.3485,
+    lat: 50.8514, lng: 4.3489,   // HARDCODED — visitBrussels dataset
     neighbourhood: 'Centre',
     emoji: '🎸', color: '#C77DFF', cat: 'Music',
     tags: ['Live Music', 'Club', 'Nightlife'],
     defaultTime: '21:00',
-    extraWait: 6000,
     enforceVisuals: true,
     urls: [
-      'https://madamemoustache.be/',
-      'http://madamemoustache.be/',
       'https://madamemoustache.be/agenda',
       'https://madamemoustache.be/events',
+      'https://madamemoustache.be/',
     ],
   },
   {
     id: 'beursschouwburg',
     name: 'Beursschouwburg',
     addr: 'Rue Auguste Orts 20-28, 1000 Brussels',
-    lat: 50.8486, lng: 4.3497,
+    lat: 50.8486, lng: 4.3483,   // HARDCODED — visitBrussels dataset
     neighbourhood: 'Centre',
     emoji: '🎭', color: '#F4A261', cat: 'Culture',
     tags: ['Alt Culture', 'Indie', 'Arts'],
     defaultTime: '20:00',
-    extraWait: 6000,
     enforceVisuals: true,
     urls: [
-      'https://www.beursschouwburg.be',
       'https://www.beursschouwburg.be/en/agenda',
       'https://www.beursschouwburg.be/fr/agenda',
       'https://www.beursschouwburg.be/nl/agenda',
-      'http://www.beursschouwburg.be',
+      'https://www.beursschouwburg.be',
     ],
   },
   {
     id: 'magasin4',
     name: 'Magasin 4',
-    addr: 'Avenue du Port 51b, 1000 Brussels',
-    lat: 50.8588, lng: 4.3423,
-    neighbourhood: 'Molenbeek',
+    addr: "Rue de l'Entrepôt 7, 1020 Brussels",
+    lat: 50.8693, lng: 4.3532,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Laeken',
     emoji: '🎸', color: '#C77DFF', cat: 'Music',
     tags: ['Punk', 'Indie', 'Alternative', 'Live Music'],
     defaultTime: '20:00',
-    extraWait: 6000,
     enforceVisuals: true,
     urls: [
-      'https://www.magasin4.be',
-      'http://www.magasin4.be',
       'https://www.magasin4.be/agenda',
       'https://www.magasin4.be/concerts',
+      'https://www.magasin4.be',
     ],
   },
   {
     id: 'laMachine',
     name: 'La Machine',
-    addr: 'Brussels, Belgium',
-    lat: 0, lng: 0,
-    neighbourhood: 'Brussels',
+    addr: 'Place Saint-Géry 2, 1000 Brussels',
+    lat: 50.8483, lng: 4.3473,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Centre',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Underground', 'Club', 'Live Music'],
     defaultTime: '22:00',
-    extraWait: 7000,
     jsHeavy: true,
     enforceVisuals: true,
     urls: [
-      'https://www.lamachine.be',
-      'http://www.lamachine.be',
       'https://www.lamachine.be/agenda',
       'https://www.lamachine.be/events',
+      'https://www.lamachine.be',
     ],
   },
   {
     id: 'kanal',
     name: 'KANAL - Centre Pompidou',
-    addr: 'Place Sainctelette 2, 1000 Brussels',
-    lat: 50.8554, lng: 4.3454,
+    addr: 'Avenue du Port 1, 1000 Brussels',
+    lat: 50.8604, lng: 4.3469,   // HARDCODED — visitBrussels dataset
     neighbourhood: 'Molenbeek',
     emoji: '🎨', color: '#F4A261', cat: 'Culture',
     tags: ['Art', 'Culture', 'Events'],
     defaultTime: '19:00',
-    extraWait: 6000,
     enforceVisuals: true,
     urls: [
-      'https://www.kanal.brussels',
-      'http://www.kanal.brussels',
       'https://www.kanal.brussels/en/agenda',
       'https://www.kanal.brussels/fr/agenda',
+      'https://www.kanal.brussels',
     ],
   },
   {
     id: 'quai20',
     name: 'Quai 20',
-    addr: 'Brussels, Belgium',
-    lat: 0, lng: 0,
-    neighbourhood: 'Brussels',
+    addr: 'Quai des Usines 20, 1000 Brussels',
+    lat: 50.8749, lng: 4.3638,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Laeken',
     emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
     tags: ['Nightclub', 'Clubbing', 'Electronic'],
     defaultTime: '23:00',
-    extraWait: 7000,
     jsHeavy: true,
     enforceVisuals: true,
     urls: [
-      'https://quai20.be/',
       'https://quai20.be/events',
       'https://quai20.be/agenda',
+      'https://quai20.be/',
     ],
   },
   {
     id: 'kaaitheater',
     name: 'Kaaitheater',
     addr: 'Square Sainctelette 20, 1000 Brussels',
-    lat: 50.8551, lng: 4.3448,
+    lat: 50.8588, lng: 4.3475,   // HARDCODED — visitBrussels dataset
     neighbourhood: 'Molenbeek',
     emoji: '🎭', color: '#E76F51', cat: 'Culture',
     tags: ['Performing Arts', 'Experimental', 'Theatre'],
     defaultTime: '20:00',
-    extraWait: 6000,
     enforceVisuals: true,
     urls: [
-      'https://www.kaaitheater.be',
-      'http://www.kaaitheater.be',
       'https://www.kaaitheater.be/en/agenda',
       'https://www.kaaitheater.be/nl/agenda',
+      'https://www.kaaitheater.be',
+    ],
+  },
+
+  // ── New unique Gen-Z picks from visitBrussels dataset (not in blacklist) ──────
+  {
+    id: 'flashClub',
+    name: 'Flash Club',
+    addr: 'Rue Duquesnoy 18, 1000 Brussels',
+    lat: 50.8448, lng: 4.3540,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Centre',
+    emoji: '⚡', color: '#FF6B9D', cat: 'Nightlife',
+    tags: ['Club', 'Electronic', 'Nightlife'],
+    defaultTime: '23:00',
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://www.flashclub.be/agenda',
+      'https://www.flashclub.be/events',
+      'https://www.flashclub.be',
+    ],
+  },
+  {
+    id: 'birdy',
+    name: 'BIRDY Brussels',
+    addr: 'Boulevard de Waterloo 38, 1000 Brussels',
+    lat: 50.8325, lng: 4.3581,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Louise',
+    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
+    tags: ['Club', 'Underground', 'Electronic'],
+    defaultTime: '23:00',
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://www.birdybrussels.com/events',
+      'https://www.birdybrussels.com/agenda',
+      'https://www.birdybrussels.com',
+    ],
+  },
+  {
+    id: 'settClub',
+    name: 'Sett Club',
+    addr: 'Avenue du Port 86c, 1000 Brussels',
+    lat: 50.8657, lng: 4.3509,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Molenbeek',
+    emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
+    tags: ['Club', 'Electronic', 'Underground'],
+    defaultTime: '23:00',
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://sett.be/agenda',
+      'https://sett.be/events',
+      'https://sett.be',
+    ],
+  },
+  {
+    id: 'kvs',
+    name: 'KVS',
+    addr: 'Quai aux Pierres de Taille 7, 1000 Brussels',
+    lat: 50.8552, lng: 4.3512,   // HARDCODED — visitBrussels dataset
+    neighbourhood: 'Centre',
+    emoji: '🎭', color: '#E76F51', cat: 'Culture',
+    tags: ['Theatre', 'Performing Arts', 'Contemporary'],
+    defaultTime: '20:00',
+    enforceVisuals: true,
+    urls: [
+      'https://www.kvs.be/en/agenda',
+      'https://www.kvs.be/fr/agenda',
+      'https://www.kvs.be',
+    ],
+  },
+  {
+    id: 'jeuxDhiver',
+    name: "Jeux d'Hiver",
+    addr: 'Chemin du Croquet 1, 1000 Brussels',
+    lat: 50.8115, lng: 4.3730,   // HARDCODED — visitBrussels dataset (Bois de la Cambre)
+    neighbourhood: 'Ixelles',
+    emoji: '🌿', color: '#F4A261', cat: 'Nightlife',
+    tags: ['Club', 'Open Air', 'Electronic'],
+    defaultTime: '22:00',
+    jsHeavy: true,
+    enforceVisuals: true,
+    urls: [
+      'https://www.jeuxdhiver.be/agenda',
+      'https://www.jeuxdhiver.be/events',
+      'https://www.jeuxdhiver.be',
     ],
   },
 ];
@@ -1127,11 +1196,11 @@ async function scrapeVenue(browser, config) {
               const descEl = el.querySelector('p,[class*="desc"],[class*="intro"],[class*="summary"]');
               const desc = (descEl?.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 200);
 
-              // Three-tier link: heading anchor → slug anchor → first anchor
+              // Two-tier link: heading anchor → slug anchor. No generic fallback.
               const headingLink = h?.querySelector('a')?.href || h?.closest?.('a')?.href || '';
               const allLinks = [...el.querySelectorAll('a[href]')];
-              const slugLink = allLinks.find(a => /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail/i.test(a.href || ''));
-              const link = headingLink || slugLink?.href || allLinks[0]?.href || '';
+              const slugLink = allLinks.find(a => /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail|\/tickets|\/activit/i.test(a.href || ''));
+              const link = headingLink || slugLink?.href || '';
 
               const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
               return { title, dateStr, timeText, desc, link, allText };
@@ -1143,16 +1212,22 @@ async function scrapeVenue(browser, config) {
 
           for (const { title, dateStr, timeText, desc, link, allText } of liveCards) {
             if (!isValidTitle(title)) continue;
+            // Strict date: prefer structured element; fall back to text scan only as last resort
             const rawDate = parseRawDate(dateStr) || parseRawDate(scanTextForDate(allText));
             if (!rawDate) { console.log(`    skip "${title.slice(0,30)}" — date not parsed`); continue; }
             const relDate = toRelativeDate(rawDate);
             if (!relDate) continue;
-
+            // Strict deep-link: reject if no link or link is bare homepage
+            if (!link) { console.log(`    skip "${title.slice(0,30)}" — no deep-link`); continue; }
             const url = link.startsWith('http') ? link
-              : link.startsWith('/') ? `${baseOrigin}${link}` : link;
+              : link.startsWith('/') ? `${baseOrigin}${link}` : '';
+            const urlPath17 = url.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+            if (!url || urlPath17.length < 5) { console.log(`    skip "${title.slice(0,30)}" — homepage URL rejected`); continue; }
+
             const cls = classifyForVenue(title + ' ' + desc, config);
             const smart = smartDefaultTime(cls.cat);
             const { time: parsedTime, startH, endH } = parseTime(timeText, smart.time);
+            const externalVenueHint17 = detectExternalVenue(title + ' ' + desc);
 
             events.push({
               _rawDate: rawDate, title, venue: config.name, addr: config.addr,
@@ -1161,6 +1236,7 @@ async function scrapeVenue(browser, config) {
               source: config.name, officialEventLink: url,
               desc: desc || `${title} at ${config.name}.`,
               neighbourhood: config.neighbourhood, lat: config.lat, lng: config.lng,
+              ...(externalVenueHint17 ? { externalVenueHint: externalVenueHint17 } : {}),
             });
           }
           console.log(`    Strategy 1.7 → ${events.length} valid event(s)`);
@@ -1254,20 +1330,22 @@ async function scrapeVenue(browser, config) {
           const title = clean(headingEl.text());
           if (!isValidTitle(title)) return;
 
-          // Date anchoring — search nearest DOM context first to avoid cross-card pairing.
-          // Tier 1: heading's direct parent (tightest possible scope).
-          // Tier 2: heading's grandparent.
-          // Tier 3: full candidate element.
-          // Tier 4: raw text scan of the candidate as last resort.
+          // ── Date anchoring (strict — no raw text fallback) ──
+          // Only accept a date from a structured element (time, [datetime], [class*="date"],
+          // etc.) within the card's DOM tree. If none found, discard the event entirely —
+          // the raw text scan is gone because it caused cross-card date pairing.
           const headingParent      = headingEl.parent();
           const headingGrandparent = headingParent.parent();
           const dateText =
             findDateIn(headingParent)      ||
             findDateIn(headingGrandparent) ||
-            findDateIn($el)                ||
-            scanTextForDate($el.text())    || '';
+            findDateIn($el)                || '';
 
-          console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${(dateText+'').slice(0,35)}"`);
+          if (!dateText) {
+            console.log(`    ${config.id}: "${title.slice(0,35)}" — no structured date element, discarded`);
+            return;
+          }
+          console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${dateText.slice(0,35)}"`);
 
           const rawDate = parseRawDate(dateText);
           if (!rawDate) { console.log(`      → date not parsed`); return; }
@@ -1277,10 +1355,10 @@ async function scrapeVenue(browser, config) {
           const timeText = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
           const desc     = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
 
-          // Deep-link: three-tier lookup for the specific event detail page href.
-          // Tier 1: anchor directly wrapping or inside the heading element.
-          // Tier 2: any <a> whose href contains a recognisable event-slug path segment.
-          // Tier 3: first anchor anywhere in the candidate (last resort).
+          // ── Deep-link (strict — no generic first-anchor fallback) ──
+          // Tier 1: anchor wrapping or inside the heading element.
+          // Tier 2: any <a> with an event-slug path segment.
+          // If neither tier yields a link, discard — a homepage URL is not a deep-link.
           const headingAnchor =
             headingEl.find('a').first().attr('href') ||
             headingEl.closest('a').attr('href') ||
@@ -1289,18 +1367,25 @@ async function scrapeVenue(browser, config) {
               '[class*="title"] a','[class*="name"] a','[class*="artist"] a',
             ].join(',')).first().attr('href');
           const slugAnchor = $el.find('a[href]').filter((_, a) =>
-            /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail/i
+            /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail|\/tickets|\/activit/i
               .test($(a).attr('href') || '')
           ).first().attr('href');
-          const link = headingAnchor || slugAnchor || $el.find('a[href]').first().attr('href') || '';
-          const url  = link.startsWith('http') ? link
-            : link.startsWith('/') ? `${baseOrigin}${link}` : link;
+          const rawLink = headingAnchor || slugAnchor || '';
+          if (!rawLink) { console.log(`      → no event deep-link found, discarded`); return; }
+          const url = rawLink.startsWith('http') ? rawLink
+            : rawLink.startsWith('/') ? `${baseOrigin}${rawLink}` : '';
+          // Reject bare homepage roots (path is empty or just '/')
+          const urlPath = url.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+          if (!url || urlPath.length < 5) {
+            console.log(`      → homepage URL rejected (no event path), discarded`);
+            return;
+          }
 
           const cls = classifyForVenue(title+' '+desc, config);
           const smart = smartDefaultTime(cls.cat);
           const { time, startH, endH } = parseTime(timeText, smart.time);
-          const externalVenueHint = (config.id === 'c12' || config.id === 'fuse')
-            ? detectExternalVenue(title+' '+desc) : null;
+          // Detect offsite/outdoor location for ALL venues (not just C12/Fuse)
+          const externalVenueHint = detectExternalVenue(title+' '+desc);
 
           events.push({ _rawDate:rawDate, title, venue:config.name, addr:config.addr,
             date:refineDateLabel(relDate, startH), time, startH, endH,
@@ -1471,6 +1556,12 @@ async function main() {
     'kanal':                  { emoji: '🎨', color: '#F4A261', cat: 'Culture'   },
     'quai 20':                { emoji: '⚡', color: '#6C63FF', cat: 'Nightlife' },
     'kaaitheater':            { emoji: '🎭', color: '#E76F51', cat: 'Culture'   },
+    // New Gen-Z venues (visitBrussels dataset)
+    'flash club':             { emoji: '⚡', color: '#FF6B9D', cat: 'Nightlife' },
+    'birdy brussels':         { emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife' },
+    'sett club':              { emoji: '⚡', color: '#6C63FF', cat: 'Nightlife' },
+    'kvs':                    { emoji: '🎭', color: '#E76F51', cat: 'Culture'   },
+    "jeux d'hiver":           { emoji: '🌿', color: '#F4A261', cat: 'Nightlife' },
   };
   let emojiFixed = 0;
   existing = existing.map(e => {
