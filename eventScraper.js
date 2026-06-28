@@ -172,286 +172,254 @@ const VENUE_CONFIGS = [
     ],
   },
 
-  // ── Gen-Z / underground Brussels venues ──────────────────────────────────────
-  // BLACKLIST: AB, Botanique, Fuse, C12, La Madeleine, Bozar already covered above.
-  // Coords are hardcoded from the official visitBrussels dataset — geocoder is NEVER called for these.
+  // ── Gen-Z / underground Brussels venues — scraped via agenda.brussels search ──
+  // Instead of hitting fragile individual venue websites, we search agenda.brussels
+  // for each venue by name. This gives us consistent DOM structure, reliable
+  // agenda.brussels deep-links, and explicit location fields on every event card.
+  // BLACKLIST REMINDER: AB, Botanique, Fuse, C12, La Madeleine, Bozar handled above.
   {
     id: 'umi',
     name: 'UMI',
+    useAgendaBrussels: true,
     addr: 'Rue du Marché aux Fromages 10, 1000 Brussels',
-    lat: 50.8459, lng: 4.3531,   // HARDCODED — visitBrussels dataset
+    lat: 50.8459, lng: 4.3531,
     neighbourhood: 'Centre',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Electronic', 'Underground', 'Art'],
     defaultTime: '23:00',
-    jsHeavy: true,
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://umibrussels.art/events',
-      'https://umibrussels.art/agenda',
-      'https://umibrussels.art/',
+      'https://www.agenda.brussels/en/search?q=UMI',
+      'https://www.agenda.brussels/en/activities?q=UMI',
+      'https://agenda.brussels/en/search?q=UMI',
     ],
   },
   {
     id: 'signalClub',
     name: 'Signal Club',
+    useAgendaBrussels: true,
     addr: 'Rue de la Fourche 49, 1000 Brussels',
-    lat: 50.8487, lng: 4.3536,   // HARDCODED — visitBrussels dataset
+    lat: 50.8487, lng: 4.3536,
     neighbourhood: 'Centre',
     emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
     tags: ['Electronic', 'Underground', 'Dark'],
     defaultTime: '23:00',
-    jsHeavy: true,
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.darkdistortedsignals.com/events',
-      'https://www.darkdistortedsignals.com/agenda',
-      'https://www.darkdistortedsignals.com/',
+      'https://www.agenda.brussels/en/search?q=Signal+Club',
+      'https://agenda.brussels/en/search?q=Signal+Club',
     ],
   },
   {
     id: 'budaBxl',
     name: 'BUDA BXL',
+    useAgendaBrussels: true,
     addr: 'Digue du Canal 98A, 1130 Brussels',
-    lat: 50.9078, lng: 4.4112,   // HARDCODED — visitBrussels dataset
+    lat: 50.9078, lng: 4.4112,
     neighbourhood: 'Laeken',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Club', 'Live Music', 'Nightlife'],
     defaultTime: '22:00',
-    jsHeavy: true,
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.budabxl.be/agenda',
-      'https://www.budabxl.be/events',
-      'https://www.budabxl.be',
+      'https://www.agenda.brussels/en/search?q=BUDA+BXL',
+      'https://www.agenda.brussels/en/search?q=BUDA',
+      'https://agenda.brussels/en/search?q=BUDA+BXL',
     ],
   },
   {
     id: 'madameMoustache',
     name: 'Madame Moustache',
+    useAgendaBrussels: true,
     addr: 'Quai au Bois à Brûler 5-7, 1000 Brussels',
-    lat: 50.8514, lng: 4.3489,   // HARDCODED — visitBrussels dataset
+    lat: 50.8514, lng: 4.3489,
     neighbourhood: 'Centre',
     emoji: '🎸', color: '#C77DFF', cat: 'Music',
     tags: ['Live Music', 'Club', 'Nightlife'],
     defaultTime: '21:00',
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://madamemoustache.be/agenda',
-      'https://madamemoustache.be/events',
-      'https://madamemoustache.be/',
+      'https://www.agenda.brussels/en/search?q=Madame+Moustache',
+      'https://agenda.brussels/en/search?q=Madame+Moustache',
     ],
   },
   {
     id: 'beursschouwburg',
     name: 'Beursschouwburg',
+    useAgendaBrussels: true,
     addr: 'Rue Auguste Orts 20-28, 1000 Brussels',
-    lat: 50.8486, lng: 4.3483,   // HARDCODED — visitBrussels dataset
+    lat: 50.8486, lng: 4.3483,
     neighbourhood: 'Centre',
     emoji: '🎭', color: '#F4A261', cat: 'Culture',
     tags: ['Alt Culture', 'Indie', 'Arts'],
     defaultTime: '20:00',
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.beursschouwburg.be/en/agenda',
-      'https://www.beursschouwburg.be/fr/agenda',
-      'https://www.beursschouwburg.be/nl/agenda',
-      'https://www.beursschouwburg.be',
+      'https://www.agenda.brussels/en/search?q=Beursschouwburg',
+      'https://agenda.brussels/en/search?q=Beursschouwburg',
     ],
   },
   {
     id: 'magasin4',
     name: 'Magasin 4',
+    useAgendaBrussels: true,
     addr: "Rue de l'Entrepôt 7, 1020 Brussels",
-    lat: 50.8693, lng: 4.3532,   // HARDCODED — visitBrussels dataset
+    lat: 50.8693, lng: 4.3532,
     neighbourhood: 'Laeken',
     emoji: '🎸', color: '#C77DFF', cat: 'Music',
     tags: ['Punk', 'Indie', 'Alternative', 'Live Music'],
     defaultTime: '20:00',
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.magasin4.be/agenda',
-      'https://www.magasin4.be/concerts',
-      'https://www.magasin4.be',
+      'https://www.agenda.brussels/en/search?q=Magasin+4',
+      'https://agenda.brussels/en/search?q=Magasin+4',
     ],
   },
   {
     id: 'laMachine',
     name: 'La Machine',
+    useAgendaBrussels: true,
     addr: 'Place Saint-Géry 2, 1000 Brussels',
-    lat: 50.8483, lng: 4.3473,   // HARDCODED — visitBrussels dataset
+    lat: 50.8483, lng: 4.3473,
     neighbourhood: 'Centre',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Underground', 'Club', 'Live Music'],
     defaultTime: '22:00',
-    jsHeavy: true,
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.lamachine.be/agenda',
-      'https://www.lamachine.be/events',
-      'https://www.lamachine.be',
+      'https://www.agenda.brussels/en/search?q=La+Machine',
+      'https://agenda.brussels/en/search?q=La+Machine',
     ],
   },
   {
     id: 'kanal',
-    name: 'KANAL - Centre Pompidou',
+    name: 'KANAL',
+    useAgendaBrussels: true,
     addr: 'Avenue du Port 1, 1000 Brussels',
-    lat: 50.8604, lng: 4.3469,   // HARDCODED — visitBrussels dataset
+    lat: 50.8604, lng: 4.3469,
     neighbourhood: 'Molenbeek',
     emoji: '🎨', color: '#F4A261', cat: 'Culture',
     tags: ['Art', 'Culture', 'Events'],
     defaultTime: '19:00',
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.kanal.brussels/en/agenda',
-      'https://www.kanal.brussels/fr/agenda',
-      'https://www.kanal.brussels',
+      'https://www.agenda.brussels/en/search?q=KANAL',
+      'https://agenda.brussels/en/search?q=KANAL',
     ],
   },
   {
     id: 'quai20',
     name: 'Quai 20',
+    useAgendaBrussels: true,
     addr: 'Quai des Usines 20, 1000 Brussels',
-    lat: 50.8749, lng: 4.3638,   // HARDCODED — visitBrussels dataset
+    lat: 50.8749, lng: 4.3638,
     neighbourhood: 'Laeken',
     emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
     tags: ['Nightclub', 'Clubbing', 'Electronic'],
     defaultTime: '23:00',
-    jsHeavy: true,
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://quai20.be/events',
-      'https://quai20.be/agenda',
-      'https://quai20.be/',
+      'https://www.agenda.brussels/en/search?q=Quai+20',
+      'https://agenda.brussels/en/search?q=Quai+20',
     ],
   },
   {
     id: 'kaaitheater',
     name: 'Kaaitheater',
+    useAgendaBrussels: true,
     addr: 'Square Sainctelette 20, 1000 Brussels',
-    lat: 50.8588, lng: 4.3475,   // HARDCODED — visitBrussels dataset
+    lat: 50.8588, lng: 4.3475,
     neighbourhood: 'Molenbeek',
     emoji: '🎭', color: '#E76F51', cat: 'Culture',
     tags: ['Performing Arts', 'Experimental', 'Theatre'],
     defaultTime: '20:00',
-    enforceVisuals: true,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.kaaitheater.be/en/agenda',
-      'https://www.kaaitheater.be/nl/agenda',
-      'https://www.kaaitheater.be',
+      'https://www.agenda.brussels/en/search?q=Kaaitheater',
+      'https://agenda.brussels/en/search?q=Kaaitheater',
     ],
   },
-
-  // ── New unique Gen-Z picks from visitBrussels dataset (not in blacklist) ──────
   {
     id: 'flashClub',
     name: 'Flash Club',
+    useAgendaBrussels: true,
     addr: 'Rue Duquesnoy 18, 1000 Brussels',
-    lat: 50.8448, lng: 4.3540,   // HARDCODED — visitBrussels dataset
+    lat: 50.8448, lng: 4.3540,
     neighbourhood: 'Centre',
     emoji: '⚡', color: '#FF6B9D', cat: 'Nightlife',
     tags: ['Club', 'Electronic', 'Nightlife'],
     defaultTime: '23:00',
-    jsHeavy: true,
-    enforceVisuals: true,
-    // Flash Club uses The Events Calendar (WordPress plugin) — tribe_ class names
-    waitForSelector: '.tribe-events-list, .tribe-event, .tribe-events-calendar, article.type-tribe_events, .event-item',
-    eventSelector:   'article.type-tribe_events, .tribe-event, .tribe-events-list .tribe-events-list-event--featured, .wp-block-post, .event-item, article',
-    linkPattern:     /\/event\/|\/events\/|\/agenda\/|\/soiree\//i,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.flashclub.be/agenda',
-      'https://www.flashclub.be/events',
-      'https://www.flashclub.be/agenda/',
-      'https://www.flashclub.be',
+      'https://www.agenda.brussels/en/search?q=Flash+Club',
+      'https://agenda.brussels/en/search?q=Flash+Club',
     ],
   },
   {
     id: 'birdy',
     name: 'BIRDY Brussels',
+    useAgendaBrussels: true,
     addr: 'Boulevard de Waterloo 38, 1000 Brussels',
-    lat: 50.8325, lng: 4.3581,   // HARDCODED — visitBrussels dataset
+    lat: 50.8325, lng: 4.3581,
     neighbourhood: 'Louise',
     emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
     tags: ['Club', 'Underground', 'Electronic'],
     defaultTime: '23:00',
-    jsHeavy: true,
-    enforceVisuals: true,
-    // BIRDY uses a React SPA or Webflow — modern class names
-    waitForSelector: '[class*="EventCard"], [class*="event-card"], [class*="show-card"], [class*="Event"], [class*="night"], article',
-    eventSelector:   '[class*="EventCard"], [class*="event-card"], [class*="show-card"], [class*="night-item"], article',
-    linkPattern:     /\/events\/|\/event\/|\/nights\/|\/night\/|\/agenda\//i,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.birdybrussels.com/events',
-      'https://www.birdybrussels.com/agenda',
-      'https://birdybrussels.com/events',
-      'https://www.birdybrussels.com',
+      'https://www.agenda.brussels/en/search?q=BIRDY+Brussels',
+      'https://www.agenda.brussels/en/search?q=BIRDY',
+      'https://agenda.brussels/en/search?q=BIRDY+Brussels',
     ],
   },
   {
     id: 'settClub',
     name: 'Sett Club',
+    useAgendaBrussels: true,
     addr: 'Avenue du Port 86c, 1000 Brussels',
-    lat: 50.8657, lng: 4.3509,   // HARDCODED — visitBrussels dataset
+    lat: 50.8657, lng: 4.3509,
     neighbourhood: 'Molenbeek',
     emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
     tags: ['Club', 'Electronic', 'Underground'],
     defaultTime: '23:00',
-    jsHeavy: true,
-    enforceVisuals: true,
-    // Sett Club — likely Drupal or custom PHP
-    waitForSelector: '.event, .agenda-item, [class*="event"], [class*="concert"], .views-row, article',
-    eventSelector:   '.event, .agenda-item, [class*="event-teaser"], .views-row, article',
-    linkPattern:     /\/agenda\/|\/events\/|\/event\/|\/concert\//i,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://sett.be/agenda',
-      'https://www.sett.be/agenda',
-      'https://sett.be/events',
-      'https://sett.be',
+      'https://www.agenda.brussels/en/search?q=Sett+Club',
+      'https://www.agenda.brussels/en/search?q=Sett',
+      'https://agenda.brussels/en/search?q=Sett+Club',
     ],
   },
   {
     id: 'kvs',
     name: 'KVS',
+    useAgendaBrussels: true,
     addr: 'Quai aux Pierres de Taille 7, 1000 Brussels',
-    lat: 50.8552, lng: 4.3512,   // HARDCODED — visitBrussels dataset
+    lat: 50.8552, lng: 4.3512,
     neighbourhood: 'Centre',
     emoji: '🎭', color: '#E76F51', cat: 'Culture',
     tags: ['Theatre', 'Performing Arts', 'Contemporary'],
     defaultTime: '20:00',
-    jsHeavy: true,   // KVS uses a React-based frontend
-    enforceVisuals: true,
-    // KVS: Dutch "productie" / French "production" URL pattern for individual shows
-    waitForSelector: '.production, .productie, [class*="production"], [class*="productie"], [class*="show-card"], [class*="program-item"], article',
-    eventSelector:   '.production, .productie, [class*="production-card"], [class*="show-card"], [class*="program-item"], article',
-    linkPattern:     /\/productie\/|\/production\/|\/voorstelling\/|\/nl\/|\/en\/|\/programme\//i,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.kvs.be/nl/programma',
-      'https://www.kvs.be/en/programme',
-      'https://www.kvs.be/fr/programme',
-      'https://www.kvs.be/nl/agenda',
-      'https://www.kvs.be',
+      'https://www.agenda.brussels/en/search?q=KVS',
+      'https://agenda.brussels/en/search?q=KVS',
     ],
   },
   {
     id: 'jeuxDhiver',
     name: "Jeux d'Hiver",
+    useAgendaBrussels: true,
     addr: 'Chemin du Croquet 1, 1000 Brussels',
-    lat: 50.8115, lng: 4.3730,   // HARDCODED — visitBrussels dataset (Bois de la Cambre)
+    lat: 50.8115, lng: 4.3730,
     neighbourhood: 'Ixelles',
     emoji: '🌿', color: '#F4A261', cat: 'Nightlife',
     tags: ['Club', 'Open Air', 'Electronic'],
     defaultTime: '22:00',
-    jsHeavy: true,
-    enforceVisuals: true,
-    // Jeux d'Hiver — Squarespace or simple WP; Squarespace uses .eventlist-event
-    waitForSelector: '.eventlist-event, .eventlist, .sqs-events-collection, article, .event-item, ul.events li',
-    eventSelector:   '.eventlist-event, .sqs-events-collection article, .event-item, article',
-    linkPattern:     /\/events\/|\/event\/|\/soirees\/|\/soiree\/|\/agenda\//i,
+    jsHeavy: true, enforceVisuals: true,
     urls: [
-      'https://www.jeuxdhiver.be/agenda',
-      'https://www.jeuxdhiver.be/events',
-      'https://www.jeuxdhiver.be/soirees',
-      'https://www.jeuxdhiver.be',
+      "https://www.agenda.brussels/en/search?q=Jeux+d%27Hiver",
+      'https://www.agenda.brussels/en/search?q=Jeux+Hiver',
+      "https://agenda.brussels/en/search?q=Jeux+d%27Hiver",
     ],
   },
 ];
@@ -1168,7 +1136,8 @@ async function scrapeVenue(browser, config) {
       // For React/Vue SPAs: Cheerio only sees the pre-JS static shell, so CSS selectors
       // find nothing. page.evaluate() runs inside the browser context where JS has already
       // rendered the real DOM, giving us real event cards.
-      if (config.jsHeavy && events.length === 0) {
+      // Skipped for useAgendaBrussels venues — Strategy 1.8 handles those specifically.
+      if (config.jsHeavy && !config.useAgendaBrussels && events.length === 0) {
         try {
           console.log(`    Strategy 1.7 (jsHeavy live DOM): waiting for deferred renders…`);
           await sleep(1000);
@@ -1275,6 +1244,95 @@ async function scrapeVenue(browser, config) {
           console.log(`    Strategy 1.7 → ${events.length} valid event(s)`);
         } catch (err) {
           console.log(`    Strategy 1.7 failed: ${err.message.slice(0, 80)}`);
+        }
+      }
+
+      // ── Strategy 1.8: Agenda Brussels venue-specific search ──
+      // For venues with useAgendaBrussels: true, the URL is already
+      // https://www.agenda.brussels/en/search?q=VENUE_NAME — a pre-filtered results page.
+      // We extract event cards from those search results, accepting agenda.brussels
+      // deep-links only. Location field is extracted for accurate geocoding.
+      if (config.useAgendaBrussels && events.length === 0) {
+        try {
+          console.log(`    Strategy 1.8 (agenda.brussels search): scanning for "${config.name}"…`);
+          await sleep(1500);
+
+          const agItems = await page.evaluate(() => {
+            const selectors = [
+              '.event-card', '[class*="event-card"]',
+              '.event-item', '[class*="event-item"]',
+              '[class*="EventCard"]', '[class*="EventItem"]',
+              'article', '[class*="card"]', '.item',
+            ];
+            let best = [];
+            for (const sel of selectors) {
+              try {
+                const els = [...document.querySelectorAll(sel)].filter(el => {
+                  const t = (el.innerText || '').trim();
+                  return t.length > 20 && t.length < 800;
+                });
+                if (els.length > best.length) best = els;
+              } catch {}
+            }
+            return best.map(el => {
+              const h       = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"]');
+              const dateEl  = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="dag"]');
+              const locEl   = el.querySelector('[class*="location"],[class*="venue"],[class*="place"],[class*="lieu"],[class*="address"]');
+              const link    = el.querySelector('a[href]')?.href || '';
+              return {
+                title:    (h?.innerText || '').replace(/\s+/g, ' ').trim(),
+                dateStr:  dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+                location: (locEl?.innerText || '').replace(/\s+/g, ' ').trim(),
+                allText:  (el.innerText || '').replace(/\s+/g, ' ').trim(),
+                link,
+              };
+            }).filter(item => item.title && item.title.length > 3);
+          });
+
+          console.log(`    Strategy 1.8: ${agItems.length} card(s) from agenda.brussels`);
+          const baseOrigin18 = 'https://www.agenda.brussels';
+
+          for (const item of agItems) {
+            if (!isValidTitle(item.title)) continue;
+            const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
+            if (!rawDate) continue;
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+
+            // Accept only agenda.brussels deep-links
+            const url18 = item.link.startsWith('http') ? item.link
+              : item.link.startsWith('/') ? `${baseOrigin18}${item.link}` : '';
+            if (!url18) continue;
+            const urlPath18 = url18.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+            if (urlPath18.length < 5) continue;
+
+            const cls18   = classifyForVenue(item.title + ' ' + item.allText, config);
+            const smart18 = smartDefaultTime(cls18.cat);
+
+            // If the card has an explicit location different from the venue's own address,
+            // set lat/lng = 0 so main() geocodes the actual event location.
+            const locationField = (item.location || '').trim();
+            const useVenueCoords = !locationField ||
+              locationField.toLowerCase().includes(config.name.toLowerCase()) ||
+              locationField.toLowerCase() === 'brussels';
+
+            events.push({
+              _rawDate: rawDate, title: item.title,
+              venue: config.name, addr: locationField || config.addr,
+              date: refineDateLabel(relDate, smart18.startH), time: smart18.time,
+              startH: smart18.startH, endH: smart18.endH,
+              emoji: cls18.emoji, color: cls18.color, cat: cls18.cat, tags: cls18.tags,
+              source: config.name, officialEventLink: url18,
+              desc: item.allText.slice(0, 200) || `${item.title} at ${config.name}.`,
+              neighbourhood: config.neighbourhood,
+              lat: useVenueCoords ? config.lat : 0,
+              lng: useVenueCoords ? config.lng : 0,
+              ...(!useVenueCoords && locationField ? { externalVenueHint: locationField } : {}),
+            });
+          }
+          console.log(`    Strategy 1.8 → ${events.length} valid event(s) for "${config.name}"`);
+        } catch (err) {
+          console.log(`    Strategy 1.8 failed: ${err.message.slice(0, 80)}`);
         }
       }
 
@@ -1522,8 +1580,9 @@ async function main() {
   ];
   const preVenuePurge = existing.length;
   existing = existing.filter(e => {
-    const v = (e.venue || e.source || '').toLowerCase();
-    return !BAD_VENUES.some(b => v.includes(b));
+    const fields = [e.venue || '', e.source || '', e.addr || '', e.title || '']
+      .join(' ').toLowerCase();
+    return !BAD_VENUES.some(b => fields.includes(b));
   });
   const purgedVenues = preVenuePurge - existing.length;
   if (purgedVenues) console.log(`🗑️   Purged ${purgedVenues} event(s) from bad test venues`);
