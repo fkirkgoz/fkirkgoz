@@ -423,24 +423,62 @@ const VENUE_CONFIGS = [
     ],
   },
 
-  // ── Resident Advisor Brussels — single source for underground nightlife ────────
-  // RA is the authoritative platform for underground electronic / club events.
-  // One page covers all our Gen-Z nightlife venues. Strategy 1.9 matches each
-  // extracted event to the correct venue config (lat/lng/emoji/color) by name.
+  // ── Resident Advisor Brussels — open-air keyword discovery stream ───────────
+  // Crawls the RA Brussels regional listing and keeps ONLY open-air / festival /
+  // day-party events. Indoor club nights are discarded by keyword filter.
   {
     id: 'residentAdvisor',
     name: 'Resident Advisor Brussels',
     useResidentAdvisor: true,
     addr: 'Brussels, Belgium',
     lat: 50.8503, lng: 4.3517,
-    neighbourhood: 'Centre',
-    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
-    tags: ['Electronic', 'Club', 'Brussels'],
-    defaultTime: '23:00',
+    neighbourhood: 'Various',
+    emoji: '🌿', color: '#F4A261', cat: 'Festival',
+    tags: ['Open Air', 'Electronic', 'Festival'],
+    defaultTime: '14:00',
     jsHeavy: true,
     extraWait: 8000,
     urls: [
       'https://ra.co/events/be/brussels',
+    ],
+  },
+
+  // ── Open-air & outdoor electronic targets ────────────────────────────────────
+  {
+    id: 'circlepark',
+    name: 'Circle Park',
+    useRaClub: true,
+    addr: 'Brussels, Belgium',
+    lat: 0, lng: 0,   // location varies per event (open-air/outdoor); geocoded from card
+    neighbourhood: 'Various',
+    emoji: '🌿', color: '#F4A261', cat: 'Festival',
+    tags: ['Open Air', 'Electronic', 'Day Party', 'Festival'],
+    defaultTime: '14:00',
+    jsHeavy: true,
+    extraWait: 6000,
+    urls: [
+      'https://ra.co/clubs/189275',
+    ],
+  },
+  {
+    id: 'brasserieIllegaal',
+    name: 'Brasserie ILLEGAAL',
+    addr: 'Brussels, Belgium',
+    lat: 50.8503, lng: 4.3517,
+    neighbourhood: 'Various',
+    emoji: '🌿', color: '#B8E5C0', cat: 'Festival',
+    tags: ['Open Air', 'Electronic', 'Day Party', 'Festival'],
+    defaultTime: '14:00',
+    jsHeavy: true,
+    enforceVisuals: true,
+    waitForSelector: '.tribe-events-list, article.type-tribe_events, .tribe-event, .tribe-events, [class*="tribe"]',
+    eventSelector:   'article.type-tribe_events, .tribe-event, [class*="tribe-events-list-event"], article',
+    linkPattern:     /\/event\/|\/events\/|\/tribe_events\//i,
+    urls: [
+      'https://brasserie-illegaal.com/all-events/list/',
+      'https://www.brasserie-illegaal.com/all-events/list/',
+      'https://brasserie-illegaal.com/all-events/',
+      'https://brasserie-illegaal.com',
     ],
   },
 ];
@@ -1157,8 +1195,8 @@ async function scrapeVenue(browser, config) {
       // For React/Vue SPAs: Cheerio only sees the pre-JS static shell, so CSS selectors
       // find nothing. page.evaluate() runs inside the browser context where JS has already
       // rendered the real DOM, giving us real event cards.
-      // Skipped for useAgendaBrussels (→ 1.8) and useResidentAdvisor (→ 1.9) venues.
-      if (config.jsHeavy && !config.useAgendaBrussels && !config.useResidentAdvisor && events.length === 0) {
+      // Skipped for useAgendaBrussels (→ 1.8), useResidentAdvisor (→ 1.9b), useRaClub (→ 1.9a).
+      if (config.jsHeavy && !config.useAgendaBrussels && !config.useResidentAdvisor && !config.useRaClub && events.length === 0) {
         try {
           console.log(`    Strategy 1.7 (jsHeavy live DOM): waiting for deferred renders…`);
           await sleep(1000);
@@ -1357,19 +1395,104 @@ async function scrapeVenue(browser, config) {
         }
       }
 
-      // ── Strategy 1.9: Resident Advisor Brussels ──
-      // RA is the authoritative source for underground electronic/nightlife events.
-      // We scrape the Brussels events listing and match each card's venue name to
-      // our VENUE_CONFIGS to assign the correct lat/lng/emoji/color per venue.
-      if (config.useResidentAdvisor && events.length === 0) {
+      // ── Strategy 1.9a: Resident Advisor — specific club page ──
+      // For venues with useRaClub: true (e.g. Circle Park, RA club ID 189275).
+      // All events on a club page belong to this venue — no venue matching needed.
+      // Strict deep-link: only accepts /events/XXXXXX paths (rejects bare domain).
+      // Location sanity: if the card text mentions an external physical location,
+      // lat/lng is zeroed so main() geocodes the actual event site.
+      if (config.useRaClub && events.length === 0) {
         try {
-          console.log('    Strategy 1.9 (Resident Advisor Brussels): extracting events…');
+          console.log(`    Strategy 1.9a (RA club page): scraping ${config.name}…`);
           await sleep(3000);
 
-          // Build venue lookup: lowercase name → config object
+          const raClubItems = await page.evaluate(() => {
+            const selectors = [
+              '[data-testid*="event"]',
+              '[class*="event-tile"]', '[class*="eventTile"]',
+              '[class*="listing-item"]', '[class*="listingItem"]',
+              'article', 'li',
+            ];
+            let best = [];
+            for (const sel of selectors) {
+              try {
+                const els = [...document.querySelectorAll(sel)].filter(el => {
+                  const t = (el.innerText || '').trim();
+                  return t.length > 15 && t.length < 600;
+                });
+                if (els.length > best.length) best = els;
+              } catch {}
+            }
+            return best.slice(0, 60).map(el => {
+              const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"],[class*="heading"]');
+              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
+              const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
+              // Strict: only RA event deep-links (/events/XXXXXX)
+              const link = el.querySelector('a[href*="/events/"]')?.href || '';
+              return {
+                title:   (h?.innerText || '').replace(/\s+/g, ' ').trim(),
+                dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+                allText, link,
+              };
+            }).filter(item => item.title && item.title.length > 3 && item.link);
+          });
+
+          console.log(`    RA club (${config.name}): ${raClubItems.length} card(s) found`);
+
+          for (const item of raClubItems) {
+            if (!isValidTitle(item.title)) continue;
+            const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
+            if (!rawDate) continue;
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+
+            // Strict deep-link: path must start with /events/ and be ≥ 10 chars
+            const raClubUrl  = item.link.startsWith('http') ? item.link : `https://ra.co${item.link}`;
+            const raClubPath = raClubUrl.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+            if (!raClubPath.startsWith('/events/') || raClubPath.length < 10) continue;
+
+            // Location sanity: if card mentions a physical location → geocode it
+            const locationHint19a = detectExternalVenue(item.allText);
+            const useVenueCoords  = !locationHint19a && config.lat !== 0;
+
+            const cls19a   = classifyForVenue(item.title + ' ' + item.allText, config);
+            const smart19a = smartDefaultTime(cls19a.cat);
+
+            events.push({
+              _rawDate: rawDate, title: item.title,
+              venue: config.name, addr: config.addr,
+              date: refineDateLabel(relDate, smart19a.startH), time: smart19a.time,
+              startH: smart19a.startH, endH: smart19a.endH,
+              emoji: cls19a.emoji, color: cls19a.color, cat: cls19a.cat, tags: cls19a.tags,
+              source: 'Resident Advisor', officialEventLink: raClubUrl,
+              desc: item.allText.slice(0, 200) || `${item.title} by ${config.name}.`,
+              neighbourhood: config.neighbourhood,
+              lat: useVenueCoords ? config.lat : 0,
+              lng: useVenueCoords ? config.lng : 0,
+              ...(locationHint19a ? { externalVenueHint: locationHint19a } : {}),
+            });
+          }
+          console.log(`    RA club → ${events.length} valid event(s) for "${config.name}"`);
+        } catch (err) {
+          console.log(`    Strategy 1.9a (RA club) failed: ${err.message.slice(0, 80)}`);
+        }
+      }
+
+      // ── Strategy 1.9b: Resident Advisor Brussels — open-air discovery stream ──
+      // Crawls the RA Brussels regional listing and keeps ONLY open-air / festival /
+      // day-party events. Indoor club nights are discarded by keyword gate.
+      // Matched events with a known venue use that venue's metadata; unmatched events
+      // get lat/lng = 0 for the geocoder to resolve from the card's location text.
+      if (config.useResidentAdvisor && events.length === 0) {
+        const OPENAIR_RE = /open[\s-]?air|festival|day[\s-]party|rooftop|garden[\s-]session|day[\s-]to[\s-]night/i;
+        try {
+          console.log('    Strategy 1.9b (RA Brussels open-air stream)…');
+          await sleep(3000);
+
+          // Build venue lookup excluding RA/club configs themselves
           const VENUE_LOOKUP = {};
           for (const vc of VENUE_CONFIGS) {
-            if (vc.id !== 'residentAdvisor') {
+            if (!vc.useResidentAdvisor && !vc.useRaClub) {
               VENUE_LOOKUP[vc.name.toLowerCase()] = vc;
             }
           }
@@ -1391,65 +1514,72 @@ async function scrapeVenue(browser, config) {
                 if (els.length > best.length) best = els;
               } catch {}
             }
-            return best.slice(0, 80).map(el => {
+            return best.slice(0, 100).map(el => {
               const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"],[class*="heading"]');
               const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
               const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
+              // Strict: prefer /events/ deep-link; reject bare-domain fallback
               const link = el.querySelector('a[href*="/events/"]')?.href
-                        || el.querySelector('a[href*="/club/"]')?.href
                         || el.querySelector('a[href]')?.href || '';
               return {
                 title:   (h?.innerText || '').replace(/\s+/g, ' ').trim(),
                 dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
-                allText,
-                link,
+                allText, link,
               };
             }).filter(item => item.title && item.title.length > 3);
           });
 
-          console.log(`    RA: ${raItems.length} card(s) on Brussels events page`);
+          console.log(`    RA Brussels: ${raItems.length} total card(s) — applying open-air filter…`);
+          let skippedIndoor = 0;
 
           for (const item of raItems) {
+            // ── Open-air keyword gate: discard indoor club nights ──
+            if (!OPENAIR_RE.test(item.title) && !OPENAIR_RE.test(item.allText)) {
+              skippedIndoor++;
+              continue;
+            }
+
             if (!isValidTitle(item.title)) continue;
             const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
             if (!rawDate) continue;
             const relDate = toRelativeDate(rawDate);
             if (!relDate) continue;
 
-            // Match to an approved Gen-Z venue by scanning the card text
+            // Strict deep-link: reject bare domain (path must be > 5 chars)
+            const raUrl19b    = item.link.startsWith('http') ? item.link
+              : item.link ? `https://ra.co${item.link}` : '';
+            const raPath19b   = raUrl19b.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+            if (!raUrl19b || raPath19b.length < 5) continue;
+
+            // Optional venue match for known Gen-Z venues
             let matchedVc = null;
             const lowerText = item.allText.toLowerCase();
             for (const [vname, vc] of Object.entries(VENUE_LOOKUP)) {
-              if (vname.length > 2 && lowerText.includes(vname)) {
-                matchedVc = vc;
-                break;
-              }
+              if (vname.length > 2 && lowerText.includes(vname)) { matchedVc = vc; break; }
             }
-            if (!matchedVc) continue; // skip events at venues we don't track
 
-            const raUrl = item.link.startsWith('http') ? item.link
-              : item.link ? `https://ra.co${item.link}` : '';
-            const raUrlPath = raUrl.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
-            if (!raUrl || raUrlPath.length < 5) continue;
-
-            const cls19   = classifyForVenue(item.title + ' ' + item.allText, matchedVc);
-            const smart19 = smartDefaultTime(cls19.cat);
+            // Location sanity: named outdoor location → geocode instead of admin address
+            const locationHint19b = detectExternalVenue(item.allText);
 
             events.push({
               _rawDate: rawDate, title: item.title,
-              venue: matchedVc.name, addr: matchedVc.addr,
-              date: refineDateLabel(relDate, smart19.startH), time: smart19.time,
-              startH: smart19.startH, endH: smart19.endH,
-              emoji: cls19.emoji, color: cls19.color, cat: cls19.cat, tags: cls19.tags,
-              source: 'Resident Advisor', officialEventLink: raUrl,
-              desc: item.allText.slice(0, 200) || `${item.title} at ${matchedVc.name}.`,
-              neighbourhood: matchedVc.neighbourhood,
-              lat: matchedVc.lat, lng: matchedVc.lng,
+              venue:  matchedVc ? matchedVc.name : 'Brussels Open Air',
+              addr:   matchedVc ? matchedVc.addr : 'Brussels, Belgium',
+              date: refineDateLabel(relDate, 12), time: '12:00',
+              startH: 12, endH: 26,
+              emoji: '🌿', color: '#F4A261', cat: 'Festival',
+              tags: ['Open Air', 'Electronic', 'Festival'],
+              source: 'Resident Advisor', officialEventLink: raUrl19b,
+              desc: item.allText.slice(0, 200) || `${item.title} — open-air event in Brussels.`,
+              neighbourhood: matchedVc ? matchedVc.neighbourhood : 'Various',
+              lat: (locationHint19b || !matchedVc) ? 0 : matchedVc.lat,
+              lng: (locationHint19b || !matchedVc) ? 0 : matchedVc.lng,
+              ...(locationHint19b ? { externalVenueHint: locationHint19b } : {}),
             });
           }
-          console.log(`    RA → ${events.length} event(s) matched to approved venues`);
+          console.log(`    RA open-air: ${skippedIndoor} indoor events discarded | ${events.length} open-air kept`);
         } catch (err) {
-          console.log(`    Strategy 1.9 (RA) failed: ${err.message.slice(0, 80)}`);
+          console.log(`    Strategy 1.9b (RA open-air) failed: ${err.message.slice(0, 80)}`);
         }
       }
 
@@ -1774,6 +1904,10 @@ async function main() {
     'sett club':              { emoji: '⚡', color: '#6C63FF', cat: 'Nightlife' },
     'kvs':                    { emoji: '🎭', color: '#E76F51', cat: 'Culture'   },
     "jeux d'hiver":           { emoji: '🌿', color: '#F4A261', cat: 'Nightlife' },
+    // Open-air venues
+    'circle park':            { emoji: '🌿', color: '#F4A261', cat: 'Festival'  },
+    'brasserie illegaal':     { emoji: '🌿', color: '#B8E5C0', cat: 'Festival'  },
+    'brussels open air':      { emoji: '🌿', color: '#F4A261', cat: 'Festival'  },
   };
   let emojiFixed = 0;
   existing = existing.map(e => {
