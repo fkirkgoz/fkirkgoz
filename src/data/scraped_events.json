@@ -11648,5 +11648,611 @@
       }
     ],
     "_rawDate": "2026-10-03"
+  },
+  {
+    "id": 551,
+    "cat": "Festival",
+    "date": "Next Week",
+    "title": "EXAG&rsquo; Records &#038; Phoenician Drive present : CONCERTS FOR PALESTINE &#038; LEBANON",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "19:00",
+    "startH": 19,
+    "endH": 22,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 3,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/exag-records-phoenician-drive-present-concerts-for-palestine-lebanon/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 106,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;CONCERTS FOR PALESTINE & LEBANON _____ EXAG\\' Records & Phoenician Drive invite you to a fundraising night of music at the Brasserie ILLEGAAL in Brussels. The initiative aims to raise [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest681",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest312",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest415",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest995",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest513",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "8:47 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Already got my ticket! 👋",
+        "time": "3:16 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Brussels never disappoints ❤️",
+        "time": "9:40 PM"
+      }
+    ],
+    "_rawDate": "2026-07-02"
+  },
+  {
+    "id": 552,
+    "cat": "Festival",
+    "date": "Next Week",
+    "title": "ILLEGAAL DANCE BATTLE ALL STYLES",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "18:00",
+    "startH": 18,
+    "endH": 21,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/illegaal-dance-battle-all-styles-3/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 52,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;ILLEGAAL DANCE BATTLE ALL STYLES 03/07/2016 - 18:00-01:00 We are backkk !! On se retrouve le vendredi 03.07 pour la 9e édition de la ILLEGAAL DANCE BATTLE ALL STYLES locking [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest033",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest526",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest900",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest739",
+        "c": "#8E7DBE",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Brussels never disappoints ❤️",
+        "time": "8:22 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:39 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Counting down the days 🗓️",
+        "time": "11:08 PM"
+      }
+    ],
+    "_rawDate": "2026-07-03"
+  },
+  {
+    "id": 553,
+    "cat": "Festival",
+    "date": "This Weekend",
+    "title": "DISTRICT OPEN AIR",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "16:00",
+    "startH": 16,
+    "endH": 19,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/district-open-air/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 265,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;DISTRICT OPEN AIR AT ILLEGAAL &#x2600;&#xfe0f; Great vibes, a dancing crowd. Incredible artists and powerful bass are on the way. All under the open sky. A new energy. A new [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Guest080",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest599",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest914",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Already got my ticket! 👋",
+        "time": "5:22 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "11:21 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Already got my ticket! 👋",
+        "time": "6:42 AM"
+      }
+    ],
+    "_rawDate": "2026-07-04"
+  },
+  {
+    "id": 554,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Mosfet Club — Swamp Night",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 0,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/mosfet-club-swamp-night/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 223,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;All you weird swamp creatures are summoned for our next all nighter. Fri July 10th - 22pm to 5amBrasserie Illegaal, Rue Bollinckx, 300 Electro, minimal house and techno from 22h [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest262",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest002",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest384",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:08 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:28 PM"
+      }
+    ],
+    "_rawDate": "2026-07-10"
+  },
+  {
+    "id": 555,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "GLOBAAL ILLEGAAL PRESENTS: LA KZ Colombian Picó soundsystem party w/ concerts, DJ sets &#038; food",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/globaal-illegaal-presents-la-kz-colombian-pico-soundsystem-party-w-concerts-dj-sets-food/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 192,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;On Saturday 11 July, Rebel Up and Baobab Music will launch the very first edition of LA KZ Brussels at the Globaal Illegaal party in collaboration with Brasserie Illegaal. LA [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest708",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest785",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest561",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest696",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "11:00 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "First time at this venue!",
+        "time": "1:12 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Who else is going?? 🙋",
+        "time": "1:37 AM"
+      }
+    ],
+    "_rawDate": "2026-07-11"
+  },
+  {
+    "id": 556,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Deep Dive Open Air",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 17,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/deep-dive-open-air/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 256,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;Ready for another deep dive?⋆ .˚ ˚ Line up: Mia Cecille / Marie K / Kivaa / Malo Z⋆ .˚ ˚ Tickets: https://deep-divee.eventsquare.store/jtyuuiylugar⋆ .˚ ˚ NO RACISM, NO SEXISM, NO QUEERPHOBIA, [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Guest815",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest209",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest474",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest917",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest349",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest454",
+        "c": "#F4C87A",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "5:58 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "Grab tickets fast, selling out!",
+        "time": "4:13 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "This is going to be AMAZING",
+        "time": "7:13 PM"
+      }
+    ],
+    "_rawDate": "2026-07-19"
+  },
+  {
+    "id": 557,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "NOESIS • Heartcore Dreams",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/noesis-heartcore-dreams/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 99,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;On JULY 25th, we return to Illegaal for a second chapter. For this round, we continue our summer journey, a drifting narrative through playful and emotional soundscapes, somewhere between fairy [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest641",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest431",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest570",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest532",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest332",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest920",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Counting down the days 🗓️",
+        "time": "11:30 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "2:49 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Brussels never disappoints ❤️",
+        "time": "3:25 PM"
+      }
+    ],
+    "_rawDate": "2026-07-25"
+  },
+  {
+    "id": 558,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Metropolis Open Air x Illegaal",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 17,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "friends": 1,
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/metropolis-open-air-x-illegaal/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "going": 87,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;Metropolis returns on 26 July for an open-air celebration at Brasserie Illegaal. For this occassion, we welcome guest DJ Mariami. Having spent much of her youth deep in Cologne’s techno [&hellip;]&lt;/p&gt;\\n",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest525",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest243",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest708",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest118",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest811",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest325",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "This is going to be AMAZING",
+        "time": "5:45 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Already got my ticket! 👋",
+        "time": "8:30 AM"
+      }
+    ],
+    "_rawDate": "2026-07-26"
   }
 ]
