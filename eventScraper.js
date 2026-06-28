@@ -354,9 +354,14 @@ const VENUE_CONFIGS = [
     defaultTime: '23:00',
     jsHeavy: true,
     enforceVisuals: true,
+    // Flash Club uses The Events Calendar (WordPress plugin) — tribe_ class names
+    waitForSelector: '.tribe-events-list, .tribe-event, .tribe-events-calendar, article.type-tribe_events, .event-item',
+    eventSelector:   'article.type-tribe_events, .tribe-event, .tribe-events-list .tribe-events-list-event--featured, .wp-block-post, .event-item, article',
+    linkPattern:     /\/event\/|\/events\/|\/agenda\/|\/soiree\//i,
     urls: [
       'https://www.flashclub.be/agenda',
       'https://www.flashclub.be/events',
+      'https://www.flashclub.be/agenda/',
       'https://www.flashclub.be',
     ],
   },
@@ -371,9 +376,14 @@ const VENUE_CONFIGS = [
     defaultTime: '23:00',
     jsHeavy: true,
     enforceVisuals: true,
+    // BIRDY uses a React SPA or Webflow — modern class names
+    waitForSelector: '[class*="EventCard"], [class*="event-card"], [class*="show-card"], [class*="Event"], [class*="night"], article',
+    eventSelector:   '[class*="EventCard"], [class*="event-card"], [class*="show-card"], [class*="night-item"], article',
+    linkPattern:     /\/events\/|\/event\/|\/nights\/|\/night\/|\/agenda\//i,
     urls: [
       'https://www.birdybrussels.com/events',
       'https://www.birdybrussels.com/agenda',
+      'https://birdybrussels.com/events',
       'https://www.birdybrussels.com',
     ],
   },
@@ -388,8 +398,13 @@ const VENUE_CONFIGS = [
     defaultTime: '23:00',
     jsHeavy: true,
     enforceVisuals: true,
+    // Sett Club — likely Drupal or custom PHP
+    waitForSelector: '.event, .agenda-item, [class*="event"], [class*="concert"], .views-row, article',
+    eventSelector:   '.event, .agenda-item, [class*="event-teaser"], .views-row, article',
+    linkPattern:     /\/agenda\/|\/events\/|\/event\/|\/concert\//i,
     urls: [
       'https://sett.be/agenda',
+      'https://www.sett.be/agenda',
       'https://sett.be/events',
       'https://sett.be',
     ],
@@ -403,10 +418,17 @@ const VENUE_CONFIGS = [
     emoji: '🎭', color: '#E76F51', cat: 'Culture',
     tags: ['Theatre', 'Performing Arts', 'Contemporary'],
     defaultTime: '20:00',
+    jsHeavy: true,   // KVS uses a React-based frontend
     enforceVisuals: true,
+    // KVS: Dutch "productie" / French "production" URL pattern for individual shows
+    waitForSelector: '.production, .productie, [class*="production"], [class*="productie"], [class*="show-card"], [class*="program-item"], article',
+    eventSelector:   '.production, .productie, [class*="production-card"], [class*="show-card"], [class*="program-item"], article',
+    linkPattern:     /\/productie\/|\/production\/|\/voorstelling\/|\/nl\/|\/en\/|\/programme\//i,
     urls: [
-      'https://www.kvs.be/en/agenda',
-      'https://www.kvs.be/fr/agenda',
+      'https://www.kvs.be/nl/programma',
+      'https://www.kvs.be/en/programme',
+      'https://www.kvs.be/fr/programme',
+      'https://www.kvs.be/nl/agenda',
       'https://www.kvs.be',
     ],
   },
@@ -421,9 +443,14 @@ const VENUE_CONFIGS = [
     defaultTime: '22:00',
     jsHeavy: true,
     enforceVisuals: true,
+    // Jeux d'Hiver — Squarespace or simple WP; Squarespace uses .eventlist-event
+    waitForSelector: '.eventlist-event, .eventlist, .sqs-events-collection, article, .event-item, ul.events li',
+    eventSelector:   '.eventlist-event, .sqs-events-collection article, .event-item, article',
+    linkPattern:     /\/events\/|\/event\/|\/soirees\/|\/soiree\/|\/agenda\//i,
     urls: [
       'https://www.jeuxdhiver.be/agenda',
       'https://www.jeuxdhiver.be/events',
+      'https://www.jeuxdhiver.be/soirees',
       'https://www.jeuxdhiver.be',
     ],
   },
@@ -1146,13 +1173,19 @@ async function scrapeVenue(browser, config) {
           console.log(`    Strategy 1.7 (jsHeavy live DOM): waiting for deferred renders…`);
           await sleep(1000);
 
-          const liveCards = await page.evaluate(() => {
+          // Pass venue-specific selectors into the browser context
+          const venueEventSel = config.eventSelector || '';
+          const liveCards = await page.evaluate((venueEventSel) => {
             function hasDates(text) {
               return /\d{1,2}[\s\/.\-]\d{1,2}|jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec|\d{4}/i.test(text);
             }
 
-            // Try progressively broader selectors; keep the largest matching set
+            // Venue-specific selectors first (highest signal), then generic fallbacks
+            const venueSelectors = venueEventSel
+              ? venueEventSel.split(',').map(s => s.trim()).filter(Boolean)
+              : [];
             const SELECTORS = [
+              ...venueSelectors,
               '[class*="event"]','[class*="Event"]',
               '[class*="agenda"]','[class*="Agenda"]',
               '[class*="show"]','[class*="Show"]',
@@ -1205,7 +1238,7 @@ async function scrapeVenue(browser, config) {
               const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
               return { title, dateStr, timeText, desc, link, allText };
             });
-          });
+          }, venueEventSel);
 
           console.log(`    Strategy 1.7: ${liveCards.length} live card(s) found`);
           const baseOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || '';
@@ -1251,13 +1284,15 @@ async function scrapeVenue(browser, config) {
       if (events.length === 0) {
         const $ = cheerio.load(await page.content());
 
-        // Prefer a scoped container; fall back to body
+        // Build scope selector: standard containers + any venue-specific eventSelector
+        const venueSpecificSels = config.eventSelector ? config.eventSelector.split(',').map(s => s.trim()) : [];
         const scope = $([
           'main','#content','[role="main"]',
           '.event-list','.event-items','.event-item',        // C12
           '.event-card','.event-cards',                      // La Madeleine / generic
           '.agenda','.programme','.calendar','.events-list',
           '.event-overview','.listing','.schedule',
+          ...venueSpecificSels,                              // venue-specific containers
         ].join(',')).first();
         const root = scope.length ? scope : $('body');
         const scopeDesc = scope.length
@@ -1269,7 +1304,7 @@ async function scrapeVenue(browser, config) {
           failReason = failReason || 'No agenda/calendar container found — using body';
         }
 
-        // Wide net: any container that has both a heading and a date
+        // Wide net: generic selectors + venue-specific eventSelector containers
         const candidates = root.find([
           'article','.event-card','[class*="event-card"]',
           '.card','[class*="card"]',
@@ -1281,6 +1316,7 @@ async function scrapeVenue(browser, config) {
           '.eventlist-event',            // Squarespace
           '.wp-block-post','.entry',     // WordPress
           '.tribe-event',                // The Events Calendar
+          ...venueSpecificSels,          // venue-specific event card selectors
           'li',
         ].join(',')).filter((_, el) => {
           const $el  = $(el);
@@ -1318,6 +1354,10 @@ async function scrapeVenue(browser, config) {
           return dtAttr || dtTxt || null;
         }
 
+        // Global slug pattern + venue-specific linkPattern used in deep-link filter below
+        const GLOBAL_SLUG_RE = /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail|\/tickets|\/activit|\/productie|\/production|\/voorstelling|\/soiree|\/night|\/party|\/project|\/reservation/i;
+
+        let skipNoDate = 0, skipNoLink = 0, skipHomepage = 0, skipBadTitle = 0;
         candidates.each((i, el) => {
           if (i >= 50) return;
           const $el = $(el);
@@ -1328,12 +1368,9 @@ async function scrapeVenue(browser, config) {
             '[class*="title"]','[class*="name"]','[class*="artist"]','[class*="heading"]',
           ].join(',')).first();
           const title = clean(headingEl.text());
-          if (!isValidTitle(title)) return;
+          if (!isValidTitle(title)) { skipBadTitle++; return; }
 
           // ── Date anchoring (strict — no raw text fallback) ──
-          // Only accept a date from a structured element (time, [datetime], [class*="date"],
-          // etc.) within the card's DOM tree. If none found, discard the event entirely —
-          // the raw text scan is gone because it caused cross-card date pairing.
           const headingParent      = headingEl.parent();
           const headingGrandparent = headingParent.parent();
           const dateText =
@@ -1341,24 +1378,21 @@ async function scrapeVenue(browser, config) {
             findDateIn(headingGrandparent) ||
             findDateIn($el)                || '';
 
-          if (!dateText) {
-            console.log(`    ${config.id}: "${title.slice(0,35)}" — no structured date element, discarded`);
-            return;
-          }
-          console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${dateText.slice(0,35)}"`);
+          if (!dateText) { skipNoDate++; return; }
 
           const rawDate = parseRawDate(dateText);
-          if (!rawDate) { console.log(`      → date not parsed`); return; }
+          if (!rawDate) { skipNoDate++; return; }
           const relDate = toRelativeDate(rawDate);
-          if (!relDate) return;
+          if (!relDate) { skipNoDate++; return; }
+
+          console.log(`    ${config.id}: "${title.slice(0,35)}" | date: "${dateText.slice(0,30)}" → ${rawDate}`);
 
           const timeText = clean($el.find('[class*="time"],[class*="hour"],[class*="uur"]').first().text());
           const desc     = clean($el.find('p,[class*="desc"],[class*="intro"],[class*="summary"]').first().text());
 
           // ── Deep-link (strict — no generic first-anchor fallback) ──
           // Tier 1: anchor wrapping or inside the heading element.
-          // Tier 2: any <a> with an event-slug path segment.
-          // If neither tier yields a link, discard — a homepage URL is not a deep-link.
+          // Tier 2: slug-keyword anchor (global pattern + venue's linkPattern if set).
           const headingAnchor =
             headingEl.find('a').first().attr('href') ||
             headingEl.closest('a').attr('href') ||
@@ -1366,20 +1400,16 @@ async function scrapeVenue(browser, config) {
               'h1 a','h2 a','h3 a','h4 a','h5 a',
               '[class*="title"] a','[class*="name"] a','[class*="artist"] a',
             ].join(',')).first().attr('href');
-          const slugAnchor = $el.find('a[href]').filter((_, a) =>
-            /\/event|\/agenda|\/concert|\/show|\/spectacle|\/programme|\/detail|\/tickets|\/activit/i
-              .test($(a).attr('href') || '')
-          ).first().attr('href');
+          const slugAnchor = $el.find('a[href]').filter((_, a) => {
+            const href = $(a).attr('href') || '';
+            return GLOBAL_SLUG_RE.test(href) || (config.linkPattern && config.linkPattern.test(href));
+          }).first().attr('href');
           const rawLink = headingAnchor || slugAnchor || '';
-          if (!rawLink) { console.log(`      → no event deep-link found, discarded`); return; }
+          if (!rawLink) { skipNoLink++; return; }
           const url = rawLink.startsWith('http') ? rawLink
             : rawLink.startsWith('/') ? `${baseOrigin}${rawLink}` : '';
-          // Reject bare homepage roots (path is empty or just '/')
           const urlPath = url.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
-          if (!url || urlPath.length < 5) {
-            console.log(`      → homepage URL rejected (no event path), discarded`);
-            return;
-          }
+          if (!url || urlPath.length < 5) { skipHomepage++; return; }
 
           const cls = classifyForVenue(title+' '+desc, config);
           const smart = smartDefaultTime(cls.cat);
@@ -1395,6 +1425,12 @@ async function scrapeVenue(browser, config) {
             neighbourhood:config.neighbourhood, lat:config.lat, lng:config.lng,
             ...(externalVenueHint ? { externalVenueHint } : {}) });
         });
+
+        // ── Skip-reason breakdown for debugging strict filter rejections ──
+        const totalSkipped = skipNoDate + skipNoLink + skipHomepage + skipBadTitle;
+        if (totalSkipped > 0 || events.length === 0) {
+          console.log(`    Skipped ${config.name}: ${skipBadTitle} bad-title | ${skipNoDate} no-date-element | ${skipNoLink} no-deep-link | ${skipHomepage} homepage-URL | ${events.length} accepted`);
+        }
       }
 
       await page.close();
