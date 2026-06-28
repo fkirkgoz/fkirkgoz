@@ -447,15 +447,33 @@ const VENUE_CONFIGS = [
   {
     id: 'circlepark',
     name: 'Circle Park',
-    useRaClub: true,
-    addr: 'Brussels, Belgium',
-    lat: 0, lng: 0,   // location varies per event (open-air/outdoor); geocoded from card
-    neighbourhood: 'Various',
+    useAgendaBrussels: true,
+    addr: 'Rue de Liverpool 2, 1070 Anderlecht, Brussels',
+    lat: 50.8348, lng: 4.3010,   // Anderlecht — HARDCODED
+    neighbourhood: 'Anderlecht',
     emoji: '🌿', color: '#F4A261', cat: 'Festival',
     tags: ['Open Air', 'Electronic', 'Day Party', 'Festival'],
     defaultTime: '14:00',
-    jsHeavy: true,
-    extraWait: 6000,
+    jsHeavy: true, enforceVisuals: true,
+    urls: [
+      'https://www.agenda.brussels/en/search?q=Circle+Park',
+      'https://agenda.brussels/en/search?q=Circle+Park',
+      'https://www.agenda.brussels/en/search?q=Circle+Park+Anderlecht',
+    ],
+  },
+  // Also scrape the RA club page directly — Strategy 1.9a handles /events/ deep-links
+  {
+    id: 'circleparkRa',
+    name: 'Circle Park',
+    useRaClub: true,
+    addr: 'Rue de Liverpool 2, 1070 Anderlecht, Brussels',
+    lat: 50.8348, lng: 4.3010,
+    neighbourhood: 'Anderlecht',
+    emoji: '🌿', color: '#F4A261', cat: 'Festival',
+    tags: ['Open Air', 'Electronic', 'Day Party', 'Festival'],
+    defaultTime: '14:00',
+    jsHeavy: true, enforceVisuals: true,
+    extraWait: 8000,
     urls: [
       'https://ra.co/clubs/189275',
     ],
@@ -526,7 +544,7 @@ function classifyForVenue(text, config) {
 // actual venue instead of pinning to the club's home address.
 const EXTERNAL_VENUE_PATTERNS = [
   { re: /gare\s+maritime/i,                        name: 'Gare Maritime Brussels'        },
-  { re: /circle\s*park|cercle\s*park/i,            name: 'Circle Park Brussels'          },
+  { re: /circle\s*park|cercle\s*park/i,            name: 'Circle Park Anderlecht Brussels' },
   { re: /brussels\s*expo|expo\s*brussels/i,        name: 'Brussels Expo'                 },
   { re: /palais\s*12/i,                            name: 'Palais 12 Brussels'            },
   { re: /wolvendael/i,                             name: 'Wolvendael Park Brussels'      },
@@ -538,6 +556,8 @@ const EXTERNAL_VENUE_PATTERNS = [
   { re: /hangar\s+flagey|flagey/i,                 name: 'Flagey Brussels'               },
   { re: /terminal\s+brussels|hangar\s+terminal/i,  name: 'Terminal Brussels'             },
   { re: /recyclart/i,                              name: 'Recyclart Brussels'            },
+  { re: /brasserie\s+illegaal/i,                  name: 'Brasserie ILLEGAAL Brussels'   },
+  { re: /parc\s+astrid.*anderlecht|anderlecht.*parc/i, name: 'Parc Astrid Anderlecht Brussels' },
 ];
 
 function detectExternalVenue(text) {
