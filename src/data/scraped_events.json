@@ -76,89 +76,9 @@
     "_rawDate": "2026-09-27"
   },
   {
-    "id": 160,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "BACO EXU DO BLUES",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "friends": 3,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/baco-exu-do-blues/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "going": 63,
-    "neighbourhood": "Centre",
-    "desc": "BACO EXU DO BLUES at La Madeleine.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Guest589",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest932",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest900",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest616",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest936",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest628",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Zoë",
-        "text": "Counting down the days 🗓️",
-        "time": "1:36 AM"
-      },
-      {
-        "user": "Kaan",
-        "text": "This is going to be AMAZING",
-        "time": "3:05 AM"
-      },
-      {
-        "user": "Axel",
-        "text": "Already got my ticket! 👋",
-        "time": "6:02 AM"
-      }
-    ],
-    "_rawDate": "2026-06-27"
-  },
-  {
     "id": 161,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "MOLOTOV & MALA RODRIGUEZ",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1568,7 +1488,7 @@
   {
     "id": 187,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Tokyo Melody: A Film about Ryuichi Sakamoto - Elizabeth Lennard",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1804,96 +1724,6 @@
       }
     ],
     "_rawDate": "2026-10-18"
-  },
-  {
-    "id": 225,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Procès d'un jeune poète - Philippe Van Cutsem",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 3,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/proces-dun-jeune-poete-philippe-van-cutsem",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 159,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest790",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest436",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest146",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest945",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest236",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest871",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Zoë",
-        "text": "Already got my ticket! 👋",
-        "time": "10:37 PM"
-      },
-      {
-        "user": "Hugo",
-        "text": "Can't wait for this one! 🔥",
-        "time": "6:21 PM"
-      },
-      {
-        "user": "Léa",
-        "text": "This is going to be AMAZING",
-        "time": "4:42 AM"
-      }
-    ],
-    "_rawDate": "2026-06-27"
   },
   {
     "id": 231,
@@ -2875,62 +2705,6 @@
       }
     ],
     "_rawDate": "2026-11-19"
-  },
-  {
-    "id": 275,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: Pawlowski & CAIVA",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "friends": 3,
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-pawlowski-caiva",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "going": 213,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: Pawlowski & CAIVA at Fuse.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Guest703",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest552",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "Brussels never disappoints ❤️",
-        "time": "9:41 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Can't wait for this one! 🔥",
-        "time": "2:14 AM"
-      }
-    ],
-    "_rawDate": "2026-06-27"
   },
   {
     "id": 284,
@@ -4350,7 +4124,7 @@
   {
     "id": 328,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Dry Leaf - Aleksandre Koberidze",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -6571,7 +6345,7 @@
   {
     "id": 410,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "18HRS of Fuse w/ Vault Sessions: Open Air & Club",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -6867,7 +6641,7 @@
   {
     "id": 443,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS'",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7076,139 +6850,9 @@
     "_rawDate": "2026-08-16"
   },
   {
-    "id": 448,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "How Pamela Anderson and my camera made me look at women who have plastic surgery - Nina Gazaniol Vérité",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/how-pamela-anderson-and-my-camera-made-me-look-women-who-have-plastic-surgery-nina",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 68,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Guest080",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest691",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest946",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest904",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest924",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest334",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest351",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Léa",
-        "text": "Who else is going?? 🙋",
-        "time": "7:29 AM"
-      },
-      {
-        "user": "Kai",
-        "text": "Can't wait for this one! 🔥",
-        "time": "12:19 AM"
-      }
-    ],
-    "_rawDate": "2026-06-27"
-  },
-  {
-    "id": 449,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "In-I in Motion - Juliette Binoche",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 0,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/i-motion-juliette-binoche",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 153,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Guest869",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest488",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Can't wait for this one! 🔥",
-        "time": "7:41 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Counting down the days 🗓️",
-        "time": "6:41 PM"
-      }
-    ],
-    "_rawDate": "2026-06-27"
-  },
-  {
     "id": 454,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Historias del buen Valle - José Luis Guerín",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -7370,7 +7014,7 @@
   {
     "id": 466,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Elvis Costello & The Imposters with Charlie Sexton",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8799,7 +8443,7 @@
   {
     "id": 503,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS' + Marc Melià",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8924,7 +8568,7 @@
   {
     "id": 506,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Meet the Writer: Dave Eggers",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -9365,7 +9009,7 @@
   {
     "id": 513,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "DE SITCOMEBACK",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -10671,73 +10315,6 @@
     "_rawDate": "2026-07-08"
   },
   {
-    "id": 531,
-    "cat": "Festival",
-    "date": "Ongoing",
-    "title": "Couleur Café Festival 2026",
-    "venue": "Osseghem Park, Atomium",
-    "addr": "Ossegempark, 1020 Laeken, Brussels",
-    "time": "14:00",
-    "startH": 14,
-    "endH": 26,
-    "emoji": "🎸",
-    "color": "#F4A261",
-    "friends": 1,
-    "tags": [
-      "World Music",
-      "Hip Hop",
-      "Festival",
-      "Open Air"
-    ],
-    "source": "Couleur Café",
-    "officialEventLink": "https://www.couleurcafe.be",
-    "lat": 50.8948,
-    "lng": 4.3411,
-    "going": 301,
-    "neighbourhood": "Laeken",
-    "desc": "Brussels' legendary 3-day world music & hip hop festival at Osseghem Park, in the shadow of the Atomium. 26–28 June 2026.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Guest078",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest174",
-        "c": "#90E0EF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Hugo",
-        "text": "Who else is going?? 🙋",
-        "time": "2:54 AM"
-      },
-      {
-        "user": "Nora",
-        "text": "Who else is going?? 🙋",
-        "time": "4:50 PM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Brussels never disappoints ❤️",
-        "time": "3:18 AM"
-      }
-    ],
-    "_rawDate": "2026-06-26"
-  },
-  {
     "id": 532,
     "cat": "Culture",
     "date": "October",
@@ -10817,5 +10394,383 @@
       }
     ],
     "_rawDate": "2026-10-17"
+  },
+  {
+    "id": 533,
+    "cat": "Nightlife",
+    "date": "August",
+    "title": "Fuse presents: RSO Berlin w/ JKS & Laure Croft",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "friends": 2,
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-rso-berlin-w-jks-laure-croft",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "going": 234,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: RSO Berlin w/ JKS & Laure Croft at Fuse.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Guest976",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest049",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest982",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest054",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest023",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest547",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest119",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Grab tickets fast, selling out!",
+        "time": "8:55 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "11:01 AM"
+      }
+    ],
+    "_rawDate": "2026-08-01"
+  },
+  {
+    "id": 534,
+    "cat": "Food & Drink",
+    "date": "Next Week",
+    "title": "The Substance - Coralie Fargeat",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🍕",
+    "color": "#F4C87A",
+    "friends": 1,
+    "tags": [
+      "Food",
+      "Social"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/substance-coralie-fargeat",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 48,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest959",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest306",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest002",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "8:31 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "7:50 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Grab tickets fast, selling out!",
+        "time": "7:31 AM"
+      }
+    ],
+    "_rawDate": "2026-07-05"
+  },
+  {
+    "id": 535,
+    "cat": "Arts",
+    "date": "August",
+    "title": "Cinema at Bozar this summer",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 0,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/cinema-bozar-summer",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 44,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest269",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest951",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest334",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest629",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest918",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest520",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest738",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:52 PM"
+      },
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "8:25 AM"
+      }
+    ],
+    "_rawDate": "2026-08-30"
+  },
+  {
+    "id": 536,
+    "cat": "Arts",
+    "date": "August",
+    "title": "Little Amélie or the Character of Rain - Maïlys Vallade & Liane-Cho Han (6+)",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 2,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/little-amelie-or-character-rain-mailys-vallade-liane-cho-han-6",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 298,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest992",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest718",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest810",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest396",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Fleur",
+        "text": "Can't wait for this one! 🔥",
+        "time": "6:16 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Brussels never disappoints ❤️",
+        "time": "3:03 PM"
+      }
+    ],
+    "_rawDate": "2026-08-01"
+  },
+  {
+    "id": 537,
+    "cat": "Festival",
+    "date": "Ongoing",
+    "title": "Couleur Café Festival 2026",
+    "venue": "Osseghem Park, Atomium",
+    "addr": "Ossegempark, 1020 Laeken, Brussels",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 26,
+    "emoji": "🎸",
+    "color": "#F4A261",
+    "friends": 2,
+    "tags": [
+      "World Music",
+      "Hip Hop",
+      "Festival",
+      "Open Air"
+    ],
+    "source": "Couleur Café",
+    "officialEventLink": "https://www.couleurcafe.be",
+    "lat": 50.8948,
+    "lng": 4.3411,
+    "going": 121,
+    "neighbourhood": "Laeken",
+    "desc": "Brussels' legendary 3-day world music & hip hop festival at Osseghem Park, in the shadow of the Atomium. 26–28 June 2026.",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest509",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest199",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest541",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Who else is going?? 🙋",
+        "time": "1:41 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Who else is going?? 🙋",
+        "time": "10:35 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Brussels never disappoints ❤️",
+        "time": "10:13 PM"
+      }
+    ],
+    "_rawDate": "2026-06-26"
   }
 ]
