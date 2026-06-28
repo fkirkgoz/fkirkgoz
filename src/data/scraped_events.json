@@ -9111,7 +9111,7 @@
     "lng": 4.3448,
     "going": 21,
     "neighbourhood": "Molenbeek",
-    "desc": "State of the Future at Kaaitheater.",
+    "desc": "02.09.26 TheaterFestival 2026 State of the Future Language: NL",
     "attendees": [
       {
         "n": "Zoë",
@@ -10483,7 +10483,7 @@
   },
   {
     "id": 534,
-    "cat": "Food & Drink",
+    "cat": "Culture",
     "date": "Next Week",
     "title": "The Substance - Coralie Fargeat",
     "venue": "Bozar",
@@ -10491,8 +10491,8 @@
     "time": "12:00",
     "startH": 12,
     "endH": 15,
-    "emoji": "🍕",
-    "color": "#F4C87A",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 1,
     "tags": [
       "Food",
@@ -10548,7 +10548,7 @@
   },
   {
     "id": 535,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "August",
     "title": "Cinema at Bozar this summer",
     "venue": "Bozar",
@@ -10556,8 +10556,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 0,
     "tags": [
       "Cinema",
@@ -10638,7 +10638,7 @@
   },
   {
     "id": 536,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "August",
     "title": "Little Amélie or the Character of Rain - Maïlys Vallade & Liane-Cho Han (6+)",
     "venue": "Bozar",
@@ -10646,8 +10646,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 2,
     "tags": [
       "Cinema",
@@ -10704,33 +10704,701 @@
   {
     "id": 537,
     "cat": "Festival",
-    "date": "Ongoing",
-    "title": "Couleur Café Festival 2026",
-    "venue": "Osseghem Park, Atomium",
-    "addr": "Ossegempark, 1020 Laeken, Brussels",
-    "time": "14:00",
-    "startH": 14,
-    "endH": 26,
+    "date": "Today",
+    "title": "Couleur Café gates are back open",
+    "venue": "Couleur Café",
+    "addr": "Ossegempark, 1020 Laeken",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
     "emoji": "🎸",
     "color": "#F4A261",
     "friends": 2,
     "tags": [
       "World Music",
       "Hip Hop",
-      "Festival",
-      "Open Air"
+      "Festival"
     ],
     "source": "Couleur Café",
-    "officialEventLink": "https://www.couleurcafe.be",
+    "officialEventLink": "https://www.couleurcafe.be/en/news/couleur-cafe-gates-are-back-open",
     "lat": 50.8948,
     "lng": 4.3411,
-    "going": 121,
+    "going": 232,
     "neighbourhood": "Laeken",
-    "desc": "Brussels' legendary 3-day world music & hip hop festival at Osseghem Park, in the shadow of the Atomium. 26–28 June 2026.",
+    "desc": "Following last night's site evacuation, we are proud to announce that Couleur Café opens its doors this Sunday at 15:00, as planned.",
     "attendees": [
       {
         "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest148",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest533",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest512",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest835",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest590",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest375",
         "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Zoë",
+        "text": "Who else is going?? 🙋",
+        "time": "9:29 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Already got my ticket! 👋",
+        "time": "3:13 AM"
+      }
+    ],
+    "_rawDate": "2026-06-28"
+  },
+  {
+    "id": 538,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "July 26",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/alleen-verbeelding",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 139,
+    "neighbourhood": "Centre",
+    "desc": "07.07.26 ― 04.04.27 Alleen Verbeelding Michael De Cock / KVS",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Guest212",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest832",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest958",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest153",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest095",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest093",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest309",
+        "c": "#B8E5C0",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:35 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Counting down the days 🗓️",
+        "time": "9:50 PM"
+      },
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:52 PM"
+      }
+    ],
+    "_rawDate": "2026-07-07"
+  },
+  {
+    "id": 539,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Alleen Verbeelding",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/alleen-verbeelding",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 205,
+    "neighbourhood": "Centre",
+    "desc": "07.07.26 ― 04.04.27 Alleen Verbeelding Michael De Cock / KVS",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest624",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest105",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest328",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest447",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest588",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest376",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest949",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "10:56 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Counting down the days 🗓️",
+        "time": "10:24 AM"
+      }
+    ],
+    "_rawDate": "2026-07-07"
+  },
+  {
+    "id": 540,
+    "cat": "Culture",
+    "date": "August",
+    "title": "Copyriot",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/copyriot-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 277,
+    "neighbourhood": "Centre",
+    "desc": "04.08.26 ― 25.09.26 Copyriot KRAPP / KVS Language: NL Surtitles: FR • EN",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest346",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest269",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest730",
+        "c": "#F4A261",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Who else is going?? 🙋",
+        "time": "4:33 AM"
+      },
+      {
+        "user": "Ali",
+        "text": "Already got my ticket! 👋",
+        "time": "3:58 AM"
+      }
+    ],
+    "_rawDate": "2026-08-04"
+  },
+  {
+    "id": 542,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Magec / the Desert",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/magec-the-desert-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 109,
+    "neighbourhood": "Centre",
+    "desc": "05.09.26 ― 06.09.26 Het TheaterFestival 2026 Magec / the Desert Radouan Mriziga / A7LA5",
+    "attendees": [
+      {
+        "n": "Guest013",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest363",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest680",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest120",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest657",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest735",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kai",
+        "text": "Can't wait for this one! 🔥",
+        "time": "3:03 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Counting down the days 🗓️",
+        "time": "4:10 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "This is going to be AMAZING",
+        "time": "1:08 AM"
+      }
+    ],
+    "_rawDate": "2026-09-05"
+  },
+  {
+    "id": 543,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Gala van de Aura’s",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/gala-van-de-aura-s-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 134,
+    "neighbourhood": "Centre",
+    "desc": "08.09.26 Het TheaterFestival 2026 Gala van de Aura’s Het TheaterFestival, de Acteursgilde, NTGent, KVS en Toneelhuis Language: NL",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Guest288",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest698",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest130",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest336",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest653",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest392",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:51 AM"
+      },
+      {
+        "user": "Fleur",
+        "text": "First time at this venue!",
+        "time": "3:07 PM"
+      }
+    ],
+    "_rawDate": "2026-09-08"
+  },
+  {
+    "id": 544,
+    "cat": "Culture",
+    "date": "September",
+    "title": "FRANK",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/frank-4",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 268,
+    "neighbourhood": "Centre",
+    "desc": "08.09.26 ― 09.09.26 Het TheaterFestival 2026 FRANK Cherish Menzo / GRIP & Theater Utrecht i.s.m. Dance On Ensemble Language: FR EN Surtitles: NL • EN",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#B8E5C0",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#C77DFF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest604",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest958",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "9:18 PM"
+      },
+      {
+        "user": "Nora",
+        "text": "Already got my ticket! 👋",
+        "time": "7:57 AM"
+      }
+    ],
+    "_rawDate": "2026-09-08"
+  },
+  {
+    "id": 545,
+    "cat": "Culture",
+    "date": "September",
+    "title": "F*CK LOLITA",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/f-ck-lolita-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 62,
+    "neighbourhood": "Centre",
+    "desc": "12.09.26 Het TheaterFestival 2026 F*CK LOLITA Het Zuidelijk Toneel Language: NL",
+    "attendees": [
+      {
+        "n": "Guest455",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest103",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest765",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest897",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest922",
+        "c": "#F7CFD8",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Nora",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:52 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Grab tickets fast, selling out!",
+        "time": "10:58 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:31 AM"
+      }
+    ],
+    "_rawDate": "2026-09-12"
+  },
+  {
+    "id": 546,
+    "cat": "Culture",
+    "date": "September",
+    "title": "For Blinky Palermo",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/for-blinky-palermo-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 296,
+    "neighbourhood": "Centre",
+    "desc": "18.09.26 ― 19.09.26 For Blinky Palermo Marc Vanrunxt & Georgia Vardarou / Kunst/Werk Language: FR",
+    "attendees": [
+      {
+        "n": "Guest351",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest288",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest612",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest940",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Can't wait for this one! 🔥",
+        "time": "4:47 PM"
+      },
+      {
+        "user": "Iris",
+        "text": "Already got my ticket! 👋",
+        "time": "5:40 AM"
+      }
+    ],
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 547,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Cry (no) more",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 3,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/cry-no-more-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 221,
+    "neighbourhood": "Centre",
+    "desc": "19.09.26 Cry (no) more Dina Dooreman / KVS Language: NL EN",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
         "isFriend": true
       },
       {
@@ -10739,38 +11407,246 @@
         "isFriend": true
       },
       {
-        "n": "Guest509",
-        "c": "#B8E5C0",
+        "n": "Guest073",
+        "c": "#90E0EF",
         "isFriend": false
       },
       {
-        "n": "Guest199",
+        "n": "Guest880",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest226",
         "c": "#A6D6D6",
         "isFriend": false
       },
       {
-        "n": "Guest541",
-        "c": "#F4A261",
+        "n": "Guest811",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest132",
+        "c": "#F7CFD8",
         "isFriend": false
       }
     ],
     "chatSeed": [
       {
-        "user": "Axel",
-        "text": "Who else is going?? 🙋",
-        "time": "1:41 AM"
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "7:01 AM"
       },
       {
-        "user": "Fleur",
+        "user": "Iris",
         "text": "Who else is going?? 🙋",
-        "time": "10:35 PM"
-      },
-      {
-        "user": "Nora",
-        "text": "Brussels never disappoints ❤️",
-        "time": "10:13 PM"
+        "time": "5:38 PM"
       }
     ],
-    "_rawDate": "2026-06-26"
+    "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 548,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Imprisoned Gods",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 0,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/imprisoned-gods-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 121,
+    "neighbourhood": "Centre",
+    "desc": "23.09.26 Imprisoned Gods Lukah Katangila / Ultima Vez",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest811",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest478",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest425",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest825",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "First time at this venue!",
+        "time": "2:13 AM"
+      },
+      {
+        "user": "Zoë",
+        "text": "First time at this venue!",
+        "time": "10:26 AM"
+      }
+    ],
+    "_rawDate": "2026-09-23"
+  },
+  {
+    "id": 549,
+    "cat": "Culture",
+    "date": "September",
+    "title": "WIPCOOP - Work in Progress 2026",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/wipcoop-work-in-progress-2026-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 224,
+    "neighbourhood": "Centre",
+    "desc": "30.09.26 ― 01.10.26 WIPCOOP - Work in Progress 2026 Mestizo Arts Platform / KVS",
+    "attendees": [
+      {
+        "n": "Guest909",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest576",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest692",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest287",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest186",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest201",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "Grab tickets fast, selling out!",
+        "time": "12:10 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Can't wait for this one! 🔥",
+        "time": "5:05 PM"
+      },
+      {
+        "user": "Kaan",
+        "text": "Brussels never disappoints ❤️",
+        "time": "4:14 PM"
+      }
+    ],
+    "_rawDate": "2026-09-30"
+  },
+  {
+    "id": 550,
+    "cat": "Culture",
+    "date": "October",
+    "title": "Dit is (niet) de evolutietheorie van de troost",
+    "venue": "KVS",
+    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "friends": 1,
+    "tags": [
+      "Theatre",
+      "Performing Arts",
+      "Contemporary"
+    ],
+    "source": "KVS",
+    "officialEventLink": "https://www.kvs.be/en/Event/dit-is-niet-de-evolutietheorie-van-de-troost-1",
+    "lat": 50.8552,
+    "lng": 4.3512,
+    "going": 287,
+    "neighbourhood": "Centre",
+    "desc": "03.10.26 Dit is (niet) de evolutietheorie van de troost Aya Sabi & Dounia Mahammed / Monty Language: NL Surtitles: FR",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#A6D6D6",
+        "isFriend": true
+      },
+      {
+        "n": "Guest534",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest626",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Léa",
+        "text": "First time at this venue!",
+        "time": "6:05 PM"
+      },
+      {
+        "user": "Kai",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:32 PM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Brussels never disappoints ❤️",
+        "time": "8:33 PM"
+      }
+    ],
+    "_rawDate": "2026-10-03"
   }
 ]
