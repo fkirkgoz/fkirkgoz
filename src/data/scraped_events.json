@@ -76,81 +76,6 @@
     "_rawDate": "2026-09-27"
   },
   {
-    "id": 161,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "MOLOTOV & MALA RODRIGUEZ",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "friends": 1,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/molotov-mala-rodriguez/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "going": 250,
-    "neighbourhood": "Centre",
-    "desc": "MOLOTOV & MALA RODRIGUEZ at La Madeleine.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Guest127",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest174",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest091",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest705",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest773",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Zoë",
-        "text": "Already got my ticket! 👋",
-        "time": "11:16 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "Who else is going?? 🙋",
-        "time": "2:04 PM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 162,
     "cat": "Music",
     "date": "September",
@@ -1484,96 +1409,6 @@
       }
     ],
     "_rawDate": "2026-08-16"
-  },
-  {
-    "id": 187,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Tokyo Melody: A Film about Ryuichi Sakamoto - Elizabeth Lennard",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 0,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/tokyo-melody-film-about-ryuichi-sakamoto-elizabeth-lennard",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 235,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#F4C87A",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#F7CFD8",
-        "isFriend": true
-      },
-      {
-        "n": "Guest414",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest657",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest012",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest203",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest763",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest957",
-        "c": "#F4C87A",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "Brussels never disappoints ❤️",
-        "time": "4:40 AM"
-      },
-      {
-        "user": "Axel",
-        "text": "Can't wait for this one! 🔥",
-        "time": "5:50 AM"
-      },
-      {
-        "user": "Ali",
-        "text": "Can't wait for this one! 🔥",
-        "time": "11:12 AM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
   },
   {
     "id": 206,
@@ -4122,81 +3957,6 @@
     "_rawDate": "2026-11-17"
   },
   {
-    "id": 328,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Dry Leaf - Aleksandre Koberidze",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/dry-leaf-aleksandre-koberidze",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 182,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Guest116",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest594",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest106",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest674",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest863",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest356",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "Can't wait for this one! 🔥",
-        "time": "3:51 PM"
-      },
-      {
-        "user": "Iris",
-        "text": "Grab tickets fast, selling out!",
-        "time": "1:59 PM"
-      },
-      {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "12:47 AM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 340,
     "cat": "Music",
     "date": "November",
@@ -6639,76 +6399,6 @@
     "_rawDate": "2026-11-24"
   },
   {
-    "id": 443,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS'",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/new-date-kyle-dixon-michael-stein-performing-the-music-of-stranger-things/a10Qw00000Ga48jIAB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 172,
-    "neighbourhood": "Centre",
-    "desc": "The superb live soundtrack to one of the most successful Netflix series ever",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#F4A261",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest984",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest536",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Zoë",
-        "text": "Counting down the days 🗓️",
-        "time": "5:28 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Grab tickets fast, selling out!",
-        "time": "4:44 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Who else is going?? 🙋",
-        "time": "10:10 AM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 446,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -6850,76 +6540,6 @@
     "_rawDate": "2026-08-16"
   },
   {
-    "id": 454,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Historias del buen Valle - José Luis Guerín",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 3,
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/historias-del-buen-valle-jose-luis-guerin-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 196,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Guest398",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest155",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest808",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Already got my ticket! 👋",
-        "time": "5:01 PM"
-      },
-      {
-        "user": "Kaan",
-        "text": "Counting down the days 🗓️",
-        "time": "6:30 PM"
-      },
-      {
-        "user": "Nora",
-        "text": "First time at this venue!",
-        "time": "4:13 PM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 465,
     "cat": "Music",
     "date": "September",
@@ -7014,7 +6634,7 @@
   {
     "id": 466,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Elvis Costello & The Imposters with Charlie Sexton",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8441,76 +8061,6 @@
     "_rawDate": "2026-11-26"
   },
   {
-    "id": 503,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS' + Marc Melià",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/new-date-kyle-dixon-michael-stein-performing-the-music-of-stranger-things/a10Qw00000Ga48jIAB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 41,
-    "neighbourhood": "Centre",
-    "desc": "The superb live soundtrack to one of the most successful Netflix series ever",
-    "attendees": [
-      {
-        "n": "Guest549",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest637",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest752",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest307",
-        "c": "#90E0EF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest043",
-        "c": "#F4A261",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Brussels never disappoints ❤️",
-        "time": "7:29 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "Grab tickets fast, selling out!",
-        "time": "2:37 AM"
-      },
-      {
-        "user": "Ali",
-        "text": "Counting down the days 🗓️",
-        "time": "1:31 PM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 504,
     "cat": "Music",
     "date": "August",
@@ -8564,82 +8114,6 @@
       }
     ],
     "_rawDate": "2026-08-30"
-  },
-  {
-    "id": 506,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Meet the Writer: Dave Eggers",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 2,
-    "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-writer-dave-eggers",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "going": 263,
-    "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Guest433",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest235",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest035",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest313",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest722",
-        "c": "#A6D6D6",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Iris",
-        "text": "Counting down the days 🗓️",
-        "time": "7:06 AM"
-      },
-      {
-        "user": "Léa",
-        "text": "Grab tickets fast, selling out!",
-        "time": "3:23 PM"
-      },
-      {
-        "user": "Kaan",
-        "text": "Who else is going?? 🙋",
-        "time": "11:24 PM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
   },
   {
     "id": 507,
@@ -9005,87 +8479,6 @@
       }
     ],
     "_rawDate": "2026-07-02"
-  },
-  {
-    "id": 513,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "DE SITCOMEBACK",
-    "venue": "Kaaitheater",
-    "addr": "Square Sainctelette 20, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "friends": 3,
-    "tags": [
-      "Performing Arts",
-      "Experimental",
-      "Theatre"
-    ],
-    "source": "Kaaitheater",
-    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/de-sitcomeback",
-    "lat": 50.8551,
-    "lng": 4.3448,
-    "going": 181,
-    "neighbourhood": "Molenbeek",
-    "desc": "DE SITCOMEBACK at Kaaitheater.",
-    "attendees": [
-      {
-        "n": "Guest920",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest653",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest592",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest256",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest804",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest337",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest407",
-        "c": "#F4A261",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "Already got my ticket! 👋",
-        "time": "9:03 AM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Who else is going?? 🙋",
-        "time": "2:09 AM"
-      },
-      {
-        "user": "Kai",
-        "text": "First time at this venue!",
-        "time": "5:51 AM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
   },
   {
     "id": 514,
@@ -10072,7 +9465,7 @@
   {
     "id": 528,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "L’heure d’été 2026 : Taipei (Taiwan)",
     "venue": "Vaux Hall & Cinéma Galeries",
     "addr": "Vaux Hall & Cinéma Galeries, Belgium",
@@ -10484,7 +9877,7 @@
   {
     "id": 534,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "The Substance - Coralie Fargeat",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -10700,82 +10093,6 @@
       }
     ],
     "_rawDate": "2026-08-01"
-  },
-  {
-    "id": 537,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Couleur Café gates are back open",
-    "venue": "Couleur Café",
-    "addr": "Ossegempark, 1020 Laeken",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎸",
-    "color": "#F4A261",
-    "friends": 2,
-    "tags": [
-      "World Music",
-      "Hip Hop",
-      "Festival"
-    ],
-    "source": "Couleur Café",
-    "officialEventLink": "https://www.couleurcafe.be/en/news/couleur-cafe-gates-are-back-open",
-    "lat": 50.8948,
-    "lng": 4.3411,
-    "going": 232,
-    "neighbourhood": "Laeken",
-    "desc": "Following last night's site evacuation, we are proud to announce that Couleur Café opens its doors this Sunday at 15:00, as planned.",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Guest148",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest533",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest512",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest835",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest590",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest375",
-        "c": "#C77DFF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Zoë",
-        "text": "Who else is going?? 🙋",
-        "time": "9:29 PM"
-      },
-      {
-        "user": "Fleur",
-        "text": "Already got my ticket! 👋",
-        "time": "3:13 AM"
-      }
-    ],
-    "_rawDate": "2026-06-28"
   },
   {
     "id": 538,
@@ -12254,5 +11571,85 @@
       }
     ],
     "_rawDate": "2026-07-26"
+  },
+  {
+    "id": 559,
+    "cat": "Arts",
+    "date": "August",
+    "title": "Bill Cunningham New York - Richard Press",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "friends": 3,
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/bill-cunningham-new-york-richard-press",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 201,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Guest078",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest619",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest945",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest059",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest558",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest869",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest754",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Hugo",
+        "text": "This is going to be AMAZING",
+        "time": "4:40 PM"
+      },
+      {
+        "user": "Fleur",
+        "text": "Grab tickets fast, selling out!",
+        "time": "2:37 AM"
+      },
+      {
+        "user": "Hugo",
+        "text": "Who else is going?? 🙋",
+        "time": "12:48 AM"
+      }
+    ],
+    "_rawDate": "2026-08-26"
   }
 ]
