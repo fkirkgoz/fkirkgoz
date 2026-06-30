@@ -2260,7 +2260,7 @@
   {
     "id": 262,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "fakemink",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -6632,71 +6632,6 @@
     "_rawDate": "2026-09-12"
   },
   {
-    "id": 466,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Elvis Costello & The Imposters with Charlie Sexton",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "friends": 0,
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/elvis-costello-the-imposters-with-charlie-sexton/a10Qw00000H7cQ9IAJ",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "going": 239,
-    "neighbourhood": "Centre",
-    "desc": "Radio Soul! The Early Songs of Elvis Costello",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#C77DFF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest837",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest274",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest351",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest318",
-        "c": "#B8E5C0",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Fleur",
-        "text": "This is going to be AMAZING",
-        "time": "10:02 PM"
-      },
-      {
-        "user": "Iris",
-        "text": "First time at this venue!",
-        "time": "12:58 AM"
-      }
-    ],
-    "_rawDate": "2026-06-29"
-  },
-  {
     "id": 470,
     "cat": "Music",
     "date": "November",
@@ -6974,7 +6909,7 @@
   {
     "id": 479,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "New date: Ghinzu",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7564,7 +7499,7 @@
   {
     "id": 495,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Ommegang 2026",
     "venue": "Grand-Place",
     "addr": "Grand-Place, Belgium",
@@ -7876,7 +7811,7 @@
   {
     "id": 500,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Midis-Minimes Festival",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -9465,7 +9400,7 @@
   {
     "id": 528,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "L’heure d’été 2026 : Taipei (Taiwan)",
     "venue": "Vaux Hall & Cinéma Galeries",
     "addr": "Vaux Hall & Cinéma Galeries, Belgium",
@@ -10097,7 +10032,7 @@
   {
     "id": 538,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "July 26",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -10188,7 +10123,7 @@
   {
     "id": 539,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Alleen Verbeelding",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -11574,7 +11509,7 @@
   },
   {
     "id": 559,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "August",
     "title": "Bill Cunningham New York - Richard Press",
     "venue": "Bozar",
@@ -11582,8 +11517,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 3,
     "tags": [
       "Cinema",
@@ -11651,5 +11586,160 @@
       }
     ],
     "_rawDate": "2026-08-26"
+  },
+  {
+    "id": 560,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Nuestra tierra - Lucrecia Martel",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "friends": 0,
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/nuestra-tierra-lucrecia-martel",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "going": 227,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4A261",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#90E0EF",
+        "isFriend": true
+      },
+      {
+        "n": "Guest587",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest992",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest704",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest818",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest198",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Axel",
+        "text": "Brussels never disappoints ❤️",
+        "time": "2:30 AM"
+      },
+      {
+        "user": "Léa",
+        "text": "This is going to be AMAZING",
+        "time": "6:09 PM"
+      },
+      {
+        "user": "Zoë",
+        "text": "Can't wait for this one! 🔥",
+        "time": "7:21 PM"
+      }
+    ],
+    "_rawDate": "2026-07-24"
+  },
+  {
+    "id": 561,
+    "cat": "Sports",
+    "date": "Next Month",
+    "title": "Beau Vélo de RAVeL : étape ixelloise",
+    "venue": "Commune d'Ixelles",
+    "addr": "Commune d'Ixelles, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "👟",
+    "color": "#90E0EF",
+    "friends": 3,
+    "tags": [
+      "Sports",
+      "Active"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Beau-Velo-de-RAVeL-etape-ixelloise.5700023988",
+    "lat": 50.837385058091385,
+    "lng": 4.342940445439298,
+    "going": 189,
+    "neighbourhood": "Centre",
+    "desc": "Sat 11 July Beau Vélo de RAVeL : étape ixelloise Free SportCommune d'Ixelles View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#F4C87A",
+        "isFriend": true
+      },
+      {
+        "n": "Kaan",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Léa",
+        "c": "#F7CFD8",
+        "isFriend": true
+      },
+      {
+        "n": "Guest303",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest861",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest246",
+        "c": "#B8E5C0",
+        "isFriend": false
+      },
+      {
+        "n": "Guest014",
+        "c": "#90E0EF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Iris",
+        "text": "First time at this venue!",
+        "time": "10:48 AM"
+      },
+      {
+        "user": "Axel",
+        "text": "Brussels never disappoints ❤️",
+        "time": "11:44 AM"
+      }
+    ],
+    "_rawDate": "2026-07-11"
   }
 ]
