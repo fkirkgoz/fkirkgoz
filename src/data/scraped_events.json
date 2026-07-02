@@ -163,7 +163,7 @@
   {
     "id": 163,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "EL BESTA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -2258,77 +2258,6 @@
     "_rawDate": "2026-10-05"
   },
   {
-    "id": 262,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "fakemink",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "friends": 2,
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/fakemink-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "going": 67,
-    "neighbourhood": "Saint-Josse",
-    "desc": "The essential name of the new-generation British cloud rap scene",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#8E7DBE",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Léa",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Guest379",
-        "c": "#F4A261",
-        "isFriend": false
-      },
-      {
-        "n": "Guest003",
-        "c": "#8E7DBE",
-        "isFriend": false
-      },
-      {
-        "n": "Guest418",
-        "c": "#90E0EF",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Nora",
-        "text": "Grab tickets fast, selling out!",
-        "time": "5:28 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Can't wait for this one! 🔥",
-        "time": "10:46 PM"
-      }
-    ],
-    "_rawDate": "2026-07-01"
-  },
-  {
     "id": 263,
     "cat": "Music",
     "date": "September",
@@ -2397,7 +2326,7 @@
   {
     "id": 264,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "C12 Nite - 03/07",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2544,7 +2473,7 @@
   {
     "id": 284,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: Samuel Moriero & KX CHR",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -6834,7 +6763,7 @@
   {
     "id": 478,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Burning Spear",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -7497,86 +7426,6 @@
     "_rawDate": "2026-08-23"
   },
   {
-    "id": 495,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Ommegang 2026",
-    "venue": "Grand-Place",
-    "addr": "Grand-Place, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "friends": 0,
-    "tags": [
-      "Culture",
-      "Brussels"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Ommegang-2026.370148",
-    "lat": 50.8467139,
-    "lng": 4.3525151,
-    "going": 90,
-    "neighbourhood": "Centre",
-    "desc": "Wed 01 July — Fri 03 July Ommegang 2026 €59 AnimationsGrand-Place View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#B8E5C0",
-        "isFriend": true
-      },
-      {
-        "n": "Kaan",
-        "c": "#90E0EF",
-        "isFriend": true
-      },
-      {
-        "n": "Guest850",
-        "c": "#F7CFD8",
-        "isFriend": false
-      },
-      {
-        "n": "Guest208",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest172",
-        "c": "#C77DFF",
-        "isFriend": false
-      },
-      {
-        "n": "Guest923",
-        "c": "#B8E5C0",
-        "isFriend": false
-      },
-      {
-        "n": "Guest492",
-        "c": "#8E7DBE",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Kaan",
-        "text": "First time at this venue!",
-        "time": "9:15 AM"
-      },
-      {
-        "user": "Iris",
-        "text": "Can't wait for this one! 🔥",
-        "time": "7:26 PM"
-      },
-      {
-        "user": "Kai",
-        "text": "Can't wait for this one! 🔥",
-        "time": "6:39 AM"
-      }
-    ],
-    "_rawDate": "2026-07-01"
-  },
-  {
     "id": 496,
     "cat": "Culture",
     "date": "November",
@@ -7809,66 +7658,6 @@
     "_rawDate": "2026-07-25"
   },
   {
-    "id": 500,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Midis-Minimes Festival",
-    "venue": "Various places in Brussels",
-    "addr": "Various places in Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "friends": 2,
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Midis-Minimes-Festival.5700023019",
-    "lat": 50.86688786301812,
-    "lng": 4.338018763609147,
-    "going": 202,
-    "neighbourhood": "Centre",
-    "desc": "Wed 01 July — Fri 28 August Midis-Minimes Festival FestivalVarious places in Brussels View more",
-    "attendees": [
-      {
-        "n": "Zoë",
-        "c": "#A6D6D6",
-        "isFriend": true
-      },
-      {
-        "n": "Guest902",
-        "c": "#F4C87A",
-        "isFriend": false
-      },
-      {
-        "n": "Guest142",
-        "c": "#A6D6D6",
-        "isFriend": false
-      },
-      {
-        "n": "Guest766",
-        "c": "#F7CFD8",
-        "isFriend": false
-      }
-    ],
-    "chatSeed": [
-      {
-        "user": "Ali",
-        "text": "First time at this venue!",
-        "time": "8:17 PM"
-      },
-      {
-        "user": "Zoë",
-        "text": "Grab tickets fast, selling out!",
-        "time": "9:44 PM"
-      }
-    ],
-    "_rawDate": "2026-07-01"
-  },
-  {
     "id": 501,
     "cat": "Culture",
     "date": "November",
@@ -8053,7 +7842,7 @@
   {
     "id": 507,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Quai d'Été",
     "venue": "Quai des péniches",
     "addr": "Quai des péniches, Belgium",
@@ -8343,7 +8132,7 @@
   {
     "id": 512,
     "cat": "Food & Drink",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Les Escales Estivales",
     "venue": "EDN Bar",
     "addr": "EDN Bar, Belgium",
@@ -8864,7 +8653,7 @@
   {
     "id": 520,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Burning Spear + Roots Warriors",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8924,7 +8713,7 @@
   {
     "id": 521,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Impro 'Night Aladar",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -8999,7 +8788,7 @@
   {
     "id": 522,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Arts at Night",
     "venue": "BOZAR, KBR, Old Masters Museum",
     "addr": "BOZAR, KBR, Old Masters Museum, Belgium",
@@ -9074,7 +8863,7 @@
   {
     "id": 523,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Nayad - Streetart festival",
     "venue": "Various places in Ixelles",
     "addr": "Various places in Ixelles, Belgium",
@@ -9134,7 +8923,7 @@
   {
     "id": 524,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brosella Festival 2026",
     "venue": "Théâtre de Verdure – Parc d’Osseghem",
     "addr": "Théâtre de Verdure – Parc d’Osseghem, Belgium",
@@ -9400,7 +9189,7 @@
   {
     "id": 529,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Visit the Royal Palace",
     "venue": "Palais Royal",
     "addr": "Palais Royal, Belgium",
@@ -10834,7 +10623,7 @@
   {
     "id": 551,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "EXAG&rsquo; Records &#038; Phoenician Drive present : CONCERTS FOR PALESTINE &#038; LEBANON",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -10916,7 +10705,7 @@
   {
     "id": 552,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ILLEGAAL DANCE BATTLE ALL STYLES",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -11674,7 +11463,7 @@
   },
   {
     "id": 562,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Magellan - Lav Diaz",
     "venue": "Bozar",
@@ -11682,8 +11471,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "friends": 0,
     "tags": [
       "Cinema",
@@ -11926,5 +11715,155 @@
       }
     ],
     "_rawDate": "2026-07-11"
+  },
+  {
+    "id": 565,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Mind of a Serial Killer : The Experience",
+    "venue": "Tour & Taxis",
+    "addr": "Tour & Taxis, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "friends": 2,
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Mind-of-a-Serial-Killer-The-Experience.5700024189",
+    "lat": 50.8665091,
+    "lng": 4.3470849,
+    "going": 157,
+    "neighbourhood": "Centre",
+    "desc": "Tue 14 July — Thu 31 December Mind of a Serial Killer : The Experience €17.9 ExhibitionsTour & Taxis View more",
+    "attendees": [
+      {
+        "n": "Zoë",
+        "c": "#8E7DBE",
+        "isFriend": true
+      },
+      {
+        "n": "Guest090",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest224",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest642",
+        "c": "#F4A261",
+        "isFriend": false
+      },
+      {
+        "n": "Guest580",
+        "c": "#C77DFF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest087",
+        "c": "#90E0EF",
+        "isFriend": false
+      },
+      {
+        "n": "Guest117",
+        "c": "#C77DFF",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "This is going to be AMAZING",
+        "time": "1:00 AM"
+      },
+      {
+        "user": "Kai",
+        "text": "Who else is going?? 🙋",
+        "time": "11:53 PM"
+      }
+    ],
+    "_rawDate": "2026-07-14"
+  },
+  {
+    "id": 566,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Detours Festival",
+    "venue": "Various locations in the Brussels Capital Region",
+    "addr": "Various locations in the Brussels Capital Region, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "friends": 1,
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Detours-Festival.5700022456",
+    "lat": 50.85214560361712,
+    "lng": 4.350072367336015,
+    "going": 198,
+    "neighbourhood": "Centre",
+    "desc": "Wed 15 July — Sat 24 October Detours Festival Free FestivalVarious locations in the Brussels Capital Region View more",
+    "attendees": [
+      {
+        "n": "Guest683",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest639",
+        "c": "#F4C87A",
+        "isFriend": false
+      },
+      {
+        "n": "Guest673",
+        "c": "#A6D6D6",
+        "isFriend": false
+      },
+      {
+        "n": "Guest301",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest928",
+        "c": "#F7CFD8",
+        "isFriend": false
+      },
+      {
+        "n": "Guest086",
+        "c": "#8E7DBE",
+        "isFriend": false
+      },
+      {
+        "n": "Guest581",
+        "c": "#A6D6D6",
+        "isFriend": false
+      }
+    ],
+    "chatSeed": [
+      {
+        "user": "Kaan",
+        "text": "Who else is going?? 🙋",
+        "time": "4:19 AM"
+      },
+      {
+        "user": "Nora",
+        "text": "Grab tickets fast, selling out!",
+        "time": "3:41 PM"
+      }
+    ],
+    "_rawDate": "2026-07-15"
   }
 ]
