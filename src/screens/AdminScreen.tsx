@@ -4,12 +4,14 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Theme, C } from '../constants/theme';
-import { AdminMetrics, getAdminMetrics } from '../lib/metrics';
+import { AdminMetrics, getAdminMetrics, isAdminUser } from '../lib/metrics';
+import { AuthUser } from './AuthScreen';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
 
 interface Props {
   onBack: () => void;
+  user: AuthUser | null;
   T: Theme;
 }
 
@@ -21,16 +23,34 @@ function fmtTime(iso: string | null): string {
     ' · ' + d.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' });
 }
 
-export default function AdminScreen({ onBack, T }: Props) {
+export default function AdminScreen({ onBack, user, T }: Props) {
   const [metrics, setMetrics] = useState<AdminMetrics | null>(null);
   const [refreshing, setRefreshing] = useState(false);
+  const authorized = isAdminUser(user);
 
   const refresh = useCallback(async () => {
+    if (!authorized) return;
     setRefreshing(true);
     try { setMetrics(await getAdminMetrics()); } finally { setRefreshing(false); }
-  }, []);
+  }, [authorized]);
 
   useEffect(() => { refresh(); }, [refresh]);
+
+  // Defense in depth: the route is only registered for the admin profile, but
+  // even if this screen is ever mounted another way, it renders no data.
+  if (!authorized) {
+    return (
+      <GradBg isDark={T.isDark} style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{ fontSize: 40, marginBottom: 12 }}>🔒</Text>
+        <Text style={{ color: T.text, fontWeight: '900', fontSize: 16 }}>Access denied</Text>
+        <Tap onPress={onBack}>
+          <View style={{ marginTop: 18, backgroundColor: C.lav, borderRadius: 18, paddingHorizontal: 22, paddingVertical: 12 }}>
+            <Text style={{ color: 'white', fontWeight: '800' }}>← Back</Text>
+          </View>
+        </Tap>
+      </GradBg>
+    );
+  }
 
   const tiles: [string, string | number, string][] = metrics ? [
     ['👥', metrics.totalAccounts,   'Accounts'],

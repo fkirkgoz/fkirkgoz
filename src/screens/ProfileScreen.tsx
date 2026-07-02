@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   View, Text, ScrollView, StyleSheet, TextInput, Modal,
   TouchableOpacity,
@@ -8,6 +8,7 @@ import { AuthUser } from './AuthScreen';
 import { Event, EVENTS } from '../data/events';
 import { Avatar, AVATARS } from '../data/avatars';
 import { Theme, C } from '../constants/theme';
+import { getFriendships } from '../lib/social';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
 
@@ -16,6 +17,7 @@ interface ProfileData { email: string; phone: string; }
 interface Props {
   user: AuthUser | null;
   onSettings: () => void;
+  onOpenFriends?: () => void;
   avatar: Avatar | null;
   onAvatarChange: (av: Avatar) => void;
   profileData: ProfileData;
@@ -25,10 +27,23 @@ interface Props {
   onUserUpdate?: (updates: Partial<AuthUser>) => void;
 }
 
-export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange, profileData, T, myEvents, onEventPress, onUserUpdate }: Props) {
+export default function ProfileScreen({ user, onSettings, onOpenFriends, avatar, onAvatarChange, profileData, T, myEvents, onEventPress, onUserUpdate }: Props) {
   const [editing, setEditing] = useState(false);
   const [bio, setBio] = useState(user?.bio ?? '');
   const [pickerOpen, setPickerOpen] = useState(false);
+
+  // Real friend count from the live friendship store
+  const [friendCount, setFriendCount] = useState(0);
+  const [pendingCount, setPendingCount] = useState(0);
+  const loadFriends = useCallback(async () => {
+    if (!user?.email) return;
+    try {
+      const v = await getFriendships(user.email);
+      setFriendCount(v.friends.length);
+      setPendingCount(v.incoming.length);
+    } catch {}
+  }, [user?.email]);
+  useEffect(() => { loadFriends(); }, [loadFriends]);
 
   const today = new Date();
   const todayISO = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
@@ -73,7 +88,7 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
             {([
               [String(myEvents.length), 'Upcoming'],
               [String(pastEvents.length), 'Attended'],
-              [String(user?.vibes?.length ?? 0), 'Vibes'],
+              [String(friendCount), 'Friends'],
             ] as [string, string][]).map(([v, l]) => (
               <View key={l} style={{ alignItems: 'center' }}>
                 <Text style={[styles.statVal, { color: T.accent }]}>{v}</Text>
@@ -82,6 +97,28 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
             ))}
           </View>
         </View>
+
+        {/* Friends — real friendship system */}
+        <Tap onPress={() => onOpenFriends?.()}>
+          <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border, marginHorizontal: 22, marginTop: 18 }]}>
+            <View style={styles.cardHeader}>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.sectionTitle, { color: T.text }]}>👥 Friends & Chats</Text>
+                <Text style={{ fontSize: 12, color: T.sub, marginTop: 3 }}>
+                  {friendCount === 0
+                    ? 'Find people and start chatting about events'
+                    : `${friendCount} friend${friendCount !== 1 ? 's' : ''}${pendingCount > 0 ? ` · ${pendingCount} pending request${pendingCount !== 1 ? 's' : ''}` : ''}`}
+                </Text>
+              </View>
+              {pendingCount > 0 && (
+                <View style={{ backgroundColor: C.pink, borderRadius: 12, minWidth: 24, height: 24, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 6, marginRight: 8 }}>
+                  <Text style={{ color: 'white', fontSize: 12, fontWeight: '900' }}>{pendingCount}</Text>
+                </View>
+              )}
+              <Text style={{ color: C.lav, fontWeight: '900', fontSize: 18 }}>→</Text>
+            </View>
+          </View>
+        </Tap>
 
         {/* Bio */}
         <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border, marginHorizontal: 22, marginTop: 18 }]}>

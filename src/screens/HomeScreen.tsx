@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import {
   View, Text, TextInput, ScrollView, TouchableOpacity,
   StyleSheet, FlatList,
@@ -6,18 +6,24 @@ import {
 import { Theme, C } from '../constants/theme';
 import { Locale, t } from '../i18n';
 import { EVENTS, CATS, DATES, Event } from '../data/events';
+import { AuthUser } from './AuthScreen';
+import { SocialNotification, getNotifications } from '../lib/social';
 import EventCard from '../components/EventCard';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
+
+const NOTIF_POLL_MS = 5000;
 
 interface Props {
   onEventPress: (e: Event) => void;
   T: Theme;
   myEvents: Event[];
   locale?: Locale;
+  user?: AuthUser | null;
+  onOpenFriends?: () => void;
 }
 
-export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }: Props) {
+export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', user, onOpenFriends }: Props) {
   const [cat,  setCat]  = useState('All');
   const [date, setDate] = useState('All');
   const [q, setQ]       = useState('');
@@ -25,6 +31,22 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   const [sort, setSort] = useState<'date-asc' | 'date-desc' | 'alpha-asc' | 'alpha-desc'>('date-asc');
   const [sortOpen, setSortOpen] = useState(false);
   const searchRef = useRef<TextInput>(null);
+
+  // Real notifications only: pending friend requests + unread messages,
+  // polled from the live social store. No hardcoded feed entries.
+  const [notifs, setNotifs] = useState<SocialNotification[]>([]);
+  const [notifOpen, setNotifOpen] = useState(false);
+
+  const loadNotifs = useCallback(async () => {
+    if (!user?.email) return;
+    try { setNotifs(await getNotifications(user.email)); } catch {}
+  }, [user?.email]);
+
+  useEffect(() => {
+    loadNotifs();
+    const iv = setInterval(loadNotifs, NOTIF_POLL_MS);
+    return () => clearInterval(iv);
+  }, [loadNotifs]);
 
   const SORT_OPTIONS = [
     ['date-asc',   '📅 Earliest first'],
@@ -99,7 +121,51 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
             What's your{'\n'}<Text style={{ color: T.accent }}>vibe tonight?</Text>
           </Text>
         </View>
+        <View>
+          <Tap onPress={() => { setNotifOpen(s => !s); if (!notifOpen) loadNotifs(); }}>
+            <View style={[styles.bellBtn, { backgroundColor: notifOpen ? T.accent : C.lav }]}>
+              <Text style={styles.bellEmoji}>🔔</Text>
+            </View>
+          </Tap>
+          {notifs.length > 0 && (
+            <View style={[styles.bellBadge, { borderColor: T.bg }]}>
+              <Text style={styles.bellBadgeTxt}>{notifs.length > 9 ? '9+' : notifs.length}</Text>
+            </View>
+          )}
+        </View>
       </View>
+
+      {/* Notification panel — live data only (friend requests + unread DMs) */}
+      {notifOpen && (
+        <View style={[styles.notifPanel, { backgroundColor: T.card, borderColor: T.border }]}>
+          <Text style={[styles.notifTitle, { color: T.text }]}>🔔 Notifications</Text>
+          {notifs.length === 0 && (
+            <Text style={[styles.notifEmpty, { color: T.sub }]}>
+              You're all caught up — no new requests or messages.
+            </Text>
+          )}
+          {notifs.map((n, i) => (
+            <View key={`${n.kind}-${n.from.email}-${i}`} style={[styles.notifRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
+              <Text style={{ fontSize: 18 }}>{n.kind === 'friend_request' ? '👥' : '💬'}</Text>
+              <View style={{ flex: 1 }}>
+                <Text style={[styles.notifText, { color: T.text }]}>
+                  {n.kind === 'friend_request'
+                    ? `${n.from.name} sent you a friend request`
+                    : `${n.from.name} sent you ${n.count === 1 ? 'a message' : `${n.count} messages`}`}
+                </Text>
+                <Text style={[styles.notifTime, { color: T.sub }]}>
+                  {new Date(n.at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}
+                </Text>
+              </View>
+            </View>
+          ))}
+          <Tap onPress={() => { setNotifOpen(false); onOpenFriends?.(); }}>
+            <View style={[styles.dismissBtn, { backgroundColor: C.lav }]}>
+              <Text style={[styles.dismissTxt, { color: 'white' }]}>Open Friends & Chats →</Text>
+            </View>
+          </Tap>
+        </View>
+      )}
 
       {/* Search */}
       <View style={styles.searchWrap}>
@@ -250,6 +316,18 @@ const styles = StyleSheet.create({
   header:            { paddingTop: 56, paddingHorizontal: 22, paddingBottom: 0, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
   headerCity:        { fontSize: 11, fontWeight: '600', letterSpacing: 2, textTransform: 'uppercase' },
   headerTitle:       { fontSize: 27, fontWeight: '900', lineHeight: 34, marginTop: 4, letterSpacing: -0.5 },
+  bellBtn:           { width: 46, height: 46, borderRadius: 23, alignItems: 'center', justifyContent: 'center', shadowColor: C.lav, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 8, elevation: 5 },
+  bellEmoji:         { fontSize: 20 },
+  bellBadge:         { position: 'absolute', top: -4, right: -4, minWidth: 20, height: 20, borderRadius: 10, backgroundColor: C.pink, borderWidth: 2, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
+  bellBadgeTxt:      { color: 'white', fontSize: 10, fontWeight: '900' },
+  notifPanel:        { marginHorizontal: 22, marginTop: 10, borderRadius: 22, padding: 16, borderWidth: 1, shadowColor: '#000', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.2, shadowRadius: 16, elevation: 8, zIndex: 100 },
+  notifTitle:        { fontWeight: '900', fontSize: 14, marginBottom: 12 },
+  notifEmpty:        { fontSize: 13, fontWeight: '600', marginBottom: 12 },
+  notifRow:          { flexDirection: 'row', gap: 10, paddingVertical: 10 },
+  notifText:         { fontSize: 12, fontWeight: '700', lineHeight: 18 },
+  notifTime:         { fontSize: 11, marginTop: 2 },
+  dismissBtn:        { marginTop: 10, borderRadius: 12, padding: 10, alignItems: 'center' },
+  dismissTxt:        { fontSize: 12, fontWeight: '800' },
   searchWrap:        { paddingHorizontal: 22, marginTop: 16 },
   searchActive:      { flexDirection: 'row', alignItems: 'center', gap: 10 },
   searchInner:       { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8, borderRadius: 22, paddingHorizontal: 16, paddingVertical: 12, borderWidth: 2 },

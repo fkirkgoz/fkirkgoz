@@ -13,6 +13,7 @@ import { Event, EVENTS } from './src/data/events';
 import { Avatar } from './src/data/avatars';
 import { AuthUser } from './src/screens/AuthScreen';
 import { logSessionStart, logEventSaved, isAdminUser } from './src/lib/metrics';
+import { PublicUser } from './src/lib/social';
 
 import AuthScreen        from './src/screens/AuthScreen';
 import HomeScreen        from './src/screens/HomeScreen';
@@ -22,12 +23,16 @@ import ProfileScreen     from './src/screens/ProfileScreen';
 import EventDetailScreen from './src/screens/EventDetailScreen';
 import SettingsScreen    from './src/screens/SettingsScreen';
 import AdminScreen       from './src/screens/AdminScreen';
+import FriendsScreen     from './src/screens/FriendsScreen';
+import ChatScreen        from './src/screens/ChatScreen';
 
 // ── Navigation types ──────────────────────────────────────────────────────────
 export type RootStackParamList = {
   Main:     undefined;
   Detail:   { event: Event };
   Settings: undefined;
+  Friends:  undefined;
+  Chat:     { peer: PublicUser };
   Admin:    undefined;
 };
 
@@ -61,13 +66,14 @@ function TabIcon({ name, focused }: { name: string; focused: boolean; color: str
 
 // ── Tab navigator ─────────────────────────────────────────────────────────────
 function TabNavigator({
-  T, myEvents, onEventPress, onSettings,
+  T, myEvents, onEventPress, onSettings, onOpenFriends,
   user, avatar, onAvatarChange, profileData, onProfileUpdate, onUserUpdate, locale,
 }: {
   T: Theme;
   myEvents: Event[];
   onEventPress: (e: Event) => void;
   onSettings: () => void;
+  onOpenFriends: () => void;
   user: AuthUser | null;
   avatar: Avatar | null;
   onAvatarChange: (av: Avatar) => void;
@@ -96,7 +102,16 @@ function TabNavigator({
       })}
     >
       <Tab.Screen name="Home" options={{ tabBarLabel: t('tab.home', locale) }}>
-        {() => <HomeScreen onEventPress={onEventPress} T={T} myEvents={myEvents} locale={locale} />}
+        {() => (
+          <HomeScreen
+            onEventPress={onEventPress}
+            T={T}
+            myEvents={myEvents}
+            locale={locale}
+            user={user}
+            onOpenFriends={onOpenFriends}
+          />
+        )}
       </Tab.Screen>
       <Tab.Screen name="Map" options={{ tabBarLabel: t('tab.map', locale) }}>
         {() => <MapScreen onEventPress={onEventPress} T={T} />}
@@ -109,6 +124,7 @@ function TabNavigator({
           <ProfileScreen
             user={user}
             onSettings={onSettings}
+            onOpenFriends={onOpenFriends}
             avatar={avatar}
             onAvatarChange={onAvatarChange}
             profileData={profileData}
@@ -228,6 +244,7 @@ export default function App() {
                 myEvents={myEvents}
                 onEventPress={ev => navigation.navigate('Detail', { event: ev })}
                 onSettings={() => navigation.navigate('Settings')}
+                onOpenFriends={() => navigation.navigate('Friends')}
                 user={user}
                 avatar={avatar}
                 onAvatarChange={setAvatar}
@@ -271,11 +288,38 @@ export default function App() {
             )}
           </Stack.Screen>
 
-          <Stack.Screen name="Admin">
+          <Stack.Screen name="Friends">
             {({ navigation }) => (
-              <AdminScreen onBack={() => navigation.goBack()} T={T} />
+              <FriendsScreen
+                user={user}
+                onBack={() => navigation.goBack()}
+                onOpenChat={peer => navigation.navigate('Chat', { peer })}
+                T={T}
+              />
             )}
           </Stack.Screen>
+
+          <Stack.Screen name="Chat">
+            {({ route, navigation }) => (
+              <ChatScreen
+                user={user}
+                peer={route.params.peer}
+                onBack={() => navigation.goBack()}
+                T={T}
+              />
+            )}
+          </Stack.Screen>
+
+          {/* RBAC: the Admin route exists ONLY for the hardcoded administrator
+              profile — for every other account it is never registered, so it is
+              unreachable and invisible by construction. */}
+          {isAdminUser(user) && (
+            <Stack.Screen name="Admin">
+              {({ navigation }) => (
+                <AdminScreen onBack={() => navigation.goBack()} user={user} T={T} />
+              )}
+            </Stack.Screen>
+          )}
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

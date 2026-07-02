@@ -32,12 +32,20 @@ No test suite exists.
 ## Architecture
 
 Single-file navigation setup in `App.tsx`:
-- **Stack navigator** (`RootStackParamList`): `Main` (tabs) → `Detail` → `Settings` → `Admin`
+- **Stack navigator** (`RootStackParamList`): `Main` (tabs) → `Detail` → `Settings` → `Friends` → `Chat` → `Admin` (Admin route is registered ONLY when `isAdminUser(user)` — see RBAC below)
 - **Tab navigator** (`TabParamList`) nested inside `Main`: Home / Map / Now / Profile
 - All screens are stateless; state (`user`, `joinedEvents`, `avatar`, `isDark`, `profileData`, `locale`) lives in `App.tsx` and is passed as props
 - Tab labels are translated via `t('tab.home', locale)` — locale is passed into TabNavigator as a prop
-- `AsyncStorage` keys: `@randevu_user` (current session), `@randevu_users` (all registered accounts), `@randevu_locale` (language preference), `@randevu_joined:<email>` (per-account joined events), `@randevu_metrics_v1` (operational metrics)
-- **Production reset (no simulated features)**: the app contains no fake chat, mock notification feed, fake attendees/friends, or placeholder perks. Core focus: real event discovery and navigation. Do not re-introduce simulated data.
+- `AsyncStorage` keys: `@randevu_user` (current session), `@randevu_users` (all registered accounts), `@randevu_locale` (language preference), `@randevu_joined:<email>` (per-account joined events), `@randevu_metrics_v1` (operational metrics), `@randevu_friendships_v1` (friendship rows), `@randevu_messages_v1` (message rows)
+- **No simulated data**: social features (friends, chat, notifications) are 100% REAL — every row comes from an actual user action. Never seed mock messages, fake attendees, or hardcoded notification items.
+
+### Real social layer (`src/lib/social.ts`)
+- **Friendships**: `{ id, requester, addressee, status: 'pending'|'accepted', createdAt, respondedAt }` — declining deletes the row
+- **Messages**: `{ id, sender, receiver, text, timestamp, readAt }` — capped at 2000 chars
+- API is backend-shaped (`sendFriendRequest`, `respondToFriendRequest`, `sendMessage`, `getConversation`, `markConversationRead`, `getNotifications`, `purgeUserSocialData`) so a server can replace the AsyncStorage layer without touching UI
+- `PublicUser` projection strips passwords/phones before anything reaches the UI
+- FriendsScreen (Friends / Requests / Find People tabs), ChatScreen (real DM thread, 2.5s poll), HomeScreen bell (real notifications: pending requests + unread DMs, 5s poll)
+- Account deletion calls `purgeUserSocialData` — no orphaned social rows
 
 ### Theme system (`src/constants/theme.ts`)
 `makeTheme(isDark)` returns a `Theme` object. All screens receive `T: Theme` as a prop. The brand palette is in the `C` constant (e.g. `C.lav` = `#8E7DBE` is the primary accent). Always use `C.lav → C.lavD` for gradient CTAs.
@@ -95,7 +103,7 @@ HomeScreen appends any extra named-month labels found in live event data via `av
 - `@randevu_metrics_v1` schema: `{ accountsCreated[], sessions[] (capped 200), eventSaves{} }`
 - Loggers: `logAccountCreated`, `logSessionStart`, `logEventSaved` — all fire-and-forget
 - `getAdminMetrics()` aggregates: total accounts, sessions (total + last 7d), top saved events — emails are ALWAYS masked via `maskEmail()`, passwords never surface
-- **Admin gate** — `isAdminUser(user)`: role === 'admin' OR email on `ADMIN_EMAILS` allowlist OR `EXPO_PUBLIC_ADMIN_MODE=true`. Gated entry card appears in Settings; route: `Admin`
+- **Admin gate (strict RBAC)** — `isAdminUser(user)` returns true ONLY for an exact email match against the hardcoded `ADMIN_PROFILE` in `metrics.ts`. The stored `role` field is informational and deliberately NOT trusted (AsyncStorage is device-writable). No env bypass. Three enforcement layers: (1) Admin route only registered in the navigator for the admin profile, (2) Settings entry card only rendered when admin, (3) AdminScreen itself renders "Access denied" unless authorized
 
 ### HomeScreen (`src/screens/HomeScreen.tsx`)
 - `FlatList` (not ScrollView) for performance with large event lists

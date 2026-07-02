@@ -92,22 +92,23 @@ export function maskEmail(email: string): string {
   return `${local.slice(0, 2)}•••@${dName.slice(0, 2)}•••${dTld}`;
 }
 
-// ── Admin gate ─────────────────────────────────────────────────────────────────
-// A user is admin when ANY of:
-//   1. their stored account has role === 'admin'
-//   2. their email is on the compile-time allowlist below
-//   3. the app runs with EXPO_PUBLIC_ADMIN_MODE=true (dev/staging builds only)
-const ADMIN_EMAILS = ['figenkirkgoz98@gmail.com'];
+// ── Admin gate (strict RBAC — production lockdown) ─────────────────────────────
+// The Admin Console mounts ONLY for the hardcoded administrator profile below.
+// The stored `role` field on AuthUser is kept for schema completeness and future
+// server sync, but it is deliberately NOT trusted for access control: AsyncStorage
+// is writable on-device, so a tampered role must never unlock the console.
+// Access = exact email match against ADMIN_PROFILE. Nothing else. No env bypass.
+const ADMIN_PROFILE = {
+  email: 'figenkirkgoz98@gmail.com',
+} as const;
 
 export function isAdminUser(user: Pick<AuthUser, 'email' | 'role'> | null): boolean {
-  if (!user) return false;
-  if (user.role === 'admin') return true;
-  if (ADMIN_EMAILS.includes(user.email?.toLowerCase() ?? '')) return true;
-  return process.env.EXPO_PUBLIC_ADMIN_MODE === 'true';
+  if (!user?.email) return false;
+  return user.email.trim().toLowerCase() === ADMIN_PROFILE.email;
 }
 
 export function roleForEmail(email: string): 'admin' | 'user' {
-  return ADMIN_EMAILS.includes(email.toLowerCase()) ? 'admin' : 'user';
+  return email.trim().toLowerCase() === ADMIN_PROFILE.email ? 'admin' : 'user';
 }
 
 // ── Aggregated admin view model ────────────────────────────────────────────────

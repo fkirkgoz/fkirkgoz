@@ -8,6 +8,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { AuthUser } from './AuthScreen';
 import { Theme, C } from '../constants/theme';
 import { Locale, LOCALE_LABELS, LOCALE_FLAGS } from '../i18n';
+import { purgeUserSocialData } from '../lib/social';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
 
@@ -62,6 +63,9 @@ export default function SettingsScreen({
   ];
 
   const confirmDelete = async () => {
+    // Remove the account's social rows first (friendships + messages), then the
+    // account stores themselves — no orphaned personal data survives deletion.
+    if (user?.email) await purgeUserSocialData(user.email).catch(() => {});
     await AsyncStorage.multiRemove(['@randevu_user', '@randevu_users']);
     setDeleteModalOpen(false);
     onSignOut();
