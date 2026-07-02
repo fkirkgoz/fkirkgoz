@@ -25,30 +25,6 @@
     "_rawDate": "2026-09-27"
   },
   {
-    "id": 161,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "MOLOTOV & MALA RODRIGUEZ",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/molotov-mala-rodriguez/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "MOLOTOV & MALA RODRIGUEZ at La Madeleine.",
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 162,
     "cat": "Music",
     "date": "September",
@@ -75,7 +51,7 @@
   {
     "id": 163,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "EL BESTA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -99,7 +75,7 @@
   {
     "id": 164,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "ELENA ROSE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -459,7 +435,7 @@
   {
     "id": 184,
     "cat": "Culture",
-    "date": "August",
+    "date": "Next Month",
     "title": "Picture Perfect",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -479,30 +455,6 @@
     "neighbourhood": "Centre",
     "desc": "Exhibitions",
     "_rawDate": "2026-08-16"
-  },
-  {
-    "id": 187,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Tokyo Melody: A Film about Ryuichi Sakamoto - Elizabeth Lennard",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/tokyo-melody-film-about-ryuichi-sakamoto-elizabeth-lennard",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-06-28"
   },
   {
     "id": 206,
@@ -776,31 +728,6 @@
     "_rawDate": "2026-10-05"
   },
   {
-    "id": 262,
-    "cat": "Music",
-    "date": "Next Week",
-    "title": "fakemink",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/fakemink-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "The essential name of the new-generation British cloud rap scene",
-    "_rawDate": "2026-07-01"
-  },
-  {
     "id": 263,
     "cat": "Music",
     "date": "September",
@@ -828,7 +755,7 @@
   {
     "id": 264,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "C12 Nite - 03/07",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -878,7 +805,7 @@
   {
     "id": 284,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: Samuel Moriero & KX CHR",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1337,30 +1264,6 @@
     "_rawDate": "2026-11-17"
   },
   {
-    "id": 328,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Dry Leaf - Aleksandre Koberidze",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/dry-leaf-aleksandre-koberidze",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 340,
     "cat": "Music",
     "date": "November",
@@ -1412,7 +1315,7 @@
   {
     "id": 356,
     "cat": "Nightlife",
-    "date": "August",
+    "date": "Next Month",
     "title": "XRDS festival 2026: Friday",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2195,30 +2098,6 @@
     "_rawDate": "2026-11-24"
   },
   {
-    "id": 443,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS'",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/new-date-kyle-dixon-michael-stein-performing-the-music-of-stranger-things/a10Qw00000Ga48jIAB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "The superb live soundtrack to one of the most successful Netflix series ever",
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 446,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -2246,7 +2125,7 @@
   {
     "id": 447,
     "cat": "Culture",
-    "date": "August",
+    "date": "Next Month",
     "title": "Exhibitions",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2266,30 +2145,6 @@
     "neighbourhood": "Centre",
     "desc": "Exhibitions",
     "_rawDate": "2026-08-16"
-  },
-  {
-    "id": 454,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Historias del buen Valle - José Luis Guerín",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/historias-del-buen-valle-jose-luis-guerin-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-06-28"
   },
   {
     "id": 465,
@@ -2316,30 +2171,6 @@
     "neighbourhood": "Molenbeek",
     "desc": "hibushibire (JP) + The WRS (BE) at Magasin 4.",
     "_rawDate": "2026-09-12"
-  },
-  {
-    "id": 466,
-    "cat": "Music",
-    "date": "Tomorrow",
-    "title": "Elvis Costello & The Imposters with Charlie Sexton",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/elvis-costello-the-imposters-with-charlie-sexton/a10Qw00000H7cQ9IAJ",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "Radio Soul! The Early Songs of Elvis Costello",
-    "_rawDate": "2026-06-29"
   },
   {
     "id": 470,
@@ -2416,7 +2247,7 @@
   {
     "id": 478,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tonight",
     "title": "Burning Spear",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2440,7 +2271,7 @@
   {
     "id": 479,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "New date: Ghinzu",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2589,7 +2420,7 @@
   {
     "id": 492,
     "cat": "Culture",
-    "date": "August",
+    "date": "Next Month",
     "title": "Delcy Morelos. Bozar Monumental",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2613,7 +2444,7 @@
   {
     "id": 493,
     "cat": "Culture",
-    "date": "August",
+    "date": "Next Month",
     "title": "Pompei, Below the Clouds - Gianfranco Rosi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2633,30 +2464,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-08-23"
-  },
-  {
-    "id": 495,
-    "cat": "Culture",
-    "date": "Next Week",
-    "title": "Ommegang 2026",
-    "venue": "Grand-Place",
-    "addr": "Grand-Place, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Brussels"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Ommegang-2026.370148",
-    "lat": 50.8467139,
-    "lng": 4.3525151,
-    "neighbourhood": "Centre",
-    "desc": "Wed 01 July — Fri 03 July Ommegang 2026 €59 AnimationsGrand-Place View more",
-    "_rawDate": "2026-07-01"
   },
   {
     "id": 496,
@@ -2733,30 +2540,6 @@
     "_rawDate": "2026-07-25"
   },
   {
-    "id": 500,
-    "cat": "Festival",
-    "date": "Next Week",
-    "title": "Midis-Minimes Festival",
-    "venue": "Various places in Brussels",
-    "addr": "Various places in Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Midis-Minimes-Festival.5700023019",
-    "lat": 50.86688786301812,
-    "lng": 4.338018763609147,
-    "neighbourhood": "Centre",
-    "desc": "Wed 01 July — Fri 28 August Midis-Minimes Festival FestivalVarious places in Brussels View more",
-    "_rawDate": "2026-07-01"
-  },
-  {
     "id": 501,
     "cat": "Culture",
     "date": "November",
@@ -2807,33 +2590,9 @@
     "_rawDate": "2026-11-26"
   },
   {
-    "id": 503,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "New date: KYLE DIXON & MICHAEL STEIN PERFORMING THE MUSIC OF 'STRANGER THINGS' + Marc Melià",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/new-date-kyle-dixon-michael-stein-performing-the-music-of-stranger-things/a10Qw00000Ga48jIAB",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "The superb live soundtrack to one of the most successful Netflix series ever",
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 504,
     "cat": "Music",
-    "date": "August",
+    "date": "Next Month",
     "title": "The Whitest Boy Alive",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2855,34 +2614,9 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 506,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Meet the Writer: Dave Eggers",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-writer-dave-eggers",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 507,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Today",
     "title": "Quai d'Été",
     "venue": "Quai des péniches",
     "addr": "Quai des péniches, Belgium",
@@ -2978,7 +2712,7 @@
   {
     "id": 512,
     "cat": "Food & Drink",
-    "date": "Next Week",
+    "date": "Today",
     "title": "Les Escales Estivales",
     "venue": "EDN Bar",
     "addr": "EDN Bar, Belgium",
@@ -2998,31 +2732,6 @@
     "neighbourhood": "Centre",
     "desc": "Thu 02 July — Thu 20 August Les Escales Estivales €4 FestivalEDN Bar View more",
     "_rawDate": "2026-07-02"
-  },
-  {
-    "id": 513,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "DE SITCOMEBACK",
-    "venue": "Kaaitheater",
-    "addr": "Square Sainctelette 20, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Performing Arts",
-      "Experimental",
-      "Theatre"
-    ],
-    "source": "Kaaitheater",
-    "officialEventLink": "https://www.kaaitheater.be/en/agenda/25-26/de-sitcomeback",
-    "lat": 50.8551,
-    "lng": 4.3448,
-    "neighbourhood": "Molenbeek",
-    "desc": "DE SITCOMEBACK at Kaaitheater.",
-    "_rawDate": "2026-06-28"
   },
   {
     "id": 514,
@@ -3177,7 +2886,7 @@
   {
     "id": 520,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tonight",
     "title": "Burning Spear + Roots Warriors",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -3201,7 +2910,7 @@
   {
     "id": 521,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Impro 'Night Aladar",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -3225,7 +2934,7 @@
   {
     "id": 522,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Arts at Night",
     "venue": "BOZAR, KBR, Old Masters Museum",
     "addr": "BOZAR, KBR, Old Masters Museum, Belgium",
@@ -3249,7 +2958,7 @@
   {
     "id": 523,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Nayad - Streetart festival",
     "venue": "Various places in Ixelles",
     "addr": "Various places in Ixelles, Belgium",
@@ -3273,7 +2982,7 @@
   {
     "id": 524,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brosella Festival 2026",
     "venue": "Théâtre de Verdure – Parc d’Osseghem",
     "addr": "Théâtre de Verdure – Parc d’Osseghem, Belgium",
@@ -3321,7 +3030,7 @@
   {
     "id": 526,
     "cat": "Nightlife",
-    "date": "August",
+    "date": "Next Month",
     "title": "C12 x GIMIC Radio - Open Air & Club - 29 August",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -3368,33 +3077,9 @@
     "_rawDate": "2026-11-22"
   },
   {
-    "id": 528,
-    "cat": "Culture",
-    "date": "Next Week",
-    "title": "L’heure d’été 2026 : Taipei (Taiwan)",
-    "venue": "Vaux Hall & Cinéma Galeries",
-    "addr": "Vaux Hall & Cinéma Galeries, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.L-heure-d-ete-2026-Taipei-Taiwan.593565",
-    "lat": 50.83929270346746,
-    "lng": 4.3385739796248295,
-    "neighbourhood": "Centre",
-    "desc": "Tue 30 June — Tue 11 August L’heure d’été 2026 : Taipei (Taiwan) FestivalVaux Hall & Cinéma Galeries View more",
-    "_rawDate": "2026-06-30"
-  },
-  {
     "id": 529,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Visit the Royal Palace",
     "venue": "Palais Royal",
     "addr": "Palais Royal, Belgium",
@@ -3418,7 +3103,7 @@
   {
     "id": 530,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Bruxellons!",
     "venue": "Festival Bruxellons! Au Château du Karreveld",
     "addr": "Festival Bruxellons! Au Château du Karreveld, Belgium",
@@ -3467,7 +3152,7 @@
   {
     "id": 533,
     "cat": "Nightlife",
-    "date": "August",
+    "date": "Next Month",
     "title": "Fuse presents: RSO Berlin w/ JKS & Laure Croft",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3492,7 +3177,7 @@
   {
     "id": 534,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "The Substance - Coralie Fargeat",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3516,7 +3201,7 @@
   {
     "id": 535,
     "cat": "Culture",
-    "date": "August",
+    "date": "Next Month",
     "title": "Cinema at Bozar this summer",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3540,7 +3225,7 @@
   {
     "id": 536,
     "cat": "Culture",
-    "date": "August",
+    "date": "Next Month",
     "title": "Little Amélie or the Character of Rain - Maïlys Vallade & Liane-Cho Han (6+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3562,34 +3247,9 @@
     "_rawDate": "2026-08-01"
   },
   {
-    "id": 537,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Couleur Café gates are back open",
-    "venue": "Couleur Café",
-    "addr": "Ossegempark, 1020 Laeken",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎸",
-    "color": "#F4A261",
-    "tags": [
-      "World Music",
-      "Hip Hop",
-      "Festival"
-    ],
-    "source": "Couleur Café",
-    "officialEventLink": "https://www.couleurcafe.be/en/news/couleur-cafe-gates-are-back-open",
-    "lat": 50.8948,
-    "lng": 4.3411,
-    "neighbourhood": "Laeken",
-    "desc": "Following last night's site evacuation, we are proud to announce that Couleur Café opens its doors this Sunday at 15:00, as planned.",
-    "_rawDate": "2026-06-28"
-  },
-  {
     "id": 538,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "July 26",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -3614,7 +3274,7 @@
   {
     "id": 539,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Alleen Verbeelding",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -3639,7 +3299,7 @@
   {
     "id": 540,
     "cat": "Culture",
-    "date": "August",
+    "date": "Next Month",
     "title": "Copyriot",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -3885,5 +3545,333 @@
     "neighbourhood": "Centre",
     "desc": "03.10.26 Dit is (niet) de evolutietheorie van de troost Aya Sabi & Dounia Mahammed / Monty Language: NL Surtitles: FR",
     "_rawDate": "2026-10-03"
+  },
+  {
+    "id": 551,
+    "cat": "Sports",
+    "date": "Next Month",
+    "title": "Beau Vélo de RAVeL : étape ixelloise",
+    "venue": "Commune d'Ixelles",
+    "addr": "Commune d'Ixelles, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "👟",
+    "color": "#90E0EF",
+    "tags": [
+      "Sports",
+      "Active"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Beau-Velo-de-RAVeL-etape-ixelloise.5700023988",
+    "lat": 50.86002902088878,
+    "lng": 4.360879117001518,
+    "neighbourhood": "Centre",
+    "desc": "Sat 11 July Beau Vélo de RAVeL : étape ixelloise Free SportCommune d'Ixelles View more",
+    "_rawDate": "2026-07-11"
+  },
+  {
+    "id": 552,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Cameristica Festival 2026",
+    "venue": "Various places in Brussels",
+    "addr": "Various places in Brussels, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Cameristica-Festival-2026.5700023205",
+    "lat": 50.845857982463585,
+    "lng": 4.3532979019383164,
+    "neighbourhood": "Centre",
+    "desc": "Sat 11 July — Sun 19 July Cameristica Festival 2026 FestivalVarious places in Brussels View more",
+    "_rawDate": "2026-07-11"
+  },
+  {
+    "id": 553,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Festival Afrodisiac",
+    "venue": "Bois de la Cambre : Carrefour des Attelages",
+    "addr": "Bois de la Cambre : Carrefour des Attelages, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Afrodisiac.5700023237",
+    "lat": 50.86355899238609,
+    "lng": 4.348379955499847,
+    "neighbourhood": "Centre",
+    "desc": "Sat 11 July — Sun 12 July Festival Afrodisiac Free FestivalBois de la Cambre : Carrefour des Attelages View more",
+    "_rawDate": "2026-07-11"
+  },
+  {
+    "id": 554,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Mind of a Serial Killer : The Experience",
+    "venue": "Tour & Taxis",
+    "addr": "Tour & Taxis, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Mind-of-a-Serial-Killer-The-Experience.5700024189",
+    "lat": 50.8665091,
+    "lng": 4.3470849,
+    "neighbourhood": "Centre",
+    "desc": "Tue 14 July — Thu 31 December Mind of a Serial Killer : The Experience €17.9 ExhibitionsTour & Taxis View more",
+    "_rawDate": "2026-07-14"
+  },
+  {
+    "id": 555,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Detours Festival",
+    "venue": "Various locations in the Brussels Capital Region",
+    "addr": "Various locations in the Brussels Capital Region, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Detours-Festival.5700022456",
+    "lat": 50.83161191593586,
+    "lng": 4.33508930828644,
+    "neighbourhood": "Centre",
+    "desc": "Wed 15 July — Sat 24 October Detours Festival Free FestivalVarious locations in the Brussels Capital Region View more",
+    "_rawDate": "2026-07-15"
+  },
+  {
+    "id": 556,
+    "cat": "Festival",
+    "date": "Tonight",
+    "title": "EXAG&rsquo; Records &#038; Phoenician Drive present : CONCERTS FOR PALESTINE &#038; LEBANON",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "19:00",
+    "startH": 19,
+    "endH": 22,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/exag-records-phoenician-drive-present-concerts-for-palestine-lebanon/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;CONCERTS FOR PALESTINE & LEBANON _____ EXAG\\' Records & Phoenician Drive invite you to a fundraising night of music at the Brasserie ILLEGAAL in Brussels. The initiative aims to raise [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-02"
+  },
+  {
+    "id": 557,
+    "cat": "Festival",
+    "date": "Tomorrow",
+    "title": "ILLEGAAL DANCE BATTLE ALL STYLES",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "18:00",
+    "startH": 18,
+    "endH": 21,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/illegaal-dance-battle-all-styles-3/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;ILLEGAAL DANCE BATTLE ALL STYLES 03/07/2016 - 18:00-01:00 We are backkk !! On se retrouve le vendredi 03.07 pour la 9e édition de la ILLEGAAL DANCE BATTLE ALL STYLES locking [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-03"
+  },
+  {
+    "id": 558,
+    "cat": "Festival",
+    "date": "This Weekend",
+    "title": "DISTRICT OPEN AIR",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "16:00",
+    "startH": 16,
+    "endH": 19,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/district-open-air/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;DISTRICT OPEN AIR AT ILLEGAAL &#x2600;&#xfe0f; Great vibes, a dancing crowd. Incredible artists and powerful bass are on the way. All under the open sky. A new energy. A new [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-04"
+  },
+  {
+    "id": 559,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Mosfet Club — Swamp Night",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/mosfet-club-swamp-night/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;All you weird swamp creatures are summoned for our next all nighter. Fri July 10th - 22pm to 5amBrasserie Illegaal, Rue Bollinckx, 300 Electro, minimal house and techno from 22h [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-10"
+  },
+  {
+    "id": 560,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "GLOBAAL ILLEGAAL PRESENTS: LA KZ Colombian Picó soundsystem party w/ concerts, DJ sets &#038; food",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/globaal-illegaal-presents-la-kz-colombian-pico-soundsystem-party-w-concerts-dj-sets-food/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;On Saturday 11 July, Rebel Up and Baobab Music will launch the very first edition of LA KZ Brussels at the Globaal Illegaal party in collaboration with Brasserie Illegaal. LA [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-11"
+  },
+  {
+    "id": 561,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Deep Dive Open Air",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 17,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/deep-dive-open-air/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;Ready for another deep dive?⋆ .˚ ˚ Line up: Mia Cecille / Marie K / Kivaa / Malo Z⋆ .˚ ˚ Tickets: https://deep-divee.eventsquare.store/jtyuuiylugar⋆ .˚ ˚ NO RACISM, NO SEXISM, NO QUEERPHOBIA, [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-19"
+  },
+  {
+    "id": 562,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "NOESIS • Heartcore Dreams",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "22:00",
+    "startH": 22,
+    "endH": 25,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/noesis-heartcore-dreams/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;On JULY 25th, we return to Illegaal for a second chapter. For this round, we continue our summer journey, a drifting narrative through playful and emotional soundscapes, somewhere between fairy [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-25"
+  },
+  {
+    "id": 563,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Metropolis Open Air x Illegaal",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "14:00",
+    "startH": 14,
+    "endH": 17,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/metropolis-open-air-x-illegaal/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "&lt;p&gt;Metropolis returns on 26 July for an open-air celebration at Brasserie Illegaal. For this occassion, we welcome guest DJ Mariami. Having spent much of her youth deep in Cologne’s techno [&hellip;]&lt;/p&gt;\\n",
+    "_rawDate": "2026-07-26"
   }
 ]
