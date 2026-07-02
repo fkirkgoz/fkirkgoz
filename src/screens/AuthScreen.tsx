@@ -7,6 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Theme, C } from '../constants/theme';
 import Tap from '../components/Tap';
+import { logAccountCreated, roleForEmail } from '../lib/metrics';
 
 export interface AuthUser {
   name: string;
@@ -15,6 +16,8 @@ export interface AuthUser {
   phone?: string;
   bio?: string;
   vibes?: string[];
+  createdAt?: string;        // ISO timestamp, stamped at sign-up
+  role?: 'admin' | 'user';   // admin unlocks the Admin Console in Settings
 }
 
 // ── User store ─────────────────────────────────────────────────────────────────
@@ -154,16 +157,20 @@ export default function AuthScreen({ onAuth, T }: Props) {
         return;
       }
 
+      const cleanEmail = email.toLowerCase().trim();
       const u: AuthUser = {
         name:     name.trim(),
-        email:    email.toLowerCase().trim(),
+        email:    cleanEmail,
         password: pass,
         phone:    phone.trim(),
         bio:      bio.trim() || undefined,
         vibes:    vibes.length > 0 ? vibes : undefined,
+        createdAt: new Date().toISOString(),
+        role:      roleForEmail(cleanEmail),
       };
 
       await persistUser(u);
+      await logAccountCreated(cleanEmail);
       onAuth(u);
     } catch {
       setErr('Something went wrong. Please try again.');

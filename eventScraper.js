@@ -20,7 +20,30 @@ const SCRAPED_JSON   = path.join(__dirname, 'src', 'data', 'scraped_events.json'
 const SCRAPED_ID_MIN = 100;
 const GEOCODE_DELAY  = 1200;
 
-// ── Hardcoded venue truths (no-guess rule) ────────────────────────────────────
+// ── Venue configuration registry ──────────────────────────────────────────────
+// EXTENSIBILITY CONTRACT: adding a venue never requires structural code changes —
+// append one object to this array and the engine routes it automatically.
+//
+// Required fields:
+//   id            unique key            name          display/venue name
+//   addr          street address        lat, lng      exact coords (0,0 → geocode)
+//   neighbourhood map filter label      emoji/color/cat/tags   visual identity
+//   defaultTime   'HH:MM' fallback      urls          ordered list, first that loads wins
+//
+// Strategy routing flags (first match wins; omit all → generic JSON-LD → HTML):
+//   useAgendaBrussels: true   → Strategy 1.8  (agenda.brussels search results)
+//   useRaClub: true           → Strategy 1.9a (Resident Advisor club page, tightly
+//                                              mapped to RA's Next.js data payload)
+//   useResidentAdvisor: true  → Strategy 1.9b (RA regional open-air keyword stream)
+//   jsHeavy: true             → Strategy 1.7  (live DOM scrape after SPA hydration)
+//
+// Optional tuning:
+//   waitForSelector   CSS selector the page must render before parsing
+//   eventSelector     venue-specific card selectors (comma-separated)
+//   linkPattern       RegExp an event deep-link must match
+//   extraWait         ms of settle time after navigation
+//   enforceVisuals    lock emoji/color/cat to this config (skip keyword classify)
+//
 // All lat/lng values below are exact — the geocoder is NEVER called for these.
 const VENUE_CONFIGS = [
   {
@@ -782,28 +805,6 @@ function isValidTitle(t) {
   return !skip.some(s => tl === s || tl.startsWith(s+' ') || tl.endsWith(' '+s));
 }
 
-const FRIEND_NAMES = ['Zoë','Kaan','Léa','Iris','Nora','Hugo','Axel','Ali','Kai','Fleur'];
-const AV_COLORS    = ['#F7CFD8','#A6D6D6','#8E7DBE','#F4A261','#90E0EF','#B8E5C0','#C77DFF','#F4C87A'];
-const HYPE = [
-  "Can't wait for this one! 🔥","Who else is going?? 🙋","Already got my ticket! 👋",
-  "This is going to be AMAZING","First time at this venue!","Brussels never disappoints ❤️",
-  "Counting down the days 🗓️","Grab tickets fast, selling out!",
-];
-function generateAttendees() {
-  const fc=Math.floor(Math.random()*4), oc=Math.floor(Math.random()*6)+2;
-  return [
-    ...FRIEND_NAMES.slice(0,fc).map(n=>({n,c:AV_COLORS[Math.floor(Math.random()*AV_COLORS.length)],isFriend:true})),
-    ...Array.from({length:oc},()=>({n:`Guest${String(Math.floor(Math.random()*999)).padStart(3,'0')}`,c:AV_COLORS[Math.floor(Math.random()*AV_COLORS.length)],isFriend:false})),
-  ];
-}
-function generateChatSeed() {
-  return Array.from({length:2+Math.floor(Math.random()*2)},()=>({
-    user:FRIEND_NAMES[Math.floor(Math.random()*FRIEND_NAMES.length)],
-    text:HYPE[Math.floor(Math.random()*HYPE.length)],
-    time:`${Math.floor(Math.random()*12+1)}:${String(Math.floor(Math.random()*60)).padStart(2,'0')} ${Math.random()>.5?'AM':'PM'}`,
-  }));
-}
-
 // ── Geocoding ─────────────────────────────────────────────────────────────────
 // Only called for events from sources that have no hardcoded lat/lng.
 async function geocode(venue) {
@@ -1418,6 +1419,14 @@ async function scrapeVenue(browser, config) {
       // ── Strategy 1.9a: Resident Advisor — specific club page ──
       // For venues with useRaClub: true (e.g. Circle Park, RA club ID 189275).
       // All events on a club page belong to this venue — no venue matching needed.
+      //
+      // RA is a Next.js app: the server response embeds the full GraphQL event
+      // payload in <script id="__NEXT_DATA__">. Tier 1 walks that JSON for
+      // objects with __typename === 'Event' (fields: title, date/startTime,
+      // contentUrl '/events/XXXXXX') — immune to CSS class churn. Tier 2 falls
+      // back to RA's DOM: [data-testid="event-listing-card"] cards / h3 titles /
+      // a[href^="/events/"] anchors.
+      //
       // Strict deep-link: only accepts /events/XXXXXX paths (rejects bare domain).
       // Location sanity: if the card text mentions an external physical location,
       // lat/lng is zeroed so main() geocodes the actual event site.
@@ -1427,37 +1436,69 @@ async function scrapeVenue(browser, config) {
           await sleep(3000);
 
           const raClubItems = await page.evaluate(() => {
-            const selectors = [
+            const results = [];
+            const seen = new Set();
+
+            // ── Tier 1: __NEXT_DATA__ GraphQL payload (authoritative) ──
+            try {
+              const raw = document.getElementById('__NEXT_DATA__')?.textContent;
+              if (raw) {
+                const walk = (node) => {
+                  if (!node || typeof node !== 'object') return;
+                  if (Array.isArray(node)) { node.forEach(walk); return; }
+                  const url = node.contentUrl || node.contentURL || '';
+                  const isEvent = node.__typename === 'Event' ||
+                    (typeof url === 'string' && /^\/events\/\d+/.test(url) && node.title);
+                  if (isEvent && node.title && !seen.has(url)) {
+                    seen.add(url);
+                    results.push({
+                      title:   String(node.title).trim(),
+                      dateStr: node.date || node.startTime || node.startDate || '',
+                      allText: [node.title, node.venue?.name, node.promoter?.name].filter(Boolean).join(' '),
+                      link:    url ? `https://ra.co${url.split('?')[0]}` : '',
+                      fromNextData: true,
+                    });
+                  }
+                  for (const k of Object.keys(node)) walk(node[k]);
+                };
+                walk(JSON.parse(raw));
+              }
+            } catch {}
+            if (results.length > 0) return results.slice(0, 60);
+
+            // ── Tier 2: RA DOM cards (post-hydration fallback) ──
+            const RA_CARD_SELECTORS = [
+              '[data-testid="event-listing-card"]',
               '[data-testid*="event"]',
-              '[class*="event-tile"]', '[class*="eventTile"]',
-              '[class*="listing-item"]', '[class*="listingItem"]',
+              'ul li:has(a[href^="/events/"])',
               'article', 'li',
             ];
             let best = [];
-            for (const sel of selectors) {
+            for (const sel of RA_CARD_SELECTORS) {
               try {
                 const els = [...document.querySelectorAll(sel)].filter(el => {
                   const t = (el.innerText || '').trim();
-                  return t.length > 15 && t.length < 600;
+                  return t.length > 15 && t.length < 600 && el.querySelector('a[href*="/events/"]');
                 });
                 if (els.length > best.length) best = els;
               } catch {}
             }
             return best.slice(0, 60).map(el => {
-              const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"],[class*="heading"]');
+              const h = el.querySelector('h3,h2,h4,[data-testid*="title"],strong,[class*="title"],[class*="name"],[class*="heading"]');
               const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
               const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
-              // Strict: only RA event deep-links (/events/XXXXXX)
               const link = el.querySelector('a[href*="/events/"]')?.href || '';
               return {
                 title:   (h?.innerText || '').replace(/\s+/g, ' ').trim(),
                 dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
                 allText, link,
+                fromNextData: false,
               };
             }).filter(item => item.title && item.title.length > 3 && item.link);
           });
 
-          console.log(`    RA club (${config.name}): ${raClubItems.length} card(s) found`);
+          const viaData = raClubItems.filter(i => i.fromNextData).length;
+          console.log(`    RA club (${config.name}): ${raClubItems.length} card(s) found (${viaData} via __NEXT_DATA__)`);
 
           for (const item of raClubItems) {
             if (!isValidTitle(item.title)) continue;
@@ -1867,6 +1908,20 @@ async function main() {
   });
   if (migrated) console.log(`🔧  Migrated ${migrated} event(s) to new schema (officialEventLink)`);
 
+  // Production-reset migration: strip simulated social fields from all stored
+  // events. The app no longer renders fake attendees, chat seeds, or invented
+  // friend/going counts — real data only.
+  let socialStripped = 0;
+  existing = existing.map(e => {
+    if ('attendees' in e || 'chatSeed' in e || 'friends' in e || 'going' in e || 'attendeeCount' in e) {
+      const { attendees: _a, chatSeed: _c, friends: _f, going: _g, attendeeCount: _ac, ...rest } = e;
+      socialStripped++;
+      return rest;
+    }
+    return e;
+  });
+  if (socialStripped) console.log(`🧼  Stripped simulated social fields from ${socialStripped} event(s)`);
+
   // Refresh date labels from _rawDate — prevents stale 'Tonight'/'Ongoing' labels
   let relabelled = 0;
   existing = existing.map(e => {
@@ -2035,12 +2090,13 @@ async function main() {
     existing.push({
       id:idCounter++, cat:r.cat, date:r.date, title:r.title, venue:r.venue, addr:r.addr,
       time:r.time, startH:r.startH, endH:r.endH,
-      emoji:r.emoji, color:r.color,
-      friends:Math.floor(Math.random()*4), tags:r.tags,
+      emoji:r.emoji, color:r.color, tags:r.tags,
       source:r.source, officialEventLink:r.officialEventLink||'',
-      lat:r.lat, lng:r.lng, going:Math.floor(Math.random()*300)+20,
+      lat:r.lat, lng:r.lng,
       neighbourhood:r.neighbourhood, desc:r.desc,
-      attendees:generateAttendees(), chatSeed:generateChatSeed(), _rawDate:r._rawDate,
+      _rawDate:r._rawDate,
+      ...(r._endDate ? { _endDate: r._endDate } : {}),
+      ...(r.status ? { status: r.status } : {}),
     });
     added++;
     console.log(`  ✅  Added: "${r.title}" (${r.date})`);

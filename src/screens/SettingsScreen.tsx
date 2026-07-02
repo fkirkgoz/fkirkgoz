@@ -23,13 +23,14 @@ interface Props {
   onSignOut: () => void;
   locale: Locale;
   onLocaleChange: (l: Locale) => void;
+  isAdmin?: boolean;
+  onOpenAdmin?: () => void;
   T: Theme;
 }
 
 type FieldKey = 'email' | 'phone' | 'password';
 
 const NOTIF_ITEMS: [string, boolean][] = [
-  ['FOMO alerts (friends going)', true],
   ['Last-minute event alerts',    true],
   ['Event reminders (1h before)', false],
   ['New events in my area',       true],
@@ -38,7 +39,7 @@ const NOTIF_ITEMS: [string, boolean][] = [
 export default function SettingsScreen({
   user, onBack, profileData, onProfileUpdate,
   isDark, onDarkToggle, onSignOut,
-  locale, onLocaleChange, T,
+  locale, onLocaleChange, isAdmin, onOpenAdmin, T,
 }: Props) {
   const [fields, setFields] = useState({
     email:    profileData.email || user?.email || 'lea@randevu.app',
@@ -219,6 +220,23 @@ export default function SettingsScreen({
               />
             </View>
           </View>
+
+          {/* Admin console — visible only to admin-role accounts */}
+          {isAdmin && (
+            <Tap onPress={() => onOpenAdmin?.()}>
+              <View style={[styles.card, { backgroundColor: T.card, borderColor: C.lav, borderWidth: 1.5 }]}>
+                <View style={styles.toggleRow}>
+                  <View style={{ flex: 1 }}>
+                    <Text style={[styles.cardTitle, { color: T.text }]}>🛡️ Admin Console</Text>
+                    <Text style={[styles.toggleDesc, { color: T.sub }]}>
+                      Accounts, sessions & saved-event analytics
+                    </Text>
+                  </View>
+                  <Text style={{ color: C.lav, fontWeight: '900', fontSize: 18 }}>→</Text>
+                </View>
+              </View>
+            </Tap>
+          )}
 
           {/* Logout / delete */}
           <TouchableOpacity style={styles.logoutBtn} onPress={onSignOut}>

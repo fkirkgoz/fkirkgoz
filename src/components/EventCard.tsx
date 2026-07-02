@@ -53,14 +53,6 @@ export default function EventCard({ event: e, onPress, T, joined }: EventCardPro
                 <Text style={[styles.catBadgeTxt, { color: C.dark }]}>✓ Going</Text>
               </View>
             )}
-            {(e.attendees ?? []).slice(0, 3).map((a, i) => (
-              <View key={i} style={[styles.avatar, { backgroundColor: a.c, marginLeft: i === 0 ? 4 : -6 }]}>
-                <Text style={styles.avatarTxt}>{a.n[0]}</Text>
-              </View>
-            ))}
-            {e.going > 0 && (
-              <Text style={[styles.goingCount, { color: T.sub }]}>+{e.going}</Text>
-            )}
           </View>
 
           {/* Tags */}
@@ -75,11 +67,7 @@ export default function EventCard({ event: e, onPress, T, joined }: EventCardPro
           {/* Footer */}
           <View style={styles.footer}>
             <Text style={[styles.timeText, { color: T.sub }]}>🗓 {e.date}  ⏰ {e.time}</Text>
-            <View style={styles.footerRight}>
-              {e.friends > 0 && (
-                <Text style={[styles.friendsCount, { color: T.accent }]}>👥 {e.friends}</Text>
-              )}
-            </View>
+            <Text style={[styles.timeText, { color: T.sub }]}>{e.neighbourhood}</Text>
           </View>
         </View>
       </View>
@@ -110,14 +98,9 @@ const styles = StyleSheet.create({
   badgeRow: { flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', gap: 6, marginTop: 10 },
   catBadge: { borderRadius: 6, paddingHorizontal: 8, paddingVertical: 2 },
   catBadgeTxt: { fontSize: 10, fontWeight: '800' },
-  avatar: { width: 22, height: 22, borderRadius: 11, alignItems: 'center', justifyContent: 'center' },
-  avatarTxt: { fontSize: 9, fontWeight: '800', color: '#22202E' },
-  goingCount: { fontSize: 11, fontWeight: '700' },
   tagRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: 8 },
   tag: { borderRadius: 20, paddingHorizontal: 10, paddingVertical: 4 },
   tagTxt: { fontSize: 11, fontWeight: '700' },
   footer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 10 },
   timeText: { fontSize: 12 },
-  footerRight: { flexDirection: 'row', alignItems: 'center', gap: 8 },
-  friendsCount: { fontSize: 11, fontWeight: '700' },
 });

@@ -2,7 +2,7 @@ import React, { useState, useMemo, useCallback, useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View, Text, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -12,6 +12,7 @@ import { Locale, t } from './src/i18n';
 import { Event, EVENTS } from './src/data/events';
 import { Avatar } from './src/data/avatars';
 import { AuthUser } from './src/screens/AuthScreen';
+import { logSessionStart, logEventSaved, isAdminUser } from './src/lib/metrics';
 
 import AuthScreen        from './src/screens/AuthScreen';
 import HomeScreen        from './src/screens/HomeScreen';
@@ -19,15 +20,15 @@ import MapScreen         from './src/screens/MapScreen';
 import NowScreen         from './src/screens/NowScreen';
 import ProfileScreen     from './src/screens/ProfileScreen';
 import EventDetailScreen from './src/screens/EventDetailScreen';
-import ChatScreen        from './src/screens/ChatScreen';
 import SettingsScreen    from './src/screens/SettingsScreen';
+import AdminScreen       from './src/screens/AdminScreen';
 
 // ── Navigation types ──────────────────────────────────────────────────────────
 export type RootStackParamList = {
   Main:     undefined;
   Detail:   { event: Event };
-  Chat:     { event: Event };
   Settings: undefined;
+  Admin:    undefined;
 };
 
 export type TabParamList = {
@@ -42,6 +43,9 @@ const Tab   = createBottomTabNavigator<TabParamList>();
 
 const USER_KEY   = '@randevu_user';
 const LOCALE_KEY = '@randevu_locale';
+// Joined events persist per account so schedules survive restarts and
+// feed real save-analytics into the admin metrics store.
+const joinedKey = (email: string) => `@randevu_joined:${email.toLowerCase()}`;
 
 // ── Tab bar icon ──────────────────────────────────────────────────────────────
 function TabIcon({ name, focused }: { name: string; focused: boolean; color: string }) {
@@ -132,14 +136,22 @@ export default function App() {
   const T        = useMemo(() => makeTheme(isDark), [isDark]);
   const myEvents = useMemo(() => EVENTS.filter(e => joinedEvents.includes(e.id)), [joinedEvents]);
 
-  // Load persisted user + locale on first launch
+  // Load persisted user + locale on first launch; restoring a session counts
+  // as a session start for the metrics log.
   useEffect(() => {
     Promise.all([
       AsyncStorage.getItem(USER_KEY),
       AsyncStorage.getItem(LOCALE_KEY),
-    ]).then(([userJson, localeStr]) => {
-      if (userJson)  setUser(JSON.parse(userJson));
+    ]).then(async ([userJson, localeStr]) => {
       if (localeStr) setLocale(localeStr as Locale);
+      if (userJson) {
+        const restored: AuthUser = JSON.parse(userJson);
+        setUser(restored);
+        setProfileData(p => ({ ...p, email: restored.email }));
+        logSessionStart(restored.email).catch(() => {});
+        const joinedJson = await AsyncStorage.getItem(joinedKey(restored.email)).catch(() => null);
+        if (joinedJson) setJoinedEvents(JSON.parse(joinedJson));
+      }
     }).catch(() => {}).finally(() => setIsLoading(false));
   }, []);
 
@@ -147,11 +159,16 @@ export default function App() {
     setUser(u);
     setProfileData(p => ({ ...p, email: u.email }));
     AsyncStorage.setItem(USER_KEY, JSON.stringify(u)).catch(() => {});
+    logSessionStart(u.email).catch(() => {});
+    AsyncStorage.getItem(joinedKey(u.email))
+      .then(json => setJoinedEvents(json ? JSON.parse(json) : []))
+      .catch(() => setJoinedEvents([]));
   }, []);
 
   const handleSignOut = useCallback(() => {
     AsyncStorage.removeItem(USER_KEY).catch(() => {});
     setUser(null);
+    setJoinedEvents([]);
   }, []);
 
   const handleLocaleChange = useCallback((l: Locale) => {
@@ -169,8 +186,16 @@ export default function App() {
   }, []);
 
   const handleJoin = useCallback((ev: Event) => {
-    setJoinedEvents(p => p.includes(ev.id) ? p.filter(id => id !== ev.id) : [...p, ev.id]);
-  }, []);
+    setJoinedEvents(prev => {
+      const joining = !prev.includes(ev.id);
+      const next = joining ? [...prev, ev.id] : prev.filter(id => id !== ev.id);
+      if (user) {
+        AsyncStorage.setItem(joinedKey(user.email), JSON.stringify(next)).catch(() => {});
+      }
+      if (joining) logEventSaved(ev.id, ev.title, ev.venue).catch(() => {});
+      return next;
+    });
+  }, [user]);
 
   if (isLoading) {
     return (
@@ -219,21 +244,10 @@ export default function App() {
               <EventDetailScreen
                 event={route.params.event}
                 onBack={() => navigation.goBack()}
-                onOpenChat={() => navigation.navigate('Chat', { event: route.params.event })}
                 onJoin={handleJoin}
                 joined={joinedEvents.includes(route.params.event.id)}
                 T={T}
                 onEventPress={ev => navigation.push('Detail', { event: ev })}
-              />
-            )}
-          </Stack.Screen>
-
-          <Stack.Screen name="Chat">
-            {({ route, navigation }) => (
-              <ChatScreen
-                event={route.params.event}
-                onBack={() => navigation.goBack()}
-                T={T}
               />
             )}
           </Stack.Screen>
@@ -250,8 +264,16 @@ export default function App() {
                 onSignOut={handleSignOut}
                 locale={locale}
                 onLocaleChange={handleLocaleChange}
+                isAdmin={isAdminUser(user)}
+                onOpenAdmin={() => navigation.navigate('Admin')}
                 T={T}
               />
+            )}
+          </Stack.Screen>
+
+          <Stack.Screen name="Admin">
+            {({ navigation }) => (
+              <AdminScreen onBack={() => navigation.goBack()} T={T} />
             )}
           </Stack.Screen>
         </Stack.Navigator>
@@ -259,5 +281,3 @@ export default function App() {
     </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({});

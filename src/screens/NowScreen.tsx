@@ -84,7 +84,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
                       <View style={styles.nowLiveBadge}>
                         <Text style={styles.nowLiveTxt}>🔴 Now · {ev.time}</Text>
                       </View>
-                      <Text style={{ color: C.teal, fontSize: 12, fontWeight: '700' }}>{ev.going} going</Text>
+                      <Text style={{ color: C.teal, fontSize: 12, fontWeight: '700' }}>{ev.neighbourhood}</Text>
                     </View>
                   </View>
                 </View>
@@ -119,7 +119,7 @@ export default function NowScreen({ onEventPress, T }: Props) {
                         <View style={styles.soonBadge}>
                           <Text style={styles.soonBadgeTxt}>⏱ In {minsUntil} min · {ev.time}</Text>
                         </View>
-                        <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: '700' }}>{ev.going} going</Text>
+                        <Text style={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: '700' }}>{ev.neighbourhood}</Text>
                       </View>
                     </View>
                   </View>

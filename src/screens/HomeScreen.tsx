@@ -22,8 +22,6 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
   const [date, setDate] = useState('All');
   const [q, setQ]       = useState('');
   const [searching, setSearching] = useState(false);
-  const [notifOpen, setNotifOpen] = useState(false);
-  const [nRead, setNRead] = useState(false);
   const [sort, setSort] = useState<'date-asc' | 'date-desc' | 'alpha-asc' | 'alpha-desc'>('date-asc');
   const [sortOpen, setSortOpen] = useState(false);
   const searchRef = useRef<TextInput>(null);
@@ -101,39 +99,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en' }:
             What's your{'\n'}<Text style={{ color: T.accent }}>vibe tonight?</Text>
           </Text>
         </View>
-        <View>
-          <Tap onPress={() => { setNotifOpen(s => !s); setNRead(true); }}>
-            <View style={[styles.bellBtn, { backgroundColor: notifOpen ? T.accent : undefined }]}>
-              <Text style={styles.bellEmoji}>🔔</Text>
-            </View>
-          </Tap>
-          {!nRead && <View style={[styles.bellDot, { borderColor: T.bg }]} />}
-        </View>
       </View>
-
-      {/* Notification panel */}
-      {notifOpen && (
-        <View style={[styles.notifPanel, { backgroundColor: T.card, borderColor: T.border }]}>
-          <Text style={[styles.notifTitle, { color: T.text }]}>🔔 Notifications</Text>
-          {[
-            { e: '⚽',  t: 'Union SG fan zone filling up fast!',     a: '15m ago' },
-            { e: '🌿', t: 'Canal Cleanup starts in 1 hour.',         a: '45m ago' },
-          ].map((n, i) => (
-            <View key={i} style={[styles.notifRow, i > 0 && { borderTopWidth: 1, borderTopColor: T.border }]}>
-              <Text style={{ fontSize: 18 }}>{n.e}</Text>
-              <View style={{ flex: 1 }}>
-                <Text style={[styles.notifText, { color: T.text }]}>{n.t}</Text>
-                <Text style={[styles.notifTime, { color: T.sub }]}>{n.a}</Text>
-              </View>
-            </View>
-          ))}
-          <Tap onPress={() => setNotifOpen(false)}>
-            <View style={[styles.dismissBtn, { backgroundColor: T.pill }]}>
-              <Text style={[styles.dismissTxt, { color: T.sub }]}>Dismiss all</Text>
-            </View>
-          </Tap>
-        </View>
-      )}
 
       {/* Search */}
       <View style={styles.searchWrap}>
@@ -284,16 +250,6 @@ const styles = StyleSheet.create({
   header:            { paddingTop: 56, paddingHorizontal: 22, paddingBottom: 0, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' },
   headerCity:        { fontSize: 11, fontWeight: '600', letterSpacing: 2, textTransform: 'uppercase' },
   headerTitle:       { fontSize: 27, fontWeight: '900', lineHeight: 34, marginTop: 4, letterSpacing: -0.5 },
-  bellBtn:           { width: 46, height: 46, borderRadius: 23, backgroundColor: C.lav, alignItems: 'center', justifyContent: 'center', shadowColor: C.lav, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 8, elevation: 5 },
-  bellEmoji:         { fontSize: 20 },
-  bellDot:           { position: 'absolute', top: 2, right: 2, width: 11, height: 11, backgroundColor: C.pink, borderWidth: 2, borderRadius: 6 },
-  notifPanel:        { marginHorizontal: 22, marginTop: 10, borderRadius: 22, padding: 16, borderWidth: 1, shadowColor: '#000', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.2, shadowRadius: 16, elevation: 8, zIndex: 100 },
-  notifTitle:        { fontWeight: '900', fontSize: 14, marginBottom: 12 },
-  notifRow:          { flexDirection: 'row', gap: 10, paddingVertical: 10 },
-  notifText:         { fontSize: 12, fontWeight: '700', lineHeight: 18 },
-  notifTime:         { fontSize: 11, marginTop: 2 },
-  dismissBtn:        { marginTop: 10, borderRadius: 12, padding: 8, alignItems: 'center' },
-  dismissTxt:        { fontSize: 12, fontWeight: '800' },
   searchWrap:        { paddingHorizontal: 22, marginTop: 16 },
   searchActive:      { flexDirection: 'row', alignItems: 'center', gap: 10 },
   searchInner:       { flex: 1, flexDirection: 'row', alignItems: 'center', gap: 8, borderRadius: 22, paddingHorizontal: 16, paddingVertical: 12, borderWidth: 2 },

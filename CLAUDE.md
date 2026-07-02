@@ -32,11 +32,12 @@ No test suite exists.
 ## Architecture
 
 Single-file navigation setup in `App.tsx`:
-- **Stack navigator** (`RootStackParamList`): `Main` (tabs) → `Detail` → `Chat` → `Settings`
+- **Stack navigator** (`RootStackParamList`): `Main` (tabs) → `Detail` → `Settings` → `Admin`
 - **Tab navigator** (`TabParamList`) nested inside `Main`: Home / Map / Now / Profile
 - All screens are stateless; state (`user`, `joinedEvents`, `avatar`, `isDark`, `profileData`, `locale`) lives in `App.tsx` and is passed as props
 - Tab labels are translated via `t('tab.home', locale)` — locale is passed into TabNavigator as a prop
-- `AsyncStorage` keys: `@randevu_user` (current session), `@randevu_users` (all registered accounts), `@randevu_locale` (language preference)
+- `AsyncStorage` keys: `@randevu_user` (current session), `@randevu_users` (all registered accounts), `@randevu_locale` (language preference), `@randevu_joined:<email>` (per-account joined events), `@randevu_metrics_v1` (operational metrics)
+- **Production reset (no simulated features)**: the app contains no fake chat, mock notification feed, fake attendees/friends, or placeholder perks. Core focus: real event discovery and navigation. Do not re-introduce simulated data.
 
 ### Theme system (`src/constants/theme.ts`)
 `makeTheme(isDark)` returns a `Theme` object. All screens receive `T: Theme` as a prop. The brand palette is in the `C` constant (e.g. `C.lav` = `#8E7DBE` is the primary accent). Always use `C.lav → C.lavD` for gradient CTAs.
@@ -51,8 +52,7 @@ The `Event` type has:
 - `date` — relative string: `'Today'`, `'Tonight'`, `'Tomorrow'`, `'This Weekend'`, `'Next Week'`, `'Next Month'`, named months (`'July'`, `'August'`, …), or `'Ongoing'`
 - `_rawDate?: string` — ISO date string (`YYYY-MM-DD`) used by `getDisplayDate()` for accurate calendar display
 - `startH` / `endH` — decimal hour values (e.g. `23.5` = 23:30) used by NowScreen live clock logic
-- `attendees: Attendee[]` where `isFriend: boolean` distinguishes friends from strangers
-- `price` is `''` (blank) when unknown — never `'TBA'`
+- No social fields — `attendees`, `chatSeed`, `friends`, `going` were removed in the production reset; the scraper strips them from stored data on every run
 
 ```ts
 export const DATES = ['All', 'Today', 'Tonight', 'Tomorrow', 'This Weekend', 'Next Week', 'Next Month'];
@@ -81,20 +81,29 @@ HomeScreen appends any extra named-month labels found in live event data via `av
 - Sign up / log in with email + password
 - Bio field and vibe selection (up to 3 from 12 options) during sign-up
 - Mandatory Terms & Conditions checkbox with full GDPR legal modal
-- `AuthUser` interface: `{ name, email, password, bio?, vibes? }`
+- `AuthUser` interface: `{ name, email, password, phone?, bio?, vibes?, createdAt?, role? }`
+- Sign-up stamps `createdAt` (ISO) and `role` (`roleForEmail()` from the admin allowlist), then calls `logAccountCreated()`
 
 ### Persistence (`App.tsx`)
 - `@randevu_user` — auto-login on relaunch, saved on sign-in, cleared on sign-out
 - `@randevu_users` — stores all registered accounts (cleared on Delete Account)
+- `@randevu_joined:<email>` — joined event IDs persist per account and reload on login/auto-login
 - `handleUserUpdate(Partial<AuthUser>)` merges partial updates and re-saves
+- Session starts (login + auto-login) and event saves are logged to the metrics store
+
+### Metrics & Admin (`src/lib/metrics.ts`, `src/screens/AdminScreen.tsx`)
+- `@randevu_metrics_v1` schema: `{ accountsCreated[], sessions[] (capped 200), eventSaves{} }`
+- Loggers: `logAccountCreated`, `logSessionStart`, `logEventSaved` — all fire-and-forget
+- `getAdminMetrics()` aggregates: total accounts, sessions (total + last 7d), top saved events — emails are ALWAYS masked via `maskEmail()`, passwords never surface
+- **Admin gate** — `isAdminUser(user)`: role === 'admin' OR email on `ADMIN_EMAILS` allowlist OR `EXPO_PUBLIC_ADMIN_MODE=true`. Gated entry card appears in Settings; route: `Admin`
 
 ### HomeScreen (`src/screens/HomeScreen.tsx`)
 - `FlatList` (not ScrollView) for performance with large event lists
 - All header/filter content in `ListHeaderComponent`
-- Category chips, date pills, search bar, FOMO banner, notification panel
+- Category chips, date pills, search bar
 - **Dynamic date pills** — `availableDates` useMemo builds the pill list from `DATES` + any named-month labels present in live event data (e.g. July, August)
-- **Sort toggle** — `📅 Date` / `🔤 A–Z` chips appear below date pills when not searching. `sorted` useMemo applies on top of `filtered`: date sort uses a weight table (Today=0 … Ongoing=99) with `startH` as tiebreaker; alpha sort uses `localeCompare`
-- **Notifications panel** — 2 contextual alerts (Union SG fan zone, Canal Cleanup). The hardcoded "Fuse RA Night" fake entry has been removed
+- **Sort dropdown** — earliest/latest/A–Z/Z–A. `sorted` useMemo applies on top of `filtered`: date sort uses a weight table (Today=0 … Ongoing=99) with `startH` as tiebreaker; alpha sort uses `localeCompare`
+- Mock notification feed and bell removed in the production reset
 
 ### MapScreen (`src/screens/MapScreen.tsx`)
 - **Venue grouping**: events at the same venue (matched by name prefix) share one marker
@@ -112,28 +121,23 @@ HomeScreen appends any extra named-month labels found in live event data via `av
 
 ### EventDetailScreen (`src/screens/EventDetailScreen.tsx`)
 - `getDisplayDate(relative, rawDate?)` — uses `_rawDate` ISO string directly for accurate calendar display (avoids approximation from relative labels). Falls back to offset-based approximation for base events without `_rawDate`
-- Friend profile navigation: closes modal → stores guest in ref → pushes new Detail → focus listener restores modal on back
-
-### ChatScreen (`src/screens/ChatScreen.tsx`)
-- **Friends-only**: on mount builds `friendNames` from `event.attendees` where `isFriend === true`. `chatSeed` is filtered to only messages from friends or self (`isMe === true`)
-- 🔒 friends-only info banner below header explains privacy scope
-- Header subtitle shows friend count: "Friends chat · N friends going"
-- Empty state when no friends are attending yet
-- New messages from "You" are appended in real time
+- Pure event detail: hero, info card, about + official-link button, map preview, join/tickets CTA bar
+- Chat teaser, Who's Going, guest-profile modals, and add-friend simulation removed in the production reset (ChatScreen deleted)
 
 ### ProfileScreen (`src/screens/ProfileScreen.tsx`)
-- Editable bio saved via `onUserUpdate`
-- Vibe tags displayed from `user.vibes`
+- Editable bio saved via `onUserUpdate` (empty-state placeholder, no fake persona)
+- Vibe tags displayed from `user.vibes`; stats row shows REAL counts (upcoming / attended / vibes)
 - **My Schedule** — horizontal scroll of `myEvents` (events the user joined)
 - **My Past Events** — horizontal scroll of events from the full `EVENTS` dataset where `_rawDate < today's ISO date`. Shows "Attended" badge. Empty state if none found
 - Avatar picker modal — full grid of all AVATARS, no pagination
-- "Meaningful Impact" badges section has been removed
+- "Meaningful Impact" badges and "My Perks" discount modules removed
 
 ### SettingsScreen (`src/screens/SettingsScreen.tsx`)
 - Editable email, phone, password fields with inline save
-- Notification toggles (4 items) via Switch
+- Notification toggles (3 items) via Switch
 - **Language selector** — EN / FR / NL pill buttons, wired to `locale` prop via `onLocaleChange`
 - Dark mode toggle
+- **Admin Console entry** — rendered only when `isAdmin` prop is true; navigates to the `Admin` route
 - **Delete Account** — two-step flow:
   1. `Alert.alert` confirmation ("Are you sure?")
   2. Slide-up modal with 4 radio-style reason options; last option ("Other") shows a free-text `TextInput`
@@ -158,10 +162,16 @@ Node.js script that populates `src/data/scraped_events.json` with real Brussels 
 | Bozar | 🏛️ | Culture / Classical |
 
 ### Scraper strategy
+Strategy routing is purely config-flag driven (see the extensibility contract comment
+above `VENUE_CONFIGS` — adding a venue = appending one object, zero structural changes):
 1. **JSON-LD first** — `extractJsonLd(page)` reads `<script type="application/ld+json">` for structured Event data
-2. **HTML fallback** — heading + date presence filter: candidates must contain a heading tag AND a date element or text matching a date pattern
-3. **JS-heavy sites** (Fuse, C12) — `networkidle2` wait mode + 9-second wait + 4 scroll passes (scrolls to `document.body.scrollHeight` on pass 3)
-4. HTML candidate limit: 50 per page; Agenda Brussels cap: 30 events
+2. **Strategy 1.8** (`useAgendaBrussels: true`) — agenda.brussels search-results parser with explicit location-field extraction
+3. **Strategy 1.9a** (`useRaClub: true`) — Resident Advisor club page (e.g. Circle Park, `ra.co/clubs/189275`). Tier 1 parses the `__NEXT_DATA__` GraphQL payload (`__typename === 'Event'`, `contentUrl` `/events/XXXXXX`) — immune to CSS churn; Tier 2 falls back to RA DOM cards (`[data-testid="event-listing-card"]`, `a[href^="/events/"]`)
+4. **Strategy 1.9b** (`useResidentAdvisor: true`) — RA Brussels regional listing filtered by open-air/festival/day-party keywords
+5. **Strategy 1.7** (`jsHeavy: true`) — live DOM scrape via `page.evaluate()` after SPA hydration
+6. **HTML fallback** — heading + date presence filter: candidates must contain a heading tag AND a date element or text matching a date pattern
+7. HTML candidate limit: 50 per page; Agenda Brussels cap: 30 events
+8. The scraper writes NO simulated fields — a per-run migration strips `attendees`/`chatSeed`/`friends`/`going` from any stored events
 
 ### Date labelling pipeline
 - `parseRawDate(str)` — multi-pattern parser with 12-month year-inference cap (dates inferred >12 months ahead are rejected to avoid 2027 bleed-through)

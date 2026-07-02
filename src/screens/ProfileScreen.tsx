@@ -11,11 +11,6 @@ import { Theme, C } from '../constants/theme';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
 
-const PERKS = [
-  { emoji: '🎛️', label: '10% off FUSE',         desc: 'Valid until 31 May', color: C.lav  },
-  { emoji: '🍹', label: 'Free drink at M. Lambic', desc: 'Show at entry',     color: C.teal },
-];
-
 interface ProfileData { email: string; phone: string; }
 
 interface Props {
@@ -32,7 +27,7 @@ interface Props {
 
 export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange, profileData, T, myEvents, onEventPress, onUserUpdate }: Props) {
   const [editing, setEditing] = useState(false);
-  const [bio, setBio] = useState(user?.bio ?? "always down for a hidden gem 💎 techno + yoga + good food ✨ Brussels-based");
+  const [bio, setBio] = useState(user?.bio ?? '');
   const [pickerOpen, setPickerOpen] = useState(false);
 
   const today = new Date();
@@ -69,13 +64,17 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
           </View>
         </View>
 
-        {/* Name / stats */}
+        {/* Name / stats — real counts only */}
         <View style={{ alignItems: 'center', paddingHorizontal: 22, marginTop: 4 }}>
-          <Text style={[styles.name, { color: T.text }]}>{user?.name ?? 'Léa Van den Berg'}</Text>
-          <Text style={[styles.emailTxt, { color: T.sub }]}>{profileData.email || (user?.email ?? 'lea@randevu.app')} · Brussels</Text>
+          <Text style={[styles.name, { color: T.text }]}>{user?.name ?? ''}</Text>
+          <Text style={[styles.emailTxt, { color: T.sub }]}>{profileData.email || user?.email || ''} · Brussels</Text>
           {!!profileData.phone && <Text style={[styles.emailTxt, { color: T.sub }]}>{profileData.phone}</Text>}
           <View style={styles.statsRow}>
-            {[['24','Events'],['8','Friends'],['3','Badges']].map(([v, l]) => (
+            {([
+              [String(myEvents.length), 'Upcoming'],
+              [String(pastEvents.length), 'Attended'],
+              [String(user?.vibes?.length ?? 0), 'Vibes'],
+            ] as [string, string][]).map(([v, l]) => (
               <View key={l} style={{ alignItems: 'center' }}>
                 <Text style={[styles.statVal, { color: T.accent }]}>{v}</Text>
                 <Text style={[styles.statLabel, { color: T.sub }]}>{l}</Text>
@@ -106,7 +105,9 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
               style={[styles.bioInput, { backgroundColor: T.pill, borderColor: T.accent, color: T.text }]}
             />
           ) : (
-            <Text style={[styles.bioText, { color: T.text }]}>{bio}</Text>
+            <Text style={[styles.bioText, { color: bio ? T.text : T.sub }]}>
+              {bio || 'Add a bio — tap Edit ✏️'}
+            </Text>
           )}
         </View>
 
@@ -198,22 +199,6 @@ export default function ProfileScreen({ user, onSettings, avatar, onAvatarChange
           )}
         </View>
 
-        {/* Perks */}
-        <View style={[styles.card, { backgroundColor: T.card, borderColor: T.border, marginHorizontal: 22, marginTop: 14 }]}>
-          <Text style={[styles.sectionTitle, { color: T.text, marginBottom: 12 }]}>🎁 My Perks</Text>
-          {PERKS.map(p => (
-            <View key={p.label} style={[styles.perkRow, { backgroundColor: `${p.color}1E`, borderColor: p.color }]}>
-              <Text style={{ fontSize: 22 }}>{p.emoji}</Text>
-              <View style={{ flex: 1 }}>
-                <Text style={[styles.perkLabel, { color: T.text }]}>{p.label}</Text>
-                <Text style={[styles.perkDesc, { color: T.sub }]}>{p.desc}</Text>
-              </View>
-              <View style={[styles.useBtn, { backgroundColor: p.color }]}>
-                <Text style={{ color: 'white', fontSize: 11, fontWeight: '800' }}>Use</Text>
-              </View>
-            </View>
-          ))}
-        </View>
       </ScrollView>
 
       {/* Avatar picker modal — all avatars in one scrollable grid, no pagination */}
@@ -271,10 +256,6 @@ const styles = StyleSheet.create({
   scheduleBar:  { height: 4 },
   scheduleName: { fontSize: 12, fontWeight: '900', lineHeight: 16, marginBottom: 3 },
   goingBadge:   { marginTop: 6, backgroundColor: C.green, borderRadius: 8, paddingHorizontal: 6, paddingVertical: 2, alignSelf: 'flex-start' },
-  perkRow:      { flexDirection: 'row', alignItems: 'center', gap: 12, borderRadius: 16, paddingHorizontal: 14, paddingVertical: 12, borderWidth: 1, borderStyle: 'dashed', marginBottom: 10 },
-  perkLabel:    { fontSize: 13, fontWeight: '800' },
-  perkDesc:     { fontSize: 11 },
-  useBtn:       { borderRadius: 12, paddingHorizontal: 12, paddingVertical: 6 },
   pickerContainer: { flex: 1, padding: 24 },
   pickerTitle:  { fontWeight: '900', fontSize: 18, marginBottom: 4 },
   pickerSub:    { fontSize: 13, fontWeight: '600', marginBottom: 18 },
