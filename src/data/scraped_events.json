@@ -49,30 +49,6 @@
     "_rawDate": "2026-09-09"
   },
   {
-    "id": 163,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "EL BESTA",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/el-besta/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "EL BESTA at La Madeleine.",
-    "_rawDate": "2026-07-03"
-  },
-  {
     "id": 164,
     "cat": "Music",
     "date": "Next Week",
@@ -753,31 +729,6 @@
     "_rawDate": "2026-09-01"
   },
   {
-    "id": 264,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "C12 Nite - 03/07",
-    "venue": "C12",
-    "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "💃",
-    "color": "#6C63FF",
-    "tags": [
-      "Electronic",
-      "Art",
-      "Nightlife"
-    ],
-    "source": "C12",
-    "officialEventLink": "https://shop.c12space.com/45ccad9c0e384d76a3a1fc0c6a45053d",
-    "lat": 50.8462,
-    "lng": 4.3556,
-    "neighbourhood": "Centre",
-    "desc": "Inox Traxx / Souleiman / Rafael Munoz",
-    "_rawDate": "2026-07-03"
-  },
-  {
     "id": 273,
     "cat": "Music",
     "date": "November",
@@ -801,31 +752,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "Martin Luke Brown at Le Botanique.",
     "_rawDate": "2026-11-19"
-  },
-  {
-    "id": 284,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: Samuel Moriero & KX CHR",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-samuel-moriero-kx-chr",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: Samuel Moriero & KX CHR at Fuse.",
-    "_rawDate": "2026-07-03"
   },
   {
     "id": 292,
@@ -1290,7 +1216,7 @@
   {
     "id": 355,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Mac Declos (all night long)",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1998,7 +1924,7 @@
   {
     "id": 410,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "18HRS of Fuse w/ Vault Sessions: Open Air & Club",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2023,7 +1949,7 @@
   {
     "id": 419,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "C12 Nite - 11/07",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2469,7 +2395,7 @@
   {
     "id": 497,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Floris Francis Arthur (Band)",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2812,105 +2738,9 @@
     "_rawDate": "2026-09-04"
   },
   {
-    "id": 521,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Impro 'Night Aladar",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/impro-night-aladar/a10Qw00000HkEhJIAV",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "Take your first steps on stage at this fun jam session!",
-    "_rawDate": "2026-07-03"
-  },
-  {
-    "id": 522,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Arts at Night",
-    "venue": "BOZAR, KBR, Old Masters Museum",
-    "addr": "BOZAR, KBR, Old Masters Museum, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Arts-at-Night.591843",
-    "lat": 50.833993060451085,
-    "lng": 4.36559691255186,
-    "neighbourhood": "Centre",
-    "desc": "Fri 03 July Arts at Night ExhibitionsBOZAR, KBR, Old Masters Museum View more",
-    "_rawDate": "2026-07-03"
-  },
-  {
-    "id": 523,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Nayad - Streetart festival",
-    "venue": "Various places in Ixelles",
-    "addr": "Various places in Ixelles, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Nayad-Streetart-festival.5700021476",
-    "lat": 50.84549656221748,
-    "lng": 4.356404098920986,
-    "neighbourhood": "Centre",
-    "desc": "Fri 03 July — Sun 05 July Nayad - Streetart festival Free ShowVarious places in Ixelles View more",
-    "_rawDate": "2026-07-03"
-  },
-  {
-    "id": 524,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Brosella Festival 2026",
-    "venue": "Théâtre de Verdure – Parc d’Osseghem",
-    "addr": "Théâtre de Verdure – Parc d’Osseghem, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brosella-Festival-2026.5700021762",
-    "lat": 50.836876559881915,
-    "lng": 4.337899127820102,
-    "neighbourhood": "Centre",
-    "desc": "Fri 03 July — Sun 05 July Brosella Festival 2026 FestivalThéâtre de Verdure – Parc d’Osseghem View more",
-    "_rawDate": "2026-07-03"
-  },
-  {
     "id": 525,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "De Kleine Boterhammen presenteert Floris Francis Arthur (Band)",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2979,30 +2809,6 @@
     "neighbourhood": "Centre",
     "desc": "WASIA PROJECT at La Madeleine.",
     "_rawDate": "2026-11-22"
-  },
-  {
-    "id": 529,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Visit the Royal Palace",
-    "venue": "Palais Royal",
-    "addr": "Palais Royal, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Brussels"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Visit-the-Royal-Palace.5700023533",
-    "lat": 50.8419277,
-    "lng": 4.3622722,
-    "neighbourhood": "Centre",
-    "desc": "Fri 03 July — Sun 16 August Visit the Royal Palace VariousPalais Royal View more",
-    "_rawDate": "2026-07-03"
   },
   {
     "id": 530,
@@ -3081,7 +2887,7 @@
   {
     "id": 534,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "The Substance - Coralie Fargeat",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3453,7 +3259,7 @@
   {
     "id": 551,
     "cat": "Sports",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Beau Vélo de RAVeL : étape ixelloise",
     "venue": "Commune d'Ixelles",
     "addr": "Commune d'Ixelles, Belgium",
@@ -3477,7 +3283,7 @@
   {
     "id": 552,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Cameristica Festival 2026",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -3501,7 +3307,7 @@
   {
     "id": 553,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival Afrodisiac",
     "venue": "Bois de la Cambre : Carrefour des Attelages",
     "addr": "Bois de la Cambre : Carrefour des Attelages, Belgium",
@@ -3571,35 +3377,9 @@
     "_rawDate": "2026-07-15"
   },
   {
-    "id": 557,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "ILLEGAAL DANCE BATTLE ALL STYLES",
-    "venue": "Brasserie ILLEGAAL",
-    "addr": "Brussels, Belgium",
-    "time": "18:00",
-    "startH": 18,
-    "endH": 21,
-    "emoji": "🌿",
-    "color": "#B8E5C0",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Day Party",
-      "Festival"
-    ],
-    "source": "Brasserie ILLEGAAL",
-    "officialEventLink": "https://brasserie-illegaal.com/event/illegaal-dance-battle-all-styles-3/",
-    "lat": 50.8503,
-    "lng": 4.3517,
-    "neighbourhood": "Various",
-    "desc": "&lt;p&gt;ILLEGAAL DANCE BATTLE ALL STYLES 03/07/2016 - 18:00-01:00 We are backkk !! On se retrouve le vendredi 03.07 pour la 9e édition de la ILLEGAAL DANCE BATTLE ALL STYLES locking [&hellip;]&lt;/p&gt;\\n",
-    "_rawDate": "2026-07-03"
-  },
-  {
     "id": 558,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "DISTRICT OPEN AIR",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3651,7 +3431,7 @@
   {
     "id": 560,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "GLOBAAL ILLEGAAL PRESENTS: LA KZ Colombian Picó soundsystem party w/ concerts, DJ sets &#038; food",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3779,7 +3559,7 @@
   },
   {
     "id": 565,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Bill Cunningham New York - Richard Press",
     "venue": "Bozar",
@@ -3787,8 +3567,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3811,8 +3591,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Art",
       "Culture"
@@ -3827,7 +3607,7 @@
   },
   {
     "id": 567,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Magellan - Lav Diaz",
     "venue": "Bozar",
@@ -3835,8 +3615,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3851,7 +3631,7 @@
   },
   {
     "id": 568,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "The Tale of the Princess Kaguya - Isao Takahata",
     "venue": "Bozar",
@@ -3859,8 +3639,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3883,8 +3663,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Art",
       "Culture"
@@ -3992,5 +3772,54 @@
     "neighbourhood": "Centre",
     "desc": "Thu 13 August — Sun 16 August Brussels' Flowercarpet ExhibitionsGrand-Place View more",
     "_rawDate": "2026-08-13"
+  },
+  {
+    "id": 574,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: KLOUD & Aiden",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-kloud-aiden",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: KLOUD & Aiden at Fuse.",
+    "_rawDate": "2026-08-08"
+  },
+  {
+    "id": 575,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "La guitarra flamenca de Yerai Cortés - C. Tangana",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/la-guitarra-flamenca-de-yerai-cortes-c-tangana-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-08-29"
   }
 ]
