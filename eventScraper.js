@@ -20,509 +20,61 @@ const SCRAPED_JSON   = path.join(__dirname, 'src', 'data', 'scraped_events.json'
 const SCRAPED_ID_MIN = 100;
 const GEOCODE_DELAY  = 1200;
 
-// ── Venue configuration registry ──────────────────────────────────────────────
-// EXTENSIBILITY CONTRACT: adding a venue never requires structural code changes —
-// append one object to this array and the engine routes it automatically.
-//
-// Required fields:
-//   id            unique key            name          display/venue name
-//   addr          street address        lat, lng      exact coords (0,0 → geocode)
-//   neighbourhood map filter label      emoji/color/cat/tags   visual identity
-//   defaultTime   'HH:MM' fallback      urls          ordered list, first that loads wins
-//
-// Strategy routing flags (first match wins; omit all → generic JSON-LD → HTML):
-//   useAgendaBrussels: true   → Strategy 1.8  (agenda.brussels search results)
-//   useRaClub: true           → Strategy 1.9a (Resident Advisor club page, tightly
-//                                              mapped to RA's Next.js data payload)
-//   useResidentAdvisor: true  → Strategy 1.9b (RA regional open-air keyword stream)
-//   jsHeavy: true             → Strategy 1.7  (live DOM scrape after SPA hydration)
-//
-// Optional tuning:
-//   waitForSelector   CSS selector the page must render before parsing
-//   eventSelector     venue-specific card selectors (comma-separated)
-//   linkPattern       RegExp an event deep-link must match
-//   extraWait         ms of settle time after navigation
-//   enforceVisuals    lock emoji/color/cat to this config (skip keyword classify)
-//
-// All lat/lng values below are exact — the geocoder is NEVER called for these.
-const VENUE_CONFIGS = [
-  {
-    id: 'ab',
-    name: 'Ancienne Belgique',
-    addr: 'Boulevard Anspach 110, 1000 Brussels',
-    lat: 50.8483, lng: 4.3512,
-    neighbourhood: 'Centre',
-    emoji: '🎸', color: '#C77DFF', cat: 'Music',
-    tags: ['Concert', 'Live Music'],
-    defaultTime: '20:00',
-    extraWait: 5000,
-    enforceVisuals: true,
-    urls: [
-      'https://www.abconcerts.be/en/agenda',
-      'https://abconcerts.be/en/agenda',
-    ],
-  },
-  {
-    id: 'botanique',
-    name: 'Le Botanique',
-    addr: 'Rue Royale 236, 1210 Brussels',
-    lat: 50.8554, lng: 4.3664,   // HARDCODED — Rue Royale 236
-    neighbourhood: 'Saint-Josse',
-    emoji: '🎸', color: '#B8E5C0', cat: 'Music',
-    tags: ['Concert', 'Indie', 'Alternative'],
-    defaultTime: '20:00',
-    extraWait: 7000,
-    enforceVisuals: true,
-    urls: [
-      'https://botanique.be/en/agenda',
-      'https://botanique.be/en',
-      'https://botanique.be/en/activities',
-      'https://www.botanique.be/en',
-      'https://botanique.be/fr/agenda',
-    ],
-  },
-  {
-    id: 'fuse',
-    name: 'Fuse',
-    addr: 'Rue Blaes 208, 1000 Brussels',
-    lat: 50.8365, lng: 4.3435,   // HARDCODED — Rue Blaes 208, Marolles
-    neighbourhood: 'Marolles',
-    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
-    tags: ['Techno', 'Electronic', 'Nightlife'],
-    defaultTime: '23:00',
-    extraWait: 9000,
-    jsHeavy: true,
-    enforceVisuals: true,
-    urls: [
-      'https://fuse.be',
-      'https://www.fuse.be',
-      'https://fuse.be/agenda',
-      'https://www.fuse.be/agenda',
-      'https://fuse.be/en',
-    ],
-  },
-  {
-    id: 'c12',
-    name: 'C12',
-    addr: 'Rue du Marché aux Herbes 116, 1000 Brussels',
-    lat: 50.8462, lng: 4.3556,   // HARDCODED — Rue du Marché aux Herbes 116
-    neighbourhood: 'Centre',
-    emoji: '💃', color: '#6C63FF', cat: 'Nightlife',
-    tags: ['Electronic', 'Art', 'Nightlife'],
-    defaultTime: '22:00',
-    extraWait: 9000,
-    jsHeavy: true,
-    enforceVisuals: true,
-    waitForSelector: '.event-list,.event-item,.event,.agenda,[class*="event"]',
-    urls: [
-      'https://agenda.paylogic.com/3b4e4443dd994952aaa213113e5d01a9',
-      'https://c12space.com/agenda/',
-      'https://c12space.com/agenda',
-      'https://www.c12space.com/agenda',
-      'https://c12space.com',
-    ],
-  },
-  {
-    id: 'laMadeleine',
-    name: 'La Madeleine',
-    addr: 'Rue de la Madeleine 51, 1000 Brussels',
-    lat: 50.8459, lng: 4.3562,
-    neighbourhood: 'Centre',
-    emoji: '🎸', color: '#8E7DBE', cat: 'Music',
-    tags: ['Concert', 'Live Music'],
-    defaultTime: '20:00',
-    extraWait: 7000,
-    enforceVisuals: true,
-    urls: [
-      'https://la-madeleine.be/en/agenda',
-      'https://www.la-madeleine.be/en/agenda',
-      'https://la-madeleine.be/agenda/',
-      'https://www.la-madeleine.be/agenda/',
-      'https://la-madeleine.be/agenda',
-      'https://www.la-madeleine.be',
-    ],
-  },
-  {
-    id: 'bozar',
-    name: 'Bozar',
-    addr: 'Rue Ravenstein 23, 1000 Brussels',
-    lat: 50.8445, lng: 4.3609,
-    neighbourhood: 'Centre',
-    emoji: '🏛️', color: '#E76F51', cat: 'Culture',
-    tags: ['Classical', 'Culture', 'Arts'],
-    defaultTime: '20:00',
-    extraWait: 5000,
-    urls: [
-      'https://www.bozar.be/en/calendar',
-      'https://www.bozar.be/en',
-      'https://bozar.be/en/calendar',
-    ],
-  },
-  {
-    id: 'agendaBrussels',
-    name: 'Agenda Brussels',
-    addr: 'Brussels, Belgium',
-    lat: 50.8503, lng: 4.3517,
-    neighbourhood: 'Centre',
-    emoji: '🏛️', color: '#E76F51', cat: 'Culture',
-    tags: ['Culture', 'Brussels'],
-    defaultTime: '10:00',
-    extraWait: 5000,
-    // No enforceVisuals — each event is classified by its own content
-    urls: [
-      'https://www.agenda.brussels/en',
-      'https://agenda.brussels/en',
-      'https://www.agenda.brussels/en/agenda',
-      'https://www.agenda.brussels/en/events',
-    ],
-  },
-  {
-    id: 'couleurCafe',
-    name: 'Couleur Café',
-    addr: 'Ossegempark, 1020 Laeken',
-    lat: 50.8948, lng: 4.3411,
-    neighbourhood: 'Laeken',
-    emoji: '🎸', color: '#F4A261', cat: 'Festival',
-    tags: ['World Music', 'Hip Hop', 'Festival'],
-    defaultTime: '14:00',
-    extraWait: 6000,
-    enforceVisuals: true,
-    urls: [
-      'https://www.couleurcafe.be',
-      'https://couleurcafe.be',
-      'https://www.couleurcafe.be/programme',
-      'https://couleurcafe.be/programme',
-    ],
-  },
+// ── Venue registry (decoupled) ────────────────────────────────────────────────
+// All scrape targets live in src/config/scraperVenues.ts — a typed, append-only
+// registry. Adding a venue = adding one object THERE; this engine never changes.
+// Node ≥ 22.18 strips the TS types natively on require (GH Actions runs Node 24).
+const { SCRAPER_VENUES } = require('./src/config/scraperVenues.ts');
 
-  // ── Gen-Z / underground Brussels venues — scraped via agenda.brussels search ──
-  // Instead of hitting fragile individual venue websites, we search agenda.brussels
-  // for each venue by name. This gives us consistent DOM structure, reliable
-  // agenda.brussels deep-links, and explicit location fields on every event card.
-  // BLACKLIST REMINDER: AB, Botanique, Fuse, C12, La Madeleine, Bozar handled above.
-  {
-    id: 'umi',
-    name: 'UMI',
-    useAgendaBrussels: true,
-    addr: 'Rue du Marché aux Fromages 10, 1000 Brussels',
-    lat: 50.8459, lng: 4.3531,
-    neighbourhood: 'Centre',
-    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
-    tags: ['Electronic', 'Underground', 'Art'],
-    defaultTime: '23:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=UMI',
-      'https://www.agenda.brussels/en/activities?q=UMI',
-      'https://agenda.brussels/en/search?q=UMI',
-    ],
-  },
-  {
-    id: 'signalClub',
-    name: 'Signal Club',
-    useAgendaBrussels: true,
-    addr: 'Rue de la Fourche 49, 1000 Brussels',
-    lat: 50.8487, lng: 4.3536,
-    neighbourhood: 'Centre',
-    emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
-    tags: ['Electronic', 'Underground', 'Dark'],
-    defaultTime: '23:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Signal+Club',
-      'https://agenda.brussels/en/search?q=Signal+Club',
-    ],
-  },
-  {
-    id: 'budaBxl',
-    name: 'BUDA BXL',
-    useAgendaBrussels: true,
-    addr: 'Digue du Canal 98A, 1130 Brussels',
-    lat: 50.9078, lng: 4.4112,
-    neighbourhood: 'Laeken',
-    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
-    tags: ['Club', 'Live Music', 'Nightlife'],
-    defaultTime: '22:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=BUDA+BXL',
-      'https://www.agenda.brussels/en/search?q=BUDA',
-      'https://agenda.brussels/en/search?q=BUDA+BXL',
-    ],
-  },
-  {
-    id: 'madameMoustache',
-    name: 'Madame Moustache',
-    useAgendaBrussels: true,
-    addr: 'Quai au Bois à Brûler 5-7, 1000 Brussels',
-    lat: 50.8514, lng: 4.3489,
-    neighbourhood: 'Centre',
-    emoji: '🎸', color: '#C77DFF', cat: 'Music',
-    tags: ['Live Music', 'Club', 'Nightlife'],
-    defaultTime: '21:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Madame+Moustache',
-      'https://agenda.brussels/en/search?q=Madame+Moustache',
-    ],
-  },
-  {
-    id: 'beursschouwburg',
-    name: 'Beursschouwburg',
-    useAgendaBrussels: true,
-    addr: 'Rue Auguste Orts 20-28, 1000 Brussels',
-    lat: 50.8486, lng: 4.3483,
-    neighbourhood: 'Centre',
-    emoji: '🎭', color: '#F4A261', cat: 'Culture',
-    tags: ['Alt Culture', 'Indie', 'Arts'],
-    defaultTime: '20:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Beursschouwburg',
-      'https://agenda.brussels/en/search?q=Beursschouwburg',
-    ],
-  },
-  {
-    id: 'magasin4',
-    name: 'Magasin 4',
-    useAgendaBrussels: true,
-    addr: "Rue de l'Entrepôt 7, 1020 Brussels",
-    lat: 50.8693, lng: 4.3532,
-    neighbourhood: 'Laeken',
-    emoji: '🎸', color: '#C77DFF', cat: 'Music',
-    tags: ['Punk', 'Indie', 'Alternative', 'Live Music'],
-    defaultTime: '20:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Magasin+4',
-      'https://agenda.brussels/en/search?q=Magasin+4',
-    ],
-  },
-  {
-    id: 'laMachine',
-    name: 'La Machine',
-    useAgendaBrussels: true,
-    addr: 'Place Saint-Géry 2, 1000 Brussels',
-    lat: 50.8483, lng: 4.3473,
-    neighbourhood: 'Centre',
-    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
-    tags: ['Underground', 'Club', 'Live Music'],
-    defaultTime: '22:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=La+Machine',
-      'https://agenda.brussels/en/search?q=La+Machine',
-    ],
-  },
-  {
-    id: 'kanal',
-    name: 'KANAL',
-    useAgendaBrussels: true,
-    addr: 'Avenue du Port 1, 1000 Brussels',
-    lat: 50.8604, lng: 4.3469,
-    neighbourhood: 'Molenbeek',
-    emoji: '🎨', color: '#F4A261', cat: 'Culture',
-    tags: ['Art', 'Culture', 'Events'],
-    defaultTime: '19:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=KANAL',
-      'https://agenda.brussels/en/search?q=KANAL',
-    ],
-  },
-  {
-    id: 'quai20',
-    name: 'Quai 20',
-    useAgendaBrussels: true,
-    addr: 'Quai des Usines 20, 1000 Brussels',
-    lat: 50.8749, lng: 4.3638,
-    neighbourhood: 'Laeken',
-    emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
-    tags: ['Nightclub', 'Clubbing', 'Electronic'],
-    defaultTime: '23:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Quai+20',
-      'https://agenda.brussels/en/search?q=Quai+20',
-    ],
-  },
-  {
-    id: 'kaaitheater',
-    name: 'Kaaitheater',
-    useAgendaBrussels: true,
-    addr: 'Square Sainctelette 20, 1000 Brussels',
-    lat: 50.8588, lng: 4.3475,
-    neighbourhood: 'Molenbeek',
-    emoji: '🎭', color: '#E76F51', cat: 'Culture',
-    tags: ['Performing Arts', 'Experimental', 'Theatre'],
-    defaultTime: '20:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Kaaitheater',
-      'https://agenda.brussels/en/search?q=Kaaitheater',
-    ],
-  },
-  {
-    id: 'flashClub',
-    name: 'Flash Club',
-    useAgendaBrussels: true,
-    addr: 'Rue Duquesnoy 18, 1000 Brussels',
-    lat: 50.8448, lng: 4.3540,
-    neighbourhood: 'Centre',
-    emoji: '⚡', color: '#FF6B9D', cat: 'Nightlife',
-    tags: ['Club', 'Electronic', 'Nightlife'],
-    defaultTime: '23:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Flash+Club',
-      'https://agenda.brussels/en/search?q=Flash+Club',
-    ],
-  },
-  {
-    id: 'birdy',
-    name: 'BIRDY Brussels',
-    useAgendaBrussels: true,
-    addr: 'Boulevard de Waterloo 38, 1000 Brussels',
-    lat: 50.8325, lng: 4.3581,
-    neighbourhood: 'Louise',
-    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
-    tags: ['Club', 'Underground', 'Electronic'],
-    defaultTime: '23:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=BIRDY+Brussels',
-      'https://www.agenda.brussels/en/search?q=BIRDY',
-      'https://agenda.brussels/en/search?q=BIRDY+Brussels',
-    ],
-  },
-  {
-    id: 'settClub',
-    name: 'Sett Club',
-    useAgendaBrussels: true,
-    addr: 'Avenue du Port 86c, 1000 Brussels',
-    lat: 50.8657, lng: 4.3509,
-    neighbourhood: 'Molenbeek',
-    emoji: '⚡', color: '#6C63FF', cat: 'Nightlife',
-    tags: ['Club', 'Electronic', 'Underground'],
-    defaultTime: '23:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Sett+Club',
-      'https://www.agenda.brussels/en/search?q=Sett',
-      'https://agenda.brussels/en/search?q=Sett+Club',
-    ],
-  },
-  {
-    id: 'kvs',
-    name: 'KVS',
-    useAgendaBrussels: true,
-    addr: 'Quai aux Pierres de Taille 7, 1000 Brussels',
-    lat: 50.8552, lng: 4.3512,
-    neighbourhood: 'Centre',
-    emoji: '🎭', color: '#E76F51', cat: 'Culture',
-    tags: ['Theatre', 'Performing Arts', 'Contemporary'],
-    defaultTime: '20:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=KVS',
-      'https://agenda.brussels/en/search?q=KVS',
-    ],
-  },
-  {
-    id: 'jeuxDhiver',
-    name: "Jeux d'Hiver",
-    useAgendaBrussels: true,
-    addr: 'Chemin du Croquet 1, 1000 Brussels',
-    lat: 50.8115, lng: 4.3730,
-    neighbourhood: 'Ixelles',
-    emoji: '🌿', color: '#F4A261', cat: 'Nightlife',
-    tags: ['Club', 'Open Air', 'Electronic'],
-    defaultTime: '22:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      "https://www.agenda.brussels/en/search?q=Jeux+d%27Hiver",
-      'https://www.agenda.brussels/en/search?q=Jeux+Hiver',
-      "https://agenda.brussels/en/search?q=Jeux+d%27Hiver",
-    ],
-  },
+// Adapter: maps a registry entry's declared scrapingStrategy onto the engine's
+// internal routing flags. portal_filter targets are routed by portal host:
+//   agenda.brussels  → Strategy 1.8 (per-venue search parser)
+//   ra.co / shotgun  → Strategy 1.9b (keyword collection stream)
+// ra_club            → Strategy 1.9a (__NEXT_DATA__ club-page parser)
+// direct_url         → full pipeline (JSON-LD → venue parsers → 1.7 → HTML)
+function toEngineConfig(v) {
+  const cfg = {
+    id: v.id,
+    name: v.name,
+    addr: v.masterAddress,
+    lat: v.lat, lng: v.lng,
+    neighbourhood: v.neighbourhood,
+    emoji: v.emoji, color: v.color, cat: v.cat, tags: v.tags,
+    defaultTime: v.defaultTime,
+    urls: [v.targetUrl, ...(v.fallbackUrls || [])],
+    ...(v.jsHeavy ? { jsHeavy: true } : {}),
+    ...(v.enforceVisuals ? { enforceVisuals: true } : {}),
+    ...(v.extraWait ? { extraWait: v.extraWait } : {}),
+    ...(v.waitForSelector ? { waitForSelector: v.waitForSelector } : {}),
+    ...(v.eventSelector ? { eventSelector: v.eventSelector } : {}),
+    ...(v.linkPattern ? { linkPattern: v.linkPattern } : {}),
+    ...(v.portalKeywords ? { portalKeywords: v.portalKeywords } : {}),
+  };
 
-  // ── Resident Advisor Brussels — open-air keyword discovery stream ───────────
-  // Crawls the RA Brussels regional listing and keeps ONLY open-air / festival /
-  // day-party events. Indoor club nights are discarded by keyword filter.
-  {
-    id: 'residentAdvisor',
-    name: 'Resident Advisor Brussels',
-    useResidentAdvisor: true,
-    addr: 'Brussels, Belgium',
-    lat: 50.8503, lng: 4.3517,
-    neighbourhood: 'Various',
-    emoji: '🌿', color: '#F4A261', cat: 'Festival',
-    tags: ['Open Air', 'Electronic', 'Festival'],
-    defaultTime: '14:00',
-    jsHeavy: true,
-    extraWait: 8000,
-    urls: [
-      'https://ra.co/events/be/brussels',
-    ],
-  },
+  switch (v.scrapingStrategy) {
+    case 'ra_club':
+      cfg.useRaClub = true;
+      cfg.jsHeavy = true;
+      break;
+    case 'portal_filter': {
+      let host = '';
+      try { host = new URL(v.targetUrl).host; } catch {}
+      if (host.includes('agenda.brussels')) {
+        cfg.useAgendaBrussels = true;
+      } else {
+        cfg.useResidentAdvisor = true; // RA + Shotgun regional streams share 1.9b
+      }
+      cfg.jsHeavy = true;
+      break;
+    }
+    case 'direct_url':
+    default:
+      break;
+  }
+  return cfg;
+}
 
-  // ── Open-air & outdoor electronic targets ────────────────────────────────────
-  {
-    id: 'circlepark',
-    name: 'Circle Park',
-    useAgendaBrussels: true,
-    addr: 'Rue de Liverpool 2, 1070 Anderlecht, Brussels',
-    lat: 50.8348, lng: 4.3010,   // Anderlecht — HARDCODED
-    neighbourhood: 'Anderlecht',
-    emoji: '🌿', color: '#F4A261', cat: 'Festival',
-    tags: ['Open Air', 'Electronic', 'Day Party', 'Festival'],
-    defaultTime: '14:00',
-    jsHeavy: true, enforceVisuals: true,
-    urls: [
-      'https://www.agenda.brussels/en/search?q=Circle+Park',
-      'https://agenda.brussels/en/search?q=Circle+Park',
-      'https://www.agenda.brussels/en/search?q=Circle+Park+Anderlecht',
-    ],
-  },
-  // Also scrape the RA club page directly — Strategy 1.9a handles /events/ deep-links
-  {
-    id: 'circleparkRa',
-    name: 'Circle Park',
-    useRaClub: true,
-    addr: 'Rue de Liverpool 2, 1070 Anderlecht, Brussels',
-    lat: 50.8348, lng: 4.3010,
-    neighbourhood: 'Anderlecht',
-    emoji: '🌿', color: '#F4A261', cat: 'Festival',
-    tags: ['Open Air', 'Electronic', 'Day Party', 'Festival'],
-    defaultTime: '14:00',
-    jsHeavy: true, enforceVisuals: true,
-    extraWait: 8000,
-    urls: [
-      'https://ra.co/clubs/189275',
-    ],
-  },
-  {
-    id: 'brasserieIllegaal',
-    name: 'Brasserie ILLEGAAL',
-    addr: 'Brussels, Belgium',
-    lat: 50.8503, lng: 4.3517,
-    neighbourhood: 'Various',
-    emoji: '🌿', color: '#B8E5C0', cat: 'Festival',
-    tags: ['Open Air', 'Electronic', 'Day Party', 'Festival'],
-    defaultTime: '14:00',
-    jsHeavy: true,
-    enforceVisuals: true,
-    waitForSelector: '.tribe-events-list, article.type-tribe_events, .tribe-event, .tribe-events, [class*="tribe"]',
-    eventSelector:   'article.type-tribe_events, .tribe-event, [class*="tribe-events-list-event"], article',
-    linkPattern:     /\/event\/|\/events\/|\/tribe_events\//i,
-    urls: [
-      'https://brasserie-illegaal.com/all-events/list/',
-      'https://www.brasserie-illegaal.com/all-events/list/',
-      'https://brasserie-illegaal.com/all-events/',
-      'https://brasserie-illegaal.com',
-    ],
-  },
-];
+const VENUE_CONFIGS = SCRAPER_VENUES.map(toEngineConfig);
 
 // ── Keyword classification ─────────────────────────────────────────────────────
 const KEYWORD_MAP = [
@@ -581,6 +133,13 @@ const EXTERNAL_VENUE_PATTERNS = [
   { re: /recyclart/i,                              name: 'Recyclart Brussels'            },
   { re: /brasserie\s+illegaal/i,                  name: 'Brasserie ILLEGAAL Brussels'   },
   { re: /parc\s+astrid.*anderlecht|anderlecht.*parc/i, name: 'Parc Astrid Anderlecht Brussels' },
+  // Roaming open-air series → their known 2026 sites
+  { re: /piknic\s*electronik|place\s+poelaert/i,   name: 'Place Poelaert Brussels'       },
+  { re: /xrds|parc\s+des\s+[ée]tangs/i,            name: 'Parc des Étangs Anderlecht Brussels' },
+  { re: /play\s+label|place\s+du\s+congr[èe]s/i,   name: 'Place du Congrès Brussels'     },
+  { re: /royal\s+palace|palais\s+royal/i,          name: 'Palais Royal Brussels'         },
+  { re: /brussels\s+beach|bruxelles\s+les\s+bains|hangar\s+beach/i, name: 'Quai des Péniches Brussels' },
+  { re: /lavall[ée]e/i,                            name: 'LaVallée Molenbeek Brussels'   },
 ];
 
 function detectExternalVenue(text) {
@@ -1539,15 +1098,24 @@ async function scrapeVenue(browser, config) {
         }
       }
 
-      // ── Strategy 1.9b: Resident Advisor Brussels — open-air discovery stream ──
-      // Crawls the RA Brussels regional listing and keeps ONLY open-air / festival /
-      // day-party events. Indoor club nights are discarded by keyword gate.
-      // Matched events with a known venue use that venue's metadata; unmatched events
-      // get lat/lng = 0 for the geocoder to resolve from the card's location text.
+      // ── Strategy 1.9b: portal keyword collection stream (RA / Shotgun) ──
+      // Crawls a regional portal feed (ra.co/events/be/brussels, shotgun.live
+      // Brussels techno) and keeps ONLY events matching the registry entry's
+      // portalKeywords — the roaming summer series (Hangar, Piknic Electronik,
+      // XRDS / Fuse Open Air, Play Label) plus generic open-air markers.
+      // Indoor club nights are discarded by the gate. Matched events with a
+      // known venue reuse that venue's metadata; everything else gets
+      // lat/lng = 0 so the geocoder resolves the real site (Atomium, Place
+      // Poelaert, Parc des Étangs, Place du Congrès, …).
       if (config.useResidentAdvisor && events.length === 0) {
-        const OPENAIR_RE = /open[\s-]?air|festival|day[\s-]party|rooftop|garden[\s-]session|day[\s-]to[\s-]night/i;
+        const OPENAIR_RE = (config.portalKeywords && config.portalKeywords.length > 0)
+          ? new RegExp(config.portalKeywords
+              .map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\?[\s-]+/g, '[\\s-]?'))
+              .join('|'), 'i')
+          : /open[\s-]?air|festival|day[\s-]party|rooftop|garden[\s-]session|day[\s-]to[\s-]night/i;
+        const portalOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || 'https://ra.co';
         try {
-          console.log('    Strategy 1.9b (RA Brussels open-air stream)…');
+          console.log(`    Strategy 1.9b (portal keyword stream: ${portalOrigin.replace('https://', '')})…`);
           await sleep(3000);
 
           // Build venue lookup excluding RA/club configs themselves
@@ -1606,9 +1174,10 @@ async function scrapeVenue(browser, config) {
             const relDate = toRelativeDate(rawDate);
             if (!relDate) continue;
 
-            // Strict deep-link: reject bare domain (path must be > 5 chars)
+            // Strict deep-link: relative links resolve against THIS portal's
+            // origin (ra.co or shotgun.live); bare-domain links are rejected.
             const raUrl19b    = item.link.startsWith('http') ? item.link
-              : item.link ? `https://ra.co${item.link}` : '';
+              : item.link ? `${portalOrigin}${item.link}` : '';
             const raPath19b   = raUrl19b.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
             if (!raUrl19b || raPath19b.length < 5) continue;
 
@@ -1630,7 +1199,8 @@ async function scrapeVenue(browser, config) {
               startH: 12, endH: 26,
               emoji: '🌿', color: '#F4A261', cat: 'Festival',
               tags: ['Open Air', 'Electronic', 'Festival'],
-              source: 'Resident Advisor', officialEventLink: raUrl19b,
+              source: portalOrigin.includes('shotgun') ? 'Shotgun' : 'Resident Advisor',
+              officialEventLink: raUrl19b,
               desc: item.allText.slice(0, 200) || `${item.title} — open-air event in Brussels.`,
               neighbourhood: matchedVc ? matchedVc.neighbourhood : 'Various',
               lat: (locationHint19b || !matchedVc) ? 0 : matchedVc.lat,
@@ -1638,9 +1208,9 @@ async function scrapeVenue(browser, config) {
               ...(locationHint19b ? { externalVenueHint: locationHint19b } : {}),
             });
           }
-          console.log(`    RA open-air: ${skippedIndoor} indoor events discarded | ${events.length} open-air kept`);
+          console.log(`    Portal stream: ${skippedIndoor} non-matching events discarded | ${events.length} series/open-air kept`);
         } catch (err) {
-          console.log(`    Strategy 1.9b (RA open-air) failed: ${err.message.slice(0, 80)}`);
+          console.log(`    Strategy 1.9b (portal stream) failed: ${err.message.slice(0, 80)}`);
         }
       }
 
@@ -1983,6 +1553,8 @@ async function main() {
     'circle park':            { emoji: '🌿', color: '#F4A261', cat: 'Festival'  },
     'brasserie illegaal':     { emoji: '🌿', color: '#B8E5C0', cat: 'Festival'  },
     'brussels open air':      { emoji: '🌿', color: '#F4A261', cat: 'Festival'  },
+    'lavallée':               { emoji: '🏭', color: '#6C63FF', cat: 'Nightlife' },
+    'lavallee':               { emoji: '🏭', color: '#6C63FF', cat: 'Nightlife' },
   };
   let emojiFixed = 0;
   existing = existing.map(e => {
@@ -2026,6 +1598,10 @@ async function main() {
 
       const settled = await Promise.allSettled(batch.map(c => scrapeVenueWithTimeout(c)));
 
+      // Graceful fail-catch: a venue that times out or errors (e.g. a promoter
+      // domain blocking requests) is logged with its name + reason, dropped
+      // cleanly, and the queue advances to the next registry target. One dead
+      // site can never halt the run — the batch settles regardless.
       for (let j = 0; j < settled.length; j++) {
         const r = settled[j];
         const config = batch[j];
@@ -2033,8 +1609,9 @@ async function main() {
           results.push({ name: config.name, emoji: config.emoji, count: r.value.length });
           raw = [...raw, ...r.value];
         } else {
-          results.push({ name: config.name, emoji: config.emoji, count: 0, err: r.reason?.message });
-          console.warn(`  ⚠️  ${config.name}: ${r.reason?.message}`);
+          const reason = r.reason?.message || 'unknown error';
+          results.push({ name: config.name, emoji: config.emoji, count: 0, err: reason });
+          console.warn(`  ⚠️  [${config.name}] failed: ${reason} — target dropped, advancing to next registry entry`);
         }
       }
     }

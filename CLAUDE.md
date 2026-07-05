@@ -158,6 +158,26 @@ HomeScreen appends any extra named-month labels found in live event data via `av
 
 Node.js script that populates `src/data/scraped_events.json` with real Brussels events.
 
+### Venue registry (`src/config/scraperVenues.ts`)
+ALL scrape targets live in this typed, append-only registry — the engine imports it
+(`require('./src/config/scraperVenues.ts')`, native Node ≥22.18 type-stripping; GH Actions
+runs Node 24) and routes each entry by `scrapingStrategy`:
+- `'ra_club'` — Resident Advisor club page (`ra.co/clubs/<id>`), e.g. Circle Park
+- `'direct_url'` — venue's own site (full JSON-LD → venue parsers → live-DOM → HTML pipeline),
+  e.g. AB, Fuse, LaVallée (`lavallee.brussels/events/`), Brasserie ILLEGAAL
+- `'portal_filter'` — multi-venue portal, filtered: agenda.brussels search URLs use the
+  per-venue search parser; ra.co / shotgun.live regional feeds use the `portalKeywords`
+  collection model that catches roaming summer series (Hangar, Piknic Electronik,
+  XRDS / Fuse Open Air, Play Label) whose locations resolve per event via
+  `EXTERNAL_VENUE_PATTERNS` (Place Poelaert, Parc des Étangs, Place du Congrès, …)
+
+Schema per entry: `id`, `name`, `scrapingStrategy`, `targetUrl`, `fallbackUrls?`,
+`masterAddress`, exact `lat`/`lng` (0,0 = geocode per event), visual identity fields,
+plus optional tuning (`jsHeavy`, `waitForSelector`, `eventSelector`, `linkPattern`,
+`portalKeywords`). Adding a venue = appending one object — engine code never changes.
+A failed/timed-out target logs `[name] failed: reason — dropped, advancing` and the
+queue continues; one dead site can never halt the run.
+
 ### Sources (7 Brussels venues)
 | Venue | Emoji | Category |
 |---|---|---|
