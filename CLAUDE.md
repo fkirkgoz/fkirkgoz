@@ -165,11 +165,17 @@ runs Node 24) and routes each entry by `scrapingStrategy`:
 - `'ra_club'` — Resident Advisor club page (`ra.co/clubs/<id>`), e.g. Circle Park
 - `'direct_url'` — venue's own site (full JSON-LD → venue parsers → live-DOM → HTML pipeline),
   e.g. AB, Fuse, LaVallée (`lavallee.brussels/events/`), Brasserie ILLEGAAL
-- `'portal_filter'` — multi-venue portal, filtered: agenda.brussels search URLs use the
-  per-venue search parser; ra.co / shotgun.live regional feeds use the `portalKeywords`
-  collection model that catches roaming summer series (Hangar, Piknic Electronik,
-  XRDS / Fuse Open Air, Play Label) whose locations resolve per event via
-  `EXTERNAL_VENUE_PATTERNS` (Place Poelaert, Parc des Étangs, Place du Congrès, …)
+- `'portal_filter'` — multi-venue portal: agenda.brussels search URLs use the per-venue
+  search parser (or, with `genericPortal: true`, a public-event collector where each card
+  keeps its own venue/location — used for open airs, festivals, National Day); the
+  ra.co regional feed is ingested in FULL (no `portalKeywords` = unified agenda capture
+  with venue metadata via `__NEXT_DATA__`); shotgun.live keeps its `portalKeywords` gate.
+  Roaming series (Hangar, Piknic Electronik, XRDS / Fuse Open Air, Play Label) and public
+  landmarks (Cinquantenaire, Grand-Place, Mont des Arts) resolve per event via
+  `EXTERNAL_VENUE_PATTERNS` + geocoder
+- **Description cleaning**: `cleanDesc()`/`decodeHtmlEntities()` strip HTML tags and decode
+  (double-)encoded entities at a single choke point in `main()`; a per-run migration also
+  re-cleans all stored descriptions
 
 Schema per entry: `id`, `name`, `scrapingStrategy`, `targetUrl`, `fallbackUrls?`,
 `masterAddress`, exact `lat`/`lng` (0,0 = geocode per event), visual identity fields,

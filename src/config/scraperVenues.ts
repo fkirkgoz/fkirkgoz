@@ -42,7 +42,12 @@ export interface ScraperVenue {
   waitForSelector?: string;
   eventSelector?: string;
   linkPattern?: RegExp;   // deep-link slug filter for HTML strategies
-  portalKeywords?: string[]; // portal_filter feeds: case-insensitive allowlist
+  portalKeywords?: string[]; // portal_filter feeds: case-insensitive allowlist.
+                             // OMIT on ra.co/shotgun feeds to ingest the FULL
+                             // regional agenda (no keyword gate).
+  genericPortal?: boolean;   // agenda.brussels searches for PUBLIC events (not a
+                             // single venue): each card keeps its own venue/location
+                             // from the page and is classified by its own content
 }
 
 export const SCRAPER_VENUES: ScraperVenue[] = [
@@ -233,11 +238,13 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     linkPattern: /\/event\/|\/events\/|\/tribe_events\//i,
   },
 
-  // ══ Roaming open-air series — portal collection model ════════════════════
-  // These feeds list ALL Brussels events; portalKeywords narrows to the active
-  // summer open-air series. Locations resolve per event (Atomium, Place
-  // Poelaert, Parc des Étangs, Place du Congrès, …) via the engine's
-  // external-venue detector + geocoder, never the promoter's admin address.
+  // ══ Regional portal feeds — collection model ═════════════════════════════
+  // RA master regional agenda: NO portalKeywords = the FULL feed is ingested,
+  // every structural row (title / date / /events/XXXXXX deep-link / venue
+  // metadata). Known venues (Circle Park…) match the registry; roaming series
+  // (Hangar, Piknic Electronik, Play Label…) resolve to their real sites
+  // (Atomium, Place Poelaert, Place du Congrès…) via the engine's
+  // external-venue detector + geocoder — never the promoter's admin address.
   {
     id: 'raBrusselsPortal',
     name: 'Resident Advisor Brussels',
@@ -246,18 +253,12 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     masterAddress: 'Brussels, Belgium',
     lat: 0, lng: 0,
     neighbourhood: 'Various',
-    emoji: '🌿', color: '#F4A261', cat: 'Festival',
-    tags: ['Open Air', 'Electronic', 'Festival'],
-    defaultTime: '14:00',
+    emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife',
+    tags: ['Electronic', 'Club', 'Brussels'],
+    defaultTime: '23:00',
     jsHeavy: true,
     extraWait: 8000,
-    portalKeywords: [
-      'open air', 'open-air', 'openair', 'festival', 'day party', 'day-party',
-      'rooftop', 'garden session', 'day-to-night',
-      'hangar', 'piknic electronik', 'piknic',
-      'xrds', 'fuse open air',
-      'play label',
-    ],
+    // no portalKeywords → unified full-agenda capture
   },
   {
     id: 'shotgunBrussels',
@@ -280,6 +281,70 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
       'xrds', 'fuse open air',
       'play label',
     ],
+  },
+
+  // ══ Public open-airs & national events — agenda.brussels wide net ════════
+  // genericPortal: each result card keeps ITS OWN venue/location from the page
+  // (Cinquantenaire Park, Grand-Place, Bois de la Cambre…) and is classified by
+  // its own content — these are NOT tied to any single venue. Catches major
+  // city events: National Day (July 21) concerts, drone shows & fireworks,
+  // municipal open-airs, park parties, free public festivals.
+  {
+    id: 'agendaOpenAir',
+    name: 'Brussels Open Air',
+    scrapingStrategy: 'portal_filter',
+    genericPortal: true,
+    targetUrl: 'https://www.agenda.brussels/en/search?q=open+air',
+    fallbackUrls: [
+      'https://www.agenda.brussels/en/search?q=openluchtfestival',
+      'https://www.agenda.brussels/en/search?q=plein+air',
+      'https://www.agenda.brussels/en/search?q=park',
+    ],
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: '🌿', color: '#F4A261', cat: 'Festival',
+    tags: ['Open Air', 'Festival', 'Brussels'],
+    defaultTime: '14:00',
+    jsHeavy: true,
+  },
+  {
+    id: 'agendaFestivals',
+    name: 'Brussels Festivals',
+    scrapingStrategy: 'portal_filter',
+    genericPortal: true,
+    targetUrl: 'https://www.agenda.brussels/en/search?q=festival',
+    fallbackUrls: [
+      'https://www.agenda.brussels/en/search?q=concert+gratuit',
+      'https://www.agenda.brussels/en/search?q=free+concert',
+    ],
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: '🌍', color: '#F4A261', cat: 'Festival',
+    tags: ['Festival', 'Music', 'Brussels'],
+    defaultTime: '14:00',
+    jsHeavy: true,
+  },
+  {
+    id: 'agendaNationalDay',
+    name: 'Belgian National Day',
+    scrapingStrategy: 'portal_filter',
+    genericPortal: true,
+    targetUrl: 'https://www.agenda.brussels/en/search?q=national+day',
+    fallbackUrls: [
+      'https://www.agenda.brussels/en/search?q=21+july',
+      'https://www.agenda.brussels/en/search?q=f%C3%AAte+nationale',
+      'https://www.agenda.brussels/en/search?q=Cinquantenaire',
+      'https://www.agenda.brussels/en/search?q=fireworks',
+    ],
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: '🎆', color: '#F4A261', cat: 'Festival',
+    tags: ['National Day', 'Festival', 'Free', 'Brussels'],
+    defaultTime: '12:00',
+    jsHeavy: true,
   },
 
   // ══ Gen-Z venues — collected via agenda.brussels per-venue search ════════

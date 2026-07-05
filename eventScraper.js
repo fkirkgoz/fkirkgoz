@@ -49,6 +49,7 @@ function toEngineConfig(v) {
     ...(v.eventSelector ? { eventSelector: v.eventSelector } : {}),
     ...(v.linkPattern ? { linkPattern: v.linkPattern } : {}),
     ...(v.portalKeywords ? { portalKeywords: v.portalKeywords } : {}),
+    ...(v.genericPortal ? { genericPortal: true } : {}),
   };
 
   switch (v.scrapingStrategy) {
@@ -140,6 +141,12 @@ const EXTERNAL_VENUE_PATTERNS = [
   { re: /royal\s+palace|palais\s+royal/i,          name: 'Palais Royal Brussels'         },
   { re: /brussels\s+beach|bruxelles\s+les\s+bains|hangar\s+beach/i, name: 'Quai des Péniches Brussels' },
   { re: /lavall[ée]e/i,                            name: 'LaVallée Molenbeek Brussels'   },
+  // Public landmarks for national/municipal events (National Day, park parties…)
+  { re: /cinquantenaire|jubelpark/i,               name: 'Parc du Cinquantenaire Brussels' },
+  { re: /grand[\s-]?place|grote\s+markt/i,         name: 'Grand-Place Brussels'          },
+  { re: /mont\s+des\s+arts|kunstberg/i,            name: 'Mont des Arts Brussels'        },
+  { re: /parc\s+royal|parc\s+de\s+bruxelles|warandepark/i, name: 'Parc de Bruxelles Royal Park' },
+  { re: /parc\s+du\s+petit\s+sablon|sablon/i,      name: 'Place du Grand Sablon Brussels' },
 ];
 
 function detectExternalVenue(text) {
@@ -350,6 +357,73 @@ function smartDefaultTime(cat) {
 // ── Other helpers ─────────────────────────────────────────────────────────────
 function clean(s) { return (s||'').replace(/\s+/g,' ').replace(/&amp;/g,'&').replace(/&nbsp;/g,' ').trim(); }
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+// ── Description cleaning module ───────────────────────────────────────────────
+// Event descriptions arrive polluted with raw HTML tags, escaped entities
+// (often DOUBLE-encoded: '&amp;lt;p&amp;gt;' → '&lt;p&gt;' → '<p>'), literal
+// '\n' sequences, and truncation artefacts like '[&hellip;]'. cleanDesc()
+// turns all of that into plain readable prose for the app UI.
+
+const HTML_ENTITIES = {
+  amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ',
+  hellip: '…', mdash: '—', ndash: '–', rsquo: '’', lsquo: '‘',
+  rdquo: '”', ldquo: '“', laquo: '«', raquo: '»',
+  eacute: 'é', egrave: 'è', ecirc: 'ê', agrave: 'à', acirc: 'â',
+  ccedil: 'ç', ocirc: 'ô', ucirc: 'û', ugrave: 'ù', icirc: 'î', iuml: 'ï',
+  euml: 'ë', auml: 'ä', ouml: 'ö', uuml: 'ü', szlig: 'ß',
+  euro: '€', pound: '£', copy: '©', reg: '®', trade: '™',
+  bull: '•', middot: '·', deg: '°', sect: '§', para: '¶',
+};
+
+function decodeHtmlEntities(s) {
+  let out = String(s || '');
+  // Iterate until stable — resolves double/triple-encoded entities
+  // ('&amp;amp;lt;' needs multiple passes to become '<').
+  for (let pass = 0; pass < 4; pass++) {
+    const before = out;
+    out = out
+      // numeric entities: &#8230; and &#x2026;
+      .replace(/&#x([0-9a-f]+);/gi, (_, h) => {
+        try { return String.fromCodePoint(parseInt(h, 16)); } catch { return ''; }
+      })
+      .replace(/&#(\d+);/g, (_, d) => {
+        try { return String.fromCodePoint(parseInt(d, 10)); } catch { return ''; }
+      })
+      // named entities
+      .replace(/&([a-z]+);/gi, (m, name) => {
+        const key = name.toLowerCase();
+        return key in HTML_ENTITIES ? HTML_ENTITIES[key] : m;
+      });
+    if (out === before) break;
+  }
+  return out;
+}
+
+function cleanDesc(s, maxLen = 260) {
+  if (!s) return '';
+  let out = decodeHtmlEntities(String(s));
+  out = out
+    .replace(/<br\s*\/?>/gi, ' ')            // line breaks → spaces
+    .replace(/<\/?(p|div|li|ul|ol|h[1-6]|span|strong|em|b|i|a|img|figure)[^>]*>/gi, ' ')
+    .replace(/<[^>]{0,200}>/g, ' ')          // any remaining tags
+    .replace(/\\n|\\t|\\r/g, ' ')            // literal escape sequences
+    .replace(/\[…\]|\[\.\.\.\]|\(\.\.\.\)/g, '…')  // truncation artefacts
+    .replace(/https?:\/\/\S{30,}/g, '')      // unreadably long raw URLs
+    .replace(/(?:\s*\.?\s*[⋆·˙•˚°✦✧☆★]+\s*\.?\s*)+/g, ' · ')  // decorative mark runs (with stray dots) → single separator
+    .replace(/\b(tickets?|info|link)\s*:\s*(?=[^\w]|·|$)/gi, '')  // orphaned labels after URL removal
+    .replace(/\s+/g, ' ')
+    .replace(/(?:\s*·\s*){2,}/g, ' · ')
+    .trim()
+    .replace(/^[·\s]+|[·\s]+$/g, '');
+  // Trim to maxLen at a word boundary, never mid-word
+  if (out.length > maxLen) {
+    out = out.slice(0, maxLen);
+    const lastSpace = out.lastIndexOf(' ');
+    if (lastSpace > maxLen * 0.6) out = out.slice(0, lastSpace);
+    out = out.replace(/[,;:\-–—·.]?$/, '') + '…';
+  }
+  return out;
+}
 
 function isValidTitle(t) {
   if (!t || t.length < 5 || t.length > 200) return false;
@@ -720,7 +794,7 @@ async function scrapeVenue(browser, config) {
           const baseOrigin = 'https://www.agenda.brussels';
 
           for (const item of agendaItems) {
-            if (events.length >= 30) break; // cap to prevent city-wide bloat
+            if (events.length >= 50) break; // widened cap — more public/city events
             if (!item.title || item.title.length < 5 || !isValidTitle(item.title)) continue;
 
             const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
@@ -932,6 +1006,7 @@ async function scrapeVenue(browser, config) {
           const baseOrigin18 = 'https://www.agenda.brussels';
 
           for (const item of agItems) {
+            if (config.genericPortal && events.length >= 40) break; // bound geocoding load
             if (!isValidTitle(item.title)) continue;
             const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
             if (!rawDate) continue;
@@ -945,12 +1020,40 @@ async function scrapeVenue(browser, config) {
             const urlPath18 = url18.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
             if (urlPath18.length < 5) continue;
 
+            const locationField = (item.location || '').trim().replace(/\n.*/g, '').slice(0, 80);
+
+            if (config.genericPortal) {
+              // ── Generic public-event collector (open airs, festivals, National
+              // Day…): the card's OWN venue/location is the truth — never pin to
+              // the portal config. Landmarks (Cinquantenaire, Grand-Place…) are
+              // detected for geocoding; classification comes from card content.
+              const landmarkHint = detectExternalVenue(`${item.title} ${locationField} ${item.allText}`);
+              let clsG = classify(item.title + ' ' + item.allText);
+              if (clsG.emoji === DEFAULT_CLASS.emoji) {
+                clsG = { emoji: config.emoji, color: config.color, cat: config.cat, tags: config.tags };
+              }
+              const smartG = smartDefaultTime(clsG.cat);
+              const venueG = locationField || (landmarkHint ? landmarkHint.replace(/\s+Brussels$/i, '') : 'Brussels');
+              events.push({
+                _rawDate: rawDate, title: item.title,
+                venue: venueG, addr: `${venueG}, Brussels, Belgium`,
+                date: refineDateLabel(relDate, smartG.startH), time: smartG.time,
+                startH: smartG.startH, endH: smartG.endH,
+                emoji: clsG.emoji, color: clsG.color, cat: clsG.cat, tags: clsG.tags,
+                source: 'Agenda Brussels', officialEventLink: url18,
+                desc: item.allText.slice(0, 260) || `${item.title} in Brussels.`,
+                neighbourhood: 'Various',
+                lat: 0, lng: 0,   // always geocode the card's real location
+                ...(landmarkHint ? { externalVenueHint: landmarkHint } : {}),
+              });
+              continue;
+            }
+
             const cls18   = classifyForVenue(item.title + ' ' + item.allText, config);
             const smart18 = smartDefaultTime(cls18.cat);
 
             // If the card has an explicit location different from the venue's own address,
             // set lat/lng = 0 so main() geocodes the actual event location.
-            const locationField = (item.location || '').trim();
             const useVenueCoords = !locationField ||
               locationField.toLowerCase().includes(config.name.toLowerCase()) ||
               locationField.toLowerCase() === 'brussels';
@@ -1098,27 +1201,41 @@ async function scrapeVenue(browser, config) {
         }
       }
 
-      // ── Strategy 1.9b: portal keyword collection stream (RA / Shotgun) ──
-      // Crawls a regional portal feed (ra.co/events/be/brussels, shotgun.live
-      // Brussels techno) and keeps ONLY events matching the registry entry's
-      // portalKeywords — the roaming summer series (Hangar, Piknic Electronik,
-      // XRDS / Fuse Open Air, Play Label) plus generic open-air markers.
-      // Indoor club nights are discarded by the gate. Matched events with a
-      // known venue reuse that venue's metadata; everything else gets
-      // lat/lng = 0 so the geocoder resolves the real site (Atomium, Place
-      // Poelaert, Parc des Étangs, Place du Congrès, …).
+      // ── Strategy 1.9b: unified regional agenda stream (RA / Shotgun) ──
+      // Scrapes the master regional calendar (ra.co/events/be/brussels or
+      // shotgun.live Brussels) and captures EVERY structural event row:
+      // verified title, correct ISO date, deep-linked /events/XXXXXX path, and
+      // the venue name/location metadata attached to the row.
+      //
+      // Tier 1 walks RA's __NEXT_DATA__ GraphQL payload (Event objects carry
+      // venue.name — immune to CSS churn); Tier 2 falls back to DOM rows.
+      //
+      // Venue names are cross-referenced against (1) our venue registry — known
+      // venues like Circle Park reuse their exact coords/identity — and
+      // (2) EXTERNAL_VENUE_PATTERNS, so roaming series (Hangar, Piknic
+      // Electronik, Play Label…) drop markers at their REAL sites (Atomium,
+      // Place Poelaert, Place du Congrès…). Everything else keeps its scraped
+      // venue name with lat/lng = 0 → the geocoder resolves it in main().
+      //
+      // If the registry entry defines portalKeywords they act as a filter gate
+      // (Shotgun techno feed); with no keywords the FULL agenda is ingested (RA).
       if (config.useResidentAdvisor && events.length === 0) {
-        const OPENAIR_RE = (config.portalKeywords && config.portalKeywords.length > 0)
+        const KEYWORD_GATE = (config.portalKeywords && config.portalKeywords.length > 0)
           ? new RegExp(config.portalKeywords
               .map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\\?[\s-]+/g, '[\\s-]?'))
               .join('|'), 'i')
-          : /open[\s-]?air|festival|day[\s-]party|rooftop|garden[\s-]session|day[\s-]to[\s-]night/i;
+          : null; // no gate — capture the whole regional agenda
         const portalOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || 'https://ra.co';
+        const MAX_PORTAL_EVENTS = 60;
         try {
-          console.log(`    Strategy 1.9b (portal keyword stream: ${portalOrigin.replace('https://', '')})…`);
-          await sleep(3000);
+          console.log(`    Strategy 1.9b (regional agenda: ${portalOrigin.replace('https://', '')})${KEYWORD_GATE ? ' [keyword-gated]' : ' [full feed]'}…`);
+          // Extra scroll passes: regional feeds lazy-load rows per day as you scroll
+          for (let s = 0; s < 4; s++) {
+            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+            await sleep(1200);
+          }
 
-          // Build venue lookup excluding RA/club configs themselves
+          // Venue lookup for cross-referencing row metadata (registry names)
           const VENUE_LOOKUP = {};
           for (const vc of VENUE_CONFIGS) {
             if (!vc.useResidentAdvisor && !vc.useRaClub) {
@@ -1127,6 +1244,38 @@ async function scrapeVenue(browser, config) {
           }
 
           const raItems = await page.evaluate(() => {
+            const results = [];
+            const seen = new Set();
+
+            // ── Tier 1: __NEXT_DATA__ GraphQL payload — full event rows with venue metadata ──
+            try {
+              const rawJson = document.getElementById('__NEXT_DATA__')?.textContent;
+              if (rawJson) {
+                const walk = (node) => {
+                  if (!node || typeof node !== 'object') return;
+                  if (Array.isArray(node)) { node.forEach(walk); return; }
+                  const url = node.contentUrl || node.contentURL || '';
+                  const isEvent = node.__typename === 'Event' ||
+                    (typeof url === 'string' && /^\/events\/\d+/.test(url) && node.title);
+                  if (isEvent && node.title && url && !seen.has(url)) {
+                    seen.add(url);
+                    results.push({
+                      title:     String(node.title).trim(),
+                      dateStr:   node.date || node.startTime || node.startDate || '',
+                      venueName: (node.venue && node.venue.name) ? String(node.venue.name).trim() : '',
+                      allText:   [node.title, node.venue && node.venue.name].filter(Boolean).join(' '),
+                      link:      url.split('?')[0],
+                      fromNextData: true,
+                    });
+                  }
+                  for (const k of Object.keys(node)) walk(node[k]);
+                };
+                walk(JSON.parse(rawJson));
+              }
+            } catch {}
+            if (results.length > 0) return results;
+
+            // ── Tier 2: DOM rows fallback ──
             const selectors = [
               '[data-testid*="event"]',
               '[class*="event-tile"]', '[class*="eventTile"]',
@@ -1138,33 +1287,39 @@ async function scrapeVenue(browser, config) {
               try {
                 const els = [...document.querySelectorAll(sel)].filter(el => {
                   const t = (el.innerText || '').trim();
-                  return t.length > 20 && t.length < 600;
+                  return t.length > 20 && t.length < 600 && el.querySelector('a[href*="/events/"]');
                 });
                 if (els.length > best.length) best = els;
               } catch {}
             }
-            return best.slice(0, 100).map(el => {
+            return best.slice(0, 120).map(el => {
               const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"],[class*="heading"]');
               const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
+              // Venue metadata: RA rows link the venue via /clubs/…
+              const venueA = el.querySelector('a[href*="/clubs/"]');
               const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
-              // Strict: prefer /events/ deep-link; reject bare-domain fallback
-              const link = el.querySelector('a[href*="/events/"]')?.href
-                        || el.querySelector('a[href]')?.href || '';
               return {
-                title:   (h?.innerText || '').replace(/\s+/g, ' ').trim(),
-                dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
-                allText, link,
+                title:     (h?.innerText || '').replace(/\s+/g, ' ').trim(),
+                dateStr:   dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+                venueName: (venueA?.innerText || '').replace(/\s+/g, ' ').trim(),
+                allText,
+                link:      el.querySelector('a[href*="/events/"]')?.href || '',
+                fromNextData: false,
               };
             }).filter(item => item.title && item.title.length > 3);
           });
 
-          console.log(`    RA Brussels: ${raItems.length} total card(s) — applying open-air filter…`);
-          let skippedIndoor = 0;
+          const viaPayload = raItems.filter(i => i.fromNextData).length;
+          console.log(`    Regional agenda: ${raItems.length} row(s) captured (${viaPayload} via __NEXT_DATA__)`);
+          let skippedGate = 0;
 
           for (const item of raItems) {
-            // ── Open-air keyword gate: discard indoor club nights ──
-            if (!OPENAIR_RE.test(item.title) && !OPENAIR_RE.test(item.allText)) {
-              skippedIndoor++;
+            if (events.length >= MAX_PORTAL_EVENTS) break;
+
+            // Optional keyword gate (Shotgun) — RA full feed passes everything
+            if (KEYWORD_GATE && !KEYWORD_GATE.test(item.title) &&
+                !KEYWORD_GATE.test(item.venueName) && !KEYWORD_GATE.test(item.allText)) {
+              skippedGate++;
               continue;
             }
 
@@ -1174,43 +1329,54 @@ async function scrapeVenue(browser, config) {
             const relDate = toRelativeDate(rawDate);
             if (!relDate) continue;
 
-            // Strict deep-link: relative links resolve against THIS portal's
-            // origin (ra.co or shotgun.live); bare-domain links are rejected.
-            const raUrl19b    = item.link.startsWith('http') ? item.link
+            // Strict deep-link against THIS portal's origin; bare domains rejected
+            const raUrl19b  = item.link.startsWith('http') ? item.link
               : item.link ? `${portalOrigin}${item.link}` : '';
-            const raPath19b   = raUrl19b.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
+            const raPath19b = raUrl19b.replace(/^https?:\/\/[^/]+/, '').replace(/\/+$/, '');
             if (!raUrl19b || raPath19b.length < 5) continue;
 
-            // Optional venue match for known Gen-Z venues
+            // ── Cross-reference venue metadata ──
+            // 1. Known registry venue → exact coords + identity
+            const metaText = `${item.venueName} ${item.title} ${item.allText}`.toLowerCase();
             let matchedVc = null;
-            const lowerText = item.allText.toLowerCase();
             for (const [vname, vc] of Object.entries(VENUE_LOOKUP)) {
-              if (vname.length > 2 && lowerText.includes(vname)) { matchedVc = vc; break; }
+              if (vname.length > 2 && metaText.includes(vname)) { matchedVc = vc; break; }
             }
+            // 2. Roaming series / landmark → real site via geocoder
+            const locationHint19b = detectExternalVenue(`${item.venueName} ${item.title} ${item.allText}`);
 
-            // Location sanity: named outdoor location → geocode instead of admin address
-            const locationHint19b = detectExternalVenue(item.allText);
+            // Classification: real content-based visuals; RA is an electronic
+            // music platform, so unclassified rows default to Nightlife.
+            let cls = classify(item.title + ' ' + item.venueName);
+            if (cls.emoji === DEFAULT_CLASS.emoji) {
+              cls = locationHint19b || /open[\s-]?air|festival/i.test(item.title)
+                ? { emoji: '🌿', color: '#F4A261', cat: 'Festival', tags: ['Open Air', 'Electronic', 'Festival'] }
+                : { emoji: '⚡', color: '#7B2FBE', cat: 'Nightlife', tags: ['Electronic', 'Club'] };
+            }
+            const smart19b = smartDefaultTime(cls.cat);
+
+            const venueName = matchedVc ? matchedVc.name
+              : (item.venueName || (locationHint19b ? locationHint19b.replace(/\s+Brussels$/i, '') : 'Brussels'));
 
             events.push({
               _rawDate: rawDate, title: item.title,
-              venue:  matchedVc ? matchedVc.name : 'Brussels Open Air',
-              addr:   matchedVc ? matchedVc.addr : 'Brussels, Belgium',
-              date: refineDateLabel(relDate, 12), time: '12:00',
-              startH: 12, endH: 26,
-              emoji: '🌿', color: '#F4A261', cat: 'Festival',
-              tags: ['Open Air', 'Electronic', 'Festival'],
+              venue: venueName,
+              addr:  matchedVc ? matchedVc.addr : `${venueName}, Brussels, Belgium`,
+              date: refineDateLabel(relDate, smart19b.startH), time: smart19b.time,
+              startH: smart19b.startH, endH: smart19b.endH,
+              emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
               source: portalOrigin.includes('shotgun') ? 'Shotgun' : 'Resident Advisor',
               officialEventLink: raUrl19b,
-              desc: item.allText.slice(0, 200) || `${item.title} — open-air event in Brussels.`,
+              desc: item.allText.slice(0, 260) || `${item.title} at ${venueName}.`,
               neighbourhood: matchedVc ? matchedVc.neighbourhood : 'Various',
               lat: (locationHint19b || !matchedVc) ? 0 : matchedVc.lat,
               lng: (locationHint19b || !matchedVc) ? 0 : matchedVc.lng,
               ...(locationHint19b ? { externalVenueHint: locationHint19b } : {}),
             });
           }
-          console.log(`    Portal stream: ${skippedIndoor} non-matching events discarded | ${events.length} series/open-air kept`);
+          console.log(`    Regional agenda → ${events.length} event(s) ingested${KEYWORD_GATE ? ` | ${skippedGate} gated out` : ''}`);
         } catch (err) {
-          console.log(`    Strategy 1.9b (portal stream) failed: ${err.message.slice(0, 80)}`);
+          console.log(`    Strategy 1.9b (regional agenda) failed: ${err.message.slice(0, 80)}`);
         }
       }
 
@@ -1492,6 +1658,17 @@ async function main() {
   });
   if (socialStripped) console.log(`🧼  Stripped simulated social fields from ${socialStripped} event(s)`);
 
+  // Re-clean ALL stored descriptions on every run — fixes historical events that
+  // were saved with raw HTML entities ('&lt;p&gt;', '[&hellip;]', literal '\n')
+  // before the description cleaning module existed.
+  let descsFixed = 0;
+  existing = existing.map(e => {
+    const cleaned = cleanDesc(e.desc);
+    if (cleaned !== e.desc) { descsFixed++; return { ...e, desc: cleaned }; }
+    return e;
+  });
+  if (descsFixed) console.log(`📝  Re-cleaned ${descsFixed} stored description(s) (HTML entities/tags stripped)`);
+
   // Refresh date labels from _rawDate — prevents stale 'Tonight'/'Ongoing' labels
   let relabelled = 0;
   existing = existing.map(e => {
@@ -1641,6 +1818,10 @@ async function main() {
   let added = 0;
 
   for (const r of raw) {
+    // Single choke point: every incoming description is decoded + stripped here,
+    // regardless of which strategy produced it.
+    r.desc = cleanDesc(r.desc) || `${r.title} at ${r.venue}.`;
+
     if (smartMerge(existing, r)) continue;
 
     // Smart venue override: external location mentioned in event text takes priority
