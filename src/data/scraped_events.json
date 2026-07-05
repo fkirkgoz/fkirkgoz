@@ -1260,7 +1260,7 @@
     "lat": 50.8365,
     "lng": 4.3435,
     "neighbourhood": "Marolles",
-    "desc": "XRDS festival 2026: Friday at Fuse.",
+    "desc": "Fri 14 August — Sat 15 August XRDS festival 2026 FestivalFuse View more",
     "_rawDate": "2026-08-14"
   },
   {
@@ -3874,5 +3874,149 @@
     "neighbourhood": "Molenbeek",
     "desc": "Inspired by artists such as H.E.R., SZA, Jazmine Sullivan, Alicia Keys and Jhené Aiko, Joël approaches music as both a vocal and emotional exploration. Her songwriting reflects on vulnerability, love and personal growth, inviting listeners into stories that…",
     "_rawDate": "2026-08-22"
+  },
+  {
+    "id": 580,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Festival Théâtres Nomades 2026",
+    "venue": "Bois de la Cambre : Carrefour des Attelages",
+    "addr": "Bois de la Cambre : Carrefour des Attelages, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Theatres-Nomades-2026.5700022234",
+    "lat": 50.85222811762393,
+    "lng": 4.362409029378253,
+    "neighbourhood": "Centre",
+    "desc": "Thu 13 August — Sun 16 August Festival Théâtres Nomades 2026 Free FestivalBois de la Cambre : Carrefour des Attelages View more",
+    "_rawDate": "2026-08-13"
+  },
+  {
+    "id": 581,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Brigittines Summer Festival",
+    "venue": "Les Brigittines",
+    "addr": "Les Brigittines, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brigittines-Summer-Festival.5700021266",
+    "lat": 50.8407084,
+    "lng": 4.3488838,
+    "neighbourhood": "Centre",
+    "desc": "Fri 14 August — Sat 29 August Brigittines Summer Festival FestivalLes Brigittines View more",
+    "_rawDate": "2026-08-14"
+  },
+  {
+    "id": 582,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Hide & Seek Festival 2026",
+    "venue": "Muziekpublique",
+    "addr": "Muziekpublique, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Hide-and-Seek-Festival-2026.5700023971",
+    "lat": 50.833538531879945,
+    "lng": 4.350588972565799,
+    "neighbourhood": "Centre",
+    "desc": "Mon 17 August — Sat 22 August Hide & Seek Festival 2026 €22 FestivalMuziekpublique View more",
+    "_rawDate": "2026-08-17"
+  },
+  {
+    "id": 583,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Plazey 26",
+    "venue": "Elisabeth Park",
+    "addr": "Elisabeth Park, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Plazey-26.592468",
+    "lat": 50.8650249,
+    "lng": 4.3244782,
+    "neighbourhood": "Centre",
+    "desc": "Fri 28 August — Sun 30 August Plazey 26 Free AnimationsElisabeth Park View more",
+    "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 584,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Fiesta Latina - 25th anniversary",
+    "venue": "Cinquantenaire Park",
+    "addr": "Cinquantenaire Park, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Fiesta-Latina-25th-anniversary.5700023976",
+    "lat": 50.8410369,
+    "lng": 4.3934924,
+    "neighbourhood": "Centre",
+    "desc": "Fri 28 August — Sun 30 August Fiesta Latina - 25th anniversary FestivalCinquantenaire Park View more",
+    "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 585,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Forest Sounds 2026",
+    "venue": "Abbaye de Forest",
+    "addr": "Abbaye de Forest, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Forest-Sounds-2026.5700021953",
+    "lat": 50.8109719,
+    "lng": 4.3168244,
+    "neighbourhood": "Centre",
+    "desc": "Fri 28 August — Sat 29 August Forest Sounds 2026 FestivalAbbaye de Forest View more",
+    "_rawDate": "2026-08-28"
   }
 ]
