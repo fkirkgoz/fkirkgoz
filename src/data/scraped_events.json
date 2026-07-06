@@ -2148,7 +2148,7 @@
   {
     "id": 479,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "New date: Ghinzu",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2860,30 +2860,6 @@
     "_rawDate": "2026-08-01"
   },
   {
-    "id": 534,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "The Substance - Coralie Fargeat",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Food",
-      "Social"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/substance-coralie-fargeat",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-07-05"
-  },
-  {
     "id": 535,
     "cat": "Culture",
     "date": "Next Month",
@@ -2934,7 +2910,7 @@
   {
     "id": 538,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "July 26",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2959,7 +2935,7 @@
   {
     "id": 539,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Alleen Verbeelding",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
