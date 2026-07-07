@@ -51,7 +51,7 @@
   {
     "id": 164,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ELENA ROSE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -2148,7 +2148,7 @@
   {
     "id": 479,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "New date: Ghinzu",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2788,7 +2788,7 @@
   {
     "id": 530,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Bruxellons!",
     "venue": "Festival Bruxellons! Au Château du Karreveld",
     "addr": "Festival Bruxellons! Au Château du Karreveld, Belgium",
@@ -2910,7 +2910,7 @@
   {
     "id": 538,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "July 26",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2935,7 +2935,7 @@
   {
     "id": 539,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Alleen Verbeelding",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -3282,7 +3282,7 @@
   {
     "id": 554,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Mind of a Serial Killer : The Experience",
     "venue": "Tour & Taxis",
     "addr": "Tour & Taxis, Belgium",
