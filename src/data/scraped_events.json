@@ -51,7 +51,7 @@
   {
     "id": 164,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "ELENA ROSE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -2146,30 +2146,6 @@
     "_rawDate": "2026-11-20"
   },
   {
-    "id": 479,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "New date: Ghinzu",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/new-date-ghinzu/a10Qw00000FjG4qIAF",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "'The Wowa Spring Tour'",
-    "_rawDate": "2026-07-07"
-  },
-  {
     "id": 482,
     "cat": "Music",
     "date": "November",
@@ -2788,7 +2764,7 @@
   {
     "id": 530,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Bruxellons!",
     "venue": "Festival Bruxellons! Au Château du Karreveld",
     "addr": "Festival Bruxellons! Au Château du Karreveld, Belgium",
@@ -2856,7 +2832,7 @@
     "lat": 50.8365,
     "lng": 4.3435,
     "neighbourhood": "Marolles",
-    "desc": "Fuse presents: RSO Berlin w/ JKS & Laure Croft at Fuse.",
+    "desc": "Fuse presents: RSO YEAR FIVE TOUR w/ JKS & Laure Croft at Fuse.",
     "_rawDate": "2026-08-01"
   },
   {
@@ -2906,56 +2882,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-08-01"
-  },
-  {
-    "id": 538,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "July 26",
-    "venue": "KVS",
-    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Theatre",
-      "Performing Arts",
-      "Contemporary"
-    ],
-    "source": "KVS",
-    "officialEventLink": "https://www.kvs.be/en/Event/alleen-verbeelding",
-    "lat": 50.8552,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "07.07.26 ― 04.04.27 Alleen Verbeelding Michael De Cock / KVS",
-    "_rawDate": "2026-07-07"
-  },
-  {
-    "id": 539,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Alleen Verbeelding",
-    "venue": "KVS",
-    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Theatre",
-      "Performing Arts",
-      "Contemporary"
-    ],
-    "source": "KVS",
-    "officialEventLink": "https://www.kvs.be/en/Event/alleen-verbeelding",
-    "lat": 50.8552,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "07.07.26 ― 04.04.27 Alleen Verbeelding Michael De Cock / KVS",
-    "_rawDate": "2026-07-07"
   },
   {
     "id": 540,
@@ -3306,7 +3232,7 @@
   {
     "id": 555,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Detours Festival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -3750,7 +3676,7 @@
   {
     "id": 576,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "PLATINE &#8211; Summer Residency !",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3994,5 +3920,77 @@
     "neighbourhood": "Centre",
     "desc": "Fri 28 August — Sat 29 August Forest Sounds 2026 FestivalAbbaye de Forest View more",
     "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 586,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Our Land (Nuestra tierra) - Lucrecia Martel",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/our-land-nuestra-tierra-lucrecia-martel",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-07-24"
+  },
+  {
+    "id": 587,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "If I had Legs I'd Kick You - Mary Bronstein",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/if-i-had-legs-id-kick-you-mary-bronstein",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-07-19"
+  },
+  {
+    "id": 588,
+    "cat": "Culture",
+    "date": "September",
+    "title": "Het TheaterFestival",
+    "venue": "Various locations in the Brussels Capital Region",
+    "addr": "Various locations in the Brussels Capital Region, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎭",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Het-TheaterFestival.5700023675",
+    "lat": 50.83741855811976,
+    "lng": 4.332719754123646,
+    "neighbourhood": "Centre",
+    "desc": "Wed 02 September — Sat 12 September Het TheaterFestival FestivalVarious locations in the Brussels Capital Region View more",
+    "_rawDate": "2026-09-02"
   }
 ]
