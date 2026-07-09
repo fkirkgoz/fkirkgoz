@@ -49,30 +49,6 @@
     "_rawDate": "2026-09-09"
   },
   {
-    "id": 164,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "ELENA ROSE",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/elena-rose/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "ELENA ROSE at La Madeleine.",
-    "_rawDate": "2026-07-08"
-  },
-  {
     "id": 165,
     "cat": "Music",
     "date": "September",
@@ -2224,7 +2200,7 @@
   {
     "id": 489,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Showcase Artist in Residence: All-Turn",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2762,30 +2738,6 @@
     "_rawDate": "2026-11-22"
   },
   {
-    "id": 530,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Bruxellons!",
-    "venue": "Festival Bruxellons! Au Château du Karreveld",
-    "addr": "Festival Bruxellons! Au Château du Karreveld, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🌍",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Bruxellons.5700022157",
-    "lat": 50.853326582742895,
-    "lng": 4.371448289591909,
-    "neighbourhood": "Centre",
-    "desc": "Wed 08 July — Sun 27 September Bruxellons! FestivalFestival Bruxellons! Au Château du Karreveld View more",
-    "_rawDate": "2026-07-08"
-  },
-  {
     "id": 532,
     "cat": "Culture",
     "date": "October",
@@ -3256,7 +3208,7 @@
   {
     "id": 559,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Mosfet Club — Swamp Night",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3931,8 +3883,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Art",
       "Culture"
@@ -3947,7 +3899,7 @@
   },
   {
     "id": 587,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "If I had Legs I'd Kick You - Mary Bronstein",
     "venue": "Bozar",
@@ -3955,8 +3907,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3992,5 +3944,53 @@
     "neighbourhood": "Centre",
     "desc": "Wed 02 September — Sat 12 September Het TheaterFestival FestivalVarious locations in the Brussels Capital Region View more",
     "_rawDate": "2026-09-02"
+  },
+  {
+    "id": 589,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Rosalie - Stephanie Di Giusto",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/rosalie-stephanie-di-giusto",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-07-26"
+  },
+  {
+    "id": 590,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Brussels Games Festival 2026",
+    "venue": "The Egg",
+    "addr": "The Egg, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🌍",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Games-Festival-2026.5700024757",
+    "lat": 50.8331413,
+    "lng": 4.3269749,
+    "neighbourhood": "Centre",
+    "desc": "Fri 28 August — Sun 30 August Brussels Games Festival 2026 €7 Fairs and showsThe Egg View more",
+    "_rawDate": "2026-08-28"
   }
 ]
