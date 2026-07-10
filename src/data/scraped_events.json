@@ -1192,7 +1192,7 @@
   {
     "id": 355,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: Mac Declos (all night long)",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1900,7 +1900,7 @@
   {
     "id": 419,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "C12 Nite - 11/07",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2200,7 +2200,7 @@
   {
     "id": 489,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Showcase Artist in Residence: All-Turn",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2322,7 +2322,7 @@
   {
     "id": 497,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Floris Francis Arthur (Band)",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2667,7 +2667,7 @@
   {
     "id": 525,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "De Kleine Boterhammen presenteert Floris Francis Arthur (Band)",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -3088,7 +3088,7 @@
   {
     "id": 551,
     "cat": "Sports",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Beau Vélo de RAVeL : étape ixelloise",
     "venue": "Commune d'Ixelles",
     "addr": "Commune d'Ixelles, Belgium",
@@ -3112,7 +3112,7 @@
   {
     "id": 552,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Cameristica Festival 2026",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -3136,7 +3136,7 @@
   {
     "id": 553,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Festival Afrodisiac",
     "venue": "Bois de la Cambre : Carrefour des Attelages",
     "addr": "Bois de la Cambre : Carrefour des Attelages, Belgium",
@@ -3208,7 +3208,7 @@
   {
     "id": 559,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Mosfet Club — Swamp Night",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3234,7 +3234,7 @@
   {
     "id": 560,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "GLOBAAL ILLEGAAL PRESENTS: LA KZ Colombian Picó soundsystem party w/ concerts, DJ sets &#038; food",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3654,7 +3654,7 @@
   {
     "id": 577,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "ARTISJOK x MICROWAVE x PLATINE",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3947,7 +3947,7 @@
   },
   {
     "id": 589,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Rosalie - Stephanie Di Giusto",
     "venue": "Bozar",
@@ -3955,8 +3955,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3992,5 +3992,29 @@
     "neighbourhood": "Centre",
     "desc": "Fri 28 August — Sun 30 August Brussels Games Festival 2026 €7 Fairs and showsThe Egg View more",
     "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 591,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Le Chant des Forêts - Vincent Munier",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/le-chant-des-forets-vincent-munier-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-08-30"
   }
 ]
