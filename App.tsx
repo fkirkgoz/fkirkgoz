@@ -68,6 +68,7 @@ function TabIcon({ name, focused }: { name: string; focused: boolean; color: str
 function TabNavigator({
   T, myEvents, onEventPress, onSettings, onOpenFriends,
   user, avatar, onAvatarChange, profileData, onProfileUpdate, onUserUpdate, locale,
+  dateFilter, onDateFilterChange,
 }: {
   T: Theme;
   myEvents: Event[];
@@ -81,6 +82,8 @@ function TabNavigator({
   onProfileUpdate: (d: { email: string; phone: string }) => void;
   onUserUpdate: (updates: Partial<AuthUser>) => void;
   locale: Locale;
+  dateFilter: string | null;
+  onDateFilterChange: (iso: string | null) => void;
 }) {
   return (
     <Tab.Navigator
@@ -110,11 +113,20 @@ function TabNavigator({
             locale={locale}
             user={user}
             onOpenFriends={onOpenFriends}
+            dateFilter={dateFilter}
+            onDateFilterChange={onDateFilterChange}
           />
         )}
       </Tab.Screen>
       <Tab.Screen name="Map" options={{ tabBarLabel: t('tab.map', locale) }}>
-        {() => <MapScreen onEventPress={onEventPress} T={T} />}
+        {() => (
+          <MapScreen
+            onEventPress={onEventPress}
+            T={T}
+            dateFilter={dateFilter}
+            onClearDateFilter={() => onDateFilterChange(null)}
+          />
+        )}
       </Tab.Screen>
       <Tab.Screen name="Now" options={{ tabBarLabel: t('tab.now', locale) }}>
         {() => <NowScreen onEventPress={onEventPress} T={T} />}
@@ -148,6 +160,7 @@ export default function App() {
   const [isDark,       setIsDark]       = useState(false);
   const [locale,       setLocale]       = useState<Locale>('en');
   const [joinedEvents, setJoinedEvents] = useState<number[]>([]);
+  const [dateFilter,   setDateFilter]   = useState<string | null>(null);
 
   const T        = useMemo(() => makeTheme(isDark), [isDark]);
   const myEvents = useMemo(() => EVENTS.filter(e => joinedEvents.includes(e.id)), [joinedEvents]);
@@ -252,6 +265,8 @@ export default function App() {
                 onProfileUpdate={setProfileData}
                 onUserUpdate={handleUserUpdate}
                 locale={locale}
+                dateFilter={dateFilter}
+                onDateFilterChange={setDateFilter}
               />
             )}
           </Stack.Screen>

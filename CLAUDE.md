@@ -233,7 +233,11 @@ Removes events where:
 - `_rawDate` year ≥ 2027 — year-inference overreach
 
 ### Geocoding
-Nominatim (OpenStreetMap) with `"Venue Name + Brussels, Belgium"` query. 1200ms delay between calls to respect rate limits. Falls back to randomised Brussels centre coords if geocoding fails.
+- **Landmark overrides** (`LANDMARK_OVERRIDES`) run FIRST: events whose venue/addr/desc match a known Brussels green space or public site (Bois de la Cambre, Cinquantenaire, Parc de Bruxelles/Warandepark, Osseghem, Atomium, Poelaert, Congrès, Grand-Place, Parc des Étangs, Tour & Taxis…) are anchored onto exact hardcoded coords, bypassing the API. This fixes Nominatim mis-hits like "Bois de la Cambre : Carrefour des Attelages" landing near Bassin Vergote. A per-run migration snaps stored events too.
+- Otherwise Nominatim (OpenStreetMap): the query is sanitized (sub-location suffixes after `:`/`–`/`-` stripped), constrained to `countrycodes=be`, and results outside the Brussels-Capital bounding box (50.76–50.92 N, 4.24–4.48 E) are rejected. 1200ms delay between calls. Fallback is deterministic Grand-Place centre (no random scatter).
+
+### Frontend single-date filter (`src/components/DateFilterModal.tsx`)
+Self-contained month-grid calendar modal (no external dep). `dateFilter: string | null` (ISO) lives in `App.tsx` and is passed to both HomeScreen and MapScreen. `eventMatchesDate(e, iso)` / `availableEventDates()` in `events.ts` drive matching (respects `_rawDate`..`_endDate` windows). Home shows a 📅 header button + active-filter badge; Map filters markers with its own clear badge + empty state.
 
 ---
 

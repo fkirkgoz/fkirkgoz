@@ -5,12 +5,19 @@ import {
 } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Event, EVENTS } from '../data/events';
+import { Event, EVENTS, eventMatchesDate } from '../data/events';
 import { Theme, C } from '../constants/theme';
+
+function prettyISO(iso: string): string {
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+}
 
 interface Props {
   onEventPress: (e: Event) => void;
   T: Theme;
+  dateFilter?: string | null;
+  onClearDateFilter?: () => void;
 }
 
 type VenueGroup = {
@@ -42,12 +49,20 @@ function groupEvents(events: Event[]): VenueGroup[] {
   return groups;
 }
 
-export default function MapScreen({ onEventPress, T }: Props) {
+export default function MapScreen({ onEventPress, T, dateFilter = null, onClearDateFilter }: Props) {
   const insets = useSafeAreaInsets();
   const [sheet, setSheet] = useState<VenueGroup | null>(null);
 
-  const groups      = useMemo(() => groupEvents(EVENTS), []);
+  // Map markers respect the same single-date filter as the Home feed
+  const visibleEvents = useMemo(
+    () => dateFilter ? EVENTS.filter(e => eventMatchesDate(e, dateFilter)) : EVENTS,
+    [dateFilter],
+  );
+  const groups      = useMemo(() => groupEvents(visibleEvents), [visibleEvents]);
   const mappedCount = useMemo(() => groups.reduce((s, g) => s + g.events.length, 0), [groups]);
+
+  // Close any open venue sheet when the filter changes (its events may vanish)
+  React.useEffect(() => { setSheet(null); }, [dateFilter]);
 
   const onMarkerPress = (group: VenueGroup) => {
     if (group.events.length === 1) {
@@ -97,7 +112,30 @@ export default function MapScreen({ onEventPress, T }: Props) {
         <Text style={[styles.headerSub, { color: T.sub }]}>
           {mappedCount} events · {groups.length} venues · tap a pin to open
         </Text>
+        {dateFilter && (
+          <View style={[styles.filterBar, { backgroundColor: `${C.lav}18`, borderColor: `${C.lav}40` }]}>
+            <Text style={{ fontSize: 12, fontWeight: '800', color: C.lav, flex: 1 }}>
+              📅 {prettyISO(dateFilter)} only
+            </Text>
+            <TouchableOpacity onPress={() => onClearDateFilter?.()}>
+              <View style={[styles.clearBadge, { backgroundColor: C.lav }]}>
+                <Text style={{ color: 'white', fontSize: 11, fontWeight: '900' }}>✕ Clear</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
+
+      {/* Empty state when the date filter hides every pin */}
+      {dateFilter && mappedCount === 0 && (
+        <View style={styles.mapEmpty} pointerEvents="none">
+          <View style={[styles.mapEmptyCard, { backgroundColor: T.card, borderColor: T.border }]}>
+            <Text style={{ fontSize: 30, marginBottom: 6 }}>🗓️</Text>
+            <Text style={{ color: T.text, fontWeight: '800', fontSize: 14 }}>No mapped events on this date</Text>
+            <Text style={{ color: T.sub, fontSize: 12, marginTop: 4, textAlign: 'center' }}>Clear the filter to see everything again.</Text>
+          </View>
+        </View>
+      )}
 
       {/* Venue bottom sheet */}
       {sheet && (
@@ -160,6 +198,10 @@ const styles = StyleSheet.create({
   header:       { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10, paddingHorizontal: 22, paddingBottom: 14 },
   headerTitle:  { fontSize: 20, fontWeight: '900' },
   headerSub:    { fontSize: 12, marginTop: 2 },
+  filterBar:    { flexDirection: 'row', alignItems: 'center', borderRadius: 14, borderWidth: 1.5, paddingHorizontal: 12, paddingVertical: 8, marginTop: 10 },
+  clearBadge:   { borderRadius: 11, paddingHorizontal: 10, paddingVertical: 5 },
+  mapEmpty:     { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40 },
+  mapEmptyCard: { borderRadius: 20, borderWidth: 1, padding: 22, alignItems: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.12, shadowRadius: 12, elevation: 6 },
 
   markerBubble: { width: 42, height: 42, borderRadius: 21, alignItems: 'center', justifyContent: 'center', borderWidth: 2.5, borderColor: 'white', shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.3, shadowRadius: 4, elevation: 5 },
   markerEmoji:  { fontSize: 18 },

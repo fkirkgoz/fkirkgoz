@@ -439,15 +439,68 @@ function isValidTitle(t) {
 }
 
 // ── Geocoding ─────────────────────────────────────────────────────────────────
+// Landmark overrides: Brussels green spaces & public sites Nominatim geocodes
+// badly (it chokes on strings like "Bois de la Cambre : Carrefour des Attelages"
+// and lands the pin miles away near Bassin Vergote). Any event whose venue/addr/
+// desc matches one of these patterns is anchored DIRECTLY onto exact coords,
+// bypassing the text-geocoding API entirely. Order matters — most specific first.
+const LANDMARK_OVERRIDES = [
+  { re: /bois\s+de\s+la\s+cambre|ter\s+kameren(?:bos)?/i,          lat: 50.8122, lng: 4.3802, addr: 'Bois de la Cambre, 1000 Brussels' },
+  { re: /cinquantenaire|jubelpark|jubel\s*park/i,                  lat: 50.8417, lng: 4.3889, addr: 'Parc du Cinquantenaire, 1000 Brussels' },
+  { re: /brussels\s+park|parc\s+royal|parc\s+de\s+bruxelles|warande\s*park|koninklijk\s+park/i, lat: 50.8444, lng: 4.3633, addr: 'Parc de Bruxelles (Warandepark), 1000 Brussels' },
+  { re: /parc\s+d['u]?\s*osseghem|ossegh?em|ossegem/i,             lat: 50.8948, lng: 4.3411, addr: 'Parc dOsseghem, 1020 Laeken' },
+  { re: /atomium/i,                                                lat: 50.8949, lng: 4.3415, addr: 'Atomium, 1020 Brussels' },
+  { re: /parc\s+du\s+petit\s+sablon|grand\s+sablon|place\s+du\s+(?:grand\s+)?sablon/i, lat: 50.8412, lng: 4.3567, addr: 'Place du Grand Sablon, 1000 Brussels' },
+  { re: /mont\s+des\s+arts|kunstberg/i,                            lat: 50.8443, lng: 4.3573, addr: 'Mont des Arts, 1000 Brussels' },
+  { re: /place\s+poelaert|poelaert/i,                              lat: 50.8362, lng: 4.3520, addr: 'Place Poelaert, 1000 Brussels' },
+  { re: /place\s+du\s+congr[èe]s|congreskolom/i,                   lat: 50.8503, lng: 4.3585, addr: 'Place du Congrès, 1000 Brussels' },
+  { re: /grand[\s-]?place|grote\s+markt/i,                         lat: 50.8467, lng: 4.3525, addr: 'Grand-Place, 1000 Brussels' },
+  { re: /parc\s+des\s+[ée]tangs|parc\s+astrid|astridpark/i,        lat: 50.8290, lng: 4.3050, addr: 'Parc Astrid / Parc des Étangs, 1070 Anderlecht' },
+  { re: /parc\s+de\s+forest|park\s+van\s+vorst|parc\s+duden|dudenpark/i, lat: 50.8155, lng: 4.3330, addr: 'Parc de Forest, 1190 Forest' },
+  { re: /parc\s+joseph\s+lema[iî]tre|parc\s+de\s+laeken/i,         lat: 50.8830, lng: 4.3490, addr: 'Parc de Laeken, 1020 Brussels' },
+  { re: /tour\s*(?:&|et|and)\s*taxis|thurn\s*(?:&|und)\s*taxis/i,  lat: 50.8676, lng: 4.3427, addr: 'Tour & Taxis, 1000 Brussels' },
+];
+
+function landmarkCoords(text) {
+  const t = text || '';
+  for (const o of LANDMARK_OVERRIDES) if (o.re.test(t)) return o;
+  return null;
+}
+
 // Only called for events from sources that have no hardcoded lat/lng.
 async function geocode(venue) {
+  // Landmark short-circuit — never hit the API for a known green space
+  const lm = landmarkCoords(venue);
+  if (lm) return { lat: lm.lat, lng: lm.lng, landmark: true };
+
+  // Sanitize: drop sub-location suffixes after ':' / '-' / '|' that confuse
+  // Nominatim ("Bois de la Cambre : Carrefour des Attelages" → "Bois de la Cambre"),
+  // and strip trailing ", Belgium"/", Brussels" the caller re-appends.
+  const cleanQuery = String(venue || '')
+    .split(/\s*[:|–—]\s*|\s+-\s+/)[0]
+    .replace(/,?\s*(brussels|bruxelles|brussel|belgium|belgi[eë])\s*$/i, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const query = cleanQuery.length >= 3 ? cleanQuery : String(venue || '');
+
   try {
-    const q   = encodeURIComponent(`${venue}, Brussels, Belgium`);
-    const res = await axios.get(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1`,
+    const q   = encodeURIComponent(`${query}, Brussels, Belgium`);
+    const res = await axios.get(`https://nominatim.openstreetmap.org/search?q=${q}&format=json&limit=1&countrycodes=be`,
       { headers:{'User-Agent':'Randevu Brussels App (randevu.app)'}, timeout:8000 });
-    if (res.data?.length > 0) return { lat:parseFloat(res.data[0].lat), lng:parseFloat(res.data[0].lon) };
+    if (res.data?.length > 0) {
+      const lat = parseFloat(res.data[0].lat), lng = parseFloat(res.data[0].lon);
+      // Sanity gate: reject results outside the Brussels-Capital region bounding
+      // box (roughly 50.76–50.92 N, 4.24–4.48 E). A hit elsewhere in Belgium is
+      // a mismatch — fall through to the city-centre fallback instead of pinning
+      // the event to another town.
+      if (lat >= 50.76 && lat <= 50.92 && lng >= 4.24 && lng <= 4.48) {
+        return { lat, lng };
+      }
+    }
   } catch {}
-  return { lat:50.8503+(Math.random()-.5)*.04, lng:4.3517+(Math.random()-.5)*.04 };
+  // Fallback: Brussels centre (Grand-Place) — deterministic, no random scatter
+  // that made events look like they were placed at arbitrary wrong addresses.
+  return { lat: 50.8467, lng: 4.3525, fallback: true };
 }
 
 // ── Persistence ───────────────────────────────────────────────────────────────
@@ -1226,14 +1279,25 @@ async function scrapeVenue(browser, config) {
               .join('|'), 'i')
           : null; // no gate — capture the whole regional agenda
         const portalOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || 'https://ra.co';
-        const MAX_PORTAL_EVENTS = 60;
+        const MAX_PORTAL_EVENTS = 90;
         try {
           console.log(`    Strategy 1.9b (regional agenda: ${portalOrigin.replace('https://', '')})${KEYWORD_GATE ? ' [keyword-gated]' : ' [full feed]'}…`);
-          // Extra scroll passes: regional feeds lazy-load rows per day as you scroll
-          for (let s = 0; s < 4; s++) {
-            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-            await sleep(1200);
+
+          // ── Scroll-until-stable: RA/Shotgun lazy-load day blocks on scroll.
+          // Keep scrolling until the /events/ anchor count plateaus for 3 rounds
+          // (bounded at 30 passes) — captures the whole feed, not just page 1.
+          let prevCount = -1, stable = 0;
+          for (let pass = 0; pass < 30 && stable < 3; pass++) {
+            const count = await page.evaluate(() => {
+              window.scrollTo(0, document.body.scrollHeight);
+              return document.querySelectorAll('a[href*="/events/"]').length;
+            });
+            if (count === prevCount) stable++; else { stable = 0; prevCount = count; }
+            await sleep(1100);
           }
+          await page.evaluate(() => window.scrollTo(0, 0));
+          await sleep(400);
+          console.log(`    RA scroll settled: ${prevCount} event anchor(s) in DOM`);
 
           // Venue lookup for cross-referencing row metadata (registry names)
           const VENUE_LOOKUP = {};
@@ -1247,7 +1311,9 @@ async function scrapeVenue(browser, config) {
             const results = [];
             const seen = new Set();
 
-            // ── Tier 1: __NEXT_DATA__ GraphQL payload — full event rows with venue metadata ──
+            // ── Tier 1: __NEXT_DATA__ payload — authoritative venue metadata for
+            //    the SSR rows. MERGED with the DOM harvest below (not returned
+            //    early), because the payload only holds the first render batch.
             try {
               const rawJson = document.getElementById('__NEXT_DATA__')?.textContent;
               if (rawJson) {
@@ -1257,61 +1323,74 @@ async function scrapeVenue(browser, config) {
                   const url = node.contentUrl || node.contentURL || '';
                   const isEvent = node.__typename === 'Event' ||
                     (typeof url === 'string' && /^\/events\/\d+/.test(url) && node.title);
-                  if (isEvent && node.title && url && !seen.has(url)) {
-                    seen.add(url);
-                    results.push({
-                      title:     String(node.title).trim(),
-                      dateStr:   node.date || node.startTime || node.startDate || '',
-                      venueName: (node.venue && node.venue.name) ? String(node.venue.name).trim() : '',
-                      allText:   [node.title, node.venue && node.venue.name].filter(Boolean).join(' '),
-                      link:      url.split('?')[0],
-                      fromNextData: true,
-                    });
+                  if (isEvent && node.title && url) {
+                    const key = url.split('?')[0];
+                    if (!seen.has(key)) {
+                      seen.add(key);
+                      results.push({
+                        title:     String(node.title).trim(),
+                        dateStr:   node.date || node.startTime || node.startDate || '',
+                        venueName: (node.venue && node.venue.name) ? String(node.venue.name).trim() : '',
+                        allText:   [node.title, node.venue && node.venue.name].filter(Boolean).join(' '),
+                        link:      key,
+                        fromNextData: true,
+                      });
+                    }
                   }
                   for (const k of Object.keys(node)) walk(node[k]);
                 };
                 walk(JSON.parse(rawJson));
               }
             } catch {}
-            if (results.length > 0) return results;
 
-            // ── Tier 2: DOM rows fallback ──
-            const selectors = [
-              '[data-testid*="event"]',
-              '[class*="event-tile"]', '[class*="eventTile"]',
-              '[class*="listing-item"]', '[class*="listingItem"]',
-              'article', 'li',
-            ];
-            let best = [];
-            for (const sel of selectors) {
-              try {
-                const els = [...document.querySelectorAll(sel)].filter(el => {
-                  const t = (el.innerText || '').trim();
-                  return t.length > 20 && t.length < 600 && el.querySelector('a[href*="/events/"]');
-                });
-                if (els.length > best.length) best = els;
-              } catch {}
-            }
-            return best.slice(0, 120).map(el => {
-              const h = el.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"],[class*="heading"]');
-              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
-              // Venue metadata: RA rows link the venue via /clubs/…
-              const venueA = el.querySelector('a[href*="/clubs/"]');
-              const allText = (el.innerText || '').replace(/\s+/g, ' ').trim();
-              return {
-                title:     (h?.innerText || '').replace(/\s+/g, ' ').trim(),
-                dateStr:   dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').trim(),
+            // ── Tier 2: DOM harvest with DAY-HEADER date association ──
+            // RA groups event cards under sticky day headers ("Fri, 11 Jul") and
+            // individual cards often carry no full date of their own. We walk the
+            // listing in document order over both day-headers and event anchors,
+            // carrying the current day's date forward onto every card beneath it.
+            const DATE_TOKEN = /\d{4}-\d{2}-\d{2}|\b(?:mon|tue|wed|thu|fri|sat|sun)[a-z]*,?\s+\d{1,2}\s+[a-z]{3,}|\b\d{1,2}\s+(?:jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*/i;
+            // One ordered NodeList of BOTH markers: date-ish elements + event anchors.
+            const nodes = [...document.querySelectorAll(
+              'a[href*="/events/"], time, [datetime], h1, h2, h3, [class*="sticky"], [class*="dayHeader"], [class*="DayHeader"], [class*="date"], [class*="Date"]'
+            )];
+            let currentDate = '';
+            for (const el of nodes) {
+              const isEventAnchor = el.tagName === 'A' && /\/events\/\d+/.test(el.getAttribute('href') || '');
+              if (!isEventAnchor) {
+                // Potential day header — only accept it if its OWN text parses as a
+                // real calendar date (card start-times like "23:00" are ignored).
+                const dt = el.getAttribute('datetime') || '';
+                const txt = (el.innerText || '').replace(/\s+/g, ' ').trim().slice(0, 40);
+                const cand = /\d{4}-\d{2}-\d{2}/.test(dt) ? dt : (DATE_TOKEN.test(txt) ? txt : '');
+                if (cand) currentDate = cand;
+                continue;
+              }
+              // Event anchor — resolve its card container for title/venue text
+              const href = el.getAttribute('href').split('?')[0];
+              const key = href.startsWith('http') ? href.replace(/^https?:\/\/[^/]+/, '') : href;
+              if (seen.has(key)) continue;
+              const card = el.closest('[data-testid], li, article, [class*="event"], [class*="Event"]') || el;
+              const h = card.querySelector('h1,h2,h3,h4,h5,strong,[class*="title"],[class*="name"],[class*="heading"]');
+              const title = ((h?.innerText || el.innerText || '')).replace(/\s+/g, ' ').trim();
+              if (!title || title.length < 3) continue;
+              seen.add(key);
+              const venueA = card.querySelector('a[href*="/clubs/"]');
+              const ownDateEl = card.querySelector('time[datetime],[datetime]');
+              results.push({
+                title,
+                dateStr:   ownDateEl?.getAttribute('datetime') || currentDate || '',
                 venueName: (venueA?.innerText || '').replace(/\s+/g, ' ').trim(),
-                allText,
-                link:      el.querySelector('a[href*="/events/"]')?.href || '',
+                allText:   (card.innerText || title).replace(/\s+/g, ' ').trim().slice(0, 400),
+                link:      key,
                 fromNextData: false,
-              };
-            }).filter(item => item.title && item.title.length > 3);
+              });
+            }
+            return results;
           });
 
           const viaPayload = raItems.filter(i => i.fromNextData).length;
-          console.log(`    Regional agenda: ${raItems.length} row(s) captured (${viaPayload} via __NEXT_DATA__)`);
-          let skippedGate = 0;
+          console.log(`    Regional agenda: ${raItems.length} row(s) captured (${viaPayload} via __NEXT_DATA__, ${raItems.length - viaPayload} via DOM)`);
+          let skippedGate = 0, skippedNoDate = 0;
 
           for (const item of raItems) {
             if (events.length >= MAX_PORTAL_EVENTS) break;
@@ -1325,7 +1404,7 @@ async function scrapeVenue(browser, config) {
 
             if (!isValidTitle(item.title)) continue;
             const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
-            if (!rawDate) continue;
+            if (!rawDate) { skippedNoDate++; continue; }
             const relDate = toRelativeDate(rawDate);
             if (!relDate) continue;
 
@@ -1374,7 +1453,7 @@ async function scrapeVenue(browser, config) {
               ...(locationHint19b ? { externalVenueHint: locationHint19b } : {}),
             });
           }
-          console.log(`    Regional agenda → ${events.length} event(s) ingested${KEYWORD_GATE ? ` | ${skippedGate} gated out` : ''}`);
+          console.log(`    Regional agenda → ${events.length} event(s) ingested${KEYWORD_GATE ? ` | ${skippedGate} gated out` : ''}${skippedNoDate ? ` | ${skippedNoDate} no-date` : ''}`);
         } catch (err) {
           console.log(`    Strategy 1.9b (regional agenda) failed: ${err.message.slice(0, 80)}`);
         }
@@ -1698,6 +1777,21 @@ async function main() {
   });
   if (coordFixes) console.log(`📍  Fixed ${coordFixes} event(s) with wrong coordinates (Fuse/C12)`);
 
+  // Retroactively snap landmark/green-space events onto their exact coords.
+  // Fixes historical rows geocoded to random Brussels-centre scatter (e.g.
+  // "Bois de la Cambre" events pinned near Bassin Vergote). Runs on every event
+  // regardless of source — a venue/addr/desc landmark match always wins.
+  let landmarkFixes = 0;
+  existing = existing.map(e => {
+    const lm = landmarkCoords(`${e.venue || ''} ${e.addr || ''} ${e.desc || ''}`);
+    if (lm && (Math.abs((e.lat || 0) - lm.lat) > 0.0005 || Math.abs((e.lng || 0) - lm.lng) > 0.0005)) {
+      landmarkFixes++;
+      return { ...e, lat: lm.lat, lng: lm.lng, addr: lm.addr };
+    }
+    return e;
+  });
+  if (landmarkFixes) console.log(`🌳  Snapped ${landmarkFixes} event(s) onto landmark coordinates`);
+
   // Retroactively enforce correct emoji/color/cat for all known venues
   const VENUE_VISUAL_MAP = {
     'ancienne belgique': { emoji: '🎸', color: '#C77DFF', cat: 'Music'     },
@@ -1824,13 +1918,21 @@ async function main() {
 
     if (smartMerge(existing, r)) continue;
 
-    // Smart venue override: external location mentioned in event text takes priority
-    if (r.externalVenueHint) {
+    // Landmark override FIRST — scan venue + addr + desc for a known green
+    // space/public site and anchor directly, before any API geocoding. This is
+    // what fixes "Bois de la Cambre : Carrefour des Attelages" being flung to
+    // Bassin Vergote: the landmark match wins and the messy sub-location string
+    // never reaches Nominatim.
+    const landmark = landmarkCoords(`${r.venue || ''} ${r.addr || ''} ${r.externalVenueHint || ''} ${r.desc || ''}`);
+    if (landmark) {
+      r.lat = landmark.lat; r.lng = landmark.lng; r.addr = landmark.addr;
+      console.log(`  🌳  Landmark override: "${r.title.slice(0,34)}" → ${landmark.addr.split(',')[0]} (${r.lat}, ${r.lng})`);
+    } else if (r.externalVenueHint) {
       process.stdout.write(`  🗺️  External venue "${r.externalVenueHint}"… `);
       const coords = await geocode(r.externalVenueHint);
       r.lat = coords.lat; r.lng = coords.lng; r.addr = r.externalVenueHint;
-      console.log(`${r.lat.toFixed(4)}, ${r.lng.toFixed(4)}`);
-      await sleep(GEOCODE_DELAY);
+      console.log(`${r.lat.toFixed(4)}, ${r.lng.toFixed(4)}${coords.fallback ? ' (centre fallback)' : ''}`);
+      if (!coords.landmark) await sleep(GEOCODE_DELAY);
     } else if (r.venue?.toLowerCase().includes('fuse')) {
       r.lat = 50.8365; r.lng = 4.3435;
       r.addr = 'Rue Blaes 208, 1000 Brussels';
@@ -1841,8 +1943,8 @@ async function main() {
       process.stdout.write(`  📍  Geocoding "${r.venue}"… `);
       const coords = await geocode(r.venue);
       r.lat = coords.lat; r.lng = coords.lng;
-      console.log(`${r.lat.toFixed(4)}, ${r.lng.toFixed(4)}`);
-      await sleep(GEOCODE_DELAY);
+      console.log(`${r.lat.toFixed(4)}, ${r.lng.toFixed(4)}${coords.fallback ? ' (centre fallback)' : ''}`);
+      if (!coords.landmark) await sleep(GEOCODE_DELAY);
     }
 
     existing.push({

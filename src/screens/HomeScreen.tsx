@@ -5,14 +5,20 @@ import {
 } from 'react-native';
 import { Theme, C } from '../constants/theme';
 import { Locale, t } from '../i18n';
-import { EVENTS, CATS, DATES, Event } from '../data/events';
+import { EVENTS, CATS, DATES, Event, eventMatchesDate, availableEventDates } from '../data/events';
 import { AuthUser } from './AuthScreen';
 import { SocialNotification, getNotifications } from '../lib/social';
 import EventCard from '../components/EventCard';
 import GradBg from '../components/GradBg';
 import Tap from '../components/Tap';
+import DateFilterModal from '../components/DateFilterModal';
 
 const NOTIF_POLL_MS = 5000;
+
+function prettyISO(iso: string): string {
+  const d = new Date(iso + 'T00:00:00');
+  return d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+}
 
 interface Props {
   onEventPress: (e: Event) => void;
@@ -21,16 +27,21 @@ interface Props {
   locale?: Locale;
   user?: AuthUser | null;
   onOpenFriends?: () => void;
+  dateFilter?: string | null;
+  onDateFilterChange?: (iso: string | null) => void;
 }
 
-export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', user, onOpenFriends }: Props) {
+export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', user, onOpenFriends, dateFilter = null, onDateFilterChange }: Props) {
   const [cat,  setCat]  = useState('All');
   const [date, setDate] = useState('All');
   const [q, setQ]       = useState('');
   const [searching, setSearching] = useState(false);
   const [sort, setSort] = useState<'date-asc' | 'date-desc' | 'alpha-asc' | 'alpha-desc'>('date-asc');
   const [sortOpen, setSortOpen] = useState(false);
+  const [calendarOpen, setCalendarOpen] = useState(false);
   const searchRef = useRef<TextInput>(null);
+
+  const markedDates = useMemo(() => availableEventDates(EVENTS), []);
 
   // Real notifications only: pending friend requests + unread messages,
   // polled from the live social store. No hardcoded feed entries.
@@ -71,8 +82,10 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', u
   }, []);
 
   const filtered = useMemo(() => EVENTS.filter(e => {
+    // Single-date calendar filter takes priority over the relative date pills
+    if (dateFilter && !eventMatchesDate(e, dateFilter)) return false;
     if (cat  !== 'All' && e.cat  !== cat)  return false;
-    if (date !== 'All' && e.date !== date) return false;
+    if (!dateFilter && date !== 'All' && e.date !== date) return false;
     if (q) {
       const ql = q.toLowerCase();
       return (
@@ -83,7 +96,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', u
       );
     }
     return true;
-  }), [cat, date, q]);
+  }), [cat, date, q, dateFilter]);
 
   const DATE_WEIGHT: Record<string, number> = {
     Today: 0, Tonight: 1, Tomorrow: 2, 'This Weekend': 3,
@@ -121,19 +134,47 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', u
             What's your{'\n'}<Text style={{ color: T.accent }}>vibe tonight?</Text>
           </Text>
         </View>
-        <View>
-          <Tap onPress={() => { setNotifOpen(s => !s); if (!notifOpen) loadNotifs(); }}>
-            <View style={[styles.bellBtn, { backgroundColor: notifOpen ? T.accent : C.lav }]}>
-              <Text style={styles.bellEmoji}>🔔</Text>
-            </View>
-          </Tap>
-          {notifs.length > 0 && (
-            <View style={[styles.bellBadge, { borderColor: T.bg }]}>
-              <Text style={styles.bellBadgeTxt}>{notifs.length > 9 ? '9+' : notifs.length}</Text>
-            </View>
-          )}
+        <View style={{ flexDirection: 'row', gap: 10 }}>
+          {/* Calendar date filter trigger */}
+          <View>
+            <Tap onPress={() => setCalendarOpen(true)}>
+              <View style={[styles.bellBtn, { backgroundColor: dateFilter ? T.accent : T.card, borderWidth: dateFilter ? 0 : 1.5, borderColor: T.border }]}>
+                <Text style={styles.bellEmoji}>📅</Text>
+              </View>
+            </Tap>
+            {dateFilter && <View style={[styles.bellBadgeDot, { borderColor: T.bg }]} />}
+          </View>
+          {/* Notifications bell */}
+          <View>
+            <Tap onPress={() => { setNotifOpen(s => !s); if (!notifOpen) loadNotifs(); }}>
+              <View style={[styles.bellBtn, { backgroundColor: notifOpen ? T.accent : C.lav }]}>
+                <Text style={styles.bellEmoji}>🔔</Text>
+              </View>
+            </Tap>
+            {notifs.length > 0 && (
+              <View style={[styles.bellBadge, { borderColor: T.bg }]}>
+                <Text style={styles.bellBadgeTxt}>{notifs.length > 9 ? '9+' : notifs.length}</Text>
+              </View>
+            )}
+          </View>
         </View>
       </View>
+
+      {/* Active date-filter badge */}
+      {dateFilter && (
+        <View style={{ paddingHorizontal: 22, marginTop: 12 }}>
+          <View style={[styles.activeFilterBar, { backgroundColor: `${C.lav}18`, borderColor: `${C.lav}40` }]}>
+            <Text style={{ fontSize: 13, fontWeight: '800', color: T.accent, flex: 1 }}>
+              📅 Showing {prettyISO(dateFilter)}
+            </Text>
+            <Tap onPress={() => onDateFilterChange?.(null)}>
+              <View style={[styles.clearBadge, { backgroundColor: C.lav }]}>
+                <Text style={{ color: 'white', fontSize: 12, fontWeight: '900' }}>✕ Clear</Text>
+              </View>
+            </Tap>
+          </View>
+        </View>
+      )}
 
       {/* Notification panel — live data only (friend requests + unread DMs) */}
       {notifOpen && (
@@ -271,7 +312,11 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', u
       {/* Section label */}
       <View style={{ paddingHorizontal: 22, marginTop: 18, marginBottom: 14 }}>
         <Text style={[styles.sectionLabel, { color: T.sub }]}>
-          {q ? `Results for "${q}"` : cat !== 'All' ? cat : date !== 'All' ? date : 'All events'} · {sorted.length}
+          {dateFilter ? prettyISO(dateFilter)
+            : q ? `Results for "${q}"`
+            : cat !== 'All' ? cat
+            : date !== 'All' ? date
+            : 'All events'} · {sorted.length}
         </Text>
       </View>
     </View>
@@ -308,6 +353,16 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', u
           </View>
         }
       />
+
+      <DateFilterModal
+        visible={calendarOpen}
+        selected={dateFilter}
+        markedDates={markedDates}
+        onSelect={iso => { onDateFilterChange?.(iso); setCalendarOpen(false); }}
+        onClear={() => { onDateFilterChange?.(null); setCalendarOpen(false); }}
+        onClose={() => setCalendarOpen(false)}
+        T={T}
+      />
     </GradBg>
   );
 }
@@ -318,6 +373,9 @@ const styles = StyleSheet.create({
   headerTitle:       { fontSize: 27, fontWeight: '900', lineHeight: 34, marginTop: 4, letterSpacing: -0.5 },
   bellBtn:           { width: 46, height: 46, borderRadius: 23, alignItems: 'center', justifyContent: 'center', shadowColor: C.lav, shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.4, shadowRadius: 8, elevation: 5 },
   bellEmoji:         { fontSize: 20 },
+  bellBadgeDot:      { position: 'absolute', top: -2, right: -2, width: 12, height: 12, borderRadius: 6, backgroundColor: C.pink, borderWidth: 2 },
+  activeFilterBar:   { flexDirection: 'row', alignItems: 'center', borderRadius: 16, borderWidth: 1.5, paddingHorizontal: 14, paddingVertical: 10 },
+  clearBadge:        { borderRadius: 12, paddingHorizontal: 12, paddingVertical: 6 },
   bellBadge:         { position: 'absolute', top: -4, right: -4, minWidth: 20, height: 20, borderRadius: 10, backgroundColor: C.pink, borderWidth: 2, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4 },
   bellBadgeTxt:      { color: 'white', fontSize: 10, fontWeight: '900' },
   notifPanel:        { marginHorizontal: 22, marginTop: 10, borderRadius: 22, padding: 16, borderWidth: 1, shadowColor: '#000', shadowOffset: { width: 0, height: 8 }, shadowOpacity: 0.2, shadowRadius: 16, elevation: 8, zIndex: 100 },

@@ -326,6 +326,12 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     defaultTime: '14:00',
     jsHeavy: true,
   },
+  // ── Belgian National Day (July 21) — one entry per distinct query ──────────
+  // The engine loads the first URL that renders and STOPS, so fallbackUrls are
+  // only tried on failure. To actually collect from several searches we give
+  // each query its own registry entry — all genericPortal, so each card keeps
+  // its own venue/location (Cinquantenaire, Parc de Bruxelles, Mont des Arts…),
+  // resolved by the landmark overrides in the engine.
   {
     id: 'agendaNationalDay',
     name: 'Belgian National Day',
@@ -335,8 +341,6 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     fallbackUrls: [
       'https://www.agenda.brussels/en/search?q=21+july',
       'https://www.agenda.brussels/en/search?q=f%C3%AAte+nationale',
-      'https://www.agenda.brussels/en/search?q=Cinquantenaire',
-      'https://www.agenda.brussels/en/search?q=fireworks',
     ],
     masterAddress: 'Brussels, Belgium',
     lat: 0, lng: 0,
@@ -344,6 +348,57 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     emoji: '🎆', color: '#F4A261', cat: 'Festival',
     tags: ['National Day', 'Festival', 'Free', 'Brussels'],
     defaultTime: '12:00',
+    jsHeavy: true,
+  },
+  {
+    id: 'agendaCinquantenaire',
+    name: 'Cinquantenaire Events',
+    scrapingStrategy: 'portal_filter',
+    genericPortal: true,
+    targetUrl: 'https://www.agenda.brussels/en/search?q=Cinquantenaire',
+    fallbackUrls: ['https://www.agenda.brussels/en/search?q=Jubelpark'],
+    masterAddress: 'Parc du Cinquantenaire, 1000 Brussels',
+    lat: 50.8417, lng: 4.3889,
+    neighbourhood: 'Etterbeek',
+    emoji: '🎆', color: '#F4A261', cat: 'Festival',
+    tags: ['National Day', 'Open Air', 'Free', 'Brussels'],
+    defaultTime: '12:00',
+    jsHeavy: true,
+  },
+  {
+    id: 'agendaFireworks',
+    name: 'Brussels Fireworks & Shows',
+    scrapingStrategy: 'portal_filter',
+    genericPortal: true,
+    targetUrl: 'https://www.agenda.brussels/en/search?q=fireworks',
+    fallbackUrls: [
+      'https://www.agenda.brussels/en/search?q=feu+d%27artifice',
+      'https://www.agenda.brussels/en/search?q=drone+show',
+    ],
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: '🎆', color: '#F4A261', cat: 'Festival',
+    tags: ['Fireworks', 'National Day', 'Free', 'Brussels'],
+    defaultTime: '22:00',
+    jsHeavy: true,
+  },
+  {
+    id: 'agendaParkParties',
+    name: 'Brussels Park Events',
+    scrapingStrategy: 'portal_filter',
+    genericPortal: true,
+    targetUrl: 'https://www.agenda.brussels/en/search?q=bal+national',
+    fallbackUrls: [
+      'https://www.agenda.brussels/en/search?q=f%C3%AAte+au+parc',
+      'https://www.agenda.brussels/en/search?q=parc+concert',
+    ],
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: '🌍', color: '#F4A261', cat: 'Festival',
+    tags: ['Open Air', 'Festival', 'Free', 'Brussels'],
+    defaultTime: '14:00',
     jsHeavy: true,
   },
 
