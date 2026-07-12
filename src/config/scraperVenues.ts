@@ -237,6 +237,32 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     eventSelector: 'article.type-tribe_events, .tribe-event, [class*="tribe-events-list-event"], article',
     linkPattern: /\/event\/|\/events\/|\/tribe_events\//i,
   },
+  {
+    // Hangar — direct scrape of their upcoming-events page (Strategy 1.6h in the
+    // engine handles this venue's specific layout). Hangar's open airs roam
+    // (Atomium, Beach, Royal Palace) so location resolves per event via the
+    // landmark overrides / geocoder — hence lat/lng 0.
+    id: 'hangar',
+    name: 'Hangar',
+    scrapingStrategy: 'direct_url',
+    targetUrl: 'https://thehangar.be/upcoming-events/',
+    fallbackUrls: [
+      'https://thehangar.be/upcoming-events',
+      'https://www.thehangar.be/upcoming-events/',
+      'https://thehangar.be/events/',
+      'https://thehangar.be',
+    ],
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: '🎉', color: '#F4A261', cat: 'Festival',
+    tags: ['Open Air', 'Electronic', 'Festival', 'Day Party'],
+    defaultTime: '14:00',
+    jsHeavy: true, enforceVisuals: true,
+    waitForSelector: '[class*="event"], article, .elementor-post, [class*="card"]',
+    eventSelector: 'article, .elementor-post, [class*="event-item"], [class*="event-card"], [class*="EventCard"], li[class*="event"]',
+    linkPattern: /\/event\/|\/events\/|\/tickets?\/|\/e\/|shotgun|dice\.fm|ticket/i,
+  },
 
   // ══ Regional portal feeds — collection model ═════════════════════════════
   // RA master regional agenda: NO portalKeywords = the FULL feed is ingested,
@@ -321,7 +347,7 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     masterAddress: 'Brussels, Belgium',
     lat: 0, lng: 0,
     neighbourhood: 'Various',
-    emoji: '🌍', color: '#F4A261', cat: 'Festival',
+    emoji: '🎉', color: '#F4A261', cat: 'Festival',
     tags: ['Festival', 'Music', 'Brussels'],
     defaultTime: '14:00',
     jsHeavy: true,
@@ -396,7 +422,7 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     masterAddress: 'Brussels, Belgium',
     lat: 0, lng: 0,
     neighbourhood: 'Various',
-    emoji: '🌍', color: '#F4A261', cat: 'Festival',
+    emoji: '🎉', color: '#F4A261', cat: 'Festival',
     tags: ['Open Air', 'Festival', 'Free', 'Brussels'],
     defaultTime: '14:00',
     jsHeavy: true,

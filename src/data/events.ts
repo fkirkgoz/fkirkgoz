@@ -23,6 +23,7 @@ export interface Event {
   lng: number;
   neighbourhood: string;
   desc: string;
+  image?: string;            // event background graphic (e.g. Hangar posters)
   status?: string;           // 'SOLD OUT' | 'POSTPONED' | 'CANCELLED'
   _rawDate?: string;         // ISO YYYY-MM-DD used for accurate calendar display
   _endDate?: string;         // ISO end date for multi-day events

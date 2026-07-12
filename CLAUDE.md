@@ -114,6 +114,7 @@ HomeScreen appends any extra named-month labels found in live event data via `av
 - Mock notification feed and bell removed in the production reset
 
 ### MapScreen (`src/screens/MapScreen.tsx`)
+- **Segmented toggle**: "🗓️ Events" ↔ "✨ Editor's Picks". Events mode shows scraped event pins; Picks mode hides them and renders curated café/restaurant pins from `src/config/editorsPicks.ts` (tap → opens the Google Maps link). Picks mode shows a category legend.
 - **Venue grouping**: events at the same venue (matched by name prefix) share one marker
 - Single-event markers → tap opens DetailScreen directly
 - Multi-event markers → show pink count badge → tap opens slide-up bottom sheet
@@ -164,7 +165,9 @@ ALL scrape targets live in this typed, append-only registry — the engine impor
 runs Node 24) and routes each entry by `scrapingStrategy`:
 - `'ra_club'` — Resident Advisor club page (`ra.co/clubs/<id>`), e.g. Circle Park
 - `'direct_url'` — venue's own site (full JSON-LD → venue parsers → live-DOM → HTML pipeline),
-  e.g. AB, Fuse, LaVallée (`lavallee.brussels/events/`), Brasserie ILLEGAAL
+  e.g. AB, Fuse, LaVallée (`lavallee.brussels/events/`), Brasserie ILLEGAAL, Hangar
+  (`thehangar.be/upcoming-events/` — dedicated Strategy 1.6h parser extracts title/date/
+  background-graphic/link; the graphic is stored as `image` and rendered in the Detail hero)
 - `'portal_filter'` — multi-venue portal: agenda.brussels search URLs use the per-venue
   search parser (or, with `genericPortal: true`, a public-event collector where each card
   keeps its own venue/location — used for open airs, festivals, National Day); the

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
-  Linking, Platform,
+  Linking, Platform, ImageBackground,
 } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -106,10 +106,16 @@ export default function EventDetailScreen({ event: e, onBack, onJoin, joined, T 
       </View>
 
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: 120 }}>
+        {/* Optional event graphic (e.g. Hangar poster) above the hero */}
+        {!!e.image && (
+          <ImageBackground source={{ uri: e.image }} style={styles.heroImage} resizeMode="cover">
+            <LinearGradient colors={['transparent', `${C.dark}CC`] as [string, string]} style={StyleSheet.absoluteFillObject} />
+          </ImageBackground>
+        )}
         {/* Hero — padded to clear the floating header */}
         <LinearGradient
           colors={[`${e.color}CC`, `${C.lav}55`] as [string, string]}
-          style={[styles.hero, { paddingTop: insets.top + 60 }]}
+          style={[styles.hero, { paddingTop: e.image ? 22 : insets.top + 60 }]}
         >
           <Text style={{ fontSize: 58, marginBottom: 10 }}>{e.emoji}</Text>
           <SrcBadge source={e.source} />
@@ -245,6 +251,7 @@ const styles = StyleSheet.create({
   topActionBtn:  { backgroundColor: 'rgba(255,255,255,0.92)', borderRadius: 22, paddingHorizontal: 14, paddingVertical: 10 },
   topActionTxt:  { fontWeight: '800', fontSize: 13, color: C.dark },
 
+  heroImage:     { width: '100%', height: 220, justifyContent: 'flex-end' },
   hero:          { paddingHorizontal: 22, paddingBottom: 28 },
   heroTitle:     { fontSize: 22, fontWeight: '900', color: C.dark, lineHeight: 28, marginVertical: 10 },
   heroTag:       { backgroundColor: 'rgba(255,255,255,0.78)', borderRadius: 20, paddingHorizontal: 12, paddingVertical: 4 },

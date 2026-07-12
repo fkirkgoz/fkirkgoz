@@ -91,7 +91,7 @@ const KEYWORD_MAP = [
   { kw:['art','exhibit','museum','gallery','paint','photo','sculpture'],       emoji:'🎨', color:'#F4A261', cat:'Culture',      tags:['Art','Culture']          },
   { kw:['football','match','vs.','home game','kick-off','ligue','jupiler'],    emoji:'⚽', color:'#90E0EF', cat:'Sports',       tags:['Football','Sports']      },
   { kw:['sport','run','yoga','fitness','athletics'],                           emoji:'🏃', color:'#90E0EF', cat:'Sports',       tags:['Sports','Active']        },
-  { kw:['festival','open air','open-air','outdoor','park'],                    emoji:'🌍', color:'#F4A261', cat:'Festival',     tags:['Festival','Outdoors']    },
+  { kw:['festival','open air','open-air','outdoor','park'],                    emoji:'🎉', color:'#F4A261', cat:'Festival',     tags:['Festival','Outdoors']    },
   { kw:['theatre','theater','play','comedy','improv','stand-up'],              emoji:'🎭', color:'#E76F51', cat:'Arts',         tags:['Theatre','Performance']  },
   { kw:['cinema','film','movie','screening','documentary'],                    emoji:'🎬', color:'#6C63FF', cat:'Arts',         tags:['Cinema','Film']          },
   { kw:['dance','ballet','tango','salsa'],                                     emoji:'💃', color:'#F7CFD8', cat:'Arts',         tags:['Dance','Performance']    },
@@ -445,7 +445,7 @@ function isValidTitle(t) {
 // desc matches one of these patterns is anchored DIRECTLY onto exact coords,
 // bypassing the text-geocoding API entirely. Order matters — most specific first.
 const LANDMARK_OVERRIDES = [
-  { re: /bois\s+de\s+la\s+cambre|ter\s+kameren(?:bos)?/i,          lat: 50.8122, lng: 4.3802, addr: 'Bois de la Cambre, 1000 Brussels' },
+  { re: /bois\s+de\s+la\s+cambre|ter\s+kameren(?:bos)?|carrefour\s+des\s+attelages/i, lat: 50.8122, lng: 4.3802, addr: 'Bois de la Cambre, 1000 Brussels' },
   { re: /cinquantenaire|jubelpark|jubel\s*park/i,                  lat: 50.8417, lng: 4.3889, addr: 'Parc du Cinquantenaire, 1000 Brussels' },
   { re: /brussels\s+park|parc\s+royal|parc\s+de\s+bruxelles|warande\s*park|koninklijk\s+park/i, lat: 50.8444, lng: 4.3633, addr: 'Parc de Bruxelles (Warandepark), 1000 Brussels' },
   { re: /parc\s+d['u]?\s*osseghem|ossegh?em|ossegem/i,             lat: 50.8948, lng: 4.3411, addr: 'Parc dOsseghem, 1020 Laeken' },
@@ -895,6 +895,101 @@ async function scrapeVenue(browser, config) {
           console.log(`    Agenda Brussels → ${events.length} event(s) parsed`);
         } catch (err) {
           console.log(`    Agenda Brussels scraper error: ${err.message.slice(0, 80)}`);
+        }
+      }
+
+      // ── Strategy 1.6h: Hangar — dedicated upcoming-events layout parser ──
+      // thehangar.be/upcoming-events lists each open air as a wrapper carrying a
+      // title, a date, a background graphic, and a ticket/detail link. We scroll
+      // to trigger lazy loads, then pull all four fields per wrapper. Location is
+      // left to the geocoder (Hangar's events roam across Brussels sites).
+      if (config.id === 'hangar' && events.length === 0) {
+        try {
+          console.log('    Strategy 1.6h (Hangar upcoming-events): scrolling + parsing…');
+          // Scroll to force any lazy-loaded event wrappers to render
+          for (let s = 0; s < 6; s++) {
+            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+            await sleep(900);
+          }
+          await page.evaluate(() => window.scrollTo(0, 0));
+          await sleep(400);
+
+          const venueEventSel = config.eventSelector || '';
+          const hangarCards = await page.evaluate((venueEventSel) => {
+            const sels = (venueEventSel ? venueEventSel.split(',').map(s => s.trim()) : [])
+              .concat(['article', '[class*="event"]', '[class*="Event"]', '.elementor-post', '[class*="card"]', 'li']);
+            let best = [];
+            for (const sel of sels) {
+              try {
+                const els = [...document.querySelectorAll(sel)].filter(el => {
+                  const t = (el.innerText || '').trim();
+                  return t.length > 8 && t.length < 700 && el.querySelector('a[href]');
+                });
+                if (els.length > best.length) best = els;
+              } catch {}
+            }
+            // Pull a background-image URL from inline style or a nested <img>
+            const bgOf = (el) => {
+              const scan = [el, ...el.querySelectorAll('[style*="background"], img')];
+              for (const n of scan) {
+                const st = n.getAttribute && n.getAttribute('style') || '';
+                const m = st.match(/url\((['"]?)(.*?)\1\)/i);
+                if (m && m[2]) return m[2];
+                if (n.tagName === 'IMG') {
+                  const src = n.getAttribute('src') || n.getAttribute('data-src') || '';
+                  if (src && !/logo|icon|sprite/i.test(src)) return src;
+                }
+              }
+              return '';
+            };
+            return best.slice(0, 40).map(el => {
+              const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"],[class*="heading"]');
+              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
+              const linkA = el.querySelector('a[href*="ticket"],a[href*="/event"],a[href*="shotgun"],a[href*="dice"]')
+                         || el.querySelector('a[href]');
+              return {
+                title:   (h?.innerText || '').replace(/\s+/g, ' ').trim(),
+                dateStr: dateEl?.getAttribute('datetime') || (dateEl?.innerText || '').replace(/\s+/g, ' ').trim(),
+                image:   bgOf(el),
+                link:    linkA?.href || '',
+                allText: (el.innerText || '').replace(/\s+/g, ' ').trim(),
+              };
+            }).filter(c => c.title && c.title.length > 3);
+          }, venueEventSel);
+
+          console.log(`    Hangar: ${hangarCards.length} event wrapper(s) found`);
+          const baseOriginH = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || 'https://thehangar.be';
+
+          for (const c of hangarCards) {
+            if (!isValidTitle(c.title)) continue;
+            const rawDate = parseRawDate(c.dateStr) || parseRawDate(scanTextForDate(c.allText));
+            if (!rawDate) { console.log(`    Hangar skip "${c.title.slice(0,30)}" — no date`); continue; }
+            const relDate = toRelativeDate(rawDate);
+            if (!relDate) continue;
+            const url = c.link.startsWith('http') ? c.link
+              : c.link.startsWith('/') ? `${baseOriginH}${c.link}` : '';
+            const cls = classifyForVenue(c.title + ' ' + c.allText, config);
+            const smart = smartDefaultTime(cls.cat);
+            // Location: Hangar events roam — detect landmark, else geocode
+            const hint = detectExternalVenue(c.title + ' ' + c.allText);
+            events.push({
+              _rawDate: rawDate, title: c.title,
+              venue: hint ? hint.replace(/\s+Brussels$/i, '') : config.name,
+              addr: config.addr,
+              date: refineDateLabel(relDate, smart.startH), time: smart.time,
+              startH: smart.startH, endH: smart.endH,
+              emoji: cls.emoji, color: cls.color, cat: cls.cat, tags: cls.tags,
+              source: config.name, officialEventLink: url,
+              desc: c.allText.slice(0, 260) || `${c.title} by ${config.name}.`,
+              neighbourhood: config.neighbourhood,
+              lat: 0, lng: 0,   // resolve per event in main()
+              ...(c.image ? { image: c.image } : {}),
+              ...(hint ? { externalVenueHint: hint } : {}),
+            });
+          }
+          console.log(`    Hangar → ${events.length} event(s) parsed`);
+        } catch (err) {
+          console.log(`    Hangar scraper error: ${err.message.slice(0, 80)}`);
         }
       }
 
@@ -1454,6 +1549,7 @@ async function scrapeVenue(browser, config) {
             });
           }
           console.log(`    Regional agenda → ${events.length} event(s) ingested${KEYWORD_GATE ? ` | ${skippedGate} gated out` : ''}${skippedNoDate ? ` | ${skippedNoDate} no-date` : ''}`);
+          console.log(`    ✅ ${portalOrigin.replace('https://','')} TOTAL PARSED: ${events.length} event(s) from ${raItems.length} row(s) scraped`);
         } catch (err) {
           console.log(`    Strategy 1.9b (regional agenda) failed: ${err.message.slice(0, 80)}`);
         }
@@ -1760,6 +1856,14 @@ async function main() {
   }).filter(Boolean);
   if (relabelled) console.log(`📅  Refreshed ${relabelled} stale date label(s)`);
 
+  // Rebrand generic 🌍 festival emoji → vibrant 🎉 (UI branding pass)
+  let emojiRebrand = 0;
+  existing = existing.map(e => {
+    if (e.emoji === '🌍') { emojiRebrand++; return { ...e, emoji: '🎉' }; }
+    return e;
+  });
+  if (emojiRebrand) console.log(`🎉  Rebranded ${emojiRebrand} generic festival emoji(s) → 🎉`);
+
   // Retroactively correct coordinates for Fuse and C12 (no external venue override)
   let coordFixes = 0;
   existing = existing.map(e => {
@@ -1957,6 +2061,7 @@ async function main() {
       _rawDate:r._rawDate,
       ...(r._endDate ? { _endDate: r._endDate } : {}),
       ...(r.status ? { status: r.status } : {}),
+      ...(r.image ? { image: r.image } : {}),
     });
     added++;
     console.log(`  ✅  Added: "${r.title}" (${r.date})`);

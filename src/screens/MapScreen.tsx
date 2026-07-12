@@ -1,12 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import {
   View, Text, StyleSheet, Modal, TouchableOpacity,
-  ScrollView, Pressable,
+  ScrollView, Pressable, Linking,
 } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Event, EVENTS, eventMatchesDate } from '../data/events';
+import { EDITORS_PICKS, PICK_STYLE } from '../config/editorsPicks';
 import { Theme, C } from '../constants/theme';
+
+type MapMode = 'events' | 'picks';
 
 function prettyISO(iso: string): string {
   const d = new Date(iso + 'T00:00:00');
@@ -52,6 +55,7 @@ function groupEvents(events: Event[]): VenueGroup[] {
 export default function MapScreen({ onEventPress, T, dateFilter = null, onClearDateFilter }: Props) {
   const insets = useSafeAreaInsets();
   const [sheet, setSheet] = useState<VenueGroup | null>(null);
+  const [mode, setMode] = useState<MapMode>('events');
 
   // Map markers respect the same single-date filter as the Home feed
   const visibleEvents = useMemo(
@@ -79,7 +83,7 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
         style={StyleSheet.absoluteFillObject}
         initialRegion={{ latitude: 50.8503, longitude: 4.3517, latitudeDelta: 0.05, longitudeDelta: 0.05 }}
       >
-        {groups.map(group => {
+        {mode === 'events' && groups.map(group => {
           const first   = group.events[0];
           const isMulti = group.events.length > 1;
 
@@ -101,6 +105,20 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
             </Marker>
           );
         })}
+
+        {/* Editor's Picks curated pins — tap opens Google Maps */}
+        {mode === 'picks' && EDITORS_PICKS.map(p => (
+          <Marker
+            key={p.id}
+            coordinate={{ latitude: p.lat, longitude: p.lng }}
+            onPress={() => Linking.openURL(p.link).catch(() => {})}
+            tracksViewChanges={false}
+          >
+            <View style={[styles.markerBubble, { backgroundColor: p.color }]}>
+              <Text style={styles.markerEmoji}>{p.emoji}</Text>
+            </View>
+          </Marker>
+        ))}
       </MapView>
 
       {/* Header overlay */}
@@ -108,11 +126,27 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
         paddingTop: insets.top + 8,
         backgroundColor: T.isDark ? 'rgba(26,26,26,0.93)' : 'rgba(255,255,255,0.93)',
       }]}>
-        <Text style={[styles.headerTitle, { color: T.text }]}>🗺️ Brussels Events Map</Text>
-        <Text style={[styles.headerSub, { color: T.sub }]}>
-          {mappedCount} events · {groups.length} venues · tap a pin to open
+        <Text style={[styles.headerTitle, { color: T.text }]}>
+          {mode === 'events' ? '🗺️ Brussels Events Map' : "✨ Editor's Picks Guide"}
         </Text>
-        {dateFilter && (
+        <Text style={[styles.headerSub, { color: T.sub }]}>
+          {mode === 'events'
+            ? `${mappedCount} events · ${groups.length} venues · tap a pin to open`
+            : `${EDITORS_PICKS.length} curated cafés & restaurants · tap a pin for directions`}
+        </Text>
+
+        {/* Segmented toggle: Events ↔ Editor's Picks */}
+        <View style={[styles.segment, { backgroundColor: T.pill }]}>
+          {([['events', '🗓️ Events'], ['picks', '✨ Editor\'s Picks']] as [MapMode, string][]).map(([m, label]) => (
+            <TouchableOpacity key={m} style={{ flex: 1 }} activeOpacity={0.8} onPress={() => { setMode(m); setSheet(null); }}>
+              <View style={[styles.segmentBtn, mode === m && { backgroundColor: C.lav }]}>
+                <Text style={[styles.segmentTxt, { color: mode === m ? 'white' : T.sub }]}>{label}</Text>
+              </View>
+            </TouchableOpacity>
+          ))}
+        </View>
+
+        {mode === 'events' && dateFilter && (
           <View style={[styles.filterBar, { backgroundColor: `${C.lav}18`, borderColor: `${C.lav}40` }]}>
             <Text style={{ fontSize: 12, fontWeight: '800', color: C.lav, flex: 1 }}>
               📅 {prettyISO(dateFilter)} only
@@ -126,8 +160,22 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
         )}
       </View>
 
+      {/* Editor's Picks legend */}
+      {mode === 'picks' && (
+        <View style={[styles.legend, { backgroundColor: T.isDark ? 'rgba(26,26,26,0.93)' : 'rgba(255,255,255,0.93)', bottom: insets.bottom + 16 }]}>
+          {(Object.keys(PICK_STYLE) as (keyof typeof PICK_STYLE)[]).map(k => (
+            <View key={k} style={styles.legendRow}>
+              <View style={[styles.legendDot, { backgroundColor: PICK_STYLE[k].color }]}>
+                <Text style={{ fontSize: 12 }}>{PICK_STYLE[k].emoji}</Text>
+              </View>
+              <Text style={[styles.legendTxt, { color: T.text }]}>{PICK_STYLE[k].label}</Text>
+            </View>
+          ))}
+        </View>
+      )}
+
       {/* Empty state when the date filter hides every pin */}
-      {dateFilter && mappedCount === 0 && (
+      {mode === 'events' && dateFilter && mappedCount === 0 && (
         <View style={styles.mapEmpty} pointerEvents="none">
           <View style={[styles.mapEmptyCard, { backgroundColor: T.card, borderColor: T.border }]}>
             <Text style={{ fontSize: 30, marginBottom: 6 }}>🗓️</Text>
@@ -198,8 +246,15 @@ const styles = StyleSheet.create({
   header:       { position: 'absolute', top: 0, left: 0, right: 0, zIndex: 10, paddingHorizontal: 22, paddingBottom: 14 },
   headerTitle:  { fontSize: 20, fontWeight: '900' },
   headerSub:    { fontSize: 12, marginTop: 2 },
+  segment:      { flexDirection: 'row', borderRadius: 14, padding: 3, marginTop: 12, gap: 3 },
+  segmentBtn:   { paddingVertical: 9, borderRadius: 11, alignItems: 'center' },
+  segmentTxt:   { fontSize: 13, fontWeight: '800' },
   filterBar:    { flexDirection: 'row', alignItems: 'center', borderRadius: 14, borderWidth: 1.5, paddingHorizontal: 12, paddingVertical: 8, marginTop: 10 },
   clearBadge:   { borderRadius: 11, paddingHorizontal: 10, paddingVertical: 5 },
+  legend:       { position: 'absolute', left: 22, borderRadius: 16, paddingHorizontal: 14, paddingVertical: 10, gap: 8, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.15, shadowRadius: 8, elevation: 5 },
+  legendRow:    { flexDirection: 'row', alignItems: 'center', gap: 8 },
+  legendDot:    { width: 26, height: 26, borderRadius: 13, alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: 'white' },
+  legendTxt:    { fontSize: 12, fontWeight: '800' },
   mapEmpty:     { position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 40 },
   mapEmptyCard: { borderRadius: 20, borderWidth: 1, padding: 22, alignItems: 'center', shadowColor: '#000', shadowOffset: { width: 0, height: 4 }, shadowOpacity: 0.12, shadowRadius: 12, elevation: 6 },
 
