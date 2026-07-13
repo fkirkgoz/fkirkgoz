@@ -259,8 +259,8 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     tags: ['Open Air', 'Electronic', 'Festival', 'Day Party'],
     defaultTime: '14:00',
     jsHeavy: true, enforceVisuals: true,
-    waitForSelector: '[class*="event"], article, .elementor-post, [class*="card"]',
-    eventSelector: 'article, .elementor-post, [class*="event-item"], [class*="event-card"], [class*="EventCard"], li[class*="event"]',
+    waitForSelector: '.elementor-post__card, .elementor-post, [class*="event"], article, [class*="card"]',
+    eventSelector: '.elementor-post__card, .elementor-post, article, [class*="event-item"], [class*="event-card"], [class*="EventCard"], li[class*="event"]',
     linkPattern: /\/event\/|\/events\/|\/tickets?\/|\/e\/|shotgun|dice\.fm|ticket/i,
   },
 

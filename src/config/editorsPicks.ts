@@ -37,32 +37,34 @@ export const PICK_STYLE: Record<PickCategory, { emoji: string; color: string; la
   Restaurant: { emoji: '🍽️', color: '#E76F51', label: 'Restaurants' },
 };
 
+// Coordinates below are EXACT verified pin positions — never re-derive them
+// from the address text or a geocoder; the map renders lat/lng verbatim.
 export const EDITORS_PICKS: EditorsPick[] = [
   // ── Cafés ──
   {
     id: 'moody',
     name: 'Moody Brussels',
     category: 'Cafe',
-    address: 'Avenue Sleeckx 5, 1030 Schaerbeek',
-    lat: 50.8654, lng: 4.3802,
+    address: 'Rue de la Victoire 122, 1060 Saint-Gilles',
+    lat: 50.8298, lng: 4.3462,
     link: 'https://maps.app.goo.gl/HDCv3Ps524QW3FQdA',
     emoji: '☕', color: '#C08457',
     priceRange: '€€',
     score: 9.1,
     blurb: 'Cosy specialty-coffee spot with a warm, moody interior — great flat whites and homemade cakes.',
-    neighbourhood: 'Schaerbeek',
+    neighbourhood: 'Saint-Gilles',
   },
   {
     id: 'tipi',
     name: 'Tipi la Guinguette',
     category: 'Cafe',
-    address: 'Rue du Lièvre 129, 1070 Anderlecht',
-    lat: 50.8252, lng: 4.2965,
+    address: 'Parc des Étangs, Boulevard de la Commande, 1070 Anderlecht',
+    lat: 50.8288, lng: 4.2954,
     link: 'https://maps.app.goo.gl/vkA4DhnXBX7D1Y879',
     emoji: '☕', color: '#C08457',
     priceRange: '€',
     score: 8.8,
-    blurb: 'Open-air guinguette café — drinks and sunset hangs surrounded by greenery.',
+    blurb: 'Open-air guinguette café in the Parc des Étangs — drinks and sunset hangs surrounded by greenery.',
     neighbourhood: 'Anderlecht',
   },
 
@@ -82,9 +84,9 @@ export const EDITORS_PICKS: EditorsPick[] = [
   },
   {
     id: 'minao',
-    name: 'Minaô Schaerbeek',
+    name: 'Minaô',
     category: 'Restaurant',
-    address: 'Rue Général Eenens 20, 1030 Schaerbeek',
+    address: "Rue de l'Avenir 20, 1030 Schaerbeek",
     lat: 50.8631, lng: 4.3813,
     link: 'https://maps.app.goo.gl/nbUdd8aAGgPHhpEp9',
     emoji: '🍽️', color: '#E76F51',

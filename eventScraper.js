@@ -913,18 +913,49 @@ async function scrapeVenue(browser, config) {
       // event/ticket anchors instead, one block per anchor.
       if (config.id === 'hangar' && events.length <= 2) {
         try {
-          console.log('    Strategy 1.6h (Hangar upcoming-events): scrolling + parsing…');
-          // Scroll in steps to trigger every below-the-fold lazy render
-          for (let s = 0; s < 8; s++) {
-            await page.evaluate((step) => {
-              window.scrollTo(0, (document.body.scrollHeight / 8) * (step + 1));
-            }, s);
-            await sleep(700);
+          console.log('    Strategy 1.6h (Hangar upcoming-events): waiting for grid render…');
+
+          // ── Explicit DOM-wait: the summer schedule grid is rendered client-side
+          // (Elementor). Parsing too early sees only the SSR shell with the first
+          // card, so we block until real event cards exist — trying the specific
+          // Elementor card class first, then progressively generic containers.
+          const HANGAR_WAIT_SELECTORS = [
+            '.elementor-post__card',
+            '.elementor-post',
+            '[class*="event-item"], [class*="event-card"]',
+            'article',
+          ];
+          let gridReady = false;
+          for (const sel of HANGAR_WAIT_SELECTORS) {
+            try {
+              await page.waitForSelector(sel, { timeout: 10000 });
+              console.log(`    Hangar grid ready: '${sel}' rendered`);
+              gridReady = true;
+              break;
+            } catch {}
+          }
+          if (!gridReady) console.log('    Hangar: no card selector appeared in 10s — parsing current DOM anyway');
+
+          // ── Scroll-until-stable: step to the bottom repeatedly until the count
+          // of candidate cards stops growing (2 stable rounds, max 15 passes) —
+          // triggers every lazy-loaded row on the timeline, not just page 1.
+          let prevCards = -1, stableRounds = 0;
+          for (let pass = 0; pass < 15 && stableRounds < 2; pass++) {
+            const cardCount = await page.evaluate((step) => {
+              window.scrollTo(0, (document.body.scrollHeight / 4) * ((step % 4) + 1));
+              window.dispatchEvent(new Event('scroll'));
+              return document.querySelectorAll(
+                '.elementor-post__card, .elementor-post, article, [class*="event-item"], [class*="event-card"]'
+              ).length;
+            }, pass);
+            if (cardCount === prevCards) stableRounds++; else { stableRounds = 0; prevCards = cardCount; }
+            await sleep(900);
           }
           await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
           await sleep(1200);
           await page.evaluate(() => window.scrollTo(0, 0));
           await sleep(400);
+          console.log(`    Hangar: grid settled at ${prevCards} card container(s)`);
 
           const venueEventSel = config.eventSelector || '';
           const hangarCards = await page.evaluate((venueEventSel) => {
