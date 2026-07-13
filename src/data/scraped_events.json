@@ -3489,7 +3489,7 @@
     "date": "Next Month",
     "title": "XRDS festival 2026: Saturday",
     "venue": "Fuse",
-    "addr": "Parc Astrid / Parc des Étangs, 1070 Anderlecht",
+    "addr": "Rue Blaes 208, 1000 Brussels",
     "time": "23:00",
     "startH": 23,
     "endH": 26,
@@ -3502,8 +3502,8 @@
     ],
     "source": "Fuse",
     "officialEventLink": "https://www.fuse.be/events/xrds-festival-2026",
-    "lat": 50.829,
-    "lng": 4.305,
+    "lat": 50.8365,
+    "lng": 4.3435,
     "neighbourhood": "Marolles",
     "desc": "XRDS festival 2026: Saturday at Fuse.",
     "_rawDate": "2026-08-15"
@@ -3518,8 +3518,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Art",
       "Culture"
@@ -3534,7 +3534,7 @@
   },
   {
     "id": 582,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "This Weekend",
     "title": "If I had Legs I'd Kick You - Mary Bronstein",
     "venue": "Bozar",
@@ -3542,8 +3542,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3558,7 +3558,7 @@
   },
   {
     "id": 583,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Rosalie - Stephanie Di Giusto",
     "venue": "Bozar",
@@ -3566,8 +3566,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3582,7 +3582,7 @@
   },
   {
     "id": 584,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Le Chant des Forêts - Vincent Munier",
     "venue": "Bozar",
@@ -3590,8 +3590,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3606,7 +3606,7 @@
   },
   {
     "id": 585,
-    "cat": "Music",
+    "cat": "Culture",
     "date": "Next Week",
     "title": "Prelude to the Belgian National Day",
     "venue": "Bozar",
@@ -3614,8 +3614,8 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Concert",
       "Live Music"
@@ -3638,8 +3638,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Art",
       "Culture"
