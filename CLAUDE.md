@@ -114,7 +114,7 @@ HomeScreen appends any extra named-month labels found in live event data via `av
 - Mock notification feed and bell removed in the production reset
 
 ### MapScreen (`src/screens/MapScreen.tsx`)
-- **Segmented toggle**: "🗓️ Events" ↔ "✨ Editor's Picks". Events mode shows scraped event pins; Picks mode hides them and renders curated café/restaurant pins from `src/config/editorsPicks.ts` (tap → opens the Google Maps link). Picks mode shows a category legend.
+- **Segmented toggle**: "🗓️ Events" ↔ "✨ Editor's Picks". Events mode shows scraped event pins; Picks mode hides them and renders curated café/restaurant pins from `src/config/editorsPicks.ts`. Tapping a pick opens an IN-APP card (name · price range €/€€/€€€ · editor score · "See more" CTA expanding blurb/address) — Google Maps only opens from the explicit button inside the expanded card, never on marker tap. Picks mode shows a category legend.
 - **Venue grouping**: events at the same venue (matched by name prefix) share one marker
 - Single-event markers → tap opens DetailScreen directly
 - Multi-event markers → show pink count badge → tap opens slide-up bottom sheet

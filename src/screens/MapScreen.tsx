@@ -6,7 +6,7 @@ import {
 import MapView, { Marker } from 'react-native-maps';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Event, EVENTS, eventMatchesDate } from '../data/events';
-import { EDITORS_PICKS, PICK_STYLE } from '../config/editorsPicks';
+import { EDITORS_PICKS, PICK_STYLE, EditorsPick } from '../config/editorsPicks';
 import { Theme, C } from '../constants/theme';
 
 type MapMode = 'events' | 'picks';
@@ -56,6 +56,8 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
   const insets = useSafeAreaInsets();
   const [sheet, setSheet] = useState<VenueGroup | null>(null);
   const [mode, setMode] = useState<MapMode>('events');
+  const [pick, setPick] = useState<EditorsPick | null>(null);        // in-app pick card
+  const [pickExpanded, setPickExpanded] = useState(false);           // "see more" state
 
   // Map markers respect the same single-date filter as the Home feed
   const visibleEvents = useMemo(
@@ -106,12 +108,13 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
           );
         })}
 
-        {/* Editor's Picks curated pins — tap opens Google Maps */}
+        {/* Editor's Picks curated pins — tap opens the IN-APP info card
+            (no redirect out to Google Maps) */}
         {mode === 'picks' && EDITORS_PICKS.map(p => (
           <Marker
             key={p.id}
             coordinate={{ latitude: p.lat, longitude: p.lng }}
-            onPress={() => Linking.openURL(p.link).catch(() => {})}
+            onPress={() => { setPickExpanded(false); setPick(p); }}
             tracksViewChanges={false}
           >
             <View style={[styles.markerBubble, { backgroundColor: p.color }]}>
@@ -138,7 +141,7 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
         {/* Segmented toggle: Events ↔ Editor's Picks */}
         <View style={[styles.segment, { backgroundColor: T.pill }]}>
           {([['events', '🗓️ Events'], ['picks', '✨ Editor\'s Picks']] as [MapMode, string][]).map(([m, label]) => (
-            <TouchableOpacity key={m} style={{ flex: 1 }} activeOpacity={0.8} onPress={() => { setMode(m); setSheet(null); }}>
+            <TouchableOpacity key={m} style={{ flex: 1 }} activeOpacity={0.8} onPress={() => { setMode(m); setSheet(null); setPick(null); }}>
               <View style={[styles.segmentBtn, mode === m && { backgroundColor: C.lav }]}>
                 <Text style={[styles.segmentTxt, { color: mode === m ? 'white' : T.sub }]}>{label}</Text>
               </View>
@@ -237,6 +240,77 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
         </Modal>
       )}
 
+      {/* ── Editor's Pick in-app info card ──
+          Uniform layout: name · price range · score · "See more" CTA.
+          Google Maps only opens from the explicit button inside the
+          expanded details — never on the marker tap itself. */}
+      {pick && (
+        <Modal visible transparent animationType="slide" onRequestClose={() => setPick(null)}>
+          <View style={{ flex: 1, justifyContent: 'flex-end' }}>
+            <Pressable style={[StyleSheet.absoluteFillObject, styles.overlay]} onPress={() => setPick(null)} />
+
+            <View style={[styles.sheet, { backgroundColor: T.card, paddingBottom: insets.bottom + 16 }]}>
+              <View style={[styles.handle, { backgroundColor: T.border }]} />
+
+              {/* Header row: emoji · name · close */}
+              <View style={styles.sheetHead}>
+                <View style={[styles.pickEmoji, { backgroundColor: `${pick.color}28`, borderColor: pick.color }]}>
+                  <Text style={{ fontSize: 26 }}>{pick.emoji}</Text>
+                </View>
+                <View style={{ flex: 1, paddingLeft: 12 }}>
+                  <Text style={[styles.sheetVenue, { color: T.text }]}>{pick.name}</Text>
+                  <Text style={[styles.sheetSub, { color: T.sub }]}>
+                    {PICK_STYLE[pick.category].label.replace(/s$/, '')} · {pick.neighbourhood}
+                  </Text>
+                </View>
+                <TouchableOpacity onPress={() => setPick(null)}>
+                  <View style={[styles.closeBtn, { backgroundColor: T.pill }]}>
+                    <Text style={{ color: T.sub, fontWeight: '700', fontSize: 13 }}>✕</Text>
+                  </View>
+                </TouchableOpacity>
+              </View>
+
+              {/* Price range + editorial score */}
+              <View style={styles.pickStatsRow}>
+                <View style={[styles.pickStat, { backgroundColor: T.pill }]}>
+                  <Text style={[styles.pickStatLabel, { color: T.sub }]}>PRICE</Text>
+                  <Text style={[styles.pickStatVal, { color: T.text }]}>
+                    <Text style={{ color: pick.color }}>{pick.priceRange}</Text>
+                    <Text style={{ color: T.border }}>{'€€€'.slice(pick.priceRange.length)}</Text>
+                  </Text>
+                </View>
+                <View style={[styles.pickStat, { backgroundColor: T.pill }]}>
+                  <Text style={[styles.pickStatLabel, { color: T.sub }]}>EDITOR SCORE</Text>
+                  <Text style={[styles.pickStatVal, { color: C.lav }]}>★ {pick.score.toFixed(1)} / 10</Text>
+                </View>
+              </View>
+
+              {/* See-more CTA → expanded details */}
+              {!pickExpanded ? (
+                <TouchableOpacity activeOpacity={0.85} onPress={() => setPickExpanded(true)}>
+                  <View style={[styles.pickCta, { backgroundColor: C.lav }]}>
+                    <Text style={styles.pickCtaTxt}>Click to see more ↓</Text>
+                  </View>
+                </TouchableOpacity>
+              ) : (
+                <View>
+                  <Text style={[styles.pickBlurb, { color: T.text }]}>{pick.blurb}</Text>
+                  <Text style={[styles.pickAddr, { color: T.sub }]}>📍 {pick.address}</Text>
+                  <TouchableOpacity
+                    activeOpacity={0.85}
+                    onPress={() => Linking.openURL(pick.link).catch(() => {})}
+                  >
+                    <View style={[styles.pickCta, { backgroundColor: pick.color }]}>
+                      <Text style={styles.pickCtaTxt}>Open in Google Maps →</Text>
+                    </View>
+                  </TouchableOpacity>
+                </View>
+              )}
+            </View>
+          </View>
+        </Modal>
+      )}
+
     </View>
   );
 }
@@ -251,6 +325,15 @@ const styles = StyleSheet.create({
   segmentTxt:   { fontSize: 13, fontWeight: '800' },
   filterBar:    { flexDirection: 'row', alignItems: 'center', borderRadius: 14, borderWidth: 1.5, paddingHorizontal: 12, paddingVertical: 8, marginTop: 10 },
   clearBadge:   { borderRadius: 11, paddingHorizontal: 10, paddingVertical: 5 },
+  pickEmoji:    { width: 52, height: 52, borderRadius: 16, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5 },
+  pickStatsRow: { flexDirection: 'row', gap: 10, marginBottom: 14 },
+  pickStat:     { flex: 1, borderRadius: 16, paddingVertical: 12, alignItems: 'center', gap: 3 },
+  pickStatLabel:{ fontSize: 10, fontWeight: '800', letterSpacing: 1 },
+  pickStatVal:  { fontSize: 17, fontWeight: '900' },
+  pickCta:      { borderRadius: 18, paddingVertical: 14, alignItems: 'center', marginTop: 4 },
+  pickCtaTxt:   { color: 'white', fontWeight: '900', fontSize: 14 },
+  pickBlurb:    { fontSize: 14, lineHeight: 22, fontWeight: '600', marginBottom: 10 },
+  pickAddr:     { fontSize: 12, fontWeight: '600', marginBottom: 14 },
   legend:       { position: 'absolute', left: 22, borderRadius: 16, paddingHorizontal: 14, paddingVertical: 10, gap: 8, shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.15, shadowRadius: 8, elevation: 5 },
   legendRow:    { flexDirection: 'row', alignItems: 'center', gap: 8 },
   legendDot:    { width: 26, height: 26, borderRadius: 13, alignItems: 'center', justifyContent: 'center', borderWidth: 2, borderColor: 'white' },

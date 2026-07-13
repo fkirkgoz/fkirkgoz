@@ -899,35 +899,77 @@ async function scrapeVenue(browser, config) {
       }
 
       // ── Strategy 1.6h: Hangar — dedicated upcoming-events layout parser ──
-      // thehangar.be/upcoming-events lists each open air as a wrapper carrying a
-      // title, a date, a background graphic, and a ticket/detail link. We scroll
-      // to trigger lazy loads, then pull all four fields per wrapper. Location is
-      // left to the geocoder (Hangar's events roam across Brussels sites).
-      if (config.id === 'hangar' && events.length === 0) {
+      // thehangar.be/upcoming-events lists each open air as a layout block with a
+      // title, calendar date, background graphic, and ticket/detail link.
+      //
+      // Runs even when a prior strategy found ≤2 events (their JSON-LD tends to
+      // expose only the first upcoming event, which previously short-circuited
+      // this parser and produced exactly 1 event).
+      //
+      // Harvesting is UNION + LEAF-ONLY: every selector's matches are pooled and
+      // any wrapper that CONTAINS another candidate is dropped — so one page-level
+      // container can never swallow the entire schedule into a single "card".
+      // If leaf detection still yields ≤1 block, we split the page by
+      // event/ticket anchors instead, one block per anchor.
+      if (config.id === 'hangar' && events.length <= 2) {
         try {
           console.log('    Strategy 1.6h (Hangar upcoming-events): scrolling + parsing…');
-          // Scroll to force any lazy-loaded event wrappers to render
-          for (let s = 0; s < 6; s++) {
-            await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-            await sleep(900);
+          // Scroll in steps to trigger every below-the-fold lazy render
+          for (let s = 0; s < 8; s++) {
+            await page.evaluate((step) => {
+              window.scrollTo(0, (document.body.scrollHeight / 8) * (step + 1));
+            }, s);
+            await sleep(700);
           }
+          await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+          await sleep(1200);
           await page.evaluate(() => window.scrollTo(0, 0));
           await sleep(400);
 
           const venueEventSel = config.eventSelector || '';
           const hangarCards = await page.evaluate((venueEventSel) => {
             const sels = (venueEventSel ? venueEventSel.split(',').map(s => s.trim()) : [])
-              .concat(['article', '[class*="event"]', '[class*="Event"]', '.elementor-post', '[class*="card"]', 'li']);
-            let best = [];
+              .concat([
+                'article', '.elementor-post', '.jet-listing-grid__item',
+                '[class*="event-item"]', '[class*="event-card"]', '[class*="EventCard"]',
+                '[class*="event"]', '[class*="Event"]', '[class*="card"]',
+                'li', '.wp-block-post',
+              ]);
+
+            // 1. UNION of all selector matches (not "best selector wins")
+            const pool = new Set();
             for (const sel of sels) {
               try {
-                const els = [...document.querySelectorAll(sel)].filter(el => {
+                document.querySelectorAll(sel).forEach(el => {
                   const t = (el.innerText || '').trim();
-                  return t.length > 8 && t.length < 700 && el.querySelector('a[href]');
+                  if (t.length > 8 && t.length < 900 && el.querySelector('a[href]')) pool.add(el);
                 });
-                if (els.length > best.length) best = els;
               } catch {}
             }
+            // 2. LEAF-ONLY: drop any candidate that contains another candidate
+            let candidates = [...pool];
+            candidates = candidates.filter(el =>
+              !candidates.some(other => other !== el && el.contains(other))
+            );
+
+            // 3. Fallback: split by event/ticket anchors — one block per anchor
+            if (candidates.length <= 1) {
+              const anchors = [...document.querySelectorAll('a[href]')]
+                .filter(a => /event|ticket|shotgun|dice|eventbrite|billet|\/e\//i.test(a.href || ''));
+              const blocks = new Set();
+              for (const a of anchors) {
+                let n = a;
+                for (let up = 0; up < 4 && n.parentElement; up++) {
+                  n = n.parentElement;
+                  const t = (n.innerText || '').trim();
+                  if (t.length > 15 && t.length < 900) { blocks.add(n); break; }
+                }
+              }
+              let arr = [...blocks];
+              arr = arr.filter(el => !arr.some(o => o !== el && el.contains(o)));
+              if (arr.length > candidates.length) candidates = arr;
+            }
+
             // Pull a background-image URL from inline style or a nested <img>
             const bgOf = (el) => {
               const scan = [el, ...el.querySelectorAll('[style*="background"], img')];
@@ -942,10 +984,11 @@ async function scrapeVenue(browser, config) {
               }
               return '';
             };
-            return best.slice(0, 40).map(el => {
-              const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"],[class*="heading"]');
-              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"]');
-              const linkA = el.querySelector('a[href*="ticket"],a[href*="/event"],a[href*="shotgun"],a[href*="dice"]')
+
+            return candidates.slice(0, 50).map(el => {
+              const h = el.querySelector('h1,h2,h3,h4,h5,[class*="title"],[class*="name"],[class*="heading"],strong');
+              const dateEl = el.querySelector('time,[datetime],[class*="date"],[class*="when"],[class*="day"],[class*="datum"]');
+              const linkA = el.querySelector('a[href*="ticket"],a[href*="/event"],a[href*="shotgun"],a[href*="dice"],a[href*="eventbrite"]')
                          || el.querySelector('a[href]');
               return {
                 title:   (h?.innerText || '').replace(/\s+/g, ' ').trim(),
@@ -957,22 +1000,23 @@ async function scrapeVenue(browser, config) {
             }).filter(c => c.title && c.title.length > 3);
           }, venueEventSel);
 
-          console.log(`    Hangar: ${hangarCards.length} event wrapper(s) found`);
+          console.log(`    Hangar: ${hangarCards.length} leaf event block(s) found`);
           const baseOriginH = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || 'https://thehangar.be';
+          const hangarEvents = [];
 
           for (const c of hangarCards) {
-            if (!isValidTitle(c.title)) continue;
+            if (!isValidTitle(c.title)) { console.log(`    Hangar skip "${c.title.slice(0,30)}" — bad title`); continue; }
             const rawDate = parseRawDate(c.dateStr) || parseRawDate(scanTextForDate(c.allText));
-            if (!rawDate) { console.log(`    Hangar skip "${c.title.slice(0,30)}" — no date`); continue; }
+            if (!rawDate) { console.log(`    Hangar skip "${c.title.slice(0,30)}" — no date (raw:"${(c.dateStr||'').slice(0,20)}")`); continue; }
             const relDate = toRelativeDate(rawDate);
-            if (!relDate) continue;
+            if (!relDate) { console.log(`    Hangar skip "${c.title.slice(0,30)}" — past date ${rawDate}`); continue; }
             const url = c.link.startsWith('http') ? c.link
               : c.link.startsWith('/') ? `${baseOriginH}${c.link}` : '';
             const cls = classifyForVenue(c.title + ' ' + c.allText, config);
             const smart = smartDefaultTime(cls.cat);
             // Location: Hangar events roam — detect landmark, else geocode
             const hint = detectExternalVenue(c.title + ' ' + c.allText);
-            events.push({
+            hangarEvents.push({
               _rawDate: rawDate, title: c.title,
               venue: hint ? hint.replace(/\s+Brussels$/i, '') : config.name,
               addr: config.addr,
@@ -987,7 +1031,13 @@ async function scrapeVenue(browser, config) {
               ...(hint ? { externalVenueHint: hint } : {}),
             });
           }
-          console.log(`    Hangar → ${events.length} event(s) parsed`);
+
+          // Replace any thinner earlier capture (e.g. single JSON-LD event)
+          if (hangarEvents.length > events.length) {
+            events.length = 0;
+            events.push(...hangarEvents);
+          }
+          console.log(`    Hangar → ${events.length} event(s) parsed (full schedule)`);
         } catch (err) {
           console.log(`    Hangar scraper error: ${err.message.slice(0, 80)}`);
         }
@@ -1374,17 +1424,28 @@ async function scrapeVenue(browser, config) {
               .join('|'), 'i')
           : null; // no gate — capture the whole regional agenda
         const portalOrigin = (config.urls[0] || '').match(/^https?:\/\/[^/]+/)?.[0] || 'https://ra.co';
-        const MAX_PORTAL_EVENTS = 90;
+        const MAX_PORTAL_EVENTS = 120;
         try {
           console.log(`    Strategy 1.9b (regional agenda: ${portalOrigin.replace('https://', '')})${KEYWORD_GATE ? ' [keyword-gated]' : ' [full feed]'}…`);
 
-          // ── Scroll-until-stable: RA/Shotgun lazy-load day blocks on scroll.
-          // Keep scrolling until the /events/ anchor count plateaus for 3 rounds
-          // (bounded at 30 passes) — captures the whole feed, not just page 1.
+          // ── Scroll-until-stable lazy-load bypass ──
+          // RA/Shotgun load day blocks via IntersectionObserver sentinels near the
+          // page bottom. Each pass: step to 90% (lets the sentinel enter the
+          // viewport "naturally"), then to the bottom, fire a scroll event, and
+          // click any visible "load/show more" button. We stop only after the
+          // /events/ anchor count plateaus for 4 consecutive rounds (max 40).
           let prevCount = -1, stable = 0;
-          for (let pass = 0; pass < 30 && stable < 3; pass++) {
+          for (let pass = 0; pass < 40 && stable < 4; pass++) {
             const count = await page.evaluate(() => {
-              window.scrollTo(0, document.body.scrollHeight);
+              const h = document.body.scrollHeight;
+              window.scrollTo(0, Math.floor(h * 0.9));
+              window.dispatchEvent(new Event('scroll'));
+              window.scrollTo(0, h);
+              window.dispatchEvent(new Event('scroll'));
+              // Some feeds hide extra days behind an explicit button
+              const btn = [...document.querySelectorAll('button, a[role="button"], [class*="loadMore"], [class*="LoadMore"]')]
+                .find(b => /load\s*more|show\s*more|more\s*events|voir\s*plus/i.test(b.innerText || ''));
+              if (btn) { try { btn.click(); } catch {} }
               return document.querySelectorAll('a[href*="/events/"]').length;
             });
             if (count === prevCount) stable++; else { stable = 0; prevCount = count; }
