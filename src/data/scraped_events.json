@@ -2966,7 +2966,7 @@
   {
     "id": 554,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Mind of a Serial Killer : The Experience",
     "venue": "Tour & Taxis",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -2990,7 +2990,7 @@
   {
     "id": 555,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Detours Festival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -3261,7 +3261,7 @@
   {
     "id": 571,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "National Day: Fête au Parc",
     "venue": "Brussels Park",
     "addr": "Brussels Park, Belgium",
@@ -3382,7 +3382,7 @@
   {
     "id": 576,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "PLATINE &#8211; Summer Residency !",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3631,7 +3631,7 @@
   {
     "id": 586,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "National Day (10+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3917,5 +3917,29 @@
     "neighbourhood": "Various",
     "desc": "Atomium Open Air 15:00 - 00:00 (Last entry 20:00)",
     "_rawDate": "2026-07-31"
+  },
+  {
+    "id": 598,
+    "cat": "Music",
+    "date": "September",
+    "title": "Marni Jazz Festival",
+    "venue": "Le Marni",
+    "addr": "Le Marni, Belgium",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎷",
+    "color": "#C77DFF",
+    "tags": [
+      "Jazz",
+      "Live Music"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Marni-Jazz-Festival.592218",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Thu 10 September — Sat 19 September Marni Jazz Festival ConcertLe Marni View more",
+    "_rawDate": "2026-09-10"
   }
 ]
