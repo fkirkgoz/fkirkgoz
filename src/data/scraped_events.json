@@ -2964,33 +2964,9 @@
     "_rawDate": "2026-10-03"
   },
   {
-    "id": 554,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Mind of a Serial Killer : The Experience",
-    "venue": "Tour & Taxis",
-    "addr": "Tour & Taxis, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Mind-of-a-Serial-Killer-The-Experience.5700024189",
-    "lat": 50.8676,
-    "lng": 4.3427,
-    "neighbourhood": "Centre",
-    "desc": "Tue 14 July — Thu 31 December Mind of a Serial Killer : The Experience €17.9 ExhibitionsTour & Taxis View more",
-    "_rawDate": "2026-07-14"
-  },
-  {
     "id": 555,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Detours Festival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -3382,7 +3358,7 @@
   {
     "id": 576,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "PLATINE &#8211; Summer Residency !",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3941,5 +3917,55 @@
     "neighbourhood": "Centre",
     "desc": "Thu 10 September — Sat 19 September Marni Jazz Festival ConcertLe Marni View more",
     "_rawDate": "2026-09-10"
+  },
+  {
+    "id": 599,
+    "cat": "Sports",
+    "date": "September",
+    "title": "Brussels Urban Sessions",
+    "venue": "Brussels Urban Sessions",
+    "addr": "Brussels Urban Sessions, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "👟",
+    "color": "#90E0EF",
+    "tags": [
+      "Sports",
+      "Active"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Urban-Sessions.5700021330",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Fri 11 September — Sun 13 September Brussels Urban Sessions €10 SportBrussels Urban Sessions View more",
+    "_rawDate": "2026-09-11"
+  },
+  {
+    "id": 600,
+    "cat": "Festival",
+    "date": "This Weekend",
+    "title": "Nyege Summer Jam",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "21:00",
+    "startH": 21,
+    "endH": 24,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/nyege-summer-jam/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "Brussels we are coming back this Saturday for our yearly Brussels summerjam at our favorite joint Brasserie Illegaal this time teaming up with Soukous Volante crew for a sweaty line up. …",
+    "_rawDate": "2026-07-18"
   }
 ]
