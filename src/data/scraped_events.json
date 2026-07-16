@@ -2964,30 +2964,6 @@
     "_rawDate": "2026-10-03"
   },
   {
-    "id": 555,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Detours Festival",
-    "venue": "Various locations in the Brussels Capital Region",
-    "addr": "Various locations in the Brussels Capital Region, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Detours-Festival.5700022456",
-    "lat": 50.83161191593586,
-    "lng": 4.33508930828644,
-    "neighbourhood": "Centre",
-    "desc": "Wed 15 July — Sat 24 October Detours Festival Free FestivalVarious locations in the Brussels Capital Region View more",
-    "_rawDate": "2026-07-15"
-  },
-  {
     "id": 561,
     "cat": "Festival",
     "date": "This Weekend",
@@ -3356,35 +3332,9 @@
     "_rawDate": "2026-08-29"
   },
   {
-    "id": 576,
-    "cat": "Nightlife",
-    "date": "Today",
-    "title": "PLATINE &#8211; Summer Residency !",
-    "venue": "LaVallée",
-    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
-    "time": "16:00",
-    "startH": 16,
-    "endH": 19,
-    "emoji": "🏭",
-    "color": "#6C63FF",
-    "tags": [
-      "Open Air",
-      "Industrial",
-      "Electronic",
-      "Art"
-    ],
-    "source": "LaVallée",
-    "officialEventLink": "https://lavallee.brussels/event/platine-summer-residency/",
-    "lat": 50.8568,
-    "lng": 4.339,
-    "neighbourhood": "Molenbeek",
-    "desc": "Four weeks of food, music, workshops, open airs, natural wine and late nights at LaVallée !",
-    "_rawDate": "2026-07-15"
-  },
-  {
     "id": 577,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ARTISJOK x MICROWAVE x PLATINE",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
