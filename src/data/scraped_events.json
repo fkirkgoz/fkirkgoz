@@ -2939,32 +2939,6 @@
     "_rawDate": "2026-10-03"
   },
   {
-    "id": 561,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Deep Dive Open Air",
-    "venue": "Brasserie ILLEGAAL",
-    "addr": "Brussels, Belgium",
-    "time": "14:00",
-    "startH": 14,
-    "endH": 17,
-    "emoji": "🌿",
-    "color": "#B8E5C0",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Day Party",
-      "Festival"
-    ],
-    "source": "Brasserie ILLEGAAL",
-    "officialEventLink": "https://brasserie-illegaal.com/event/deep-dive-open-air/",
-    "lat": 50.8503,
-    "lng": 4.3517,
-    "neighbourhood": "Various",
-    "desc": "Ready for another deep dive? · Line up: Mia Cecille / Marie K / Kivaa / Malo Z · NO RACISM, NO SEXISM, NO QUEERPHOBIA, …",
-    "_rawDate": "2026-07-19"
-  },
-  {
     "id": 562,
     "cat": "Festival",
     "date": "This Weekend",
@@ -2993,7 +2967,7 @@
   {
     "id": 563,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Metropolis Open Air x Illegaal",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3044,7 +3018,7 @@
   {
     "id": 565,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Bill Cunningham New York - Richard Press",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3140,7 +3114,7 @@
   {
     "id": 569,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "I am Martin Parr - Lee Shulman",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3164,7 +3138,7 @@
   {
     "id": 570,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Bal National",
     "venue": "Place du Jeu de Balle",
     "addr": "Place du Jeu de Balle, Belgium",
@@ -3188,7 +3162,7 @@
   {
     "id": 571,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "National Day: Fête au Parc",
     "venue": "Brussels Park",
     "addr": "Brussels Park, Belgium",
@@ -3408,33 +3382,9 @@
     "_rawDate": "2026-07-24"
   },
   {
-    "id": 582,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "If I had Legs I'd Kick You - Mary Bronstein",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/if-i-had-legs-id-kick-you-mary-bronstein",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-07-19"
-  },
-  {
     "id": 583,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Rosalie - Stephanie Di Giusto",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3482,7 +3432,7 @@
   {
     "id": 585,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Prelude to the Belgian National Day",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3506,7 +3456,7 @@
   {
     "id": 586,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "National Day (10+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
