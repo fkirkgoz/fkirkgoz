@@ -3136,33 +3136,9 @@
     "_rawDate": "2026-07-26"
   },
   {
-    "id": 570,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Bal National",
-    "venue": "Place du Jeu de Balle",
-    "addr": "Place du Jeu de Balle, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Bal-National.5700024107",
-    "lat": 50.8370045,
-    "lng": 4.3458407,
-    "neighbourhood": "Centre",
-    "desc": "Mon 20 July Bal National Free FestivalPlace du Jeu de Balle View more",
-    "_rawDate": "2026-07-20"
-  },
-  {
     "id": 571,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "National Day: Fête au Parc",
     "venue": "Brussels Park",
     "addr": "Brussels Park, Belgium",
@@ -3430,33 +3406,9 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 585,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Prelude to the Belgian National Day",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/prelude-belgian-national-day",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-07-20"
-  },
-  {
     "id": 586,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "National Day (10+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3794,7 +3746,7 @@
   {
     "id": 601,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Summer Organ Festival",
     "venue": "St Michael and St Gudula Cathedral",
     "addr": "St Michael and St Gudula Cathedral, Belgium",
@@ -3863,5 +3815,53 @@
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Dan Shake & Luke Alessi at Fuse.",
     "_rawDate": "2026-08-22"
+  },
+  {
+    "id": 604,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Mr Nobody against Putin - David Borenstein",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/mr-nobody-against-putin-david-borenstein",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-08-02"
+  },
+  {
+    "id": 605,
+    "cat": "Festival",
+    "date": "September",
+    "title": "Brussels Open Air Festival 2026",
+    "venue": "Various locations in the Brussels Capital Region",
+    "addr": "Various locations in the Brussels Capital Region, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Open-Air-Festival-2026.5700023729",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Sat 12 September Brussels Open Air Festival 2026 FestivalVarious locations in the Brussels Capital Region View more",
+    "_rawDate": "2026-09-12"
   }
 ]
