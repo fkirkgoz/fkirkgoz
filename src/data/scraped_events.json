@@ -3136,30 +3136,6 @@
     "_rawDate": "2026-07-26"
   },
   {
-    "id": 571,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "National Day: Fête au Parc",
-    "venue": "Brussels Park",
-    "addr": "Brussels Park, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.National-Day-Fete-au-Parc.5700023891",
-    "lat": 50.844595,
-    "lng": 4.3636534,
-    "neighbourhood": "Centre",
-    "desc": "Tue 21 July National Day: Fête au Parc Free AnimationsBrussels Park View more",
-    "_rawDate": "2026-07-21"
-  },
-  {
     "id": 572,
     "cat": "Festival",
     "date": "Next Month",
@@ -3404,30 +3380,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-08-30"
-  },
-  {
-    "id": 586,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "National Day (10+)",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/national-day-10",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2026-07-21"
   },
   {
     "id": 587,
@@ -3818,7 +3770,7 @@
   },
   {
     "id": 604,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Mr Nobody against Putin - David Borenstein",
     "venue": "Bozar",
@@ -3826,8 +3778,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
