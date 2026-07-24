@@ -2125,7 +2125,7 @@
   {
     "id": 491,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "C12 Nite - 25/07",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2223,7 +2223,7 @@
   {
     "id": 498,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: Amotik & Olivia Mendez",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2941,7 +2941,7 @@
   {
     "id": 562,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "NOESIS • Heartcore Dreams",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3042,7 +3042,7 @@
   {
     "id": 566,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Nuestra tierra - Lucrecia Martel",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3235,7 +3235,7 @@
   {
     "id": 578,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "VICIOSA x XXXOUND x PLATINE",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3312,7 +3312,7 @@
   {
     "id": 581,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Our Land (Nuestra tierra) - Lucrecia Martel",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3624,7 +3624,7 @@
   {
     "id": 597,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Tiësto 31 Jul 26",
     "venue": "Hangar",
     "addr": "Atomium, 1020 Brussels",
