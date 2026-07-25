@@ -2125,7 +2125,7 @@
   {
     "id": 491,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "C12 Nite - 25/07",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2223,7 +2223,7 @@
   {
     "id": 498,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: Amotik & Olivia Mendez",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2618,7 +2618,7 @@
   {
     "id": 533,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: RSO Berlin w/ JKS & Laure Croft",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2667,7 +2667,7 @@
   {
     "id": 536,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Little Amélie or the Character of Rain - Maïlys Vallade & Liane-Cho Han (6+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2941,7 +2941,7 @@
   {
     "id": 562,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "NOESIS • Heartcore Dreams",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -2967,7 +2967,7 @@
   {
     "id": 563,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Metropolis Open Air x Illegaal",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -3018,7 +3018,7 @@
   {
     "id": 565,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Bill Cunningham New York - Richard Press",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3038,30 +3038,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-07-26"
-  },
-  {
-    "id": 566,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Nuestra tierra - Lucrecia Martel",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/nuestra-tierra-lucrecia-martel",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-07-24"
   },
   {
     "id": 567,
@@ -3114,7 +3090,7 @@
   {
     "id": 569,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "I am Martin Parr - Lee Shulman",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3233,32 +3209,6 @@
     "_rawDate": "2026-08-29"
   },
   {
-    "id": 578,
-    "cat": "Nightlife",
-    "date": "Today",
-    "title": "VICIOSA x XXXOUND x PLATINE",
-    "venue": "LaVallée",
-    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
-    "time": "16:00",
-    "startH": 16,
-    "endH": 19,
-    "emoji": "🏭",
-    "color": "#6C63FF",
-    "tags": [
-      "Open Air",
-      "Industrial",
-      "Electronic",
-      "Art"
-    ],
-    "source": "LaVallée",
-    "officialEventLink": "https://lavallee.brussels/event/viciosa-x-xxxound-x-platine/",
-    "lat": 50.8568,
-    "lng": 4.339,
-    "neighbourhood": "Molenbeek",
-    "desc": "This time, Viciosa joins forces with Brussels-based Latin collective XXXOUND for a night where food, music, and dancing come together at La Vallée. The concept is simple: doors open at 6.30 PM for an exclusive dinner experience by SAANA Kitchen, serving a…",
-    "_rawDate": "2026-07-24"
-  },
-  {
     "id": 579,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -3310,33 +3260,9 @@
     "_rawDate": "2026-08-15"
   },
   {
-    "id": 581,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Our Land (Nuestra tierra) - Lucrecia Martel",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/our-land-nuestra-tierra-lucrecia-martel",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-07-24"
-  },
-  {
     "id": 583,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Rosalie - Stephanie Di Giusto",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
