@@ -2641,7 +2641,7 @@
   {
     "id": 540,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Copyriot",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -3450,7 +3450,7 @@
   {
     "id": 601,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Summer Organ Festival",
     "venue": "St Michael and St Gudula Cathedral",
     "addr": "St Michael and St Gudula Cathedral, Belgium",
@@ -3595,6 +3595,54 @@
   },
   {
     "id": 607,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Toxic - Saulė Bliuvaitė",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/toxic-saule-bliuvaite-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-08-09"
+  },
+  {
+    "id": 608,
+    "cat": "Festival",
+    "date": "September",
+    "title": "Fêtes Médiévales de Forest - 27e édition",
+    "venue": "Abbaye de Forest",
+    "addr": "Abbaye de Forest, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Fetes-Medievales-de-Forest-27e-edition.5700024730",
+    "lat": 50.8109719,
+    "lng": 4.3168244,
+    "neighbourhood": "Centre",
+    "desc": "Fri 18 September — Sun 20 September Fêtes Médiévales de Forest - 27e édition Free FestivalAbbaye de Forest View more",
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 609,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3620,7 +3668,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 608,
+    "id": 610,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3646,7 +3694,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 609,
+    "id": 611,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
