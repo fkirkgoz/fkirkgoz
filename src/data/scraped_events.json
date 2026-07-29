@@ -2964,7 +2964,7 @@
   {
     "id": 572,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival Classissimo 2026",
     "venue": "Théâtre Royal du Parc",
     "addr": "Théâtre Royal du Parc, Belgium",
@@ -3448,30 +3448,6 @@
     "_rawDate": "2026-09-11"
   },
   {
-    "id": 601,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Summer Organ Festival",
-    "venue": "St Michael and St Gudula Cathedral",
-    "addr": "St Michael and St Gudula Cathedral, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Summer-Organ-Festival.5700024969",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Tue 28 July — Tue 01 September Summer Organ Festival Free FestivalSt Michael and St Gudula Cathedral View more",
-    "_rawDate": "2026-07-28"
-  },
-  {
     "id": 602,
     "cat": "Culture",
     "date": "Next Month",
@@ -3595,7 +3571,7 @@
   },
   {
     "id": 607,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Toxic - Saulė Bliuvaitė",
     "venue": "Bozar",
@@ -3603,8 +3579,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3643,6 +3619,55 @@
   },
   {
     "id": 609,
+    "cat": "Music",
+    "date": "September",
+    "title": "The Belair Lip Bombs - Richarichar",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/belair-lip-bombs-richarichar-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Hybrid hyperpop, between confessional songwriting, emo guitars, and nervy electronic experimentation",
+    "_rawDate": "2026-09-01"
+  },
+  {
+    "id": 610,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Hair, Paper, Water... - Trương Minh Quý & Nicolas Graux",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/hair-paper-water-truong-minh-quy-nicolas-graux-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-08-09"
+  },
+  {
+    "id": 611,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3668,7 +3693,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 610,
+    "id": 612,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3694,7 +3719,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 611,
+    "id": 613,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
