@@ -3106,7 +3106,7 @@
     "lat": 50.8365,
     "lng": 4.3435,
     "neighbourhood": "Marolles",
-    "desc": "XRDS festival 2026: Saturday at Fuse.",
+    "desc": "XRDS festival 2026: Saturday afterparty at Fuse.",
     "_rawDate": "2026-08-15"
   },
   {
@@ -3376,7 +3376,7 @@
   {
     "id": 597,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Tiësto 31 Jul 26",
     "venue": "Hangar",
     "addr": "Atomium, 1020 Brussels",
@@ -3644,7 +3644,7 @@
   },
   {
     "id": 610,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Hair, Paper, Water... - Trương Minh Quý & Nicolas Graux",
     "venue": "Bozar",
@@ -3652,8 +3652,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3668,6 +3668,54 @@
   },
   {
     "id": 611,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Heritage in Motion",
+    "venue": "Hôtel de Ville de Bruxelles",
+    "addr": "Hôtel de Ville de Bruxelles, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Brussels"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Heritage-in-Motion.5700025216",
+    "lat": 50.8465225,
+    "lng": 4.3517633,
+    "neighbourhood": "Centre",
+    "desc": "Wed 19 August — Sun 23 August Heritage in Motion €26 ShowHôtel de Ville de Bruxelles View more",
+    "_rawDate": "2026-08-19"
+  },
+  {
+    "id": 612,
+    "cat": "Culture",
+    "date": "September",
+    "title": "RendezVous 2026 - Brussels Art Week",
+    "venue": "RendezVous 2026 - Brussels Art Week",
+    "addr": "RendezVous 2026 - Brussels Art Week, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.RendezVous-2026-Brussels-Art-Week.5700025197",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Thu 10 September — Sun 13 September RendezVous 2026 - Brussels Art Week Free FestivalRendezVous 2026 - Brussels Art Week View more",
+    "_rawDate": "2026-09-10"
+  },
+  {
+    "id": 613,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3693,7 +3741,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 612,
+    "id": 614,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3719,7 +3767,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 613,
+    "id": 615,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
