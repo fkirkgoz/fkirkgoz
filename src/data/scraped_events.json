@@ -2,7 +2,7 @@
   {
     "id": 137,
     "cat": "Nightlife",
-    "date": "September",
+    "date": "Next Month",
     "title": "C12 - Summer Pass 2026 (June to Sept)",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -27,7 +27,7 @@
   {
     "id": 162,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "KRS ONE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -51,7 +51,7 @@
   {
     "id": 165,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "HIMRA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -75,7 +75,7 @@
   {
     "id": 166,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "RED BULL DANCE YOUR STYLE NATIONAL FINAL BELGIUM",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -99,7 +99,7 @@
   {
     "id": 167,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "ALLIE SHERLOCK",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -123,7 +123,7 @@
   {
     "id": 168,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "AGNIESZKA CHYLIŃSKA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -147,7 +147,7 @@
   {
     "id": 169,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "JOSIAH QUEEN",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -171,7 +171,7 @@
   {
     "id": 170,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "ATERCIOPELADOS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -507,7 +507,7 @@
   {
     "id": 239,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Bozar Rooftop 2026",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -532,7 +532,7 @@
   {
     "id": 242,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "zeyne",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -557,7 +557,7 @@
   {
     "id": 247,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Clarion",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -607,7 +607,7 @@
   {
     "id": 250,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Wild Pink",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -632,7 +632,7 @@
   {
     "id": 252,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Strawberry Guy",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -682,7 +682,7 @@
   {
     "id": 263,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "The Belair Lip Bombs",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -732,7 +732,7 @@
   {
     "id": 292,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Ryan Davis & the Roadhouse Band",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -757,7 +757,7 @@
   {
     "id": 293,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "she's green",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -782,7 +782,7 @@
   {
     "id": 299,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "The Orielles + Golomb",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -807,7 +807,7 @@
   {
     "id": 300,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Wine Lips - The Boojums",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1217,7 +1217,7 @@
   {
     "id": 372,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Pyrrhon (US) + Devoid Of Thought (IT)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1243,7 +1243,7 @@
   {
     "id": 373,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "The Toasters (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1269,7 +1269,7 @@
   {
     "id": 374,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Nile On waX (BE) + Bärlin (FR)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1674,7 +1674,7 @@
   {
     "id": 396,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "A Love Supreme",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1699,7 +1699,7 @@
   {
     "id": 397,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Figures of Fascism and Antifascist Solidarities",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1724,7 +1724,7 @@
   {
     "id": 398,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Again Forever",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1951,7 +1951,7 @@
   {
     "id": 465,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "hibushibire (JP) + The WRS (BE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -2073,7 +2073,7 @@
   {
     "id": 485,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Black Magnet (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -2272,7 +2272,7 @@
   {
     "id": 508,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "The Waterboys Fisherman’s Blues Revue",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2296,7 +2296,7 @@
   {
     "id": 509,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "HYPNOTIC",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -2320,7 +2320,7 @@
   {
     "id": 511,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Bedouine",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2344,7 +2344,7 @@
   {
     "id": 514,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "State of the Future",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2369,7 +2369,7 @@
   {
     "id": 515,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Chapters of Celebration",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2394,7 +2394,7 @@
   {
     "id": 516,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "shoe/farm",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2419,7 +2419,7 @@
   {
     "id": 517,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "The Truthful",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2444,7 +2444,7 @@
   {
     "id": 518,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Bonjour Mademoiselleke",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2469,7 +2469,7 @@
   {
     "id": 519,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Kunst in de greep van uiterst rechts?",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2568,7 +2568,7 @@
   {
     "id": 533,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: RSO Berlin w/ JKS & Laure Croft",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2617,7 +2617,7 @@
   {
     "id": 536,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Little Amélie or the Character of Rain - Maïlys Vallade & Liane-Cho Han (6+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2666,7 +2666,7 @@
   {
     "id": 542,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Magec / the Desert",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2691,7 +2691,7 @@
   {
     "id": 543,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Gala van de Aura’s",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2716,7 +2716,7 @@
   {
     "id": 544,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "FRANK",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2741,7 +2741,7 @@
   {
     "id": 545,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "F*CK LOLITA",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2766,7 +2766,7 @@
   {
     "id": 546,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "For Blinky Palermo",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2791,7 +2791,7 @@
   {
     "id": 547,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Cry (no) more",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2816,7 +2816,7 @@
   {
     "id": 548,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Imprisoned Gods",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2841,7 +2841,7 @@
   {
     "id": 549,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "WIPCOOP - Work in Progress 2026",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2891,7 +2891,7 @@
   {
     "id": 564,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Ezra Feinberg",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3012,7 +3012,7 @@
   {
     "id": 574,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: KLOUD & Aiden",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3304,7 +3304,7 @@
   {
     "id": 594,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Het TheaterFestival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -3328,7 +3328,7 @@
   {
     "id": 595,
     "cat": "Festival",
-    "date": "September",
+    "date": "Next Month",
     "title": "Brussels International Film Festival",
     "venue": "De Brouckère Square",
     "addr": "De Brouckère Square, Belgium",
@@ -3352,7 +3352,7 @@
   {
     "id": 596,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "Ali Cherri - 'Soul Witness'",
     "venue": "Wiels - Contemporary art centre",
     "addr": "Wiels - Contemporary art centre, Belgium",
@@ -3374,35 +3374,9 @@
     "_rawDate": "2026-09-05"
   },
   {
-    "id": 597,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Tiësto 31 Jul 26",
-    "venue": "Hangar",
-    "addr": "Atomium, 1020 Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Festival",
-      "Day Party"
-    ],
-    "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=3017",
-    "lat": 50.8949,
-    "lng": 4.3415,
-    "neighbourhood": "Various",
-    "desc": "Atomium Open Air 15:00 - 00:00 (Last entry 20:00)",
-    "_rawDate": "2026-07-31"
-  },
-  {
     "id": 598,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "Marni Jazz Festival",
     "venue": "Le Marni",
     "addr": "Le Marni, Belgium",
@@ -3426,7 +3400,7 @@
   {
     "id": 599,
     "cat": "Sports",
-    "date": "September",
+    "date": "Next Month",
     "title": "Brussels Urban Sessions",
     "venue": "Brussels Urban Sessions",
     "addr": "Brussels Urban Sessions, Belgium",
@@ -3499,7 +3473,7 @@
   {
     "id": 604,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Mr Nobody against Putin - David Borenstein",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3523,7 +3497,7 @@
   {
     "id": 605,
     "cat": "Festival",
-    "date": "September",
+    "date": "Next Month",
     "title": "Brussels Open Air Festival 2026",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -3596,7 +3570,7 @@
   {
     "id": 608,
     "cat": "Festival",
-    "date": "September",
+    "date": "Next Month",
     "title": "Fêtes Médiévales de Forest - 27e édition",
     "venue": "Abbaye de Forest",
     "addr": "Abbaye de Forest, Belgium",
@@ -3620,7 +3594,7 @@
   {
     "id": 609,
     "cat": "Music",
-    "date": "September",
+    "date": "Next Month",
     "title": "The Belair Lip Bombs - Richarichar",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3693,7 +3667,7 @@
   {
     "id": 612,
     "cat": "Culture",
-    "date": "September",
+    "date": "Next Month",
     "title": "RendezVous 2026 - Brussels Art Week",
     "venue": "RendezVous 2026 - Brussels Art Week",
     "addr": "RendezVous 2026 - Brussels Art Week, Belgium",
@@ -3791,5 +3765,31 @@
     "neighbourhood": "Various",
     "desc": "Ready for another deep dive? · Line up: Mia Cecille / Marie K / Kivaa / Malo Z · NO RACISM, NO SEXISM, NO QUEERPHOBIA, …",
     "_rawDate": "2027-07-19"
+  },
+  {
+    "id": 616,
+    "cat": "Festival",
+    "date": "July",
+    "title": "Tiësto 31 Jul 26",
+    "venue": "Hangar",
+    "addr": "Atomium, 1020 Brussels",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Festival",
+      "Day Party"
+    ],
+    "source": "Hangar",
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=3017",
+    "lat": 50.8949,
+    "lng": 4.3415,
+    "neighbourhood": "Various",
+    "desc": "Atomium Open Air 15:00 - 00:00 (Last entry 20:00)",
+    "_rawDate": "2027-07-31"
   }
 ]
