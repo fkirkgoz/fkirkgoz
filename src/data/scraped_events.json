@@ -2592,7 +2592,7 @@
   {
     "id": 540,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Copyriot",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2891,7 +2891,7 @@
   {
     "id": 568,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "The Tale of the Princess Kaguya - Isao Takahata",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3422,30 +3422,6 @@
     "_rawDate": "2026-08-22"
   },
   {
-    "id": 604,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Mr Nobody against Putin - David Borenstein",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/mr-nobody-against-putin-david-borenstein",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-02"
-  },
-  {
     "id": 605,
     "cat": "Festival",
     "date": "Next Month",
@@ -3497,7 +3473,7 @@
   {
     "id": 607,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Toxic - Saulė Bliuvaitė",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3570,7 +3546,7 @@
   {
     "id": 610,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Hair, Paper, Water... - Trương Minh Quý & Nicolas Graux",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3640,7 +3616,33 @@
     "_rawDate": "2026-09-10"
   },
   {
-    "id": 613,
+    "id": 616,
+    "cat": "Festival",
+    "date": "This Weekend",
+    "title": "Colyn & Stavroz (live) 8 Aug 26",
+    "venue": "Hangar",
+    "addr": "Brussels, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Festival",
+      "Day Party"
+    ],
+    "source": "Hangar",
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=2964",
+    "lat": 50.8248331,
+    "lng": 4.3601686,
+    "neighbourhood": "Various",
+    "desc": "Knokke Open Air 16:00 - 00:00 (Last entry 19:00)",
+    "_rawDate": "2026-08-08"
+  },
+  {
+    "id": 617,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3666,7 +3668,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 614,
+    "id": 618,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3692,7 +3694,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 615,
+    "id": 619,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
@@ -3716,31 +3718,5 @@
     "neighbourhood": "Various",
     "desc": "Ready for another deep dive? · Line up: Mia Cecille / Marie K / Kivaa / Malo Z · NO RACISM, NO SEXISM, NO QUEERPHOBIA, …",
     "_rawDate": "2027-07-19"
-  },
-  {
-    "id": 616,
-    "cat": "Festival",
-    "date": "This Weekend",
-    "title": "Colyn & Stavroz (live) 8 Aug 26",
-    "venue": "Hangar",
-    "addr": "Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Festival",
-      "Day Party"
-    ],
-    "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=2964",
-    "lat": 50.8248331,
-    "lng": 4.3601686,
-    "neighbourhood": "Various",
-    "desc": "Knokke Open Air 16:00 - 00:00 (Last entry 19:00)",
-    "_rawDate": "2026-08-08"
   }
 ]
