@@ -2590,31 +2590,6 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 540,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Copyriot",
-    "venue": "KVS",
-    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Theatre",
-      "Performing Arts",
-      "Contemporary"
-    ],
-    "source": "KVS",
-    "officialEventLink": "https://www.kvs.be/en/Event/copyriot-1",
-    "lat": 50.8552,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "04.08.26 ― 25.09.26 Copyriot KRAPP / KVS Language: NL Surtitles: FR · EN",
-    "_rawDate": "2026-08-04"
-  },
-  {
     "id": 542,
     "cat": "Culture",
     "date": "Next Month",
@@ -2915,7 +2890,7 @@
   {
     "id": 572,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Festival Classissimo 2026",
     "venue": "Théâtre Royal du Parc",
     "addr": "Théâtre Royal du Parc, Belgium",
