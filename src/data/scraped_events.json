@@ -2888,33 +2888,9 @@
     "_rawDate": "2026-08-09"
   },
   {
-    "id": 572,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Festival Classissimo 2026",
-    "venue": "Théâtre Royal du Parc",
-    "addr": "Théâtre Royal du Parc, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Classissimo-2026.5700023105",
-    "lat": 50.8457648,
-    "lng": 4.3655553,
-    "neighbourhood": "Centre",
-    "desc": "Wed 05 August — Tue 11 August Festival Classissimo 2026 €15 FestivalThéâtre Royal du Parc View more",
-    "_rawDate": "2026-08-05"
-  },
-  {
     "id": 573,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels' Flowercarpet",
     "venue": "Grand-Place",
     "addr": "Grand-Place, Belgium",
@@ -3062,7 +3038,7 @@
   {
     "id": 587,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival Théâtres Nomades 2026",
     "venue": "Bois de la Cambre : Carrefour des Attelages",
     "addr": "Bois de la Cambre, 1000 Brussels",
