@@ -2866,7 +2866,7 @@
   {
     "id": 568,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "The Tale of the Princess Kaguya - Isao Takahata",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2914,7 +2914,7 @@
   {
     "id": 574,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: KLOUD & Aiden",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2989,7 +2989,7 @@
   {
     "id": 580,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "XRDS festival 2026: Saturday",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3424,7 +3424,7 @@
   {
     "id": 607,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Toxic - Saulė Bliuvaitė",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3497,7 +3497,7 @@
   {
     "id": 610,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Hair, Paper, Water... - Trương Minh Quý & Nicolas Graux",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3569,7 +3569,7 @@
   {
     "id": 616,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Colyn & Stavroz (live) 8 Aug 26",
     "venue": "Hangar",
     "addr": "Brussels, Belgium",
