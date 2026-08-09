@@ -387,7 +387,7 @@
   {
     "id": 184,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Picture Perfect",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1927,7 +1927,7 @@
   {
     "id": 447,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Exhibitions",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2866,7 +2866,7 @@
   {
     "id": 568,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "The Tale of the Princess Kaguya - Isao Takahata",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2910,31 +2910,6 @@
     "neighbourhood": "Centre",
     "desc": "Thu 13 August — Sun 16 August Brussels' Flowercarpet ExhibitionsGrand-Place View more",
     "_rawDate": "2026-08-13"
-  },
-  {
-    "id": 574,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: KLOUD & Aiden",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-kloud-aiden",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: KLOUD & Aiden at Fuse.",
-    "_rawDate": "2026-08-08"
   },
   {
     "id": 575,
@@ -2989,7 +2964,7 @@
   {
     "id": 580,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "XRDS festival 2026: Saturday",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3424,7 +3399,7 @@
   {
     "id": 607,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Toxic - Saulė Bliuvaitė",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3497,7 +3472,7 @@
   {
     "id": 610,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Hair, Paper, Water... - Trương Minh Quý & Nicolas Graux",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3567,33 +3542,56 @@
     "_rawDate": "2026-09-10"
   },
   {
-    "id": 616,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Colyn & Stavroz (live) 8 Aug 26",
-    "venue": "Hangar",
-    "addr": "Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎉",
-    "color": "#F4A261",
+    "id": 613,
+    "cat": "Nightlife",
+    "date": "August",
+    "title": "UPCOMING EVENTS",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
     "tags": [
-      "Open Air",
+      "Techno",
       "Electronic",
-      "Festival",
-      "Day Party"
+      "Nightlife"
     ],
-    "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=2964",
-    "lat": 50.8248331,
-    "lng": 4.3601686,
-    "neighbourhood": "Various",
-    "desc": "Knokke Open Air 16:00 - 00:00 (Last entry 19:00)",
-    "_rawDate": "2026-08-08"
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: KLOUD & Aiden at Fuse.",
+    "_rawDate": "2027-08-08"
   },
   {
-    "id": 617,
+    "id": 614,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Festival Midis-Minimes 2026",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/festival-midis-minimes-2026",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 615,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3619,7 +3617,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 618,
+    "id": 616,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3645,7 +3643,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 619,
+    "id": 617,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
@@ -3669,5 +3667,31 @@
     "neighbourhood": "Various",
     "desc": "Ready for another deep dive? · Line up: Mia Cecille / Marie K / Kivaa / Malo Z · NO RACISM, NO SEXISM, NO QUEERPHOBIA, …",
     "_rawDate": "2027-07-19"
+  },
+  {
+    "id": 618,
+    "cat": "Festival",
+    "date": "August",
+    "title": "Colyn & Stavroz (live) 8 Aug 26",
+    "venue": "Hangar",
+    "addr": "Brussels, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Festival",
+      "Day Party"
+    ],
+    "source": "Hangar",
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=2964",
+    "lat": 50.8248331,
+    "lng": 4.3601686,
+    "neighbourhood": "Various",
+    "desc": "Knokke Open Air 16:00 - 00:00 (Last entry 19:00)",
+    "_rawDate": "2027-08-08"
   }
 ]
