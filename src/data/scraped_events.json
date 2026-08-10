@@ -387,7 +387,7 @@
   {
     "id": 184,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Picture Perfect",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1927,7 +1927,7 @@
   {
     "id": 447,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Exhibitions",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2864,30 +2864,6 @@
     "_rawDate": "2026-08-27"
   },
   {
-    "id": 568,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "The Tale of the Princess Kaguya - Isao Takahata",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/tale-princess-kaguya-isao-takahata",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-09"
-  },
-  {
     "id": 573,
     "cat": "Culture",
     "date": "Next Week",
@@ -3061,7 +3037,7 @@
   {
     "id": 589,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Hide & Seek Festival 2026",
     "venue": "Muziekpublique",
     "addr": "Muziekpublique, Belgium",
@@ -3397,30 +3373,6 @@
     "_rawDate": "2026-08-29"
   },
   {
-    "id": 607,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Toxic - Saulė Bliuvaitė",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/toxic-saule-bliuvaite-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-09"
-  },
-  {
     "id": 608,
     "cat": "Festival",
     "date": "Next Month",
@@ -3468,30 +3420,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "Hybrid hyperpop, between confessional songwriting, emo guitars, and nervy electronic experimentation",
     "_rawDate": "2026-09-01"
-  },
-  {
-    "id": 610,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Hair, Paper, Water... - Trương Minh Quý & Nicolas Graux",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/hair-paper-water-truong-minh-quy-nicolas-graux-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-09"
   },
   {
     "id": 611,
@@ -3542,33 +3470,8 @@
     "_rawDate": "2026-09-10"
   },
   {
-    "id": 613,
-    "cat": "Nightlife",
-    "date": "August",
-    "title": "UPCOMING EVENTS",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: KLOUD & Aiden at Fuse.",
-    "_rawDate": "2027-08-08"
-  },
-  {
     "id": 614,
-    "cat": "Music",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Festival Midis-Minimes 2026",
     "venue": "Bozar",
@@ -3576,8 +3479,8 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Concert",
       "Live Music"
@@ -3592,6 +3495,83 @@
   },
   {
     "id": 615,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: The Third Room w/ Verraco, Felix Fleer & Maōh",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-the-third-room-w-verraco-felix-fleer-ma%C5%8Dh",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: The Third Room w/ Verraco, Felix Fleer & Maōh at Fuse.",
+    "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 616,
+    "cat": "Nightlife",
+    "date": "Next Week",
+    "title": "Session &#8211; Open Air &#038; Club Night -House &#038; Hard House",
+    "venue": "LaVallée",
+    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
+    "time": "17:00",
+    "startH": 17,
+    "endH": 20,
+    "emoji": "🏭",
+    "color": "#6C63FF",
+    "tags": [
+      "Open Air",
+      "Industrial",
+      "Electronic",
+      "Art"
+    ],
+    "source": "LaVallée",
+    "officialEventLink": "https://lavallee.brussels/event/session-open-air-club-night-house-hard-house/",
+    "lat": 50.8568,
+    "lng": 4.339,
+    "neighbourhood": "Molenbeek",
+    "desc": "SESSION X LA VALLÉE X GRUB Open-air. Club energy. Honest food. We\\'re bringing three elements together for one unforgettable night: DJs spinning from 5PM to 2AM, terrace vibes transitioning into club energy, and GRUB collective redefining what food at events…",
+    "_rawDate": "2026-08-14"
+  },
+  {
+    "id": 617,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "LaVallée Olympics – 11th Anniversary Special !",
+    "venue": "LaVallée",
+    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
+    "time": "17:00",
+    "startH": 17,
+    "endH": 20,
+    "emoji": "🏭",
+    "color": "#6C63FF",
+    "tags": [
+      "Open Air",
+      "Industrial",
+      "Electronic",
+      "Art"
+    ],
+    "source": "LaVallée",
+    "officialEventLink": "https://lavallee.brussels/event/lavallee-olympics-11th-anniversary-special/",
+    "lat": 50.8568,
+    "lng": 4.339,
+    "neighbourhood": "Molenbeek",
+    "desc": "Join us on Friday, September 4! From 5:00 PM to 9:00 PM, enjoy our special open studios, meet the resident artists, and take part in the LaVallée Olympics. From 9:00 PM onwards, the studios will close, but the celebration continues! Head to the LaVallée bar…",
+    "_rawDate": "2026-09-04"
+  },
+  {
+    "id": 618,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3617,7 +3597,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 616,
+    "id": 619,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3643,7 +3623,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 617,
+    "id": 620,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
@@ -3669,7 +3649,7 @@
     "_rawDate": "2027-07-19"
   },
   {
-    "id": 618,
+    "id": 621,
     "cat": "Festival",
     "date": "August",
     "title": "Colyn & Stavroz (live) 8 Aug 26",
