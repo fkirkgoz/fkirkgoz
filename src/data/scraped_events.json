@@ -2866,7 +2866,7 @@
   {
     "id": 573,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brussels' Flowercarpet",
     "venue": "Grand-Place",
     "addr": "Grand-Place, Belgium",
@@ -2989,7 +2989,7 @@
   {
     "id": 587,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival Théâtres Nomades 2026",
     "venue": "Bois de la Cambre : Carrefour des Attelages",
     "addr": "Bois de la Cambre, 1000 Brussels",
@@ -3424,7 +3424,7 @@
   {
     "id": 611,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Heritage in Motion",
     "venue": "Hôtel de Ville de Bruxelles",
     "addr": "Hôtel de Ville de Bruxelles, Belgium",
@@ -3572,7 +3572,7 @@
   },
   {
     "id": 618,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Orwell: 2+2=5 - Raoul Peck",
     "venue": "Bozar",
@@ -3580,8 +3580,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3763,7 +3763,57 @@
     "_rawDate": "2026-08-29"
   },
   {
-    "id": 626,
+    "id": 629,
+    "cat": "Festival",
+    "date": "This Weekend",
+    "title": "Boris Brejcha B2B Eric Prydz 15 Aug 26",
+    "venue": "Hangar",
+    "addr": "Palais Royal Brussels",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Festival",
+      "Day Party"
+    ],
+    "source": "Hangar",
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=2860",
+    "lat": 50.8419277,
+    "lng": 4.3622722,
+    "neighbourhood": "Various",
+    "desc": "Royal Palace Open Air 15:00 - 00:00 (Last Entry 19:00)",
+    "_rawDate": "2026-08-15"
+  },
+  {
+    "id": 630,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Festival Plazey",
+    "venue": "Elisabeth Park",
+    "addr": "Elisabeth Park, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Plazey.5700020378",
+    "lat": 50.8650249,
+    "lng": 4.3244782,
+    "neighbourhood": "Centre",
+    "desc": "Fri 28 August — Sun 30 August Festival Plazey FestivalElisabeth Park View more",
+    "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 631,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3789,7 +3839,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 627,
+    "id": 632,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3815,7 +3865,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 628,
+    "id": 633,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
@@ -3839,31 +3889,5 @@
     "neighbourhood": "Various",
     "desc": "Ready for another deep dive? · Line up: Mia Cecille / Marie K / Kivaa / Malo Z · NO RACISM, NO SEXISM, NO QUEERPHOBIA, …",
     "_rawDate": "2027-07-19"
-  },
-  {
-    "id": 629,
-    "cat": "Festival",
-    "date": "This Weekend",
-    "title": "Boris Brejcha B2B Eric Prydz 15 Aug 26",
-    "venue": "Hangar",
-    "addr": "Palais Royal Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Festival",
-      "Day Party"
-    ],
-    "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=2860",
-    "lat": 50.8419277,
-    "lng": 4.3622722,
-    "neighbourhood": "Various",
-    "desc": "Royal Palace Open Air 15:00 - 00:00 (Last Entry 19:00)",
-    "_rawDate": "2026-08-15"
   }
 ]
