@@ -1192,7 +1192,7 @@
   {
     "id": 356,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "XRDS festival 2026: Friday",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2866,7 +2866,7 @@
   {
     "id": 573,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Brussels' Flowercarpet",
     "venue": "Grand-Place",
     "addr": "Grand-Place, Belgium",
@@ -2989,7 +2989,7 @@
   {
     "id": 587,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Festival Théâtres Nomades 2026",
     "venue": "Bois de la Cambre : Carrefour des Attelages",
     "addr": "Bois de la Cambre, 1000 Brussels",
@@ -3013,7 +3013,7 @@
   {
     "id": 588,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brigittines Summer Festival",
     "venue": "Les Brigittines",
     "addr": "Les Brigittines, Belgium",
@@ -3521,7 +3521,7 @@
   {
     "id": 616,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Session &#8211; Open Air &#038; Club Night -House &#038; Hard House",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3597,7 +3597,7 @@
   {
     "id": 619,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Sablon Music Festival",
     "venue": "Commune Libre du Sablon",
     "addr": "Commune Libre du Sablon, Belgium",
@@ -3621,7 +3621,7 @@
   {
     "id": 620,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brussels Dance Festival",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
