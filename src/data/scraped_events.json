@@ -1192,7 +1192,7 @@
   {
     "id": 356,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "XRDS festival 2026: Friday",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2864,30 +2864,6 @@
     "_rawDate": "2026-08-27"
   },
   {
-    "id": 573,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Brussels' Flowercarpet",
-    "venue": "Grand-Place",
-    "addr": "Grand-Place, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Flowercarpet.5700018874",
-    "lat": 50.8467139,
-    "lng": 4.3525151,
-    "neighbourhood": "Centre",
-    "desc": "Thu 13 August — Sun 16 August Brussels' Flowercarpet ExhibitionsGrand-Place View more",
-    "_rawDate": "2026-08-13"
-  },
-  {
     "id": 575,
     "cat": "Culture",
     "date": "Next Month",
@@ -2940,7 +2916,7 @@
   {
     "id": 580,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "XRDS festival 2026: Saturday",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2987,33 +2963,9 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 587,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Festival Théâtres Nomades 2026",
-    "venue": "Bois de la Cambre : Carrefour des Attelages",
-    "addr": "Bois de la Cambre, 1000 Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Theatres-Nomades-2026.5700022234",
-    "lat": 50.8122,
-    "lng": 4.3802,
-    "neighbourhood": "Centre",
-    "desc": "Thu 13 August — Sun 16 August Festival Théâtres Nomades 2026 Free FestivalBois de la Cambre : Carrefour des Attelages View more",
-    "_rawDate": "2026-08-13"
-  },
-  {
     "id": 588,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Brigittines Summer Festival",
     "venue": "Les Brigittines",
     "addr": "Les Brigittines, Belgium",
@@ -3521,7 +3473,7 @@
   {
     "id": 616,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Session &#8211; Open Air &#038; Club Night -House &#038; Hard House",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3597,7 +3549,7 @@
   {
     "id": 619,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Sablon Music Festival",
     "venue": "Commune Libre du Sablon",
     "addr": "Commune Libre du Sablon, Belgium",
@@ -3621,7 +3573,7 @@
   {
     "id": 620,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Brussels Dance Festival",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -3765,7 +3717,7 @@
   {
     "id": 629,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Boris Brejcha B2B Eric Prydz 15 Aug 26",
     "venue": "Hangar",
     "addr": "Palais Royal Brussels",
@@ -3814,6 +3766,30 @@
   },
   {
     "id": 631,
+    "cat": "Food & Drink",
+    "date": "Next Month",
+    "title": "Belgium Beer Week",
+    "venue": "Belgium Beer Week",
+    "addr": "Belgium Beer Week, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 20,
+    "emoji": "🍹",
+    "color": "#F4C87A",
+    "tags": [
+      "Drinks",
+      "Social"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Belgium-Beer-Week.5700025037",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Mon 24 August — Sun 30 August Belgium Beer Week Free FestivalBelgium Beer Week View more",
+    "_rawDate": "2026-08-24"
+  },
+  {
+    "id": 632,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3839,7 +3815,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 632,
+    "id": 633,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3865,7 +3841,7 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 633,
+    "id": 634,
     "cat": "Festival",
     "date": "July",
     "title": "Deep Dive Open Air",
