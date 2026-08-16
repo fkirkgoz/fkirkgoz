@@ -387,7 +387,7 @@
   {
     "id": 184,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Picture Perfect",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1902,7 +1902,7 @@
   {
     "id": 447,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Exhibitions",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2124,7 +2124,7 @@
   {
     "id": 493,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Pompei, Below the Clouds - Gianfranco Rosi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2865,7 +2865,7 @@
   {
     "id": 579,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Rooted in love – Live concert Joël Francis",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -2887,31 +2887,6 @@
     "neighbourhood": "Molenbeek",
     "desc": "Inspired by artists such as H.E.R., SZA, Jazmine Sullivan, Alicia Keys and Jhené Aiko, Joël approaches music as both a vocal and emotional exploration. Her songwriting reflects on vulnerability, love and personal growth, inviting listeners into stories that…",
     "_rawDate": "2026-08-22"
-  },
-  {
-    "id": 580,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "XRDS festival 2026: Saturday",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/xrds-festival-2026",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "XRDS festival 2026: Saturday afterparty at Fuse.",
-    "_rawDate": "2026-08-15"
   },
   {
     "id": 584,
@@ -2940,7 +2915,7 @@
   {
     "id": 589,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Hide & Seek Festival 2026",
     "venue": "Muziekpublique",
     "addr": "Muziekpublique, Belgium",
@@ -3180,7 +3155,7 @@
   {
     "id": 602,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Ponyo - Hayao Miyazaki",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3204,7 +3179,7 @@
   {
     "id": 603,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Fuse presents: Dan Shake & Luke Alessi",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3450,7 +3425,7 @@
   {
     "id": 618,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Orwell: 2+2=5 - Raoul Peck",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3474,7 +3449,7 @@
   {
     "id": 621,
     "cat": "Food & Drink",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "10th Indian Food Festival",
     "venue": "Arcades du Cinquantenaire",
     "addr": "Parc du Cinquantenaire, 1000 Brussels",
@@ -3498,7 +3473,7 @@
   {
     "id": 622,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "HappyLife festival",
     "venue": "Ferme Nos Pilifs",
     "addr": "Ferme Nos Pilifs, Belgium",
@@ -3592,32 +3567,6 @@
     "_rawDate": "2026-08-29"
   },
   {
-    "id": 629,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Boris Brejcha B2B Eric Prydz 15 Aug 26",
-    "venue": "Hangar",
-    "addr": "Palais Royal Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Festival",
-      "Day Party"
-    ],
-    "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=2860",
-    "lat": 50.8419277,
-    "lng": 4.3622722,
-    "neighbourhood": "Various",
-    "desc": "Royal Palace Open Air 15:00 - 00:00 (Last Entry 19:00)",
-    "_rawDate": "2026-08-15"
-  },
-  {
     "id": 630,
     "cat": "Festival",
     "date": "Next Month",
@@ -3687,11 +3636,61 @@
     "lat": 50.8365,
     "lng": 4.3435,
     "neighbourhood": "Marolles",
-    "desc": "XRDS festival 2026: Friday afterparty at Fuse.",
-    "_rawDate": "2027-08-14"
+    "desc": "XRDS festival 2026: Saturday afterparty at Fuse.",
+    "_rawDate": "2027-08-15"
   },
   {
     "id": 633,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: NIKOLINA & Ornella",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-nikolina-ornella",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: NIKOLINA & Ornella at Fuse.",
+    "_rawDate": "2026-09-04"
+  },
+  {
+    "id": 634,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: Hadone curates w/ Nørbak & Tauceti",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-hadone-curates-w-n%C3%B8rbak-tauceti",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: Hadone curates w/ Nørbak & Tauceti at Fuse.",
+    "_rawDate": "2026-09-05"
+  },
+  {
+    "id": 635,
     "cat": "Festival",
     "date": "August",
     "title": "ILLEGAAL FEESTJE",
@@ -3717,7 +3716,7 @@
     "_rawDate": "2027-08-14"
   },
   {
-    "id": 634,
+    "id": 636,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3743,7 +3742,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 635,
+    "id": 637,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3767,5 +3766,31 @@
     "neighbourhood": "Various",
     "desc": "On JULY 25th, we return to Illegaal for a second chapter. For this round, we continue our summer journey, a drifting narrative through playful and emotional soundscapes, somewhere between fairy …",
     "_rawDate": "2027-07-25"
+  },
+  {
+    "id": 638,
+    "cat": "Festival",
+    "date": "August",
+    "title": "Boris Brejcha B2B Eric Prydz 15 Aug 26",
+    "venue": "Hangar",
+    "addr": "Palais Royal Brussels",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Festival",
+      "Day Party"
+    ],
+    "source": "Hangar",
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=2860",
+    "lat": 50.8419277,
+    "lng": 4.3622722,
+    "neighbourhood": "Various",
+    "desc": "Royal Palace Open Air 15:00 - 00:00 (Last Entry 19:00)",
+    "_rawDate": "2027-08-15"
   }
 ]
