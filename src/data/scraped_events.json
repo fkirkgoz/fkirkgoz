@@ -385,30 +385,6 @@
     "_rawDate": "2026-10-14"
   },
   {
-    "id": 184,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Picture Perfect",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/picture-perfect",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2026-08-16"
-  },
-  {
     "id": 206,
     "cat": "Music",
     "date": "October",
@@ -1900,30 +1876,6 @@
     "_rawDate": "2026-11-24"
   },
   {
-    "id": 447,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Exhibitions",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/picture-perfect",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2026-08-16"
-  },
-  {
     "id": 465,
     "cat": "Music",
     "date": "Next Month",
@@ -2124,7 +2076,7 @@
   {
     "id": 493,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Next Month",
     "title": "Pompei, Below the Clouds - Gianfranco Rosi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2143,7 +2095,7 @@
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Films",
-    "_rawDate": "2026-08-23"
+    "_rawDate": "2026-08-30"
   },
   {
     "id": 496,
@@ -2915,7 +2867,7 @@
   {
     "id": 589,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Hide & Seek Festival 2026",
     "venue": "Muziekpublique",
     "addr": "Muziekpublique, Belgium",
@@ -3155,7 +3107,7 @@
   {
     "id": 602,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Ponyo - Hayao Miyazaki",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3425,7 +3377,7 @@
   {
     "id": 618,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Orwell: 2+2=5 - Raoul Peck",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3593,7 +3545,7 @@
   {
     "id": 631,
     "cat": "Food & Drink",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Belgium Beer Week",
     "venue": "Belgium Beer Week",
     "addr": "Belgium Beer Week, Belgium",
@@ -3613,31 +3565,6 @@
     "neighbourhood": "Centre",
     "desc": "Mon 24 August — Sun 30 August Belgium Beer Week Free FestivalBelgium Beer Week View more",
     "_rawDate": "2026-08-24"
-  },
-  {
-    "id": 632,
-    "cat": "Nightlife",
-    "date": "August",
-    "title": "UPCOMING EVENTS",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "XRDS festival 2026: Saturday afterparty at Fuse.",
-    "_rawDate": "2027-08-15"
   },
   {
     "id": 633,
@@ -3691,6 +3618,31 @@
   },
   {
     "id": 635,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: 2HOT2PLAY & ALT8",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-2hot2play-alt8",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: 2HOT2PLAY & ALT8 at Fuse.",
+    "_rawDate": "2026-09-11"
+  },
+  {
+    "id": 636,
     "cat": "Festival",
     "date": "August",
     "title": "ILLEGAAL FEESTJE",
@@ -3716,7 +3668,7 @@
     "_rawDate": "2027-08-14"
   },
   {
-    "id": 636,
+    "id": 637,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3742,7 +3694,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 637,
+    "id": 638,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3768,10 +3720,10 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 638,
+    "id": 639,
     "cat": "Festival",
     "date": "August",
-    "title": "Boris Brejcha B2B Eric Prydz 15 Aug 26",
+    "title": "Black Coffee 16 Aug 26",
     "venue": "Hangar",
     "addr": "Palais Royal Brussels",
     "time": "12:00",
@@ -3786,11 +3738,11 @@
       "Day Party"
     ],
     "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=2860",
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=1903",
     "lat": 50.8419277,
     "lng": 4.3622722,
     "neighbourhood": "Various",
     "desc": "Royal Palace Open Air 15:00 - 00:00 (Last Entry 19:00)",
-    "_rawDate": "2027-08-15"
+    "_rawDate": "2027-08-16"
   }
 ]
