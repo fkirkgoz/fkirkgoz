@@ -2865,30 +2865,6 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 589,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Hide & Seek Festival 2026",
-    "venue": "Muziekpublique",
-    "addr": "Muziekpublique, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Hide-and-Seek-Festival-2026.5700023971",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Mon 17 August — Sat 22 August Hide & Seek Festival 2026 €22 FestivalMuziekpublique View more",
-    "_rawDate": "2026-08-17"
-  },
-  {
     "id": 590,
     "cat": "Festival",
     "date": "Next Month",
@@ -3029,7 +3005,7 @@
     "lat": 50.8197489,
     "lng": 4.3993283,
     "neighbourhood": "Centre",
-    "desc": "Fri 04 September — Sat 12 September Brussels International Film Festival CinemaDe Brouckère Square View more",
+    "desc": "Fri 04 September — Sat 12 September Brussels International Film Festival FestivalVarious locations in the Brussels Capital Region View more",
     "_rawDate": "2026-09-04"
   },
   {
@@ -3254,7 +3230,7 @@
   {
     "id": 611,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Heritage in Motion",
     "venue": "Hôtel de Ville de Bruxelles",
     "addr": "Hôtel de Ville de Bruxelles, Belgium",
@@ -3643,6 +3619,126 @@
   },
   {
     "id": 636,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Peter Hujar's Day - Ira Sachs",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/peter-hujars-day-ira-sachs-2",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-08-30"
+  },
+  {
+    "id": 637,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Festival des Arts Vodoun",
+    "venue": "Tours & Taxis, at the main entrance of the Teirlinck building",
+    "addr": "Tours & Taxis, at the main entrance of the Teirlinck building, Belgium",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-des-Arts-Vodoun.5700023397",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Fri 28 August — Sun 30 August Festival des Arts Vodoun Free FestivalTours & Taxis, at the main entrance of the Teirlinck building View more",
+    "_rawDate": "2026-08-28"
+  },
+  {
+    "id": 638,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "POMPOMPOM Festival",
+    "venue": "Vaux Hall",
+    "addr": "Vaux Hall, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.POMPOMPOM-Festival.5700021936",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Sat 29 August — Sun 30 August POMPOMPOM Festival Free FestivalVaux Hall View more",
+    "_rawDate": "2026-08-29"
+  },
+  {
+    "id": 639,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Racines Festival",
+    "venue": "L'Entrela' - Centre Culturel d'Evere",
+    "addr": "L'Entrela' - Centre Culturel d'Evere, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Racines-Festival.5700025420",
+    "lat": 50.8769007,
+    "lng": 4.401818,
+    "neighbourhood": "Centre",
+    "desc": "Sat 05 September — Sun 13 September Racines Festival Free FestivalL'Entrela' - Centre Culturel d'Evere View more",
+    "_rawDate": "2026-09-05"
+  },
+  {
+    "id": 640,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Classique à l'Abbaye",
+    "venue": "Dieleghem Abbey",
+    "addr": "Dieleghem Abbey, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Classique-a-l-Abbaye.5700025090",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Sun 06 September 2026 — Sun 06 June 2027 Classique à l'Abbaye FestivalDieleghem Abbey View more",
+    "_rawDate": "2026-09-06"
+  },
+  {
+    "id": 641,
     "cat": "Festival",
     "date": "August",
     "title": "ILLEGAAL FEESTJE",
@@ -3668,7 +3764,7 @@
     "_rawDate": "2027-08-14"
   },
   {
-    "id": 637,
+    "id": 642,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3694,7 +3790,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 638,
+    "id": 643,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3720,12 +3816,12 @@
     "_rawDate": "2027-07-25"
   },
   {
-    "id": 639,
+    "id": 644,
     "cat": "Festival",
-    "date": "August",
-    "title": "Black Coffee 16 Aug 26",
+    "date": "Next Month",
+    "title": "Solomun 19 Sep 26",
     "venue": "Hangar",
-    "addr": "Palais Royal Brussels",
+    "addr": "Brussels, Belgium",
     "time": "12:00",
     "startH": 12,
     "endH": 15,
@@ -3738,11 +3834,11 @@
       "Day Party"
     ],
     "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=1903",
-    "lat": 50.8419277,
-    "lng": 4.3622722,
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=3052",
+    "lat": 50.8248331,
+    "lng": 4.3601686,
     "neighbourhood": "Various",
-    "desc": "Royal Palace Open Air 15:00 - 00:00 (Last Entry 19:00)",
-    "_rawDate": "2027-08-16"
+    "desc": "Palace of Justice Open Air 14:00 - 23:00 (Last entry 19:00)",
+    "_rawDate": "2026-09-19"
   }
 ]
