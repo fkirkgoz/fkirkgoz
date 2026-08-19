@@ -3230,7 +3230,7 @@
   {
     "id": 611,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Heritage in Motion",
     "venue": "Hôtel de Ville de Bruxelles",
     "addr": "Hôtel de Ville de Bruxelles, Belgium",
@@ -3619,7 +3619,7 @@
   },
   {
     "id": 636,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "Peter Hujar's Day - Ira Sachs",
     "venue": "Bozar",
@@ -3627,8 +3627,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -3738,7 +3738,33 @@
     "_rawDate": "2026-09-06"
   },
   {
-    "id": 641,
+    "id": 644,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Solomun 19 Sep 26",
+    "venue": "Hangar",
+    "addr": "Brussels, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Festival",
+      "Day Party"
+    ],
+    "source": "Hangar",
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=3052",
+    "lat": 50.8248331,
+    "lng": 4.3601686,
+    "neighbourhood": "Various",
+    "desc": "Palace of Justice Open Air 14:00 - 23:00 (Last entry 19:00)",
+    "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 645,
     "cat": "Festival",
     "date": "August",
     "title": "ILLEGAAL FEESTJE",
@@ -3764,7 +3790,7 @@
     "_rawDate": "2027-08-14"
   },
   {
-    "id": 642,
+    "id": 646,
     "cat": "Festival",
     "date": "July",
     "title": "Metropolis Open Air x Illegaal",
@@ -3790,7 +3816,7 @@
     "_rawDate": "2027-07-26"
   },
   {
-    "id": 643,
+    "id": 647,
     "cat": "Festival",
     "date": "July",
     "title": "NOESIS • Heartcore Dreams",
@@ -3814,31 +3840,5 @@
     "neighbourhood": "Various",
     "desc": "On JULY 25th, we return to Illegaal for a second chapter. For this round, we continue our summer journey, a drifting narrative through playful and emotional soundscapes, somewhere between fairy …",
     "_rawDate": "2027-07-25"
-  },
-  {
-    "id": 644,
-    "cat": "Festival",
-    "date": "Next Month",
-    "title": "Solomun 19 Sep 26",
-    "venue": "Hangar",
-    "addr": "Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Festival",
-      "Day Party"
-    ],
-    "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=3052",
-    "lat": 50.8248331,
-    "lng": 4.3601686,
-    "neighbourhood": "Various",
-    "desc": "Palace of Justice Open Air 14:00 - 23:00 (Last entry 19:00)",
-    "_rawDate": "2026-09-19"
   }
 ]
