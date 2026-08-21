@@ -2817,7 +2817,7 @@
   {
     "id": 579,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Rooted in love – Live concert Joël Francis",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -2867,7 +2867,7 @@
   {
     "id": 590,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Plazey 26",
     "venue": "Elisabeth Park",
     "addr": "Elisabeth Park, Belgium",
@@ -2891,7 +2891,7 @@
   {
     "id": 591,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fiesta Latina - 25th anniversary",
     "venue": "Cinquantenaire Park",
     "addr": "Parc du Cinquantenaire, 1000 Brussels",
@@ -2915,7 +2915,7 @@
   {
     "id": 592,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels Games Festival 2026",
     "venue": "The Egg",
     "addr": "The Egg, Belgium",
@@ -2939,7 +2939,7 @@
   {
     "id": 593,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Forest Sounds 2026",
     "venue": "Abbaye de Forest",
     "addr": "Abbaye de Forest, Belgium",
@@ -3107,7 +3107,7 @@
   {
     "id": 603,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: Dan Shake & Luke Alessi",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3248,13 +3248,13 @@
     "lat": 50.8467,
     "lng": 4.3525,
     "neighbourhood": "Centre",
-    "desc": "Thu 10 September — Sun 13 September RendezVous 2026 - Brussels Art Week Free FestivalRendezVous 2026 - Brussels Art Week View more",
+    "desc": "Thu 10 September — Sun 13 September RendezVous 2026 - Brussels Art Week Free FestivalVarious locations in the Brussels Capital Region View more",
     "_rawDate": "2026-09-10"
   },
   {
     "id": 614,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival Midis-Minimes 2026",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3278,7 +3278,7 @@
   {
     "id": 615,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: The Third Room w/ Verraco, Felix Fleer & Maōh",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3353,7 +3353,7 @@
   {
     "id": 621,
     "cat": "Food & Drink",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "10th Indian Food Festival",
     "venue": "Arcades du Cinquantenaire",
     "addr": "Parc du Cinquantenaire, 1000 Brussels",
@@ -3377,7 +3377,7 @@
   {
     "id": 622,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "HappyLife festival",
     "venue": "Ferme Nos Pilifs",
     "addr": "Ferme Nos Pilifs, Belgium",
@@ -3401,7 +3401,7 @@
   {
     "id": 623,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels Games Festival",
     "venue": "The Egg",
     "addr": "The Egg, Belgium",
@@ -3473,7 +3473,7 @@
   {
     "id": 630,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival Plazey",
     "venue": "Elisabeth Park",
     "addr": "Elisabeth Park, Belgium",
@@ -3620,7 +3620,7 @@
   {
     "id": 637,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival des Arts Vodoun",
     "venue": "Tours & Taxis, at the main entrance of the Teirlinck building",
     "addr": "Tours & Taxis, at the main entrance of the Teirlinck building, Belgium",
@@ -3868,5 +3868,29 @@
     "neighbourhood": "Various",
     "desc": "Pointzero Rec is back !! Saturday 17th october 2026 ____ ●●● LINEUP ●●● HYPOGEO (IT) - Zenon Records - (3h New Live set !! Dark Prog) SUBWAY SHAMANS (BE) - …",
     "_rawDate": "2026-10-17"
+  },
+  {
+    "id": 650,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Moche In Festival - Le festival des refusé·es",
+    "venue": "LaVallée",
+    "addr": "LaVallée, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Moche-In-Festival-Le-festival-des-refuse-es.5700024627",
+    "lat": 50.8586368,
+    "lng": 4.3423059,
+    "neighbourhood": "Centre",
+    "desc": "Fri 11 September — Sat 12 September Moche In Festival - Le festival des refusé · es FestivalLaVallée View more",
+    "_rawDate": "2026-09-11"
   }
 ]
