@@ -2421,7 +2421,7 @@
   {
     "id": 526,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "C12 x GIMIC Radio - Open Air & Club - 29 August",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2793,7 +2793,7 @@
   {
     "id": 575,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "La guitarra flamenca de Yerai Cortés - C. Tangana",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2817,7 +2817,7 @@
   {
     "id": 579,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Rooted in love – Live concert Joël Francis",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3083,7 +3083,7 @@
   {
     "id": 602,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Ponyo - Hayao Miyazaki",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3107,7 +3107,7 @@
   {
     "id": 603,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: Dan Shake & Luke Alessi",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3156,7 +3156,7 @@
   {
     "id": 606,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Pearson Sound & Martyn",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3329,7 +3329,7 @@
   {
     "id": 618,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Orwell: 2+2=5 - Raoul Peck",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3353,7 +3353,7 @@
   {
     "id": 621,
     "cat": "Food & Drink",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "10th Indian Food Festival",
     "venue": "Arcades du Cinquantenaire",
     "addr": "Parc du Cinquantenaire, 1000 Brussels",
@@ -3377,7 +3377,7 @@
   {
     "id": 622,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "HappyLife festival",
     "venue": "Ferme Nos Pilifs",
     "addr": "Ferme Nos Pilifs, Belgium",
@@ -3425,7 +3425,7 @@
   {
     "id": 624,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "insifon",
     "venue": "Meudon Park",
     "addr": "Meudon Park, Belgium",
@@ -3449,7 +3449,7 @@
   {
     "id": 625,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "L'Afrique en Couleurs Festival",
     "venue": "Tour et Taxis",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -3644,7 +3644,7 @@
   {
     "id": 638,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "POMPOMPOM Festival",
     "venue": "Vaux Hall",
     "addr": "Vaux Hall, Belgium",
@@ -3871,7 +3871,7 @@
   },
   {
     "id": 650,
-    "cat": "Festival",
+    "cat": "Nightlife",
     "date": "Next Month",
     "title": "Moche In Festival - Le festival des refusé·es",
     "venue": "LaVallée",
@@ -3879,8 +3879,8 @@
     "time": "12:00",
     "startH": 12,
     "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
+    "emoji": "🏭",
+    "color": "#6C63FF",
     "tags": [
       "Festival",
       "Outdoors"
