@@ -2052,7 +2052,7 @@
   {
     "id": 492,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Delcy Morelos. Bozar Monumental",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2076,7 +2076,7 @@
   {
     "id": 493,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Pompei, Below the Clouds - Gianfranco Rosi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2175,7 +2175,7 @@
   {
     "id": 504,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Whitest Boy Alive",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2421,7 +2421,7 @@
   {
     "id": 526,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "C12 x GIMIC Radio - Open Air & Club - 29 August",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2495,7 +2495,7 @@
   {
     "id": 535,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Cinema at Bozar this summer",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2793,7 +2793,7 @@
   {
     "id": 575,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "La guitarra flamenca de Yerai Cortés - C. Tangana",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2815,35 +2815,9 @@
     "_rawDate": "2026-08-29"
   },
   {
-    "id": 579,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Rooted in love – Live concert Joël Francis",
-    "venue": "LaVallée",
-    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
-    "time": "19:00",
-    "startH": 19,
-    "endH": 22,
-    "emoji": "🏭",
-    "color": "#6C63FF",
-    "tags": [
-      "Open Air",
-      "Industrial",
-      "Electronic",
-      "Art"
-    ],
-    "source": "LaVallée",
-    "officialEventLink": "https://lavallee.brussels/event/rooted-in-love-live-concert-joel-francis/",
-    "lat": 50.8568,
-    "lng": 4.339,
-    "neighbourhood": "Molenbeek",
-    "desc": "Inspired by artists such as H.E.R., SZA, Jazmine Sullivan, Alicia Keys and Jhené Aiko, Joël approaches music as both a vocal and emotional exploration. Her songwriting reflects on vulnerability, love and personal growth, inviting listeners into stories that…",
-    "_rawDate": "2026-08-22"
-  },
-  {
     "id": 584,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Le Chant des Forêts - Vincent Munier",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3083,7 +3057,7 @@
   {
     "id": 602,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Ponyo - Hayao Miyazaki",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3103,31 +3077,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-08-23"
-  },
-  {
-    "id": 603,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: Dan Shake & Luke Alessi",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-dan-shake-luke-alessi",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: Dan Shake & Luke Alessi at Fuse.",
-    "_rawDate": "2026-08-22"
   },
   {
     "id": 605,
@@ -3156,7 +3105,7 @@
   {
     "id": 606,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Fuse presents: Pearson Sound & Martyn",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3329,7 +3278,7 @@
   {
     "id": 618,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Orwell: 2+2=5 - Raoul Peck",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3349,54 +3298,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-08-23"
-  },
-  {
-    "id": 621,
-    "cat": "Food & Drink",
-    "date": "Today",
-    "title": "10th Indian Food Festival",
-    "venue": "Arcades du Cinquantenaire",
-    "addr": "Parc du Cinquantenaire, 1000 Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 20,
-    "emoji": "🍕",
-    "color": "#F4C87A",
-    "tags": [
-      "Food",
-      "Social"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.10th-Indian-Food-Festival.5700022427",
-    "lat": 50.8417,
-    "lng": 4.3889,
-    "neighbourhood": "Centre",
-    "desc": "Sat 22 August — Sun 23 August 10th Indian Food Festival Free FestivalArcades du Cinquantenaire View more",
-    "_rawDate": "2026-08-22"
-  },
-  {
-    "id": 622,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "HappyLife festival",
-    "venue": "Ferme Nos Pilifs",
-    "addr": "Ferme Nos Pilifs, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.HappyLife-festival.5700021586",
-    "lat": 50.9039215,
-    "lng": 4.3867648,
-    "neighbourhood": "Centre",
-    "desc": "Sat 22 August — Sun 23 August HappyLife festival Free FestivalFerme Nos Pilifs View more",
-    "_rawDate": "2026-08-22"
   },
   {
     "id": 623,
@@ -3425,7 +3326,7 @@
   {
     "id": 624,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "insifon",
     "venue": "Meudon Park",
     "addr": "Meudon Park, Belgium",
@@ -3449,7 +3350,7 @@
   {
     "id": 625,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "L'Afrique en Couleurs Festival",
     "venue": "Tour et Taxis",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -3497,7 +3398,7 @@
   {
     "id": 631,
     "cat": "Food & Drink",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Belgium Beer Week",
     "venue": "Belgium Beer Week",
     "addr": "Belgium Beer Week, Belgium",
@@ -3596,7 +3497,7 @@
   {
     "id": 636,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Peter Hujar's Day - Ira Sachs",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3644,7 +3545,7 @@
   {
     "id": 638,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "POMPOMPOM Festival",
     "venue": "Vaux Hall",
     "addr": "Vaux Hall, Belgium",
@@ -3892,5 +3793,54 @@
     "neighbourhood": "Centre",
     "desc": "Fri 11 September — Sat 12 September Moche In Festival - Le festival des refusé · es FestivalLaVallée View more",
     "_rawDate": "2026-09-11"
+  },
+  {
+    "id": 651,
+    "cat": "Nightlife",
+    "date": "August",
+    "title": "UPCOMING EVENTS",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: Dan Shake & Luke Alessi at Fuse.",
+    "_rawDate": "2027-08-22"
+  },
+  {
+    "id": 652,
+    "cat": "Sports",
+    "date": "Next Month",
+    "title": "Climate Classic Belgium (Cycle or Run for Climate!)",
+    "venue": "Sonian Forest Sports Centre",
+    "addr": "Sonian Forest Sports Centre, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "👟",
+    "color": "#90E0EF",
+    "tags": [
+      "Sports",
+      "Active"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Climate-Classic-Belgium-Cycle-or-Run-for-Climate.5700025351",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Sat 12 September Climate Classic Belgium (Cycle or Run for Climate!) SportSonian Forest Sports Centre View more",
+    "_rawDate": "2026-09-12"
   }
 ]
