@@ -2052,7 +2052,7 @@
   {
     "id": 492,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Delcy Morelos. Bozar Monumental",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2076,7 +2076,7 @@
   {
     "id": 493,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Pompei, Below the Clouds - Gianfranco Rosi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2175,7 +2175,7 @@
   {
     "id": 504,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "The Whitest Boy Alive",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2495,7 +2495,7 @@
   {
     "id": 535,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Cinema at Bozar this summer",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2817,7 +2817,7 @@
   {
     "id": 584,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Le Chant des Forêts - Vincent Munier",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3055,30 +3055,6 @@
     "_rawDate": "2026-09-11"
   },
   {
-    "id": 602,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Ponyo - Hayao Miyazaki",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/ponyo-hayao-miyazaki-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-23"
-  },
-  {
     "id": 605,
     "cat": "Festival",
     "date": "Next Month",
@@ -3276,30 +3252,6 @@
     "_rawDate": "2026-09-04"
   },
   {
-    "id": 618,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Orwell: 2+2=5 - Raoul Peck",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/orwell-225-raoul-peck",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-23"
-  },
-  {
     "id": 623,
     "cat": "Festival",
     "date": "Next Week",
@@ -3398,7 +3350,7 @@
   {
     "id": 631,
     "cat": "Food & Drink",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Belgium Beer Week",
     "venue": "Belgium Beer Week",
     "addr": "Belgium Beer Week, Belgium",
@@ -3497,7 +3449,7 @@
   {
     "id": 636,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Peter Hujar's Day - Ira Sachs",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3795,31 +3747,6 @@
     "_rawDate": "2026-09-11"
   },
   {
-    "id": 651,
-    "cat": "Nightlife",
-    "date": "August",
-    "title": "UPCOMING EVENTS",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: Dan Shake & Luke Alessi at Fuse.",
-    "_rawDate": "2027-08-22"
-  },
-  {
     "id": 652,
     "cat": "Sports",
     "date": "Next Month",
@@ -3841,6 +3768,31 @@
     "lng": 4.3525,
     "neighbourhood": "Centre",
     "desc": "Sat 12 September Climate Classic Belgium (Cycle or Run for Climate!) SportSonian Forest Sports Centre View more",
+    "_rawDate": "2026-09-12"
+  },
+  {
+    "id": 653,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: Andy C",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-andy-c",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: Andy C at Fuse.",
     "_rawDate": "2026-09-12"
   }
 ]
