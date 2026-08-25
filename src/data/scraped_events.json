@@ -583,7 +583,7 @@
   {
     "id": 250,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Wild Pink",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -658,7 +658,7 @@
   {
     "id": 263,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Belair Lip Bombs",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2199,7 +2199,7 @@
   {
     "id": 508,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Waterboys Fisherman’s Blues Revue",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -3130,7 +3130,7 @@
   {
     "id": 609,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Belair Lip Bombs - Richarichar",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3346,30 +3346,6 @@
     "neighbourhood": "Centre",
     "desc": "Fri 28 August — Sun 30 August Festival Plazey FestivalElisabeth Park View more",
     "_rawDate": "2026-08-28"
-  },
-  {
-    "id": 631,
-    "cat": "Food & Drink",
-    "date": "Today",
-    "title": "Belgium Beer Week",
-    "venue": "Belgium Beer Week",
-    "addr": "Belgium Beer Week, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 20,
-    "emoji": "🍹",
-    "color": "#F4C87A",
-    "tags": [
-      "Drinks",
-      "Social"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Belgium-Beer-Week.5700025037",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Mon 24 August — Sun 30 August Belgium Beer Week Free FestivalBelgium Beer Week View more",
-    "_rawDate": "2026-08-24"
   },
   {
     "id": 633,
