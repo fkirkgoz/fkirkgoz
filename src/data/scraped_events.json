@@ -2271,7 +2271,7 @@
   {
     "id": 514,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "State of the Future",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2744,7 +2744,7 @@
   {
     "id": 564,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Ezra Feinberg",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2769,7 +2769,7 @@
   {
     "id": 567,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Magellan - Lav Diaz",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2937,7 +2937,7 @@
   {
     "id": 594,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Het TheaterFestival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -3770,5 +3770,53 @@
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Andy C at Fuse.",
     "_rawDate": "2026-09-12"
+  },
+  {
+    "id": 654,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Emmylou Harris",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/emmylou-harris",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-09-03"
+  },
+  {
+    "id": 655,
+    "cat": "Market",
+    "date": "Next Month",
+    "title": "Sablon Design Market",
+    "venue": "Sablon design Market",
+    "addr": "Sablon design Market, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 17,
+    "emoji": "🛍️",
+    "color": "#F4C87A",
+    "tags": [
+      "Market",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Sablon-Design-Market.5700026015",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Fri 11 September — Sun 13 September Sablon Design Market Free Fairs and showsSablon design Market View more",
+    "_rawDate": "2026-09-11"
   }
 ]
