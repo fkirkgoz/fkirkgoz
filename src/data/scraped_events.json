@@ -708,7 +708,7 @@
   {
     "id": 292,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Ryan Davis & the Roadhouse Band",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2296,7 +2296,7 @@
   {
     "id": 515,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Chapters of Celebration",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2321,7 +2321,7 @@
   {
     "id": 516,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "shoe/farm",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2769,7 +2769,7 @@
   {
     "id": 567,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Magellan - Lav Diaz",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2841,7 +2841,7 @@
   {
     "id": 590,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Plazey 26",
     "venue": "Elisabeth Park",
     "addr": "Elisabeth Park, Belgium",
@@ -2865,7 +2865,7 @@
   {
     "id": 591,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fiesta Latina - 25th anniversary",
     "venue": "Cinquantenaire Park",
     "addr": "Parc du Cinquantenaire, 1000 Brussels",
@@ -2889,7 +2889,7 @@
   {
     "id": 592,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brussels Games Festival 2026",
     "venue": "The Egg",
     "addr": "The Egg, Belgium",
@@ -2913,7 +2913,7 @@
   {
     "id": 593,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Forest Sounds 2026",
     "venue": "Abbaye de Forest",
     "addr": "Abbaye de Forest, Belgium",
@@ -3179,7 +3179,7 @@
   {
     "id": 614,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival Midis-Minimes 2026",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3203,7 +3203,7 @@
   {
     "id": 615,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: The Third Room w/ Verraco, Felix Fleer & Maōh",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3254,7 +3254,7 @@
   {
     "id": 623,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brussels Games Festival",
     "venue": "The Egg",
     "addr": "The Egg, Belgium",
@@ -3326,7 +3326,7 @@
   {
     "id": 630,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival Plazey",
     "venue": "Elisabeth Park",
     "addr": "Elisabeth Park, Belgium",
@@ -3449,7 +3449,7 @@
   {
     "id": 637,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival des Arts Vodoun",
     "venue": "Tours & Taxis, at the main entrance of the Teirlinck building",
     "addr": "Tours & Taxis, at the main entrance of the Teirlinck building, Belgium",
@@ -3773,16 +3773,16 @@
   },
   {
     "id": 654,
-    "cat": "Music",
-    "date": "Next Month",
+    "cat": "Culture",
+    "date": "Next Week",
     "title": "Emmylou Harris",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Concert",
       "Live Music"
@@ -3818,5 +3818,54 @@
     "neighbourhood": "Centre",
     "desc": "Fri 11 September — Sun 13 September Sablon Design Market Free Fairs and showsSablon design Market View more",
     "_rawDate": "2026-09-11"
+  },
+  {
+    "id": 656,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Billy Corgan",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/billy-corgan",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "4 Sept.'26 - 20:00",
+    "_rawDate": "2026-09-04"
+  },
+  {
+    "id": 657,
+    "cat": "Culture",
+    "date": "Next Week",
+    "title": "Edgar Sarin - 'Matthäus-Passion'",
+    "venue": "Fondation CAB",
+    "addr": "Fondation CAB, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Edgar-Sarin-Matthaus-Passion.5700024518",
+    "lat": 50.826292,
+    "lng": 4.3773659,
+    "neighbourhood": "Centre",
+    "desc": "Wed 02 September 2026 — Sat 17 April 2027 Edgar Sarin - 'Matthäus-Passion' ExhibitionsFondation CAB View more",
+    "_rawDate": "2026-09-02"
   }
 ]
