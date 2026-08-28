@@ -2247,7 +2247,7 @@
   {
     "id": 511,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Bedouine",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2346,7 +2346,7 @@
   {
     "id": 517,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Truthful",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2396,7 +2396,7 @@
   {
     "id": 519,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Kunst in de greep van uiterst rechts?",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2421,7 +2421,7 @@
   {
     "id": 526,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "C12 x GIMIC Radio - Open Air & Club - 29 August",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2767,33 +2767,9 @@
     "_rawDate": "2026-09-02"
   },
   {
-    "id": 567,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Magellan - Lav Diaz",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/magellan-lav-diaz-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-27"
-  },
-  {
     "id": 575,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "La guitarra flamenca de Yerai Cortés - C. Tangana",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2841,7 +2817,7 @@
   {
     "id": 590,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Plazey 26",
     "venue": "Elisabeth Park",
     "addr": "Elisabeth Park, Belgium",
@@ -2865,7 +2841,7 @@
   {
     "id": 591,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Fiesta Latina - 25th anniversary",
     "venue": "Cinquantenaire Park",
     "addr": "Parc du Cinquantenaire, 1000 Brussels",
@@ -2889,7 +2865,7 @@
   {
     "id": 592,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Brussels Games Festival 2026",
     "venue": "The Egg",
     "addr": "The Egg, Belgium",
@@ -2913,7 +2889,7 @@
   {
     "id": 593,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Forest Sounds 2026",
     "venue": "Abbaye de Forest",
     "addr": "Abbaye de Forest, Belgium",
@@ -2961,7 +2937,7 @@
   {
     "id": 595,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels International Film Festival",
     "venue": "De Brouckère Square",
     "addr": "De Brouckère Square, Belgium",
@@ -3081,7 +3057,7 @@
   {
     "id": 606,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: Pearson Sound & Martyn",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3179,7 +3155,7 @@
   {
     "id": 614,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Festival Midis-Minimes 2026",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3203,7 +3179,7 @@
   {
     "id": 615,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: The Third Room w/ Verraco, Felix Fleer & Maōh",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3228,7 +3204,7 @@
   {
     "id": 617,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "LaVallée Olympics – 11th Anniversary Special !",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -3254,7 +3230,7 @@
   {
     "id": 623,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Brussels Games Festival",
     "venue": "The Egg",
     "addr": "The Egg, Belgium",
@@ -3278,7 +3254,7 @@
   {
     "id": 624,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "insifon",
     "venue": "Meudon Park",
     "addr": "Meudon Park, Belgium",
@@ -3302,7 +3278,7 @@
   {
     "id": 625,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "L'Afrique en Couleurs Festival",
     "venue": "Tour et Taxis",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -3326,7 +3302,7 @@
   {
     "id": 630,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Festival Plazey",
     "venue": "Elisabeth Park",
     "addr": "Elisabeth Park, Belgium",
@@ -3350,7 +3326,7 @@
   {
     "id": 633,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: NIKOLINA & Ornella",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3449,7 +3425,7 @@
   {
     "id": 637,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Festival des Arts Vodoun",
     "venue": "Tours & Taxis, at the main entrance of the Teirlinck building",
     "addr": "Tours & Taxis, at the main entrance of the Teirlinck building, Belgium",
@@ -3473,7 +3449,7 @@
   {
     "id": 638,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "POMPOMPOM Festival",
     "venue": "Vaux Hall",
     "addr": "Vaux Hall, Belgium",
@@ -3822,7 +3798,7 @@
   {
     "id": 656,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Billy Corgan",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3867,5 +3843,53 @@
     "neighbourhood": "Centre",
     "desc": "Wed 02 September 2026 — Sat 17 April 2027 Edgar Sarin - 'Matthäus-Passion' ExhibitionsFondation CAB View more",
     "_rawDate": "2026-09-02"
+  },
+  {
+    "id": 658,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Wanderlust by Brussels Beer Project",
+    "venue": "Place du marché au poisson",
+    "addr": "Place du marché au poisson, Belgium",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Wanderlust-by-Brussels-Beer-Project.5700023949",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Sat 12 September — Sun 13 September Wanderlust by Brussels Beer Project ConcertPlace du marché au poisson View more",
+    "_rawDate": "2026-09-12"
+  },
+  {
+    "id": 659,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Genesis",
+    "venue": "Église Notre-Dame du Sablon",
+    "addr": "Église Notre-Dame du Sablon, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Brussels"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Genesis.5700025683",
+    "lat": 50.8403333,
+    "lng": 4.3561989,
+    "neighbourhood": "Centre",
+    "desc": "Sat 12 September — Sun 25 October Genesis ShowÉglise Notre-Dame du Sablon View more",
+    "_rawDate": "2026-09-12"
   }
 ]
