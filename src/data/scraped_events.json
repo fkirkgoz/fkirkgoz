@@ -508,7 +508,7 @@
   {
     "id": 242,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "zeyne",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2052,7 +2052,7 @@
   {
     "id": 492,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Delcy Morelos. Bozar Monumental",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2076,7 +2076,7 @@
   {
     "id": 493,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Pompei, Below the Clouds - Gianfranco Rosi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2175,7 +2175,7 @@
   {
     "id": 504,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "The Whitest Boy Alive",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2421,7 +2421,7 @@
   {
     "id": 526,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "C12 x GIMIC Radio - Open Air & Club - 29 August",
     "venue": "C12",
     "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
@@ -2495,7 +2495,7 @@
   {
     "id": 535,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Cinema at Bozar this summer",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2519,7 +2519,7 @@
   {
     "id": 542,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Magec / the Desert",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2769,7 +2769,7 @@
   {
     "id": 575,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "La guitarra flamenca de Yerai Cortés - C. Tangana",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2793,7 +2793,7 @@
   {
     "id": 584,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Le Chant des Forêts - Vincent Munier",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2813,102 +2813,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-08-30"
-  },
-  {
-    "id": 590,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Plazey 26",
-    "venue": "Elisabeth Park",
-    "addr": "Elisabeth Park, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Plazey-26.592468",
-    "lat": 50.8650249,
-    "lng": 4.3244782,
-    "neighbourhood": "Centre",
-    "desc": "Fri 28 August — Sun 30 August Plazey 26 Free AnimationsElisabeth Park View more",
-    "_rawDate": "2026-08-28"
-  },
-  {
-    "id": 591,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Fiesta Latina - 25th anniversary",
-    "venue": "Cinquantenaire Park",
-    "addr": "Parc du Cinquantenaire, 1000 Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Fiesta-Latina-25th-anniversary.5700023976",
-    "lat": 50.8417,
-    "lng": 4.3889,
-    "neighbourhood": "Centre",
-    "desc": "Fri 28 August — Sun 30 August Fiesta Latina - 25th anniversary FestivalCinquantenaire Park View more",
-    "_rawDate": "2026-08-28"
-  },
-  {
-    "id": 592,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Brussels Games Festival 2026",
-    "venue": "The Egg",
-    "addr": "The Egg, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Games-Festival-2026.5700024757",
-    "lat": 50.8331413,
-    "lng": 4.3269749,
-    "neighbourhood": "Centre",
-    "desc": "Fri 28 August — Sun 30 August Brussels Games Festival 2026 €7 Fairs and showsThe Egg View more",
-    "_rawDate": "2026-08-28"
-  },
-  {
-    "id": 593,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Forest Sounds 2026",
-    "venue": "Abbaye de Forest",
-    "addr": "Abbaye de Forest, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Forest-Sounds-2026.5700021953",
-    "lat": 50.8109719,
-    "lng": 4.3168244,
-    "neighbourhood": "Centre",
-    "desc": "Fri 28 August — Sat 29 August Forest Sounds 2026 FestivalAbbaye de Forest View more",
-    "_rawDate": "2026-08-28"
   },
   {
     "id": 594,
@@ -2961,7 +2865,7 @@
   {
     "id": 596,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Ali Cherri - 'Soul Witness'",
     "venue": "Wiels - Contemporary art centre",
     "addr": "Wiels - Contemporary art centre, Belgium",
@@ -3057,7 +2961,7 @@
   {
     "id": 606,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: Pearson Sound & Martyn",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3153,55 +3057,6 @@
     "_rawDate": "2026-09-10"
   },
   {
-    "id": 614,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Festival Midis-Minimes 2026",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/festival-midis-minimes-2026",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-08-28"
-  },
-  {
-    "id": 615,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: The Third Room w/ Verraco, Felix Fleer & Maōh",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-the-third-room-w-verraco-felix-fleer-ma%C5%8Dh",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: The Third Room w/ Verraco, Felix Fleer & Maōh at Fuse.",
-    "_rawDate": "2026-08-28"
-  },
-  {
     "id": 617,
     "cat": "Nightlife",
     "date": "Next Week",
@@ -3228,33 +3083,9 @@
     "_rawDate": "2026-09-04"
   },
   {
-    "id": 623,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Brussels Games Festival",
-    "venue": "The Egg",
-    "addr": "The Egg, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Games-Festival.5700024757",
-    "lat": 50.8331413,
-    "lng": 4.3269749,
-    "neighbourhood": "Centre",
-    "desc": "Fri 28 August — Sun 30 August Brussels Games Festival €7 Fairs and showsThe Egg View more",
-    "_rawDate": "2026-08-28"
-  },
-  {
     "id": 624,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "insifon",
     "venue": "Meudon Park",
     "addr": "Meudon Park, Belgium",
@@ -3278,7 +3109,7 @@
   {
     "id": 625,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "L'Afrique en Couleurs Festival",
     "venue": "Tour et Taxis",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -3298,30 +3129,6 @@
     "neighbourhood": "Centre",
     "desc": "Sat 29 August — Sun 30 August L'Afrique en Couleurs Festival Free FestivalTour et Taxis View more",
     "_rawDate": "2026-08-29"
-  },
-  {
-    "id": 630,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Festival Plazey",
-    "venue": "Elisabeth Park",
-    "addr": "Elisabeth Park, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Plazey.5700020378",
-    "lat": 50.8650249,
-    "lng": 4.3244782,
-    "neighbourhood": "Centre",
-    "desc": "Fri 28 August — Sun 30 August Festival Plazey FestivalElisabeth Park View more",
-    "_rawDate": "2026-08-28"
   },
   {
     "id": 633,
@@ -3351,7 +3158,7 @@
   {
     "id": 634,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Hadone curates w/ Nørbak & Tauceti",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3401,7 +3208,7 @@
   {
     "id": 636,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Peter Hujar's Day - Ira Sachs",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3423,33 +3230,9 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 637,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Festival des Arts Vodoun",
-    "venue": "Tours & Taxis, at the main entrance of the Teirlinck building",
-    "addr": "Tours & Taxis, at the main entrance of the Teirlinck building, Belgium",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-des-Arts-Vodoun.5700023397",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Fri 28 August — Sun 30 August Festival des Arts Vodoun Free FestivalTours & Taxis, at the main entrance of the Teirlinck building View more",
-    "_rawDate": "2026-08-28"
-  },
-  {
     "id": 638,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "POMPOMPOM Festival",
     "venue": "Vaux Hall",
     "addr": "Vaux Hall, Belgium",
@@ -3473,7 +3256,7 @@
   {
     "id": 639,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Racines Festival",
     "venue": "L'Entrela' - Centre Culturel d'Evere",
     "addr": "L'Entrela' - Centre Culturel d'Evere, Belgium",
@@ -3891,5 +3674,78 @@
     "neighbourhood": "Centre",
     "desc": "Sat 12 September — Sun 25 October Genesis ShowÉglise Notre-Dame du Sablon View more",
     "_rawDate": "2026-09-12"
+  },
+  {
+    "id": 660,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: SESH w/ Clara Cuvé & PETERBLUE",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-sesh-w-clara-cuv%C3%A9-peterblue",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: SESH w/ Clara Cuvé & PETERBLUE at Fuse.",
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 661,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "M.C. Escher - Beyond Infinity",
+    "venue": "Tour & Taxis - Shed 4bis",
+    "addr": "Tour & Taxis, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.M-C-Escher-Beyond-Infinity.5700025515",
+    "lat": 50.8676,
+    "lng": 4.3427,
+    "neighbourhood": "Centre",
+    "desc": "Thu 17 September 2026 — Sun 07 March 2027 M.C. Escher - Beyond Infinity €17.9 ExhibitionsTour & Taxis - Shed 4bis View more",
+    "_rawDate": "2026-09-17"
+  },
+  {
+    "id": 662,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Poetik Bazar",
+    "venue": "Les Halles de Schaerbeek",
+    "addr": "Les Halles de Schaerbeek, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Poetik-Bazar.591705",
+    "lat": 50.8600606,
+    "lng": 4.3699578,
+    "neighbourhood": "Centre",
+    "desc": "Fri 18 September — Sun 20 September Poetik Bazar FestivalLes Halles de Schaerbeek View more",
+    "_rawDate": "2026-09-18"
   }
 ]
