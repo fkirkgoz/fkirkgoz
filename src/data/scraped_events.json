@@ -508,7 +508,7 @@
   {
     "id": 242,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "zeyne",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -733,7 +733,7 @@
   {
     "id": 293,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "she's green",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2052,7 +2052,7 @@
   {
     "id": 492,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Delcy Morelos. Bozar Monumental",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2076,7 +2076,7 @@
   {
     "id": 493,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Pompei, Below the Clouds - Gianfranco Rosi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2175,7 +2175,7 @@
   {
     "id": 504,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "The Whitest Boy Alive",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2419,31 +2419,6 @@
     "_rawDate": "2026-09-04"
   },
   {
-    "id": 526,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "C12 x GIMIC Radio - Open Air & Club - 29 August",
-    "venue": "C12",
-    "addr": "Rue du Marché aux Herbes 116, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "💃",
-    "color": "#6C63FF",
-    "tags": [
-      "Electronic",
-      "Art",
-      "Nightlife"
-    ],
-    "source": "C12",
-    "officialEventLink": "https://shop.c12space.com/fa38e08cae304c8880d8844015cfd9c6",
-    "lat": 50.8462,
-    "lng": 4.3556,
-    "neighbourhood": "Centre",
-    "desc": "C12 x GIMIC Radio - Open Air & Club - 29 August",
-    "_rawDate": "2026-08-29"
-  },
-  {
     "id": 527,
     "cat": "Music",
     "date": "November",
@@ -2495,7 +2470,7 @@
   {
     "id": 535,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Cinema at Bozar this summer",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2519,7 +2494,7 @@
   {
     "id": 542,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Magec / the Desert",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2767,33 +2742,9 @@
     "_rawDate": "2026-09-02"
   },
   {
-    "id": 575,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "La guitarra flamenca de Yerai Cortés - C. Tangana",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/la-guitarra-flamenca-de-yerai-cortes-c-tangana-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-29"
-  },
-  {
     "id": 584,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Le Chant des Forêts - Vincent Munier",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2865,7 +2816,7 @@
   {
     "id": 596,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Ali Cherri - 'Soul Witness'",
     "venue": "Wiels - Contemporary art centre",
     "addr": "Wiels - Contemporary art centre, Belgium",
@@ -2957,31 +2908,6 @@
     "neighbourhood": "Centre",
     "desc": "Sat 12 September Brussels Open Air Festival 2026 FestivalVarious locations in the Brussels Capital Region View more",
     "_rawDate": "2026-09-12"
-  },
-  {
-    "id": 606,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: Pearson Sound & Martyn",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-pearson-sound-martyn",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: Pearson Sound & Martyn at Fuse.",
-    "_rawDate": "2026-08-29"
   },
   {
     "id": 608,
@@ -3083,54 +3009,6 @@
     "_rawDate": "2026-09-04"
   },
   {
-    "id": 624,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "insifon",
-    "venue": "Meudon Park",
-    "addr": "Meudon Park, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.insifon.5700024858",
-    "lat": 50.8951487,
-    "lng": 4.3943702,
-    "neighbourhood": "Centre",
-    "desc": "Sat 29 August — Sun 30 August insifon FestivalMeudon Park View more",
-    "_rawDate": "2026-08-29"
-  },
-  {
-    "id": 625,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "L'Afrique en Couleurs Festival",
-    "venue": "Tour et Taxis",
-    "addr": "Tour & Taxis, 1000 Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.L-Afrique-en-Couleurs-Festival.5700023137",
-    "lat": 50.8676,
-    "lng": 4.3427,
-    "neighbourhood": "Centre",
-    "desc": "Sat 29 August — Sun 30 August L'Afrique en Couleurs Festival Free FestivalTour et Taxis View more",
-    "_rawDate": "2026-08-29"
-  },
-  {
     "id": 633,
     "cat": "Nightlife",
     "date": "Next Week",
@@ -3158,7 +3036,7 @@
   {
     "id": 634,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Fuse presents: Hadone curates w/ Nørbak & Tauceti",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3208,7 +3086,7 @@
   {
     "id": 636,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Peter Hujar's Day - Ira Sachs",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3230,33 +3108,9 @@
     "_rawDate": "2026-08-30"
   },
   {
-    "id": 638,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "POMPOMPOM Festival",
-    "venue": "Vaux Hall",
-    "addr": "Vaux Hall, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.POMPOMPOM-Festival.5700021936",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Sat 29 August — Sun 30 August POMPOMPOM Festival Free FestivalVaux Hall View more",
-    "_rawDate": "2026-08-29"
-  },
-  {
     "id": 639,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Racines Festival",
     "venue": "L'Entrela' - Centre Culturel d'Evere",
     "addr": "L'Entrela' - Centre Culturel d'Evere, Belgium",
@@ -3280,7 +3134,7 @@
   {
     "id": 640,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Classique à l'Abbaye",
     "venue": "Dieleghem Abbey",
     "addr": "Dieleghem Abbey, Belgium",
@@ -3747,5 +3601,30 @@
     "neighbourhood": "Centre",
     "desc": "Fri 18 September — Sun 20 September Poetik Bazar FestivalLes Halles de Schaerbeek View more",
     "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 663,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: PACT (Joachim Pastor + Joris Delacroix + Teho)",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-pact-joachim-pastor-joris-delacroix-teho",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: PACT (Joachim Pastor + Joris Delacroix + Teho) at Fuse.",
+    "_rawDate": "2026-09-19"
   }
 ]
