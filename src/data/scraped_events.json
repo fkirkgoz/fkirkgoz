@@ -583,7 +583,7 @@
   {
     "id": 250,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Wild Pink",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -658,7 +658,7 @@
   {
     "id": 263,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Belair Lip Bombs",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -733,7 +733,7 @@
   {
     "id": 293,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "she's green",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1168,7 +1168,7 @@
   {
     "id": 372,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Pyrrhon (US) + Devoid Of Thought (IT)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -2050,54 +2050,6 @@
     "_rawDate": "2026-10-20"
   },
   {
-    "id": 492,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Delcy Morelos. Bozar Monumental",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/delcy-morelos-bozar-monumental",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2026-08-30"
-  },
-  {
-    "id": 493,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Pompei, Below the Clouds - Gianfranco Rosi",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/pompei-below-clouds-gianfranco-rosi-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-30"
-  },
-  {
     "id": 496,
     "cat": "Culture",
     "date": "November",
@@ -2173,33 +2125,9 @@
     "_rawDate": "2026-11-26"
   },
   {
-    "id": 504,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Whitest Boy Alive",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/the-whitest-boy-alive/a10Qw00000GS2gnIAD",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "Celebrating 20 year of the album dreams",
-    "_rawDate": "2026-08-30"
-  },
-  {
     "id": 508,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Waterboys Fisherman’s Blues Revue",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2468,30 +2396,6 @@
     "_rawDate": "2026-10-17"
   },
   {
-    "id": 535,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Cinema at Bozar this summer",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/cinema-bozar-summer",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-30"
-  },
-  {
     "id": 542,
     "cat": "Culture",
     "date": "This Weekend",
@@ -2742,30 +2646,6 @@
     "_rawDate": "2026-09-02"
   },
   {
-    "id": 584,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Le Chant des Forêts - Vincent Munier",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/le-chant-des-forets-vincent-munier-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-30"
-  },
-  {
     "id": 594,
     "cat": "Culture",
     "date": "Next Week",
@@ -2936,7 +2816,7 @@
   {
     "id": 609,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Belair Lip Bombs - Richarichar",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3084,30 +2964,6 @@
     "_rawDate": "2026-09-11"
   },
   {
-    "id": 636,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Peter Hujar's Day - Ira Sachs",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/peter-hujars-day-ira-sachs-2",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-08-30"
-  },
-  {
     "id": 639,
     "cat": "Festival",
     "date": "This Weekend",
@@ -3134,7 +2990,7 @@
   {
     "id": 640,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Classique à l'Abbaye",
     "venue": "Dieleghem Abbey",
     "addr": "Dieleghem Abbey, Belgium",
@@ -3626,5 +3482,30 @@
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: PACT (Joachim Pastor + Joris Delacroix + Teho) at Fuse.",
     "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 664,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Voodoo Village x BCCO afterparty",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/voodoo-village-afterparty",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Voodoo Village x BCCO afterparty at Fuse.",
+    "_rawDate": "2026-09-13"
   }
 ]
