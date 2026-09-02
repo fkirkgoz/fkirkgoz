@@ -27,7 +27,7 @@
   {
     "id": 162,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "KRS ONE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -533,7 +533,7 @@
   {
     "id": 247,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Clarion",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -579,31 +579,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "Schur at Le Botanique.",
     "_rawDate": "2026-11-04"
-  },
-  {
-    "id": 250,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Wild Pink",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/wild-pink-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A delicate balance of raw Americana songwriting, atmospheric rock, and melodic elegance",
-    "_rawDate": "2026-09-01"
   },
   {
     "id": 252,
@@ -656,31 +631,6 @@
     "_rawDate": "2026-10-05"
   },
   {
-    "id": 263,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Belair Lip Bombs",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/belair-lip-bombs-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Hybrid hyperpop, between confessional songwriting, emo guitars, and nervy electronic experimentation",
-    "_rawDate": "2026-09-01"
-  },
-  {
     "id": 273,
     "cat": "Music",
     "date": "November",
@@ -708,7 +658,7 @@
   {
     "id": 292,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Ryan Davis & the Roadhouse Band",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2125,30 +2075,6 @@
     "_rawDate": "2026-11-26"
   },
   {
-    "id": 508,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Waterboys Fisherman’s Blues Revue",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/the-waterboys-fishermans-blues-revue/a10Qw00000HhUqgIAF",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "The Waterboys Fisherman’s Blues Revue at Ancienne Belgique.",
-    "_rawDate": "2026-09-01"
-  },
-  {
     "id": 509,
     "cat": "Music",
     "date": "Next Month",
@@ -2199,7 +2125,7 @@
   {
     "id": 514,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "State of the Future",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2224,7 +2150,7 @@
   {
     "id": 515,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Chapters of Celebration",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2249,7 +2175,7 @@
   {
     "id": 516,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "shoe/farm",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2623,7 +2549,7 @@
   {
     "id": 564,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Ezra Feinberg",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2648,7 +2574,7 @@
   {
     "id": 594,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Het TheaterFestival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -2812,31 +2738,6 @@
     "neighbourhood": "Centre",
     "desc": "Fri 18 September — Sun 20 September Fêtes Médiévales de Forest - 27e édition Free FestivalAbbaye de Forest View more",
     "_rawDate": "2026-09-18"
-  },
-  {
-    "id": 609,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Belair Lip Bombs - Richarichar",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/belair-lip-bombs-richarichar-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Hybrid hyperpop, between confessional songwriting, emo guitars, and nervy electronic experimentation",
-    "_rawDate": "2026-09-01"
   },
   {
     "id": 612,
@@ -3243,7 +3144,7 @@
   {
     "id": 654,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Emmylou Harris",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3316,7 +3217,7 @@
   {
     "id": 657,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Edgar Sarin - 'Matthäus-Passion'",
     "venue": "Fondation CAB",
     "addr": "Fondation CAB, Belgium",
@@ -3510,16 +3411,16 @@
   },
   {
     "id": 665,
-    "cat": "Music",
-    "date": "Next Month",
+    "cat": "Culture",
+    "date": "Next Week",
     "title": "Carminho",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Concert",
       "Live Music"
@@ -3531,5 +3432,103 @@
     "neighbourhood": "Centre",
     "desc": "Concerts",
     "_rawDate": "2026-09-09"
+  },
+  {
+    "id": 666,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Prewn",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/prewn-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Tender indie rock and folk, with songs that feel both deeply intimate and fiercely powerful",
+    "_rawDate": "2026-09-02"
+  },
+  {
+    "id": 667,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Ryan Davis & the Roadhouse Band - Ebby",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/ryan-davis-roadhouse-band-ebby-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Roots rock immersed in melancholic, poetic, and philosophically rich soul",
+    "_rawDate": "2026-09-03"
+  },
+  {
+    "id": 668,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "William Kentridge - I am not me, the horse is not mine",
+    "venue": "Centre for Fine Arts - Bozar",
+    "addr": "Centre for Fine Arts - Bozar, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.William-Kentridge-I-am-not-me-the-horse-is-not-mine.5700026009",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Fri 18 September 2026 — Sun 07 March 2027 William Kentridge - I am not me, the horse is not mine €20 ExhibitionsCentre for Fine Arts - Bozar View more",
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 669,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Reinventing Photography",
+    "venue": "Hangar",
+    "addr": "Hangar, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Reinventing-Photography.5700024520",
+    "lat": 50.8248331,
+    "lng": 4.3601686,
+    "neighbourhood": "Centre",
+    "desc": "Fri 18 September — Sun 20 December Reinventing Photography ExhibitionsHangar View more",
+    "_rawDate": "2026-09-18"
   }
 ]
