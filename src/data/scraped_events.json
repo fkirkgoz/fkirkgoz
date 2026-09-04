@@ -508,7 +508,7 @@
   {
     "id": 242,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "zeyne",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -654,31 +654,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "Martin Luke Brown at Le Botanique.",
     "_rawDate": "2026-11-19"
-  },
-  {
-    "id": 292,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ryan Davis & the Roadhouse Band",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/ryan-davis-roadhouse-band-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Roots rock immersed in melancholic, poetic, and philosophically rich soul",
-    "_rawDate": "2026-09-03"
   },
   {
     "id": 293,
@@ -2101,7 +2076,7 @@
   {
     "id": 511,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Bedouine",
     "venue": "Ancienne Belgique",
     "addr": "Boulevard Anspach 110, 1000 Brussels",
@@ -2123,59 +2098,9 @@
     "_rawDate": "2026-09-04"
   },
   {
-    "id": 515,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Chapters of Celebration",
-    "venue": "Kaaitheater",
-    "addr": "Square Sainctelette 20, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Performing Arts",
-      "Experimental",
-      "Theatre"
-    ],
-    "source": "Kaaitheater",
-    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/chapters-celebration-0",
-    "lat": 50.8551,
-    "lng": 4.3448,
-    "neighbourhood": "Molenbeek",
-    "desc": "Chapters of Celebration at Kaaitheater.",
-    "_rawDate": "2026-09-03"
-  },
-  {
-    "id": 516,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "shoe/farm",
-    "venue": "Kaaitheater",
-    "addr": "Square Sainctelette 20, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Performing Arts",
-      "Experimental",
-      "Theatre"
-    ],
-    "source": "Kaaitheater",
-    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/shoe-farm",
-    "lat": 50.8551,
-    "lng": 4.3448,
-    "neighbourhood": "Molenbeek",
-    "desc": "shoe/farm at Kaaitheater.",
-    "_rawDate": "2026-09-03"
-  },
-  {
     "id": 517,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "The Truthful",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2225,7 +2150,7 @@
   {
     "id": 519,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Kunst in de greep van uiterst rechts?",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2299,7 +2224,7 @@
   {
     "id": 542,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Magec / the Desert",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2524,7 +2449,7 @@
   {
     "id": 595,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Brussels International Film Festival",
     "venue": "De Brouckère Square",
     "addr": "De Brouckère Square, Belgium",
@@ -2548,7 +2473,7 @@
   {
     "id": 596,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Ali Cherri - 'Soul Witness'",
     "venue": "Wiels - Contemporary art centre",
     "addr": "Wiels - Contemporary art centre, Belgium",
@@ -2596,7 +2521,7 @@
   {
     "id": 599,
     "cat": "Sports",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels Urban Sessions",
     "venue": "Brussels Urban Sessions",
     "addr": "Brussels Urban Sessions, Belgium",
@@ -2692,7 +2617,7 @@
   {
     "id": 617,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "LaVallée Olympics – 11th Anniversary Special !",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -2718,7 +2643,7 @@
   {
     "id": 633,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: NIKOLINA & Ornella",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2743,7 +2668,7 @@
   {
     "id": 634,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: Hadone curates w/ Nørbak & Tauceti",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2768,7 +2693,7 @@
   {
     "id": 635,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: 2HOT2PLAY & ALT8",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2793,7 +2718,7 @@
   {
     "id": 639,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Racines Festival",
     "venue": "L'Entrela' - Centre Culturel d'Evere",
     "addr": "L'Entrela' - Centre Culturel d'Evere, Belgium",
@@ -2867,7 +2792,7 @@
   {
     "id": 645,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Moche In Festival &#8211; Le festival des refusé•es",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -2997,7 +2922,7 @@
   {
     "id": 650,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Moche In Festival - Le festival des refusé·es",
     "venue": "LaVallée",
     "addr": "LaVallée, Belgium",
@@ -3068,33 +2993,9 @@
     "_rawDate": "2026-09-12"
   },
   {
-    "id": 654,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Emmylou Harris",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/emmylou-harris",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-09-03"
-  },
-  {
     "id": 655,
     "cat": "Market",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Sablon Design Market",
     "venue": "Sablon design Market",
     "addr": "Sablon design Market, Belgium",
@@ -3118,7 +3019,7 @@
   {
     "id": 656,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Billy Corgan",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3336,31 +3237,6 @@
     "_rawDate": "2026-09-09"
   },
   {
-    "id": 667,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ryan Davis & the Roadhouse Band - Ebby",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/ryan-davis-roadhouse-band-ebby-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Roots rock immersed in melancholic, poetic, and philosophically rich soul",
-    "_rawDate": "2026-09-03"
-  },
-  {
     "id": 668,
     "cat": "Culture",
     "date": "Next Month",
@@ -3409,41 +3285,16 @@
     "_rawDate": "2026-09-18"
   },
   {
-    "id": 670,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Nothing - Hammok",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/nothing-hammok-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Massive, melancholic shoegaze where darkness and fragile beauty collide beneath walls of saturated guitars",
-    "_rawDate": "2026-09-03"
-  },
-  {
     "id": 671,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Belgian National Orchestra, Halls & Vinnitskaya",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎻",
+    "emoji": "🏛️",
     "color": "#E76F51",
     "tags": [
       "Classical",
@@ -3456,31 +3307,6 @@
     "neighbourhood": "Centre",
     "desc": "Concerts",
     "_rawDate": "2026-09-11"
-  },
-  {
-    "id": 672,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Couleur Café x Brussels Urban Sessions, round 2!",
-    "venue": "Couleur Café",
-    "addr": "Parc du Cinquantenaire, 1000 Brussels",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎸",
-    "color": "#F4A261",
-    "tags": [
-      "World Music",
-      "Hip Hop",
-      "Festival"
-    ],
-    "source": "Couleur Café",
-    "officialEventLink": "https://www.couleurcafe.be/en/news/couleur-cafe-x-brussels-urban-sessions-round-2",
-    "lat": 50.8417,
-    "lng": 4.3889,
-    "neighbourhood": "Laeken",
-    "desc": "After welcoming Brussels Urban Sessions to the festival, it's our turn: our iconic Black Stage is heading to Parc du Cinquantenaire for the annual celebration of urban sports, bringing a soundtrack signed Couleur Café.",
-    "_rawDate": "2026-09-03"
   },
   {
     "id": 673,
@@ -3533,5 +3359,104 @@
     "neighbourhood": "Various",
     "desc": "La nuit tombe sur Bruxelles. Les crapules sortent sans leurs MOBIB 🥴. Le rendez-vous est bien connu… Musique et tenues farfelues. Posée sur la place du village, autour d’un grog …",
     "_rawDate": "2026-09-26"
+  },
+  {
+    "id": 675,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Cannelle - Salome",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/cannelle-salome-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "An audacious fusion of pop and electronic music, wrapped in a glamorous, avant-garde aesthetic",
+    "_rawDate": "2026-09-05"
+  },
+  {
+    "id": 676,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "deBasement",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/debasement-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "A high-energy blend of electropop and bass music, wrapped in an explosive queer vision made for the dancefloor",
+    "_rawDate": "2026-09-05"
+  },
+  {
+    "id": 677,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Jeanine De Bique",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/jeanine-de-bique-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "12 Sept.'26 - 20:00",
+    "_rawDate": "2026-09-12"
+  },
+  {
+    "id": 678,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Comic Strip Festival",
+    "venue": "Bourse Brussels",
+    "addr": "Bourse Brussels, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Comic-Strip-Festival.5700026005",
+    "lat": 50.8478282,
+    "lng": 4.3491201,
+    "neighbourhood": "Centre",
+    "desc": "Sat 19 September — Sun 20 September Comic Strip Festival Free FestivalBourse Brussels View more",
+    "_rawDate": "2026-09-19"
   }
 ]
