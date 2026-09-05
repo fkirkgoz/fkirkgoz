@@ -508,7 +508,7 @@
   {
     "id": 242,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "zeyne",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -658,7 +658,7 @@
   {
     "id": 293,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "she's green",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1803,7 +1803,7 @@
   {
     "id": 465,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "hibushibire (JP) + The WRS (BE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -2074,55 +2074,6 @@
     "_rawDate": "2026-09-13"
   },
   {
-    "id": 511,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Bedouine",
-    "venue": "Ancienne Belgique",
-    "addr": "Boulevard Anspach 110, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Ancienne Belgique",
-    "officialEventLink": "https://www.abconcerts.be/en/agenda/bedouine/a10Qw00000HoTGLIA3",
-    "lat": 50.8483,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "Dreamy folk that enters quietly and leaves a lasting impression",
-    "_rawDate": "2026-09-04"
-  },
-  {
-    "id": 517,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "The Truthful",
-    "venue": "Kaaitheater",
-    "addr": "Square Sainctelette 20, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Performing Arts",
-      "Experimental",
-      "Theatre"
-    ],
-    "source": "Kaaitheater",
-    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/truthful",
-    "lat": 50.8551,
-    "lng": 4.3448,
-    "neighbourhood": "Molenbeek",
-    "desc": "The Truthful at Kaaitheater.",
-    "_rawDate": "2026-09-04"
-  },
-  {
     "id": 518,
     "cat": "Culture",
     "date": "Next Week",
@@ -2146,31 +2097,6 @@
     "neighbourhood": "Molenbeek",
     "desc": "Bonjour Mademoiselleke at Kaaitheater.",
     "_rawDate": "2026-09-10"
-  },
-  {
-    "id": 519,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Kunst in de greep van uiterst rechts?",
-    "venue": "Kaaitheater",
-    "addr": "Square Sainctelette 20, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Performing Arts",
-      "Experimental",
-      "Theatre"
-    ],
-    "source": "Kaaitheater",
-    "officialEventLink": "https://www.kaaitheater.be/en/agenda/26-27/kunst-de-greep-van-uiterst-rechts",
-    "lat": 50.8551,
-    "lng": 4.3448,
-    "neighbourhood": "Molenbeek",
-    "desc": "Kunst in de greep van uiterst rechts? at Kaaitheater.",
-    "_rawDate": "2026-09-04"
   },
   {
     "id": 527,
@@ -2224,7 +2150,7 @@
   {
     "id": 542,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Magec / the Desert",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2299,7 +2225,7 @@
   {
     "id": 545,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "F*CK LOLITA",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2447,33 +2373,9 @@
     "_rawDate": "2026-10-03"
   },
   {
-    "id": 595,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Brussels International Film Festival",
-    "venue": "De Brouckère Square",
-    "addr": "De Brouckère Square, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-International-Film-Festival.5700023547",
-    "lat": 50.8197489,
-    "lng": 4.3993283,
-    "neighbourhood": "Centre",
-    "desc": "Fri 04 September — Sat 12 September Brussels International Film Festival FestivalVarious locations in the Brussels Capital Region View more",
-    "_rawDate": "2026-09-04"
-  },
-  {
     "id": 596,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Ali Cherri - 'Soul Witness'",
     "venue": "Wiels - Contemporary art centre",
     "addr": "Wiels - Contemporary art centre, Belgium",
@@ -2545,7 +2447,7 @@
   {
     "id": 605,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels Open Air Festival 2026",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -2615,60 +2517,9 @@
     "_rawDate": "2026-09-10"
   },
   {
-    "id": 617,
-    "cat": "Nightlife",
-    "date": "Today",
-    "title": "LaVallée Olympics – 11th Anniversary Special !",
-    "venue": "LaVallée",
-    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
-    "time": "17:00",
-    "startH": 17,
-    "endH": 20,
-    "emoji": "🏭",
-    "color": "#6C63FF",
-    "tags": [
-      "Open Air",
-      "Industrial",
-      "Electronic",
-      "Art"
-    ],
-    "source": "LaVallée",
-    "officialEventLink": "https://lavallee.brussels/event/lavallee-olympics-11th-anniversary-special/",
-    "lat": 50.8568,
-    "lng": 4.339,
-    "neighbourhood": "Molenbeek",
-    "desc": "Join us on Friday, September 4! From 5:00 PM to 9:00 PM, enjoy our special open studios, meet the resident artists, and take part in the LaVallée Olympics. From 9:00 PM onwards, the studios will close, but the celebration continues! Head to the LaVallée bar…",
-    "_rawDate": "2026-09-04"
-  },
-  {
-    "id": 633,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: NIKOLINA & Ornella",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-nikolina-ornella",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: NIKOLINA & Ornella at Fuse.",
-    "_rawDate": "2026-09-04"
-  },
-  {
     "id": 634,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: Hadone curates w/ Nørbak & Tauceti",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2718,7 +2569,7 @@
   {
     "id": 639,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Racines Festival",
     "venue": "L'Entrela' - Centre Culturel d'Evere",
     "addr": "L'Entrela' - Centre Culturel d'Evere, Belgium",
@@ -2742,7 +2593,7 @@
   {
     "id": 640,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Classique à l'Abbaye",
     "venue": "Dieleghem Abbey",
     "addr": "Dieleghem Abbey, Belgium",
@@ -2818,7 +2669,7 @@
   {
     "id": 646,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "ILLEGAAL FEESTJE",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -2946,7 +2797,7 @@
   {
     "id": 652,
     "cat": "Sports",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Climate Classic Belgium (Cycle or Run for Climate!)",
     "venue": "Sonian Forest Sports Centre",
     "addr": "Sonian Forest Sports Centre, Belgium",
@@ -2970,7 +2821,7 @@
   {
     "id": 653,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Andy C",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3017,34 +2868,9 @@
     "_rawDate": "2026-09-11"
   },
   {
-    "id": 656,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Billy Corgan",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/billy-corgan",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "4 Sept.'26 - 20:00",
-    "_rawDate": "2026-09-04"
-  },
-  {
     "id": 658,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Wanderlust by Brussels Beer Project",
     "venue": "Place du marché au poisson",
     "addr": "Place du marché au poisson, Belgium",
@@ -3068,7 +2894,7 @@
   {
     "id": 659,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Genesis",
     "venue": "Église Notre-Dame du Sablon",
     "addr": "Église Notre-Dame du Sablon, Belgium",
@@ -3363,7 +3189,7 @@
   {
     "id": 675,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Cannelle - Salome",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3388,7 +3214,7 @@
   {
     "id": 676,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "deBasement",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3413,7 +3239,7 @@
   {
     "id": 677,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Jeanine De Bique",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3458,5 +3284,77 @@
     "neighbourhood": "Centre",
     "desc": "Sat 19 September — Sun 20 September Comic Strip Festival Free FestivalBourse Brussels View more",
     "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 679,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "La Monnaie Symphony Orchestra, Altinoglu & Cho",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎻",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/la-monnaie-symphony-orchestra-altinoglu-cho",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-09-13"
+  },
+  {
+    "id": 680,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Heritage Days 2026",
+    "venue": "Various locations in the Brussels Capital Region",
+    "addr": "Various locations in the Brussels Capital Region, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Brussels"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Heritage-Days-2026.5700025496",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Sat 19 September — Sun 20 September Heritage Days 2026 Free Guided toursVarious locations in the Brussels Capital Region View more",
+    "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 681,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Car-Free Sunday",
+    "venue": "Various locations in the Brussels Capital Region",
+    "addr": "Various locations in the Brussels Capital Region, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Brussels"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Car-Free-Sunday.5700025480",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Sun 20 September Car-Free Sunday AnimationsVarious locations in the Brussels Capital Region View more",
+    "_rawDate": "2026-09-20"
   }
 ]
