@@ -631,34 +631,9 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 293,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "she's green",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/shes-green-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Inspired by the vast Midwestern landscapes they call home, she’s green blends textured alt-rock with dream-pop softness.",
-    "_rawDate": "2026-09-06"
-  },
-  {
     "id": 299,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Orielles + Golomb",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1068,7 +1043,7 @@
   {
     "id": 372,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Pyrrhon (US) + Devoid Of Thought (IT)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1900,7 +1875,7 @@
   {
     "id": 485,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Black Magnet (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -2027,7 +2002,7 @@
   {
     "id": 509,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "HYPNOTIC",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -2125,7 +2100,7 @@
   {
     "id": 543,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Gala van de Aura’s",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2150,7 +2125,7 @@
   {
     "id": 544,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "FRANK",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2466,30 +2441,6 @@
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: 2HOT2PLAY & ALT8 at Fuse.",
     "_rawDate": "2026-09-11"
-  },
-  {
-    "id": 640,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Classique à l'Abbaye",
-    "venue": "Dieleghem Abbey",
-    "addr": "Dieleghem Abbey, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Classique-a-l-Abbaye.5700025090",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Sun 06 September 2026 — Sun 06 June 2027 Classique à l'Abbaye FestivalDieleghem Abbey View more",
-    "_rawDate": "2026-09-06"
   },
   {
     "id": 644,
@@ -2893,7 +2844,7 @@
   {
     "id": 664,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Voodoo Village x BCCO afterparty",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -3115,7 +3066,7 @@
   {
     "id": 679,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "La Monnaie Symphony Orchestra, Altinoglu & Cho",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3185,31 +3136,6 @@
     "_rawDate": "2026-09-20"
   },
   {
-    "id": 682,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "she's green - Blue Robin",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/shes-green-blue-robin-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Inspired by the vast Midwestern landscapes they call home, she’s green blends textured alt-rock with dream-pop softness.",
-    "_rawDate": "2026-09-06"
-  },
-  {
     "id": 683,
     "cat": "Music",
     "date": "Next Week",
@@ -3261,16 +3187,16 @@
   },
   {
     "id": 685,
-    "cat": "Music",
-    "date": "Next Month",
+    "cat": "Culture",
+    "date": "Next Week",
     "title": "Palestine, a Song of the Land",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Concert",
       "Live Music"
@@ -3282,5 +3208,30 @@
     "neighbourhood": "Centre",
     "desc": "Concerts",
     "_rawDate": "2026-09-14"
+  },
+  {
+    "id": 686,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Democracy Talk: Without facts, no democracy",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/democracy-talk-without-facts-no-democracy",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-09-15"
   }
 ]
