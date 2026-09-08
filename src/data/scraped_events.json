@@ -27,7 +27,7 @@
   {
     "id": 162,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "KRS ONE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -508,7 +508,7 @@
   {
     "id": 247,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Clarion",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -633,7 +633,7 @@
   {
     "id": 299,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "The Orielles + Golomb",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1041,35 +1041,9 @@
     "_rawDate": "2026-11-18"
   },
   {
-    "id": 372,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Pyrrhon (US) + Devoid Of Thought (IT)",
-    "venue": "Magasin 4",
-    "addr": "Avenue du Port 51b, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Punk",
-      "Indie",
-      "Alternative",
-      "Live Music"
-    ],
-    "source": "Magasin 4",
-    "officialEventLink": "https://www.magasin4.be/concerts/51281/2026-09-07/",
-    "lat": 50.8588,
-    "lng": 4.3423,
-    "neighbourhood": "Molenbeek",
-    "desc": "Pyrrhon (US) + Devoid Of Thought (IT) at Magasin 4.",
-    "_rawDate": "2026-09-07"
-  },
-  {
     "id": 373,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Toasters (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1875,7 +1849,7 @@
   {
     "id": 485,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Black Magnet (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -2100,7 +2074,7 @@
   {
     "id": 543,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Gala van de Aura’s",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2125,7 +2099,7 @@
   {
     "id": 544,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "FRANK",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2869,7 +2843,7 @@
   {
     "id": 665,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Carminho",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3138,7 +3112,7 @@
   {
     "id": 683,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Clarion - Organoid",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3212,7 +3186,7 @@
   {
     "id": 686,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Democracy Talk: Without facts, no democracy",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3233,5 +3207,30 @@
     "neighbourhood": "Centre",
     "desc": "Talks & Debates",
     "_rawDate": "2026-09-15"
+  },
+  {
+    "id": 687,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "TR/ST",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/trst-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Dark, spellbinding synth-pop blending goth aesthetics with darkwave textures",
+    "_rawDate": "2026-09-09"
   }
 ]
