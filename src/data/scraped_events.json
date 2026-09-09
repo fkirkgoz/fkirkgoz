@@ -27,7 +27,7 @@
   {
     "id": 162,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "KRS ONE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -508,7 +508,7 @@
   {
     "id": 247,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Clarion",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -631,34 +631,9 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 299,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Orielles + Golomb",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/orielles-golomb-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "An adventurous rock double bill, with garage sounds ranging from pop experimentation and very raw energy to bursts of noise",
-    "_rawDate": "2026-09-08"
-  },
-  {
     "id": 300,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Wine Lips - The Boojums",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1847,32 +1822,6 @@
     "_rawDate": "2026-11-21"
   },
   {
-    "id": 485,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Black Magnet (US)",
-    "venue": "Magasin 4",
-    "addr": "Avenue du Port 51b, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Punk",
-      "Indie",
-      "Alternative",
-      "Live Music"
-    ],
-    "source": "Magasin 4",
-    "officialEventLink": "https://www.magasin4.be/concerts/51441/2026-09-08/",
-    "lat": 50.8588,
-    "lng": 4.3423,
-    "neighbourhood": "Molenbeek",
-    "desc": "Black Magnet (US) at Magasin 4.",
-    "_rawDate": "2026-09-08"
-  },
-  {
     "id": 488,
     "cat": "Music",
     "date": "Next Month",
@@ -2000,7 +1949,7 @@
   {
     "id": 518,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Bonjour Mademoiselleke",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2070,56 +2019,6 @@
     "neighbourhood": "Molenbeek",
     "desc": "The Latecomers at Kaaitheater.",
     "_rawDate": "2026-10-17"
-  },
-  {
-    "id": 543,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Gala van de Aura’s",
-    "venue": "KVS",
-    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Theatre",
-      "Performing Arts",
-      "Contemporary"
-    ],
-    "source": "KVS",
-    "officialEventLink": "https://www.kvs.be/en/Event/gala-van-de-aura-s-1",
-    "lat": 50.8552,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "08.09.26 Het TheaterFestival 2026 Gala van de Aura’s Het TheaterFestival, de Acteursgilde, NTGent, KVS en Toneelhuis Language: NL",
-    "_rawDate": "2026-09-08"
-  },
-  {
-    "id": 544,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "FRANK",
-    "venue": "KVS",
-    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Theatre",
-      "Performing Arts",
-      "Contemporary"
-    ],
-    "source": "KVS",
-    "officialEventLink": "https://www.kvs.be/en/Event/frank-4",
-    "lat": 50.8552,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "08.09.26 ― 09.09.26 Het TheaterFestival 2026 FRANK Cherish Menzo / GRIP & Theater Utrecht i.s.m. Dance On Ensemble Language: FR EN Surtitles: NL · EN",
-    "_rawDate": "2026-09-08"
   },
   {
     "id": 545,
@@ -2274,7 +2173,7 @@
   {
     "id": 598,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Marni Jazz Festival",
     "venue": "Le Marni",
     "addr": "Le Marni, Belgium",
@@ -2370,7 +2269,7 @@
   {
     "id": 612,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "RendezVous 2026 - Brussels Art Week",
     "venue": "RendezVous 2026 - Brussels Art Week",
     "addr": "RendezVous 2026 - Brussels Art Week, Belgium",
@@ -2843,7 +2742,7 @@
   {
     "id": 665,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Carminho",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3112,7 +3011,7 @@
   {
     "id": 683,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Clarion - Organoid",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3211,7 +3110,7 @@
   {
     "id": 687,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "TR/ST",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
