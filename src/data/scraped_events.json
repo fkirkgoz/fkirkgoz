@@ -25,33 +25,9 @@
     "_rawDate": "2026-09-27"
   },
   {
-    "id": 162,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "KRS ONE",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/krs-one/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "KRS ONE at La Madeleine.",
-    "_rawDate": "2026-09-09"
-  },
-  {
     "id": 165,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "HIMRA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -506,31 +482,6 @@
     "_rawDate": "2026-09-20"
   },
   {
-    "id": 247,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Clarion",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/clarion-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Nervy, melancholic shoegaze driven by saturated guitars, blending DIY spirit, post-punk, and dream-pop swells",
-    "_rawDate": "2026-09-09"
-  },
-  {
     "id": 248,
     "cat": "Music",
     "date": "November",
@@ -633,7 +584,7 @@
   {
     "id": 300,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Wine Lips - The Boojums",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1949,7 +1900,7 @@
   {
     "id": 518,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Bonjour Mademoiselleke",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -2173,7 +2124,7 @@
   {
     "id": 598,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Marni Jazz Festival",
     "venue": "Le Marni",
     "addr": "Le Marni, Belgium",
@@ -2197,7 +2148,7 @@
   {
     "id": 599,
     "cat": "Sports",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brussels Urban Sessions",
     "venue": "Brussels Urban Sessions",
     "addr": "Brussels Urban Sessions, Belgium",
@@ -2269,7 +2220,7 @@
   {
     "id": 612,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "RendezVous 2026 - Brussels Art Week",
     "venue": "RendezVous 2026 - Brussels Art Week",
     "addr": "RendezVous 2026 - Brussels Art Week, Belgium",
@@ -2293,7 +2244,7 @@
   {
     "id": 635,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: 2HOT2PLAY & ALT8",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2344,7 +2295,7 @@
   {
     "id": 645,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Moche In Festival &#8211; Le festival des refusé•es",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -2474,7 +2425,7 @@
   {
     "id": 650,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Moche In Festival - Le festival des refusé·es",
     "venue": "LaVallée",
     "addr": "LaVallée, Belgium",
@@ -2547,7 +2498,7 @@
   {
     "id": 655,
     "cat": "Market",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Sablon Design Market",
     "venue": "Sablon design Market",
     "addr": "Sablon design Market, Belgium",
@@ -2644,7 +2595,7 @@
   {
     "id": 661,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "M.C. Escher - Beyond Infinity",
     "venue": "Tour & Taxis - Shed 4bis",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -2740,30 +2691,6 @@
     "_rawDate": "2026-09-13"
   },
   {
-    "id": 665,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Carminho",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/carminho-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-09-09"
-  },
-  {
     "id": 668,
     "cat": "Culture",
     "date": "Next Month",
@@ -2814,7 +2741,7 @@
   {
     "id": 671,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Belgian National Orchestra, Halls & Vinnitskaya",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -3009,31 +2936,6 @@
     "_rawDate": "2026-09-20"
   },
   {
-    "id": 683,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Clarion - Organoid",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/clarion-organoid-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Nervy, melancholic shoegaze driven by saturated guitars, blending DIY spirit, post-punk, and dream-pop swells",
-    "_rawDate": "2026-09-09"
-  },
-  {
     "id": 684,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -3111,7 +3013,7 @@
     "id": 687,
     "cat": "Music",
     "date": "Tonight",
-    "title": "TR/ST",
+    "title": "Sparklmami - Mab'ish",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -3125,11 +3027,156 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/trst-2026",
+    "officialEventLink": "https://botanique.be/en/concert/sparklmami-mabish-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Dark, spellbinding synth-pop blending goth aesthetics with darkwave textures",
-    "_rawDate": "2026-09-09"
+    "desc": "A dreamlike blend of jazz, bolero, pop, and Latin American influences, delivered with rare delicacy and deep emotion",
+    "_rawDate": "2026-09-10"
+  },
+  {
+    "id": 688,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Rachel Chinouriri - Heidi Curtis | Postponed",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/rachel-chinouriri-heidi-curtis-postponed-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Rachel Chinouriri - Heidi Curtis | Postponed at Le Botanique.",
+    "_rawDate": "2026-09-10"
+  },
+  {
+    "id": 689,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "William Kentridge",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 690,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Open air cinema: William Kentridge short films",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 15,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/open-air-cinema-william-kentridge-short-films",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 691,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Belgian National Orchestra, Aadland & Gatto - William Kentridge",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎻",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/belgian-national-orchestra-aadland-gatto-william-kentridge",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-09-18"
+  },
+  {
+    "id": 692,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Brussels Design Week 2026",
+    "venue": "Brussels Design September",
+    "addr": "Brussels Design September, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Design-Week-2026.5700025574",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Wed 23 September — Sun 04 October Brussels Design Week 2026 Free FestivalBrussels Design September View more",
+    "_rawDate": "2026-09-23"
+  },
+  {
+    "id": 693,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Ballroom Weekender",
+    "venue": "Centre Culturel Jacques Franck",
+    "addr": "Centre Culturel Jacques Franck, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Ballroom-Weekender.5700026117",
+    "lat": 50.8293447,
+    "lng": 4.3445657,
+    "neighbourhood": "Centre",
+    "desc": "Thu 24 September — Sun 27 September Ballroom Weekender FestivalCentre Culturel Jacques Franck View more",
+    "_rawDate": "2026-09-24"
   }
 ]
