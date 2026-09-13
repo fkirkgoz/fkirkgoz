@@ -51,7 +51,7 @@
   {
     "id": 166,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "RED BULL DANCE YOUR STYLE NATIONAL FINAL BELGIUM",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -75,7 +75,7 @@
   {
     "id": 167,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "ALLIE SHERLOCK",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -459,7 +459,7 @@
   {
     "id": 239,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Bozar Rooftop 2026",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1400,7 +1400,7 @@
   {
     "id": 397,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Figures of Fascism and Antifascist Solidarities",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1626,32 +1626,6 @@
     "_rawDate": "2026-11-24"
   },
   {
-    "id": 465,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "hibushibire (JP) + The WRS (BE)",
-    "venue": "Magasin 4",
-    "addr": "Avenue du Port 51b, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#C77DFF",
-    "tags": [
-      "Punk",
-      "Indie",
-      "Alternative",
-      "Live Music"
-    ],
-    "source": "Magasin 4",
-    "officialEventLink": "https://www.magasin4.be/concerts/51432/2026-09-12/",
-    "lat": 50.8588,
-    "lng": 4.3423,
-    "neighbourhood": "Molenbeek",
-    "desc": "hibushibire (JP) + The WRS (BE) at Magasin 4.",
-    "_rawDate": "2026-09-12"
-  },
-  {
     "id": 470,
     "cat": "Music",
     "date": "November",
@@ -1851,7 +1825,7 @@
   {
     "id": 509,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "HYPNOTIC",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1922,31 +1896,6 @@
     "_rawDate": "2026-10-17"
   },
   {
-    "id": 545,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "F*CK LOLITA",
-    "venue": "KVS",
-    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Theatre",
-      "Performing Arts",
-      "Contemporary"
-    ],
-    "source": "KVS",
-    "officialEventLink": "https://www.kvs.be/en/Event/f-ck-lolita-1",
-    "lat": 50.8552,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "12.09.26 Het TheaterFestival 2026 F*CK LOLITA Het Zuidelijk Toneel Language: NL",
-    "_rawDate": "2026-09-12"
-  },
-  {
     "id": 546,
     "cat": "Culture",
     "date": "Next Week",
@@ -1974,7 +1923,7 @@
   {
     "id": 547,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Cry (no) more",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -2072,30 +2021,6 @@
     "_rawDate": "2026-10-03"
   },
   {
-    "id": 605,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Brussels Open Air Festival 2026",
-    "venue": "Various locations in the Brussels Capital Region",
-    "addr": "Various locations in the Brussels Capital Region, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Open-Air-Festival-2026.5700023729",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Sat 12 September Brussels Open Air Festival 2026 FestivalVarious locations in the Brussels Capital Region View more",
-    "_rawDate": "2026-09-12"
-  },
-  {
     "id": 608,
     "cat": "Festival",
     "date": "Next Week",
@@ -2122,7 +2047,7 @@
   {
     "id": 644,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Solomun 19 Sep 26",
     "venue": "Hangar",
     "addr": "Brussels, Belgium",
@@ -2144,32 +2069,6 @@
     "neighbourhood": "Various",
     "desc": "Palace of Justice Open Air 14:00 - 23:00 (Last entry 19:00)",
     "_rawDate": "2026-09-19"
-  },
-  {
-    "id": 646,
-    "cat": "Festival",
-    "date": "Tonight",
-    "title": "ILLEGAAL FEESTJE",
-    "venue": "Brasserie ILLEGAAL",
-    "addr": "Brussels, Belgium",
-    "time": "19:00",
-    "startH": 19,
-    "endH": 22,
-    "emoji": "🌿",
-    "color": "#B8E5C0",
-    "tags": [
-      "Open Air",
-      "Electronic",
-      "Day Party",
-      "Festival"
-    ],
-    "source": "Brasserie ILLEGAAL",
-    "officialEventLink": "https://brasserie-illegaal.com/event/illegaal-feestje-10/",
-    "lat": 50.8503,
-    "lng": 4.3517,
-    "neighbourhood": "Various",
-    "desc": "ILLEGAAL FEESTJE SAMEDI 12 SEPTEMBRE 19:00-05:00 Septembre ! Le mois de la transition, du renouveau, des récoltes et des vendanges, … Le mois de la rentrée, de l’équinoxe et de …",
-    "_rawDate": "2026-09-12"
   },
   {
     "id": 647,
@@ -2200,7 +2099,7 @@
   {
     "id": 648,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "MAGMA",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -2248,103 +2147,6 @@
     "neighbourhood": "Various",
     "desc": "Pointzero Rec is back !! Saturday 17th october 2026 ____ ●●● LINEUP ●●● HYPOGEO (IT) - Zenon Records - (3h New Live set !! Dark Prog) SUBWAY SHAMANS (BE) - …",
     "_rawDate": "2026-10-17"
-  },
-  {
-    "id": 652,
-    "cat": "Sports",
-    "date": "Today",
-    "title": "Climate Classic Belgium (Cycle or Run for Climate!)",
-    "venue": "Sonian Forest Sports Centre",
-    "addr": "Sonian Forest Sports Centre, Belgium",
-    "time": "10:00",
-    "startH": 10,
-    "endH": 13,
-    "emoji": "👟",
-    "color": "#90E0EF",
-    "tags": [
-      "Sports",
-      "Active"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Climate-Classic-Belgium-Cycle-or-Run-for-Climate.5700025351",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Sat 12 September Climate Classic Belgium (Cycle or Run for Climate!) SportSonian Forest Sports Centre View more",
-    "_rawDate": "2026-09-12"
-  },
-  {
-    "id": 653,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Fuse presents: Andy C",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/fuse-presents-andy-c",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Fuse presents: Andy C at Fuse.",
-    "_rawDate": "2026-09-12"
-  },
-  {
-    "id": 658,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Wanderlust by Brussels Beer Project",
-    "venue": "Place du marché au poisson",
-    "addr": "Place du marché au poisson, Belgium",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Wanderlust-by-Brussels-Beer-Project.5700023949",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Sat 12 September — Sun 13 September Wanderlust by Brussels Beer Project ConcertPlace du marché au poisson View more",
-    "_rawDate": "2026-09-12"
-  },
-  {
-    "id": 659,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Genesis",
-    "venue": "Église Notre-Dame du Sablon",
-    "addr": "Église Notre-Dame du Sablon, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Brussels"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Genesis.5700025683",
-    "lat": 50.8403333,
-    "lng": 4.3561989,
-    "neighbourhood": "Centre",
-    "desc": "Sat 12 September — Sun 25 October Genesis ShowÉglise Notre-Dame du Sablon View more",
-    "_rawDate": "2026-09-12"
   },
   {
     "id": 660,
@@ -2422,7 +2224,7 @@
   {
     "id": 663,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Fuse presents: PACT (Joachim Pastor + Joris Delacroix + Teho)",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2447,7 +2249,7 @@
   {
     "id": 664,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Voodoo Village x BCCO afterparty",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2570,34 +2372,9 @@
     "_rawDate": "2026-09-26"
   },
   {
-    "id": 677,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Jeanine De Bique",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/jeanine-de-bique-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "12 Sept.'26 - 20:00",
-    "_rawDate": "2026-09-12"
-  },
-  {
     "id": 678,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Comic Strip Festival",
     "venue": "Bourse Brussels",
     "addr": "Bourse Brussels, Belgium",
@@ -2621,7 +2398,7 @@
   {
     "id": 679,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "La Monnaie Symphony Orchestra, Altinoglu & Cho",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2645,7 +2422,7 @@
   {
     "id": 680,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Heritage Days 2026",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -2669,7 +2446,7 @@
   {
     "id": 681,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Car-Free Sunday",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -2718,7 +2495,7 @@
   {
     "id": 685,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Palestine, a Song of the Land",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2791,7 +2568,7 @@
   {
     "id": 690,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Open air cinema: William Kentridge short films",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2885,56 +2662,6 @@
     "_rawDate": "2026-09-24"
   },
   {
-    "id": 694,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ty Segall - Annabelle Chairlegs",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/ty-segall-annabelle-chairlegs-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Psychedelic, high-energy garage rock that travels between fuzz and pop melodies",
-    "_rawDate": "2026-09-12"
-  },
-  {
-    "id": 695,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Francis of Delirium - Epona",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/francis-delirium-epona-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Authentic, melancholic indie rock with a youthful, muscular pop energy",
-    "_rawDate": "2026-09-12"
-  },
-  {
     "id": 696,
     "cat": "Culture",
     "date": "Next Month",
@@ -3009,7 +2736,7 @@
   {
     "id": 699,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Havok + Blood Red Throne + Xonor + Eradikated",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -3059,15 +2786,15 @@
   {
     "id": 701,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Meet the Artist: William Kentridge",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Art",
       "Culture"
@@ -3178,6 +2905,105 @@
   },
   {
     "id": 706,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Shallowater - Twine",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/shallowater-twine-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Gritty, melancholic slowcore with ballads infused with overdriven, saturated guitars",
+    "_rawDate": "2026-09-13"
+  },
+  {
+    "id": 707,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Ora Cogan - Elaine Malone",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/ora-cogan-elaine-malone-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Gothic, cinematic folk blending psych rock, post-punk, and haunted ballads",
+    "_rawDate": "2026-09-13"
+  },
+  {
+    "id": 708,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: Primal Instinct",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-primal-instinct-w-chl%C3%A4r-b2b-temudo-philippa-pacho-jennifer-loveless",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: Primal Instinct at Fuse.",
+    "_rawDate": "2026-10-03"
+  },
+  {
+    "id": 709,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Camila Mandillo - ECHO Rising Star",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/camila-mandillo-echo-rising-star",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-09-20"
+  },
+  {
+    "id": 710,
     "cat": "Nightlife",
     "date": "September",
     "title": "Moche In Festival – Le festival des refusé•es",
@@ -3203,7 +3029,7 @@
     "_rawDate": "2027-09-11"
   },
   {
-    "id": 707,
+    "id": 711,
     "cat": "Nightlife",
     "date": "September",
     "title": "LaVallée Olympics – 11th Anniversary Special !",
@@ -3229,7 +3055,7 @@
     "_rawDate": "2027-09-04"
   },
   {
-    "id": 708,
+    "id": 712,
     "cat": "Nightlife",
     "date": "August",
     "title": "Rooted in love – Live concert Joël Francis",
