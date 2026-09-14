@@ -75,7 +75,7 @@
   {
     "id": 167,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "ALLIE SHERLOCK",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -459,7 +459,7 @@
   {
     "id": 239,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Bozar Rooftop 2026",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -944,7 +944,7 @@
   {
     "id": 373,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Toasters (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1823,30 +1823,6 @@
     "_rawDate": "2026-11-26"
   },
   {
-    "id": 509,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "HYPNOTIC",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/hypnotic-immersive-opera-experience/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "HYPNOTIC at La Madeleine.",
-    "_rawDate": "2026-09-13"
-  },
-  {
     "id": 527,
     "cat": "Music",
     "date": "November",
@@ -2247,31 +2223,6 @@
     "_rawDate": "2026-09-19"
   },
   {
-    "id": 664,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "Voodoo Village x BCCO afterparty",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://www.fuse.be/events/voodoo-village-afterparty",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "Voodoo Village x BCCO afterparty at Fuse.",
-    "_rawDate": "2026-09-13"
-  },
-  {
     "id": 668,
     "cat": "Culture",
     "date": "Next Week",
@@ -2396,30 +2347,6 @@
     "_rawDate": "2026-09-19"
   },
   {
-    "id": 679,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "La Monnaie Symphony Orchestra, Altinoglu & Cho",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Classical",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/la-monnaie-symphony-orchestra-altinoglu-cho",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-09-13"
-  },
-  {
     "id": 680,
     "cat": "Culture",
     "date": "This Weekend",
@@ -2446,7 +2373,7 @@
   {
     "id": 681,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Car-Free Sunday",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -2495,7 +2422,7 @@
   {
     "id": 685,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Palestine, a Song of the Land",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2519,7 +2446,7 @@
   {
     "id": 686,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Democracy Talk: Without facts, no democracy",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2734,31 +2661,6 @@
     "_rawDate": "2026-09-25"
   },
   {
-    "id": 699,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Havok + Blood Red Throne + Xonor + Eradikated",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/havok-blood-red-throne-xonor-eradikated-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A fast, hard-hitting thrash metal tour with crossover overtones, driven by Havok and their new album",
-    "_rawDate": "2026-09-13"
-  },
-  {
     "id": 700,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -2904,56 +2806,6 @@
     "_rawDate": "2026-09-30"
   },
   {
-    "id": 706,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Shallowater - Twine",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/shallowater-twine-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Gritty, melancholic slowcore with ballads infused with overdriven, saturated guitars",
-    "_rawDate": "2026-09-13"
-  },
-  {
-    "id": 707,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ora Cogan - Elaine Malone",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/ora-cogan-elaine-malone-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Gothic, cinematic folk blending psych rock, post-punk, and haunted ballads",
-    "_rawDate": "2026-09-13"
-  },
-  {
     "id": 708,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -2980,16 +2832,16 @@
   },
   {
     "id": 709,
-    "cat": "Music",
-    "date": "Next Week",
+    "cat": "Culture",
+    "date": "This Weekend",
     "title": "Camila Mandillo - ECHO Rising Star",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Concert",
       "Live Music"
@@ -3004,6 +2856,130 @@
   },
   {
     "id": 710,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Feng - Soraya Cinema",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/feng-soraya-cinema-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "New-generation UK rap, DIY and explosive, drawing from club culture and Y2K nostalgia",
+    "_rawDate": "2026-09-15"
+  },
+  {
+    "id": 711,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Gyasi",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/gyasi-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "A modern take on glam rock, driven by flamboyant riffs, theatrical energy, and an undeniable gift for melody",
+    "_rawDate": "2026-09-15"
+  },
+  {
+    "id": 712,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Aurel - Nola Mann",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/aurel-nola-mann-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "🌟 Release | A luminous, intimate take on French chanson, shaped by delicate and heartfelt songwriting.",
+    "_rawDate": "2026-09-16"
+  },
+  {
+    "id": 713,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Fuse presents: Fenrick (all night long) & Riana Holley (all night long)",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://www.fuse.be/events/fuse-presents-fenrick-all-night-long-riana-holley-all-night-long",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "Fuse presents: Fenrick (all night long) & Riana Holley (all night long) at Fuse.",
+    "_rawDate": "2026-10-09"
+  },
+  {
+    "id": 714,
+    "cat": "Arts",
+    "date": "This Weekend",
+    "title": "Les Demoiselles de Rochefort - Jacques Demy",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/les-demoiselles-de-rochefort-jacques-demy",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-09-20"
+  },
+  {
+    "id": 715,
     "cat": "Nightlife",
     "date": "September",
     "title": "Moche In Festival – Le festival des refusé•es",
@@ -3029,7 +3005,7 @@
     "_rawDate": "2027-09-11"
   },
   {
-    "id": 711,
+    "id": 716,
     "cat": "Nightlife",
     "date": "September",
     "title": "LaVallée Olympics – 11th Anniversary Special !",
@@ -3055,7 +3031,7 @@
     "_rawDate": "2027-09-04"
   },
   {
-    "id": 712,
+    "id": 717,
     "cat": "Nightlife",
     "date": "August",
     "title": "Rooted in love – Live concert Joël Francis",
