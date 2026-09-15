@@ -944,7 +944,7 @@
   {
     "id": 373,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "The Toasters (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -2420,33 +2420,9 @@
     "_rawDate": "2026-09-26"
   },
   {
-    "id": 685,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Palestine, a Song of the Land",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/palestine-song-land",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-09-14"
-  },
-  {
     "id": 686,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Democracy Talk: Without facts, no democracy",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2857,7 +2833,7 @@
   {
     "id": 710,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Feng - Soraya Cinema",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2882,7 +2858,7 @@
   {
     "id": 711,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Gyasi",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2907,7 +2883,7 @@
   {
     "id": 712,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Aurel - Nola Mann",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2956,7 +2932,7 @@
   },
   {
     "id": 714,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "This Weekend",
     "title": "Les Demoiselles de Rochefort - Jacques Demy",
     "venue": "Bozar",
@@ -2964,8 +2940,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -2980,6 +2956,30 @@
   },
   {
     "id": 715,
+    "cat": "Market",
+    "date": "This Weekend",
+    "title": "Womenpreneur Market",
+    "venue": "Place de la Monnaie",
+    "addr": "Place de la Monnaie, Belgium",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 17,
+    "emoji": "🛍️",
+    "color": "#F4C87A",
+    "tags": [
+      "Market",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Womenpreneur-Market.5700026293",
+    "lat": 50.8498961,
+    "lng": 4.3535773,
+    "neighbourhood": "Centre",
+    "desc": "Sat 19 September Womenpreneur Market Free Markets & flea marketsPlace de la Monnaie View more",
+    "_rawDate": "2026-09-19"
+  },
+  {
+    "id": 716,
     "cat": "Nightlife",
     "date": "September",
     "title": "Moche In Festival – Le festival des refusé•es",
@@ -3005,7 +3005,7 @@
     "_rawDate": "2027-09-11"
   },
   {
-    "id": 716,
+    "id": 717,
     "cat": "Nightlife",
     "date": "September",
     "title": "LaVallée Olympics – 11th Anniversary Special !",
@@ -3031,7 +3031,7 @@
     "_rawDate": "2027-09-04"
   },
   {
-    "id": 717,
+    "id": 718,
     "cat": "Nightlife",
     "date": "August",
     "title": "Rooted in love – Live concert Joël Francis",
