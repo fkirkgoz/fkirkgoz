@@ -27,7 +27,7 @@
   {
     "id": 165,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "HIMRA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -944,7 +944,7 @@
   {
     "id": 374,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Nile On waX (BE) + Bärlin (FR)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1349,7 +1349,7 @@
   {
     "id": 396,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "A Love Supreme",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1848,7 +1848,7 @@
   {
     "id": 546,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "For Blinky Palermo",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -1973,7 +1973,7 @@
   {
     "id": 608,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fêtes Médiévales de Forest - 27e édition",
     "venue": "Abbaye de Forest",
     "addr": "Abbaye de Forest, Belgium",
@@ -2023,7 +2023,7 @@
   {
     "id": 647,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Playground • 3rd Stop",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -2101,7 +2101,7 @@
   {
     "id": 660,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: SESH w/ Clara Cuvé & PETERBLUE",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -2126,7 +2126,7 @@
   {
     "id": 661,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "M.C. Escher - Beyond Infinity",
     "venue": "Tour & Taxis - Shed 4bis",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -2150,7 +2150,7 @@
   {
     "id": 662,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Poetik Bazar",
     "venue": "Les Halles de Schaerbeek",
     "addr": "Les Halles de Schaerbeek, Belgium",
@@ -2199,7 +2199,7 @@
   {
     "id": 668,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "William Kentridge - I am not me, the horse is not mine",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -2223,7 +2223,7 @@
   {
     "id": 669,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Reinventing Photography",
     "venue": "Hangar",
     "addr": "Hangar, Belgium",
@@ -2396,7 +2396,7 @@
   {
     "id": 689,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "William Kentridge",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2444,7 +2444,7 @@
   {
     "id": 691,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Belgian National Orchestra, Aadland & Gatto - William Kentridge",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2492,7 +2492,7 @@
   {
     "id": 693,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Ballroom Weekender",
     "venue": "Centre Culturel Jacques Franck",
     "addr": "Centre Culturel Jacques Franck, Belgium",
@@ -2516,7 +2516,7 @@
   {
     "id": 696,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels Art Square 2026",
     "venue": "Diverses galeries du quartier du Sablon",
     "addr": "Diverses galeries du quartier du Sablon, Belgium",
@@ -2637,7 +2637,7 @@
   {
     "id": 702,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "DRAWING THE STAGE - Women Set Designers 1927–2026",
     "venue": "ENSAV La Cambre",
     "addr": "ENSAV La Cambre, Belgium",
@@ -2780,31 +2780,6 @@
     "_rawDate": "2026-09-20"
   },
   {
-    "id": 712,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Aurel - Nola Mann",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/aurel-nola-mann-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "🌟 Release | A luminous, intimate take on French chanson, shaped by delicate and heartfelt songwriting.",
-    "_rawDate": "2026-09-16"
-  },
-  {
     "id": 713,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -2878,58 +2853,8 @@
     "_rawDate": "2026-09-19"
   },
   {
-    "id": 716,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ásgeir - Hailaker",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/asgeir-hailaker-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Luminous, intimate Icelandic folk, driven by a tender and emotionally charged voice",
-    "_rawDate": "2026-09-16"
-  },
-  {
-    "id": 717,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Dave Bixby - aloisius",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/dave-bixby-aloisius-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A legendary figure in American psychedelic folk, forged through a life of spirituality, adventure, and music",
-    "_rawDate": "2026-09-16"
-  },
-  {
     "id": 718,
-    "cat": "Music",
+    "cat": "Culture",
     "date": "This Weekend",
     "title": "Radio Cos (6+)",
     "venue": "Bozar",
@@ -2937,8 +2862,8 @@
     "time": "20:00",
     "startH": 20,
     "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Concert",
       "Live Music"
@@ -2976,5 +2901,105 @@
     "neighbourhood": "Molenbeek",
     "desc": "“Drawing From Where We Are - Une exposition des jeunes diplômé · e · s des écoles d’art belges” est une exposition collective bi-annuelle consacrée à la jeune création belge et aux formes contemporaines du dessin. Elle réunit dix-neuf artistes récemment…",
     "_rawDate": "2026-10-02"
+  },
+  {
+    "id": 720,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Holly Humberstone - Nell Mescal",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/holly-humberstone-nell-mescal-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "The singular new voice in the British pop, continuing to assert itself both in the shadows and in the spotlight",
+    "_rawDate": "2026-09-17"
+  },
+  {
+    "id": 721,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Under The Reefs Orchestra - Alejandra Borzyk",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/under-reefs-orchestra-alejandra-borzyk-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "🌟 Release | A musical journey between jazz and post-rock",
+    "_rawDate": "2026-09-17"
+  },
+  {
+    "id": 722,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Lauren Auder - Paraecho",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/lauren-auder-paraecho-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Lauren Auder crafts experimental pop that blends dense lyricism, literary references and expansive production, with subtle baroque undertones",
+    "_rawDate": "2026-09-17"
+  },
+  {
+    "id": 723,
+    "cat": "Culture",
+    "date": "This Weekend",
+    "title": "Bozar Sunday #1: Car Free Sunday",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/bozar-sunday-1-car-free-sunday",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Kids’ Palace",
+    "_rawDate": "2026-09-20"
   }
 ]
