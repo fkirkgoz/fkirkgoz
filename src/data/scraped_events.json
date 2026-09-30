@@ -1,32 +1,8 @@
 [
   {
-    "id": 170,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "ATERCIOPELADOS",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/aterciopelados/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "ATERCIOPELADOS at La Madeleine.",
-    "_rawDate": "2026-09-29"
-  },
-  {
     "id": 171,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "LUIZA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -98,7 +74,7 @@
   {
     "id": 174,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "FREYA RIDINGS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1552,7 +1528,7 @@
   {
     "id": 549,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "WIPCOOP - Work in Progress 2026",
     "venue": "KVS",
     "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
@@ -1653,7 +1629,7 @@
   {
     "id": 704,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "OVO - Cirque du Soleil",
     "venue": "ING Arena",
     "addr": "ING Arena, Belgium",
@@ -1677,7 +1653,7 @@
   {
     "id": 705,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Les Lundis d’Hortense 50",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -1777,7 +1753,7 @@
   {
     "id": 727,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "FrancoFaune 2026",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -1801,7 +1777,7 @@
   {
     "id": 728,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Icons, 20 years Designer of the Year",
     "venue": "MAD Brussels",
     "addr": "MAD Brussels, Belgium",
@@ -1825,7 +1801,7 @@
   {
     "id": 729,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Future Generation, MAD Graduation Show 2026",
     "venue": "MAD Brussels",
     "addr": "MAD Brussels, Belgium",
@@ -2439,31 +2415,6 @@
     "_rawDate": "2026-10-16"
   },
   {
-    "id": 805,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Unprocessed - Of Virtue - Daedric",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/unprocessed-virtue-daedric-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Futuristic progressive metal, blending technical mastery, melody, and raw intensity",
-    "_rawDate": "2026-09-29"
-  },
-  {
     "id": 807,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -2515,7 +2466,7 @@
   {
     "id": 810,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Meet the Artist: Ai Weiwei",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2537,34 +2488,9 @@
     "_rawDate": "2026-09-30"
   },
   {
-    "id": 811,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Little Barrie - Wilderlust",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/little-barrie-wilderlust-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Groovy, organic psych rock blending blues, soul and hypnotic riffs",
-    "_rawDate": "2026-09-29"
-  },
-  {
     "id": 812,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "The Bones of J.R. Jones - Seba Safe",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2613,7 +2539,7 @@
   {
     "id": 816,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Antwerp Symphony Orchestra, Albrecht & Lehmkuhl",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2637,7 +2563,7 @@
   {
     "id": 817,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Aaron Parks & Walter Smith III",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2711,7 +2637,7 @@
   {
     "id": 820,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ShitKid - Coup Dur",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2861,7 +2787,7 @@
   {
     "id": 826,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Kathryn Mohr + Siem Reap",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2911,7 +2837,7 @@
   {
     "id": 828,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "FORAGER - Gos Rosling",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2930,13 +2856,13 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "FORAGER - Gos Rosling at Le Botanique.",
+    "desc": "Sinuous, organic indie, blending psych-pop-tinged guitars with a deeply visceral intensity",
     "_rawDate": "2026-09-30"
   },
   {
     "id": 829,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Lawrence English + Margaret Hermant",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2955,13 +2881,13 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Lawrence English + Margaret Hermant at Le Botanique.",
+    "desc": "A meeting of ambient music, post-classical composition, and sonic experimentation in a space that becomes a true sensory experience",
     "_rawDate": "2026-09-30"
   },
   {
     "id": 830,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "a6el - Yirji",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2982,31 +2908,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "a6el - Yirji at Le Botanique.",
     "_rawDate": "2026-10-01"
-  },
-  {
-    "id": 831,
-    "cat": "Music",
-    "date": "March",
-    "title": "Bianca Steck",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/bianca-steck-2027",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Bianca Steck at Le Botanique.",
-    "_rawDate": "2027-03-25"
   },
   {
     "id": 832,
@@ -3034,180 +2935,6 @@
     "_rawDate": "2026-12-01"
   },
   {
-    "id": 833,
-    "cat": "Music",
-    "date": "February",
-    "title": "Night Lovell",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/night-lovell-2027",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Night Lovell at Le Botanique.",
-    "_rawDate": "2027-02-17"
-  },
-  {
-    "id": 834,
-    "cat": "Music",
-    "date": "January",
-    "title": "Body Horror",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/body-horror-2027",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Body Horror at Le Botanique.",
-    "_rawDate": "2027-01-20"
-  },
-  {
-    "id": 835,
-    "cat": "Music",
-    "date": "February",
-    "title": "Frankie Stew & Harvey Gunn",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/frankie-stew-harvey-gunn-2027",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Frankie Stew & Harvey Gunn at Le Botanique.",
-    "_rawDate": "2027-02-13"
-  },
-  {
-    "id": 836,
-    "cat": "Music",
-    "date": "April",
-    "title": "Sietepè: Gabriel Ríos + Augusto Bracho + Ruben Samama",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/sietepe-gabriel-rios-augusto-bracho-ruben-samama-2027",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Sietepè: Gabriel Ríos + Augusto Bracho + Ruben Samama at Le Botanique.",
-    "_rawDate": "2027-04-30"
-  },
-  {
-    "id": 837,
-    "cat": "Music",
-    "date": "January",
-    "title": "Gwenifer Raymond",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/gwenifer-raymond-2027",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Gwenifer Raymond at Le Botanique.",
-    "_rawDate": "2027-01-19"
-  },
-  {
-    "id": 838,
-    "cat": "Nightlife",
-    "date": "March",
-    "title": "ROOM 01",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://tickets.fuse.be/d402ee9306ba4a1993bcf3a2894cff91",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "ROOM 01 at Fuse.",
-    "_rawDate": "2027-03-01"
-  },
-  {
-    "id": 839,
-    "cat": "Culture",
-    "date": "March",
-    "title": "William Kentridge",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2027-03-07"
-  },
-  {
     "id": 840,
     "cat": "Culture",
     "date": "Next Week",
@@ -3217,8 +2944,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Art",
       "Culture"
@@ -3254,5 +2981,78 @@
     "neighbourhood": "Centre",
     "desc": "Fri 09 October — Mon 12 October Parcours d'Artistes d'Etterbeek 2026 Free ExhibitionsService Culture Francophone d'Etterbeek View more",
     "_rawDate": "2026-10-09"
+  },
+  {
+    "id": 842,
+    "cat": "Nightlife",
+    "date": "March",
+    "title": "ROOM 01",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://tickets.fuse.be/d402ee9306ba4a1993bcf3a2894cff91",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "ROOM 01 at Fuse.",
+    "_rawDate": "2027-03-01"
+  },
+  {
+    "id": 843,
+    "cat": "Culture",
+    "date": "March",
+    "title": "William Kentridge",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "_rawDate": "2027-03-07"
+  },
+  {
+    "id": 844,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Mangatopia 30: years of manga from Kana!",
+    "venue": "Comic Art Museum",
+    "addr": "Comic Art Museum, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Mangatopia-30-years-of-manga-from-Kana.5700026697",
+    "lat": 50.8512487,
+    "lng": 4.3601777,
+    "neighbourhood": "Centre",
+    "desc": "Fri 16 October 2026 — Mon 17 May 2027 Mangatopia 30: years of manga from Kana! ExhibitionsComic Art Museum View more",
+    "_rawDate": "2026-10-16"
   }
 ]
