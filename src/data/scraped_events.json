@@ -2,7 +2,7 @@
   {
     "id": 171,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "LUIZA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -98,7 +98,7 @@
   {
     "id": 175,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "GAVIN DEGRAW",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -290,7 +290,7 @@
   {
     "id": 248,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "Schur",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -340,7 +340,7 @@
   {
     "id": 273,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "Martin Luke Brown",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -437,7 +437,7 @@
   {
     "id": 317,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "KELELA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -461,7 +461,7 @@
   {
     "id": 318,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "ALCEU VALENÇA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -485,7 +485,7 @@
   {
     "id": 319,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "SO LA LUNE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -509,7 +509,7 @@
   {
     "id": 320,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "KOCEE LIVE BAND CONCERT",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -533,7 +533,7 @@
   {
     "id": 321,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "POETIC LOVER",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -557,7 +557,7 @@
   {
     "id": 322,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "THE FRAY",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -581,7 +581,7 @@
   {
     "id": 323,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "MERYL",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -605,7 +605,7 @@
   {
     "id": 324,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "KABARET MŁODYCH PANÓW",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -629,7 +629,7 @@
   {
     "id": 325,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "RENAN LUCE JOUE REPENTI",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -653,7 +653,7 @@
   {
     "id": 326,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "SALMO",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -677,7 +677,7 @@
   {
     "id": 327,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "STRANGELOVE - THE DEPECHE MODE EXPERIENCE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -701,7 +701,7 @@
   {
     "id": 340,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "FREYA SKYE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -725,7 +725,7 @@
   {
     "id": 375,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Pisse (DE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -803,7 +803,7 @@
   {
     "id": 378,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "Deaf Kids (BR)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -854,7 +854,7 @@
   {
     "id": 380,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "A truly immense journey",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -879,7 +879,7 @@
   {
     "id": 381,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "NO SHOW",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -904,7 +904,7 @@
   {
     "id": 382,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "An infinite woman",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -929,7 +929,7 @@
   {
     "id": 383,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Right to the City - Right to the Future",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -954,7 +954,7 @@
   {
     "id": 384,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Joëlle Tuerlinckx",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -979,7 +979,7 @@
   {
     "id": 385,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Département des Pièges",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -1004,7 +1004,7 @@
   {
     "id": 386,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Banu Cennetoğlu",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -1029,7 +1029,7 @@
   {
     "id": 387,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Manon de Boer",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -1054,7 +1054,7 @@
   {
     "id": 388,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Joshua Serafin",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -1079,7 +1079,7 @@
   {
     "id": 389,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Otobong Nkanga",
     "venue": "KANAL - Centre Pompidou",
     "addr": "Place Sainctelette 2, 1000 Brussels",
@@ -1179,7 +1179,7 @@
   {
     "id": 402,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Spaghetti Western",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1230,7 +1230,7 @@
   {
     "id": 435,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "LONERFEST III",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1256,7 +1256,7 @@
   {
     "id": 442,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "LET THE CHURCHES BURN XX YEARS",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1282,7 +1282,7 @@
   {
     "id": 470,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "RAZORLIGHT",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1306,7 +1306,7 @@
   {
     "id": 471,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "HILIGHT TRIBE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1330,7 +1330,7 @@
   {
     "id": 472,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "MO GILLIGAN",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1354,7 +1354,7 @@
   {
     "id": 482,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "HERMANOS GUTIÉRREZ",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1404,7 +1404,7 @@
   {
     "id": 496,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "LOUNGE",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1429,7 +1429,7 @@
   {
     "id": 501,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "Rectum Crocodile",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1454,7 +1454,7 @@
   {
     "id": 502,
     "cat": "Culture",
-    "date": "November",
+    "date": "Next Month",
     "title": "AfterMyth",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1479,7 +1479,7 @@
   {
     "id": 527,
     "cat": "Music",
-    "date": "November",
+    "date": "Next Month",
     "title": "WASIA PROJECT",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1524,31 +1524,6 @@
     "neighbourhood": "Molenbeek",
     "desc": "The Latecomers at Kaaitheater.",
     "_rawDate": "2026-10-17"
-  },
-  {
-    "id": 549,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "WIPCOOP - Work in Progress 2026",
-    "venue": "KVS",
-    "addr": "Quai aux Pierres de Taille 7, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎭",
-    "color": "#E76F51",
-    "tags": [
-      "Theatre",
-      "Performing Arts",
-      "Contemporary"
-    ],
-    "source": "KVS",
-    "officialEventLink": "https://www.kvs.be/en/Event/wipcoop-work-in-progress-2026-1",
-    "lat": 50.8552,
-    "lng": 4.3512,
-    "neighbourhood": "Centre",
-    "desc": "30.09.26 ― 01.10.26 WIPCOOP - Work in Progress 2026 Mestizo Arts Platform / KVS",
-    "_rawDate": "2026-09-30"
   },
   {
     "id": 550,
@@ -1604,7 +1579,7 @@
   {
     "id": 700,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: The Ghost & Gonno",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1625,54 +1600,6 @@
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: The Ghost & Gonno at Fuse.",
     "_rawDate": "2026-10-02"
-  },
-  {
-    "id": 704,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "OVO - Cirque du Soleil",
-    "venue": "ING Arena",
-    "addr": "ING Arena, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.OVO-Cirque-du-Soleil.5700017211",
-    "lat": 50.9011203,
-    "lng": 4.3423147,
-    "neighbourhood": "Centre",
-    "desc": "Wed 30 September — Sun 04 October OVO - Cirque du Soleil ShowING Arena View more",
-    "_rawDate": "2026-09-30"
-  },
-  {
-    "id": 705,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Les Lundis d’Hortense 50",
-    "venue": "Various places in Brussels",
-    "addr": "Various places in Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Les-Lundis-d-Hortense-50.5700025595",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Wed 30 September — Sun 04 October Les Lundis d’Hortense 50 FestivalVarious places in Brussels View more",
-    "_rawDate": "2026-09-30"
   },
   {
     "id": 708,
@@ -1727,7 +1654,7 @@
   {
     "id": 719,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Drawing From Where We Are &#8211; An Exhibition of Recent Graduates from Belgian Art Schools",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -1753,7 +1680,7 @@
   {
     "id": 727,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "FrancoFaune 2026",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -1777,7 +1704,7 @@
   {
     "id": 728,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Icons, 20 years Designer of the Year",
     "venue": "MAD Brussels",
     "addr": "MAD Brussels, Belgium",
@@ -1801,7 +1728,7 @@
   {
     "id": 729,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Future Generation, MAD Graduation Show 2026",
     "venue": "MAD Brussels",
     "addr": "MAD Brussels, Belgium",
@@ -1825,7 +1752,7 @@
   {
     "id": 730,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ArtOnPaper",
     "venue": "Tour & Taxis - Shed 1",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -1874,7 +1801,7 @@
   {
     "id": 737,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Jean Brusselmans - Painter by nature",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -2069,7 +1996,7 @@
   {
     "id": 767,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "MashaaDunya Festival",
     "venue": "Various locations in Brussels",
     "addr": "Various locations in Brussels, Belgium",
@@ -2093,7 +2020,7 @@
   {
     "id": 769,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ET_NÀ &#8211; Concert Release by Paola Di Bella",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -2223,7 +2150,7 @@
   {
     "id": 781,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "In.out.sider Festival 2026 - 5th edition",
     "venue": "LaVallée",
     "addr": "LaVallée, Belgium",
@@ -2295,7 +2222,7 @@
   {
     "id": 792,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Faits d'art / Kunststreken",
     "venue": "Commune de Woluwe-Saint-Pierre",
     "addr": "Commune de Woluwe-Saint-Pierre, Belgium",
@@ -2464,55 +2391,6 @@
     "_rawDate": "2026-10-25"
   },
   {
-    "id": 810,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Meet the Artist: Ai Weiwei",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-artist-ai-weiwei-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "_rawDate": "2026-09-30"
-  },
-  {
-    "id": 812,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Bones of J.R. Jones - Seba Safe",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/bones-jr-jones-seba-safe-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Dark, hypnotic folk-blues blending American roots, raw guitars and haunted atmospheres",
-    "_rawDate": "2026-09-30"
-  },
-  {
     "id": 815,
     "cat": "Culture",
     "date": "This Weekend",
@@ -2539,7 +2417,7 @@
   {
     "id": 816,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Antwerp Symphony Orchestra, Albrecht & Lehmkuhl",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2563,7 +2441,7 @@
   {
     "id": 817,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Aaron Parks & Walter Smith III",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2637,7 +2515,7 @@
   {
     "id": 820,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "ShitKid - Coup Dur",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2656,7 +2534,7 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "ShitKid - Coup Dur at Le Botanique.",
+    "desc": "Insolent, DIY lo-fi garage rock, with catchy melodies and a deeply endearing eccentricity",
     "_rawDate": "2026-10-01"
   },
   {
@@ -2835,59 +2713,9 @@
     "_rawDate": "2026-10-09"
   },
   {
-    "id": 828,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "FORAGER - Gos Rosling",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/forager-gos-rosling-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Sinuous, organic indie, blending psych-pop-tinged guitars with a deeply visceral intensity",
-    "_rawDate": "2026-09-30"
-  },
-  {
-    "id": 829,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Lawrence English + Margaret Hermant",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/lawrence-english-margaret-hermant-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A meeting of ambient music, post-classical composition, and sonic experimentation in a space that becomes a true sensory experience",
-    "_rawDate": "2026-09-30"
-  },
-  {
     "id": 830,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "a6el - Yirji",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2906,7 +2734,7 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "a6el - Yirji at Le Botanique.",
+    "desc": "The new face of Swiss melancholic rap, pairing introspective lyrics with luminous, finely crafted beats",
     "_rawDate": "2026-10-01"
   },
   {
@@ -2937,7 +2765,7 @@
   {
     "id": 840,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Jean Brusselmans",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2983,7 +2811,56 @@
     "_rawDate": "2026-10-09"
   },
   {
-    "id": 842,
+    "id": 844,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Mangatopia 30: years of manga from Kana!",
+    "venue": "Comic Art Museum",
+    "addr": "Comic Art Museum, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Mangatopia-30-years-of-manga-from-Kana.5700026697",
+    "lat": 50.8512487,
+    "lng": 4.3601777,
+    "neighbourhood": "Centre",
+    "desc": "Fri 16 October 2026 — Mon 17 May 2027 Mangatopia 30: years of manga from Kana! ExhibitionsComic Art Museum View more",
+    "_rawDate": "2026-10-16"
+  },
+  {
+    "id": 845,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Prohibition - Ciseaux",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/prohibition-ciseaux-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Abrasive, experimental post-punk blending noise tension, free saxophone and atonal guitars",
+    "_rawDate": "2026-10-02"
+  },
+  {
+    "id": 846,
     "cat": "Nightlife",
     "date": "March",
     "title": "ROOM 01",
@@ -3008,7 +2885,7 @@
     "_rawDate": "2027-03-01"
   },
   {
-    "id": 843,
+    "id": 847,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -3032,12 +2909,36 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 844,
+    "id": 848,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "Kentridge et les artistes contre les discriminations",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/kentridge-et-les-artistes-contre-les-discriminations",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Lecture",
+    "_rawDate": "2026-10-02"
+  },
+  {
+    "id": 849,
     "cat": "Culture",
     "date": "Next Month",
-    "title": "Mangatopia 30: years of manga from Kana!",
-    "venue": "Comic Art Museum",
-    "addr": "Comic Art Museum, Belgium",
+    "title": "Museum Night Fever",
+    "venue": "Brussels Museums",
+    "addr": "Brussels Museums, Belgium",
     "time": "11:00",
     "startH": 11,
     "endH": 18,
@@ -3048,11 +2949,59 @@
       "Art"
     ],
     "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Mangatopia-30-years-of-manga-from-Kana.5700026697",
-    "lat": 50.8512487,
-    "lng": 4.3601777,
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Museum-Night-Fever.5700026782",
+    "lat": 50.8479629,
+    "lng": 4.3552346,
     "neighbourhood": "Centre",
-    "desc": "Fri 16 October 2026 — Mon 17 May 2027 Mangatopia 30: years of manga from Kana! ExhibitionsComic Art Museum View more",
-    "_rawDate": "2026-10-16"
+    "desc": "Sat 17 October — Sun 18 October Museum Night Fever €22 FestivalBrussels Museums View more",
+    "_rawDate": "2026-10-17"
+  },
+  {
+    "id": 850,
+    "cat": "Festival",
+    "date": "Next Week",
+    "title": "Festival Des Libertés",
+    "venue": "Théâtre National Wallonie-Bruxelles",
+    "addr": "Théâtre National Wallonie-Bruxelles, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Des-Libertes.5700026654",
+    "lat": 50.8547606,
+    "lng": 4.3550879,
+    "neighbourhood": "Centre",
+    "desc": "Thu 08 October — Sat 17 October Festival Des Libertés FestivalThéâtre National Wallonie-Bruxelles View more",
+    "_rawDate": "2026-10-08"
+  },
+  {
+    "id": 851,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Brussels Diwali Festival",
+    "venue": "Atomiumsquare",
+    "addr": "Atomium, 1020 Brussels",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Brussels-Diwali-Festival.5700026274",
+    "lat": 50.8949,
+    "lng": 4.3415,
+    "neighbourhood": "Centre",
+    "desc": "Sat 24 October — Sun 25 October Brussels Diwali Festival €15 FestivalAtomiumsquare View more",
+    "_rawDate": "2026-10-24"
   }
 ]
