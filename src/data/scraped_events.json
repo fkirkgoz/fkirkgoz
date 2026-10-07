@@ -2,7 +2,7 @@
   {
     "id": 174,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "FREYA RIDINGS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -26,7 +26,7 @@
   {
     "id": 175,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "GAVIN DEGRAW",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -98,7 +98,7 @@
   {
     "id": 178,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "WORLDS APART",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1554,7 +1554,7 @@
   {
     "id": 767,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "MashaaDunya Festival",
     "venue": "Various locations in Brussels",
     "addr": "Various locations in Brussels, Belgium",
@@ -1656,7 +1656,7 @@
   {
     "id": 781,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "In.out.sider Festival 2026 - 5th edition",
     "venue": "LaVallée",
     "addr": "LaVallée, Belgium",
@@ -1680,7 +1680,7 @@
   {
     "id": 782,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "House of Memory / بيت الذاكرة by Basil Al-Rawi",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -1704,7 +1704,7 @@
   {
     "id": 783,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels Oktoberfest 2026",
     "venue": "Brussels Oktoberfest",
     "addr": "Brussels Oktoberfest, Belgium",
@@ -1728,7 +1728,7 @@
   {
     "id": 793,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Edith Dekyndt x Cristobal Balenciaga",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -1900,7 +1900,7 @@
   {
     "id": 819,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "The Lemonheads - Vincent Khouni",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1923,34 +1923,9 @@
     "_rawDate": "2026-10-14"
   },
   {
-    "id": 825,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Stormy",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/stormy-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Stormy at Le Botanique.",
-    "_rawDate": "2026-10-06"
-  },
-  {
     "id": 826,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Kathryn Mohr + Siem Reap",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1969,7 +1944,7 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Kathryn Mohr + Siem Reap at Le Botanique.",
+    "desc": "A double bill of intimate, melancholic songwriting, moving between raw folk and dark textures",
     "_rawDate": "2026-10-07"
   },
   {
@@ -2097,7 +2072,7 @@
   {
     "id": 850,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Festival Des Libertés",
     "venue": "Théâtre National Wallonie-Bruxelles",
     "addr": "Théâtre National Wallonie-Bruxelles, Belgium",
@@ -2411,10 +2386,34 @@
     "_rawDate": "2026-10-31"
   },
   {
-    "id": 885,
+    "id": 890,
+    "cat": "Culture",
+    "date": "This Weekend",
+    "title": "Agatha's Almanac - Amalie Atkins",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/agathas-almanac-amalie-atkins",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-10-11"
+  },
+  {
+    "id": 891,
     "cat": "Music",
     "date": "Tonight",
-    "title": "mary in the junkyard - everett dolphin",
+    "title": "Panchiko - Alison's Halo - CJ’s Mirra Maze",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -2428,18 +2427,18 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/mary-junkyard-everett-dolphin-2026",
+    "officialEventLink": "https://botanique.be/en/concert/panchiko-alisons-halo-cjs-mirra-maze-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "The trio crafts a unique, intimate, and unpredictable universe combining experimentation, indie rock tension, and sharp songwriting",
-    "_rawDate": "2026-10-06"
+    "desc": "Panchiko blends shoegaze and lo-fi electronics into immersive, dreamy, and melancholic soundscapes",
+    "_rawDate": "2026-10-07"
   },
   {
-    "id": 886,
+    "id": 892,
     "cat": "Music",
     "date": "Tonight",
-    "title": "echofarmer - Sasha Sykes",
+    "title": "Catbug - Saving Nico",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -2453,15 +2452,15 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/echofarmer-sasha-sykes-2026",
+    "officialEventLink": "https://botanique.be/en/concert/catbug-saving-nico-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "🌟 Release | Immersive electronic music built on club textures, shimmering synths, and unapologetically pop experimentation",
-    "_rawDate": "2026-10-06"
+    "desc": "🌟 Release | Delicate, poetic folk balancing rural intimacy with luminous melancholy",
+    "_rawDate": "2026-10-07"
   },
   {
-    "id": 887,
+    "id": 893,
     "cat": "Nightlife",
     "date": "March",
     "title": "ROOM 01",
@@ -2486,7 +2485,7 @@
     "_rawDate": "2027-03-01"
   },
   {
-    "id": 888,
+    "id": 894,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -2510,7 +2509,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 889,
+    "id": 895,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -2534,27 +2533,99 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 890,
-    "cat": "Arts",
-    "date": "This Weekend",
-    "title": "Agatha's Almanac - Amalie Atkins",
+    "id": 896,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Adia Vanheerentals Solo - Amirtha Kidambi’s Elder Ones",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/adia-vanheerentals-solo-amirtha-kidambis-elder-ones",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-10-08"
+  },
+  {
+    "id": 897,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "The Cleveland Orchestra, Welser-Möst & Schultz",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🎻",
+    "color": "#E76F51",
     "tags": [
-      "Cinema",
-      "Film"
+      "Classical",
+      "Culture"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/agathas-almanac-amalie-atkins",
+    "officialEventLink": "https://www.bozar.be/en/calendar/cleveland-orchestra-welser-most-schultz",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-10-11"
+    "desc": "Concerts",
+    "_rawDate": "2026-10-08"
+  },
+  {
+    "id": 898,
+    "cat": "Music",
+    "date": "Next Week",
+    "title": "Nkisi - Jlin",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/nkisi-jlin",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-10-09"
+  },
+  {
+    "id": 899,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Soleil Noir : Léon Spilliaert, Michaël Borremans, James Ensor…",
+    "venue": "Boghossian Foundation - Villa Empain",
+    "addr": "Boghossian Foundation - Villa Empain, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Soleil-Noir-Leon-Spilliaert-Michael-Borremans-James-Ensor.5700024720",
+    "lat": 50.8073866,
+    "lng": 4.3840456,
+    "neighbourhood": "Centre",
+    "desc": "Thu 22 October 2026 — Fri 19 March 2027 Soleil Noir : Léon Spilliaert, Michaël Borremans, James Ensor… €15 ExhibitionsBoghossian Foundation - Villa Empain View more",
+    "_rawDate": "2026-10-22"
   }
 ]
