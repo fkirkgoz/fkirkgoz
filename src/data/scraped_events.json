@@ -1,32 +1,8 @@
 [
   {
-    "id": 175,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "GAVIN DEGRAW",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/gavin-degraw/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "GAVIN DEGRAW at La Madeleine.",
-    "_rawDate": "2026-10-08"
-  },
-  {
     "id": 176,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "JIMMY SAX IN BRUSSELS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -50,7 +26,7 @@
   {
     "id": 177,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "ARIES SPEARS",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -604,7 +580,7 @@
   {
     "id": 376,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Young Widows (US) + Aicher (DE)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -630,7 +606,7 @@
   {
     "id": 377,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Dazzling Killmen (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -957,7 +933,7 @@
   {
     "id": 399,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "ADIDAS",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1407,7 +1383,7 @@
   {
     "id": 713,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: Fenrick (all night long) & Riana Holley (all night long)",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1432,7 +1408,7 @@
   {
     "id": 733,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: ÜBERKIKZ (all night long) & Altered Circuits w/ Curses",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1457,7 +1433,7 @@
   {
     "id": 742,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Maribou State (DJ set) & Cinthie",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1482,7 +1458,7 @@
   {
     "id": 753,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Next Month",
     "title": "In-I In Motion - Juliette Binoche",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1501,12 +1477,12 @@
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Films",
-    "_rawDate": "2026-10-10"
+    "_rawDate": "2026-11-01"
   },
   {
     "id": 766,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Like a Fortress - Lou Colpé",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1528,33 +1504,9 @@
     "_rawDate": "2026-10-10"
   },
   {
-    "id": 767,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "MashaaDunya Festival",
-    "venue": "Various locations in Brussels",
-    "addr": "Various locations in Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.MashaaDunya-Festival.5700026816",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Thu 08 October — Sat 28 November MashaaDunya Festival FestivalVarious locations in Brussels View more",
-    "_rawDate": "2026-10-08"
-  },
-  {
     "id": 771,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "ILLEGAAL DANCE BATTLE ALL STYLES #10",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -1580,7 +1532,7 @@
   {
     "id": 772,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "RITMO INFERNAL °3",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -1606,7 +1558,7 @@
   {
     "id": 773,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "EELF Presents &#8211; Brussels: Target Demographic, Shaolin Cowboy, Kleinefrigo + more TBA",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -1628,30 +1580,6 @@
     "neighbourhood": "Various",
     "desc": "Since 2017, EELF has grown from a YouTube channel into one of underground house\\'s most connected communities, a label and touring family with roots all across Europe and Americas. This …",
     "_rawDate": "2026-10-16"
-  },
-  {
-    "id": 781,
-    "cat": "Nightlife",
-    "date": "Today",
-    "title": "In.out.sider Festival 2026 - 5th edition",
-    "venue": "LaVallée",
-    "addr": "LaVallée, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🏭",
-    "color": "#6C63FF",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.In-out-sider-Festival-2026-5th-edition.5700024738",
-    "lat": 50.8586368,
-    "lng": 4.3423059,
-    "neighbourhood": "Centre",
-    "desc": "Thu 08 October — Sat 10 October In.out.sider Festival 2026 - 5th edition €10 FestivalLaVallée View more",
-    "_rawDate": "2026-10-08"
   },
   {
     "id": 782,
@@ -1728,7 +1656,7 @@
   {
     "id": 794,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "INUIT - Impressions of the Canadian Far North",
     "venue": "Art & History Museum (RMAH)",
     "addr": "Art & History Museum (RMAH), Belgium",
@@ -1778,7 +1706,7 @@
   {
     "id": 802,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Animazing",
     "venue": "Institute of Natural Sciences",
     "addr": "Institute of Natural Sciences, Belgium",
@@ -1901,7 +1829,7 @@
   {
     "id": 827,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Lucas Santtana - Renato Baccarat",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1920,7 +1848,7 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Lucas Santtana - Renato Baccarat at Le Botanique.",
+    "desc": "Blending Brazilian music, pop, and experimentation to celebrate the richness of languages and cultures through an engaged artistic vision",
     "_rawDate": "2026-10-09"
   },
   {
@@ -1951,7 +1879,7 @@
   {
     "id": 841,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Parcours d'Artistes d'Etterbeek 2026",
     "venue": "Service Culture Francophone d'Etterbeek",
     "addr": "Service Culture Francophone d'Etterbeek, Belgium",
@@ -1975,7 +1903,7 @@
   {
     "id": 844,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Mangatopia 30: years of manga from Kana!",
     "venue": "Comic Art Museum",
     "addr": "Comic Art Museum, Belgium",
@@ -2019,30 +1947,6 @@
     "neighbourhood": "Centre",
     "desc": "Sat 17 October — Sun 18 October Museum Night Fever €22 FestivalBrussels Museums View more",
     "_rawDate": "2026-10-17"
-  },
-  {
-    "id": 850,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Festival Des Libertés",
-    "venue": "Théâtre National Wallonie-Bruxelles",
-    "addr": "Théâtre National Wallonie-Bruxelles, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Des-Libertes.5700026654",
-    "lat": 50.8547606,
-    "lng": 4.3550879,
-    "neighbourhood": "Centre",
-    "desc": "Thu 08 October — Sat 17 October Festival Des Libertés FestivalThéâtre National Wallonie-Bruxelles View more",
-    "_rawDate": "2026-10-08"
   },
   {
     "id": 851,
@@ -2361,57 +2265,9 @@
     "_rawDate": "2026-10-11"
   },
   {
-    "id": 896,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Adia Vanheerentals Solo - Amirtha Kidambi’s Elder Ones",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/adia-vanheerentals-solo-amirtha-kidambis-elder-ones",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-10-08"
-  },
-  {
-    "id": 897,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "The Cleveland Orchestra, Welser-Möst & Schultz",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Classical",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/cleveland-orchestra-welser-most-schultz",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-10-08"
-  },
-  {
     "id": 898,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Nkisi - Jlin",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2457,106 +2313,6 @@
     "_rawDate": "2026-10-22"
   },
   {
-    "id": 900,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "LSD and the Search for God - Yumi Jun",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/lsd-and-search-god-yumi-jun-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Psychedelic, atmospheric shoegaze, blending swirling guitars, hazy melodies, and dreamy vocal harmonies",
-    "_rawDate": "2026-10-08"
-  },
-  {
-    "id": 901,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "rogergoon - Ursula VI",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/rogergoon-ursula-vi-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "🌟 Release | Unpredictable DIY electronica weaving together ambient textures, guitar, samples, and trap loops, with every track venturing into new territory",
-    "_rawDate": "2026-10-08"
-  },
-  {
-    "id": 902,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Rêves x J&A.",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/reves-x-ja-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Rêves x J&A. at Le Botanique.",
-    "_rawDate": "2026-10-08"
-  },
-  {
-    "id": 903,
-    "cat": "Nightlife",
-    "date": "March",
-    "title": "ROOM 01",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://tickets.fuse.be/d402ee9306ba4a1993bcf3a2894cff91",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "ROOM 01 at Fuse.",
-    "_rawDate": "2027-03-01"
-  },
-  {
     "id": 904,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -2580,54 +2336,6 @@
     "neighbourhood": "Marolles",
     "desc": "Fuse presents: Marco Shuttle & Dold (live) at Fuse.",
     "_rawDate": "2026-10-24"
-  },
-  {
-    "id": 905,
-    "cat": "Culture",
-    "date": "March",
-    "title": "William Kentridge",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2027-03-07"
-  },
-  {
-    "id": 906,
-    "cat": "Culture",
-    "date": "January",
-    "title": "Jean Brusselmans",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/jean-brusselmans",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2027-01-31"
   },
   {
     "id": 907,
@@ -2780,5 +2488,200 @@
     "neighbourhood": "Various",
     "desc": "⏣▼⏣▼⏣ 303FUNKSTREET ⏣▼⏣▼⏣▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀Get ready for Saturday, November 7, when we’ll light up the night with electrifying 303-waves and tekno beats. Expect an unforgettable lineup of top-tier DJs and producers bringing …",
     "_rawDate": "2026-11-07"
+  },
+  {
+    "id": 913,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "World Brain - Stéphane Odrobinski",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/world-brain-stephane-odrobinski-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Hybrid, inventive pop with sophisticated arrangements — on stage, the songs transform into a playful and explosive celebration",
+    "_rawDate": "2026-10-09"
+  },
+  {
+    "id": 914,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Kiss Facility - Kidä",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/kiss-facility-kida-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Kiss Facility brings a fresh perspective to shoegaze, blending enchanting guitars with vocal poetry inspired by Arabic traditions",
+    "_rawDate": "2026-10-09"
+  },
+  {
+    "id": 915,
+    "cat": "Nightlife",
+    "date": "March",
+    "title": "ROOM 01",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://tickets.fuse.be/d402ee9306ba4a1993bcf3a2894cff91",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "ROOM 01 at Fuse.",
+    "_rawDate": "2027-03-01"
+  },
+  {
+    "id": 916,
+    "cat": "Culture",
+    "date": "March",
+    "title": "William Kentridge",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "_rawDate": "2027-03-07"
+  },
+  {
+    "id": 917,
+    "cat": "Culture",
+    "date": "January",
+    "title": "Jean Brusselmans",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/jean-brusselmans",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "_rawDate": "2027-01-31"
+  },
+  {
+    "id": 918,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Cartography of an engraver - Marie-Eve de Grave",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/cartography-engraver-marie-eve-de-grave",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-10-18"
+  },
+  {
+    "id": 919,
+    "cat": "Music",
+    "date": "This Weekend",
+    "title": "Logan Lopez Gonzalez",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/logan-lopez-gonzalez",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-10-11"
+  },
+  {
+    "id": 920,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Sous Influence",
+    "venue": "VITRINE",
+    "addr": "VITRINE, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Sous-Influence.5700027216",
+    "lat": 50.8276264,
+    "lng": 4.3393232,
+    "neighbourhood": "Centre",
+    "desc": "Fri 06 November — Sun 13 December Sous Influence ExhibitionsVITRINE View more",
+    "_rawDate": "2026-11-06"
   }
 ]
