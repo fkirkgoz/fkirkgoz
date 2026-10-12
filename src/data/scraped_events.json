@@ -50,7 +50,7 @@
   {
     "id": 219,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "GÖKHAN TÜRKMEN",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -94,30 +94,6 @@
     "neighbourhood": "Centre",
     "desc": "GUY2BEZBAR at La Madeleine.",
     "_rawDate": "2026-10-23"
-  },
-  {
-    "id": 237,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "MATT HANSEN",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/matt-hansen/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "MATT HANSEN at La Madeleine.",
-    "_rawDate": "2026-10-11"
   },
   {
     "id": 248,
@@ -1427,32 +1403,6 @@
     "_rawDate": "2026-10-16"
   },
   {
-    "id": 795,
-    "cat": "Nightlife",
-    "date": "Tonight",
-    "title": "COUPE CONTAINER",
-    "venue": "LaVallée",
-    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
-    "time": "19:00",
-    "startH": 19,
-    "endH": 22,
-    "emoji": "🏭",
-    "color": "#6C63FF",
-    "tags": [
-      "Open Air",
-      "Industrial",
-      "Electronic",
-      "Art"
-    ],
-    "source": "LaVallée",
-    "officialEventLink": "https://lavallee.brussels/event/coupe-container/",
-    "lat": 50.8568,
-    "lng": 4.339,
-    "neighbourhood": "Molenbeek",
-    "desc": "Le collectif de production musicale féminin bruxellois COUPE Prod, @coupe_e_prod, aussi residents de LaVallée, revient avec la 6e édition de son événement sonore multidisciplinaire, COUPE CONTAINER, à LaVallée.bxl. @lavallee.bxl Cette édition mettra à…",
-    "_rawDate": "2026-10-11"
-  },
-  {
     "id": 802,
     "cat": "Culture",
     "date": "Next Week",
@@ -1528,7 +1478,7 @@
   {
     "id": 818,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "billie",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1675,7 +1625,7 @@
   {
     "id": 855,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Gavagai - Ulrich Köhler",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1941,30 +1891,6 @@
     "_rawDate": "2026-10-31"
   },
   {
-    "id": 890,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Agatha's Almanac - Amalie Atkins",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/agathas-almanac-amalie-atkins",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-10-11"
-  },
-  {
     "id": 899,
     "cat": "Culture",
     "date": "Next Month",
@@ -2168,7 +2094,7 @@
   {
     "id": 918,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Cartography of an engraver - Marie-Eve de Grave",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2188,30 +2114,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-10-18"
-  },
-  {
-    "id": 919,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "Logan Lopez Gonzalez",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/logan-lopez-gonzalez",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-10-11"
   },
   {
     "id": 920,
@@ -2236,31 +2138,6 @@
     "neighbourhood": "Centre",
     "desc": "Fri 06 November — Sun 13 December Sous Influence ExhibitionsVITRINE View more",
     "_rawDate": "2026-11-06"
-  },
-  {
-    "id": 921,
-    "cat": "Nightlife",
-    "date": "March",
-    "title": "ROOM 01",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://tickets.fuse.be/d402ee9306ba4a1993bcf3a2894cff91",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "ROOM 01 at Fuse.",
-    "_rawDate": "2027-03-01"
   },
   {
     "id": 922,
@@ -2289,6 +2166,106 @@
   },
   {
     "id": 923,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Bayou | cancelled",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/bayou-cancelled-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Alternative, atmospheric R&B blending introspection, sensuality and contemporary global influences.",
+    "_rawDate": "2026-10-12"
+  },
+  {
+    "id": 924,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "MOLIY | cancelled",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/moliy-cancelled-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Sunny, ultra-effective afropop, blending dancehall, R&B, and rhythms made for both clubs and social media",
+    "_rawDate": "2026-10-12"
+  },
+  {
+    "id": 925,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Margaret Glaspy - Emilie Mover",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/margaret-glaspy-emilie-mover-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Elegant, introspective indie folk-rock driven by assured vocals and expressive guitar work",
+    "_rawDate": "2026-10-12"
+  },
+  {
+    "id": 926,
+    "cat": "Nightlife",
+    "date": "March",
+    "title": "ROOM 01",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://tickets.fuse.be/d402ee9306ba4a1993bcf3a2894cff91",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "ROOM 01 at Fuse.",
+    "_rawDate": "2027-03-01"
+  },
+  {
+    "id": 927,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -2312,7 +2289,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 924,
+    "id": 928,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -2336,27 +2313,78 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 925,
+    "id": 929,
     "cat": "Culture",
-    "date": "Today",
-    "title": "Belgian National Orchestra, Petrenko & Kobekina",
+    "date": "Tomorrow",
+    "title": "Meet the Artist: Edith Dekyndt",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎻",
-    "color": "#E76F51",
+    "emoji": "🎨",
+    "color": "#F4A261",
     "tags": [
-      "Classical",
+      "Art",
       "Culture"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/belgian-national-orchestra-petrenko-kobekina",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-artist-edith-dekyndt",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-10-11"
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-10-13"
+  },
+  {
+    "id": 930,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "Meet the Architect: Tatiana Bilbao",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-architect-tatiana-bilbao",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-10-13"
+  },
+  {
+    "id": 931,
+    "cat": "Nightlife",
+    "date": "October",
+    "title": "Drawing From Where We Are – An Exhibition of Recent Graduates from Belgian Art Schools",
+    "venue": "LaVallée",
+    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "🏭",
+    "color": "#6C63FF",
+    "tags": [
+      "Open Air",
+      "Industrial",
+      "Electronic",
+      "Art"
+    ],
+    "source": "LaVallée",
+    "officialEventLink": "https://lavallee.brussels/event/drawing-from-where-we-are-an-exhibition-of-recent-graduates-from-belgian-art-schools/",
+    "lat": 50.8568,
+    "lng": 4.339,
+    "neighbourhood": "Molenbeek",
+    "desc": "“Drawing From Where We Are - Une exposition des jeunes diplômé · e · s des écoles d’art belges” est une exposition collective bi-annuelle consacrée à la jeune création belge et aux formes contemporaines d",
+    "_rawDate": "2027-10-02"
   }
 ]
