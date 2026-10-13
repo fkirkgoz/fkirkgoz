@@ -2,7 +2,7 @@
   {
     "id": 178,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "WORLDS APART",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -1058,7 +1058,7 @@
   {
     "id": 488,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Lagrimas (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1309,7 +1309,7 @@
   {
     "id": 782,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "House of Memory / بيت الذاكرة by Basil Al-Rawi",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -1333,7 +1333,7 @@
   {
     "id": 783,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brussels Oktoberfest 2026",
     "venue": "Brussels Oktoberfest",
     "addr": "Brussels Oktoberfest, Belgium",
@@ -1357,7 +1357,7 @@
   {
     "id": 793,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Edith Dekyndt x Cristobal Balenciaga",
     "venue": "Centre for Fine Arts - Bozar",
     "addr": "Centre for Fine Arts - Bozar, Belgium",
@@ -1478,7 +1478,7 @@
   {
     "id": 818,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "billie",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1503,7 +1503,7 @@
   {
     "id": 819,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "The Lemonheads - Vincent Khouni",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2165,10 +2165,59 @@
     "_rawDate": "2026-11-06"
   },
   {
-    "id": 923,
+    "id": 929,
+    "cat": "Culture",
+    "date": "Today",
+    "title": "Meet the Artist: Edith Dekyndt",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-artist-edith-dekyndt",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-10-13"
+  },
+  {
+    "id": 930,
+    "cat": "Culture",
+    "date": "Today",
+    "title": "Meet the Architect: Tatiana Bilbao",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-architect-tatiana-bilbao",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-10-13"
+  },
+  {
+    "id": 931,
     "cat": "Music",
     "date": "Tonight",
-    "title": "Bayou | cancelled",
+    "title": "The Reverend Peyton's Big Damn Band",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -2182,18 +2231,18 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/bayou-cancelled-2026",
+    "officialEventLink": "https://botanique.be/en/concert/reverend-peytons-big-damn-band-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Alternative, atmospheric R&B blending introspection, sensuality and contemporary global influences.",
-    "_rawDate": "2026-10-12"
+    "desc": "Incandescent roots blues, authentically blending gospel fervor and rock’n’roll energy",
+    "_rawDate": "2026-10-13"
   },
   {
-    "id": 924,
+    "id": 932,
     "cat": "Music",
     "date": "Tonight",
-    "title": "MOLIY | cancelled",
+    "title": "billie - Caroco",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -2207,18 +2256,18 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/moliy-cancelled-2026",
+    "officialEventLink": "https://botanique.be/en/concert/billie-caroco-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Sunny, ultra-effective afropop, blending dancehall, R&B, and rhythms made for both clubs and social media",
-    "_rawDate": "2026-10-12"
+    "desc": "A new wave of French chanson infused with British rock and dream pop, delivered with instinctive elegance",
+    "_rawDate": "2026-10-13"
   },
   {
-    "id": 925,
+    "id": 933,
     "cat": "Music",
     "date": "Tonight",
-    "title": "Margaret Glaspy - Emilie Mover",
+    "title": "Starjunk 95 - Alex Lesage",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -2232,15 +2281,15 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/margaret-glaspy-emilie-mover-2026",
+    "officialEventLink": "https://botanique.be/en/concert/starjunk-95-alex-lesage-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Elegant, introspective indie folk-rock driven by assured vocals and expressive guitar work",
-    "_rawDate": "2026-10-12"
+    "desc": "Anime-inspired retrofuturism meets an intergalactic musical journey through funk, electro, pop, and rap",
+    "_rawDate": "2026-10-13"
   },
   {
-    "id": 926,
+    "id": 934,
     "cat": "Nightlife",
     "date": "March",
     "title": "ROOM 01",
@@ -2265,7 +2314,7 @@
     "_rawDate": "2027-03-01"
   },
   {
-    "id": 927,
+    "id": 935,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -2289,7 +2338,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 928,
+    "id": 936,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -2313,56 +2362,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 929,
-    "cat": "Culture",
-    "date": "Tomorrow",
-    "title": "Meet the Artist: Edith Dekyndt",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-artist-edith-dekyndt",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "_rawDate": "2026-10-13"
-  },
-  {
-    "id": 930,
-    "cat": "Culture",
-    "date": "Tomorrow",
-    "title": "Meet the Architect: Tatiana Bilbao",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-architect-tatiana-bilbao",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "_rawDate": "2026-10-13"
-  },
-  {
-    "id": 931,
+    "id": 937,
     "cat": "Nightlife",
     "date": "October",
     "title": "Drawing From Where We Are – An Exhibition of Recent Graduates from Belgian Art Schools",
