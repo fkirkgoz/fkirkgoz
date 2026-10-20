@@ -812,7 +812,7 @@
   {
     "id": 407,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Babe Haven (US) + Latter (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -986,7 +986,7 @@
   {
     "id": 488,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Lagrimas (US)",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -1945,31 +1945,6 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 969,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Essyla - Nel",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/essyla-nel-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "🌟 Release | The young Belgian singer will show on stage her new project «But Maybe Tomorrow»",
-    "_rawDate": "2026-10-19"
-  },
-  {
     "id": 976,
     "cat": "Culture",
     "date": "Next Month",
@@ -1994,34 +1969,9 @@
     "_rawDate": "2026-10-31"
   },
   {
-    "id": 977,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ulrika Spacek - Teenage Exorcists",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/ulrika-spacek-teenage-exorcists-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Abrasive and psychedelic art-rock blending dissonance, electronic textures, and collective energy",
-    "_rawDate": "2026-10-19"
-  },
-  {
     "id": 978,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Baba Zula - Monstera Occulta",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2042,31 +1992,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "Hypnotic, theatrical, and improvisational — Baba Zula’s Istanbul Psychedelia redefines the boundaries of psychedelic rock",
     "_rawDate": "2026-10-20"
-  },
-  {
-    "id": 979,
-    "cat": "Nightlife",
-    "date": "March",
-    "title": "ROOM 01",
-    "venue": "Fuse",
-    "addr": "Rue Blaes 208, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "⚡",
-    "color": "#7B2FBE",
-    "tags": [
-      "Techno",
-      "Electronic",
-      "Nightlife"
-    ],
-    "source": "Fuse",
-    "officialEventLink": "https://tickets.fuse.be/4fc67280b96f4642913024ae4b0a8579",
-    "lat": 50.8365,
-    "lng": 4.3435,
-    "neighbourhood": "Marolles",
-    "desc": "ROOM 01 at Fuse.",
-    "_rawDate": "2027-03-01"
   },
   {
     "id": 980,
@@ -2094,10 +2019,10 @@
     "_rawDate": "2026-11-10"
   },
   {
-    "id": 981,
+    "id": 985,
     "cat": "Culture",
-    "date": "Today",
-    "title": "Darius Dolatyari-Dolatdoust. DRESSING + mata !",
+    "date": "Next Week",
+    "title": "Clorindo Testa - Mariano Llinás",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
@@ -2106,20 +2031,94 @@
     "emoji": "🏛️",
     "color": "#E76F51",
     "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
+      "Cinema",
+      "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/darius-dolatyari-dolatdoust-dressing-mata",
+    "officialEventLink": "https://www.bozar.be/en/calendar/clorindo-testa-mariano-llinas",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Performances",
-    "_rawDate": "2026-10-19"
+    "desc": "Films",
+    "_rawDate": "2026-10-23"
   },
   {
-    "id": 982,
+    "id": 986,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "The Guest List - Spanish Horses",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/guest-list-spanish-horses-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "One of the most promising new names in British indie rock",
+    "_rawDate": "2026-10-20"
+  },
+  {
+    "id": 987,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "The Bernadette Maries - BOI",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/bernadette-maries-boi-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "🌟 Release | Melancholic, tense post-punk carried by dreamy shoegaze guitars and indie hooks",
+    "_rawDate": "2026-10-20"
+  },
+  {
+    "id": 988,
+    "cat": "Nightlife",
+    "date": "March",
+    "title": "ROOM 01",
+    "venue": "Fuse",
+    "addr": "Rue Blaes 208, 1000 Brussels",
+    "time": "23:00",
+    "startH": 23,
+    "endH": 26,
+    "emoji": "⚡",
+    "color": "#7B2FBE",
+    "tags": [
+      "Techno",
+      "Electronic",
+      "Nightlife"
+    ],
+    "source": "Fuse",
+    "officialEventLink": "https://tickets.fuse.be/4fc67280b96f4642913024ae4b0a8579",
+    "lat": 50.8365,
+    "lng": 4.3435,
+    "neighbourhood": "Marolles",
+    "desc": "ROOM 01 at Fuse.",
+    "_rawDate": "2027-03-01"
+  },
+  {
+    "id": 989,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -2143,7 +2142,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 983,
+    "id": 990,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -2167,7 +2166,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 984,
+    "id": 991,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -2191,27 +2190,103 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 985,
-    "cat": "Arts",
-    "date": "Next Week",
-    "title": "Clorindo Testa - Mariano Llinás",
+    "id": 992,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Janine Jansen & Denis Kozhukhin",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
     "tags": [
-      "Cinema",
-      "Film"
+      "Concert",
+      "Live Music"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/clorindo-testa-mariano-llinas",
+    "officialEventLink": "https://www.bozar.be/en/calendar/janine-jansen-denis-kozhukhin-3",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-10-23"
+    "desc": "Concerts",
+    "_rawDate": "2026-10-20"
+  },
+  {
+    "id": 993,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Brussels Jazz Orchestra: The Music of Bert Joris",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎷",
+    "color": "#C77DFF",
+    "tags": [
+      "Jazz",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/brussels-jazz-orchestra-music-bert-joris",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-10-20"
+  },
+  {
+    "id": 994,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "FriskyFlexShow &#8211; Silver Jubilee",
+    "venue": "LaVallée",
+    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
+    "time": "18:00",
+    "startH": 18,
+    "endH": 21,
+    "emoji": "🏭",
+    "color": "#6C63FF",
+    "tags": [
+      "Open Air",
+      "Industrial",
+      "Electronic",
+      "Art"
+    ],
+    "source": "LaVallée",
+    "officialEventLink": "https://lavallee.brussels/event/friskyflexshow-silver-jubilee/",
+    "lat": 50.8568,
+    "lng": 4.339,
+    "neighbourhood": "Molenbeek",
+    "desc": "FriskyFlexShow Silver Jubilee – 25 ans de ska-punk DIY à Bruxelles Né en 2001 autour de quatre groupes bruxellois (Combi Drivers, Skamuraï Munchies, Mockingbirds et Expressure), bientôt rejoints par Happening Leek, le FriskyFlexFellow a animé la scène ska et…",
+    "_rawDate": "2026-11-07"
+  },
+  {
+    "id": 995,
+    "cat": "Nightlife",
+    "date": "Next Month",
+    "title": "Grrrabuge &#8211; Festival de vin naturel",
+    "venue": "LaVallée",
+    "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
+    "time": "10:00",
+    "startH": 10,
+    "endH": 13,
+    "emoji": "🏭",
+    "color": "#6C63FF",
+    "tags": [
+      "Open Air",
+      "Industrial",
+      "Electronic",
+      "Art"
+    ],
+    "source": "LaVallée",
+    "officialEventLink": "https://lavallee.brussels/event/grrrabuge-festival-de-vin-naturel/",
+    "lat": 50.8568,
+    "lng": 4.339,
+    "neighbourhood": "Molenbeek",
+    "desc": "Un rendez-vous incontournable pour les curieux · ses et les amateur · ices de vins naturels et de gastronomie, Grrrabuge est un salon des vins qui réunit dégustations, ventes, conférences, food trucks et concerts pendant deux jours à LaVallée, à Bruxelles…",
+    "_rawDate": "2026-11-14"
   }
 ]
