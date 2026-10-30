@@ -50,30 +50,6 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 316,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "NONO LA GRINTA",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/nono-la-grinta/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "NONO LA GRINTA at La Madeleine.",
-    "_rawDate": "2026-10-29"
-  },
-  {
     "id": 317,
     "cat": "Music",
     "date": "Next Week",
@@ -124,7 +100,7 @@
   {
     "id": 319,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "SO LA LUNE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -665,7 +641,7 @@
   {
     "id": 401,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "it doesn't go without saying (& other gossips)",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -1035,7 +1011,7 @@
   {
     "id": 868,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Les Nuits Weekender",
     "venue": "Botanique",
     "addr": "Botanique, Belgium",
@@ -1059,7 +1035,7 @@
   {
     "id": 871,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: Silva Bumpa",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1108,7 +1084,7 @@
   {
     "id": 884,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Hangar Festival — Halloween Edition 31 Oct 26",
     "venue": "Hangar",
     "addr": "Brussels, Belgium",
@@ -1134,7 +1110,7 @@
   {
     "id": 907,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Amazing Asia",
     "venue": "Tour & Taxis - Shed 1",
     "addr": "Tour & Taxis, 1000 Brussels",
@@ -1158,7 +1134,7 @@
   {
     "id": 908,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Parcours d'artistes d'Ixelles",
     "venue": "Commune d'Ixelles - Gemeente Elsene",
     "addr": "Commune d'Ixelles - Gemeente Elsene, Belgium",
@@ -1182,7 +1158,7 @@
   {
     "id": 911,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Optimistic Club : Le grand Cirque des Opti&rsquo;monstres",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -1234,7 +1210,7 @@
   {
     "id": 920,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Sous Influence",
     "venue": "VITRINE",
     "addr": "VITRINE, Belgium",
@@ -1258,7 +1234,7 @@
   {
     "id": 922,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Edward & Loidis",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1307,7 +1283,7 @@
   {
     "id": 930,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "The Magic City: Birmingham According To Sun Ra - Pablo Guarise & Guillaume Maupin",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1576,7 +1552,7 @@
   {
     "id": 976,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "The Other Side of the Sun - Tawfik Sabouni",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -2099,7 +2075,7 @@
   {
     "id": 1063,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Les Nuits Weekender: IAMDDB (The Live Jazz Experience) & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2124,7 +2100,7 @@
   {
     "id": 1064,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Les Nuits Weekender : The Avalanches & many more",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2198,7 +2174,7 @@
   {
     "id": 1082,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Cocq'Arts Festival",
     "venue": "Centre culturel Espace Magh asbl",
     "addr": "Centre culturel Espace Magh asbl, Belgium",
@@ -2292,10 +2268,10 @@
     "_rawDate": "2026-12-06"
   },
   {
-    "id": 1090,
+    "id": 1094,
     "cat": "Culture",
     "date": "Tonight",
-    "title": "Les Muffatti & Anthony Romaniuk",
+    "title": "Camerata Salzburg & Vox Luminis",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
@@ -2308,15 +2284,15 @@
       "Live Music"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/les-muffatti-anthony-romaniuk",
+    "officialEventLink": "https://www.bozar.be/en/calendar/camerata-salzburg-vox-luminis",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Concerts",
-    "_rawDate": "2026-10-29"
+    "_rawDate": "2026-10-30"
   },
   {
-    "id": 1091,
+    "id": 1095,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -2340,7 +2316,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1092,
+    "id": 1096,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -2364,7 +2340,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1093,
+    "id": 1097,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -2388,10 +2364,10 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1094,
+    "id": 1098,
     "cat": "Music",
-    "date": "Tomorrow",
-    "title": "Camerata Salzburg & Vox Luminis",
+    "date": "Tonight",
+    "title": "Vijay Iyer: Solo",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "20:00",
@@ -2404,11 +2380,35 @@
       "Live Music"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/camerata-salzburg-vox-luminis",
+    "officialEventLink": "https://www.bozar.be/en/calendar/vijay-iyer-solo",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Concerts",
     "_rawDate": "2026-10-30"
+  },
+  {
+    "id": 1099,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Festival Cinemamed 2026",
+    "venue": "Cinéma Palace",
+    "addr": "Cinéma Palace, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Festival-Cinemamed-2026.5700023745",
+    "lat": 50.8442488,
+    "lng": 4.3525732,
+    "neighbourhood": "Centre",
+    "desc": "Thu 26 November — Fri 04 December Festival Cinemamed 2026 €8 FestivalCinéma Palace View more",
+    "_rawDate": "2026-11-26"
   }
 ]
