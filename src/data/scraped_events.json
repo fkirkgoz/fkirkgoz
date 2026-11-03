@@ -2,7 +2,7 @@
   {
     "id": 248,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Schur",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -50,33 +50,9 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 317,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "KELELA",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/kelela/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "KELELA at La Madeleine.",
-    "_rawDate": "2026-11-02"
-  },
-  {
     "id": 318,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "ALCEU VALENÇA",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -938,7 +914,7 @@
   {
     "id": 877,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brigitte en Novembre",
     "venue": "Les Brigittines",
     "addr": "Les Brigittines, Belgium",
@@ -1109,7 +1085,7 @@
   {
     "id": 933,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Brussels Art Film Festival (BAFF)",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -1133,7 +1109,7 @@
   {
     "id": 934,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "BAFF- Brussels Art Film Festival",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -1354,7 +1330,7 @@
   {
     "id": 980,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Worakls",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1949,7 +1925,7 @@
   {
     "id": 1100,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "My First Time | cancelled",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2047,7 +2023,7 @@
   {
     "id": 1109,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Primero - Simma (dj-set)",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -2070,89 +2046,17 @@
     "_rawDate": "2026-11-04"
   },
   {
-    "id": 1110,
-    "cat": "Culture",
-    "date": "March",
-    "title": "William Kentridge",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2027-03-07"
-  },
-  {
-    "id": 1111,
-    "cat": "Culture",
-    "date": "January",
-    "title": "Jean Brusselmans",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/jean-brusselmans",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2027-01-31"
-  },
-  {
-    "id": 1112,
-    "cat": "Culture",
-    "date": "January",
-    "title": "Edith Dekyndt x Cristóbal Balenciaga",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
-    "tags": [
-      "Art",
-      "Culture"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/edith-dekyndt-x-cristobal-balenciaga",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2027-01-31"
-  },
-  {
     "id": 1113,
-    "cat": "Arts",
-    "date": "Tomorrow",
+    "cat": "Culture",
+    "date": "Today",
     "title": "Aylan's Dream - Àlex Agüera (10+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -2167,16 +2071,16 @@
   },
   {
     "id": 1114,
-    "cat": "Arts",
-    "date": "Tomorrow",
+    "cat": "Culture",
+    "date": "Today",
     "title": "Definitely Gangster - Jlee MacKenzie (12+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -2191,7 +2095,7 @@
   },
   {
     "id": 1115,
-    "cat": "Arts",
+    "cat": "Culture",
     "date": "Next Month",
     "title": "The Six - Reiner Holzemer",
     "venue": "Bozar",
@@ -2199,8 +2103,8 @@
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
       "Cinema",
       "Film"
@@ -2212,31 +2116,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-11-22"
-  },
-  {
-    "id": 1116,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Bring your project to life!",
-    "venue": "Couleur Café",
-    "addr": "Parc dOsseghem, 1020 Laeken",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 15,
-    "emoji": "🎸",
-    "color": "#F4A261",
-    "tags": [
-      "World Music",
-      "Hip Hop",
-      "Festival"
-    ],
-    "source": "Couleur Café",
-    "officialEventLink": "https://www.couleurcafe.be/en/news/bring-your-project-to-life",
-    "lat": 50.8948,
-    "lng": 4.3411,
-    "neighbourhood": "Laeken",
-    "desc": "Couleur Café, Coca-Cola Europacific Partners and CAPITAL asbl are teaming up to give young people a real boost: those who have talent and ideas, but not necessarily the means to bring them to life. If you're between 16 and 25 with a great idea for a…",
-    "_rawDate": "2026-11-02"
   },
   {
     "id": 1117,
@@ -2263,5 +2142,102 @@
     "neighbourhood": "Various",
     "desc": "HangarTalks - Behind The Frame. 05 November. Cyprien Delire, Fien Vonk & Milan Cools.",
     "_rawDate": "2026-11-05"
+  },
+  {
+    "id": 1118,
+    "cat": "Culture",
+    "date": "March",
+    "title": "William Kentridge",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-0",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "_rawDate": "2027-03-07"
+  },
+  {
+    "id": 1119,
+    "cat": "Culture",
+    "date": "January",
+    "title": "Jean Brusselmans",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/jean-brusselmans",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "_rawDate": "2027-01-31"
+  },
+  {
+    "id": 1120,
+    "cat": "Culture",
+    "date": "January",
+    "title": "Edith Dekyndt x Cristóbal Balenciaga",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
+    "tags": [
+      "Art",
+      "Culture"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/edith-dekyndt-x-cristobal-balenciaga",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Exhibitions",
+    "_rawDate": "2027-01-31"
+  },
+  {
+    "id": 1121,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "Live Magazine autumn edition '26",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/live-magazine-autumn-edition-26",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-11-04"
   }
 ]
