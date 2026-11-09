@@ -25,33 +25,9 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 321,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "POETIC LOVER",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/poetic-lover-08-11/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "POETIC LOVER at La Madeleine.",
-    "_rawDate": "2026-11-08"
-  },
-  {
     "id": 322,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "THE FRAY",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -123,7 +99,7 @@
   {
     "id": 325,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "RENAN LUCE JOUE REPENTI",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -147,7 +123,7 @@
   {
     "id": 326,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "SALMO",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -765,7 +741,7 @@
   {
     "id": 933,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Brussels Art Film Festival (BAFF)",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -789,7 +765,7 @@
   {
     "id": 934,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "BAFF- Brussels Art Film Festival",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -985,7 +961,7 @@
   {
     "id": 980,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: Worakls",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1106,31 +1082,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "Maria Arnal - Bulie Jordeaux at Le Botanique.",
     "_rawDate": "2026-11-18"
-  },
-  {
-    "id": 1013,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Lido Pimienta - Mas Aya",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/lido-pimienta-mas-aya-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A Grammy-nominated artist, she celebrates Caribbean identity through a vibrant blend of cumbia, electronic music, celebration, and activism",
-    "_rawDate": "2026-11-08"
   },
   {
     "id": 1014,
@@ -1455,30 +1406,6 @@
     "_rawDate": "2026-11-22"
   },
   {
-    "id": 1087,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "New Beginnings - Isabelle Ingold & Vivianne Perelmuter",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/new-beginnings-isabelle-ingold-vivianne-perelmuter",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-11-08"
-  },
-  {
     "id": 1088,
     "cat": "Culture",
     "date": "Next Month",
@@ -1622,30 +1549,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-11-22"
-  },
-  {
-    "id": 1128,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "Kurtág Fragments - Dénes Nagy",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/kurtag-fragments-denes-nagy",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-11-08"
   },
   {
     "id": 1130,
@@ -1819,56 +1722,6 @@
     "_rawDate": "2026-11-28"
   },
   {
-    "id": 1164,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Girl Group | postponed",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/girl-group-postponed-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Reimagining the girl band, they put women at the center of every stage of the creative process, between alternative pop, post-punk energy, and DIY ethos",
-    "_rawDate": "2026-11-08"
-  },
-  {
-    "id": 1165,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Deer Park + Touching Ice + The Healing Power Of Horses",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/deer-park-touching-ice-healing-power-horses-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Cloud rock & hyperclash: discover three exciting new bands defining the sound of fall 2026",
-    "_rawDate": "2026-11-08"
-  },
-  {
     "id": 1166,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -1894,7 +1747,106 @@
     "_rawDate": "2026-11-27"
   },
   {
-    "id": 1167,
+    "id": 1170,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "In Waves - Phuong Mai Nguyen (12+)",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/waves-phuong-mai-nguyen-12",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-11-22"
+  },
+  {
+    "id": 1171,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Kiwi Jr. - Manitou",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/kiwi-jr-manitou-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Melodic alternative indie rock with a fast pace and a sunny feel",
+    "_rawDate": "2026-11-09"
+  },
+  {
+    "id": 1172,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Infinity Song - Uwase",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/infinity-song-uwase-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Elegant guitars and celestial vocals in the service of dreams",
+    "_rawDate": "2026-11-10"
+  },
+  {
+    "id": 1173,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Adult DVD - Miss Tetanos",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/adult-dvd-miss-tetanos-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Incisive, high-energy dance-(post-)punk, with biting humor and hooky choruses",
+    "_rawDate": "2026-11-10"
+  },
+  {
+    "id": 1174,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -1918,7 +1870,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1168,
+    "id": 1175,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -1942,7 +1894,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1169,
+    "id": 1176,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -1966,10 +1918,10 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1170,
+    "id": 1177,
     "cat": "Arts",
-    "date": "Next Month",
-    "title": "In Waves - Phuong Mai Nguyen (12+)",
+    "date": "Tomorrow",
+    "title": "Immersive Cinema 26-27",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
@@ -1982,18 +1934,18 @@
       "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/waves-phuong-mai-nguyen-12",
+    "officialEventLink": "https://www.bozar.be/en/calendar/immersive-cinema-26-27-0",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Films",
-    "_rawDate": "2026-11-22"
+    "_rawDate": "2026-11-10"
   },
   {
-    "id": 1171,
+    "id": 1178,
     "cat": "Culture",
-    "date": "Today",
-    "title": "Bozar Sunday #2: Jean Brusselmans",
+    "date": "Tomorrow",
+    "title": "Meet the Architects : Central",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
@@ -2007,68 +1959,68 @@
       "Arts"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/bozar-sunday-2-jean-brusselmans",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-architects-central",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Kids’ Palace",
-    "_rawDate": "2026-11-08"
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-11-10"
   },
   {
-    "id": 1172,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Un Pays Supplémentaire (6+)",
+    "id": 1179,
+    "cat": "Arts",
+    "date": "Tomorrow",
+    "title": "VR Film Screening : What Remains - Ukrainian VR",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
     "tags": [
-      "Concert",
-      "Live Music"
+      "Cinema",
+      "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/un-pays-supplementaire-6",
+    "officialEventLink": "https://www.bozar.be/en/calendar/vr-film-screening-what-remains-ukrainian-vr",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-08"
+    "desc": "Films",
+    "_rawDate": "2026-11-10"
   },
   {
-    "id": 1173,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Asaf Avidan",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "id": 1180,
+    "cat": "Culture",
+    "date": "Next Week",
+    "title": "Carte de Visite | ARTopenKUNST",
+    "venue": "Espace Vanderborght",
+    "addr": "Espace Vanderborght, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
     "tags": [
-      "Concert",
-      "Live Music"
+      "Culture",
+      "Art"
     ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/asaf-avidan",
-    "lat": 50.8445,
-    "lng": 4.3609,
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Carte-de-Visite-ARTopenKUNST.5700029024",
+    "lat": 50.8489235,
+    "lng": 4.3556435,
     "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-08"
+    "desc": "Fri 13 November — Sun 15 November Carte de Visite | ARTopenKUNST Free ExhibitionsEspace Vanderborght View more",
+    "_rawDate": "2026-11-13"
   },
   {
-    "id": 1174,
+    "id": 1181,
     "cat": "Festival",
-    "date": "November",
-    "title": "KETTAMA 07 Nov 26",
+    "date": "Next Month",
+    "title": "KI/KI — 5 HOURS — Brussels 28 Nov 26",
     "venue": "Hangar",
-    "addr": "Brussels, Belgium",
+    "addr": "Gare Maritime Brussels",
     "time": "12:00",
     "startH": 12,
     "endH": 15,
@@ -2081,11 +2033,11 @@
       "Day Party"
     ],
     "source": "Hangar",
-    "officialEventLink": "https://thehangar.be/?post_type=post&p=3276",
-    "lat": 50.8248331,
-    "lng": 4.3601686,
+    "officialEventLink": "https://thehangar.be/?post_type=post&p=3228",
+    "lat": 50.8651841,
+    "lng": 4.3455258,
     "neighbourhood": "Various",
-    "desc": "Antwerp Expo 22:00 - 06:00 (Last entry - 00:30)",
-    "_rawDate": "2027-11-07"
+    "desc": "Gare Maritime 15:00 - 01:00 (Last entry 20:00)",
+    "_rawDate": "2026-11-28"
   }
 ]
