@@ -2,7 +2,7 @@
   {
     "id": 273,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Martin Luke Brown",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -27,7 +27,7 @@
   {
     "id": 323,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "MERYL",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -390,7 +390,7 @@
     "lat": 50.8554,
     "lng": 4.3454,
     "neighbourhood": "Molenbeek",
-    "desc": "Blindsight",
+    "desc": "Sat 28 November 2026 — Sun 28 March 2027 Manon de Boer €18 ExhibitionsKanal - Centre Pompidou View more",
     "_rawDate": "2026-11-28"
   },
   {
@@ -415,7 +415,7 @@
     "lat": 50.8554,
     "lng": 4.3454,
     "neighbourhood": "Molenbeek",
-    "desc": "Joshua Serafin at KANAL - Centre Pompidou.",
+    "desc": "Sat 28 November 2026 — Sun 28 March 2027 Joshua Serafin €18 ExhibitionsKanal - Centre Pompidou View more",
     "_rawDate": "2026-11-28"
   },
   {
@@ -446,7 +446,7 @@
   {
     "id": 402,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Spaghetti Western",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -497,7 +497,7 @@
   {
     "id": 471,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "HILIGHT TRIBE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -767,33 +767,9 @@
     "_rawDate": "2026-11-14"
   },
   {
-    "id": 955,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Fifty Lab Music Festival",
-    "venue": "Various places in Brussels",
-    "addr": "Various places in Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Fifty-Lab-Music-Festival.5700027029",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Wed 11 November — Fri 13 November Fifty Lab Music Festival FestivalVarious places in Brussels View more",
-    "_rawDate": "2026-11-11"
-  },
-  {
     "id": 956,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "MAD Parcours 2026",
     "venue": "MAD Brussels",
     "addr": "MAD Brussels, Belgium",
@@ -865,7 +841,7 @@
   {
     "id": 968,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Balkan Trafik!",
     "venue": "Bourse Brussels",
     "addr": "Bourse Brussels, Belgium",
@@ -987,34 +963,9 @@
     "_rawDate": "2026-11-18"
   },
   {
-    "id": 1014,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Kelsey Lu",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/kelsey-lu-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "An unmistakable voice paired with rare emotional depth, blending cello, experimental pop, soul, and electronic textures",
-    "_rawDate": "2026-11-11"
-  },
-  {
     "id": 1015,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Clara Kimera + Coals",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1139,7 +1090,7 @@
   {
     "id": 1036,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Robert Lester Folsom",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1164,7 +1115,7 @@
   {
     "id": 1037,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Martin Luke Brown - Hetta Falzon",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1189,7 +1140,7 @@
   {
     "id": 1050,
     "cat": "Nightlife",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Fuse presents: Polyamor w/ davyboi & Cara Elizabeth",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1480,7 +1431,7 @@
   {
     "id": 1141,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "TADAM IMPRO FESTIVAL : 25 ans de complicité",
     "venue": "La Vénerie / Espace Delvaux",
     "addr": "La Vénerie / Espace Delvaux, Belgium",
@@ -1676,7 +1627,7 @@
   {
     "id": 1180,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Carte de Visite | ARTopenKUNST",
     "venue": "Espace Vanderborght",
     "addr": "Espace Vanderborght, Belgium",
@@ -1800,34 +1751,9 @@
     "_rawDate": "2026-12-12"
   },
   {
-    "id": 1189,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Radio Free Alice - Humane The Moon",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/radio-free-alice-humane-moon-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Australian indie band standing out with post-punk energy and catchy melodies",
-    "_rawDate": "2026-11-11"
-  },
-  {
     "id": 1190,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Westside Cowboy - Wyatt",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1876,6 +1802,56 @@
   },
   {
     "id": 1192,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Koala Disco - Kosmouz",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/koala-disco-kosmouz-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "🌟 Release | Post-punk, new wave, and psychedelic rock collide in an explosive sound fueled by irresistible live energy",
+    "_rawDate": "2026-11-12"
+  },
+  {
+    "id": 1193,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Willow Avalon - Cloe Wilder | cancelled",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/willow-avalon-cloe-wilder-cancelled-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Breathing new life into country through a blend of Americana, pop, and compelling songwriting, driven by a magnetic voice",
+    "_rawDate": "2026-11-12"
+  },
+  {
+    "id": 1194,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -1899,7 +1875,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1193,
+    "id": 1195,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -1923,7 +1899,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1194,
+    "id": 1196,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -1947,9 +1923,9 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1195,
+    "id": 1197,
     "cat": "Culture",
-    "date": "Today",
+    "date": "January",
     "title": "Central. Never Alone",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1968,13 +1944,13 @@
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Exhibitions",
-    "_rawDate": "2026-11-11"
+    "_rawDate": "2027-01-24"
   },
   {
-    "id": 1196,
+    "id": 1198,
     "cat": "Arts",
     "date": "Today",
-    "title": "Le Chat dans le Sac - Gilles Groulx",
+    "title": "Dentro - Elsa Amiel",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
@@ -1987,59 +1963,36 @@
       "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/le-chat-dans-le-sac-gilles-groulx",
+    "officialEventLink": "https://www.bozar.be/en/calendar/dentro-elsa-amiel",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Films",
-    "_rawDate": "2026-11-11"
+    "_rawDate": "2026-11-12"
   },
   {
-    "id": 1197,
+    "id": 1199,
     "cat": "Culture",
     "date": "Today",
-    "title": "The New Museum - Birgitte Sigmundstad",
+    "title": "Meet the Writer: Zadie Smith",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
-      "Art",
-      "Culture"
+      "Classical",
+      "Culture",
+      "Arts"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/new-museum-birgitte-sigmundstad",
+    "officialEventLink": "https://www.bozar.be/en/calendar/meet-writer-zadie-smith",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-11-11"
-  },
-  {
-    "id": 1198,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Coltrane 100 - Joe Lovano, Melissa Aldana, Nduduzo Makhathini, Linda May Han Oh, Jeff \"Tain\" Watts",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/coltrane-100-joe-lovano-melissa-aldana-nduduzo-makhathini-linda-may-han-oh-jeff-tain-watts",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-11"
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-11-12"
   }
 ]
