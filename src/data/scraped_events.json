@@ -25,33 +25,9 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 323,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "MERYL",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/meryl/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "MERYL at La Madeleine.",
-    "_rawDate": "2026-11-12"
-  },
-  {
     "id": 324,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "KABARET MŁODYCH PANÓW",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -440,13 +416,13 @@
     "lat": 50.8554,
     "lng": 4.3454,
     "neighbourhood": "Molenbeek",
-    "desc": "Otobong Nkanga at KANAL - Centre Pompidou.",
+    "desc": "Sat 28 November 2026 — Sun 18 April 2027 Otobong Nkanga Free ExhibitionsKanal - Centre Pompidou View more",
     "_rawDate": "2026-11-28"
   },
   {
     "id": 402,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Spaghetti Western",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -521,7 +497,7 @@
   {
     "id": 472,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "MO GILLIGAN",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -743,7 +719,7 @@
   {
     "id": 945,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "GOULASH DISKO PARTY",
     "venue": "Brasserie ILLEGAAL",
     "addr": "Brussels, Belgium",
@@ -767,33 +743,9 @@
     "_rawDate": "2026-11-14"
   },
   {
-    "id": 956,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "MAD Parcours 2026",
-    "venue": "MAD Brussels",
-    "addr": "MAD Brussels, Belgium",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 18,
-    "emoji": "🎨",
-    "color": "#E76F51",
-    "tags": [
-      "Culture",
-      "Art"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.MAD-Parcours-2026.5700027001",
-    "lat": 50.851318,
-    "lng": 4.3439652,
-    "neighbourhood": "Centre",
-    "desc": "Thu 12 November — Sat 14 November MAD Parcours 2026 Free ExhibitionsMAD Brussels View more",
-    "_rawDate": "2026-11-12"
-  },
-  {
     "id": 957,
     "cat": "Food & Drink",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Grrrabuge Natural Wine Festival #4",
     "venue": "Salon Grrrabuge",
     "addr": "Salon Grrrabuge, Belgium",
@@ -817,7 +769,7 @@
   {
     "id": 967,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Ars Musica Festival — ARCTIC FEVER",
     "venue": "Ars Musica",
     "addr": "Ars Musica, Belgium",
@@ -865,7 +817,7 @@
   {
     "id": 995,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Grrrabuge &#8211; Festival de vin naturel",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -891,7 +843,7 @@
   {
     "id": 1004,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Courts + Queer Mais Trash 2026 Film Festival",
     "venue": "Centre culturel Espace Magh asbl",
     "addr": "Centre culturel Espace Magh asbl, Belgium",
@@ -965,7 +917,7 @@
   {
     "id": 1015,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Clara Kimera + Coals",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -984,13 +936,13 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Clara Kimera + Coals at Le Botanique.",
+    "desc": "Dreamy and melancholic pop, two worlds between tension and tenderness",
     "_rawDate": "2026-11-13"
   },
   {
     "id": 1032,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Shaping the Possible. Pierre Lallemand, designer",
     "venue": "Design Museum Brussels",
     "addr": "Design Museum Brussels, Belgium",
@@ -1040,7 +992,7 @@
   {
     "id": 1034,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Mietze Conte",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1090,7 +1042,7 @@
   {
     "id": 1036,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Robert Lester Folsom",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1140,7 +1092,7 @@
   {
     "id": 1050,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents: Polyamor w/ davyboi & Cara Elizabeth",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1189,7 +1141,7 @@
   {
     "id": 1057,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Fuse presents: 20YRS Klockworks w/ Ben Klock, DVS1 & Steve Rachmad aka STERAC (house set)",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1310,7 +1262,7 @@
   {
     "id": 1101,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents Life Extension w/ Partiboi69, LB aka LABAT & SALOME",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1407,7 +1359,7 @@
   {
     "id": 1130,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Quatuor Ébène | Beethoven String Quartet Cycle",
     "venue": "Flagey",
     "addr": "Flagey, Belgium",
@@ -1427,30 +1379,6 @@
     "neighbourhood": "Centre",
     "desc": "Fri 20 November — Sun 22 November Quatuor Ébène | Beethoven String Quartet Cycle FestivalFlagey View more",
     "_rawDate": "2026-11-20"
-  },
-  {
-    "id": 1141,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "TADAM IMPRO FESTIVAL : 25 ans de complicité",
-    "venue": "La Vénerie / Espace Delvaux",
-    "addr": "La Vénerie / Espace Delvaux, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.TADAM-IMPRO-FESTIVAL-25-ans-de-complicite.5700026892",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Thu 12 November — Sun 15 November TADAM IMPRO FESTIVAL : 25 ans de complicité €15 FestivalLa Vénerie / Espace Delvaux View more",
-    "_rawDate": "2026-11-12"
   },
   {
     "id": 1152,
@@ -1627,7 +1555,7 @@
   {
     "id": 1180,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Carte de Visite | ARTopenKUNST",
     "venue": "Espace Vanderborght",
     "addr": "Espace Vanderborght, Belgium",
@@ -1751,31 +1679,6 @@
     "_rawDate": "2026-12-12"
   },
   {
-    "id": 1190,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Westside Cowboy - Wyatt",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/westside-cowboy-wyatt-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "The new sensation of English indie rock, blurring the boundaries between genres",
-    "_rawDate": "2026-11-12"
-  },
-  {
     "id": 1191,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -1804,7 +1707,7 @@
     "id": 1192,
     "cat": "Music",
     "date": "Tonight",
-    "title": "Koala Disco - Kosmouz",
+    "title": "NeS - Basement",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -1818,18 +1721,18 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/koala-disco-kosmouz-2026",
+    "officialEventLink": "https://botanique.be/en/concert/nes-basement-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "🌟 Release | Post-punk, new wave, and psychedelic rock collide in an explosive sound fueled by irresistible live energy",
-    "_rawDate": "2026-11-12"
+    "desc": "New wave French rap with futuristic production and a minimal, introspective, distinctive flow",
+    "_rawDate": "2026-11-13"
   },
   {
     "id": 1193,
     "cat": "Music",
     "date": "Tonight",
-    "title": "Willow Avalon - Cloe Wilder | cancelled",
+    "title": "Robert Lester Folsom - Maya Teklal",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -1843,12 +1746,12 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/willow-avalon-cloe-wilder-cancelled-2026",
+    "officialEventLink": "https://botanique.be/en/concert/robert-lester-folsom-maya-teklal-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Breathing new life into country through a blend of Americana, pop, and compelling songwriting, driven by a magnetic voice",
-    "_rawDate": "2026-11-12"
+    "desc": "Psychedelic folk-rock with pop undertones, carried by dreamy melodies",
+    "_rawDate": "2026-11-13"
   },
   {
     "id": 1194,
@@ -1950,7 +1853,7 @@
     "id": 1198,
     "cat": "Arts",
     "date": "Today",
-    "title": "Dentro - Elsa Amiel",
+    "title": "Final Cut - Joeri Pruys",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
@@ -1963,36 +1866,85 @@
       "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/dentro-elsa-amiel",
+    "officialEventLink": "https://www.bozar.be/en/calendar/final-cut-joeri-pruys",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Films",
-    "_rawDate": "2026-11-12"
+    "_rawDate": "2026-11-13"
   },
   {
     "id": 1199,
-    "cat": "Culture",
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Mogwai",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
+    "tags": [
+      "Concert",
+      "Live Music"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/mogwai",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Concerts",
+    "_rawDate": "2026-11-13"
+  },
+  {
+    "id": 1200,
+    "cat": "Arts",
     "date": "Today",
-    "title": "Meet the Writer: Zadie Smith",
+    "title": "Nova '78 - Aaron Brookner & Rodrigo Areias",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
+    "emoji": "🎬",
+    "color": "#6C63FF",
     "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
+      "Cinema",
+      "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/meet-writer-zadie-smith",
+    "officialEventLink": "https://www.bozar.be/en/calendar/nova-78-aaron-brookner-rodrigo-areias",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "_rawDate": "2026-11-12"
+    "desc": "Films",
+    "_rawDate": "2026-11-13"
+  },
+  {
+    "id": 1201,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "ILLEGAAL FEESTJE",
+    "venue": "Brasserie ILLEGAAL",
+    "addr": "Brussels, Belgium",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🌿",
+    "color": "#B8E5C0",
+    "tags": [
+      "Open Air",
+      "Electronic",
+      "Day Party",
+      "Festival"
+    ],
+    "source": "Brasserie ILLEGAAL",
+    "officialEventLink": "https://brasserie-illegaal.com/event/illegaal-feestje-11/",
+    "lat": 50.8503,
+    "lng": 4.3517,
+    "neighbourhood": "Various",
+    "desc": "ILLEGAAL FEESTJE SAMEDI 05 DÉCEMBRE 20:00-05:00 Décembre! Le mois du clair obscur et du solstice d’hiver. On se rapproche doucement du jour le plus court de l\\'année, Les nuits se …",
+    "_rawDate": "2026-12-05"
   }
 ]
