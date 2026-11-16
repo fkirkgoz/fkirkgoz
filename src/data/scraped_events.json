@@ -25,33 +25,9 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 325,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "RENAN LUCE JOUE REPENTI",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/renan-luce-joue-repenti/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "RENAN LUCE JOUE REPENTI at La Madeleine.",
-    "_rawDate": "2026-11-15"
-  },
-  {
     "id": 326,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "SALMO",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -75,7 +51,7 @@
   {
     "id": 327,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "STRANGELOVE - THE DEPECHE MODE EXPERIENCE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -571,7 +547,7 @@
   {
     "id": 527,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "WASIA PROJECT",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -620,7 +596,7 @@
   {
     "id": 929,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "House of Memory / بيت الذاكرة by Basil Al-Rawi",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -718,7 +694,7 @@
   {
     "id": 1006,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Pearly Drops",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -941,7 +917,7 @@
   {
     "id": 1077,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Coudenberg Sound Box Fest 2026",
     "venue": "Palais du Coudenbergpaleis",
     "addr": "Palais du Coudenbergpaleis, Belgium",
@@ -1038,7 +1014,7 @@
   {
     "id": 1107,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Ai Weiwei's Turandot - Maxim Derevianko",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1086,7 +1062,7 @@
   {
     "id": 1115,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "The Six - Reiner Holzemer",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1282,7 +1258,7 @@
   {
     "id": 1170,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "In Waves - Phuong Mai Nguyen (12+)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1457,56 +1433,6 @@
     "_rawDate": "2026-12-05"
   },
   {
-    "id": 1203,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ars Musica | Bota Kids : Jeux d'Enfants - Kinderspelletjes",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/ars-musica-bota-kids-jeux-denfants-kinderspelletjes-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "The Cikada Ensemble invites young and old alike on a musical journey through nocturnal animal revelry and children's games from around the world. Bonus: discover MUS-E's DROOM DRONE installation before the concert",
-    "_rawDate": "2026-11-15"
-  },
-  {
-    "id": 1204,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Yndling - Neptune Bloom",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/yndling-neptune-bloom-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Dream pop infused with shoegaze and trip-hop, unfolding in a world both cinematic and deeply intimate",
-    "_rawDate": "2026-11-15"
-  },
-  {
     "id": 1205,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -1532,33 +1458,9 @@
     "_rawDate": "2026-12-04"
   },
   {
-    "id": 1210,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "William Kentridge : Self Portrait as a Coffee Pot",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/william-kentridge-self-portrait-coffee-pot",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-11-15"
-  },
-  {
     "id": 1211,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Zimmer90 - Tonique & Man",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1607,6 +1509,56 @@
   },
   {
     "id": 1213,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "feeble little horse - If i was a pony",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/feeble-little-horse-if-i-was-pony-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Indie rock with saturated, abrasive guitars — a chaotic and addictive blend of noise pop and shoegaze",
+    "_rawDate": "2026-11-16"
+  },
+  {
+    "id": 1214,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Faux Real - Satchel Hart",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/faux-real-satchel-hart-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Eccentric electronic pop driven by infectious, fast-moving melodies, somewhere between Paris and L.A",
+    "_rawDate": "2026-11-16"
+  },
+  {
+    "id": 1215,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -1630,7 +1582,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1214,
+    "id": 1216,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -1654,7 +1606,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1215,
+    "id": 1217,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -1678,7 +1630,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1216,
+    "id": 1218,
     "cat": "Culture",
     "date": "January",
     "title": "Central. Never Alone",
@@ -1702,51 +1654,28 @@
     "_rawDate": "2027-01-24"
   },
   {
-    "id": 1217,
-    "cat": "Arts",
-    "date": "Today",
-    "title": "Un Chant Aveugle - Stefano Canapa & Natacha Muslera",
+    "id": 1219,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "Checkpoint Brussels",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "emoji": "🏛️",
+    "color": "#E76F51",
     "tags": [
-      "Cinema",
-      "Film"
+      "Classical",
+      "Culture",
+      "Arts"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/un-chant-aveugle-stefano-canapa-natacha-muslera",
+    "officialEventLink": "https://www.bozar.be/en/calendar/checkpoint-brussels-1",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-11-15"
-  },
-  {
-    "id": 1218,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Quatuor Diotima",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/quatuor-diotima-0",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-15"
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-11-17"
   }
 ]
