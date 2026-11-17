@@ -25,33 +25,9 @@
     "_rawDate": "2026-11-19"
   },
   {
-    "id": 326,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "SALMO",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/salmo/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "SALMO at La Madeleine.",
-    "_rawDate": "2026-11-16"
-  },
-  {
     "id": 327,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "STRANGELOVE - THE DEPECHE MODE EXPERIENCE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -75,7 +51,7 @@
   {
     "id": 340,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "FREYA SKYE",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -374,7 +350,7 @@
   {
     "id": 442,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "LET THE CHURCHES BURN XX YEARS",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -472,7 +448,7 @@
   {
     "id": 496,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "LOUNGE",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -694,7 +670,7 @@
   {
     "id": 1006,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Pearly Drops",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -719,7 +695,7 @@
   {
     "id": 1007,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Maria Arnal - Bulie Jordeaux",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -738,7 +714,7 @@
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Maria Arnal - Bulie Jordeaux at Le Botanique.",
+    "desc": "One of the most innovative voices on the contemporary Spanish scene: between avant-pop, electronic music, and traditional polyphonies",
     "_rawDate": "2026-11-18"
   },
   {
@@ -1308,7 +1284,7 @@
   {
     "id": 1186,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Cuddles Festival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -1458,31 +1434,6 @@
     "_rawDate": "2026-12-04"
   },
   {
-    "id": 1211,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Zimmer90 - Tonique & Man",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/zimmer90-tonique-man-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Modern electronic indie pop with smooth grooves and a bright, uplifting feel",
-    "_rawDate": "2026-11-16"
-  },
-  {
     "id": 1212,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -1508,10 +1459,35 @@
     "_rawDate": "2026-12-05"
   },
   {
-    "id": 1213,
+    "id": 1219,
+    "cat": "Culture",
+    "date": "Today",
+    "title": "Checkpoint Brussels",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/checkpoint-brussels-1",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Talks & Debates",
+    "_rawDate": "2026-11-17"
+  },
+  {
+    "id": 1220,
     "cat": "Music",
     "date": "Tonight",
-    "title": "feeble little horse - If i was a pony",
+    "title": "MASTER BOOT RECORD + Fulci - arottenbit",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -1525,18 +1501,18 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/feeble-little-horse-if-i-was-pony-2026",
+    "officialEventLink": "https://botanique.be/en/concert/master-boot-record-fulci-arottenbit-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Indie rock with saturated, abrasive guitars — a chaotic and addictive blend of noise pop and shoegaze",
-    "_rawDate": "2026-11-16"
+    "desc": "MASTER BOOT RECORD and FULCI announce an exclusive co-headlining tour across Europe and the UK in Fall 2026.",
+    "_rawDate": "2026-11-17"
   },
   {
-    "id": 1214,
+    "id": 1221,
     "cat": "Music",
     "date": "Tonight",
-    "title": "Faux Real - Satchel Hart",
+    "title": "Pearly Drops - Tessa Dixson",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -1550,15 +1526,15 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/faux-real-satchel-hart-2026",
+    "officialEventLink": "https://botanique.be/en/concert/pearly-drops-tessa-dixson-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "Eccentric electronic pop driven by infectious, fast-moving melodies, somewhere between Paris and L.A",
-    "_rawDate": "2026-11-16"
+    "desc": "Pearly Drops - Tessa Dixson at Le Botanique.",
+    "_rawDate": "2026-11-17"
   },
   {
-    "id": 1215,
+    "id": 1222,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -1582,7 +1558,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1216,
+    "id": 1223,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -1606,7 +1582,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1217,
+    "id": 1224,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -1630,7 +1606,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1218,
+    "id": 1225,
     "cat": "Culture",
     "date": "January",
     "title": "Central. Never Alone",
@@ -1654,28 +1630,75 @@
     "_rawDate": "2027-01-24"
   },
   {
-    "id": 1219,
-    "cat": "Culture",
-    "date": "Tomorrow",
-    "title": "Checkpoint Brussels",
+    "id": 1226,
+    "cat": "Arts",
+    "date": "Next Month",
+    "title": "Nova '78 - Aaron Brookner & Rodrigo Areias",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
+    "emoji": "🎬",
+    "color": "#6C63FF",
     "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
+      "Cinema",
+      "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/checkpoint-brussels-1",
+    "officialEventLink": "https://www.bozar.be/en/calendar/nova-78-aaron-brookner-rodrigo-areias-0",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Talks & Debates",
-    "_rawDate": "2026-11-17"
+    "desc": "Films",
+    "_rawDate": "2026-12-12"
+  },
+  {
+    "id": 1227,
+    "cat": "Culture",
+    "date": "Tomorrow",
+    "title": "Jean Brusselmans The Artist at Work",
+    "venue": "Royal Museums of Fine Arts of Belgium",
+    "addr": "Royal Museums of Fine Arts of Belgium, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Jean-Brusselmans-The-Artist-at-Work.5700027523",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Wed 18 November 2026 — Sun 09 May 2027 Jean Brusselmans The Artist at Work €13 ExhibitionsRoyal Museums of Fine Arts of Belgium View more",
+    "_rawDate": "2026-11-18"
+  },
+  {
+    "id": 1228,
+    "cat": "Culture",
+    "date": "Next Week",
+    "title": "Duos en Résonances",
+    "venue": "Design Museum Brussels",
+    "addr": "Design Museum Brussels, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Duos-en-Resonances.5700028794",
+    "lat": 50.8976599,
+    "lng": 4.3413109,
+    "neighbourhood": "Centre",
+    "desc": "Fri 20 November 2026 — Sun 11 April 2027 Duos en Résonances €8.5 ExhibitionsDesign Museum Brussels View more",
+    "_rawDate": "2026-11-20"
   }
 ]
