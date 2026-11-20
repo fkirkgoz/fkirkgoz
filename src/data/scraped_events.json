@@ -1,30 +1,5 @@
 [
   {
-    "id": 273,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Martin Luke Brown",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/martin-luke-brown-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Martin Luke Brown at Le Botanique.",
-    "_rawDate": "2026-11-19"
-  },
-  {
     "id": 379,
     "cat": "Culture",
     "date": "Next Month",
@@ -71,7 +46,7 @@
     "lat": 50.8554,
     "lng": 4.3454,
     "neighbourhood": "Molenbeek",
-    "desc": "100 YEARS OF MASTERPIECES CENTRE POMPIDOU COLLECTION",
+    "desc": "Sat 28 November 2026 — Sun 09 January 2028 A truly immense journey €18 ExhibitionsKanal - Centre Pompidou View more",
     "_rawDate": "2026-11-28"
   },
   {
@@ -326,33 +301,9 @@
     "_rawDate": "2026-11-24"
   },
   {
-    "id": 471,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "HILIGHT TRIBE",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/hilight-tribe-2/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "HILIGHT TRIBE at La Madeleine.",
-    "_rawDate": "2026-11-19"
-  },
-  {
     "id": 472,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "MO GILLIGAN",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -376,7 +327,7 @@
   {
     "id": 482,
     "cat": "Music",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "HERMANOS GUTIÉRREZ",
     "venue": "La Madeleine",
     "addr": "Rue de la Madeleine 51, 1000 Brussels",
@@ -400,7 +351,7 @@
   {
     "id": 501,
     "cat": "Culture",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Rectum Crocodile",
     "venue": "Kaaitheater",
     "addr": "Square Sainctelette 20, 1000 Brussels",
@@ -547,33 +498,9 @@
     "_rawDate": "2026-12-03"
   },
   {
-    "id": 968,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Balkan Trafik!",
-    "venue": "Bourse Brussels",
-    "addr": "Bourse Brussels, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Balkan-Trafik.5700024927",
-    "lat": 50.8478282,
-    "lng": 4.3491201,
-    "neighbourhood": "Centre",
-    "desc": "Thu 19 November — Sat 21 November Balkan Trafik! FestivalBourse Brussels View more",
-    "_rawDate": "2026-11-19"
-  },
-  {
     "id": 1004,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Courts + Queer Mais Trash 2026 Film Festival",
     "venue": "Centre culturel Espace Magh asbl",
     "addr": "Centre culturel Espace Magh asbl, Belgium",
@@ -597,7 +524,7 @@
   {
     "id": 1032,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Shaping the Possible. Pierre Lallemand, designer",
     "venue": "Design Museum Brussels",
     "addr": "Design Museum Brussels, Belgium",
@@ -647,7 +574,7 @@
   {
     "id": 1034,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Mietze Conte",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -695,31 +622,6 @@
     "_rawDate": "2026-11-25"
   },
   {
-    "id": 1037,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Martin Luke Brown - Hetta Falzon",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/martin-luke-brown-hetta-falzon-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Tender, intimate indie folk driven by delicate songwriting and warm, melancholic melodies",
-    "_rawDate": "2026-11-19"
-  },
-  {
     "id": 1054,
     "cat": "Culture",
     "date": "Next Week",
@@ -746,7 +648,7 @@
   {
     "id": 1062,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Listen Festival 2026",
     "venue": "Listen",
     "addr": "Listen, Belgium",
@@ -842,7 +744,7 @@
   {
     "id": 1101,
     "cat": "Nightlife",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Fuse presents Life Extension w/ Partiboi69, LB aka LABAT & SALOME",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -891,7 +793,7 @@
   {
     "id": 1108,
     "cat": "Festival",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Winter Wonders",
     "venue": "Various places in Brussels",
     "addr": "Various places in Brussels, Belgium",
@@ -939,7 +841,7 @@
   {
     "id": 1130,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Quatuor Ébène | Beethoven String Quartet Cycle",
     "venue": "Flagey",
     "addr": "Flagey, Belgium",
@@ -963,7 +865,7 @@
   {
     "id": 1152,
     "cat": "Festival",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Tough Enough : David Eugene Edwards & Many more",
     "venue": "Botanique",
     "addr": "Botanique, Belgium",
@@ -981,7 +883,7 @@
     "lat": 50.8530808,
     "lng": 4.3662257,
     "neighbourhood": "Centre",
-    "desc": "Sat 21 November Tough Enough : David Eugene Edwards & Many more €44 FestivalBotanique View more",
+    "desc": "David Eugene Edwards · The Courettes · C.O.F.F.I.N · Munly & the Lupercalians · Early James · L.A. Sagne · Fervents · Tuesday Violence · France De Griessen · Gipsy Rufina · Elephant Stone",
     "_rawDate": "2026-11-21"
   },
   {
@@ -1013,7 +915,7 @@
   {
     "id": 1156,
     "cat": "Nightlife",
-    "date": "This Weekend",
+    "date": "Tomorrow",
     "title": "Listen Festival x Fuse w/ MCR-T & Miss Bashful",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1086,7 +988,7 @@
   {
     "id": 1166,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Fuse presents: Alarico & Iman Janes",
     "venue": "Fuse",
     "addr": "Rue Blaes 208, 1000 Brussels",
@@ -1185,7 +1087,7 @@
   {
     "id": 1187,
     "cat": "Nightlife",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Festival Et cætera",
     "venue": "LaVallée",
     "addr": "Rue Adolphe Lavallée 39, 1080 Molenbeek, Brussels",
@@ -1362,7 +1264,7 @@
   {
     "id": 1228,
     "cat": "Culture",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Duos en Résonances",
     "venue": "Design Museum Brussels",
     "addr": "Design Museum Brussels, Belgium",
@@ -1382,31 +1284,6 @@
     "neighbourhood": "Centre",
     "desc": "Fri 20 November 2026 — Sun 11 April 2027 Duos en Résonances €8.5 ExhibitionsDesign Museum Brussels View more",
     "_rawDate": "2026-11-20"
-  },
-  {
-    "id": 1230,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "The Sheepdogs - Steve Hill",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/sheepdogs-steve-hill-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "Raw indie folk, even poignant and fragile, for pure emotions",
-    "_rawDate": "2026-11-19"
   },
   {
     "id": 1238,
@@ -1438,7 +1315,7 @@
     "id": 1239,
     "cat": "Music",
     "date": "Tonight",
-    "title": "Prison Religion + EDU & JUDGITZU",
+    "title": "Mietze Conte - Nyusta",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
     "time": "20:00",
@@ -1452,15 +1329,40 @@
       "Alternative"
     ],
     "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/prison-religion-edu-judgitzu-2026",
+    "officialEventLink": "https://botanique.be/en/concert/mietze-conte-nyusta-2026",
     "lat": 50.8554,
     "lng": 4.3664,
     "neighbourhood": "Saint-Josse",
-    "desc": "From Prison Religion’s abrasive electronics to E’DU & Judgitzu’s Vodou rhythms, two singular sonic worlds with hypnotic undertones | Free concert for Bota'Carte holders ✨",
-    "_rawDate": "2026-11-19"
+    "desc": "Euphoric hyperpop blending high-energy eurodance beats with playful, experimental pop melodies",
+    "_rawDate": "2026-11-20"
   },
   {
     "id": 1240,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Ridgeclub",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/ridgeclub-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Psychedelic jazz, saxophone and electronic textures",
+    "_rawDate": "2026-11-20"
+  },
+  {
+    "id": 1241,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -1484,7 +1386,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1241,
+    "id": 1242,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -1508,7 +1410,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1242,
+    "id": 1243,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -1532,7 +1434,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1243,
+    "id": 1244,
     "cat": "Culture",
     "date": "January",
     "title": "Central. Never Alone",
@@ -1556,10 +1458,10 @@
     "_rawDate": "2027-01-24"
   },
   {
-    "id": 1244,
+    "id": 1245,
     "cat": "Arts",
     "date": "Today",
-    "title": "Liberty's Booty - Vivienne Dick",
+    "title": "Short movies by Vivienne Dick (I)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
@@ -1572,59 +1474,107 @@
       "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/libertys-booty-vivienne-dick",
+    "officialEventLink": "https://www.bozar.be/en/calendar/short-movies-vivienne-dick-i",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Films",
-    "_rawDate": "2026-11-19"
+    "_rawDate": "2026-11-20"
   },
   {
-    "id": 1245,
-    "cat": "Culture",
+    "id": 1246,
+    "cat": "Arts",
     "date": "Today",
-    "title": "Belgian National Orchestra & Cecile McLorin Salvant",
+    "title": "Short movies by Vivienne Dick (II)",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
     "endH": 14,
-    "emoji": "🎻",
-    "color": "#E76F51",
+    "emoji": "🎬",
+    "color": "#6C63FF",
     "tags": [
-      "Classical",
-      "Culture"
+      "Cinema",
+      "Film"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/belgian-national-orchestra-cecile-mclorin-salvant",
+    "officialEventLink": "https://www.bozar.be/en/calendar/short-movies-vivienne-dick-ii",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-19"
+    "desc": "Films",
+    "_rawDate": "2026-11-20"
   },
   {
-    "id": 1246,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Saint Abdullah, Eomac & Rebecca Salvadori - NVST & Mika Oki",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
+    "id": 1247,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "La Cambre 100 ANS! - 100 GESTES",
+    "venue": "La Cambre",
+    "addr": "La Cambre, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
     "tags": [
-      "Concert",
-      "Live Music"
+      "Culture",
+      "Art"
     ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/saint-abdullah-eomac-rebecca-salvadori-nvst-mika-oki",
-    "lat": 50.8445,
-    "lng": 4.3609,
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.La-Cambre-100-ANS-100-GESTES.5700028997",
+    "lat": 50.8188622,
+    "lng": 4.3741895,
     "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-19"
+    "desc": "Mon 30 November 2026 — Sat 30 January 2027 La Cambre 100 ANS! - 100 GESTES Free ExhibitionsLa Cambre View more",
+    "_rawDate": "2026-11-30"
+  },
+  {
+    "id": 1248,
+    "cat": "Festival",
+    "date": "Next Month",
+    "title": "Music Chapel Festival 2026",
+    "venue": "Flagey",
+    "addr": "Flagey, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Music-Chapel-Festival-2026.5700028902",
+    "lat": 50.8278557,
+    "lng": 4.372152,
+    "neighbourhood": "Centre",
+    "desc": "Fri 04 December — Sat 05 December Music Chapel Festival 2026 FestivalFlagey View more",
+    "_rawDate": "2026-12-04"
+  },
+  {
+    "id": 1249,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Heritage in Motion",
+    "venue": "City of Brussels Town Hall",
+    "addr": "City of Brussels Town Hall, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Brussels"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Heritage-in-Motion.5700029262",
+    "lat": 50.8467,
+    "lng": 4.3525,
+    "neighbourhood": "Centre",
+    "desc": "Fri 04 December — Wed 30 December Heritage in Motion €26 ShowCity of Brussels Town Hall View more",
+    "_rawDate": "2026-12-04"
   }
 ]
