@@ -277,7 +277,7 @@
   {
     "id": 442,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "LET THE CHURCHES BURN XX YEARS",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -326,30 +326,6 @@
     "_rawDate": "2026-11-26"
   },
   {
-    "id": 527,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "WASIA PROJECT",
-    "venue": "La Madeleine",
-    "addr": "Rue de la Madeleine 51, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "La Madeleine",
-    "officialEventLink": "https://la-madeleine.be/show/wasia-project/",
-    "lat": 50.8459,
-    "lng": 4.3562,
-    "neighbourhood": "Centre",
-    "desc": "WASIA PROJECT at La Madeleine.",
-    "_rawDate": "2026-11-22"
-  },
-  {
     "id": 832,
     "cat": "Music",
     "date": "Next Month",
@@ -373,30 +349,6 @@
     "neighbourhood": "Saint-Josse",
     "desc": "Evanora Unlimited at Le Botanique.",
     "_rawDate": "2026-12-01"
-  },
-  {
-    "id": 929,
-    "cat": "Culture",
-    "date": "Tonight",
-    "title": "House of Memory / بيت الذاكرة by Basil Al-Rawi",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "23:00",
-    "startH": 23,
-    "endH": 26,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Techno",
-      "Electronic"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/house-memory-byt-aldhakrt-basil-al-rawi",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Exhibitions",
-    "_rawDate": "2026-11-22"
   },
   {
     "id": 944,
@@ -498,30 +450,6 @@
     "neighbourhood": "Centre",
     "desc": "Films",
     "_rawDate": "2026-11-26"
-  },
-  {
-    "id": 1077,
-    "cat": "Festival",
-    "date": "Today",
-    "title": "Coudenberg Sound Box Fest 2026",
-    "venue": "Palais du Coudenbergpaleis",
-    "addr": "Palais du Coudenbergpaleis, Belgium",
-    "time": "12:00",
-    "startH": 12,
-    "endH": 22,
-    "emoji": "🎉",
-    "color": "#F4A261",
-    "tags": [
-      "Festival",
-      "Outdoors"
-    ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Coudenberg-Sound-Box-Fest-2026.5700027693",
-    "lat": 50.8467,
-    "lng": 4.3525,
-    "neighbourhood": "Centre",
-    "desc": "Sun 22 November — Sun 13 December Coudenberg Sound Box Fest 2026 €25 FestivalPalais du Coudenbergpaleis View more",
-    "_rawDate": "2026-11-22"
   },
   {
     "id": 1088,
@@ -743,30 +671,6 @@
     "_rawDate": "2026-11-27"
   },
   {
-    "id": 1170,
-    "cat": "Culture",
-    "date": "Today",
-    "title": "In Waves - Phuong Mai Nguyen (12+)",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🏛️",
-    "color": "#E76F51",
-    "tags": [
-      "Cinema",
-      "Film"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/waves-phuong-mai-nguyen-12",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-11-22"
-  },
-  {
     "id": 1181,
     "cat": "Festival",
     "date": "This Weekend",
@@ -795,7 +699,7 @@
   {
     "id": 1186,
     "cat": "Festival",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Cuddles Festival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -1022,7 +926,7 @@
   {
     "id": 1247,
     "cat": "Culture",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "La Cambre 100 ANS! - 100 GESTES",
     "venue": "La Cambre",
     "addr": "La Cambre, Belgium",
@@ -1094,7 +998,7 @@
   {
     "id": 1250,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "greek | cancelled",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1119,7 +1023,7 @@
   {
     "id": 1251,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "Dizzy Dros",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1169,7 +1073,7 @@
   {
     "id": 1258,
     "cat": "Culture",
-    "date": "Next Week",
+    "date": "This Weekend",
     "title": "Barbara Forever - Brydie O'Connor",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
@@ -1241,7 +1145,7 @@
   {
     "id": 1262,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "strongboi - Salami Rose Joe Louis",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1289,7 +1193,56 @@
     "_rawDate": "2026-12-12"
   },
   {
-    "id": 1264,
+    "id": 1270,
+    "cat": "Culture",
+    "date": "Next Month",
+    "title": "Lucky Luke rides again!",
+    "venue": "Comic Art Museum",
+    "addr": "Comic Art Museum, Belgium",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 18,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Culture",
+      "Art"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Lucky-Luke-rides-again.5700029136",
+    "lat": 50.8512487,
+    "lng": 4.3601777,
+    "neighbourhood": "Centre",
+    "desc": "Fri 11 December 2026 — Sun 12 September 2027 Lucky Luke rides again! ExhibitionsComic Art Museum View more",
+    "_rawDate": "2026-12-11"
+  },
+  {
+    "id": 1271,
+    "cat": "Culture",
+    "date": "Today",
+    "title": "L’essence des choses",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Classical",
+      "Culture",
+      "Arts"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/lessence-des-choses",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Lecture",
+    "_rawDate": "2026-11-23"
+  },
+  {
+    "id": 1272,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -1313,7 +1266,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1265,
+    "id": 1273,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -1337,7 +1290,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1266,
+    "id": 1274,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -1361,7 +1314,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1267,
+    "id": 1275,
     "cat": "Culture",
     "date": "January",
     "title": "Central. Never Alone",
@@ -1385,75 +1338,51 @@
     "_rawDate": "2027-01-24"
   },
   {
-    "id": 1268,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Ava Bahari - ECHO Rising Star",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/ava-bahari-echo-rising-star",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-22"
-  },
-  {
-    "id": 1269,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Charbel Rouhana",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎵",
-    "color": "#8E7DBE",
-    "tags": [
-      "Concert",
-      "Live Music"
-    ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/charbel-rouhana",
-    "lat": 50.8445,
-    "lng": 4.3609,
-    "neighbourhood": "Centre",
-    "desc": "Concerts",
-    "_rawDate": "2026-11-22"
-  },
-  {
-    "id": 1270,
+    "id": 1276,
     "cat": "Culture",
-    "date": "Next Month",
-    "title": "Lucky Luke rides again!",
-    "venue": "Comic Art Museum",
-    "addr": "Comic Art Museum, Belgium",
+    "date": "Tomorrow",
+    "title": "Artistes femmes et travail du sexe",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
     "startH": 11,
-    "endH": 18,
-    "emoji": "🏛️",
-    "color": "#E76F51",
+    "endH": 14,
+    "emoji": "🎨",
+    "color": "#F4A261",
     "tags": [
-      "Culture",
-      "Art"
+      "Art",
+      "Culture"
     ],
-    "source": "Agenda Brussels",
-    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Lucky-Luke-rides-again.5700029136",
-    "lat": 50.8512487,
-    "lng": 4.3601777,
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/artistes-femmes-et-travail-du-sexe",
+    "lat": 50.8445,
+    "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Fri 11 December 2026 — Sun 12 September 2027 Lucky Luke rides again! ExhibitionsComic Art Museum View more",
-    "_rawDate": "2026-12-11"
+    "desc": "Lecture",
+    "_rawDate": "2026-11-24"
+  },
+  {
+    "id": 1277,
+    "cat": "Arts",
+    "date": "Tomorrow",
+    "title": "HELLwach – Wide Awake: A Tribute to Bodo Hell - Carola Mair",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🎬",
+    "color": "#6C63FF",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/hellwach-wide-awake-tribute-bodo-hell-carola-mair",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-11-24"
   }
 ]
