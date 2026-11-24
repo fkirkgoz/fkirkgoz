@@ -7,13 +7,14 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
-    "newArchEnabled": false,
     "splash": {
       "image": "./assets/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#8E7DBE"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
       "supportsTablet": false,
       "bundleIdentifier": "app.randevu.brussels",
@@ -23,7 +24,10 @@
       },
       "infoPlist": {
         "NSLocationWhenInUseUsageDescription": "Randevu uses your location to show nearby Brussels events on the map and help you discover what's happening around you.",
-        "LSApplicationQueriesSchemes": ["https", "maps"]
+        "LSApplicationQueriesSchemes": [
+          "https",
+          "maps"
+        ]
       }
     },
     "android": {
@@ -33,7 +37,10 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#8E7DBE"
       },
-      "permissions": ["ACCESS_COARSE_LOCATION", "ACCESS_FINE_LOCATION"]
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     "plugins": []
   }

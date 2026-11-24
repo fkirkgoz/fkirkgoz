@@ -109,7 +109,7 @@ export default function EventDetailScreen({ event: e, onBack, onJoin, joined, T 
         {/* Optional event graphic (e.g. Hangar poster) above the hero */}
         {!!e.image && (
           <ImageBackground source={{ uri: e.image }} style={styles.heroImage} resizeMode="cover">
-            <LinearGradient colors={['transparent', `${C.dark}CC`] as [string, string]} style={StyleSheet.absoluteFillObject} />
+            <LinearGradient colors={['transparent', `${C.dark}CC`] as [string, string]} style={StyleSheet.absoluteFill} />
           </ImageBackground>
         )}
         {/* Hero — padded to clear the floating header */}
@@ -169,7 +169,7 @@ export default function EventDetailScreen({ event: e, onBack, onJoin, joined, T 
             <Text style={[styles.sectionTitle, { color: T.text }]}>Location</Text>
             <View style={[styles.mapContainer, { borderColor: T.border }]}>
               <MapView
-                style={StyleSheet.absoluteFillObject}
+                style={StyleSheet.absoluteFill}
                 liteMode={Platform.OS === 'android'}
                 scrollEnabled={false}
                 zoomEnabled={false}
