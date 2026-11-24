@@ -733,5 +733,7 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
   // markets, food, sports, cinema, comedy, free). Same proven mechanism as the
   // open-air entries above: genericPortal, each card keeps its own venue and
   // location; the query decides the category (enforceVisuals).
-  ...TOPIC_SEARCHES.map(topicEntry),
+  // DISABLED: agenda.brussels/en/search?... renders a blank page for the scraper
+  // (165 chars, "All URLs failed"). Re-enable once a working search URL is found.
+  // ...TOPIC_SEARCHES.map(topicEntry),
 ];

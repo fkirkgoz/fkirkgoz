@@ -849,7 +849,7 @@ async function scrapeVenue(browser, config) {
           const baseOrigin = 'https://www.agenda.brussels';
 
           for (const item of agendaItems) {
-            if (events.length >= 50) break; // widened cap — more public/city events
+            if (events.length >= 160) break; // overall cap (was 50)
             if (!item.title || item.title.length < 5 || !isValidTitle(item.title)) continue;
 
             const rawDate = parseRawDate(item.dateStr) || parseRawDate(scanTextForDate(item.allText));
@@ -860,7 +860,17 @@ async function scrapeVenue(browser, config) {
             // Category + emoji: explicit mapping per user spec, then generic classify
             const combined = (item.title + ' ' + item.category + ' ' + item.allText).toLowerCase();
             let cls;
-            if (/exhibition|museum|art\b|theater|theatre|galerie|gallery|exposition|dance|ballet|circus|cirque/i.test(combined)) {
+            if (/volunteer|b[ée]n[ée]vol|vrijwillig|clean[\s-]?up|nettoyage|charity/i.test(combined)) {
+              cls = { emoji: '🤝', color: '#F7CFD8', cat: 'Volunteering', tags: ['Volunteering', 'Meaningful'] };
+            } else if (/\byoga\b|pilates|meditation|m[ée]ditation|mindful|breathwork|sound bath|wellness/i.test(combined)) {
+              cls = { emoji: '🧘', color: '#A6D6D6', cat: 'Wellness', tags: ['Wellness', 'Lowkey'] };
+            } else if (/christmas market|march[ée] de no[ëe]l|winter wonders|brocante|flea market|vintage market|\bmarket\b|\bmarch[ée]\b/i.test(combined)) {
+              cls = { emoji: '🛍️', color: '#F4C87A', cat: 'Market', tags: ['Market', 'Outdoors'] };
+            } else if (/cooking class|workshop cuisine|atelier cuisine|tasting|d[ée]gustation|food|gastronom|brunch|wine|beer|cocktail/i.test(combined)) {
+              cls = { emoji: '🍷', color: '#F4C87A', cat: 'Food & Drink', tags: ['Food', 'Social'] };
+            } else if (/cinema|cin[ée]ma|film|screening|stand-up|comedy|improv/i.test(combined)) {
+              cls = { emoji: '🎬', color: '#6C63FF', cat: 'Arts', tags: ['Cinema', 'Comedy'] };
+            } else if (/exhibition|museum|art\b|theater|theatre|galerie|gallery|exposition|dance|ballet|circus|cirque/i.test(combined)) {
               const emoji = /theater|theatre|dance|ballet|performance/i.test(combined) ? '🎭'
                           : /museum|history|histoire/i.test(combined) ? '🏛️' : '🎨';
               cls = { emoji, color: '#E76F51', cat: 'Culture', tags: ['Culture', 'Art'] };
@@ -872,6 +882,9 @@ async function scrapeVenue(browser, config) {
                 cls = { emoji: '🏛️', color: '#E76F51', cat: 'Culture', tags: ['Culture', 'Brussels'] };
               }
             }
+
+            // Keep the feed diverse: at most 18 events per category from this source.
+            if (events.filter(e => e.cat === cls.cat).length >= 18) continue;
 
             const venueText = (item.location || 'Brussels').replace(/\n.*/g, '').trim().slice(0, 80);
             const url = item.link.startsWith('http') ? item.link
