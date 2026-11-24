@@ -21,7 +21,7 @@
     "lat": 50.8554,
     "lng": 4.3454,
     "neighbourhood": "Molenbeek",
-    "desc": "Apply now to be an exhibitor",
+    "desc": "Fri 04 December — Sun 06 December Brussels Ass Book Fair Free Fairs and showsKanal - Centre Pompidou View more",
     "_rawDate": "2026-12-04"
   },
   {
@@ -277,7 +277,7 @@
   {
     "id": 442,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "LET THE CHURCHES BURN XX YEARS",
     "venue": "Magasin 4",
     "addr": "Avenue du Port 51b, 1000 Brussels",
@@ -328,7 +328,7 @@
   {
     "id": 832,
     "cat": "Music",
-    "date": "Next Month",
+    "date": "Next Week",
     "title": "Evanora Unlimited",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -405,7 +405,7 @@
   {
     "id": 1035,
     "cat": "Music",
-    "date": "Next Week",
+    "date": "Tomorrow",
     "title": "Judith Kiddo - Melissa Weikart",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -699,7 +699,7 @@
   {
     "id": 1186,
     "cat": "Festival",
-    "date": "Tomorrow",
+    "date": "Today",
     "title": "Cuddles Festival",
     "venue": "Various locations in the Brussels Capital Region",
     "addr": "Various locations in the Brussels Capital Region, Belgium",
@@ -996,56 +996,6 @@
     "_rawDate": "2026-12-04"
   },
   {
-    "id": 1250,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "greek | cancelled",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/greek-cancelled-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "An intimate, atmospheric blend of alternative pop, R&B, and lo-fi, driven by rich vocal harmonies",
-    "_rawDate": "2026-11-23"
-  },
-  {
-    "id": 1251,
-    "cat": "Music",
-    "date": "Tonight",
-    "title": "Dizzy Dros",
-    "venue": "Le Botanique",
-    "addr": "Rue Royale 236, 1210 Brussels",
-    "time": "20:00",
-    "startH": 20,
-    "endH": 23,
-    "emoji": "🎸",
-    "color": "#B8E5C0",
-    "tags": [
-      "Concert",
-      "Indie",
-      "Alternative"
-    ],
-    "source": "Le Botanique",
-    "officialEventLink": "https://botanique.be/en/concert/dizzy-dros-2026",
-    "lat": 50.8554,
-    "lng": 4.3664,
-    "neighbourhood": "Saint-Josse",
-    "desc": "A leading voice in Moroccan rap, driven by incisive flows, gangsta production, and engaged songwriting reflecting the realities of Casablanca",
-    "_rawDate": "2026-11-23"
-  },
-  {
     "id": 1252,
     "cat": "Nightlife",
     "date": "Next Month",
@@ -1145,7 +1095,7 @@
   {
     "id": 1262,
     "cat": "Music",
-    "date": "Tomorrow",
+    "date": "Tonight",
     "title": "strongboi - Salami Rose Joe Louis",
     "venue": "Le Botanique",
     "addr": "Rue Royale 236, 1210 Brussels",
@@ -1217,10 +1167,10 @@
     "_rawDate": "2026-12-11"
   },
   {
-    "id": 1271,
+    "id": 1276,
     "cat": "Culture",
     "date": "Today",
-    "title": "L’essence des choses",
+    "title": "Artistes femmes et travail du sexe",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
     "time": "11:00",
@@ -1229,20 +1179,93 @@
     "emoji": "🏛️",
     "color": "#E76F51",
     "tags": [
-      "Classical",
-      "Culture",
-      "Arts"
+      "Art",
+      "Culture"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/lessence-des-choses",
+    "officialEventLink": "https://www.bozar.be/en/calendar/artistes-femmes-et-travail-du-sexe",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
     "desc": "Lecture",
-    "_rawDate": "2026-11-23"
+    "_rawDate": "2026-11-24"
   },
   {
-    "id": 1272,
+    "id": 1277,
+    "cat": "Culture",
+    "date": "Today",
+    "title": "HELLwach – Wide Awake: A Tribute to Bodo Hell - Carola Mair",
+    "venue": "Bozar",
+    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "time": "11:00",
+    "startH": 11,
+    "endH": 14,
+    "emoji": "🏛️",
+    "color": "#E76F51",
+    "tags": [
+      "Cinema",
+      "Film"
+    ],
+    "source": "Bozar",
+    "officialEventLink": "https://www.bozar.be/en/calendar/hellwach-wide-awake-tribute-bodo-hell-carola-mair",
+    "lat": 50.8445,
+    "lng": 4.3609,
+    "neighbourhood": "Centre",
+    "desc": "Films",
+    "_rawDate": "2026-11-24"
+  },
+  {
+    "id": 1278,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "@ - nykolaes",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/nykolaes-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "@ - nykolaes at Le Botanique.",
+    "_rawDate": "2026-11-24"
+  },
+  {
+    "id": 1279,
+    "cat": "Music",
+    "date": "Tomorrow",
+    "title": "Shaking Hand - Désespoir des Singes",
+    "venue": "Le Botanique",
+    "addr": "Rue Royale 236, 1210 Brussels",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎸",
+    "color": "#B8E5C0",
+    "tags": [
+      "Concert",
+      "Indie",
+      "Alternative"
+    ],
+    "source": "Le Botanique",
+    "officialEventLink": "https://botanique.be/en/concert/shaking-hand-desespoir-des-singes-2026",
+    "lat": 50.8554,
+    "lng": 4.3664,
+    "neighbourhood": "Saint-Josse",
+    "desc": "Atmospheric, tense indie rock influenced by experimental textures and post-rock peaks",
+    "_rawDate": "2026-11-25"
+  },
+  {
+    "id": 1280,
     "cat": "Culture",
     "date": "March",
     "title": "William Kentridge",
@@ -1266,7 +1289,7 @@
     "_rawDate": "2027-03-07"
   },
   {
-    "id": 1273,
+    "id": 1281,
     "cat": "Culture",
     "date": "January",
     "title": "Jean Brusselmans",
@@ -1290,7 +1313,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1274,
+    "id": 1282,
     "cat": "Culture",
     "date": "January",
     "title": "Edith Dekyndt x Cristóbal Balenciaga",
@@ -1314,7 +1337,7 @@
     "_rawDate": "2027-01-31"
   },
   {
-    "id": 1275,
+    "id": 1283,
     "cat": "Culture",
     "date": "January",
     "title": "Central. Never Alone",
@@ -1338,51 +1361,99 @@
     "_rawDate": "2027-01-24"
   },
   {
-    "id": 1276,
-    "cat": "Culture",
-    "date": "Tomorrow",
-    "title": "Artistes femmes et travail du sexe",
+    "id": 1284,
+    "cat": "Music",
+    "date": "Tonight",
+    "title": "Münchner Philharmoniker & Vilde Frang",
     "venue": "Bozar",
     "addr": "Rue Ravenstein 23, 1000 Brussels",
-    "time": "11:00",
-    "startH": 11,
-    "endH": 14,
-    "emoji": "🎨",
-    "color": "#F4A261",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎵",
+    "color": "#8E7DBE",
     "tags": [
-      "Art",
-      "Culture"
+      "Concert",
+      "Live Music"
     ],
     "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/artistes-femmes-et-travail-du-sexe",
+    "officialEventLink": "https://www.bozar.be/en/calendar/munchner-philharmoniker-vilde-frang",
     "lat": 50.8445,
     "lng": 4.3609,
     "neighbourhood": "Centre",
-    "desc": "Lecture",
+    "desc": "Concerts",
     "_rawDate": "2026-11-24"
   },
   {
-    "id": 1277,
-    "cat": "Arts",
-    "date": "Tomorrow",
-    "title": "HELLwach – Wide Awake: A Tribute to Bodo Hell - Carola Mair",
-    "venue": "Bozar",
-    "addr": "Rue Ravenstein 23, 1000 Brussels",
+    "id": 1285,
+    "cat": "Culture",
+    "date": "Next Week",
+    "title": "Art Truc Troc & Fashion",
+    "venue": "Espace Vanderborght",
+    "addr": "Espace Vanderborght, Belgium",
     "time": "11:00",
     "startH": 11,
-    "endH": 14,
-    "emoji": "🎬",
-    "color": "#6C63FF",
+    "endH": 18,
+    "emoji": "🎨",
+    "color": "#E76F51",
     "tags": [
-      "Cinema",
-      "Film"
+      "Culture",
+      "Art"
     ],
-    "source": "Bozar",
-    "officialEventLink": "https://www.bozar.be/en/calendar/hellwach-wide-awake-tribute-bodo-hell-carola-mair",
-    "lat": 50.8445,
-    "lng": 4.3609,
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Art-Truc-Troc-and-Fashion.5700028667",
+    "lat": 50.8489235,
+    "lng": 4.3556435,
     "neighbourhood": "Centre",
-    "desc": "Films",
-    "_rawDate": "2026-11-24"
+    "desc": "Fri 27 November — Sun 06 December Art Truc Troc & Fashion ExhibitionsEspace Vanderborght View more",
+    "_rawDate": "2026-11-27"
+  },
+  {
+    "id": 1286,
+    "cat": "Festival",
+    "date": "This Weekend",
+    "title": "En Avant ! Fête des droits de l'enfant et des Jeunes",
+    "venue": "Flagey",
+    "addr": "Flagey, Belgium",
+    "time": "12:00",
+    "startH": 12,
+    "endH": 22,
+    "emoji": "🎉",
+    "color": "#F4A261",
+    "tags": [
+      "Festival",
+      "Outdoors"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.En-Avant-Fete-des-droits-de-l-enfant-et-des-Jeunes.5700028698",
+    "lat": 50.8278557,
+    "lng": 4.372152,
+    "neighbourhood": "Centre",
+    "desc": "Sun 29 November En Avant ! Fête des droits de l'enfant et des Jeunes Free FestivalFlagey View more",
+    "_rawDate": "2026-11-29"
+  },
+  {
+    "id": 1287,
+    "cat": "Music",
+    "date": "Next Month",
+    "title": "Belgian Italian Jazz Festival VI Edition",
+    "venue": "Istituto Italiano di Cultura",
+    "addr": "Istituto Italiano di Cultura, Belgium",
+    "time": "20:00",
+    "startH": 20,
+    "endH": 23,
+    "emoji": "🎷",
+    "color": "#C77DFF",
+    "tags": [
+      "Jazz",
+      "Live Music"
+    ],
+    "source": "Agenda Brussels",
+    "officialEventLink": "https://www.visit.brussels/en/visitors/agenda/event-detail.Belgian-Italian-Jazz-Festival-VI-Edition.5700029020",
+    "lat": 50.8299549,
+    "lng": 4.3592527,
+    "neighbourhood": "Centre",
+    "desc": "Wed 02 December — Thu 03 December Belgian Italian Jazz Festival VI Edition Free FestivalIstituto Italiano di Cultura View more",
+    "_rawDate": "2026-12-02"
   }
 ]
