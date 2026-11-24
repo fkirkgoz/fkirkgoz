@@ -82,7 +82,7 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
     <View style={styles.container}>
 
       <MapView
-        style={StyleSheet.absoluteFillObject}
+        style={StyleSheet.absoluteFill}
         initialRegion={{ latitude: 50.8503, longitude: 4.3517, latitudeDelta: 0.05, longitudeDelta: 0.05 }}
       >
         {mode === 'events' && groups.map(group => {
@@ -192,7 +192,7 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
       {sheet && (
         <Modal visible transparent animationType="slide" onRequestClose={() => setSheet(null)}>
           <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-            <Pressable style={[StyleSheet.absoluteFillObject, styles.overlay]} onPress={() => setSheet(null)} />
+            <Pressable style={[StyleSheet.absoluteFill, styles.overlay]} onPress={() => setSheet(null)} />
 
             <View style={[styles.sheet, { backgroundColor: T.card, paddingBottom: insets.bottom + 12 }]}>
               <View style={[styles.handle, { backgroundColor: T.border }]} />
@@ -247,7 +247,7 @@ export default function MapScreen({ onEventPress, T, dateFilter = null, onClearD
       {pick && (
         <Modal visible transparent animationType="slide" onRequestClose={() => setPick(null)}>
           <View style={{ flex: 1, justifyContent: 'flex-end' }}>
-            <Pressable style={[StyleSheet.absoluteFillObject, styles.overlay]} onPress={() => setPick(null)} />
+            <Pressable style={[StyleSheet.absoluteFill, styles.overlay]} onPress={() => setPick(null)} />
 
             <View style={[styles.sheet, { backgroundColor: T.card, paddingBottom: insets.bottom + 16 }]}>
               <View style={[styles.handle, { backgroundColor: T.border }]} />

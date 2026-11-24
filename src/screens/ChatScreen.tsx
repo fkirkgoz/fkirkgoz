@@ -31,7 +31,7 @@ export default function ChatScreen({ user, peer, onBack, T }: Props) {
   const insets = useSafeAreaInsets();
   const [msgs, setMsgs]   = useState<Message[]>([]);
   const [draft, setDraft] = useState('');
-  const scrollRef = useRef<ScrollView>(null);
+  const scrollRef = useRef<React.ComponentRef<typeof ScrollView>>(null);
   const countRef  = useRef(0);
 
   const me = user.email.toLowerCase();

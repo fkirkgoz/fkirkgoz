@@ -39,7 +39,7 @@ export default function HomeScreen({ onEventPress, T, myEvents, locale = 'en', u
   const [sort, setSort] = useState<'date-asc' | 'date-desc' | 'alpha-asc' | 'alpha-desc'>('date-asc');
   const [sortOpen, setSortOpen] = useState(false);
   const [calendarOpen, setCalendarOpen] = useState(false);
-  const searchRef = useRef<TextInput>(null);
+  const searchRef = useRef<React.ComponentRef<typeof TextInput>>(null);
 
   const markedDates = useMemo(() => availableEventDates(EVENTS), []);
 
