@@ -866,7 +866,7 @@ async function scrapeVenue(browser, config) {
               cls = { emoji: '🧘', color: '#A6D6D6', cat: 'Wellness', tags: ['Wellness', 'Lowkey'] };
             } else if (/christmas market|march[ée] de no[ëe]l|winter wonders|brocante|flea market|vintage market|\bmarket\b|\bmarch[ée]\b/i.test(combined)) {
               cls = { emoji: '🛍️', color: '#F4C87A', cat: 'Market', tags: ['Market', 'Outdoors'] };
-            } else if (/cooking class|workshop cuisine|atelier cuisine|tasting|d[ée]gustation|food|gastronom|brunch|wine|beer|cocktail/i.test(combined)) {
+            } else if (/\bcooking (?:class|workshop)|atelier cuisine|\btastings?\b|d[ée]gustation|\bfood (?:market|festival|truck)|gastronom|\bbrunch\b|\bwine\b|\bbeer\b|\bcocktails?\b/i.test(combined)) {
               cls = { emoji: '🍷', color: '#F4C87A', cat: 'Food & Drink', tags: ['Food', 'Social'] };
             } else if (/cinema|cin[ée]ma|film|screening|stand-up|comedy|improv/i.test(combined)) {
               cls = { emoji: '🎬', color: '#6C63FF', cat: 'Arts', tags: ['Cinema', 'Comedy'] };
