@@ -50,6 +50,60 @@ export interface ScraperVenue {
                              // from the page and is classified by its own content
 }
 
+// ── Topic searches (diversity) ───────────────────────────────────────────────
+interface TopicSearch {
+  id: string; name: string; q: string; alt?: string;
+  emoji: string; color: string; cat: string; tags: string[]; defaultTime: string;
+}
+const TOPIC_SEARCHES: TopicSearch[] = [
+  // Wellness
+  { id: 'topicYoga',       name: 'Brussels Yoga',        q: 'yoga',        alt: 'yoga+gratuit', emoji: '🧘', color: '#A6D6D6', cat: 'Wellness', tags: ['Yoga', 'Wellness', 'Lowkey'],            defaultTime: '10:00' },
+  { id: 'topicPilates',    name: 'Brussels Pilates',     q: 'pilates',     alt: 'wellness',     emoji: '🤸', color: '#A6D6D6', cat: 'Wellness', tags: ['Pilates', 'Wellness', 'Lowkey'],         defaultTime: '10:00' },
+  { id: 'topicMeditation', name: 'Brussels Mindfulness', q: 'meditation',  alt: 'mindfulness',  emoji: '🌿', color: '#A6D6D6', cat: 'Wellness', tags: ['Meditation', 'Wellness', 'Lowkey'],      defaultTime: '19:00' },
+  // Volunteering / meaningful
+  { id: 'topicVolunteer',  name: 'Brussels Volunteering', q: 'volunteer',  alt: 'benevole',     emoji: '🤝', color: '#F7CFD8', cat: 'Volunteering', tags: ['Volunteering', 'Meaningful', 'Community'], defaultTime: '10:00' },
+  { id: 'topicCleanup',    name: 'Brussels Clean-ups',    q: 'clean+up',   alt: 'nettoyage',    emoji: '🧹', color: '#F7CFD8', cat: 'Volunteering', tags: ['Clean-up', 'Meaningful', 'Community'],    defaultTime: '10:00' },
+  // Markets
+  { id: 'topicMarkets',    name: 'Brussels Markets',      q: 'market',     alt: 'marche',       emoji: '🛍️', color: '#F4C87A', cat: 'Market', tags: ['Market', 'Outdoors'],                       defaultTime: '10:00' },
+  { id: 'topicXmas',       name: 'Brussels Christmas',    q: 'christmas+market', alt: 'winter+wonders', emoji: '🎄', color: '#F4C87A', cat: 'Market', tags: ['Christmas', 'Market', 'Instagrammable'], defaultTime: '12:00' },
+  { id: 'topicVintage',    name: 'Brussels Vintage',      q: 'brocante',   alt: 'vintage',      emoji: '👗', color: '#F4C87A', cat: 'Market', tags: ['Vintage', 'Market', 'Hidden Gem'],           defaultTime: '09:00' },
+  // Food & drink / workshops
+  { id: 'topicCooking',    name: 'Brussels Cooking',      q: 'cooking',    alt: 'atelier+cuisine', emoji: '🍳', color: '#F4C87A', cat: 'Food & Drink', tags: ['Cooking', 'Workshop', 'Social'], defaultTime: '18:30' },
+  { id: 'topicTasting',    name: 'Brussels Tastings',     q: 'tasting',    alt: 'degustation',  emoji: '🍷', color: '#F4C87A', cat: 'Food & Drink', tags: ['Tasting', 'Social'],                defaultTime: '19:00' },
+  { id: 'topicWorkshop',   name: 'Brussels Workshops',    q: 'workshop',   alt: 'atelier',      emoji: '🎨', color: '#F4A261', cat: 'Culture', tags: ['Workshop', 'Creative', 'Social'],           defaultTime: '14:00' },
+  // Sports
+  { id: 'topicPadel',      name: 'Brussels Padel',        q: 'padel',      alt: 'tennis',       emoji: '🎾', color: '#90E0EF', cat: 'Sports', tags: ['Padel', 'Sports', 'Active'],                 defaultTime: '18:00' },
+  { id: 'topicRunning',    name: 'Brussels Running',      q: 'running',    alt: 'course+a+pied', emoji: '🏃', color: '#90E0EF', cat: 'Sports', tags: ['Running', 'Sports', 'Active'],              defaultTime: '09:00' },
+  { id: 'topicClimbing',   name: 'Brussels Climbing',     q: 'climbing',   alt: 'escalade',     emoji: '🧗', color: '#90E0EF', cat: 'Sports', tags: ['Climbing', 'Sports', 'Active'],              defaultTime: '18:00' },
+  // Arts / entertainment
+  { id: 'topicCinema',     name: 'Brussels Cinema',       q: 'cinema',     alt: 'film',         emoji: '🎬', color: '#6C63FF', cat: 'Arts', tags: ['Cinema', 'Film', 'Lowkey'],                    defaultTime: '20:00' },
+  { id: 'topicComedy',     name: 'Brussels Comedy',       q: 'comedy',     alt: 'stand-up',     emoji: '🎭', color: '#E76F51', cat: 'Arts', tags: ['Comedy', 'Stand-up', 'Social'],               defaultTime: '20:30' },
+  { id: 'topicDance',      name: 'Brussels Dance',        q: 'dance',      alt: 'danse',        emoji: '💃', color: '#F7CFD8', cat: 'Arts', tags: ['Dance', 'Performance'],                       defaultTime: '20:00' },
+  // Free / budget
+  { id: 'topicFreeExpo',   name: 'Brussels Free Exhibitions', q: 'free+exhibition', alt: 'exposition+gratuite', emoji: '🖼️', color: '#F4A261', cat: 'Culture', tags: ['Free', 'Exhibition', 'Budget Friendly'], defaultTime: '11:00' },
+  { id: 'topicFree',       name: 'Brussels Free Events',  q: 'free+entry', alt: 'gratuit',      emoji: '🎟️', color: '#A6D6D6', cat: 'Culture', tags: ['Free', 'Budget Friendly'],                   defaultTime: '14:00' },
+  // Family / community
+  { id: 'topicFamily',     name: 'Brussels Family',       q: 'family',     alt: 'enfants',      emoji: '👨‍👩‍👧', color: '#F7CFD8', cat: 'Culture', tags: ['Family', 'Daytime'],                  defaultTime: '14:00' },
+];
+
+function topicEntry(t: TopicSearch): ScraperVenue {
+  const base = 'https://www.agenda.brussels/en/search?q=';
+  return {
+    id: t.id,
+    name: t.name,
+    scrapingStrategy: 'portal_filter',
+    genericPortal: true,
+    targetUrl: base + t.q,
+    fallbackUrls: t.alt ? [base + t.alt] : [],
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: t.emoji, color: t.color, cat: t.cat, tags: t.tags,
+    defaultTime: t.defaultTime,
+    jsHeavy: true, enforceVisuals: true,
+  };
+}
+
 export const SCRAPER_VENUES: ScraperVenue[] = [
   // ══ Core Brussels venues — own websites ══════════════════════════════════
   {
@@ -673,4 +727,11 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
     defaultTime: '14:00',
     jsHeavy: true, enforceVisuals: true,
   },
+
+  // ══ Topic searches — agenda.brussels, one entry per query ═══════════════
+  // Adds the categories the club/venue list lacks (wellness, volunteering,
+  // markets, food, sports, cinema, comedy, free). Same proven mechanism as the
+  // open-air entries above: genericPortal, each card keeps its own venue and
+  // location; the query decides the category (enforceVisuals).
+  ...TOPIC_SEARCHES.map(topicEntry),
 ];
