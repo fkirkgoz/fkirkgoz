@@ -79,6 +79,8 @@ const VENUE_CONFIGS = SCRAPER_VENUES.map(toEngineConfig);
 
 // ── Keyword classification ─────────────────────────────────────────────────────
 const KEYWORD_MAP = [
+  { kw:['volunteer','bénévole','benevole','vrijwillig','clean-up','clean up','cleanup','nettoyage','charity'], emoji:'🤝', color:'#F7CFD8', cat:'Volunteering', tags:['Volunteering','Meaningful'] },
+  { kw:['yoga','pilates','meditation','méditation','mindful','breathwork','wellness','sound bath'],            emoji:'🧘', color:'#A6D6D6', cat:'Wellness',     tags:['Wellness','Lowkey']        },
   { kw:['techno','electronic','rave','dj set','club night','trance','house'],  emoji:'⚡', color:'#7B2FBE', cat:'Nightlife',    tags:['Techno','Electronic']   },
   { kw:['jazz','blues','swing','bossa nova'],                                  emoji:'🎷', color:'#C77DFF', cat:'Music',        tags:['Jazz','Live Music']      },
   { kw:['rock','indie','punk','metal','alternative','grunge'],                 emoji:'🎸', color:'#C77DFF', cat:'Music',        tags:['Rock','Live Music']      },
@@ -1257,7 +1259,9 @@ async function scrapeVenue(browser, config) {
               // the portal config. Landmarks (Cinquantenaire, Grand-Place…) are
               // detected for geocoding; classification comes from card content.
               const landmarkHint = detectExternalVenue(`${item.title} ${locationField} ${item.allText}`);
-              let clsG = classify(item.title + ' ' + item.allText);
+              let clsG = config.enforceVisuals
+                ? { emoji: config.emoji, color: config.color, cat: config.cat, tags: config.tags }
+                : classify(item.title + ' ' + item.allText);
               if (clsG.emoji === DEFAULT_CLASS.emoji) {
                 clsG = { emoji: config.emoji, color: config.color, cat: config.cat, tags: config.tags };
               }
