@@ -68,6 +68,10 @@ function toEngineConfig(v) {
       cfg.jsHeavy = true;
       break;
     }
+    case 'n22':
+      cfg.useN22 = true;
+      if (v.maxPages) cfg.n22MaxPages = v.maxPages;
+      break;
     case 'direct_url':
     default:
       break;
@@ -621,7 +625,146 @@ async function extractJsonLd(page) {
 }
 
 // ── Generic venue scraper ─────────────────────────────────────────────────────
+
+// ── N22 (Brussels Dutch-language community centres) ───────────────────────────
+// n22.brussels/activiteiten is a server-rendered Drupal list (25 cards/page,
+// date-ascending) covering all 22 Brusselse gemeenschapscentra. No browser
+// needed: axios + cheerio. Each card: a.activity-teaser-link with .title,
+// time[datetime] (UTC ISO), .address ("GC Den Dam, Oudergem"), a theme field,
+// age range, and .activity--state badges (GRATIS / VOLZET).
+const N22_THEME_MAP = [
+  { re: /voeding|horeca|kitchen|keuken|\bkook|koken|soep|\beten\b/i,                          emoji:'🍲', color:'#F4C87A', cat:'Food & Drink', tags:['Food','Community','Social'] },
+  { re: /muziek|jazz|blues|pop|rock|klassiek|wereldmuziek|hiphop/i, emoji:'🎵', color:'#8E7DBE', cat:'Music', tags:['Concert','Community'] },
+  { re: /film|documentaire|cinema/i,                emoji:'🎬', color:'#6C63FF', cat:'Arts',    tags:['Film','Community'] },
+  { re: /humor|comedy|theater|toneel|dans|circus|performance/i, emoji:'🎭', color:'#E76F51', cat:'Arts', tags:['Performance','Community'] },
+  { re: /yoga|pilates|mindful|meditat|ontspan|welzijn|gezondheid/i, emoji:'🧘', color:'#A6D6D6', cat:'Wellness', tags:['Wellness','Lowkey'] },
+  { re: /sport|fitness|zwem|voetbal|racket|bal en|beweg|dans/i, emoji:'🏃', color:'#90E0EF', cat:'Sports', tags:['Sports','Active'] },
+  { re: /vrijwillig|buurt(?!kaf)/i,                 emoji:'🤝', color:'#F7CFD8', cat:'Volunteering', tags:['Volunteering','Meaningful','Community'] },
+  { re: /taal|talen|conversatie|nederlands/i,       emoji:'💬', color:'#A6D6D6', cat:'Culture', tags:['Language','Community','Social'] },
+  { re: /kunst|schilder|teken|keramiek|creatief|atelier|workshop|expo/i, emoji:'🎨', color:'#F4A261', cat:'Culture', tags:['Workshop','Creative','Community'] },
+];
+
+function n22Classify(theme, title) {
+  const hay = `${theme} ${title}`;
+  for (const m of N22_THEME_MAP) if (m.re.test(hay)) return { emoji:m.emoji, color:m.color, cat:m.cat, tags:m.tags };
+  return { emoji:'🏘️', color:'#8E7DBE', cat:'Culture', tags:['Community','Neighbourhood'] };
+}
+
+// Events for children only (max age ≤ 15) are not relevant to the Gen-Z feed.
+function n22IsKidsOnly(text) {
+  const m = text.match(/(\d{1,2})\s*-\s*(\d{1,3})\s*jaar/i);
+  return !!m && Number(m[2]) <= 15;
+}
+
+function brusselsIso(dt) {
+  const d = new Date(dt);
+  if (isNaN(d)) return null;
+  return d.toLocaleDateString('sv-SE', { timeZone: 'Europe/Brussels' }); // YYYY-MM-DD
+}
+
+async function scrapeN22(config) {
+  console.log(`\n${config.emoji}  Scraping ${config.name} (axios + cheerio)…`);
+  const events = [];
+  const geoCache = new Map();
+  const titleCount = new Map();
+  const maxPages = config.n22MaxPages || 10;
+  const base = (config.urls[0] || 'https://www.n22.brussels/activiteiten').replace(/\?.*$/, '');
+  const todayIso = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Brussels' });
+  const horizon = new Date(Date.now() + 35 * 86400000).toLocaleDateString('sv-SE', { timeZone: 'Europe/Brussels' });
+
+  for (let pg = 0; pg < maxPages; pg++) {
+    let html;
+    try {
+      const res = await axios.get(`${base}?page=${pg}`, {
+        timeout: 15000,
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; RandevuBot/1.0; +https://randevu.app)', 'Accept-Language': 'nl-BE,nl;q=0.9,en;q=0.8' },
+      });
+      html = res.data;
+    } catch (err) {
+      console.log(`    N22 page ${pg} failed: ${String(err.message).slice(0, 60)}`);
+      break;
+    }
+    const $ = cheerio.load(html);
+    const cards = $('a.activity-teaser-link');
+    if (!cards.length) break;
+    let beyondHorizon = 0;
+
+    cards.each((_, el) => {
+      const c = $(el);
+      const title = clean(c.find('.title').first().text());
+      const href  = c.attr('href') || '';
+      const times = c.find('time[datetime]').map((__, t) => brusselsIso($(t).attr('datetime'))).get().filter(Boolean);
+      if (!title || !href || !times.length) return;
+      const start = times[0];
+      const end   = times.length > 1 && times[times.length - 1] > start ? times[times.length - 1] : null;
+      if (start > horizon) { beyondHorizon++; return; }
+
+      const text = clean(c.text());
+      if (n22IsKidsOnly(text)) return;
+
+      const addr  = clean(c.find('.address').first().text());           // "GC Den Dam, Oudergem"
+      const parts = addr.split(',').map(x => x.trim()).filter(Boolean);
+      const venue = (parts[0] || 'Gemeenschapscentrum').replace(/^Gemeenschapscentrum\s+/i, 'GC ').replace(/\s+vzw$/i, '');
+      const commune = parts.length > 1 ? parts[parts.length - 1] : 'Brussels';
+
+      // theme = the field item that follows the visually-hidden "Thema activiteit" label
+      let theme = '';
+      c.find('.field__label').each((__, l) => {
+        if (/thema/i.test($(l).text())) theme = clean($(l).parent().find('.field__item').first().text());
+      });
+
+      const free = /GRATIS/.test(c.find('.activity--state').text());
+      const soldOut = /VOLZET/.test(c.find('.activity--state.warning').text());
+
+      // At most 2 occurrences of the same recurring title per run (keeps the feed varied)
+      const seen = (titleCount.get(title) || 0) + 1;
+      titleCount.set(title, seen);
+      if (seen > 2) return;
+
+      const cls = n22Classify(theme, title);
+      const smart = smartDefaultTime(cls.cat);
+      const rel = toRelativeDate(start, end);
+      if (!rel) return;
+
+      events.push({
+        _rawDate: start, ...(end ? { _endDate: end } : {}),
+        title, venue,
+        addr: `${venue}, ${commune}, Brussels, Belgium`,
+        date: refineDateLabel(rel, smart.startH), time: smart.time,
+        startH: smart.startH, endH: smart.endH,
+        emoji: cls.emoji, color: cls.color, cat: cls.cat,
+        tags: [...cls.tags, ...(free ? ['Free', 'Budget Friendly'] : [])],
+        source: 'N22 Community Centres',
+        officialEventLink: href.startsWith('http') ? href : `https://www.n22.brussels${href}`,
+        desc: `${title} — ${venue}, ${commune}.${theme ? ' ' + theme + '.' : ''}${free ? ' Free entry.' : ''} Organised by a Brussels community centre (N22).`,
+        neighbourhood: commune,
+        lat: 0, lng: 0,
+        ...(soldOut ? { status: 'SOLD OUT' } : {}),
+      });
+    });
+
+    console.log(`    N22 page ${pg}: ${cards.length} cards → ${events.length} kept`);
+    if (beyondHorizon >= cards.length) break;   // date-ascending list: nothing useful further on
+    await sleep(400);
+  }
+
+  // Resolve each centre once (not once per event) — ~22 geocoder calls total.
+  for (const ev of events) {
+    const key = ev.venue;
+    if (!geoCache.has(key)) {
+      const g = await geocode(`${ev.venue}, ${ev.neighbourhood}, Brussels`);
+      geoCache.set(key, g);
+      if (!g.landmark) await sleep(GEOCODE_DELAY);
+    }
+    const g = geoCache.get(key);
+    ev.lat = g.lat; ev.lng = g.lng;
+  }
+  console.log(`    N22 → ${events.length} event(s)`);
+  return events;
+}
+
 async function scrapeVenue(browser, config) {
+  if (config.useN22) return scrapeN22(config);
   console.log(`\n${config.emoji}  Scraping ${config.name}…`);
   const events  = [];
   let failReason = '';
@@ -1873,6 +2016,56 @@ async function scrapeVenue(browser, config) {
 }
 
 // ── Main ──────────────────────────────────────────────────────────────────────
+
+// ── Hand-curated events (src/data/curated_events.json) ────────────────────────
+// For one-off finds that have no scrapable page (e.g. Christmas markets from
+// local guides). Same event shape the scraper produces, but minimal: title,
+// venue, address, ISO dates, category. Labels (Today/Tomorrow/…) are recomputed
+// every run and past events drop out automatically.
+const CURATED_JSON = path.join(__dirname, 'src', 'data', 'curated_events.json');
+const CURATED_STYLE = {
+  'Market':       { emoji:'🎄', color:'#F4C87A' },
+  'Food & Drink': { emoji:'🍷', color:'#F4C87A' },
+  'Festival':     { emoji:'🎉', color:'#F4A261' },
+  'Culture':      { emoji:'🎨', color:'#F4A261' },
+  'Music':        { emoji:'🎵', color:'#8E7DBE' },
+  'Arts':         { emoji:'🎭', color:'#E76F51' },
+  'Wellness':     { emoji:'🧘', color:'#A6D6D6' },
+  'Volunteering': { emoji:'🤝', color:'#F7CFD8' },
+  'Sports':       { emoji:'🏃', color:'#90E0EF' },
+};
+function loadCurated() {
+  if (!fs.existsSync(CURATED_JSON)) return [];
+  let items;
+  try { items = JSON.parse(fs.readFileSync(CURATED_JSON, 'utf8')); } catch (e) { console.log(`⚠️  curated_events.json unreadable: ${e.message}`); return []; }
+  const out = [];
+  for (const c of items) {
+    if (!c.title || !c._rawDate || !c.addr) { console.log(`    curated: skipped incomplete entry "${c.title || '?'}"`); continue; }
+    const rel = toRelativeDate(c._rawDate, c._endDate || null);
+    if (!rel) continue; // already over
+    const style = CURATED_STYLE[c.cat] || { emoji:'📍', color:'#8E7DBE' };
+    const smart = smartDefaultTime(c.cat);
+    const timeStr = c.time || smart.time;
+    const [hh, mm] = timeStr.split(':').map(Number);
+    const startH = c.startH ?? (Number.isFinite(hh) ? hh + (mm || 0) / 60 : smart.startH);
+    const endH = c.endH ?? (c.time ? Math.min(startH + 3, 26) : smart.endH);
+    out.push({
+      _rawDate: c._rawDate, ...(c._endDate ? { _endDate: c._endDate } : {}),
+      title: c.title, venue: c.venue || c.title,
+      addr: c.addr, externalVenueHint: c.addr,      // geocoded from the street address
+      date: refineDateLabel(rel, startH), time: timeStr, startH, endH,
+      emoji: c.emoji || style.emoji, color: c.color || style.color, cat: c.cat,
+      tags: c.tags || [c.cat], source: c.source || 'Curated',
+      officialEventLink: c.officialEventLink || '',
+      desc: c.desc || `${c.title} in Brussels.`,
+      neighbourhood: c.neighbourhood || 'Brussels',
+      lat: c.lat || 0, lng: c.lng || 0,
+    });
+  }
+  console.log(`📌  Curated: ${out.length} upcoming event(s) from curated_events.json`);
+  return out;
+}
+
 async function main() {
   console.log('🚀  Randevu Event Scraper\n');
 
@@ -2063,10 +2256,12 @@ async function main() {
 
   // Hard per-venue timeout: one stalled page can't freeze its whole batch
   async function scrapeVenueWithTimeout(config) {
+    // N22 reads ~10 list pages and geocodes ~40 community centres (1.2 s each) → needs longer
+    const limitMs = config.useN22 ? 240000 : 60000;
     return Promise.race([
       scrapeVenue(browser, config),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Venue timed out after 60 s')), 60000)
+        setTimeout(() => reject(new Error(`Venue timed out after ${limitMs / 1000} s`)), limitMs)
       ),
     ]);
   }
@@ -2119,6 +2314,7 @@ async function main() {
     if (r.name === 'C12') console.log(`💃 C12: [${r.count} events added]`);
   }
 
+  raw = [...raw, ...loadCurated()];
   console.log(`📡  Processing ${raw.length} scraped candidates…`);
 
   let idCounter = nextId(existing);

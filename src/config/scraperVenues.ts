@@ -19,7 +19,7 @@
 //                     model (portalKeywords) for roaming open-air series
 // ─────────────────────────────────────────────────────────────────────────────
 
-export type ScrapingStrategy = 'ra_club' | 'direct_url' | 'portal_filter';
+export type ScrapingStrategy = 'ra_club' | 'direct_url' | 'portal_filter' | 'n22';
 
 export interface ScraperVenue {
   id: string;
@@ -36,6 +36,7 @@ export interface ScraperVenue {
   cat: string;
   tags: string[];
   defaultTime: string;    // 'HH:MM' fallback when no time found on page
+  maxPages?: number;      // 'n22' strategy: how many list pages (25 events each) to read
   jsHeavy?: boolean;      // SPA — wait for hydration + live-DOM scrape
   enforceVisuals?: boolean; // lock emoji/color/cat (skip keyword classification)
   extraWait?: number;     // extra settle ms after navigation
@@ -733,6 +734,22 @@ export const SCRAPER_VENUES: ScraperVenue[] = [
   // markets, food, sports, cinema, comedy, free). Same proven mechanism as the
   // open-air entries above: genericPortal, each card keeps its own venue and
   // location; the query decides the category (enforceVisuals).
+  // ══ Community centres — N22 (all 22 Dutch-language centres in Brussels) ══
+  // Server-rendered list → axios + cheerio, no browser. Small local events:
+  // world-kitchen nights, cooking, yoga, comedy, film, free concerts, workshops.
+  {
+    id: 'n22',
+    name: 'N22 Community Centres',
+    scrapingStrategy: 'n22',
+    targetUrl: 'https://www.n22.brussels/activiteiten',
+    maxPages: 10,
+    masterAddress: 'Brussels, Belgium',
+    lat: 0, lng: 0,
+    neighbourhood: 'Various',
+    emoji: '🏘️', color: '#8E7DBE', cat: 'Culture',
+    tags: ['Community', 'Neighbourhood'],
+    defaultTime: '19:00',
+  },
   // DISABLED: agenda.brussels/en/search?... renders a blank page for the scraper
   // (165 chars, "All URLs failed"). Re-enable once a working search URL is found.
   // ...TOPIC_SEARCHES.map(topicEntry),
