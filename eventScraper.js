@@ -2256,10 +2256,12 @@ async function main() {
 
   // Hard per-venue timeout: one stalled page can't freeze its whole batch
   async function scrapeVenueWithTimeout(config) {
+    // N22 reads ~10 list pages and geocodes ~40 community centres (1.2 s each) → needs longer
+    const limitMs = config.useN22 ? 240000 : 60000;
     return Promise.race([
       scrapeVenue(browser, config),
       new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('Venue timed out after 60 s')), 60000)
+        setTimeout(() => reject(new Error(`Venue timed out after ${limitMs / 1000} s`)), limitMs)
       ),
     ]);
   }
